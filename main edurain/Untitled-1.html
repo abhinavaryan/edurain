@@ -1,0 +1,705 @@
+<style type="text/css">/* =======================================================
+  EDURAIN MODERN UI - FULL PAGE (CMS COMPATIBLE)
+======================================================= */
+.edr-app {
+   font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+   color: #1e293b;
+   background: #ffffff;
+   -webkit-font-smoothing: antialiased;
+   line-height: 1.5;
+}
+.edr-container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 20px;
+}
+a { text-decoration: none; }
+
+/* ================= SECTION 1: HERO ================= */
+.edr-hero {
+   background: linear-gradient(135deg, #eefdf2 0%, #fffdf4 100%);
+   padding: 80px 0 120px;
+   position: relative;
+}
+.edr-hero-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 50px;
+   align-items: center;
+}
+.edr-badge {
+   display: inline-flex;
+   align-items: center;
+   background: #e4f6ec;
+   color: #2b7a5f;
+   padding: 6px 14px;
+   border-radius: 50px;
+   font-size: 13px;
+   font-weight: 600;
+   margin-bottom: 20px;
+}
+.edr-badge .dot {
+   width: 6px; height: 6px;
+   background: #2b7a5f;
+   border-radius: 50%;
+   margin-right: 8px;
+}
+.edr-h1 {
+   font-size: 48px;
+   font-weight: 800;
+   color: #1a4d3e;
+   line-height: 1.15;
+   margin: 0 0 20px;
+}
+.edr-hero-p {
+   font-size: 16px;
+   color: #475569;
+   margin-bottom: 30px;
+   max-width: 480px;
+}
+.edr-btn-group { display: flex; gap: 15px; margin-bottom: 30px; }
+.edr-btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: 14px 24px;
+   border-radius: 8px;
+   font-weight: 600;
+   font-size: 15px;
+   transition: all 0.3s ease;
+}
+.edr-btn-primary {
+   background: #2b7a5f;
+   color: #ffffff !important;
+   box-shadow: 0 4px 14px rgba(43, 122, 95, 0.25);
+}
+.edr-btn-primary:hover { background: #1a4d3e; transform: translateY(-2px); }
+.edr-btn-secondary { background: #ffffff; color: #1e293b !important; border: 1px solid #cbd5e1; }
+.edr-btn-secondary:hover { background: #f8fafc; border-color: #94a3b8; transform: translateY(-2px); }
+.edr-btn svg { margin-left: 8px; }
+.edr-btn-secondary svg { margin-left: 0; margin-right: 8px; }
+
+.edr-social-proof { display: flex; align-items: center; gap: 15px; font-size: 13px; color: #64748b; }
+.edr-avatars { display: flex; }
+.edr-avatars img { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #fff; margin-left: -10px; background: #e2e8f0; }
+.edr-avatars img:first-child { margin-left: 0; }
+.edr-avatar-count { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #fff; margin-left: -10px; background: #fde68a; color: #92400e; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; z-index: 1; }
+
+.edr-hero-image-wrap {
+   border-radius: 20px;
+   padding: 15px;
+   background: #fff;
+   box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+.edr-hero-image-wrap > img { width: 100%; border-radius: 12px; display: block; }
+
+/* ================= SECTION 2: STATS ================= */
+.edr-stats-wrap {
+   max-width: 1200px;
+   margin: -60px auto 80px;
+   padding: 0 20px;
+   position: relative;
+   z-index: 10;
+}
+.edr-stats-grid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 20px;
+}
+.edr-stat-card {
+   background: #fff;
+   padding: 30px 20px;
+   border-radius: 16px;
+   text-align: center;
+   box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+   border: 1px solid #f1f5f9;
+   transition: transform 0.3s ease;
+}
+.edr-stat-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+.edr-stat-icon {
+   width: 50px; height: 50px;
+   border-radius: 12px;
+   display: flex; align-items: center; justify-content: center;
+   margin: 0 auto 15px;
+}
+.edr-stat-num { font-size: 28px; font-weight: 800; color: #1e293b; margin: 0 0 5px; }
+.edr-stat-label { font-size: 11px; font-weight: 700; color: #94a3b8; letter-spacing: 1px; text-transform: uppercase; margin: 0; }
+
+.bg-blue { background: #eff6ff; color: #3b82f6; }
+.bg-purple { background: #faf5ff; color: #a855f7; }
+.bg-green { background: #f0fdf4; color: #22c55e; }
+.bg-orange { background: #fff7ed; color: #f97316; }
+
+/* ================= SECTION 2B: COURSES ================= */
+.edr-courses { padding: 20px 0 80px; text-align: center; }
+.edr-section-subtitle { font-size: 12px; font-weight: 800; color: #2b7a5f; letter-spacing: 1.5px; text-transform: uppercase; margin: 0 0 10px; }
+.edr-section-title { font-size: 36px; font-weight: 800; color: #1a4d3e; margin: 0 0 15px; }
+.edr-section-desc { font-size: 16px; color: #64748b; max-width: 600px; margin: 0 auto 50px; }
+
+.edr-course-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: left; }
+.edr-course-card {
+   background: #fff; border: 1px solid #f1f5f9; border-radius: 20px; padding: 30px; position: relative;
+   overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.03); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.edr-course-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+.edr-course-card::before {
+   content: ""; position: absolute; top: -40px; right: -40px; width: 140px; height: 140px;
+   border-radius: 50%; opacity: 0.2; z-index: 0;
+}
+.blob-red::before { background: #ef4444; }
+.blob-blue::before { background: #3b82f6; }
+.blob-green::before { background: #10b981; }
+.blob-indigo::before { background: #6366f1; }
+.blob-yellow::before { background: #f59e0b; }
+.blob-purple::before { background: #8b5cf6; }
+
+.edr-card-content { position: relative; z-index: 1; }
+.edr-course-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: #fff; }
+.ic-red { background: #ef4444; }
+.ic-blue { background: #3b82f6; }
+.ic-green { background: #10b981; }
+.ic-indigo { background: #6366f1; }
+.ic-yellow { background: #f59e0b; }
+.ic-purple { background: #8b5cf6; }
+
+.edr-course-badge { display: inline-block; background: #f1f5f9; color: #64748b; padding: 4px 10px; border-radius: 4px; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 12px; }
+.edr-course-title { font-size: 20px; font-weight: 800; color: #1e293b; margin: 0 0 10px; }
+.edr-course-p { font-size: 14px; color: #64748b; margin: 0 0 25px; line-height: 1.6; min-height: 45px; }
+.edr-explore-link { display: inline-flex; align-items: center; font-size: 14px; font-weight: 700; color: #2b7a5f; transition: color 0.2s; }
+.edr-explore-link svg { margin-left: 6px; width: 16px; height: 16px; background: #2b7a5f; color: #fff; border-radius: 50%; padding: 2px; transition: transform 0.3s; }
+.edr-course-card:hover .edr-explore-link svg { transform: translateX(4px); }
+
+/* ================= SECTION 3: FEATURES ================= */
+.edr-features-wrap { padding: 80px 0; background: #ffffff; border-top: 1px solid #f1f5f9; }
+.edr-feat-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
+.edr-feat-desc { font-size: 16px; color: #64748b; margin-bottom: 30px; line-height: 1.6; }
+
+.edr-feat-list { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+.edr-feat-item { display: flex; gap: 15px; }
+.edr-feat-icon-sm { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.edr-feat-item h4 { margin: 0 0 5px; font-size: 15px; font-weight: 700; color: #1e293b; }
+.edr-feat-item p { margin: 0; font-size: 13px; color: #64748b; line-height: 1.5; }
+
+.edr-feat-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.edr-feat-box { border: 1px solid #f1f5f9; border-radius: 12px; padding: 25px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02); background: #fff; transition: transform 0.3s; }
+.edr-feat-box:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
+.edr-feat-box .icon { width: 48px; height: 48px; border-radius: 12px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; }
+.edr-feat-box h4 { margin: 0; font-size: 14px; font-weight: 700; color: #1e293b; }
+
+.bg-light-green { background: #f0fdf4; color: #22c55e; }
+.bg-light-blue { background: #eff6ff; color: #3b82f6; }
+.bg-light-yellow { background: #fefce8; color: #eab308; }
+.bg-light-purple { background: #faf5ff; color: #a855f7; }
+.bg-light-orange { background: #fff7ed; color: #f97316; }
+.bg-light-red { background: #fef2f2; color: #ef4444; }
+
+/* ================= SECTION 4: RESULTS ================= */
+.edr-results-wrap { padding: 80px 0; background: #fafafa; }
+.edr-results-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; }
+.edr-results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.edr-result-card { background: #fff; border: 1px solid #f1f5f9; border-radius: 16px; padding: 30px 15px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.3s; }
+.edr-result-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+.edr-result-img { width: 90px; height: 90px; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin: 0 auto 15px; object-fit: cover; }
+.edr-result-name { font-size: 16px; font-weight: 700; color: #1e293b; margin: 0 0 5px; }
+.edr-result-exam { font-size: 11px; font-weight: 700; color: #64748b; letter-spacing: 0.5px; text-transform: uppercase; margin: 0 0 15px; }
+.edr-result-score { display: inline-block; background: #e4f6ec; color: #10b981; font-weight: 800; font-size: 14px; padding: 6px 16px; border-radius: 6px; }
+
+/* ================= SECTION 5: TESTIMONIALS ================= */
+.edr-testi-wrap { padding: 80px 0; overflow: hidden; text-align: center; background: #ffffff;}
+.edr-slider-container { width: 100%; overflow: hidden; margin-top: 40px; padding: 10px 0; }
+.edr-slider-track { display: flex; gap: 30px; width: max-content; animation: testi-scroll 35s linear infinite; }
+.edr-slider-container:hover .edr-slider-track { animation-play-state: paused; }
+
+.edr-testi-card { width: 350px; flex-shrink: 0; background: #fff; border: 1px solid #f1f5f9; border-radius: 16px; padding: 30px; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.03); position: relative; }
+.edr-testi-stars { color: #fde047; font-size: 16px; margin-bottom: 15px; }
+.edr-testi-quote { font-size: 14px; color: #64748b; font-style: italic; line-height: 1.6; margin-bottom: 25px; min-height: 80px; }
+.edr-testi-user { display: flex; align-items: center; gap: 12px; }
+.edr-testi-avatar { width: 40px; height: 40px; background: #f0fdf4; color: #2b7a5f; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; }
+.edr-testi-userinfo h5 { margin: 0 0 2px; font-size: 14px; font-weight: 700; color: #1e293b; }
+.edr-testi-userinfo p { margin: 0; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+.edr-quote-mark { position: absolute; top: 25px; right: 25px; color: #f1f5f9; font-size: 40px; font-family: serif; font-weight: bold; line-height: 1; }
+
+@keyframes testi-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* ================= RESPONSIVE ADJUSTMENTS ================= */
+@media(max-width: 992px) {
+   .edr-hero-grid, .edr-feat-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+   .edr-feat-list { text-align: left; }
+   .edr-hero-p { margin-left: auto; margin-right: auto; }
+   .edr-btn-group, .edr-social-proof { justify-content: center; }
+   .edr-stats-grid { grid-template-columns: repeat(2, 1fr); }
+   .edr-course-grid { grid-template-columns: repeat(2, 1fr); }
+   .edr-results-header { flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+   .edr-results-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media(max-width: 600px) {
+   .edr-h1, .edr-section-title, .edr-section-h2 { font-size: 32px; }
+   .edr-btn-group { flex-direction: column; }
+   .edr-stats-wrap { margin-top: 40px; }
+   .edr-stats-grid, .edr-course-grid, .edr-feat-list, .edr-feat-cards, .edr-results-grid { grid-template-columns: 1fr; }
+   .edr-testi-card { width: 300px; }
+}
+</style>
+<div class="edr-app"><!-- ================= SECTION 1: HERO ================= -->
+<section class="edr-hero">
+<div class="edr-container edr-hero-grid"><!-- Left Text Area -->
+<div>
+<div class="edr-badge"><span class="dot"></span> India's Smart Learning Platform</div>
+
+<h1 class="edr-h1">From Foundation to JEE<br />
+& NEET We Get You There</h1>
+
+<p class="edr-hero-p">India's trusted online education platforms  for NEET, IIT-JEE & Class 6–12 expert faculty, live classes, personal mentorship, and result-driven teaching for exam success. </p>
+
+<div class="edr-btn-group"><a class="edr-btn edr-btn-primary" href="/online_admission">Start Learning <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg> </a> <a class="edr-btn edr-btn-secondary" href="/page/contact-edurain-institute-coaching-institute-in-janakpuri-delhi"> <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg> Contact Us </a></div>
+
+<div class="edr-social-proof">
+<div class="edr-avatars"><img alt="Student" src="https://ui-avatars.com/api/?name=R&amp;background=0D8ABC&amp;color=fff&amp;rounded=true" /> <img alt="Student" src="https://ui-avatars.com/api/?name=S&amp;background=10B981&amp;color=fff&amp;rounded=true" /> <img alt="Student" src="https://ui-avatars.com/api/?name=A&amp;background=F59E0B&amp;color=fff&amp;rounded=true" />
+<div class="edr-avatar-count">10k+</div>
+</div>
+<span>Joined by <strong>5,000+</strong> students this year</span></div>
+</div>
+<!-- Right Image Area -->
+
+<div>
+<div class="edr-hero-image-wrap"><img alt="EduRain Student Learning Online" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" /></div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 2: STATS ================= -->
+
+<section class="edr-stats-wrap">
+<div class="edr-stats-grid">
+<div class="edr-stat-card">
+<div class="edr-stat-icon bg-blue"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+
+<h3 class="edr-stat-num">12K+</h3>
+
+<p class="edr-stat-label">Students Enrolled</p>
+</div>
+
+<div class="edr-stat-card">
+<div class="edr-stat-icon bg-purple"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect height="14" rx="2" ry="2" width="15" x="1" y="5"></rect></svg></div>
+
+<h3 class="edr-stat-num">10K+</h3>
+
+<p class="edr-stat-label">Classes Conducted</p>
+</div>
+
+<div class="edr-stat-card">
+<div class="edr-stat-icon bg-green"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div>
+
+<h3 class="edr-stat-num">250+</h3>
+
+<p class="edr-stat-label">Mock Tests</p>
+</div>
+
+<div class="edr-stat-card">
+<div class="edr-stat-icon bg-orange"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></div>
+
+<h3 class="edr-stat-num">15+</h3>
+
+<p class="edr-stat-label">Faculty Members</p>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 2B: POPULAR COURSES ================= -->
+
+<section class="edr-courses edr-container">
+<p class="edr-section-subtitle">Our Top Programs</p>
+
+<h2 class="edr-section-title">Popular Courses at EduRain</h2>
+
+<p class="edr-section-desc">Choose from our meticulously designed courses to kickstart your career in engineering or medicine.</p>
+
+<div class="edr-course-grid">
+<div class="edr-course-card blob-red">
+<div class="edr-card-content">
+<div class="edr-course-icon ic-red"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M9.5 2h5M12 2v4M17 21v-4a2 2 0 0 0-2-2h-6a2 2 0 0 0-2 2v4M12 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path></svg></div>
+<span class="edr-course-badge">Medical</span>
+
+<h3 class="edr-course-title">NEET 2027</h3>
+
+<p class="edr-course-p">Comprehensive medical entrance preparation with daily live classes and PCB practice.</p>
+<a class="edr-explore-link" href="/neetcourse">Explore Course <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></div>
+</div>
+
+<div class="edr-course-card blob-blue">
+<div class="edr-card-content">
+<div class="edr-course-icon ic-blue"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="14.01"></line><line x1="12" x2="12" y1="14" y2="14.01"></line><line x1="8" x2="8" y1="14" y2="14.01"></line></svg></div>
+<span class="edr-course-badge">Engineering</span>
+
+<h3 class="edr-course-title">JEE 2027</h3>
+
+<p class="edr-course-p">Master Physics, Chemistry, and Maths for India's toughest engineering exam.</p>
+<a class="edr-explore-link" href="/courses">Explore Course <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></div>
+</div>
+
+<div class="edr-course-card blob-green">
+<div class="edr-card-content">
+<div class="edr-course-icon ic-green"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
+<span class="edr-course-badge">Medical</span>
+
+<h3 class="edr-course-title">NEET Dropper</h3>
+
+<p class="edr-course-p">Specialized batch for repeaters focusing on shortcut techniques and intensive practice.</p>
+<a class="edr-explore-link" href="/neetcourse">Explore Course <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></div>
+</div>
+
+<div class="edr-course-card blob-indigo">
+<div class="edr-card-content">
+<div class="edr-course-icon ic-indigo"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div>
+<span class="edr-course-badge">Engineering</span>
+
+<h3 class="edr-course-title">JEE Dropper</h3>
+
+<p class="edr-course-p">One-year intensive program to secure top ranks in JEE Mains and Advanced.</p>
+<a class="edr-explore-link" href="/courses">Explore Course <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></div>
+</div>
+
+<div class="edr-course-card blob-yellow">
+<div class="edr-card-content">
+<div class="edr-course-icon ic-yellow"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path></svg></div>
+<span class="edr-course-badge">School</span>
+
+<h3 class="edr-course-title">Foundation (6-10)</h3>
+
+<p class="edr-course-p">Building strong conceptual basics for school exams and future competitive tests.</p>
+<a class="edr-explore-link" href="/courses">Explore Course <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></div>
+</div>
+
+<div class="edr-course-card blob-purple">
+<div class="edr-card-content">
+<div class="edr-course-icon ic-purple"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></div>
+<span class="edr-course-badge">University</span>
+
+<h3 class="edr-course-title">CUET 2027</h3>
+
+<p class="edr-course-p">Prepare for top central universities with our expert-led common entrance batch.</p>
+<a class="edr-explore-link" href="/competitive-exams">Explore Course <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 3: FEATURES ================= -->
+
+<section class="edr-features-wrap">
+<div class="edr-container edr-feat-grid"><!-- Left Side Content -->
+<div>
+<p class="edr-section-label">Why EduRain?</p>
+
+<h2 class="edr-section-h2">Designed for Results, Built for Students</h2>
+
+<p class="edr-feat-desc">We provide a holistic learning experience that goes beyond just video lectures. Our platform is built to ensure every student receives personalized attention and the best resources possible.</p>
+
+<div class="edr-feat-list">
+<div class="edr-feat-item">
+<div class="edr-feat-icon-sm bg-light-green"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><rect height="15" rx="2" ry="2" width="20" x="2" y="7"></rect><polyline points="17 2 12 7 7 2"></polyline></svg></div>
+
+<div>
+<h4>Live Interactive Classes</h4>
+
+<p>Experience real-time interaction with top educators from home.</p>
+</div>
+</div>
+
+<div class="edr-feat-item">
+<div class="edr-feat-icon-sm bg-light-blue"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg></div>
+
+<div>
+<h4>Recorded Lectures</h4>
+
+<p>Missed a class? Access all live sessions later in our library.</p>
+</div>
+</div>
+
+<div class="edr-feat-item">
+<div class="edr-feat-icon-sm bg-light-yellow"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+
+<div>
+<h4>24/7 Doubt Solving</h4>
+
+<p>Get doubts cleared instantly by experts anytime, anywhere.</p>
+</div>
+</div>
+
+<div class="edr-feat-item">
+<div class="edr-feat-icon-sm bg-light-purple"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line></svg></div>
+
+<div>
+<h4>Comprehensive Tests</h4>
+
+<p>Mock tests exactly on the latest exam patterns with analysis.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side Grid -->
+
+<div class="edr-feat-cards">
+<div class="edr-feat-box">
+<div class="icon bg-light-green"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><rect height="15" rx="2" ry="2" width="20" x="2" y="7"></rect><polyline points="17 2 12 7 7 2"></polyline></svg></div>
+
+<h4>Live Interactive Classes</h4>
+</div>
+
+<div class="edr-feat-box">
+<div class="icon bg-light-blue"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg></div>
+
+<h4>Recorded Lectures</h4>
+</div>
+
+<div class="edr-feat-box">
+<div class="icon bg-light-yellow"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+
+<h4>24/7 Doubt Solving</h4>
+</div>
+
+<div class="edr-feat-box">
+<div class="icon bg-light-purple"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+
+<h4>Comprehensive Tests</h4>
+</div>
+
+<div class="edr-feat-box">
+<div class="icon bg-light-orange"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><line x1="18" x2="18" y1="20" y2="10"></line><line x1="12" x2="12" y1="20" y2="4"></line><line x1="6" x2="6" y1="20" y2="14"></line></svg></div>
+
+<h4>Performance Tracking</h4>
+</div>
+
+<div class="edr-feat-box">
+<div class="icon bg-light-red"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+
+<h4>Quality Study Material</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 4: RESULTS ================= -->
+
+<section class="edr-results-wrap">
+<div class="edr-container">
+<div class="edr-results-header">
+<div>
+<p class="edr-section-label">Success Stories</p>
+
+<h2 class="edr-section-h2" style="margin-bottom: 5px;">Our Results</h2>
+
+<p style="color: #64748b; margin:0; font-size: 15px;">Every year, thousands of EduRain students secure top ranks in India's most competitive exams.</p>
+</div>
+<a class="edr-btn edr-btn-secondary" href="/courses" style="margin: 0;">View All Results</a></div>
+
+<div class="edr-results-grid">
+<div class="edr-result-card"><img alt="Aditya Kumar" class="edr-result-img" src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=150&amp;q=80" />
+<h4 class="edr-result-name">Aditya Kumar</h4>
+
+<p class="edr-result-exam">JEE ADVANCED 2024</p>
+
+<div class="edr-result-score">AIR 42</div>
+</div>
+
+<div class="edr-result-card"><img alt="Priya Sharma" class="edr-result-img" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=150&amp;q=80" />
+<h4 class="edr-result-name">Priya Sharma</h4>
+
+<p class="edr-result-exam">NEET UG 2024</p>
+
+<div class="edr-result-score">710/720</div>
+</div>
+
+<div class="edr-result-card"><img alt="Rahul Verma" class="edr-result-img" src="https://images.unsplash.com/photo-1531123897727-8f129e1bf98a?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=150&amp;q=80" />
+<h4 class="edr-result-name">Rahul Verma</h4>
+
+<p class="edr-result-exam">JEE MAINS 2024</p>
+
+<div class="edr-result-score">99.98 %ile</div>
+</div>
+
+<div class="edr-result-card"><img alt="Sneha Patel" class="edr-result-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=150&amp;q=80" />
+<h4 class="edr-result-name">Sneha Patel</h4>
+
+<p class="edr-result-exam">NEET UG 2024</p>
+
+<div class="edr-result-score">695/720</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 5: TESTIMONIALS ================= -->
+
+<section class="edr-testi-wrap">
+<p class="edr-section-label">Testimonials</p>
+
+<h2 class="edr-section-h2">What our Students say</h2>
+
+<div class="edr-slider-container">
+<div class="edr-slider-track"><!-- Review 1 -->
+<div class="edr-testi-card">
+<div class="edr-quote-mark">"</div>
+
+<div class="edr-testi-stars">★★★★★</div>
+
+<p class="edr-testi-quote">"The quality of teachers here is unmatched. The way they explain complex Physics concepts with simple daily life examples is just amazing."</p>
+
+<div class="edr-testi-user">
+<div class="edr-testi-avatar" style="background:#e0f2fe; color:#0284c7;">A</div>
+
+<div class="edr-testi-userinfo">
+<h5>Aryan Malhotra</h5>
+
+<p>JEE Aspirant</p>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+
+<div class="edr-testi-card">
+<div class="edr-quote-mark">"</div>
+
+<div class="edr-testi-stars">★★★★★</div>
+
+<p class="edr-testi-quote">"EduRain's test series and detailed analytics helped me identify my weak spots in Biology. Highly recommend it for NEET students."</p>
+
+<div class="edr-testi-user">
+<div class="edr-testi-avatar" style="background:#fef3c7; color:#d97706;">I</div>
+
+<div class="edr-testi-userinfo">
+<h5>Ishita Gupta</h5>
+
+<p>NEET Ranker</p>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+
+<div class="edr-testi-card">
+<div class="edr-quote-mark">"</div>
+
+<div class="edr-testi-stars">★★★★★</div>
+
+<p class="edr-testi-quote">"The doubt solving feature is literally a life saver. I can get my Chemistry doubts cleared even at midnight. Simply brilliant!"</p>
+
+<div class="edr-testi-user">
+<div class="edr-testi-avatar" style="background:#dcfce7; color:#15803d;">Z</div>
+
+<div class="edr-testi-userinfo">
+<h5>Zaid Khan</h5>
+
+<p>Foundation (Class 10)</p>
+</div>
+</div>
+</div>
+<!-- Review 4 -->
+
+<div class="edr-testi-card">
+<div class="edr-quote-mark">"</div>
+
+<div class="edr-testi-stars">★★★★★</div>
+
+<p class="edr-testi-quote">"I transitioned from an average student to scoring 98% in my boards purely because of their structured curriculum and support."</p>
+
+<div class="edr-testi-user">
+<div class="edr-testi-avatar" style="background:#f3e8ff; color:#7e22ce;">S</div>
+
+<div class="edr-testi-userinfo">
+<h5>Simran Kaur</h5>
+
+<p>Class 12 Boards</p>
+</div>
+</div>
+</div>
+<!-- Review 5 -->
+
+<div class="edr-testi-card">
+<div class="edr-quote-mark">"</div>
+
+<div class="edr-testi-stars">★★★★★</div>
+
+<p class="edr-testi-quote">"The recorded lectures let me learn at my own pace. Combined with the mock tests, I felt completely prepared for exam day."</p>
+
+<div class="edr-testi-user">
+<div class="edr-testi-avatar" style="background:#ffe4e6; color:#be123c;">R</div>
+
+<div class="edr-testi-userinfo">
+<h5>Rohan Das</h5>
+
+<p>JEE Mains Clear</p>
+</div>
+</div>
+</div>
+<!-- Review 6 -->
+
+<div class="edr-testi-card">
+<div class="edr-quote-mark">"</div>
+
+<div class="edr-testi-stars">★★★★★</div>
+
+<p class="edr-testi-quote">"Small batch sizes mean the teachers actually know who you are and where you struggle. It’s personalized learning at its best."</p>
+
+<div class="edr-testi-user">
+<div class="edr-testi-avatar" style="background:#e0e7ff; color:#4338ca;">N</div>
+
+<div class="edr-testi-userinfo">
+<h5>Neha Singh</h5>
+
+<p>NEET Aspirant</p>
+</div>
+</div>
+</div>
+<!-- ================= DUPLICATES FOR INFINITE LOOP ================= -->
+
+<div class="edr-testi-card">
+<div class="edr-quote-mark">"</div>
+
+<div class="edr-testi-stars">★★★★★</div>
+
+<p class="edr-testi-quote">"The quality of teachers here is unmatched. The way they explain complex Physics concepts with simple daily life examples is just amazing."</p>
+
+<div class="edr-testi-user">
+<div class="edr-testi-avatar" style="background:#e0f2fe; color:#0284c7;">A</div>
+
+<div class="edr-testi-userinfo">
+<h5>Aryan Malhotra</h5>
+
+<p>JEE Aspirant</p>
+</div>
+</div>
+</div>
+
+<div class="edr-testi-card">
+<div class="edr-quote-mark">"</div>
+
+<div class="edr-testi-stars">★★★★★</div>
+
+<p class="edr-testi-quote">"EduRain's test series and detailed analytics helped me identify my weak spots in Biology. Highly recommend it for NEET students."</p>
+
+<div class="edr-testi-user">
+<div class="edr-testi-avatar" style="background:#fef3c7; color:#d97706;">I</div>
+
+<div class="edr-testi-userinfo">
+<h5>Ishita Gupta</h5>
+
+<p>NEET Ranker</p>
+</div>
+</div>
+</div>
+
+<div class="edr-testi-card">
+<div class="edr-quote-mark">"</div>
+
+<div class="edr-testi-stars">★★★★★</div>
+
+<p class="edr-testi-quote">"The doubt solving feature is literally a life saver. I can get my Chemistry doubts cleared even at midnight. Simply brilliant!"</p>
+
+<div class="edr-testi-user">
+<div class="edr-testi-avatar" style="background:#dcfce7; color:#15803d;">Z</div>
+
+<div class="edr-testi-userinfo">
+<h5>Zaid Khan</h5>
+
+<p>Foundation (Class 10)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
