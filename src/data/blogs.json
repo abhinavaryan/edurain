@@ -1,0 +1,56 @@
+[
+  {
+    "id": "b1",
+    "title": "Top 10 Study Hacks for Competitive Exams in India",
+    "excerpt": "Discover proven strategies to maximize your retention and ace exams like JEE and NEET. Time management and strategic planning play a vital role.",
+    "author": "Ravi Shastri",
+    "date": "2026-06-15T09:00:00Z",
+    "category": "Study Tips",
+    "coverImage": "/images/blog-1.jpg"
+  },
+  {
+    "id": "b2",
+    "title": "Why Python is the Best First Programming Language",
+    "excerpt": "Explore why Python's readable syntax and vast ecosystem make it perfect for beginners. Start your coding journey the right way.",
+    "author": "Anjali Mehta",
+    "date": "2026-07-02T14:30:00Z",
+    "category": "Programming",
+    "coverImage": "/images/blog-2.jpg"
+  },
+  {
+    "id": "b3",
+    "title": "The Future of EdTech in Rural India",
+    "excerpt": "How mobile internet and vernacular content are bridging the educational divide. A look at the next decade of digital learning.",
+    "author": "Siddharth Rao",
+    "date": "2026-07-10T11:15:00Z",
+    "category": "Education Trends",
+    "coverImage": "/images/blog-3.jpg"
+  },
+  {
+    "id": "b4",
+    "title": "Mastering English Grammar for Professionals",
+    "excerpt": "A deep dive into common grammatical errors and how to avoid them in corporate communications. Elevate your professional presence.",
+    "author": "Priya Desai",
+    "date": "2026-07-18T08:45:00Z",
+    "category": "Languages",
+    "coverImage": "/images/blog-1.jpg"
+  },
+  {
+    "id": "b5",
+    "title": "Mental Health for Students: Balancing Academics and Life",
+    "excerpt": "Stress management techniques for students dealing with high-pressure academic environments. Prioritizing mental well-being is crucial.",
+    "author": "Dr. Kavita Joshi",
+    "date": "2026-07-20T16:00:00Z",
+    "category": "Wellness",
+    "coverImage": "/images/blog-2.jpg"
+  },
+  {
+    "id": "b6",
+    "title": "Demystifying Calculus: It's Easier Than You Think",
+    "excerpt": "Breaking down complex calculus concepts into simple, intuitive ideas. Stop fearing math and start enjoying the logic.",
+    "author": "Dr. Rajesh Kumar",
+    "date": "2026-07-22T10:20:00Z",
+    "category": "Mathematics",
+    "coverImage": "/images/blog-3.jpg"
+  }
+]

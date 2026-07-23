@@ -1,0 +1,66 @@
+[
+  {
+    "id": "r1",
+    "name": "Aarav Patel",
+    "course": "Full Stack Web Development Bootcamp",
+    "rating": 5,
+    "quote": "This bootcamp completely transformed my career. The projects were practical, and I landed a great job right after completion!",
+    "avatar": "/images/avatar-1.jpg"
+  },
+  {
+    "id": "r2",
+    "name": "Diya Sharma",
+    "course": "Physics Masterclass for JEE Advanced",
+    "rating": 5,
+    "quote": "Aisha ma'am makes complex physics concepts so easy to understand. I finally feel confident about my JEE preparation.",
+    "avatar": "/images/avatar-2.jpg"
+  },
+  {
+    "id": "r3",
+    "name": "Rohan Gupta",
+    "course": "Data Structures and Algorithms in Python",
+    "rating": 5,
+    "quote": "The best DSA course I've ever taken. Amit sir's explanation of dynamic programming was phenomenal.",
+    "avatar": "/images/avatar-3.jpg"
+  },
+  {
+    "id": "r4",
+    "name": "Ananya Singh",
+    "course": "Biology for NEET - Complete Syllabus",
+    "rating": 5,
+    "quote": "Dr. Reddy's teaching style is engaging and highly informative. The mock tests provided were exactly what I needed.",
+    "avatar": "/images/avatar-4.jpg"
+  },
+  {
+    "id": "r5",
+    "name": "Karan Malhotra",
+    "course": "Vedic Mathematics for Lightning Fast Calculations",
+    "rating": 5,
+    "quote": "I used to struggle with calculations during exams. Vedic math techniques have literally doubled my speed!",
+    "avatar": "/images/avatar-1.jpg"
+  },
+  {
+    "id": "r6",
+    "name": "Megha Nair",
+    "course": "Spoken English Fluency Course",
+    "rating": 5,
+    "quote": "Priya ma'am helped me overcome my fear of public speaking. Highly recommend this to anyone looking to improve fluency.",
+    "avatar": "/images/avatar-2.jpg"
+  },
+  {
+    "id": "r7",
+    "name": "Ishaan Desai",
+    "course": "Advanced Mathematics: Calculus & Linear Algebra",
+    "rating": 5,
+    "quote": "Brilliant course for engineering students. The visual explanations for linear algebra made everything click.",
+    "avatar": "/images/avatar-3.jpg"
+  },
+  {
+    "id": "r8",
+    "name": "Sneha Iyer",
+    "course": "Machine Learning Foundations",
+    "rating": 5,
+    "quote": "A perfect introduction to AI. The hands-on projects gave me the practical experience I needed to start my ML journey.",
+    "avatar": "/images/avatar-4.jpg"
+  }
+]
