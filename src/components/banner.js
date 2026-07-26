@@ -5,16 +5,88 @@ export function renderBanner() {
 
       <div id="er-slider-track" style="display:flex;transition:transform 0.7s cubic-bezier(0.4,0,0.2,1);will-change:transform;">
 
-        <!-- SLIDE 1 -->
+        <!-- SLIDE 1 — PROMOTIONAL SALE BANNER (reference image style) -->
         <a href="#courses" class="er-slide" style="position:relative;flex-shrink:0;width:100%;display:block;aspect-ratio:4096/773;text-decoration:none;">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0e3a24 0%,#2a9d62 60%,#4ab880 100%);display:flex;align-items:center;padding:0 6%;">
-            <div style="max-width:600px;color:#fff;z-index:2;">
-              <span class="er-badge">🏆 India's #1 EdTech Platform</span>
-              <h1 class="er-slide-h1"><span class="er-yellow">Victory</span> Starts Here.</h1>
-              <p class="er-slide-p">Expert-led courses for JEE, NEET, CUET &amp; more. Start your journey today.</p>
-              <span class="er-cta-btn">Explore Courses →</span>
+          <div style="position:absolute;inset:0;background:linear-gradient(105deg,#064e3b 0%,#065f46 30%,#047857 70%,#059669 100%);display:flex;align-items:stretch;overflow:hidden;">
+
+            <!-- Decorative diamonds – top-left -->
+            <div style="position:absolute;top:-18px;left:-18px;width:80px;height:80px;background:rgba(250,204,21,0.18);transform:rotate(45deg);border-radius:6px;"></div>
+            <div style="position:absolute;top:8px;left:8px;width:48px;height:48px;background:rgba(250,204,21,0.12);transform:rotate(45deg);border-radius:4px;"></div>
+            <div style="position:absolute;bottom:-18px;left:60px;width:60px;height:60px;background:rgba(255,255,255,0.07);transform:rotate(45deg);border-radius:5px;"></div>
+
+            <!-- Decorative diamonds – top-right -->
+            <div style="position:absolute;top:-18px;right:-18px;width:80px;height:80px;background:rgba(250,204,21,0.18);transform:rotate(45deg);border-radius:6px;"></div>
+            <div style="position:absolute;top:8px;right:8px;width:48px;height:48px;background:rgba(250,204,21,0.12);transform:rotate(45deg);border-radius:4px;"></div>
+            <div style="position:absolute;bottom:-18px;right:60px;width:60px;height:60px;background:rgba(255,255,255,0.07);transform:rotate(45deg);border-radius:5px;"></div>
+
+            <!-- Water-drop texture dots -->
+            <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.06) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;"></div>
+
+            <!-- ── COLUMN 1: SALE BRANDING (left ~28%) ── -->
+            <div style="width:28%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5% 2%;position:relative;z-index:2;">
+              <!-- MEGA SALE logo block -->
+              <div style="text-align:center;line-height:1;">
+                <div style="font-size:clamp(2rem,5vw,4.2rem);font-weight:900;color:#fff;letter-spacing:-1px;text-shadow:0 4px 16px rgba(0,0,0,0.4);font-style:italic;display:flex;align-items:center;gap:4px;">
+                  <span>MEGA</span>
+                </div>
+                <div style="font-size:clamp(2.5rem,6vw,5rem);font-weight:900;color:#FACC15;letter-spacing:-2px;text-shadow:0 4px 20px rgba(250,204,21,0.4);font-style:italic;display:flex;align-items:center;gap:6px;line-height:0.9;">
+                  <span>⚡</span><span>SALE</span>
+                </div>
+              </div>
+              <!-- "Is Live Now!" tag -->
+              <div style="margin-top:8px;background:#FACC15;color:#064e3b;font-size:clamp(0.6rem,1.2vw,0.9rem);font-weight:800;padding:4px 14px;border-radius:4px;letter-spacing:0.04em;text-transform:uppercase;">
+                Is Live Now! 🎉
+              </div>
             </div>
-            <div class="er-slide-emoji er-float">🎓</div>
+
+            <!-- Vertical divider 1 -->
+            <div style="width:2px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.25),transparent);margin:8% 0;flex-shrink:0;"></div>
+
+            <!-- ── COLUMN 2: COURSE OFFER (center ~42%) ── -->
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5% 4%;position:relative;z-index:2;gap:6px;">
+              <!-- Course name -->
+              <div style="font-size:clamp(1rem,2.2vw,1.7rem);font-weight:800;color:#fff;letter-spacing:0.01em;text-align:center;">
+                Victory Batch 2.0 — 2027
+              </div>
+              <!-- Sub label -->
+              <div style="font-size:clamp(0.65rem,1.3vw,0.95rem);color:#a7f3d0;font-weight:500;text-align:center;">
+                For JEE &amp; NEET Dropper Aspirants
+              </div>
+              <!-- Divider line with text -->
+              <div style="display:flex;align-items:center;gap:10px;width:80%;margin:4px 0;">
+                <div style="flex:1;height:1.5px;background:linear-gradient(to right,transparent,#FACC15);"></div>
+                <span style="color:#FACC15;font-size:clamp(0.6rem,1vw,0.8rem);font-weight:700;white-space:nowrap;">✦ Get Flat 40% Off ✦</span>
+                <div style="flex:1;height:1.5px;background:linear-gradient(to left,transparent,#FACC15);"></div>
+              </div>
+              <!-- Batch name highlight -->
+              <div style="font-size:clamp(1.1rem,2.5vw,2rem);font-weight:900;color:#FACC15;letter-spacing:0.02em;text-align:center;text-shadow:0 2px 12px rgba(250,204,21,0.35);">
+                Victory 2027
+              </div>
+            </div>
+
+            <!-- Vertical divider 2 -->
+            <div style="width:2px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.25),transparent);margin:8% 0;flex-shrink:0;"></div>
+
+            <!-- ── COLUMN 3: PRICE + CTA (right ~28%) ── -->
+            <div style="width:28%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5% 3%;position:relative;z-index:2;gap:10px;">
+              <!-- Price tag -->
+              <div style="text-align:center;">
+                <div style="font-size:clamp(0.6rem,1.1vw,0.85rem);color:#a7f3d0;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px;">
+                  Only At:–
+                </div>
+                <div style="font-size:clamp(1.4rem,3vw,2.4rem);font-weight:900;color:#fff;letter-spacing:-0.5px;">
+                  ₹<span style="color:#FACC15;">4,999</span><span style="font-size:0.6em;color:#a7f3d0;">/–</span>
+                </div>
+                <div style="font-size:clamp(0.55rem,0.9vw,0.75rem);color:#a7f3d0;text-decoration:line-through;margin-top:2px;">
+                  M.R.P. ₹8,999/-
+                </div>
+              </div>
+              <!-- CTA Button -->
+              <a href="#courses" style="display:inline-block;background:#FACC15;color:#064e3b;font-weight:800;font-size:clamp(0.75rem,1.5vw,1.1rem);padding:clamp(8px,1.5vw,14px) clamp(20px,3vw,36px);border-radius:999px;box-shadow:0 6px 24px rgba(250,204,21,0.5);letter-spacing:0.02em;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;white-space:nowrap;" onmouseover="this.style.transform='scale(1.06)';this.style.boxShadow='0 10px 32px rgba(250,204,21,0.7)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 6px 24px rgba(250,204,21,0.5)'">
+                Enroll Now &gt;
+              </a>
+            </div>
+
           </div>
         </a>
 
