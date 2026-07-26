@@ -1,10 +1,15 @@
 import './style.css';
+import './fab.css';
 import { initRouter } from './router.js';
 import { onAuthChange } from './firebase/auth.js';
+import { initFab } from './components/fab.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize SPA Router
   initRouter();
+  
+  // Initialize Floating Action Buttons & Chat
+  initFab();
 
   // Listen to Auth State Changes and update navbar
   onAuthChange((user) => {
