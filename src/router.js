@@ -9,10 +9,28 @@ import { renderReviews, initReviews } from './components/reviews.js';
 import { renderContact, initContact } from './components/contact.js';
 import { renderAuthModal, initAuthModal } from './components/authModal.js';
 
+// ── NEW SECTIONS ──
+import { renderBanner, initBanner } from './components/banner.js';
+import { renderPopularCourses } from './components/popularCourses.js';
+import { renderFreeDemo } from './components/freeDemo.js';
+import { renderImpact, initImpact } from './components/impact.js';
+import { renderAppDownload } from './components/appDownload.js';
+
 const routes = {
   '#home': {
-    render: () => renderHero() + renderFeatures(),
-    postRender: () => {}
+    render: () =>
+      renderBanner() +
+      renderHero() +
+      renderFeatures() +
+      renderPopularCourses() +
+      renderFreeDemo() +
+      renderImpact() +
+      renderAppDownload(),
+    postRender: () => {
+      initBanner();
+      initImpact();
+      initScrollReveal();
+    }
   },
   '#courses': {
     render: () => renderCourses(),
@@ -36,6 +54,21 @@ const routes = {
   }
 };
 
+// ── Scroll reveal for .er-reveal elements ──
+function initScrollReveal() {
+  const els = document.querySelectorAll('.er-reveal');
+  if (!els.length) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(el => obs.observe(el));
+}
+
 export const navigateTo = (hash) => {
   window.location.hash = hash;
 };
@@ -48,7 +81,7 @@ export const initRouter = () => {
     if (!hash || hash === '#') {
       hash = '#home';
       window.location.hash = hash;
-      return; // hashchange will fire and re-render
+      return;
     }
 
     const route = routes[hash] || {
@@ -56,9 +89,9 @@ export const initRouter = () => {
       postRender: () => {}
     };
 
-    const navbarHTML = renderNavbar();
-    const pageHTML = route.render();
-    const footerHTML = renderFooter();
+    const navbarHTML    = renderNavbar();
+    const pageHTML      = route.render();
+    const footerHTML    = renderFooter();
     const authModalHTML = renderAuthModal();
 
     app.innerHTML = `
@@ -70,32 +103,21 @@ export const initRouter = () => {
       ${authModalHTML}
     `;
 
-    // Trigger fade-in
     requestAnimationFrame(() => {
       const main = app.querySelector('.main-content');
       if (main) main.classList.add('visible');
     });
 
-    // Update active nav links
     document.querySelectorAll('.nav-link').forEach(link => {
-      if (link.getAttribute('href') === hash) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
+      link.classList.toggle('active', link.getAttribute('href') === hash);
     });
 
-    // Scroll to top
     window.scrollTo({ top: 0, behavior: 'instant' });
 
-    // Init navbar + auth modal (they exist on every page)
     initNavbar();
     initAuthModal();
-
-    // Page-specific post-render
     route.postRender();
 
-    // Observe fade-in elements
     if (window.observeFadeElements) {
       window.observeFadeElements();
     }
