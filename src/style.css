@@ -58,8 +58,8 @@
   --radius-lg: 1.618rem;
   --radius-full: 50%;
 
-  /* Navbar height — used to offset fixed header */
-  --navbar-height: 68px;
+  /* Navbar height — must match actual nav padding+content height exactly */
+  --navbar-height: 72px;
 
   /* Transitions */
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
@@ -272,21 +272,17 @@ input, textarea {
   left: 0;
   right: 0;
   z-index: 1000;
-  height: var(--navbar-height);
-  padding: 0 var(--space-xl);
-  display: flex;
-  align-items: center;
-  transition: box-shadow var(--duration) var(--ease), background var(--duration) var(--ease);
-  /* Always solid — header never merges with banner */
-  background: var(--primary-dark);
-  border-bottom: 2px solid rgba(250, 204, 21, 0.25);
+  padding: var(--space-md) var(--space-xl);
+  transition: all var(--duration) var(--ease);
+  background: transparent;
 }
 
 .navbar.scrolled {
-  background: rgba(6, 78, 59, 0.98);
+  background: rgba(6, 78, 59, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-sm) var(--space-xl);
 }
 
 .navbar-container {
@@ -1561,7 +1557,7 @@ input, textarea {
   }
 
   .navbar {
-    padding: 0 var(--space-md);
+    padding: var(--space-sm) var(--space-md);
   }
 
   .hero-section {
