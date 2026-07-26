@@ -72,6 +72,20 @@ export function renderBanner() {
 
       </div>
 
+      <!-- LEFT arrow -->
+      <button id="er-arrow-prev" class="er-arrow er-arrow-prev" aria-label="Previous slide">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+
+      <!-- RIGHT arrow -->
+      <button id="er-arrow-next" class="er-arrow er-arrow-next" aria-label="Next slide">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+      </button>
+
       <!-- Dot pagination -->
       <div id="er-dots" style="position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:20;">
         <button class="er-dot er-dot-active" data-index="0" aria-label="Slide 1"></button>
@@ -81,21 +95,15 @@ export function renderBanner() {
         <button class="er-dot" data-index="4" aria-label="Slide 5"></button>
       </div>
     </section>
-
-    <!-- Scroll cue -->
-    <div class="er-scroll-cue">
-      <p class="er-scroll-cue-text">Scroll to explore</p>
-      <svg class="er-scroll-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-      </svg>
-    </div>
     `;
 }
 
 export function initBanner() {
-    const track  = document.getElementById('er-slider-track');
-    const dots   = document.querySelectorAll('.er-dot');
-    const slides = document.querySelectorAll('.er-slide');
+    const track    = document.getElementById('er-slider-track');
+    const dots     = document.querySelectorAll('.er-dot');
+    const slides   = document.querySelectorAll('.er-slide');
+    const btnPrev  = document.getElementById('er-arrow-prev');
+    const btnNext  = document.getElementById('er-arrow-next');
     if (!track || !slides.length) return;
 
     let current = 0;
@@ -105,28 +113,34 @@ export function initBanner() {
         current = ((index % slides.length) + slides.length) % slides.length;
         track.style.transform = `translateX(-${current * 100}%)`;
         dots.forEach((d, i) => {
-            if (i === current) {
-                d.classList.add('er-dot-active');
-            } else {
-                d.classList.remove('er-dot-active');
-            }
+            d.classList.toggle('er-dot-active', i === current);
         });
     }
 
-    function start() { timer = setInterval(() => goTo(current + 1), 5000); }
-    function stop()  { clearInterval(timer); }
+    // 3 seconds stay, 0.7s transition (CSS), then 3 seconds again
+    function start() {
+        timer = setInterval(() => goTo(current + 1), 3000);
+    }
+    function stop() { clearInterval(timer); }
 
+    // Dot clicks
     dots.forEach(dot => {
         dot.addEventListener('click', () => { stop(); goTo(parseInt(dot.dataset.index)); start(); });
     });
 
+    // Arrow clicks
+    if (btnPrev) btnPrev.addEventListener('click', (e) => { e.preventDefault(); stop(); goTo(current - 1); start(); });
+    if (btnNext) btnNext.addEventListener('click', (e) => { e.preventDefault(); stop(); goTo(current + 1); start(); });
+
     // Touch swipe
     let tx = 0;
     track.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
-    track.addEventListener('touchend',   e => {
+    track.addEventListener('touchend', e => {
         const diff = tx - e.changedTouches[0].screenX;
         if (Math.abs(diff) > 50) { stop(); goTo(current + (diff > 0 ? 1 : -1)); start(); }
     });
+
+    // Pause on hover
     track.addEventListener('mouseenter', stop);
     track.addEventListener('mouseleave', start);
 

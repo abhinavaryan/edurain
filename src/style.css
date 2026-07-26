@@ -1802,28 +1802,39 @@ input, textarea {
   width: 26px;
 }
 
-/* Scroll cue */
-.er-scroll-cue {
+/* Scroll cue — REMOVED */
+
+/* Banner arrow nav buttons */
+.er-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--sage-50);
-  padding: 0.85rem 1rem;
-  gap: 4px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 }
-.er-scroll-cue-text {
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--sage-500);
+.er-arrow:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-50%) scale(1.1);
 }
-.er-scroll-arrow {
-  width: 18px;
-  height: 18px;
-  color: var(--sage-400);
-  animation: erBounce 2.5s infinite;
+.er-arrow-prev { left: 1.25rem; }
+.er-arrow-next { right: 1.25rem; }
+@media (max-width: 640px) {
+  .er-arrow { width: 36px; height: 36px; }
+  .er-arrow-prev { left: 0.5rem; }
+  .er-arrow-next { right: 0.5rem; }
 }
 
 
@@ -1838,18 +1849,18 @@ input, textarea {
 
 .er-course-card {
   position: relative;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 1.25rem;
   padding: 1.5rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  border: 1px solid var(--sage-100);
+  box-shadow: 0 2px 16px rgba(6, 78, 59, 0.13);
+  border: 1px solid rgba(255,255,255,0.7);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 .er-course-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(42,157,98,0.15);
+  box-shadow: 0 14px 36px rgba(42,157,98,0.22);
 }
 
 .er-course-blob {

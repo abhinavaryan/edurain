@@ -24,10 +24,10 @@ export function renderPopularCourses() {
 
     return `
     <!-- ═══ SECTION B: POPULAR COURSES ═══ -->
-    <section id="er-popular-courses" class="er-section" style="background:#fff;">
+    <section id="er-popular-courses" class="er-section" style="background:linear-gradient(160deg,#e8f5ee 0%,#d4eddf 50%,#c5e8d5 100%);">
         <div class="er-container">
-            <h2 class="er-section-heading er-reveal">Popular Courses at <span style="color:#2a9d62;">EduRain</span></h2>
-            <p class="er-section-sub er-reveal er-reveal-delay-1">
+            <h2 class="er-section-heading er-reveal" style="color:#0e3a24;">Popular Courses at <span style="color:#1f7d4e;">EduRain</span></h2>
+            <p class="er-section-sub er-reveal er-reveal-delay-1" style="color:#2a5e3a;">
                 Choose from our meticulously designed courses to kickstart your career in engineering or medicine.
             </p>
             <div class="er-courses-grid">

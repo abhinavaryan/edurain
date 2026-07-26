@@ -1,7 +1,5 @@
 import { renderNavbar, initNavbar } from './components/navbar.js';
 import { renderFooter } from './components/footer.js';
-import { renderHero } from './components/hero.js';
-import { renderFeatures } from './components/features.js';
 import { renderCourses, initCourses } from './components/courses.js';
 import { renderBlogs } from './components/blogs.js';
 import { renderAbout } from './components/about.js';
@@ -9,7 +7,7 @@ import { renderReviews, initReviews } from './components/reviews.js';
 import { renderContact, initContact } from './components/contact.js';
 import { renderAuthModal, initAuthModal } from './components/authModal.js';
 
-// ── NEW SECTIONS ──
+// ── HOME PAGE SECTIONS (exact order) ──
 import { renderBanner, initBanner } from './components/banner.js';
 import { renderPopularCourses } from './components/popularCourses.js';
 import { renderFreeDemo } from './components/freeDemo.js';
@@ -18,10 +16,9 @@ import { renderAppDownload } from './components/appDownload.js';
 
 const routes = {
   '#home': {
+    // EXACT ORDER: Banner → Popular Courses → Free Demo → Impact → App Download
     render: () =>
       renderBanner() +
-      renderHero() +
-      renderFeatures() +
       renderPopularCourses() +
       renderFreeDemo() +
       renderImpact() +
