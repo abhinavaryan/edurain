@@ -6,12 +6,12 @@ export function renderBanner() {
       <div id="er-slider-track" style="display:flex;transition:transform 0.7s cubic-bezier(0.4,0,0.2,1);will-change:transform;">
 
         <!-- SLIDE 1 — PROMOTIONAL SALE BANNER (Uploaded Image) -->
-        <a href="#courses" class="er-slide" style="position:relative;flex-shrink:0;width:100%;display:block;aspect-ratio:4096/773;text-decoration:none;">
-          <img src="/images/promo-banner.png" alt="Promo Banner" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;background:#001d66;">
+          <img src="/images/promo-banner.png" alt="Promo Banner" style="width:100%;height:100%;object-fit:contain;display:block;">
         </a>
 
         <!-- SLIDE 2 -->
-        <a href="#courses" class="er-slide" style="position:relative;flex-shrink:0;width:100%;display:block;aspect-ratio:4096/773;text-decoration:none;">
+        <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;">
           <div style="position:absolute;inset:0;background:linear-gradient(135deg,#134a2f 0%,#1f7d4e 50%,#2a9d62 100%);display:flex;align-items:center;padding:0 6%;">
             <div style="max-width:600px;color:#fff;z-index:2;">
               <span class="er-badge">⚡ JEE 2027 Batch Open</span>
@@ -24,7 +24,7 @@ export function renderBanner() {
         </a>
 
         <!-- SLIDE 3 -->
-        <a href="#courses" class="er-slide" style="position:relative;flex-shrink:0;width:100%;display:block;aspect-ratio:4096/773;text-decoration:none;">
+        <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;">
           <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0e3a24 0%,#185f3c 50%,#2a9d62 100%);display:flex;align-items:center;padding:0 6%;">
             <div style="max-width:600px;color:#fff;z-index:2;">
               <span class="er-badge">🩺 NEET 2027 — Now Enrolling</span>
@@ -37,7 +37,7 @@ export function renderBanner() {
         </a>
 
         <!-- SLIDE 4 -->
-        <a href="#contact" class="er-slide" style="position:relative;flex-shrink:0;width:100%;display:block;aspect-ratio:4096/773;text-decoration:none;">
+        <a href="#contact" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;">
           <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1f7d4e 0%,#2a9d62 40%,#7fd4a8 100%);display:flex;align-items:center;padding:0 6%;">
             <div style="max-width:600px;color:#fff;z-index:2;">
               <span class="er-badge">🎁 FREE — No Credit Card</span>
@@ -50,7 +50,7 @@ export function renderBanner() {
         </a>
 
         <!-- SLIDE 5 -->
-        <a href="#" class="er-slide" style="position:relative;flex-shrink:0;width:100%;display:block;aspect-ratio:4096/773;text-decoration:none;">
+        <a href="#" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;">
           <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0e3a24 0%,#1f7d4e 50%,#4ab880 100%);display:flex;align-items:center;padding:0 6%;">
             <div style="max-width:600px;color:#fff;z-index:2;">
               <span class="er-badge">📱 Now on Android &amp; iOS</span>

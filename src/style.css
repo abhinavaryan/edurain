@@ -80,6 +80,15 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
 }
+@media (max-width: 640px) {
+  html { font-size: 14px; }
+}
+@media (min-width: 1536px) {
+  html { font-size: 18px; }
+}
+@media (min-width: 1920px) {
+  html { font-size: 20px; }
+}
 
 body {
   font-family: var(--font-family);
@@ -2451,3 +2460,8 @@ input, textarea {
   .er-badge-float { display: none; }
 }
 
+
+/* Responsive Banner Aspect Ratio */
+.er-slide-aspect { aspect-ratio: 4096 / 773; }
+@media (max-width: 1024px) { .er-slide-aspect { aspect-ratio: 21 / 9; } }
+@media (max-width: 640px) { .er-slide-aspect { aspect-ratio: 16 / 9; } }

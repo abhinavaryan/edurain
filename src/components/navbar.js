@@ -16,7 +16,7 @@ export function renderNavbar() {
                     <a href="#contact" class="nav-link">Contact Us</a>
                 </div>
                 <div class="auth-btn-area" id="auth-btn-area">
-                    <button class="btn btn-accent" id="login-btn">Login</button>
+                    <button class="btn btn-accent" id="login-btn">Login/Signup</button>
                 </div>
                 <button class="hamburger" id="hamburger-btn">
                     <span></span>
