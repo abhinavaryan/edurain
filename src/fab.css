@@ -89,6 +89,10 @@
    AI CHAT WINDOW
    ============================================================ */
 #er-chat-window {
+    position: absolute;
+    bottom: 4.5rem;
+    right: 0;
+    z-index: 10;
     width: 350px;
     height: 500px;
     max-height: calc(100vh - 120px);
@@ -100,7 +104,6 @@
     overflow: hidden;
     transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), visibility 0.3s;
     transform-origin: bottom right;
-    margin-bottom: 0.5rem;
     border: 1px solid rgba(0,0,0,0.05);
 }
 #er-chat-window.er-chat-hidden {
