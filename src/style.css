@@ -1869,12 +1869,12 @@ input, textarea {
   box-shadow: 0 2px 16px rgba(6, 78, 59, 0.13);
   border: 1px solid rgba(255,255,255,0.7);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
   cursor: pointer;
 }
 .er-course-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 36px rgba(42,157,98,0.22);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(42,157,98,0.25);
 }
 
 .er-course-blob {
@@ -1885,9 +1885,12 @@ input, textarea {
   height: 5rem;
   border-radius: 999px;
   opacity: 0.22;
-  transition: opacity 0.3s;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
-.er-course-card:hover .er-course-blob { opacity: 0.4; }
+.er-course-card:hover .er-course-blob {
+  opacity: 0.45;
+  transform: scale(1.2) translate(-6px, 6px);
+}
 
 .er-course-icon {
   width: 3rem;
@@ -1898,6 +1901,10 @@ input, textarea {
   justify-content: center;
   font-size: 1.4rem;
   margin-bottom: 1rem;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.er-course-card:hover .er-course-icon {
+  transform: translateY(-4px) rotate(-8deg) scale(1.1);
 }
 
 .er-course-cat {
@@ -1935,9 +1942,10 @@ input, textarea {
   font-weight: 600;
   color: var(--sage-500);
   text-decoration: none;
-  transition: gap 0.2s;
+  transition: gap 0.4s ease-in-out;
 }
-.er-explore-link:hover { gap: 0.8rem; }
+.er-course-card:hover .er-explore-link { gap: 0.9rem; }
+.er-explore-link:hover { gap: 1rem; }
 
 .er-explore-arrow {
   width: 1.4rem;
@@ -1949,26 +1957,31 @@ input, textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  transition: background 0.3s ease, transform 0.4s ease-in-out;
 }
-.er-explore-link:hover .er-explore-arrow { background: var(--sage-700); }
+.er-course-card:hover .er-explore-arrow { 
+  background: var(--sage-700); 
+  transform: translateX(4px);
+}
 
 .er-view-all-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 2.5rem;
-  background: var(--sage-500);
+  background: linear-gradient(90deg, #1f7d4e, #2a9d62, #1f7d4e);
+  background-size: 200% auto;
   color: #fff;
   font-weight: 700;
   border-radius: 0.75rem;
   text-decoration: none;
   box-shadow: 0 6px 20px rgba(42,157,98,0.3);
-  transition: background 0.2s, transform 0.2s;
+  transition: all 0.4s ease-in-out;
 }
 .er-view-all-btn:hover {
-  background: var(--sage-700);
-  transform: translateY(-2px);
+  background-position: right center;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(42,157,98,0.45);
 }
 
 @media (max-width: 1024px) {
