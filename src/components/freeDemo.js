@@ -34,7 +34,7 @@ export function renderFreeDemo() {
                 <div class="er-demo-image-wrap er-reveal er-reveal-delay-2">
                     <div class="er-demo-glow-ring"></div>
                     <img
-                        src="/images/demo-teacher.png"
+                        src="./images/demo-teacher.png"
                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                         alt="Free Demo — Teacher with student"
                         class="er-demo-img"
@@ -43,7 +43,7 @@ export function renderFreeDemo() {
                     <div class="er-demo-placeholder" style="display:none;">
                         <span style="font-size:5rem;">👨‍🏫</span>
                         <p style="color:#2a9d62;font-weight:700;margin-top:1rem;">Add your teacher image here</p>
-                        <p style="color:#4a6156;font-size:0.85rem;">Place file at: /images/demo-teacher.png</p>
+                        <p style="color:#4a6156;font-size:0.85rem;">Place file at: ./images/demo-teacher.png</p>
                     </div>
                     <span class="er-sparkle er-sparkle-1">✨</span>
                     <span class="er-sparkle er-sparkle-2">⭐</span>

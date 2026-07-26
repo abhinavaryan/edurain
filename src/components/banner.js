@@ -7,7 +7,7 @@ export function renderBanner() {
 
         <!-- SLIDE 1 — PROMOTIONAL SALE BANNER (Uploaded Image) -->
         <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;background:#001d66;">
-          <img src="/images/promo-banner.png" alt="Promo Banner" style="width:100%;height:100%;object-fit:contain;display:block;">
+          <img src="./images/promo-banner.png" alt="Promo Banner" style="width:100%;height:100%;object-fit:contain;display:block;">
         </a>
 
         <!-- SLIDE 2 -->
