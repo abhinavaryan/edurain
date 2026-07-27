@@ -1,8 +1,23 @@
 export function renderPopularCourses() {
     const courses = [
-        { icon: '🔬', iconBg: '#ef4444', blobColor: '#fca5a5', category: 'Medical', title: 'NEET 2027', desc: 'Comprehensive medical entrance preparation with daily live classes and PCB practice.', link: '#courses' },
-        { icon: '📐', iconBg: '#3b82f6', blobColor: '#93c5fd', category: 'Engineering', title: 'JEE 2027', desc: 'Master Physics, Chemistry, and Maths for India\'s toughest engineering exam.', link: '#courses' },
-        { icon: '📚', iconBg: '#f59e0b', blobColor: '#fde68a', category: 'School', title: 'Foundation (6-10)', desc: 'Building strong conceptual basics for school exams and future competitive tests.', link: '#courses' },
+        {
+            icon: '🔬', iconBg: '#ef4444', blobColor: '#fca5a5', category: 'Medical', title: 'NEET 2027',
+            desc: 'Comprehensive medical entrance preparation with daily live classes and PCB practice.',
+            link: '#courses',
+            tags: ['Class 11', 'Class 12', 'Dropper']
+        },
+        {
+            icon: '📐', iconBg: '#3b82f6', blobColor: '#93c5fd', category: 'Engineering', title: 'JEE 2027',
+            desc: 'Master Physics, Chemistry, and Maths for India\'s toughest engineering exam.',
+            link: '#courses',
+            tags: ['Class 11', 'Class 12', 'Dropper']
+        },
+        {
+            icon: '📚', iconBg: '#f59e0b', blobColor: '#fde68a', category: 'School', title: 'Foundation (6-10)',
+            desc: 'Building strong conceptual basics for school exams and future competitive tests.',
+            link: '#courses',
+            tags: ['Class 8', 'Class 9', 'Class 10']
+        },
     ];
 
     const cards = courses.map((c, i) => `
@@ -12,6 +27,16 @@ export function renderPopularCourses() {
             <span class="er-course-cat">${c.category}</span>
             <h3 class="er-course-title">${c.title}</h3>
             <p class="er-course-desc">${c.desc}</p>
+            
+            <!-- Added Tags Section -->
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; margin-top: 1rem;">
+                ${c.tags.map(tag => `
+                    <span style="padding: 6px 16px; border: 1px solid #cbd5e1; border-radius: 50px; font-size: 14px; color: #475569; background: transparent;">
+                        ${tag}
+                    </span>
+                `).join('')}
+            </div>
+
             <a href="${c.link}" class="er-explore-link">
                 Explore Course
                 <span class="er-explore-arrow">→</span>
