@@ -81,7 +81,9 @@ export const initRouter = () => {
       return;
     }
 
-    const route = routes[hash] || {
+    const routeKey = hash.split('?')[0];
+
+    const route = routes[routeKey] || {
       render: () => `<div class="page-404"><h1>404</h1><p>Page not found</p><a href="#home" class="btn btn-accent">Go Home</a></div>`,
       postRender: () => {}
     };
@@ -106,7 +108,7 @@ export const initRouter = () => {
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === hash);
+      link.classList.toggle('active', link.getAttribute('href') === routeKey);
     });
 
     window.scrollTo({ top: 0, behavior: 'instant' });

@@ -2,17 +2,17 @@ export function renderPopularCourses() {
     const courses = [
         {
             icon: '🔬', iconBg: '#ef4444', blobColor: '#fca5a5', category: 'Medical', title: 'NEET 2027',
-            link: '#courses',
+            link: '#courses?filter=NEET',
             tags: ['Class 11', 'Class 12', 'Dropper']
         },
         {
             icon: '📐', iconBg: '#3b82f6', blobColor: '#93c5fd', category: 'Engineering', title: 'JEE 2027',
-            link: '#courses',
+            link: '#courses?filter=JEE',
             tags: ['Class 11', 'Class 12', 'Dropper']
         },
         {
             icon: '📚', iconBg: '#f59e0b', blobColor: '#fde68a', category: 'School', title: 'Foundation (6-10)',
-            link: '#courses',
+            link: '#courses?filter=FOUNDATION',
             tags: ['Class 8', 'Class 9', 'Class 10']
         },
     ];

@@ -33,10 +33,9 @@ export function renderCourses() {
             </div>
             <div class="filter-row">
                 <button class="filter-btn active" data-filter="All">All</button>
-                <button class="filter-btn" data-filter="Mathematics">Mathematics</button>
-                <button class="filter-btn" data-filter="Science">Science</button>
-                <button class="filter-btn" data-filter="Programming">Programming</button>
-                <button class="filter-btn" data-filter="Languages">Languages</button>
+                <button class="filter-btn" data-filter="JEE">JEE</button>
+                <button class="filter-btn" data-filter="NEET">NEET</button>
+                <button class="filter-btn" data-filter="FOUNDATION">FOUNDATION</button>
             </div>
             <div class="courses-grid" id="courses-grid">
                 ${coursesHtml}
@@ -49,20 +48,41 @@ export function initCourses() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const courseCards = document.querySelectorAll('.course-card');
 
+    function applyFilter(filter) {
+        let matched = false;
+        filterBtns.forEach(b => {
+            const isMatch = b.dataset.filter === filter;
+            b.classList.toggle('active', isMatch);
+            if (isMatch) matched = true;
+        });
+
+        if (!matched && filterBtns.length) {
+            filterBtns[0].classList.add('active');
+            filter = 'All';
+        }
+
+        courseCards.forEach(card => {
+            if (filter === 'All' || card.dataset.category === filter) {
+                card.style.display = '';
+                card.classList.add('fade-in-section', 'visible');
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    let initialFilter = 'All';
+    const hash = window.location.hash;
+    if (hash.includes('?filter=')) {
+        initialFilter = decodeURIComponent(hash.split('?filter=')[1]);
+    }
+
+    applyFilter(initialFilter);
+
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
             const filter = btn.dataset.filter;
-
-            courseCards.forEach(card => {
-                if (filter === 'All' || card.dataset.category === filter) {
-                    card.style.display = '';
-                    card.classList.add('fade-in-section', 'visible');
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+            applyFilter(filter);
         });
     });
 }

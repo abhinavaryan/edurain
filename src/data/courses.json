@@ -7,7 +7,7 @@
     "students": 12500,
     "price": "₹1499",
     "thumbnail": "/images/course-1.jpg",
-    "category": "Mathematics",
+    "category": "JEE",
     "description": "Master the fundamentals of Calculus and Linear Algebra. Perfect for engineering aspirants."
   },
   {
@@ -18,7 +18,7 @@
     "students": 8400,
     "price": "₹2999",
     "thumbnail": "/images/course-2.jpg",
-    "category": "Science",
+    "category": "NEET",
     "description": "In-depth physics concepts tailored for competitive exams. Includes problem-solving sessions."
   },
   {
@@ -29,7 +29,7 @@
     "students": 22300,
     "price": "₹3499",
     "thumbnail": "/images/course-3.jpg",
-    "category": "Programming",
+    "category": "FOUNDATION",
     "description": "Learn to build modern web applications from scratch using MERN stack."
   },
   {
@@ -40,7 +40,7 @@
     "students": 15000,
     "price": "Free",
     "thumbnail": "/images/course-4.jpg",
-    "category": "Languages",
+    "category": "JEE",
     "description": "Improve your spoken English skills for professional and everyday use."
   },
   {
@@ -51,7 +51,7 @@
     "students": 9600,
     "price": "₹1999",
     "thumbnail": "/images/course-1.jpg",
-    "category": "Programming",
+    "category": "FOUNDATION",
     "description": "Crack product-based company interviews with robust DSA concepts."
   },
   {
@@ -62,7 +62,7 @@
     "students": 6200,
     "price": "₹1299",
     "thumbnail": "/images/course-2.jpg",
-    "category": "Science",
+    "category": "NEET",
     "description": "Clear your basics in Organic Chemistry with reaction mechanisms and practical examples."
   },
   {
@@ -73,7 +73,7 @@
     "students": 18000,
     "price": "₹499",
     "thumbnail": "/images/course-3.jpg",
-    "category": "Mathematics",
+    "category": "JEE",
     "description": "Boost your calculation speed using ancient Vedic Math techniques."
   },
   {
@@ -84,7 +84,7 @@
     "students": 5400,
     "price": "Free",
     "thumbnail": "/images/course-4.jpg",
-    "category": "Languages",
+    "category": "FOUNDATION",
     "description": "A complete beginner's guide to understanding, reading, and speaking Hindi."
   },
   {
@@ -95,7 +95,7 @@
     "students": 11200,
     "price": "₹2499",
     "thumbnail": "/images/course-1.jpg",
-    "category": "Programming",
+    "category": "FOUNDATION",
     "description": "Step into the world of AI with practical Machine Learning algorithms and tools."
   },
   {
@@ -106,7 +106,7 @@
     "students": 32000,
     "price": "₹3999",
     "thumbnail": "/images/course-2.jpg",
-    "category": "Science",
+    "category": "NEET",
     "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET."
   }
 ]
