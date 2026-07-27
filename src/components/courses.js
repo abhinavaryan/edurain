@@ -83,6 +83,10 @@ export function initCourses() {
         btn.addEventListener('click', () => {
             const filter = btn.dataset.filter;
             applyFilter(filter);
+            const targetHash = filter === 'All' ? '#courses' : `#courses?filter=${filter}`;
+            if (window.location.hash !== targetHash) {
+                history.replaceState(null, '', targetHash);
+            }
         });
     });
 }
