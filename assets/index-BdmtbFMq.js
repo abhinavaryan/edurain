@@ -566,7 +566,7 @@ Total Duration: ${c-l}ms`),W.resolve({didRun:!0,sequenceNumbersCollected:r,targe
                     <div class="er-impact-border" style="--er-hover-color:#a78bfa;"></div>
                     <div style="position:relative;z-index:1;">
                         <p class="er-impact-number">
-                            <span class="er-count" data-target="800" data-suffix="+">0</span>
+                            <span class="er-count" data-target="3000" data-suffix="+">0</span>
                         </p>
                         <p class="er-impact-label">Practice Papers</p>
                         <div class="er-impact-bar-wrap">
