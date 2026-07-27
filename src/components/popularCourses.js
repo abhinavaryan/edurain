@@ -2,19 +2,16 @@ export function renderPopularCourses() {
     const courses = [
         {
             icon: '🔬', iconBg: '#ef4444', blobColor: '#fca5a5', category: 'Medical', title: 'NEET 2027',
-            desc: 'Comprehensive medical entrance preparation with daily live classes and PCB practice.',
             link: '#courses',
             tags: ['Class 11', 'Class 12', 'Dropper']
         },
         {
             icon: '📐', iconBg: '#3b82f6', blobColor: '#93c5fd', category: 'Engineering', title: 'JEE 2027',
-            desc: 'Master Physics, Chemistry, and Maths for India\'s toughest engineering exam.',
             link: '#courses',
             tags: ['Class 11', 'Class 12', 'Dropper']
         },
         {
             icon: '📚', iconBg: '#f59e0b', blobColor: '#fde68a', category: 'School', title: 'Foundation (6-10)',
-            desc: 'Building strong conceptual basics for school exams and future competitive tests.',
             link: '#courses',
             tags: ['Class 8', 'Class 9', 'Class 10']
         },
