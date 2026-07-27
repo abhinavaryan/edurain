@@ -1,5 +1,5 @@
 export function renderBanner() {
-    return `
+  return `
     <!-- ═══ SECTION A: HERO AUTO-SCROLL BANNER ═══ -->
     <section id="er-hero-banner" style="position:relative;width:100%;overflow:hidden;background:#0e3a24;">
 
@@ -7,7 +7,7 @@ export function renderBanner() {
 
         <!-- SLIDE 1 — PROMOTIONAL SALE BANNER (Uploaded Image) -->
         <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;background:#001d66;">
-          <img src="./images/promo-banner.png" alt="Promo Banner" style="width:100%;height:100%;object-fit:contain;display:block;">
+          <img src="https://cdn.phototourl.com/member/2026-07-27-59e74bcc-7345-472c-a696-569c45707ced.png" alt="Promo Banner" style="width:100%;height:100%;object-fit:contain;display:block;">
         </a>
 
         <!-- SLIDE 2 -->
@@ -91,51 +91,51 @@ export function renderBanner() {
 }
 
 export function initBanner() {
-    const track    = document.getElementById('er-slider-track');
-    const dots     = document.querySelectorAll('.er-dot');
-    const slides   = document.querySelectorAll('.er-slide');
-    const btnPrev  = document.getElementById('er-arrow-prev');
-    const btnNext  = document.getElementById('er-arrow-next');
-    if (!track || !slides.length) return;
+  const track = document.getElementById('er-slider-track');
+  const dots = document.querySelectorAll('.er-dot');
+  const slides = document.querySelectorAll('.er-slide');
+  const btnPrev = document.getElementById('er-arrow-prev');
+  const btnNext = document.getElementById('er-arrow-next');
+  if (!track || !slides.length) return;
 
-    let current = 0;
-    let timer;
+  let current = 0;
+  let timer;
 
-    function goTo(index) {
-        current = ((index % slides.length) + slides.length) % slides.length;
-        track.style.transform = `translateX(-${current * 100}%)`;
-        dots.forEach((d, i) => {
-            d.classList.toggle('er-dot-active', i === current);
-        });
-    }
-
-    // 3 seconds stay, 0.7s transition (CSS), then 3 seconds again
-    function start() {
-        timer = setInterval(() => goTo(current + 1), 3000);
-    }
-    function stop() { clearInterval(timer); }
-
-    // Dot clicks
-    dots.forEach(dot => {
-        dot.addEventListener('click', () => { stop(); goTo(parseInt(dot.dataset.index)); start(); });
+  function goTo(index) {
+    current = ((index % slides.length) + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => {
+      d.classList.toggle('er-dot-active', i === current);
     });
+  }
 
-    // Arrow clicks
-    if (btnPrev) btnPrev.addEventListener('click', (e) => { e.preventDefault(); stop(); goTo(current - 1); start(); });
-    if (btnNext) btnNext.addEventListener('click', (e) => { e.preventDefault(); stop(); goTo(current + 1); start(); });
+  // 3 seconds stay, 0.7s transition (CSS), then 3 seconds again
+  function start() {
+    timer = setInterval(() => goTo(current + 1), 3000);
+  }
+  function stop() { clearInterval(timer); }
 
-    // Touch swipe
-    let tx = 0;
-    track.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
-    track.addEventListener('touchend', e => {
-        const diff = tx - e.changedTouches[0].screenX;
-        if (Math.abs(diff) > 50) { stop(); goTo(current + (diff > 0 ? 1 : -1)); start(); }
-    });
+  // Dot clicks
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => { stop(); goTo(parseInt(dot.dataset.index)); start(); });
+  });
 
-    // Pause on hover
-    track.addEventListener('mouseenter', stop);
-    track.addEventListener('mouseleave', start);
+  // Arrow clicks
+  if (btnPrev) btnPrev.addEventListener('click', (e) => { e.preventDefault(); stop(); goTo(current - 1); start(); });
+  if (btnNext) btnNext.addEventListener('click', (e) => { e.preventDefault(); stop(); goTo(current + 1); start(); });
 
-    goTo(0);
-    start();
+  // Touch swipe
+  let tx = 0;
+  track.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = tx - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) { stop(); goTo(current + (diff > 0 ? 1 : -1)); start(); }
+  });
+
+  // Pause on hover
+  track.addEventListener('mouseenter', stop);
+  track.addEventListener('mouseleave', start);
+
+  goTo(0);
+  start();
 }
