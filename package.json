@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "push": "git add . && (git commit -m \"Update site\" || true) && git push && npm run deploy"
+    "push": "git add . && (git commit -m \"Update site\" || cd .) && git push && npm run deploy"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",
