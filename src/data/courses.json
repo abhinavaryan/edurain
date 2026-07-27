@@ -1,12 +1,12 @@
 [
   {
     "id": "c1",
-    "title": "Advanced Mathematics: Calculus & Linear Algebra",
-    "instructor": "Dr. Rajesh Kumar",
-    "rating": 4.8,
-    "students": 12500,
-    "price": "₹1499",
-    "thumbnail": "/images/course-1.jpg",
+    "title": "Dropper JEE 2027 Batch",
+    "instructor": "Ms.Ritu , Mr.Diwakar ,Mr.Banarjee",
+    "rating": 4.2,
+    "students": 500,
+    "price": "₹12,520",
+    "thumbnail": "https://www.image2url.com/r2/default/images/1785157356188-540a31c9-58f3-4039-8fbc-6797c5f250c7.png",
     "category": "JEE",
     "description": "Master the fundamentals of Calculus and Linear Algebra. Perfect for engineering aspirants."
   },
@@ -17,7 +17,7 @@
     "rating": 4.9,
     "students": 8400,
     "price": "₹2999",
-    "thumbnail": "/images/course-2.jpg",
+    "thumbnail": "",
     "category": "NEET",
     "description": "In-depth physics concepts tailored for competitive exams. Includes problem-solving sessions."
   },
