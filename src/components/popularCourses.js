@@ -1,11 +1,8 @@
 export function renderPopularCourses() {
     const courses = [
-        { icon: '🔬', iconBg: '#ef4444', blobColor: '#fca5a5', category: 'Medical',      title: 'NEET 2027',        desc: 'Comprehensive medical entrance preparation with daily live classes and PCB practice.',         link: '#courses' },
-        { icon: '📐', iconBg: '#3b82f6', blobColor: '#93c5fd', category: 'Engineering',  title: 'JEE 2027',         desc: 'Master Physics, Chemistry, and Maths for India\'s toughest engineering exam.',             link: '#courses' },
-        { icon: '⭐', iconBg: '#2a9d62', blobColor: '#6ee7b7', category: 'Medical',      title: 'NEET Dropper',     desc: 'Specialized batch for repeaters focusing on shortcut techniques and intensive practice.', link: '#courses' },
-        { icon: '✏️', iconBg: '#7c3aed', blobColor: '#c4b5fd', category: 'Engineering',  title: 'JEE Dropper',      desc: 'One-year intensive program to secure top ranks in JEE Mains and Advanced.',               link: '#courses' },
-        { icon: '📚', iconBg: '#f59e0b', blobColor: '#fde68a', category: 'School',       title: 'Foundation (6-10)',desc: 'Building strong conceptual basics for school exams and future competitive tests.',          link: '#courses' },
-        { icon: '🎓', iconBg: '#0891b2', blobColor: '#a5f3fc', category: 'University',   title: 'CUET 2027',        desc: 'Prepare for top central universities with our expert-led common entrance batch.',          link: '#courses' },
+        { icon: '🔬', iconBg: '#ef4444', blobColor: '#fca5a5', category: 'Medical', title: 'NEET 2027', desc: 'Comprehensive medical entrance preparation with daily live classes and PCB practice.', link: '#courses' },
+        { icon: '📐', iconBg: '#3b82f6', blobColor: '#93c5fd', category: 'Engineering', title: 'JEE 2027', desc: 'Master Physics, Chemistry, and Maths for India\'s toughest engineering exam.', link: '#courses' },
+        { icon: '📚', iconBg: '#f59e0b', blobColor: '#fde68a', category: 'School', title: 'Foundation (6-10)', desc: 'Building strong conceptual basics for school exams and future competitive tests.', link: '#courses' },
     ];
 
     const cards = courses.map((c, i) => `
