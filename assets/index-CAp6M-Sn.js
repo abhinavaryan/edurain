@@ -518,7 +518,7 @@ Total Duration: ${c-l}ms`),W.resolve({didRun:!0,sequenceNumbersCollected:r,targe
                     <div class="er-impact-border" style="--er-hover-color:#FACC15;"></div>
                     <div style="position:relative;z-index:1;">
                         <p class="er-impact-number">
-                            <span class="er-count" data-target="15" data-suffix="M+">0</span>
+                            <span class="er-count" data-target="15" data-suffix="k+">0</span>
                         </p>
                         <p class="er-impact-label">Happy Students</p>
                         <div class="er-impact-bar-wrap">
@@ -534,7 +534,7 @@ Total Duration: ${c-l}ms`),W.resolve({didRun:!0,sequenceNumbersCollected:r,targe
                     <div class="er-impact-border" style="--er-hover-color:#f87171;"></div>
                     <div style="position:relative;z-index:1;">
                         <p class="er-impact-number">
-                            <span class="er-count" data-target="24000" data-suffix="+">0</span>
+                            <span class="er-count" data-target="2400" data-suffix="+">0</span>
                         </p>
                         <p class="er-impact-label">Mock Tests</p>
                         <div class="er-impact-bar-wrap">
@@ -550,7 +550,7 @@ Total Duration: ${c-l}ms`),W.resolve({didRun:!0,sequenceNumbersCollected:r,targe
                     <div class="er-impact-border" style="--er-hover-color:#22d3ee;"></div>
                     <div style="position:relative;z-index:1;">
                         <p class="er-impact-number">
-                            <span class="er-count" data-target="14000" data-suffix="+">0</span>
+                            <span class="er-count" data-target="1400" data-suffix="+">0</span>
                         </p>
                         <p class="er-impact-label">Video Lectures</p>
                         <div class="er-impact-bar-wrap">
@@ -566,7 +566,7 @@ Total Duration: ${c-l}ms`),W.resolve({didRun:!0,sequenceNumbersCollected:r,targe
                     <div class="er-impact-border" style="--er-hover-color:#a78bfa;"></div>
                     <div style="position:relative;z-index:1;">
                         <p class="er-impact-number">
-                            <span class="er-count" data-target="80000" data-suffix="+">0</span>
+                            <span class="er-count" data-target="800" data-suffix="+">0</span>
                         </p>
                         <p class="er-impact-label">Practice Papers</p>
                         <div class="er-impact-bar-wrap">
