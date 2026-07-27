@@ -401,7 +401,7 @@ Total Duration: ${c-l}ms`),W.resolve({didRun:!0,sequenceNumbersCollected:r,targe
             <div class="er-course-icon" style="background:${e.iconBg};">${e.icon}</div>
             <span class="er-course-cat">${e.category}</span>
             <h3 class="er-course-title">${e.title}</h3>
-            <p class="er-course-desc">${e.desc}</p>
+          
             
             <!-- Added Tags Section -->
             <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; margin-top: 1rem;">
