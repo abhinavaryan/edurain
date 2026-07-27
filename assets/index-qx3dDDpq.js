@@ -342,55 +342,23 @@ Total Duration: ${c-l}ms`),W.resolve({didRun:!0,sequenceNumbersCollected:r,targe
         </a>
 
         <!-- SLIDE 2 -->
-        <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#134a2f 0%,#1f7d4e 50%,#2a9d62 100%);display:flex;align-items:center;padding:0 6%;">
-            <div style="max-width:600px;color:#fff;z-index:2;">
-              <span class="er-badge">⚡ JEE 2027 Batch Open</span>
-              <h1 class="er-slide-h1">Crack <span class="er-yellow">JEE</span> With India's Best Mentors</h1>
-              <p class="er-slide-p">Live classes · Daily practice · 24/7 doubt solving. Limited seats available.</p>
-              <span class="er-cta-btn">Enroll Now →</span>
-            </div>
-            <div class="er-slide-emoji" style="animation:erFloat 6s ease-in-out 1s infinite;">⚗️</div>
-          </div>
+          <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;background:#001d66;">
+          <img src="https://cdn.phototourl.com/member/2026-07-27-ec17ea66-1dcd-4396-9c72-8861db276038.jpg " alt="Promo Banner" style="width:100%;height:100%;object-fit:contain;display:block;">
         </a>
 
         <!-- SLIDE 3 -->
-        <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0e3a24 0%,#185f3c 50%,#2a9d62 100%);display:flex;align-items:center;padding:0 6%;">
-            <div style="max-width:600px;color:#fff;z-index:2;">
-              <span class="er-badge">🩺 NEET 2027 — Now Enrolling</span>
-              <h1 class="er-slide-h1">Your <span class="er-yellow">MBBS</span> Dream Starts Here</h1>
-              <p class="er-slide-p">Comprehensive biology, chemistry &amp; physics with PCB specialists.</p>
-              <span class="er-cta-btn">Join NEET Batch →</span>
-            </div>
-            <div class="er-slide-emoji" style="animation:erFloat 8s ease-in-out infinite;">🧬</div>
-          </div>
+        <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;background:#001d66;">
+          <img src=" " alt="Promo Banner" style="width:100%;height:100%;object-fit:contain;display:block;">
         </a>
 
         <!-- SLIDE 4 -->
-        <a href="#contact" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1f7d4e 0%,#2a9d62 40%,#7fd4a8 100%);display:flex;align-items:center;padding:0 6%;">
-            <div style="max-width:600px;color:#fff;z-index:2;">
-              <span class="er-badge">🎁 FREE — No Credit Card</span>
-              <h1 class="er-slide-h1">Try a <span class="er-yellow">Free Live</span> Class Today</h1>
-              <p class="er-slide-p">Experience EduRain's teaching quality firsthand. Zero commitment required.</p>
-              <span class="er-cta-btn">Book Free Demo →</span>
-            </div>
-            <div class="er-slide-emoji" style="animation:erFloat 7s ease-in-out 0.5s infinite;">💻</div>
-          </div>
+        <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;background:#001d66;">
+          <img src=" " alt="Promo Banner" style="width:100%;height:100%;object-fit:contain;display:block;">
         </a>
 
         <!-- SLIDE 5 -->
-        <a href="#" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0e3a24 0%,#1f7d4e 50%,#4ab880 100%);display:flex;align-items:center;padding:0 6%;">
-            <div style="max-width:600px;color:#fff;z-index:2;">
-              <span class="er-badge">📱 Now on Android &amp; iOS</span>
-              <h1 class="er-slide-h1">Learn from <span class="er-yellow">Anywhere</span></h1>
-              <p class="er-slide-p">Download the EduRain app and study on the go. Offline mode included.</p>
-              <span class="er-cta-btn">Download App →</span>
-            </div>
-            <div class="er-slide-emoji" style="animation:erFloat 5s ease-in-out 1.5s infinite;">📱</div>
-          </div>
+       <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;background:#001d66;">
+          <img src=" " alt="Promo Banner" style="width:100%;height:100%;object-fit:contain;display:block;">
         </a>
 
       </div>
