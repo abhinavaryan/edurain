@@ -66,37 +66,56 @@ Total Duration: ${c-l}ms`),W.resolve({didRun:!0,sequenceNumbersCollected:r,targe
                     <div class="logo">
                         <span class="text-white">Edu</span><span class="text-accent">Rain</span> 🎓
                     </div>
-                    <p>Empowering learners across India with accessible, high-quality education and expert guidance.</p>
+                    <p>Empowering learners across India with accessible,<br>high-quality education and expert guidance.</p>
                     <div class="social-icons">
-                        <span>TW</span> <span>IN</span> <span>IG</span>
+                        <span class="social-icon"><i class="fab fa-instagram"></i></span>
+                        <span class="social-icon"><i class="fab fa-linkedin-in"></i></span>
+                        <span class="social-icon"><i class="fab fa-youtube"></i></span>
+                        <span class="social-icon"><i class="fab fa-x-twitter"></i></span>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#courses">Courses</a></li>
-                        <li><a href="#blogs">Blogs</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#home">&gt; Home</a></li>
+                        <li><a href="#courses">&gt; Courses</a></li>
+                        <li><a href="#blogs">&gt; Blogs</a></li>
+                        <li><a href="#about">&gt; About</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p>hello@edurain.in</p>
-                    <p>+91 98765 43210</p>
-                    <button class="btn btn-accent btn-sm mt-2">Download App</button>
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-phone"></i> +91 91234 56789</p>
+                    <p><i class="fas fa-envelope"></i> hello@edurain.in</p>
+                    <p><i class="fas fa-envelope"></i> support@edurain.in</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Get the App</h4>
+                    <p>Learn on the go. Download the EduRain app today.</p>
+                    <div class="app-buttons">
+                        <button class="btn-store">
+                            <i class="fab fa-google-play"></i>
+                            <span><small>GET IT ON</small><br>Google Play</span>
+                        </button>
+                        <button class="btn-store">
+                            <i class="fab fa-apple"></i>
+                            <span><small>Download on the</small><br>App Store</span>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 EduRain. Made with 💚 in India</p>
+                <p>&copy; 2026 <span class="text-accent">EduRain</span>. All rights reserved.</p>
+                <p class="made-with-love">💚 Made with love in India</p>
                 <div class="legal-links">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
+                    <a href="#privacy">Privacy Policy</a> |
+                    <a href="#terms">Terms of Service</a> |
+                    <a href="#sitemap">Sitemap</a>
                 </div>
             </div>
         </footer>
-    `}var ty=[{id:`c1`,title:`Dropper JEE 2027 Batch`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Banarjee`,rating:4.2,students:500,price:`₹12,520`,thumbnail:`https://www.image2url.com/r2/default/images/1785157356188-540a31c9-58f3-4039-8fbc-6797c5f250c7.png`,category:`JEE`,description:`Master the fundamentals of Calculus and Linear Algebra. Perfect for engineering aspirants.`},{id:`c2`,title:`Physics Masterclass for JEE Advanced`,instructor:`Aisha Sharma`,rating:4.9,students:8400,price:`₹2999`,thumbnail:``,category:`NEET`,description:`In-depth physics concepts tailored for competitive exams. Includes problem-solving sessions.`},{id:`c3`,title:`Full Stack Web Development Bootcamp`,instructor:`Vikram Singh`,rating:4.7,students:22300,price:`₹3499`,thumbnail:`/images/course-3.jpg`,category:`FOUNDATION`,description:`Learn to build modern web applications from scratch using MERN stack.`},{id:`c4`,title:`Spoken English Fluency Course`,instructor:`Priya Desai`,rating:4.6,students:15e3,price:`Free`,thumbnail:`/images/course-4.jpg`,category:`JEE`,description:`Improve your spoken English skills for professional and everyday use.`},{id:`c5`,title:`Data Structures and Algorithms in Python`,instructor:`Amit Patel`,rating:4.8,students:9600,price:`₹1999`,thumbnail:`/images/course-1.jpg`,category:`FOUNDATION`,description:`Crack product-based company interviews with robust DSA concepts.`},{id:`c6`,title:`Organic Chemistry Fundamentals`,instructor:`Dr. Neha Gupta`,rating:4.5,students:6200,price:`₹1299`,thumbnail:`/images/course-2.jpg`,category:`NEET`,description:`Clear your basics in Organic Chemistry with reaction mechanisms and practical examples.`},{id:`c7`,title:`Vedic Mathematics for Lightning Fast Calculations`,instructor:`Suresh Iyer`,rating:4.7,students:18e3,price:`₹499`,thumbnail:`/images/course-3.jpg`,category:`JEE`,description:`Boost your calculation speed using ancient Vedic Math techniques.`},{id:`c8`,title:`Learn Hindi: From Beginner to Conversational`,instructor:`Rohan Verma`,rating:4.9,students:5400,price:`Free`,thumbnail:`/images/course-4.jpg`,category:`FOUNDATION`,description:`A complete beginner's guide to understanding, reading, and speaking Hindi.`},{id:`c9`,title:`Machine Learning Foundations`,instructor:`Arjun Nair`,rating:4.8,students:11200,price:`₹2499`,thumbnail:`/images/course-1.jpg`,category:`FOUNDATION`,description:`Step into the world of AI with practical Machine Learning algorithms and tools.`},{id:`c10`,title:`Biology for NEET - Complete Syllabus`,instructor:`Dr. Meera Reddy`,rating:4.9,students:32e3,price:`₹3999`,thumbnail:`/images/course-2.jpg`,category:`NEET`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`}];function ny(){return`
+    `}var ty=[{id:`c1`,title:`Dropper JEE 2027 Batch`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Banarjee`,rating:4.2,students:500,price:`₹12,520`,thumbnail:`https://www.image2url.com/r2/default/images/1785241678586-e366f596-5395-4f47-8046-e3da0a27c9d1.png`,category:`JEE`,description:`Master the fundamentals of Calculus and Linear Algebra. Perfect for engineering aspirants.`},{id:`c2`,title:`CLASS 11TH MATHEMATICS`,instructor:`Mr.Banarjee Sir`,rating:4.5,students:302,price:`₹2,520`,thumbnail:`https://www.image2url.com/r2/default/images/1785224597331-747f9012-6f61-4100-8093-a6fb60ec85fb.png`,category:`JEE`,description:`Master the fundamentals of Calculus and Linear Algebra. Perfect for engineering aspirants.`},{id:`c3`,title:`9th English`,instructor:`Mr.Manoj Sir`,rating:4.9,students:200,price:`₹3020`,thumbnail:``,category:`FOUNDATION`,description:`In-depth physics concepts tailored for competitive exams. Includes problem-solving sessions.`},{id:`c4`,title:`CLASS 12TH Physics`,instructor:`Mr.Diwakar Sir`,rating:4.7,students:236,price:`₹2,520`,thumbnail:`/images/course-3.jpg`,category:`NEET`,description:`Learn to build modern web applications from scratch using MERN stack.`},{id:`c5`,title:`BIOLOGY CLASS 12TH`,instructor:`Mr.Nitin Sir`,rating:4.6,students:150,price:`2,520`,thumbnail:`/images/course-4.jpg`,category:`NEET`,description:`Improve your spoken English skills for professional and everyday use.`},{id:`c6`,title:`CLASS 12TH MATHEMATICS`,instructor:`Mr.Banarjee Sir`,rating:4.8,students:132,price:`₹2,520`,thumbnail:`/images/course-1.jpg`,category:`JEE`,description:`Crack product-based company interviews with robust DSA concepts.`},{id:`c7`,title:`CLASS 11TH PCB(NEET)`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Nitin`,rating:4.5,students:620,price:`₹5,020`,thumbnail:`/images/course-2.jpg`,category:`NEET`,description:`Clear your basics in Organic Chemistry with reaction mechanisms and practical examples.`},{id:`c8`,title:`DROPPER NEET 2027 BATCH`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Nitin`,rating:4.7,students:1800,price:`₹12,520`,thumbnail:`/images/course-3.jpg`,category:`NEET`,description:`Boost your calculation speed using ancient Vedic Math techniques.`},{id:`c9`,title:`CLASS 11TH PCB(JEE)`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Banarjee`,rating:4.9,students:1200,price:`₹5,020`,thumbnail:`/images/course-4.jpg`,category:`JEE`,description:`A complete beginner's guide to understanding, reading, and speaking Hindi.`},{id:`c10`,title:`CLASS 8TH`,instructor:`Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir`,rating:4.8,students:1120,price:`₹4,520`,thumbnail:`/images/course-1.jpg`,category:`FOUNDATION`,description:`Step into the world of AI with practical Machine Learning algorithms and tools.`},{id:`c11`,title:`CLASS 7TH`,instructor:`Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir`,rating:4.9,students:320,price:`₹3,520`,thumbnail:`/images/course-2.jpg`,category:`NEET`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c12`,title:`CLASS 12TH English`,instructor:`Mr.Manoj Sir`,rating:4.1,students:126,price:`₹2,520`,thumbnail:`/images/course-2.jpg`,category:`ALL`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c13`,title:`CLASS 6TH`,instructor:`Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir`,rating:3.9,students:234,price:`₹3,520`,thumbnail:`/images/course-2.jpg`,category:`FOUNDATION`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c14`,title:`CLASS 11TH ENGLISH`,instructor:`Mr.Manoj Sir`,rating:4.3,students:105,price:`₹2,520`,thumbnail:`/images/course-2.jpg`,category:`ENGLISH`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c15`,title:`CLASS 9TH SUPER CAMPIONS`,instructor:`Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir`,rating:4.4,students:370,price:`₹4,520`,thumbnail:`/images/course-2.jpg`,category:`FOUNDATION`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c16`,title:`CLASS 10TH DISHA BATCH`,instructor:`Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir`,rating:4.7,students:249,price:`₹4,020`,thumbnail:`/images/course-2.jpg`,category:`FOUNDATION`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c17`,title:`TARGET JEE 2027 -12TH CLASS BATCH`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Banarjee`,rating:4.45,students:425,price:`₹4,820`,thumbnail:`/images/course-2.jpg`,category:`JEE`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c18`,title:`NEET WHITE COAT 2027 -CLASS 12th`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Nitin`,rating:4.9,students:770,price:`₹4,820`,thumbnail:`/images/course-2.jpg`,category:`NEET`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c19`,title:`MISSION NEET 3.0 BATCH 2028`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Nitin`,rating:4.1,students:505,price:`₹9,019`,thumbnail:`/images/course-2.jpg`,category:`NEET`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c20`,title:`CLASS 10TH ENGLISH`,instructor:`Mr.Manoj Sir`,rating:4.2,students:120,price:`₹3,020`,thumbnail:`/images/course-2.jpg`,category:`FOUNDATION`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c21`,title:`CHEMISTRY CLASS 11TH `,instructor:`Ms.Ritu ma'am`,rating:4.7,students:304,price:`₹3,020`,thumbnail:`/images/course-2.jpg`,category:`NEET`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c22`,title:`CHEMISTRY CLASS 12TH`,instructor:`Ms.Ritu ma'am`,rating:4,students:321,price:`₹3,620`,thumbnail:`/images/course-2.jpg`,category:`NEET`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c23`,title:`JEE Mantra 3.0 Batch 2028`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Banarjee`,rating:3.89,students:890,price:`₹9,019`,thumbnail:`/images/course-2.jpg`,category:`JEE`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`}];function ny(){return`
         <section class="courses-section" id="courses-page">
             <div class="section-header">
                 <h2>Our Courses</h2>
@@ -389,9 +408,9 @@ Total Duration: ${c-l}ms`),W.resolve({didRun:!0,sequenceNumbersCollected:r,targe
     <!-- ═══ SECTION B: POPULAR COURSES ═══ -->
     <section id="er-popular-courses" class="er-section" style="background:linear-gradient(160deg,#e8f5ee 0%,#d4eddf 50%,#c5e8d5 100%);">
         <div class="er-container">
-            <h2 class="er-section-heading er-reveal" style="color:#0e3a24;">Popular Courses at <span style="color:#1f7d4e;">EduRain</span></h2>
+            <h2 class="er-section-heading er-reveal" style="color:#0e3a24;"> Explore Our Popular <span style="color:#1f7d4e;">Courses</span></h2>
             <p class="er-section-sub er-reveal er-reveal-delay-1" style="color:#2a5e3a;">
-                Choose from our meticulously designed courses to kickstart your career in engineering or medicine.
+                Find the best course for your JEE, NEET, or foundation preparation and start learning today.
             </p>
             <div class="er-courses-grid">
                 ${[{icon:`🔬`,iconBg:`#ef4444`,blobColor:`#fca5a5`,category:`Medical`,title:`NEET 2027`,link:`#courses?filter=NEET`,tags:[`Class 11`,`Class 12`,`Dropper`]},{icon:`📐`,iconBg:`#3b82f6`,blobColor:`#93c5fd`,category:`Engineering`,title:`JEE 2027`,link:`#courses?filter=JEE`,tags:[`Class 11`,`Class 12`,`Dropper`]},{icon:`📚`,iconBg:`#f59e0b`,blobColor:`#fde68a`,category:`School`,title:`Foundation (6-10)`,link:`#courses?filter=FOUNDATION`,tags:[`Class 8`,`Class 9`,`Class 10`]}].map((e,t)=>`
@@ -441,12 +460,12 @@ Total Duration: ${c-l}ms`),W.resolve({didRun:!0,sequenceNumbersCollected:r,targe
                         </span>
                         session
                     </h2>
-                    <p class="er-demo-sub">Get a free academic counselling session with India's top educators and discover the right learning path for you.</p>
+                    <p class="er-demo-sub">Experience how we teach before you commit to anything. Join a free session with India's top educators, ask your doubts, and see if it's the right fit for you.</p>
 
                     <ul class="er-demo-checklist">
                         <li><span class="er-check">✓</span> Live class with expert faculty</li>
-                        <li><span class="er-check">✓</span> Personalised study plan created for you</li>
-                        <li><span class="er-check">✓</span> Zero cost, zero commitment</li>
+                        <li><span class="er-check">✓</span> Discover a study plan designed around your goals</li>
+                        <li><span class="er-check">✓</span> Learn free, experience it, then decide</li>
                     </ul>
 
                     <a href="#contact" class="er-demo-cta">
@@ -458,7 +477,7 @@ Total Duration: ${c-l}ms`),W.resolve({didRun:!0,sequenceNumbersCollected:r,targe
                 <div class="er-demo-image-wrap er-reveal er-reveal-delay-2">
                     <div class="er-demo-glow-ring"></div>
                     <img
-                        src="./images/demo-teacher.png"
+                        src="https://cdn.phototourl.com/free/2026-07-29-95aea96d-d417-49bd-a2f3-cd7f4725e628.png"
                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                         alt="Free Demo — Teacher with student"
                         class="er-demo-img"
@@ -478,12 +497,12 @@ Total Duration: ${c-l}ms`),W.resolve({didRun:!0,sequenceNumbersCollected:r,targe
         </div>
     </section>
     `}function vy(){return`
-    <!-- ═══ SECTION D: IMPACT NUMBERS ═══ -->
+   
     <section id="er-impact" class="er-section" style="background:#fff;">
         <div class="er-container">
-            <h2 class="er-section-heading er-reveal">A Platform Trusted by Students Worldwide</h2>
+            <h2 class="er-section-heading er-reveal">Trusted by Thousands, Proven by Results</h2>
             <p class="er-section-sub er-reveal er-reveal-delay-1">
-                Don't just take our word for it — witness the excellence for yourself!
+                Join thousands of students learning and growing with us every day. 
             </p>
 
             <div class="er-impact-grid">
@@ -591,16 +610,19 @@ Total Duration: ${c-l}ms`),W.resolve({didRun:!0,sequenceNumbersCollected:r,targe
 
                     <!-- Store Buttons -->
                     <div class="er-store-buttons">
-                        <a href="#" class="er-store-btn er-store-btn-play">
-                            <svg class="er-store-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M3.18 23.75a1.5 1.5 0 01-1.18-1.5V1.75A1.5 1.5 0 013.18.25l11.5 11.5-11.5 12zM16.5 15.25l-2.5-2.5 2.5-2.5 3.25 1.75a1.38 1.38 0 010 2.5L16.5 15.25z"/>
+                        <a href="https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN" target="_blank" rel="noopener noreferrer" class="er-store-btn er-store-btn-play">
+                            <svg class="er-store-icon" viewBox="0 0 48 48">
+                                <path fill="#00D2FF" d="M7.705,4.043C7.292,4.15,7,4.507,7,5.121c0,1.802,0,18.795,0,18.795S7,42.28,7,43.091c0,0.446,0.197,0.745,0.5,0.856l20.181-20.064L7.705,4.043z"></path>
+                                <path fill="#00E676" d="M33.237,18.36l-8.307-4.796c0,0-15.245-8.803-16.141-9.32C8.401,4.02,8.019,3.961,7.705,4.043l19.977,19.84L33.237,18.36z"></path>
+                                <path fill="#FF3D00" d="M8.417,43.802c0.532-0.308,15.284-8.825,24.865-14.357l-5.601-5.562L7.5,43.947C7.748,44.038,8.066,44.004,8.417,43.802z"></path>
+                                <path fill="#FFC107" d="M41.398,23.071c-0.796-0.429-8.1-4.676-8.1-4.676l-0.061-0.035l-5.556,5.523l5.601,5.562c4.432-2.559,7.761-4.48,8.059-4.653C42.285,24.248,42.194,23.5,41.398,23.071z"></path>
                             </svg>
                             <div>
                                 <div class="er-store-small">GET IT ON</div>
                                 <div class="er-store-name">Google Play</div>
                             </div>
                         </a>
-                        <a href="#" class="er-store-btn er-store-btn-apple">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="er-store-btn er-store-btn-apple">
                             <svg class="er-store-icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.2 1.28-2.18 3.81.03 3.02 2.65 4.03 2.68 4.04l-.05.13zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                             </svg>
