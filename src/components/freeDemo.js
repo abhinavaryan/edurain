@@ -17,12 +17,12 @@ export function renderFreeDemo() {
                         </span>
                         session
                     </h2>
-                    <p class="er-demo-sub">Get a free academic counselling session with India's top educators and discover the right learning path for you.</p>
+                    <p class="er-demo-sub">Experience how we teach before you commit to anything. Join a free session with India's top educators, ask your doubts, and see if it's the right fit for you.</p>
 
                     <ul class="er-demo-checklist">
                         <li><span class="er-check">✓</span> Live class with expert faculty</li>
-                        <li><span class="er-check">✓</span> Personalised study plan created for you</li>
-                        <li><span class="er-check">✓</span> Zero cost, zero commitment</li>
+                        <li><span class="er-check">✓</span> Discover a study plan designed around your goals</li>
+                        <li><span class="er-check">✓</span> Learn free, experience it, then decide</li>
                     </ul>
 
                     <a href="#contact" class="er-demo-cta">
@@ -34,7 +34,7 @@ export function renderFreeDemo() {
                 <div class="er-demo-image-wrap er-reveal er-reveal-delay-2">
                     <div class="er-demo-glow-ring"></div>
                     <img
-                        src="./images/demo-teacher.png"
+                        src="https://cdn.phototourl.com/free/2026-07-29-95aea96d-d417-49bd-a2f3-cd7f4725e628.png"
                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                         alt="Free Demo — Teacher with student"
                         class="er-demo-img"

@@ -1,11 +1,11 @@
 export function renderImpact() {
     return `
-    <!-- ═══ SECTION D: IMPACT NUMBERS ═══ -->
+   
     <section id="er-impact" class="er-section" style="background:#fff;">
         <div class="er-container">
-            <h2 class="er-section-heading er-reveal">A Platform Trusted by Students Worldwide</h2>
+            <h2 class="er-section-heading er-reveal">Trusted by Thousands, Proven by Results</h2>
             <p class="er-section-sub er-reveal er-reveal-delay-1">
-                Don't just take our word for it — witness the excellence for yourself!
+                Join thousands of students learning and growing with us every day. 
             </p>
 
             <div class="er-impact-grid">
