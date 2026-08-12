@@ -12,7 +12,6 @@ export function renderNavbar() {
                     <a href="#courses" class="nav-link">Our Courses</a>
                     <a href="#blogs" class="nav-link">Blogs</a>
                     <a href="#about" class="nav-link">About Us</a>
-                    <a href="#reviews" class="nav-link">Reviews</a>
                     <a href="#contact" class="nav-link">Contact Us</a>
                 </div>
                 <div class="auth-btn-area" id="auth-btn-area">
@@ -29,7 +28,6 @@ export function renderNavbar() {
                 <a href="#courses" class="nav-link">Our Courses</a>
                 <a href="#blogs" class="nav-link">Blogs</a>
                 <a href="#about" class="nav-link">About Us</a>
-                <a href="#reviews" class="nav-link">Reviews</a>
                 <a href="#contact" class="nav-link">Contact Us</a>
             </div>
         </nav>

@@ -1,75 +1,81 @@
 export function renderImpact() {
     return `
-   
-    <section id="er-impact" class="er-section" style="background:#fff;">
+    <!-- ═══ SECTION D: IMPACT NUMBERS ═══ -->
+    <section id="er-impact" class="er-section" style="background:#ffffff; padding: 4.236rem 0;">
         <div class="er-container">
-            <h2 class="er-section-heading er-reveal">Trusted by Thousands, Proven by Results</h2>
-            <p class="er-section-sub er-reveal er-reveal-delay-1">
+            <h2 class="er-section-heading er-reveal visible" style="color:#0e3a24; font-weight: 800; font-size: 2.25rem;">
+                Trusted by Thousands, Proven by Results
+            </h2>
+            <p class="er-section-sub er-reveal visible" style="color:#4a6156; margin-top: 0.75rem; font-size: 1.05rem;">
                 Join thousands of students learning and growing with us every day. 
             </p>
 
-            <div class="er-impact-grid">
+            <div class="er-impact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.618rem; margin-top: 2.618rem;">
 
                 <!-- Card 1 — Students -->
-                <div class="er-impact-card er-reveal er-reveal-delay-1" data-color="#FACC15" style="background:linear-gradient(145deg,#fef9ee,#fef3c7);">
-                    <div class="er-impact-shimmer"></div>
-                    <div class="er-impact-icon-reveal">🎓</div>
-                    <div class="er-impact-border" style="--er-hover-color:#FACC15;"></div>
-                    <div style="position:relative;z-index:1;">
-                        <p class="er-impact-number">
-                            <span class="er-count" data-target="15" data-suffix="k+">0</span>
+                <div class="er-impact-card glass-card er-reveal visible" data-color="#16a34a" style="background: #f0fdf4 !important; border: 1px solid rgba(22, 163, 74, 0.25); border-radius: 1.618rem; padding: 1.618rem; box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.1); position: relative; overflow: hidden; transition: all 0.3s ease;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                        <span style="font-size: 2.5rem;">🎓</span>
+                        <span style="background: rgba(22, 163, 74, 0.15); color: #15803d; border-radius: 50px; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700;">Community</span>
+                    </div>
+                    <div>
+                        <p class="er-impact-number" style="color:#0e3a24; font-size: 2.5rem; font-weight: 800; margin: 0; line-height: 1.2;">
+                            <span class="er-count" data-target="15" data-suffix="k+">15k+</span>
                         </p>
-                        <p class="er-impact-label">Happy Students</p>
-                        <div class="er-impact-bar-wrap">
-                            <div class="er-impact-bar" style="--er-bar-color:#FACC15;"></div>
+                        <p class="er-impact-label" style="color:#166534; font-weight: 700; font-size: 1rem; margin-top: 0.25rem;">Happy Students</p>
+                        <div class="er-impact-bar-wrap" style="height: 4px; background: rgba(22, 163, 74, 0.15); border-radius: 4px; margin-top: 1rem; overflow: hidden;">
+                            <div class="er-impact-bar er-bar-expanded" style="height: 100%; background: linear-gradient(90deg, #16a34a, #22c55e); width: 100%; border-radius: 4px;"></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 2 — Mock Tests -->
-                <div class="er-impact-card er-reveal er-reveal-delay-2" data-color="#f87171" style="background:linear-gradient(145deg,#fdf2f2,#fce7e7);">
-                    <div class="er-impact-shimmer" style="--er-shimmer-color:#f87171;"></div>
-                    <div class="er-impact-icon-reveal">📝</div>
-                    <div class="er-impact-border" style="--er-hover-color:#f87171;"></div>
-                    <div style="position:relative;z-index:1;">
-                        <p class="er-impact-number">
-                            <span class="er-count" data-target="2400" data-suffix="+">0</span>
+                <div class="er-impact-card glass-card er-reveal visible" data-color="#ef4444" style="background: #fef2f2 !important; border: 1px solid rgba(239, 68, 68, 0.25); border-radius: 1.618rem; padding: 1.618rem; box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.1); position: relative; overflow: hidden; transition: all 0.3s ease;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                        <span style="font-size: 2.5rem;">📝</span>
+                        <span style="background: rgba(239, 68, 68, 0.15); color: #b91c1c; border-radius: 50px; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700;">Test Series</span>
+                    </div>
+                    <div>
+                        <p class="er-impact-number" style="color:#7f1d1d; font-size: 2.5rem; font-weight: 800; margin: 0; line-height: 1.2;">
+                            <span class="er-count" data-target="2400" data-suffix="+">2,400+</span>
                         </p>
-                        <p class="er-impact-label">Mock Tests</p>
-                        <div class="er-impact-bar-wrap">
-                            <div class="er-impact-bar" style="--er-bar-color:#f87171;"></div>
+                        <p class="er-impact-label" style="color:#991b1b; font-weight: 700; font-size: 1rem; margin-top: 0.25rem;">Mock Tests</p>
+                        <div class="er-impact-bar-wrap" style="height: 4px; background: rgba(239, 68, 68, 0.15); border-radius: 4px; margin-top: 1rem; overflow: hidden;">
+                            <div class="er-impact-bar er-bar-expanded" style="height: 100%; background: linear-gradient(90deg, #ef4444, #f87171); width: 100%; border-radius: 4px;"></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 3 — Video Lectures -->
-                <div class="er-impact-card er-reveal er-reveal-delay-3" data-color="#22d3ee" style="background:linear-gradient(145deg,#ecfeff,#cffafe);">
-                    <div class="er-impact-shimmer" style="--er-shimmer-color:#22d3ee;"></div>
-                    <div class="er-impact-icon-reveal">🎬</div>
-                    <div class="er-impact-border" style="--er-hover-color:#22d3ee;"></div>
-                    <div style="position:relative;z-index:1;">
-                        <p class="er-impact-number">
-                            <span class="er-count" data-target="1400" data-suffix="+">0</span>
+                <div class="er-impact-card glass-card er-reveal visible" data-color="#0284c7" style="background: #f0f9ff !important; border: 1px solid rgba(2, 132, 199, 0.25); border-radius: 1.618rem; padding: 1.618rem; box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.1); position: relative; overflow: hidden; transition: all 0.3s ease;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                        <span style="font-size: 2.5rem;">🎬</span>
+                        <span style="background: rgba(2, 132, 199, 0.15); color: #0369a1; border-radius: 50px; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700;">Content</span>
+                    </div>
+                    <div>
+                        <p class="er-impact-number" style="color:#0c4a6e; font-size: 2.5rem; font-weight: 800; margin: 0; line-height: 1.2;">
+                            <span class="er-count" data-target="1400" data-suffix="+">1,400+</span>
                         </p>
-                        <p class="er-impact-label">Video Lectures</p>
-                        <div class="er-impact-bar-wrap">
-                            <div class="er-impact-bar" style="--er-bar-color:#22d3ee;"></div>
+                        <p class="er-impact-label" style="color:#075985; font-weight: 700; font-size: 1rem; margin-top: 0.25rem;">Video Lectures</p>
+                        <div class="er-impact-bar-wrap" style="height: 4px; background: rgba(2, 132, 199, 0.15); border-radius: 4px; margin-top: 1rem; overflow: hidden;">
+                            <div class="er-impact-bar er-bar-expanded" style="height: 100%; background: linear-gradient(90deg, #0284c7, #38bdf8); width: 100%; border-radius: 4px;"></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 4 — Practice Papers -->
-                <div class="er-impact-card er-reveal er-reveal-delay-4" data-color="#a78bfa" style="background:linear-gradient(145deg,#f5f3ff,#ede9fe);">
-                    <div class="er-impact-shimmer" style="--er-shimmer-color:#a78bfa;"></div>
-                    <div class="er-impact-icon-reveal">📄</div>
-                    <div class="er-impact-border" style="--er-hover-color:#a78bfa;"></div>
-                    <div style="position:relative;z-index:1;">
-                        <p class="er-impact-number">
-                            <span class="er-count" data-target="3000" data-suffix="+">0</span>
+                <div class="er-impact-card glass-card er-reveal visible" data-color="#7c3aed" style="background: #faf5ff !important; border: 1px solid rgba(124, 58, 237, 0.25); border-radius: 1.618rem; padding: 1.618rem; box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.1); position: relative; overflow: hidden; transition: all 0.3s ease;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                        <span style="font-size: 2.5rem;">📄</span>
+                        <span style="background: rgba(124, 58, 237, 0.15); color: #6d28d9; border-radius: 50px; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700;">Practice</span>
+                    </div>
+                    <div>
+                        <p class="er-impact-number" style="color:#4c1d95; font-size: 2.5rem; font-weight: 800; margin: 0; line-height: 1.2;">
+                            <span class="er-count" data-target="3000" data-suffix="+">3,000+</span>
                         </p>
-                        <p class="er-impact-label">Practice Papers</p>
-                        <div class="er-impact-bar-wrap">
-                            <div class="er-impact-bar" style="--er-bar-color:#a78bfa;"></div>
+                        <p class="er-impact-label" style="color:#5b21b6; font-weight: 700; font-size: 1rem; margin-top: 0.25rem;">Practice Papers</p>
+                        <div class="er-impact-bar-wrap" style="height: 4px; background: rgba(124, 58, 237, 0.15); border-radius: 4px; margin-top: 1rem; overflow: hidden;">
+                            <div class="er-impact-bar er-bar-expanded" style="height: 100%; background: linear-gradient(90deg, #7c3aed, #a78bfa); width: 100%; border-radius: 4px;"></div>
                         </div>
                     </div>
                 </div>
@@ -123,14 +129,15 @@ export function initImpact() {
 
     obs.observe(section);
 
-    // Hover bar animation via CSS class toggle
     document.querySelectorAll('.er-impact-card').forEach(card => {
         const bar = card.querySelector('.er-impact-bar');
         card.addEventListener('mouseenter', () => {
             if (bar) bar.classList.add('er-bar-expanded');
+            card.style.transform = 'translateY(-6px)';
         });
         card.addEventListener('mouseleave', () => {
             if (bar) bar.classList.remove('er-bar-expanded');
+            card.style.transform = 'translateY(0)';
         });
     });
 }

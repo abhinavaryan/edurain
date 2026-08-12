@@ -6,7 +6,7 @@ export function renderFreeDemo() {
             <div class="er-demo-layout">
 
                 <!-- LEFT — Text -->
-                <div class="er-demo-text er-reveal">
+                <div class="er-demo-text er-reveal visible">
                     <h2 class="er-demo-heading">
                         Book your
                         <span class="er-demo-highlight">
@@ -31,7 +31,7 @@ export function renderFreeDemo() {
                 </div>
 
                 <!-- RIGHT — Image placeholder -->
-                <div class="er-demo-image-wrap er-reveal er-reveal-delay-2">
+                <div class="er-demo-image-wrap er-reveal visible">
                     <div class="er-demo-glow-ring"></div>
                     <img
                         src="https://cdn.phototourl.com/free/2026-07-29-95aea96d-d417-49bd-a2f3-cd7f4725e628.png"

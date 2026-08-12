@@ -1,61 +1,56 @@
 export function renderBanner() {
   return `
-    <!-- ═══ SECTION A: HERO AUTO-SCROLL BANNER ═══ -->
-    <section id="er-hero-banner" style="position:relative;width:100%;overflow:hidden;background:#0e3a24;">
+    <!-- ═══ SECTION A: HERO AUTO-SCROLL BANNER (Restored Original Layout & Aspect Ratio) ═══ -->
+    <section id="er-hero-banner" style="position:relative; width:100%; overflow:hidden; background:#0e3a24;">
 
-      <div id="er-slider-track" style="display:flex;transition:transform 0.7s cubic-bezier(0.4,0,0.2,1);will-change:transform;">
+      <div id="er-slider-track" style="display:flex; transition:transform 0.7s cubic-bezier(0.4,0,0.2,1); will-change:transform;">
 
-        <!-- SLIDE 1 — PROMOTIONAL SALE BANNER (Uploaded Image) -->
-        <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;background:#001d66;">
-          <img src="https://cdn.phototourl.com/member/2026-07-27-2d737d14-a16d-4942-b782-acbf1a3374a2.png" alt="Promo Banner" style="width:100%;height:100%;object-fit:contain;display:block;">
+        <!-- SLIDE 1 — FOUNDATION COURSES BANNER -->
+        <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+          <img src="https://cdn.phototourl.com/free/2026-08-11-a7030a92-dc08-48c2-b85c-b8e62024f50c.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
         </a>
 
-        <!-- SLIDE 2 -->
-          <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;background:#001d66;">
-          <img src="https://cdn.phototourl.com/member/2026-07-27-ec17ea66-1dcd-4396-9c72-8861db276038.jpg" alt="Promo Banner" style="width:100%;height:100%;object-fit:contain;display:block;">
+        <!-- SLIDE 2 — NEET BATCH -->
+        <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+          <img src="https://cdn.phototourl.com/free/2026-08-11-9182f96d-b0d3-40b7-a92d-52fa39089fe8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
         </a>
 
-        <!-- SLIDE 3 -->
-        <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;background:#001d66;">
-          <img src=" " alt="Promo Banner" style="width:100%;height:100%;object-fit:contain;display:block;">
+
+        <!-- SLIDE 3 — FOUNDATION COURSES BANNER -->
+        <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+          <img src="https://cdn.phototourl.com/free/2026-08-11-e4468359-9693-4f56-9f6a-88775f0b4e55.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
         </a>
 
-        <!-- SLIDE 4 -->
-        <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;background:#001d66;">
-          <img src=" " alt="Promo Banner" style="width:100%;height:100%;object-fit:contain;display:block;">
-        </a>
-
-        <!-- SLIDE 5 -->
-       <a href="#courses" class="er-slide er-slide-aspect" style="position:relative;flex-shrink:0;width:100%;display:block;text-decoration:none;background:#001d66;">
-          <img src=" " alt="Promo Banner" style="width:100%;height:100%;object-fit:contain;display:block;">
+        <!-- SLIDE 4 — JOURNEY & INTROSPECTION -->
+        <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+          <img src="https://cdn.phototourl.com/free/2026-08-11-619f7a94-6a9a-453c-908b-1651484fe7d5.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
         </a>
 
       </div>
 
       <!-- LEFT arrow -->
       <button id="er-arrow-prev" class="er-arrow er-arrow-prev" aria-label="Previous slide">
-        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
         </svg>
       </button>
 
       <!-- RIGHT arrow -->
       <button id="er-arrow-next" class="er-arrow er-arrow-next" aria-label="Next slide">
-        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
         </svg>
       </button>
 
       <!-- Dot pagination -->
-      <div id="er-dots" style="position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:20;">
+      <div id="er-dots" style="position:absolute; bottom:16px; left:50%; transform:translateX(-50%); display:flex; gap:10px; z-index:20;">
         <button class="er-dot er-dot-active" data-index="0" aria-label="Slide 1"></button>
         <button class="er-dot" data-index="1" aria-label="Slide 2"></button>
         <button class="er-dot" data-index="2" aria-label="Slide 3"></button>
         <button class="er-dot" data-index="3" aria-label="Slide 4"></button>
-        <button class="er-dot" data-index="4" aria-label="Slide 5"></button>
       </div>
     </section>
-    `;
+  `;
 }
 
 export function initBanner() {
@@ -77,22 +72,19 @@ export function initBanner() {
     });
   }
 
-  // 3 seconds stay, 0.7s transition (CSS), then 3 seconds again
   function start() {
-    timer = setInterval(() => goTo(current + 1), 3000);
+    stop();
+    timer = setInterval(() => goTo(current + 1), 3500);
   }
   function stop() { clearInterval(timer); }
 
-  // Dot clicks
   dots.forEach(dot => {
     dot.addEventListener('click', () => { stop(); goTo(parseInt(dot.dataset.index)); start(); });
   });
 
-  // Arrow clicks
   if (btnPrev) btnPrev.addEventListener('click', (e) => { e.preventDefault(); stop(); goTo(current - 1); start(); });
   if (btnNext) btnNext.addEventListener('click', (e) => { e.preventDefault(); stop(); goTo(current + 1); start(); });
 
-  // Touch swipe
   let tx = 0;
   track.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
   track.addEventListener('touchend', e => {
@@ -100,7 +92,6 @@ export function initBanner() {
     if (Math.abs(diff) > 50) { stop(); goTo(current + (diff > 0 ? 1 : -1)); start(); }
   });
 
-  // Pause on hover
   track.addEventListener('mouseenter', stop);
   track.addEventListener('mouseleave', start);
 

@@ -1,6 +1,7 @@
 export function renderHero() {
     return `
         <section class="hero-section" id="home">
+            <div class="hero-glitch-overlay" style="position: absolute; inset: 0; z-index: 999; pointer-events: auto; background: transparent;"></div>
             <div class="hero-content">
                 <div class="hero-text">
                     <span class="badge">🏆 #1 Learning Platform</span>

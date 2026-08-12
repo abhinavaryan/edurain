@@ -11,7 +11,7 @@ export function renderAppDownload() {
             <div class="er-app-layout">
 
                 <!-- LEFT — Text & store buttons -->
-                <div class="er-app-text er-reveal">
+                <div class="er-app-text er-reveal visible">
                     <div class="er-app-platform-badge">📱 Now Available on All Platforms</div>
 
                     <h2 class="er-app-heading">
@@ -60,7 +60,7 @@ export function renderAppDownload() {
                 </div>
 
                 <!-- RIGHT — Floating phone mockup -->
-                <div class="er-app-phone-wrap er-reveal er-reveal-delay-2">
+                <div class="er-app-phone-wrap er-reveal visible">
                     <div class="er-app-glow-ring"></div>
 
                     <div class="er-phone-frame">

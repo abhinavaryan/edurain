@@ -1,15 +1,29 @@
 import reviewsData from '../data/reviews.json';
 
 export function renderReviews() {
-    const reviewsHtml = reviewsData.map(review => `
+    const reviewsHtml = reviewsData.map((review, idx) => {
+        const colors = [
+            'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+            'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
+            'linear-gradient(135deg, #ec4899 0%, #be185d 100%)',
+            'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+            'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)',
+            'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)'
+        ];
+        const bg = colors[idx % colors.length];
+
+        return `
         <div class="glass-card review-card">
-            <img src="${review.avatar}" alt="${review.name}" class="review-avatar" />
+            <div class="er-review-avatar-badge" style="background: ${bg}; margin: 0 auto 1rem auto;">
+                ${review.name[0]}
+            </div>
             <div class="review-stars">⭐⭐⭐⭐⭐</div>
             <p class="review-quote">"${review.quote}"</p>
             <h4>${review.name}</h4>
             <p class="review-course">${review.course}</p>
         </div>
-    `).join('');
+        `;
+    }).join('');
 
     const dotsHtml = reviewsData.map((_, i) =>
         `<span class="dot ${i === 0 ? 'active' : ''}" data-index="${i}"></span>`

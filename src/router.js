@@ -6,25 +6,32 @@ import { renderAbout } from './components/about.js';
 import { renderReviews, initReviews } from './components/reviews.js';
 import { renderContact, initContact } from './components/contact.js';
 import { renderAuthModal, initAuthModal } from './components/authModal.js';
+import { renderJourney, initJourney } from './components/journey.js';
 
 // ── HOME PAGE SECTIONS (exact order) ──
 import { renderBanner, initBanner } from './components/banner.js';
 import { renderPopularCourses } from './components/popularCourses.js';
 import { renderFreeDemo } from './components/freeDemo.js';
+import { renderFaculty, initFaculty } from './components/faculty.js';
+import { renderHomeReviews, initHomeReviews } from './components/homeReviews.js';
 import { renderImpact, initImpact } from './components/impact.js';
 import { renderAppDownload } from './components/appDownload.js';
 
 const routes = {
   '#home': {
-    // EXACT ORDER: Banner → Popular Courses → Free Demo → Impact → App Download
+    // ORDER: Banner → Popular Courses → Free Demo → Faculty → Student Reviews → Impact → App Download
     render: () =>
       renderBanner() +
       renderPopularCourses() +
       renderFreeDemo() +
+      renderFaculty() +
+      renderHomeReviews() +
       renderImpact() +
       renderAppDownload(),
     postRender: () => {
       initBanner();
+      initFaculty();
+      initHomeReviews();
       initImpact();
       initScrollReveal();
     }
@@ -35,11 +42,15 @@ const routes = {
   },
   '#blogs': {
     render: () => renderBlogs(),
-    postRender: () => {}
+    postRender: () => { }
+  },
+  '#journey': {
+    render: () => renderJourney(),
+    postRender: () => initJourney()
   },
   '#about': {
     render: () => renderAbout(),
-    postRender: () => {}
+    postRender: () => { }
   },
   '#reviews': {
     render: () => renderReviews(),
@@ -85,12 +96,12 @@ export const initRouter = () => {
 
     const route = routes[routeKey] || {
       render: () => `<div class="page-404"><h1>404</h1><p>Page not found</p><a href="#home" class="btn btn-accent">Go Home</a></div>`,
-      postRender: () => {}
+      postRender: () => { }
     };
 
-    const navbarHTML    = renderNavbar();
-    const pageHTML      = route.render();
-    const footerHTML    = renderFooter();
+    const navbarHTML = renderNavbar();
+    const pageHTML = route.render();
+    const footerHTML = renderFooter();
     const authModalHTML = renderAuthModal();
 
     app.innerHTML = `
