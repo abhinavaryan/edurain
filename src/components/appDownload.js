@@ -1,9 +1,8 @@
 export function renderAppDownload() {
     return `
-    <!-- ═══ SECTION E: APP DOWNLOAD ═══ -->
+
     <section id="er-app-download" class="er-section er-app-bg">
 
-        <!-- Background decorative blobs -->
         <div class="er-app-blob er-app-blob-1"></div>
         <div class="er-app-blob er-app-blob-2"></div>
 
@@ -12,7 +11,6 @@ export function renderAppDownload() {
 
                 <!-- LEFT — Text & store buttons -->
                 <div class="er-app-text er-reveal visible">
-                    <div class="er-app-platform-badge">📱 Now Available on All Platforms</div>
 
                     <h2 class="er-app-heading">
                         Learn from

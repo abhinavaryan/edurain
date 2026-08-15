@@ -1,7 +1,7 @@
 import { renderNavbar, initNavbar } from './components/navbar.js';
-import { renderFooter } from './components/footer.js';
+import { renderFooter, initFooter } from './components/footer.js';
 import { renderCourses, initCourses } from './components/courses.js';
-import { renderBlogs } from './components/blogs.js';
+import { renderBlogs, initBlogs } from './components/blogs.js';
 import { renderAbout } from './components/about.js';
 import { renderReviews, initReviews } from './components/reviews.js';
 import { renderContact, initContact } from './components/contact.js';
@@ -42,7 +42,7 @@ const routes = {
   },
   '#blogs': {
     render: () => renderBlogs(),
-    postRender: () => { }
+    postRender: () => initBlogs()
   },
   '#journey': {
     render: () => renderJourney(),
@@ -91,9 +91,7 @@ export const initRouter = () => {
       window.location.hash = hash;
       return;
     }
-
-    const routeKey = hash.split('?')[0];
-
+    const routeKey = hash.split('?')[0].split('/')[0];
     const route = routes[routeKey] || {
       render: () => `<div class="page-404"><h1>404</h1><p>Page not found</p><a href="#home" class="btn btn-accent">Go Home</a></div>`,
       postRender: () => { }
@@ -126,6 +124,7 @@ export const initRouter = () => {
 
     initNavbar();
     initAuthModal();
+    initFooter();
     route.postRender();
 
     if (window.observeFadeElements) {

@@ -1,6 +1,14 @@
 export function renderFaculty() {
     const faculties = [
         {
+            name: "Mr. Manoj sir",
+            subject: "English",
+            exp: "14 Years Exp.",
+            desc: "He is a passionate English mentor dedicated to mastering language skills, literature, and communication excellence.",
+            avatarBg: "linear-gradient(135deg, #4c1d95 0%, #8b5cf6 100%)",
+            icon: "📖"
+        },
+        {
             name: "Mrs. Ritu ma'am",
             subject: "Chemistry",
             exp: "14 Years Exp.",
@@ -25,28 +33,28 @@ export function renderFaculty() {
             icon: "🧬"
         },
         {
-            name: "Dr. Aakash Sharma",
-            subject: "Organic Chemistry",
-            exp: "12 Years Exp.",
-            desc: "Specialist in reaction mechanisms, helping students master organic chemistry with logical flow and memory maps.",
-            avatarBg: "linear-gradient(135deg, #581c87 0%, #a855f7 100%)",
-            icon: "🔬"
+            name: "Ms. Khushbu ma'am",
+            subject: "Social Studies",
+            exp: "5 Years Exp.",
+            desc: "Passionate Social Studies mentor with 5 years of teaching experience, making History, Civics, and Geography engaging and accessible.",
+            avatarBg: "linear-gradient(135deg, #0284c7 0%, #38bdf8 100%)",
+            icon: "🌍"
         },
         {
-            name: "Ms. Priya Verma",
+            name: "Mr. Sujeet sir",
             subject: "Mathematics",
-            exp: "10 Years Exp.",
-            desc: "Focused on short-cut techniques and speed math for JEE Advanced, building student confidence step-by-step.",
-            avatarBg: "linear-gradient(135deg, #831843 0%, #ec4899 100%)",
+            exp: "15 Years Exp.",
+            desc: "A highly experienced Mathematics teacher with 15 years of experience, specializing in Foundation classes (6th to 10th).",
+            avatarBg: "linear-gradient(135deg, #0f766e 0%, #14b8a6 100%)",
             icon: "📐"
         },
         {
-            name: "Mr. Rajesh Kumar",
-            subject: "Physical Chemistry",
-            exp: "14 Years Exp.",
-            desc: "Simplifies numerical problem solving and formula applications with real-world practical illustrations.",
-            avatarBg: "linear-gradient(135deg, #1e293b 0%, #64748b 100%)",
-            icon: "⚗️"
+            name: "Mr. Debashish Banerjee sir",
+            subject: "Mathematics",
+            exp: "13 Years Exp.",
+            desc: "Expert Mathematics mentor with 13 years of experience, specializing in Class 11th & 12th and JEE preparation.",
+            avatarBg: "linear-gradient(135deg, #4338ca 0%, #6366f1 100%)",
+            icon: "🔢"
         },
 
     ];

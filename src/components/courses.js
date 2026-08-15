@@ -8,10 +8,18 @@ export function renderCourses() {
             : course.students;
 
         return `
-            <div class="glass-card course-card fade-in-section" data-category="${course.category}">
-                <div class="course-thumb" style="background-image: url('${course.thumbnail}')"></div>
+            <div class="glass-card course-card fade-in-section" data-category="${course.category}" data-link="${course.link || '#'}">
+                <div class="course-thumb">
+                    <a href="${course.link || '#'}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
+                        <img src="${course.thumbnail || '/images/course-1.jpg'}" alt="${course.title}" />
+                    </a>
+                </div>
                 <span class="course-category">${course.category}</span>
-                <h3>${course.title}</h3>
+                <h3>
+                    <a href="${course.link || '#'}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                        ${course.title}
+                    </a>
+                </h3>
                 <p class="course-instructor">by ${course.instructor}</p>
                 <div class="course-meta">
                     <span class="course-rating">${stars} ${course.rating}</span>
@@ -19,7 +27,9 @@ export function renderCourses() {
                 </div>
                 <div class="course-bottom">
                     <span class="course-price">${course.price}</span>
-                    <button class="btn btn-accent btn-sm">View Details</button>
+                    <a href="${course.link || '#'}" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">
+                        View Details
+                    </a>
                 </div>
             </div>
         `;
@@ -86,6 +96,17 @@ export function initCourses() {
             const targetHash = filter === 'All' ? '#courses' : `#courses?filter=${filter}`;
             if (window.location.hash !== targetHash) {
                 history.replaceState(null, '', targetHash);
+            }
+        });
+    });
+
+    courseCards.forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;
+            const link = card.getAttribute('data-link');
+            if (link && link !== '#') {
+                window.open(link, '_blank', 'noopener,noreferrer');
             }
         });
     });

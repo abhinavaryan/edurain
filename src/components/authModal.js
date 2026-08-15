@@ -6,7 +6,7 @@ export function renderAuthModal() {
             <div class="auth-modal glass-card">
                 <button class="modal-close" id="modal-close">&times;</button>
                 <div class="auth-modal-header">
-                    <div class="logo"><span class="text-white">Edu</span><span class="text-accent">Rain</span> 🎓</div>
+                    <div class="logo"><span class="text-white">Edu</span><span class="text-accent">Rain</span></div>
                     <p>Welcome back! Please login or create an account.</p>
                 </div>
                 <div class="auth-tabs">

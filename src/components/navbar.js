@@ -5,7 +5,7 @@ export function renderNavbar() {
         <nav class="navbar" id="main-nav">
             <div class="navbar-container">
                 <div class="logo">
-                    <span class="text-white">Edu</span><span class="text-accent">Rain</span> 🎓
+                    <span class="text-white">Edu</span><span class="text-accent">Rain</span>
                 </div>
                 <div class="nav-links">
                     <a href="#home" class="nav-link active">Home</a>

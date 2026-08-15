@@ -16,29 +16,28 @@ export function renderContact() {
                             <span class="contact-icon">📧</span>
                             <div>
                                 <strong>Email</strong>
-                                <p>hello@edurain.in</p>
+                                <p>support@edurain.in</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">📞</span>
                             <div>
                                 <strong>Phone</strong>
-                                <p>+91 98765 43210</p>
+                                <p>+91 87974 43910</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">📍</span>
                             <div>
                                 <strong>Location</strong>
-                                <p>Mumbai, India</p>
+                                <p>Delhi, India</p>
                             </div>
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="#" class="social-icon" title="Twitter">𝕏</a>
-                        <a href="#" class="social-icon" title="LinkedIn">in</a>
-                        <a href="#" class="social-icon" title="Instagram">📷</a>
-                        <a href="#" class="social-icon" title="YouTube">▶</a>
+                        <a href="https://www.instagram.com/edurain_official/" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/edurainofficial/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@Eduraininstitute" target="_blank" rel="noopener noreferrer" class="social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="contact-form-wrapper">

@@ -1,56 +1,201 @@
 [
   {
     "id": "b1",
-    "title": "Top 10 Study Hacks for Competitive Exams in India",
-    "excerpt": "Discover proven strategies to maximize your retention and ace exams like JEE and NEET. Time management and strategic planning play a vital role.",
-    "author": "Ravi Shastri",
-    "date": "2026-06-15T09:00:00Z",
+    "title": "Top 10 Study Hacks for Competitive Exams in India (JEE & NEET)",
+    "excerpt": "Discover proven strategies to maximize your retention, manage time efficiently, and ace competitive exams like JEE and NEET with confidence.",
+    "author": "EduRain Editorial Team",
+    "date": "2026-08-14T09:00:00Z",
     "category": "Study Tips",
-    "coverImage": "/images/blog-1.jpg"
+    "tag": "Study Hacks",
+    "readTime": "5 min read",
+    "coverImage": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80",
+    "isPublished": true,
+    "content": [
+      {
+        "type": "heading",
+        "text": "1. Master the 80/20 Rule (Pareto Principle)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Focus 80% of your energy on the top 20% high-yield topics that carry the maximum weightage in JEE & NEET examinations. Analyze previous 10-year question papers (PYQs) to identify recurring patterns in Physics, Chemistry, and Mathematics/Biology."
+      },
+      {
+        "type": "heading",
+        "text": "2. Active Recall & Spaced Repetition"
+      },
+      {
+        "type": "paragraph",
+        "text": "Passive reading leads to the illusion of competence. Test yourself regularly using flashcards and formula sheets without looking at solutions. Revisit complex topics at expanding intervals: Day 1, Day 3, Day 7, and Day 30."
+      },
+      {
+        "type": "heading",
+        "text": "3. The Pomodoro Technique with Focused Bursts"
+      },
+      {
+        "type": "paragraph",
+        "text": "Study in uninterrupted 50-minute blocks followed by 10-minute restorative breaks. During focus sessions, keep your phone in another room or turn on Do Not Disturb."
+      },
+      {
+        "type": "heading",
+        "text": "4. Mock Test Analysis Strategy"
+      },
+      {
+        "type": "paragraph",
+        "text": "Writing mock tests is only half the battle. Spend at least 2 hours analyzing every incorrect attempt. Categorize errors into conceptual mistakes, calculation slips, and time-pressure panics to systematically eliminate weaknesses."
+      },
+      {
+        "type": "heading",
+        "text": "5. Maintain Consistency and Physical Well-being"
+      },
+      {
+        "type": "paragraph",
+        "text": "Consistency beats cramming every single time. Prioritize 7 to 8 hours of quality sleep to solidify memory consolidation, stay hydrated, and practice light mindfulness exercises daily."
+      }
+    ],
+    "keyTakeaways": [
+      "Analyze PYQs to prioritize high-weightage topics.",
+      "Use active recall instead of passive reading.",
+      "Thoroughly analyze every mock test error.",
+      "Maintain 7-8 hours of sleep for optimal memory retention."
+    ]
   },
   {
     "id": "b2",
-    "title": "Why Python is the Best First Programming Language",
-    "excerpt": "Explore why Python's readable syntax and vast ecosystem make it perfect for beginners. Start your coding journey the right way.",
-    "author": "Anjali Mehta",
-    "date": "2026-07-02T14:30:00Z",
-    "category": "Programming",
-    "coverImage": "/images/blog-2.jpg"
+    "title": "How to Crack JEE Mains 2026: Subject-Wise Mastery & Preparation Guide",
+    "excerpt": "A step-by-step roadmap for Physics, Chemistry, and Mathematics to secure a top percentile in JEE Mains 2026.",
+    "author": "Er. Abhinav Aryan",
+    "date": "2026-08-10T10:30:00Z",
+    "category": "JEE & NEET Prep",
+    "tag": "JEE Mains PYQ",
+    "readTime": "6 min read",
+    "coverImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    "isPublished": true,
+    "content": [
+      {
+        "type": "heading",
+        "text": "Physics: Focus on Fundamentals & Problem Solving"
+      },
+      {
+        "type": "paragraph",
+        "text": "Mechanics, Electrodynamics, and Optics form the backbone of JEE Mains Physics. Solve NCERT examples thoroughly followed by 15-year Previous Year Questions (PYQs)."
+      },
+      {
+        "type": "heading",
+        "text": "Chemistry: NCERT is Your Ultimate Bible"
+      },
+      {
+        "type": "paragraph",
+        "text": "Inorganic Chemistry questions in JEE Mains are directly asked line-by-line from NCERT text. Create short revision charts for periodic properties and reaction mechanisms."
+      },
+      {
+        "type": "heading",
+        "text": "Mathematics: Speed and Accuracy Balance"
+      },
+      {
+        "type": "paragraph",
+        "text": "Calculus and Algebra carry heavy weightage. Practice timed sectional tests to improve your calculation speed without committing silly mistakes."
+      }
+    ],
+    "keyTakeaways": [
+      "NCERT Chemistry line-by-line preparation is mandatory.",
+      "Solve PYQs twice before final revision.",
+      "Daily 30-minute numerical calculation practice."
+    ]
   },
   {
     "id": "b3",
-    "title": "The Future of EdTech in Rural India",
-    "excerpt": "How mobile internet and vernacular content are bridging the educational divide. A look at the next decade of digital learning.",
-    "author": "Siddharth Rao",
-    "date": "2026-07-10T11:15:00Z",
-    "category": "Education Trends",
-    "coverImage": "/images/blog-3.jpg"
+    "title": "NEET 2026 Biology & Chemistry High-Weightage Chapters & Strategy",
+    "excerpt": "Key chapters, diagram-based questions, and memory tricks to score 680+ marks in NEET 2026.",
+    "author": "EduRain Medical Faculty",
+    "date": "2026-08-05T14:15:00Z",
+    "category": "JEE & NEET Prep",
+    "tag": "NEET Test Series",
+    "readTime": "7 min read",
+    "coverImage": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+    "isPublished": true,
+    "content": [
+      {
+        "type": "heading",
+        "text": "Biology: 360 Marks Target Strategy"
+      },
+      {
+        "type": "paragraph",
+        "text": "Genetics, Human Physiology, and Plant Physiology account for over 50% of Biology questions. Focus heavily on NCERT diagrams, footnotes, and scientific terms."
+      },
+      {
+        "type": "heading",
+        "text": "Organic & Physical Chemistry Preparation"
+      },
+      {
+        "type": "paragraph",
+        "text": "Master Named Reactions and Mole Concept formulas. Daily practice of 50 MCQs improves recall speed significantly."
+      }
+    ],
+    "keyTakeaways": [
+      "Biology NCERT diagrams demand special attention.",
+      "Attempt mock tests strictly between 2 PM to 5:20 PM.",
+      "Maintain a mistake notebook for instant revision."
+    ]
   },
   {
     "id": "b4",
-    "title": "Mastering English Grammar for Professionals",
-    "excerpt": "A deep dive into common grammatical errors and how to avoid them in corporate communications. Elevate your professional presence.",
-    "author": "Priya Desai",
-    "date": "2026-07-18T08:45:00Z",
-    "category": "Languages",
-    "coverImage": "/images/blog-1.jpg"
+    "title": "CBSE Class 10 & 12 Board Exams 2026: Sample Paper Analysis & Time Table",
+    "excerpt": "Comprehensive roadmap to score 95%+ in Science, Math, and English with official CBSE marking scheme tips.",
+    "author": "Academic Team EduRain",
+    "date": "2026-07-28T11:00:00Z",
+    "category": "CBSE Board Exams",
+    "tag": "CBSE Class 10 PYQ",
+    "readTime": "5 min read",
+    "coverImage": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
+    "isPublished": true,
+    "content": [
+      {
+        "type": "heading",
+        "text": "Understanding the CBSE Competency-Based Questions"
+      },
+      {
+        "type": "paragraph",
+        "text": "CBSE has increased competency-based questions to 50%. Focus on real-life case studies and practical application problems rather than rote memorization."
+      },
+      {
+        "type": "heading",
+        "text": "Answer Presentation Techniques for Full Marks"
+      },
+      {
+        "type": "paragraph",
+        "text": "Write point-wise answers with bullet points, underline key keywords, and draw clean labeled diagrams in Science and Social Science papers."
+      }
+    ],
+    "keyTakeaways": [
+      "50% questions are competency-based case studies.",
+      "Highlight keywords for evaluators.",
+      "Solve at least 5 sample papers under timed conditions."
+    ]
   },
   {
     "id": "b5",
-    "title": "Mental Health for Students: Balancing Academics and Life",
-    "excerpt": "Stress management techniques for students dealing with high-pressure academic environments. Prioritizing mental well-being is crucial.",
-    "author": "Dr. Kavita Joshi",
-    "date": "2026-07-20T16:00:00Z",
-    "category": "Wellness",
-    "coverImage": "/images/blog-2.jpg"
-  },
-  {
-    "id": "b6",
-    "title": "Demystifying Calculus: It's Easier Than You Think",
-    "excerpt": "Breaking down complex calculus concepts into simple, intuitive ideas. Stop fearing math and start enjoying the logic.",
-    "author": "Dr. Rajesh Kumar",
-    "date": "2026-07-22T10:20:00Z",
-    "category": "Mathematics",
-    "coverImage": "/images/blog-3.jpg"
+    "title": "Effective Time Management Tips for Class 9th & 10th Foundation Aspirants",
+    "excerpt": "How to balance school studies, coaching classes, and Olympiad/NTSE preparation effortlessly.",
+    "author": "EduRain Mentorship Cell",
+    "date": "2026-07-20T16:45:00Z",
+    "category": "Foundation 9th-10th",
+    "tag": "Foundation 9th-10th",
+    "readTime": "4 min read",
+    "coverImage": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80",
+    "isPublished": true,
+    "content": [
+      {
+        "type": "heading",
+        "text": "Building a Strong Foundation Early"
+      },
+      {
+        "type": "paragraph",
+        "text": "Starting early in Class 9 & 10 develops analytical thinking needed for competitive exams later. Focus on fundamental concepts in Math and Science."
+      }
+    ],
+    "keyTakeaways": [
+      "Consistent 2 hours of self-study daily yields massive long-term results.",
+      "Clear fundamental doubts immediately with mentors."
+    ]
   }
 ]

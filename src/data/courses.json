@@ -6,9 +6,10 @@
     "rating": 4.2,
     "students": 500,
     "price": "₹12,520",
-    "thumbnail": "https://www.image2url.com/r2/default/images/1785241678586-e366f596-5395-4f47-8046-e3da0a27c9d1.png",
+    "thumbnail": "https://cdn.phototourl.com/free/2026-08-14-50ced64b-6d99-422d-91fb-8a62bfa1e137.webp",
     "category": "JEE",
-    "description": "Master the fundamentals of Calculus and Linear Algebra. Perfect for engineering aspirants."
+    "description": "Master the fundamentals of Calculus and Linear Algebra. Perfect for engineering aspirants.",
+    "link": "https://courses.edurain.in/courses/849750"
   },
   {
     "id": "c2",
@@ -17,20 +18,10 @@
     "rating": 4.5,
     "students": 302,
     "price": "₹2,520",
-    "thumbnail": "https://www.image2url.com/r2/default/images/1785224597331-747f9012-6f61-4100-8093-a6fb60ec85fb.png",
+    "thumbnail": "https://cdn.phototourl.com/free/2026-08-14-105e8fdd-49f2-4184-9f47-9c66ccfe1665.webp",
     "category": "JEE",
-    "description": "Master the fundamentals of Calculus and Linear Algebra. Perfect for engineering aspirants."
-  },
-  {
-    "id": "c3",
-    "title": "9th English",
-    "instructor": "Mr.Manoj Sir",
-    "rating": 4.9,
-    "students": 200,
-    "price": "₹3020",
-    "thumbnail": "",
-    "category": "FOUNDATION",
-    "description": "In-depth physics concepts tailored for competitive exams. Includes problem-solving sessions."
+    "description": "Master the fundamentals of Calculus and Linear Algebra. Perfect for engineering aspirants.",
+    "link": "https://courses.edurain.in/courses/857872"
   },
   {
     "id": "c4",
@@ -39,9 +30,10 @@
     "rating": 4.7,
     "students": 236,
     "price": "₹2,520",
-    "thumbnail": "/images/course-3.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786706990678_43a19880_Abhinav_Figma_class_plus__phy.webp",
     "category": "NEET",
-    "description": "Learn to build modern web applications from scratch using MERN stack."
+    "description": "Learn to build modern web applications from scratch using MERN stack.",
+    "link": "https://courses.edurain.in/courses/865098"
   },
   {
     "id": "c5",
@@ -50,9 +42,10 @@
     "rating": 4.6,
     "students": 150,
     "price": "2,520",
-    "thumbnail": "/images/course-4.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786707177596_0f003a03_faculty_2__7_.jpg",
     "category": "NEET",
-    "description": "Improve your spoken English skills for professional and everyday use."
+    "description": "Improve your spoken English skills for professional and everyday use.",
+    "link": "https://courses.edurain.in/courses/857877"
   },
   {
     "id": "c6",
@@ -61,9 +54,10 @@
     "rating": 4.8,
     "students": 132,
     "price": "₹2,520",
-    "thumbnail": "/images/course-1.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786707733989_84534946_unnamed.webp",
     "category": "JEE",
-    "description": "Crack product-based company interviews with robust DSA concepts."
+    "description": "Crack product-based company interviews with robust DSA concepts.",
+    "link": "https://courses.edurain.in/courses/857872"
   },
   {
     "id": "c7",
@@ -72,9 +66,10 @@
     "rating": 4.5,
     "students": 620,
     "price": "₹5,020",
-    "thumbnail": "/images/course-2.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786707980934_915096e8_unnamed.webp",
     "category": "NEET",
-    "description": "Clear your basics in Organic Chemistry with reaction mechanisms and practical examples."
+    "description": "Clear your basics in Organic Chemistry with reaction mechanisms and practical examples.",
+    "link": "https://courses.edurain.in/courses/855893"
   },
   {
     "id": "c8",
@@ -83,9 +78,10 @@
     "rating": 4.7,
     "students": 1800,
     "price": "₹12,520",
-    "thumbnail": "/images/course-3.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708172893_14fde1b1_unnamed.webp",
     "category": "NEET",
-    "description": "Boost your calculation speed using ancient Vedic Math techniques."
+    "description": "Boost your calculation speed using ancient Vedic Math techniques.",
+    "link": "https://courses.edurain.in/courses/849750"
   },
   {
     "id": "c9",
@@ -94,9 +90,10 @@
     "rating": 4.9,
     "students": 1200,
     "price": "₹5,020",
-    "thumbnail": "/images/course-4.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708237356_3e4e42b7_unnamed.webp",
     "category": "JEE",
-    "description": "A complete beginner's guide to understanding, reading, and speaking Hindi."
+    "description": "A complete beginner's guide to understanding, reading, and speaking Hindi.",
+    "link": "https://courses.edurain.in/courses/846771"
   },
   {
     "id": "c10",
@@ -105,9 +102,10 @@
     "rating": 4.8,
     "students": 1120,
     "price": "₹4,520",
-    "thumbnail": "/images/course-1.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708300269_af0cced2_unnamed.webp",
     "category": "FOUNDATION",
-    "description": "Step into the world of AI with practical Machine Learning algorithms and tools."
+    "description": "Step into the world of AI with practical Machine Learning algorithms and tools.",
+    "link": "https://courses.edurain.in/courses/830945"
   },
   {
     "id": "c11",
@@ -116,9 +114,10 @@
     "rating": 4.9,
     "students": 320,
     "price": "₹3,520",
-    "thumbnail": "/images/course-2.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708358028_b62b8226_unnamed.webp",
     "category": "NEET",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET."
+    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
+    "link": "https://courses.edurain.in/courses/830943"
   },
   {
     "id": "c12",
@@ -127,9 +126,10 @@
     "rating": 4.1,
     "students": 126,
     "price": "₹2,520",
-    "thumbnail": "/images/course-2.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708411693_43d53417_unnamed.webp",
     "category": "ALL",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET."
+    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
+    "link": "https://courses.edurain.in/courses/830941"
   },
   {
     "id": "c13",
@@ -138,9 +138,10 @@
     "rating": 3.9,
     "students": 234,
     "price": "₹3,520",
-    "thumbnail": "/images/course-2.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708440388_cfb42854_unnamed.webp",
     "category": "FOUNDATION",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET."
+    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
+    "link": "https://courses.edurain.in/courses/830607"
   },
   {
     "id": "c14",
@@ -149,9 +150,10 @@
     "rating": 4.3,
     "students": 105,
     "price": "₹2,520",
-    "thumbnail": "/images/course-2.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708511517_f37d966c_unnamed.webp",
     "category": "ENGLISH",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET."
+    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
+    "link": "https://courses.edurain.in/courses/828615"
   },
   {
     "id": "c15",
@@ -160,9 +162,10 @@
     "rating": 4.4,
     "students": 370,
     "price": "₹4,520",
-    "thumbnail": "/images/course-2.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708557261_08ee3912_unnamed.webp",
     "category": "FOUNDATION",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET."
+    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
+    "link": "https://courses.edurain.in/courses/814577"
   },
   {
     "id": "c16",
@@ -171,9 +174,10 @@
     "rating": 4.7,
     "students": 249,
     "price": "₹4,020",
-    "thumbnail": "/images/course-2.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708593166_35c415e1_unnamed.webp",
     "category": "FOUNDATION",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET."
+    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
+    "link": "https://courses.edurain.in/courses/814204"
   },
   {
     "id": "c17",
@@ -182,9 +186,10 @@
     "rating": 4.45,
     "students": 425,
     "price": "₹4,820",
-    "thumbnail": "/images/course-2.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708692702_1d2899f4_unnamed.webp",
     "category": "JEE",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET."
+    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
+    "link": "https://courses.edurain.in/courses/814178"
   },
   {
     "id": "c18",
@@ -193,9 +198,10 @@
     "rating": 4.9,
     "students": 770,
     "price": "₹4,820",
-    "thumbnail": "/images/course-2.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708771621_b592371a_unnamed.webp",
     "category": "NEET",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET."
+    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
+    "link": "https://courses.edurain.in/courses/814170"
   },
   {
     "id": "c19",
@@ -204,9 +210,10 @@
     "rating": 4.1,
     "students": 505,
     "price": "₹9,019",
-    "thumbnail": "/images/course-2.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708845701_d57d2524_unnamed.webp",
     "category": "NEET",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET."
+    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
+    "link": "https://courses.edurain.in/courses/814073"
   },
   {
     "id": "c20",
@@ -215,9 +222,10 @@
     "rating": 4.2,
     "students": 120,
     "price": "₹3,020",
-    "thumbnail": "/images/course-2.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708889429_9888c881_unnamed.webp",
     "category": "FOUNDATION",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET."
+    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
+    "link": "https://courses.edurain.in/courses/813859"
   },
   {
     "id": "c21",
@@ -226,9 +234,10 @@
     "rating": 4.7,
     "students": 304,
     "price": "₹3,020",
-    "thumbnail": "/images/course-2.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786709148253_00a742d4_unnamed.webp",
     "category": "NEET",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET."
+    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
+    "link": "https://courses.edurain.in/courses/813844"
   },
   {
     "id": "c22",
@@ -237,9 +246,10 @@
     "rating": 4.0,
     "students": 321,
     "price": "₹3,620",
-    "thumbnail": "/images/course-2.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708966455_36f61966_unnamed.webp",
     "category": "NEET",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET."
+    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
+    "link": "https://courses.edurain.in/courses/813836"
   },
   {
     "id": "c23",
@@ -248,8 +258,9 @@
     "rating": 3.89,
     "students": 890,
     "price": "₹9,019",
-    "thumbnail": "/images/course-2.jpg",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786709213605_9dd96992_unnamed.webp",
     "category": "JEE",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET."
+    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
+    "link": "https://courses.edurain.in/courses/813811"
   }
 ]
