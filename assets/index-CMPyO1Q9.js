@@ -2,7 +2,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
         <nav class="navbar" id="main-nav">
             <div class="navbar-container">
                 <div class="logo">
-                    <span class="text-white">Edu</span><span class="text-accent">Rain</span> 🎓
+                    <span class="text-white">Edu</span><span class="text-accent">Rain</span>
                 </div>
                 <div class="nav-links">
                     <a href="#home" class="nav-link active">Home</a>
@@ -29,45 +29,67 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
             </div>
         </nav>
     `}function C(){let e=document.getElementById(`hamburger-btn`),t=document.getElementById(`mobile-menu`),n=document.querySelectorAll(`.mobile-menu .nav-link`),r=document.getElementById(`login-btn`),i=document.getElementById(`auth-btn-area`),a=document.getElementById(`main-nav`);e&&t&&e.addEventListener(`click`,()=>{e.classList.toggle(`active`),t.classList.toggle(`active`)}),n.forEach(n=>{n.addEventListener(`click`,()=>{e&&t&&(e.classList.remove(`active`),t.classList.remove(`active`))})}),r&&r.addEventListener(`click`,()=>{document.dispatchEvent(new CustomEvent(`open-auth-modal`))}),i&&i.addEventListener(`click`,e=>{e.target.id===`logout-btn`&&b()}),window.addEventListener(`scroll`,()=>{window.scrollY>50?a.classList.add(`scrolled`):a.classList.remove(`scrolled`)})}function w(){return`
+        <div class="footer-separator"></div>
         <footer class="site-footer">
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="logo">
-                        <span class="text-white">Edu</span><span class="text-accent">Rain</span> 🎓
+                        <span class="text-white">Edu</span><span class="text-accent">Rain</span>
                     </div>
                     <p>Empowering learners across India with accessible,<br>high-quality education and expert guidance.</p>
                     <div class="social-icons">
-                        <span class="social-icon"><i class="fab fa-instagram"></i></span>
-                        <span class="social-icon"><i class="fab fa-linkedin-in"></i></span>
-                        <span class="social-icon"><i class="fab fa-youtube"></i></span>
-                        <span class="social-icon"><i class="fab fa-x-twitter"></i></span>
+                        <a href="https://www.instagram.com/edurain_official/" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/edurainofficial/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <div class="social-dropdown-wrapper">
+                            <button type="button" class="social-icon social-dropdown-toggle" title="YouTube Channels" aria-label="YouTube Channels">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            <div class="social-dropdown-menu">
+                                <div class="dropdown-header">YouTube Channels</div>
+                                <a href="https://www.youtube.com/@Eduraininstitute" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>EduRain Institute</span>
+                                </a>
+                                <a href="https://www.youtube.com/@EduRain9th10th" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>EduRain 9th &amp; 10th</span>
+                                </a>
+                                <a href="https://www.youtube.com/@EduRainNEETJEE" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>EduRain NEET / JEE</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#home">&gt; Home</a></li>
-                        <li><a href="#courses">&gt; Courses</a></li>
+                        <li><a href="https://edurain.in/jeecourse" target="_blank" rel="noopener noreferrer">&gt; JEE Courses</a></li>
+                        <li><a href="https://edurain.in/neetcources" target="_blank" rel="noopener noreferrer">&gt; NEET Courses</a></li>
+                        <li><a href="https://edurain.in/foundationcources" target="_blank" rel="noopener noreferrer">&gt; Foundation Courses</a></li>
                         <li><a href="#blogs">&gt; Blogs</a></li>
                         <li><a href="#about">&gt; About</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contact Us</h4>
-                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-                    <p><i class="fas fa-phone"></i> +91 91234 56789</p>
-                    <p><i class="fas fa-envelope"></i> hello@edurain.in</p>
+                    <p><i class="fas fa-phone"></i> +91 87974 43910</p>
                     <p><i class="fas fa-envelope"></i> support@edurain.in</p>
                 </div>
                 <div class="footer-col">
                     <h4>Get the App</h4>
                     <p>Learn on the go. Download the EduRain app today.</p>
                     <div class="app-buttons">
-                        <button class="btn-store">
+                        <a href="https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN" target="_blank" rel="noopener noreferrer" class="btn-store">
                             <i class="fab fa-google-play"></i>
                             <span><small>GET IT ON</small><br>Google Play</span>
-                        </button>
-                        <button class="btn-store">
+                        </a>
+                        <button type="button" class="btn-store">
                             <i class="fab fa-apple"></i>
                             <span><small>Download on the</small><br>App Store</span>
                         </button>
@@ -76,7 +98,6 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 <span class="text-accent">EduRain</span>. All rights reserved.</p>
-                <p class="made-with-love">💚 Made with love in India</p>
                 <div class="legal-links">
                     <a href="#privacy">Privacy Policy</a> |
                     <a href="#terms">Terms of Service</a> |
@@ -84,7 +105,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 </div>
             </div>
         </footer>
-    `}var T=[{id:`c1`,title:`Dropper JEE 2027 Batch`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Banarjee`,rating:4.2,students:500,price:`₹12,520`,thumbnail:`https://www.image2url.com/r2/default/images/1785241678586-e366f596-5395-4f47-8046-e3da0a27c9d1.png`,category:`JEE`,description:`Master the fundamentals of Calculus and Linear Algebra. Perfect for engineering aspirants.`},{id:`c2`,title:`CLASS 11TH MATHEMATICS`,instructor:`Mr.Banarjee Sir`,rating:4.5,students:302,price:`₹2,520`,thumbnail:`https://www.image2url.com/r2/default/images/1785224597331-747f9012-6f61-4100-8093-a6fb60ec85fb.png`,category:`JEE`,description:`Master the fundamentals of Calculus and Linear Algebra. Perfect for engineering aspirants.`},{id:`c3`,title:`9th English`,instructor:`Mr.Manoj Sir`,rating:4.9,students:200,price:`₹3020`,thumbnail:``,category:`FOUNDATION`,description:`In-depth physics concepts tailored for competitive exams. Includes problem-solving sessions.`},{id:`c4`,title:`CLASS 12TH Physics`,instructor:`Mr.Diwakar Sir`,rating:4.7,students:236,price:`₹2,520`,thumbnail:`/images/course-3.jpg`,category:`NEET`,description:`Learn to build modern web applications from scratch using MERN stack.`},{id:`c5`,title:`BIOLOGY CLASS 12TH`,instructor:`Mr.Nitin Sir`,rating:4.6,students:150,price:`2,520`,thumbnail:`/images/course-4.jpg`,category:`NEET`,description:`Improve your spoken English skills for professional and everyday use.`},{id:`c6`,title:`CLASS 12TH MATHEMATICS`,instructor:`Mr.Banarjee Sir`,rating:4.8,students:132,price:`₹2,520`,thumbnail:`/images/course-1.jpg`,category:`JEE`,description:`Crack product-based company interviews with robust DSA concepts.`},{id:`c7`,title:`CLASS 11TH PCB(NEET)`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Nitin`,rating:4.5,students:620,price:`₹5,020`,thumbnail:`/images/course-2.jpg`,category:`NEET`,description:`Clear your basics in Organic Chemistry with reaction mechanisms and practical examples.`},{id:`c8`,title:`DROPPER NEET 2027 BATCH`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Nitin`,rating:4.7,students:1800,price:`₹12,520`,thumbnail:`/images/course-3.jpg`,category:`NEET`,description:`Boost your calculation speed using ancient Vedic Math techniques.`},{id:`c9`,title:`CLASS 11TH PCB(JEE)`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Banarjee`,rating:4.9,students:1200,price:`₹5,020`,thumbnail:`/images/course-4.jpg`,category:`JEE`,description:`A complete beginner's guide to understanding, reading, and speaking Hindi.`},{id:`c10`,title:`CLASS 8TH`,instructor:`Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir`,rating:4.8,students:1120,price:`₹4,520`,thumbnail:`/images/course-1.jpg`,category:`FOUNDATION`,description:`Step into the world of AI with practical Machine Learning algorithms and tools.`},{id:`c11`,title:`CLASS 7TH`,instructor:`Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir`,rating:4.9,students:320,price:`₹3,520`,thumbnail:`/images/course-2.jpg`,category:`NEET`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c12`,title:`CLASS 12TH English`,instructor:`Mr.Manoj Sir`,rating:4.1,students:126,price:`₹2,520`,thumbnail:`/images/course-2.jpg`,category:`ALL`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c13`,title:`CLASS 6TH`,instructor:`Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir`,rating:3.9,students:234,price:`₹3,520`,thumbnail:`/images/course-2.jpg`,category:`FOUNDATION`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c14`,title:`CLASS 11TH ENGLISH`,instructor:`Mr.Manoj Sir`,rating:4.3,students:105,price:`₹2,520`,thumbnail:`/images/course-2.jpg`,category:`ENGLISH`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c15`,title:`CLASS 9TH SUPER CAMPIONS`,instructor:`Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir`,rating:4.4,students:370,price:`₹4,520`,thumbnail:`/images/course-2.jpg`,category:`FOUNDATION`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c16`,title:`CLASS 10TH DISHA BATCH`,instructor:`Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir`,rating:4.7,students:249,price:`₹4,020`,thumbnail:`/images/course-2.jpg`,category:`FOUNDATION`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c17`,title:`TARGET JEE 2027 -12TH CLASS BATCH`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Banarjee`,rating:4.45,students:425,price:`₹4,820`,thumbnail:`/images/course-2.jpg`,category:`JEE`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c18`,title:`NEET WHITE COAT 2027 -CLASS 12th`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Nitin`,rating:4.9,students:770,price:`₹4,820`,thumbnail:`/images/course-2.jpg`,category:`NEET`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c19`,title:`MISSION NEET 3.0 BATCH 2028`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Nitin`,rating:4.1,students:505,price:`₹9,019`,thumbnail:`/images/course-2.jpg`,category:`NEET`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c20`,title:`CLASS 10TH ENGLISH`,instructor:`Mr.Manoj Sir`,rating:4.2,students:120,price:`₹3,020`,thumbnail:`/images/course-2.jpg`,category:`FOUNDATION`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c21`,title:`CHEMISTRY CLASS 11TH `,instructor:`Ms.Ritu ma'am`,rating:4.7,students:304,price:`₹3,020`,thumbnail:`/images/course-2.jpg`,category:`NEET`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c22`,title:`CHEMISTRY CLASS 12TH`,instructor:`Ms.Ritu ma'am`,rating:4,students:321,price:`₹3,620`,thumbnail:`/images/course-2.jpg`,category:`NEET`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`},{id:`c23`,title:`JEE Mantra 3.0 Batch 2028`,instructor:`Ms.Ritu , Mr.Diwakar ,Mr.Banarjee`,rating:3.89,students:890,price:`₹9,019`,thumbnail:`/images/course-2.jpg`,category:`JEE`,description:`Comprehensive biology course designed specifically for medical aspirants targeting NEET.`}];function E(){return`
+    `}function T(){let e=document.querySelector(`.social-dropdown-toggle`),t=document.querySelector(`.social-dropdown-wrapper`);e&&t&&(e.addEventListener(`click`,e=>{e.stopPropagation(),t.classList.toggle(`active`)}),document.addEventListener(`click`,e=>{t.contains(e.target)||t.classList.remove(`active`)}))}var E=JSON.parse(`[{"id":"c1","title":"Dropper JEE 2027 Batch","instructor":"Ms.Ritu , Mr.Diwakar ,Mr.Banarjee","rating":4.2,"students":500,"price":"₹12,520","thumbnail":"https://cdn.phototourl.com/free/2026-08-14-50ced64b-6d99-422d-91fb-8a62bfa1e137.webp","category":"JEE","description":"Master the fundamentals of Calculus and Linear Algebra. Perfect for engineering aspirants.","link":"https://courses.edurain.in/courses/849750"},{"id":"c2","title":"CLASS 11TH MATHEMATICS","instructor":"Mr.Banarjee Sir","rating":4.5,"students":302,"price":"₹2,520","thumbnail":"https://cdn.phototourl.com/free/2026-08-14-105e8fdd-49f2-4184-9f47-9c66ccfe1665.webp","category":"JEE","description":"Master the fundamentals of Calculus and Linear Algebra. Perfect for engineering aspirants.","link":"https://courses.edurain.in/courses/857872"},{"id":"c4","title":"CLASS 12TH Physics","instructor":"Mr.Diwakar Sir","rating":4.7,"students":236,"price":"₹2,520","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786706990678_43a19880_Abhinav_Figma_class_plus__phy.webp","category":"NEET","description":"Learn to build modern web applications from scratch using MERN stack.","link":"https://courses.edurain.in/courses/865098"},{"id":"c5","title":"BIOLOGY CLASS 12TH","instructor":"Mr.Nitin Sir","rating":4.6,"students":150,"price":"2,520","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786707177596_0f003a03_faculty_2__7_.jpg","category":"NEET","description":"Improve your spoken English skills for professional and everyday use.","link":"https://courses.edurain.in/courses/857877"},{"id":"c6","title":"CLASS 12TH MATHEMATICS","instructor":"Mr.Banarjee Sir","rating":4.8,"students":132,"price":"₹2,520","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786707733989_84534946_unnamed.webp","category":"JEE","description":"Crack product-based company interviews with robust DSA concepts.","link":"https://courses.edurain.in/courses/857872"},{"id":"c7","title":"CLASS 11TH PCB(NEET)","instructor":"Ms.Ritu , Mr.Diwakar ,Mr.Nitin","rating":4.5,"students":620,"price":"₹5,020","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786707980934_915096e8_unnamed.webp","category":"NEET","description":"Clear your basics in Organic Chemistry with reaction mechanisms and practical examples.","link":"https://courses.edurain.in/courses/855893"},{"id":"c8","title":"DROPPER NEET 2027 BATCH","instructor":"Ms.Ritu , Mr.Diwakar ,Mr.Nitin","rating":4.7,"students":1800,"price":"₹12,520","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708172893_14fde1b1_unnamed.webp","category":"NEET","description":"Boost your calculation speed using ancient Vedic Math techniques.","link":"https://courses.edurain.in/courses/849750"},{"id":"c9","title":"CLASS 11TH PCB(JEE)","instructor":"Ms.Ritu , Mr.Diwakar ,Mr.Banarjee","rating":4.9,"students":1200,"price":"₹5,020","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708237356_3e4e42b7_unnamed.webp","category":"JEE","description":"A complete beginner's guide to understanding, reading, and speaking Hindi.","link":"https://courses.edurain.in/courses/846771"},{"id":"c10","title":"CLASS 8TH","instructor":"Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir","rating":4.8,"students":1120,"price":"₹4,520","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708300269_af0cced2_unnamed.webp","category":"FOUNDATION","description":"Step into the world of AI with practical Machine Learning algorithms and tools.","link":"https://courses.edurain.in/courses/830945"},{"id":"c11","title":"CLASS 7TH","instructor":"Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir","rating":4.9,"students":320,"price":"₹3,520","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708358028_b62b8226_unnamed.webp","category":"NEET","description":"Comprehensive biology course designed specifically for medical aspirants targeting NEET.","link":"https://courses.edurain.in/courses/830943"},{"id":"c12","title":"CLASS 12TH English","instructor":"Mr.Manoj Sir","rating":4.1,"students":126,"price":"₹2,520","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708411693_43d53417_unnamed.webp","category":"ALL","description":"Comprehensive biology course designed specifically for medical aspirants targeting NEET.","link":"https://courses.edurain.in/courses/830941"},{"id":"c13","title":"CLASS 6TH","instructor":"Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir","rating":3.9,"students":234,"price":"₹3,520","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708440388_cfb42854_unnamed.webp","category":"FOUNDATION","description":"Comprehensive biology course designed specifically for medical aspirants targeting NEET.","link":"https://courses.edurain.in/courses/830607"},{"id":"c14","title":"CLASS 11TH ENGLISH","instructor":"Mr.Manoj Sir","rating":4.3,"students":105,"price":"₹2,520","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708511517_f37d966c_unnamed.webp","category":"ENGLISH","description":"Comprehensive biology course designed specifically for medical aspirants targeting NEET.","link":"https://courses.edurain.in/courses/828615"},{"id":"c15","title":"CLASS 9TH SUPER CAMPIONS","instructor":"Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir","rating":4.4,"students":370,"price":"₹4,520","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708557261_08ee3912_unnamed.webp","category":"FOUNDATION","description":"Comprehensive biology course designed specifically for medical aspirants targeting NEET.","link":"https://courses.edurain.in/courses/814577"},{"id":"c16","title":"CLASS 10TH DISHA BATCH","instructor":"Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir","rating":4.7,"students":249,"price":"₹4,020","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708593166_35c415e1_unnamed.webp","category":"FOUNDATION","description":"Comprehensive biology course designed specifically for medical aspirants targeting NEET.","link":"https://courses.edurain.in/courses/814204"},{"id":"c17","title":"TARGET JEE 2027 -12TH CLASS BATCH","instructor":"Ms.Ritu , Mr.Diwakar ,Mr.Banarjee","rating":4.45,"students":425,"price":"₹4,820","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708692702_1d2899f4_unnamed.webp","category":"JEE","description":"Comprehensive biology course designed specifically for medical aspirants targeting NEET.","link":"https://courses.edurain.in/courses/814178"},{"id":"c18","title":"NEET WHITE COAT 2027 -CLASS 12th","instructor":"Ms.Ritu , Mr.Diwakar ,Mr.Nitin","rating":4.9,"students":770,"price":"₹4,820","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708771621_b592371a_unnamed.webp","category":"NEET","description":"Comprehensive biology course designed specifically for medical aspirants targeting NEET.","link":"https://courses.edurain.in/courses/814170"},{"id":"c19","title":"MISSION NEET 3.0 BATCH 2028","instructor":"Ms.Ritu , Mr.Diwakar ,Mr.Nitin","rating":4.1,"students":505,"price":"₹9,019","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708845701_d57d2524_unnamed.webp","category":"NEET","description":"Comprehensive biology course designed specifically for medical aspirants targeting NEET.","link":"https://courses.edurain.in/courses/814073"},{"id":"c20","title":"CLASS 10TH ENGLISH","instructor":"Mr.Manoj Sir","rating":4.2,"students":120,"price":"₹3,020","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708889429_9888c881_unnamed.webp","category":"FOUNDATION","description":"Comprehensive biology course designed specifically for medical aspirants targeting NEET.","link":"https://courses.edurain.in/courses/813859"},{"id":"c21","title":"CHEMISTRY CLASS 11TH ","instructor":"Ms.Ritu ma'am","rating":4.7,"students":304,"price":"₹3,020","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786709148253_00a742d4_unnamed.webp","category":"NEET","description":"Comprehensive biology course designed specifically for medical aspirants targeting NEET.","link":"https://courses.edurain.in/courses/813844"},{"id":"c22","title":"CHEMISTRY CLASS 12TH","instructor":"Ms.Ritu ma'am","rating":4.0,"students":321,"price":"₹3,620","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708966455_36f61966_unnamed.webp","category":"NEET","description":"Comprehensive biology course designed specifically for medical aspirants targeting NEET.","link":"https://courses.edurain.in/courses/813836"},{"id":"c23","title":"JEE Mantra 3.0 Batch 2028","instructor":"Ms.Ritu , Mr.Diwakar ,Mr.Banarjee","rating":3.89,"students":890,"price":"₹9,019","thumbnail":"https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786709213605_9dd96992_unnamed.webp","category":"JEE","description":"Comprehensive biology course designed specifically for medical aspirants targeting NEET.","link":"https://courses.edurain.in/courses/813811"}]`);function D(){return`
         <section class="courses-section" id="courses-page">
             <div class="section-header">
                 <h2>Our Courses</h2>
@@ -97,11 +118,19 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 <button class="filter-btn" data-filter="FOUNDATION">FOUNDATION</button>
             </div>
             <div class="courses-grid" id="courses-grid">
-                ${T.map(e=>{let t=`⭐`.repeat(Math.round(e.rating)),n=e.students>=1e3?`${(e.students/1e3).toFixed(1)}K`:e.students;return`
-            <div class="glass-card course-card fade-in-section" data-category="${e.category}">
-                <div class="course-thumb" style="background-image: url('${e.thumbnail}')"></div>
+                ${E.map(e=>{let t=`⭐`.repeat(Math.round(e.rating)),n=e.students>=1e3?`${(e.students/1e3).toFixed(1)}K`:e.students;return`
+            <div class="glass-card course-card fade-in-section" data-category="${e.category}" data-link="${e.link||`#`}">
+                <div class="course-thumb">
+                    <a href="${e.link||`#`}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
+                        <img src="${e.thumbnail||`/images/course-1.jpg`}" alt="${e.title}" />
+                    </a>
+                </div>
                 <span class="course-category">${e.category}</span>
-                <h3>${e.title}</h3>
+                <h3>
+                    <a href="${e.link||`#`}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                        ${e.title}
+                    </a>
+                </h3>
                 <p class="course-instructor">by ${e.instructor}</p>
                 <div class="course-meta">
                     <span class="course-rating">${t} ${e.rating}</span>
@@ -109,79 +138,247 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 </div>
                 <div class="course-bottom">
                     <span class="course-price">${e.price}</span>
-                    <button class="btn btn-accent btn-sm">View Details</button>
+                    <a href="${e.link||`#`}" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">
+                        View Details
+                    </a>
                 </div>
             </div>
         `}).join(``)}
             </div>
         </section>
-    `}function D(){let e=document.querySelectorAll(`.filter-btn`),t=document.querySelectorAll(`.course-card`);function n(n){let r=!1;e.forEach(e=>{let t=e.dataset.filter===n;e.classList.toggle(`active`,t),t&&(r=!0)}),!r&&e.length&&(e[0].classList.add(`active`),n=`All`),t.forEach(e=>{n===`All`||e.dataset.category===n?(e.style.display=``,e.classList.add(`fade-in-section`,`visible`)):e.style.display=`none`})}let r=`All`,i=window.location.hash;i.includes(`?filter=`)&&(r=decodeURIComponent(i.split(`?filter=`)[1])),n(r),e.forEach(e=>{e.addEventListener(`click`,()=>{let t=e.dataset.filter;n(t);let r=t===`All`?`#courses`:`#courses?filter=${t}`;window.location.hash!==r&&history.replaceState(null,``,r)})})}var O=[{id:`b1`,title:`Top 10 Study Hacks for Competitive Exams in India`,excerpt:`Discover proven strategies to maximize your retention and ace exams like JEE and NEET. Time management and strategic planning play a vital role.`,author:`Ravi Shastri`,date:`2026-06-15T09:00:00Z`,category:`Study Tips`,coverImage:`/images/blog-1.jpg`},{id:`b2`,title:`Why Python is the Best First Programming Language`,excerpt:`Explore why Python's readable syntax and vast ecosystem make it perfect for beginners. Start your coding journey the right way.`,author:`Anjali Mehta`,date:`2026-07-02T14:30:00Z`,category:`Programming`,coverImage:`/images/blog-2.jpg`},{id:`b3`,title:`The Future of EdTech in Rural India`,excerpt:`How mobile internet and vernacular content are bridging the educational divide. A look at the next decade of digital learning.`,author:`Siddharth Rao`,date:`2026-07-10T11:15:00Z`,category:`Education Trends`,coverImage:`/images/blog-3.jpg`},{id:`b4`,title:`Mastering English Grammar for Professionals`,excerpt:`A deep dive into common grammatical errors and how to avoid them in corporate communications. Elevate your professional presence.`,author:`Priya Desai`,date:`2026-07-18T08:45:00Z`,category:`Languages`,coverImage:`/images/blog-1.jpg`},{id:`b5`,title:`Mental Health for Students: Balancing Academics and Life`,excerpt:`Stress management techniques for students dealing with high-pressure academic environments. Prioritizing mental well-being is crucial.`,author:`Dr. Kavita Joshi`,date:`2026-07-20T16:00:00Z`,category:`Wellness`,coverImage:`/images/blog-2.jpg`},{id:`b6`,title:`Demystifying Calculus: It's Easier Than You Think`,excerpt:`Breaking down complex calculus concepts into simple, intuitive ideas. Stop fearing math and start enjoying the logic.`,author:`Dr. Rajesh Kumar`,date:`2026-07-22T10:20:00Z`,category:`Mathematics`,coverImage:`/images/blog-3.jpg`}];function k(){return`
+    `}function O(){let e=document.querySelectorAll(`.filter-btn`),t=document.querySelectorAll(`.course-card`);function n(n){let r=!1;e.forEach(e=>{let t=e.dataset.filter===n;e.classList.toggle(`active`,t),t&&(r=!0)}),!r&&e.length&&(e[0].classList.add(`active`),n=`All`),t.forEach(e=>{n===`All`||e.dataset.category===n?(e.style.display=``,e.classList.add(`fade-in-section`,`visible`)):e.style.display=`none`})}let r=`All`,i=window.location.hash;i.includes(`?filter=`)&&(r=decodeURIComponent(i.split(`?filter=`)[1])),n(r),e.forEach(e=>{e.addEventListener(`click`,()=>{let t=e.dataset.filter;n(t);let r=t===`All`?`#courses`:`#courses?filter=${t}`;window.location.hash!==r&&history.replaceState(null,``,r)})}),t.forEach(e=>{e.style.cursor=`pointer`,e.addEventListener(`click`,t=>{if(t.target.closest(`a`))return;let n=e.getAttribute(`data-link`);n&&n!==`#`&&window.open(n,`_blank`,`noopener,noreferrer`)})})}var k=[{id:`b1`,title:`Top 10 Study Hacks for Competitive Exams in India (JEE & NEET)`,excerpt:`Discover proven strategies to maximize your retention, manage time efficiently, and ace competitive exams like JEE and NEET with confidence.`,author:`EduRain Editorial Team`,date:`2026-08-14T09:00:00Z`,category:`Study Tips`,tag:`Study Hacks`,readTime:`5 min read`,coverImage:`https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80`,isPublished:!0,content:[{type:`heading`,text:`1. Master the 80/20 Rule (Pareto Principle)`},{type:`paragraph`,text:`Focus 80% of your energy on the top 20% high-yield topics that carry the maximum weightage in JEE & NEET examinations. Analyze previous 10-year question papers (PYQs) to identify recurring patterns in Physics, Chemistry, and Mathematics/Biology.`},{type:`heading`,text:`2. Active Recall & Spaced Repetition`},{type:`paragraph`,text:`Passive reading leads to the illusion of competence. Test yourself regularly using flashcards and formula sheets without looking at solutions. Revisit complex topics at expanding intervals: Day 1, Day 3, Day 7, and Day 30.`},{type:`heading`,text:`3. The Pomodoro Technique with Focused Bursts`},{type:`paragraph`,text:`Study in uninterrupted 50-minute blocks followed by 10-minute restorative breaks. During focus sessions, keep your phone in another room or turn on Do Not Disturb.`},{type:`heading`,text:`4. Mock Test Analysis Strategy`},{type:`paragraph`,text:`Writing mock tests is only half the battle. Spend at least 2 hours analyzing every incorrect attempt. Categorize errors into conceptual mistakes, calculation slips, and time-pressure panics to systematically eliminate weaknesses.`},{type:`heading`,text:`5. Maintain Consistency and Physical Well-being`},{type:`paragraph`,text:`Consistency beats cramming every single time. Prioritize 7 to 8 hours of quality sleep to solidify memory consolidation, stay hydrated, and practice light mindfulness exercises daily.`}],keyTakeaways:[`Analyze PYQs to prioritize high-weightage topics.`,`Use active recall instead of passive reading.`,`Thoroughly analyze every mock test error.`,`Maintain 7-8 hours of sleep for optimal memory retention.`]},{id:`b2`,title:`How to Crack JEE Mains 2026: Subject-Wise Mastery & Preparation Guide`,excerpt:`A step-by-step roadmap for Physics, Chemistry, and Mathematics to secure a top percentile in JEE Mains 2026.`,author:`Er. Abhinav Aryan`,date:`2026-08-10T10:30:00Z`,category:`JEE & NEET Prep`,tag:`JEE Mains PYQ`,readTime:`6 min read`,coverImage:`https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80`,isPublished:!0,content:[{type:`heading`,text:`Physics: Focus on Fundamentals & Problem Solving`},{type:`paragraph`,text:`Mechanics, Electrodynamics, and Optics form the backbone of JEE Mains Physics. Solve NCERT examples thoroughly followed by 15-year Previous Year Questions (PYQs).`},{type:`heading`,text:`Chemistry: NCERT is Your Ultimate Bible`},{type:`paragraph`,text:`Inorganic Chemistry questions in JEE Mains are directly asked line-by-line from NCERT text. Create short revision charts for periodic properties and reaction mechanisms.`},{type:`heading`,text:`Mathematics: Speed and Accuracy Balance`},{type:`paragraph`,text:`Calculus and Algebra carry heavy weightage. Practice timed sectional tests to improve your calculation speed without committing silly mistakes.`}],keyTakeaways:[`NCERT Chemistry line-by-line preparation is mandatory.`,`Solve PYQs twice before final revision.`,`Daily 30-minute numerical calculation practice.`]},{id:`b3`,title:`NEET 2026 Biology & Chemistry High-Weightage Chapters & Strategy`,excerpt:`Key chapters, diagram-based questions, and memory tricks to score 680+ marks in NEET 2026.`,author:`EduRain Medical Faculty`,date:`2026-08-05T14:15:00Z`,category:`JEE & NEET Prep`,tag:`NEET Test Series`,readTime:`7 min read`,coverImage:`https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80`,isPublished:!0,content:[{type:`heading`,text:`Biology: 360 Marks Target Strategy`},{type:`paragraph`,text:`Genetics, Human Physiology, and Plant Physiology account for over 50% of Biology questions. Focus heavily on NCERT diagrams, footnotes, and scientific terms.`},{type:`heading`,text:`Organic & Physical Chemistry Preparation`},{type:`paragraph`,text:`Master Named Reactions and Mole Concept formulas. Daily practice of 50 MCQs improves recall speed significantly.`}],keyTakeaways:[`Biology NCERT diagrams demand special attention.`,`Attempt mock tests strictly between 2 PM to 5:20 PM.`,`Maintain a mistake notebook for instant revision.`]},{id:`b4`,title:`CBSE Class 10 & 12 Board Exams 2026: Sample Paper Analysis & Time Table`,excerpt:`Comprehensive roadmap to score 95%+ in Science, Math, and English with official CBSE marking scheme tips.`,author:`Academic Team EduRain`,date:`2026-07-28T11:00:00Z`,category:`CBSE Board Exams`,tag:`CBSE Class 10 PYQ`,readTime:`5 min read`,coverImage:`https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80`,isPublished:!0,content:[{type:`heading`,text:`Understanding the CBSE Competency-Based Questions`},{type:`paragraph`,text:`CBSE has increased competency-based questions to 50%. Focus on real-life case studies and practical application problems rather than rote memorization.`},{type:`heading`,text:`Answer Presentation Techniques for Full Marks`},{type:`paragraph`,text:`Write point-wise answers with bullet points, underline key keywords, and draw clean labeled diagrams in Science and Social Science papers.`}],keyTakeaways:[`50% questions are competency-based case studies.`,`Highlight keywords for evaluators.`,`Solve at least 5 sample papers under timed conditions.`]},{id:`b5`,title:`Effective Time Management Tips for Class 9th & 10th Foundation Aspirants`,excerpt:`How to balance school studies, coaching classes, and Olympiad/NTSE preparation effortlessly.`,author:`EduRain Mentorship Cell`,date:`2026-07-20T16:45:00Z`,category:`Foundation 9th-10th`,tag:`Foundation 9th-10th`,readTime:`4 min read`,coverImage:`https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80`,isPublished:!0,content:[{type:`heading`,text:`Building a Strong Foundation Early`},{type:`paragraph`,text:`Starting early in Class 9 & 10 develops analytical thinking needed for competitive exams later. Focus on fundamental concepts in Math and Science.`}],keyTakeaways:[`Consistent 2 hours of self-study daily yields massive long-term results.`,`Clear fundamental doubts immediately with mentors.`]}],A=[`All Blogs`,`Study Hacks`,`JEE Mains PYQ`,`NEET Test Series`,`CBSE Class 10 PYQ`,`CBSE Class 12 PYQ`,`Foundation 9th-10th`];function j(){let e=k.filter(e=>e.isPublished!==!1);return Array.from(new Set(e.map(e=>e.category||`General`))),`
         <section class="blogs-section" id="blogs">
-            <div class="section-header">
-                <h2>Latest from Our Blog</h2>
-                <p>Insights, tips, and news from EduRain</p>
+            <div class="er-pw-blog-container" id="blog-list-view">
+                
+                <!-- PW Style Hero Header -->
+                <div class="er-pw-blog-hero">
+                    <h1 class="er-pw-blog-title">EduRain Blog</h1>
+                    <p class="er-pw-blog-subtitle">India's Leading Learning & Exam Preparation Platform for Students</p>
+                    
+                    <!-- Search Bar -->
+                    <div class="er-pw-search-wrapper">
+                        <span class="er-pw-search-icon">🔍</span>
+                        <input type="text" id="er-blog-search-input" class="er-pw-search-input" placeholder="Search articles, exam tips, PYQs, or topics..." />
+                    </div>
+
+                    <!-- Our Popular Tags Filter -->
+                    <div class="er-pw-tags-section">
+                        <div class="er-pw-tags-label">#Ourpopulartags</div>
+                        <div class="er-pw-tags-list" id="er-tags-container">
+                            ${A.map((e,t)=>`
+        <button class="er-tag-pill ${t===0?`active`:``}" data-tag="${e}">
+            ${e}
+        </button>
+    `).join(``)}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Grid Section -->
+                <div class="er-pw-grid-section" id="er-blogs-grid-container">
+                    ${M(e)}
+                </div>
+
             </div>
-            <div class="blogs-grid">
-                ${O.map(e=>{let t=new Date(e.date).toLocaleDateString(`en-IN`,{year:`numeric`,month:`short`,day:`numeric`});return`
-            <div class="glass-card blog-card fade-in-section">
-                <div class="blog-cover" style="background-image: url('${e.coverImage}')"></div>
-                <div class="blog-body">
-                    <span class="blog-tag">${e.category}</span>
-                    <h3>${e.title}</h3>
-                    <p>${e.excerpt}</p>
-                    <div class="blog-meta">
-                        <span class="blog-author">${e.author}</span>
-                        <span class="blog-date">${t}</span>
-                        <a href="#" class="read-more">Read More &rarr;</a>
+
+            <!-- PW Style Full Article Reader View (Inline) -->
+            <div id="blog-reader-view" class="blog-reader-view-container" style="display: none;">
+                <div class="pw-reader-container">
+                    
+                    <div class="pw-reader-layout">
+                        <!-- Left Main Content Column (~70%) -->
+                        <div class="pw-reader-main" id="pw-reader-main-content"></div>
+                        
+                        <!-- Right Sidebar Column (~30%) -->
+                        <div class="pw-reader-sidebar">
+                            <div class="pw-sidebar-widget">
+                                <div class="pw-sidebar-widget-header">
+                                    <h3>Recommended for you</h3>
+                                    <a href="#courses" class="pw-see-all">See All &rarr;</a>
+                                </div>
+                                <div class="pw-sidebar-courses-list">
+                                    ${E.slice(0,3).map(e=>`
+        <div class="pw-sidebar-course-card">
+            <img src="${e.thumbnail}" alt="${e.title}" class="pw-sidebar-course-img" />
+            <div class="pw-sidebar-course-info">
+                <h4 class="pw-sidebar-course-title">${e.title}</h4>
+                <div class="pw-sidebar-course-price">
+                    <span class="price-current">${e.price}</span>
+                    <span class="price-discount-badge">25% OFF</span>
+                </div>
+                <a href="${e.link||`#courses`}" target="_blank" rel="noopener" class="pw-sidebar-enroll-btn">
+                    Enroll Now
+                </a>
+            </div>
+        </div>
+    `).join(``)}
+                                </div>
+                            </div>
+
+                            <div class="pw-sidebar-widget pw-app-promo-widget">
+                                <h3>EduRain Learning App</h3>
+                                <p>Get live classes, DPPs, doubt solving & mock test series on your phone.</p>
+                                <a href="#appDownload" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; margin-top: 0.5rem; background: #16a34a; border: none; border-radius: 8px;">
+                                    Download App Free
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Articles Carousel Footer -->
+                    <div class="pw-reader-related-section" id="pw-reader-related-container"></div>
+                </div>
+            </div>
+        </section>
+    `}function M(e){return!e||e.length===0?`
+            <div class="er-no-blogs-found" style="text-align: center; padding: 3rem; color: #94a3b8;">
+                <h3>No articles found</h3>
+                <p>Try searching for a different keyword or selecting another tag.</p>
+            </div>
+        `:`
+        <div class="er-pw-blogs-grid">
+            ${e.map(e=>{let t=new Date(e.date).toLocaleDateString(`en-IN`,{year:`numeric`,month:`long`,day:`numeric`});return`
+            <div class="er-pw-blog-card glass-card fade-in-section" data-blog-id="${e.id}">
+                <div class="er-pw-card-cover">
+                    <img src="${e.coverImage}" alt="${e.title}" class="er-pw-card-img" />
+                    <span class="er-pw-card-badge">${e.category||`Exam Prep`}</span>
+                </div>
+                <div class="er-pw-card-body">
+                    <h3 class="er-pw-card-title">${e.title}</h3>
+                    <p class="er-pw-card-excerpt">${e.excerpt}</p>
+                    <div class="er-pw-card-meta">
+                        <span class="er-pw-card-author">By ${e.author}</span>
+                        <span class="er-pw-card-date">${t}</span>
                     </div>
                 </div>
             </div>
         `}).join(``)}
+        </div>
+    `}function N(){let e=document.getElementById(`er-blog-search-input`),t=document.getElementById(`er-tags-container`),n=document.getElementById(`er-blogs-grid-container`),r=document.getElementById(`blog-list-view`),i=document.getElementById(`blog-reader-view`),a=document.getElementById(`pw-reader-main-content`),o=document.getElementById(`pw-reader-related-container`);if(!n||!i)return;let s=`All Blogs`,c=``;function l(){let e=k.filter(e=>e.isPublished!==!1).filter(e=>{let t=s===`All Blogs`||e.category&&e.category.toLowerCase().includes(s.toLowerCase())||e.tag&&e.tag.toLowerCase().includes(s.toLowerCase())||e.title&&e.title.toLowerCase().includes(s.toLowerCase()),n=!c||e.title.toLowerCase().includes(c.toLowerCase())||e.excerpt.toLowerCase().includes(c.toLowerCase())||e.category&&e.category.toLowerCase().includes(c.toLowerCase());return t&&n});n.innerHTML=M(e),f()}e&&e.addEventListener(`input`,e=>{c=e.target.value.trim(),l()}),t&&t.addEventListener(`click`,e=>{let n=e.target.closest(`.er-tag-pill`);n&&(t.querySelectorAll(`.er-tag-pill`).forEach(e=>e.classList.remove(`active`)),n.classList.add(`active`),s=n.getAttribute(`data-tag`),l())});function u(e,t=!0){let n=k.find(t=>t.id===e)||k[0];if(!n)return;let s=new Date(n.date).toLocaleDateString(`en-IN`,{year:`numeric`,month:`long`,day:`numeric`}),c=``;c=Array.isArray(n.content)?n.content.map(e=>e.type===`heading`?`<h3 class="pw-article-h3">${e.text}</h3>`:`<p class="pw-article-p">${e.text}</p>`).join(``):`<p class="pw-article-p">${n.excerpt}</p>`;let l=``;Array.isArray(n.keyTakeaways)&&n.keyTakeaways.length>0&&(l=`
+                <div class="pw-takeaways-box">
+                    <h4>💡 Key Takeaways & Action Plan</h4>
+                    <ul>
+                        ${n.keyTakeaways.map(e=>`<li>${e}</li>`).join(``)}
+                    </ul>
+                </div>
+            `),a.innerHTML=`
+            <div class="pw-article-breadcrumbs">
+                <a href="#home">Home</a> &rsaquo; <a href="#blogs">Blogs</a> &rsaquo; <span>${n.title}</span>
+            </div>
+
+            <h1 class="pw-article-h1">${n.title}</h1>
+            
+            <div class="pw-article-meta-header">
+                <span>By <strong>${n.author}</strong></span>
+                <span>•</span>
+                <span>📅 ${s}</span>
+                <span>•</span>
+                <span>⏱️ ${n.readTime||`5 min read`}</span>
+            </div>
+
+            <div class="pw-article-cover-banner">
+                <img src="${n.coverImage}" alt="${n.title}" />
+            </div>
+
+            <div class="pw-article-body">
+                ${c}
+                ${l}
+                
+            <div class="pw-article-faqs">
+                <h3 class="pw-faqs-title">Frequently Asked Questions (FAQs)</h3>
+                <div class="pw-faq-item">
+                    <div class="pw-faq-q">Q1. How often are EduRain study materials and blogs updated?</div>
+                    <div class="pw-faq-a">Our editorial and academic teams update materials daily in accordance with the latest NTA (JEE/NEET) and CBSE guidelines.</div>
+                </div>
+                <div class="pw-faq-item">
+                    <div class="pw-faq-q">Q2. Where can I solve topic-wise Previous Year Questions (PYQs)?</div>
+                    <div class="pw-faq-a">You can download chapter-wise PYQ PDFs and attempt mock test series directly on the EduRain App and Web platform.</div>
+                </div>
+            </div>
+        
+            </div>
+
+            <div class="pw-article-footer-bar">
+                <button id="btn-close-modal-bottom" class="btn btn-primary" style="background: #16a34a; border: none; padding: 0.5rem 1.35rem; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                    &larr; Back to All Blogs
+                </button>
+            </div>
+        `;let f=k.filter(e=>e.id!==n.id).slice(0,3);o.innerHTML=`
+            <h3 class="pw-related-title">Related Articles</h3>
+            <div class="pw-related-grid">
+                ${f.map(e=>`
+                    <div class="pw-related-card btn-open-blog" data-blog-id="${e.id}">
+                        <img src="${e.coverImage}" alt="${e.title}" />
+                        <div class="pw-related-info">
+                            <h4>${e.title}</h4>
+                            <span>${new Date(e.date).toLocaleDateString(`en-IN`,{month:`short`,day:`numeric`,year:`numeric`})}</span>
+                        </div>
+                    </div>
+                `).join(``)}
+            </div>
+        `,r.style.display=`none`,i.style.display=`block`;let p=document.getElementById(`blogs`);p?p.scrollIntoView({behavior:`smooth`}):window.scrollTo({top:0,behavior:`smooth`});let m=document.getElementById(`btn-close-modal-bottom`);m&&m.addEventListener(`click`,d),o.querySelectorAll(`.btn-open-blog`).forEach(e=>{e.addEventListener(`click`,t=>{t.stopPropagation();let n=e.getAttribute(`data-blog-id`);n&&u(n)})}),t&&history.pushState(null,null,`#blogs/`+n.id)}function d(){i.style.display=`none`,r.style.display=`block`,history.pushState(null,null,`#blogs`);let e=document.getElementById(`blogs`);e&&e.scrollIntoView({behavior:`smooth`})}function f(){n.querySelectorAll(`.er-pw-blog-card`).forEach(e=>{e.addEventListener(`click`,t=>{t.preventDefault(),t.stopPropagation();let n=e.getAttribute(`data-blog-id`);n&&u(n)})})}f();let p=window.location.hash.split(`?`)[0].split(`/`);if(p.length>1&&p[0]===`#blogs`){let e=p[1];u(e,!1)}}function P(){return`
+        <section class="er-about-hero" id="about">
+            <!-- Beautiful gradient mesh background -->
+            <div class="er-about-bg-mesh">
+                <div class="mesh-orb mesh-orb-1"></div>
+                <div class="mesh-orb mesh-orb-2"></div>
+                <div class="mesh-orb mesh-orb-3"></div>
+            </div>
+            
+            <div class="er-about-container">
+                <!-- Hero Header -->
+                <div class="er-about-header">
+                    <h1 class="er-about-title">About Us — EduRain</h1>
+                    <p class="er-about-subtitle">Foundation today, results tomorrow.</p>
+                </div>
+
+                <div class="er-about-grid">
+                    <!-- Left Column: Who we are & Story -->
+                    <div class="er-about-col-left">
+                        <div class="er-glass-card er-about-card">
+                            <div class="er-card-icon">🎯</div>
+                            <h2>Who We Are</h2>
+                            <p>At EduRain, we believe quality education shouldn't depend on where you live or how much you can afford to spend on coaching. We started EduRain with one simple goal: to bring foundation learning for Classes 6 to 10 and online coaching for IIT-JEE and NEET preparation to every student who's serious about their future, no matter which city or town they're studying from.</p>
+                        </div>
+                        
+                        <div class="er-glass-card er-about-card">
+                            <div class="er-card-icon">📖</div>
+                            <h2>Our Story</h2>
+                            <p>We saw how the internet was changing the way students in India prepare for competitive exams. We also saw a gap: many students still struggle to find a platform that combines strong fundamentals with focused JEE and NEET preparation, at a pace and price that actually works for them. That's the gap we built EduRain to fill.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: What we offer & Why Us -->
+                    <div class="er-about-col-right">
+                        <div class="er-glass-card er-about-card er-card-highlight">
+                            <div class="er-card-icon">✨</div>
+                            <h2>What We Offer</h2>
+                            <ul class="er-about-list">
+                                <li><strong>Foundation Courses (Classes 6–10):</strong> We help students build strong concepts in Maths and Science early on, so the transition to JEE and NEET preparation later feels natural, not overwhelming.</li>
+                                <li><strong>IIT-JEE Preparation:</strong> Structured online classes, regular practice tests, and doubt-solving sessions designed around the JEE syllabus and exam pattern.</li>
+                                <li><strong>NEET Preparation:</strong> Focused Biology, Physics, and Chemistry coaching built around what NEET actually demands — accuracy, speed, and conceptual clarity.</li>
+                                <li><strong>Live and Recorded Classes:</strong> So students can learn at a time and pace that suits them, whether they're keeping up in real time or revising later.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="er-glass-card er-about-card">
+                            <div class="er-card-icon">🤝</div>
+                            <h2>Why Students Choose EduRain</h2>
+                            <p>We're not trying to be the biggest online coaching platform. We're trying to be the one that genuinely cares whether a student understands a concept, not just whether they've watched a video. Our teachers focus on building a strong foundation first, because we've seen that students who understand the "why" behind a formula perform far better in JEE and NEET than those who simply memorize.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promise Section (Full width at bottom) -->
+                <div class="er-glass-card er-about-promise-card text-center">
+                    <div class="er-card-icon">💎</div>
+                    <h2>Our Promise</h2>
+                    <p>Every student who comes to EduRain gets the same thing from us: honest teaching, real support, and a team that wants to see them succeed. Whether a student is in Class 6 just starting to enjoy Maths, or in Class 12 preparing for the final NEET or JEE attempt, our focus stays the same.</p>
+                    <h3 class="er-promise-tagline">EduRain — Foundation today, results tomorrow.</h3>
+                </div>
             </div>
         </section>
-    `}function A(){return`
-        <section class="about-section low-light-bg" id="about">
-            <div class="section-header">
-                <h2 class="text-light">About EduRain</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-left">
-                    <div class="glass-card mission-card">
-                        <h3>Our Mission</h3>
-                        <p>To democratize quality education across India using technology.</p>
-                    </div>
-                    <div class="glass-card vision-card">
-                        <h3>Our Vision</h3>
-                        <p>To become India's most trusted and accessible learning platform by 2030.</p>
-                    </div>
-                </div>
-                <div class="about-right text-light">
-                    <h3>Our Story</h3>
-                    <p>Founded in 2024, EduRain was born from a simple idea: education should be accessible to everyone, everywhere. What started as a small initiative has quickly grown into a comprehensive learning ecosystem.</p>
-                    <p>We believe in combining the best educators with cutting-edge technology to deliver personalized, engaging, and effective learning experiences.</p>
-                    <div class="about-stats">
-                        <div class="stat">Founded 2024</div>
-                        <div class="stat">10K+ Students</div>
-                        <div class="stat">50+ Expert Educators</div>
-                    </div>
-                </div>
-            </div>
-            <div class="values-row">
-                <div class="glass-card value-card">
-                    <h4>Innovation</h4>
-                    <p>Constantly improving the learning experience.</p>
-                </div>
-                <div class="glass-card value-card">
-                    <h4>Accessibility</h4>
-                    <p>Education for everyone, anywhere.</p>
-                </div>
-                <div class="glass-card value-card">
-                    <h4>Excellence</h4>
-                    <p>Uncompromising quality in everything we do.</p>
-                </div>
-            </div>
-        </section>
-    `}var j=[{id:`r1`,name:`Aarav Patel`,course:`Full Stack Web Development Bootcamp`,rating:5,quote:`This bootcamp completely transformed my career. The projects were practical, and I landed a great job right after completion!`,avatar:`/images/avatar-1.jpg`},{id:`r2`,name:`Diya Sharma`,course:`Physics Masterclass for JEE Advanced`,rating:5,quote:`Aisha ma'am makes complex physics concepts so easy to understand. I finally feel confident about my JEE preparation.`,avatar:`/images/avatar-2.jpg`},{id:`r3`,name:`Rohan Gupta`,course:`Data Structures and Algorithms in Python`,rating:5,quote:`The best DSA course I've ever taken. Amit sir's explanation of dynamic programming was phenomenal.`,avatar:`/images/avatar-3.jpg`},{id:`r4`,name:`Ananya Singh`,course:`Biology for NEET - Complete Syllabus`,rating:5,quote:`Dr. Reddy's teaching style is engaging and highly informative. The mock tests provided were exactly what I needed.`,avatar:`/images/avatar-4.jpg`},{id:`r5`,name:`Karan Malhotra`,course:`Vedic Mathematics for Lightning Fast Calculations`,rating:5,quote:`I used to struggle with calculations during exams. Vedic math techniques have literally doubled my speed!`,avatar:`/images/avatar-1.jpg`},{id:`r6`,name:`Megha Nair`,course:`Spoken English Fluency Course`,rating:5,quote:`Priya ma'am helped me overcome my fear of public speaking. Highly recommend this to anyone looking to improve fluency.`,avatar:`/images/avatar-2.jpg`},{id:`r7`,name:`Ishaan Desai`,course:`Advanced Mathematics: Calculus & Linear Algebra`,rating:5,quote:`Brilliant course for engineering students. The visual explanations for linear algebra made everything click.`,avatar:`/images/avatar-3.jpg`},{id:`r8`,name:`Sneha Iyer`,course:`Machine Learning Foundations`,rating:5,quote:`A perfect introduction to AI. The hands-on projects gave me the practical experience I needed to start my ML journey.`,avatar:`/images/avatar-4.jpg`}];function M(){return`
+    `}var F=[{id:`r1`,name:`Aarav Patel`,course:`Full Stack Web Development Bootcamp`,rating:5,quote:`This bootcamp completely transformed my career. The projects were practical, and I landed a great job right after completion!`,avatar:`/images/avatar-1.jpg`},{id:`r2`,name:`Diya Sharma`,course:`Physics Masterclass for JEE Advanced`,rating:5,quote:`Aisha ma'am makes complex physics concepts so easy to understand. I finally feel confident about my JEE preparation.`,avatar:`/images/avatar-2.jpg`},{id:`r3`,name:`Rohan Gupta`,course:`Data Structures and Algorithms in Python`,rating:5,quote:`The best DSA course I've ever taken. Amit sir's explanation of dynamic programming was phenomenal.`,avatar:`/images/avatar-3.jpg`},{id:`r4`,name:`Ananya Singh`,course:`Biology for NEET - Complete Syllabus`,rating:5,quote:`Dr. Reddy's teaching style is engaging and highly informative. The mock tests provided were exactly what I needed.`,avatar:`/images/avatar-4.jpg`},{id:`r5`,name:`Karan Malhotra`,course:`Vedic Mathematics for Lightning Fast Calculations`,rating:5,quote:`I used to struggle with calculations during exams. Vedic math techniques have literally doubled my speed!`,avatar:`/images/avatar-1.jpg`},{id:`r6`,name:`Megha Nair`,course:`Spoken English Fluency Course`,rating:5,quote:`Priya ma'am helped me overcome my fear of public speaking. Highly recommend this to anyone looking to improve fluency.`,avatar:`/images/avatar-2.jpg`},{id:`r7`,name:`Ishaan Desai`,course:`Advanced Mathematics: Calculus & Linear Algebra`,rating:5,quote:`Brilliant course for engineering students. The visual explanations for linear algebra made everything click.`,avatar:`/images/avatar-3.jpg`},{id:`r8`,name:`Sneha Iyer`,course:`Machine Learning Foundations`,rating:5,quote:`A perfect introduction to AI. The hands-on projects gave me the practical experience I needed to start my ML journey.`,avatar:`/images/avatar-4.jpg`}];function I(){return`
         <section class="reviews-section" id="reviews">
             <div class="section-header">
                 <h2>What Our Students Say</h2>
@@ -191,7 +388,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 <button class="carousel-btn carousel-prev">&larr;</button>
                 <div class="carousel-viewport">
                     <div class="carousel-track" id="review-track">
-                        ${j.map((e,t)=>{let n=[`linear-gradient(135deg, #10b981 0%, #059669 100%)`,`linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)`,`linear-gradient(135deg, #ec4899 0%, #be185d 100%)`,`linear-gradient(135deg, #f59e0b 0%, #d97706 100%)`,`linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)`,`linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)`];return`
+                        ${F.map((e,t)=>{let n=[`linear-gradient(135deg, #10b981 0%, #059669 100%)`,`linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)`,`linear-gradient(135deg, #ec4899 0%, #be185d 100%)`,`linear-gradient(135deg, #f59e0b 0%, #d97706 100%)`,`linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)`,`linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)`];return`
         <div class="glass-card review-card">
             <div class="er-review-avatar-badge" style="background: ${n[t%n.length]}; margin: 0 auto 1rem auto;">
                 ${e.name[0]}
@@ -206,11 +403,11 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 </div>
                 <button class="carousel-btn carousel-next">&rarr;</button>
                 <div class="carousel-dots" id="carousel-dots">
-                    ${j.map((e,t)=>`<span class="dot ${t===0?`active`:``}" data-index="${t}"></span>`).join(``)}
+                    ${F.map((e,t)=>`<span class="dot ${t===0?`active`:``}" data-index="${t}"></span>`).join(``)}
                 </div>
             </div>
         </section>
-    `}function N(){let e=document.getElementById(`review-track`),t=document.querySelector(`.carousel-prev`),n=document.querySelector(`.carousel-next`),r=document.querySelectorAll(`.carousel-dots .dot`),i=0,a=r.length,o;if(!e||a===0)return;function s(){e.style.transform=`translateX(-${i*100}%)`,r.forEach(e=>e.classList.remove(`active`)),r[i]&&r[i].classList.add(`active`)}function c(){i=(i+1)%a,s()}function l(){i=(i-1+a)%a,s()}function u(){o=setInterval(c,4e3)}function d(){clearInterval(o)}t&&t.addEventListener(`click`,()=>{l(),d(),u()}),n&&n.addEventListener(`click`,()=>{c(),d(),u()}),r.forEach(e=>{e.addEventListener(`click`,e=>{i=parseInt(e.target.dataset.index),s(),d(),u()})});let f=document.querySelector(`.reviews-carousel`);f&&(f.addEventListener(`mouseenter`,d),f.addEventListener(`mouseleave`,u));let p=0;e&&(e.addEventListener(`touchstart`,e=>{p=e.changedTouches[0].screenX}),e.addEventListener(`touchend`,e=>{let t=e.changedTouches[0].screenX;p-t>50&&c(),t-p>50&&l()})),u()}function ee(){return`
+    `}function ee(){let e=document.getElementById(`review-track`),t=document.querySelector(`.carousel-prev`),n=document.querySelector(`.carousel-next`),r=document.querySelectorAll(`.carousel-dots .dot`),i=0,a=r.length,o;if(!e||a===0)return;function s(){e.style.transform=`translateX(-${i*100}%)`,r.forEach(e=>e.classList.remove(`active`)),r[i]&&r[i].classList.add(`active`)}function c(){i=(i+1)%a,s()}function l(){i=(i-1+a)%a,s()}function u(){o=setInterval(c,4e3)}function d(){clearInterval(o)}t&&t.addEventListener(`click`,()=>{l(),d(),u()}),n&&n.addEventListener(`click`,()=>{c(),d(),u()}),r.forEach(e=>{e.addEventListener(`click`,e=>{i=parseInt(e.target.dataset.index),s(),d(),u()})});let f=document.querySelector(`.reviews-carousel`);f&&(f.addEventListener(`mouseenter`,d),f.addEventListener(`mouseleave`,u));let p=0;e&&(e.addEventListener(`touchstart`,e=>{p=e.changedTouches[0].screenX}),e.addEventListener(`touchend`,e=>{let t=e.changedTouches[0].screenX;p-t>50&&c(),t-p>50&&l()})),u()}function L(){return`
         <section class="contact-section" id="contact">
             <div class="section-header">
                 <h2>Get In Touch</h2>
@@ -225,29 +422,28 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                             <span class="contact-icon">📧</span>
                             <div>
                                 <strong>Email</strong>
-                                <p>hello@edurain.in</p>
+                                <p>support@edurain.in</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">📞</span>
                             <div>
                                 <strong>Phone</strong>
-                                <p>+91 98765 43210</p>
+                                <p>+91 87974 43910</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">📍</span>
                             <div>
                                 <strong>Location</strong>
-                                <p>Mumbai, India</p>
+                                <p>Delhi, India</p>
                             </div>
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="#" class="social-icon" title="Twitter">𝕏</a>
-                        <a href="#" class="social-icon" title="LinkedIn">in</a>
-                        <a href="#" class="social-icon" title="Instagram">📷</a>
-                        <a href="#" class="social-icon" title="YouTube">▶</a>
+                        <a href="https://www.instagram.com/edurain_official/" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/edurainofficial/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@Eduraininstitute" target="_blank" rel="noopener noreferrer" class="social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
@@ -267,12 +463,12 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 </div>
             </div>
         </section>
-    `}function P(){let e=document.getElementById(`contact-form`),t=document.getElementById(`form-message`);e&&e.addEventListener(`submit`,async n=>{n.preventDefault();let r=document.getElementById(`contact-name`).value.trim(),i=document.getElementById(`contact-email`).value.trim(),a=document.getElementById(`contact-message`).value.trim();if(r.length<2){t.textContent=`Please enter your name (min 2 characters).`,t.className=`form-message error`;return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(i)){t.textContent=`Please enter a valid email address.`,t.className=`form-message error`;return}if(a.length<10){t.textContent=`Message must be at least 10 characters.`,t.className=`form-message error`;return}let o=document.getElementById(`contact-submit`);o.disabled=!0,o.textContent=`Sending...`;try{await _(r,i,a),t.textContent=`✅ Message sent successfully! We will get back to you soon.`,t.className=`form-message success`,e.reset()}catch{t.textContent=`❌ Failed to send message. Please try again.`,t.className=`form-message error`}finally{o.disabled=!1,o.textContent=`Send Message`}})}function F(){return`
+    `}function R(){let e=document.getElementById(`contact-form`),t=document.getElementById(`form-message`);e&&e.addEventListener(`submit`,async n=>{n.preventDefault();let r=document.getElementById(`contact-name`).value.trim(),i=document.getElementById(`contact-email`).value.trim(),a=document.getElementById(`contact-message`).value.trim();if(r.length<2){t.textContent=`Please enter your name (min 2 characters).`,t.className=`form-message error`;return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(i)){t.textContent=`Please enter a valid email address.`,t.className=`form-message error`;return}if(a.length<10){t.textContent=`Message must be at least 10 characters.`,t.className=`form-message error`;return}let o=document.getElementById(`contact-submit`);o.disabled=!0,o.textContent=`Sending...`;try{await _(r,i,a),t.textContent=`✅ Message sent successfully! We will get back to you soon.`,t.className=`form-message success`,e.reset()}catch{t.textContent=`❌ Failed to send message. Please try again.`,t.className=`form-message error`}finally{o.disabled=!1,o.textContent=`Send Message`}})}function z(){return`
         <div class="auth-modal-overlay" id="auth-modal" style="display:none;">
             <div class="auth-modal glass-card">
                 <button class="modal-close" id="modal-close">&times;</button>
                 <div class="auth-modal-header">
-                    <div class="logo"><span class="text-white">Edu</span><span class="text-accent">Rain</span> 🎓</div>
+                    <div class="logo"><span class="text-white">Edu</span><span class="text-accent">Rain</span></div>
                     <p>Welcome back! Please login or create an account.</p>
                 </div>
                 <div class="auth-tabs">
@@ -319,7 +515,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 </form>
             </div>
         </div>
-    `}function I(){let e=document.getElementById(`auth-modal`),t=document.getElementById(`modal-close`),n=document.getElementById(`login-form`),r=document.getElementById(`signup-form`);if(!e)return;document.addEventListener(`open-auth-modal`,()=>{e.style.display=`flex`,document.body.style.overflow=`hidden`});let i=()=>{e.style.display=`none`,document.body.style.overflow=``};t&&t.addEventListener(`click`,i),e.addEventListener(`click`,t=>{t.target===e&&i()}),document.addEventListener(`keydown`,t=>{t.key===`Escape`&&e.style.display===`flex`&&i()});let a=e=>{document.querySelectorAll(`.auth-tab`).forEach(e=>e.classList.remove(`active`));let t=document.querySelector(`.auth-tab[data-target="${e}"]`);t&&t.classList.add(`active`),n.style.display=e===`login-form`?`block`:`none`,r.style.display=e===`signup-form`?`block`:`none`};document.querySelectorAll(`.auth-tab`).forEach(e=>{e.addEventListener(`click`,e=>a(e.target.dataset.target))}),document.querySelectorAll(`.switch-form`).forEach(e=>{e.addEventListener(`click`,e=>{e.preventDefault(),a(e.target.dataset.target)})}),document.querySelectorAll(`.toggle-password`).forEach(e=>{e.addEventListener(`click`,()=>{let t=document.getElementById(e.dataset.target);t&&(t.type=t.type===`password`?`text`:`password`,e.textContent=t.type===`password`?`👁`:`🙈`)})}),n&&n.addEventListener(`submit`,async e=>{e.preventDefault();let t=document.getElementById(`login-email`).value.trim(),r=document.getElementById(`login-password`).value,a=document.getElementById(`login-error`),o=n.querySelector(`.btn-text`),s=n.querySelector(`.spinner`);a.textContent=``,o.style.display=`none`,s.style.display=`inline-block`;try{await y(t,r),i(),n.reset()}catch(e){a.textContent=e.message||`Login failed. Please try again.`}finally{o.style.display=`inline`,s.style.display=`none`}}),r&&r.addEventListener(`submit`,async e=>{e.preventDefault();let t=document.getElementById(`signup-name`).value.trim(),n=document.getElementById(`signup-email`).value.trim(),a=document.getElementById(`signup-password`).value,o=document.getElementById(`signup-confirm`).value,s=document.getElementById(`signup-error`),c=r.querySelector(`.btn-text`),l=r.querySelector(`.spinner`);if(s.textContent=``,t.length<2){s.textContent=`Please enter your full name.`;return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(n)){s.textContent=`Please enter a valid email address.`;return}if(a.length<6){s.textContent=`Password must be at least 6 characters.`;return}if(a!==o){s.textContent=`Passwords do not match.`;return}c.style.display=`none`,l.style.display=`inline-block`;try{await v(t,n,a),i(),r.reset()}catch(e){s.textContent=e.message||`Registration failed. Please try again.`}finally{c.style.display=`inline`,l.style.display=`none`}})}function L(){return`
+    `}function B(){let e=document.getElementById(`auth-modal`),t=document.getElementById(`modal-close`),n=document.getElementById(`login-form`),r=document.getElementById(`signup-form`);if(!e)return;document.addEventListener(`open-auth-modal`,()=>{e.style.display=`flex`,document.body.style.overflow=`hidden`});let i=()=>{e.style.display=`none`,document.body.style.overflow=``};t&&t.addEventListener(`click`,i),e.addEventListener(`click`,t=>{t.target===e&&i()}),document.addEventListener(`keydown`,t=>{t.key===`Escape`&&e.style.display===`flex`&&i()});let a=e=>{document.querySelectorAll(`.auth-tab`).forEach(e=>e.classList.remove(`active`));let t=document.querySelector(`.auth-tab[data-target="${e}"]`);t&&t.classList.add(`active`),n.style.display=e===`login-form`?`block`:`none`,r.style.display=e===`signup-form`?`block`:`none`};document.querySelectorAll(`.auth-tab`).forEach(e=>{e.addEventListener(`click`,e=>a(e.target.dataset.target))}),document.querySelectorAll(`.switch-form`).forEach(e=>{e.addEventListener(`click`,e=>{e.preventDefault(),a(e.target.dataset.target)})}),document.querySelectorAll(`.toggle-password`).forEach(e=>{e.addEventListener(`click`,()=>{let t=document.getElementById(e.dataset.target);t&&(t.type=t.type===`password`?`text`:`password`,e.textContent=t.type===`password`?`👁`:`🙈`)})}),n&&n.addEventListener(`submit`,async e=>{e.preventDefault();let t=document.getElementById(`login-email`).value.trim(),r=document.getElementById(`login-password`).value,a=document.getElementById(`login-error`),o=n.querySelector(`.btn-text`),s=n.querySelector(`.spinner`);a.textContent=``,o.style.display=`none`,s.style.display=`inline-block`;try{await y(t,r),i(),n.reset()}catch(e){a.textContent=e.message||`Login failed. Please try again.`}finally{o.style.display=`inline`,s.style.display=`none`}}),r&&r.addEventListener(`submit`,async e=>{e.preventDefault();let t=document.getElementById(`signup-name`).value.trim(),n=document.getElementById(`signup-email`).value.trim(),a=document.getElementById(`signup-password`).value,o=document.getElementById(`signup-confirm`).value,s=document.getElementById(`signup-error`),c=r.querySelector(`.btn-text`),l=r.querySelector(`.spinner`);if(s.textContent=``,t.length<2){s.textContent=`Please enter your full name.`;return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(n)){s.textContent=`Please enter a valid email address.`;return}if(a.length<6){s.textContent=`Password must be at least 6 characters.`;return}if(a!==o){s.textContent=`Passwords do not match.`;return}c.style.display=`none`,l.style.display=`inline-block`;try{await v(t,n,a),i(),r.reset()}catch(e){s.textContent=e.message||`Registration failed. Please try again.`}finally{c.style.display=`inline`,l.style.display=`none`}})}function V(){return`
     <div class="low-light-page low-light-bg indigo-pulse-bg">
         <!-- ═══ HEADER / INTRO BANNER ═══ -->
         <section class="er-section" style="padding: var(--space-2xl) 0 var(--space-xl) 0;">
@@ -455,7 +651,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
         </div>
 
     </div>
-    `}function R(){let e=document.getElementById(`architecture-modal`),t=document.getElementById(`modal-close-btn`),n=document.getElementById(`modal-title`),r=document.getElementById(`mermaid-diagram-container`);document.querySelectorAll(`.view-architecture-btn`).forEach(t=>{t.addEventListener(`click`,()=>{let i=t.dataset.project,a=`System Architecture`,o=``;if(i===`credit-risk`?(a=`💳 Credit Risk Assessment — Multi-Agent Architecture`,o=`
+    `}function H(){let e=document.getElementById(`architecture-modal`),t=document.getElementById(`modal-close-btn`),n=document.getElementById(`modal-title`),r=document.getElementById(`mermaid-diagram-container`);document.querySelectorAll(`.view-architecture-btn`).forEach(t=>{t.addEventListener(`click`,()=>{let i=t.dataset.project,a=`System Architecture`,o=``;if(i===`credit-risk`?(a=`💳 Credit Risk Assessment — Multi-Agent Architecture`,o=`
     graph TD
         A["Input Data: Credit Bureau & Bank Statements"] --> B["Data Preprocessing Agent"]
         B --> C["Feature Extraction & Risk Scoring Agent"]
@@ -486,7 +682,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
         style D fill:#831843,stroke:#f472b6,stroke-width:2px,color:#ffffff
         style E fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#ffffff
         style H fill:#065f46,stroke:#34d399,stroke-width:2px,color:#ffffff
-    `),n.textContent=a,r.innerHTML=`<div class="mermaid">${o}</div>`,e.classList.add(`active`),window.mermaid)try{window.mermaid.initialize({startOnLoad:!1,theme:`dark`}),window.mermaid.run({nodes:r.querySelectorAll(`.mermaid`)})}catch(e){console.error(`Mermaid render error:`,e)}})}),t&&t.addEventListener(`click`,()=>{e.classList.remove(`active`)}),e&&e.addEventListener(`click`,t=>{t.target===e&&e.classList.remove(`active`)});let i=document.getElementById(`reflection-journal-form`),a=document.getElementById(`journal-status`);i&&i.addEventListener(`submit`,e=>{e.preventDefault(),a&&(a.style.display=`block`,setTimeout(()=>{a.style.display=`none`,i.reset()},3e3))})}function z(){return`
+    `),n.textContent=a,r.innerHTML=`<div class="mermaid">${o}</div>`,e.classList.add(`active`),window.mermaid)try{window.mermaid.initialize({startOnLoad:!1,theme:`dark`}),window.mermaid.run({nodes:r.querySelectorAll(`.mermaid`)})}catch(e){console.error(`Mermaid render error:`,e)}})}),t&&t.addEventListener(`click`,()=>{e.classList.remove(`active`)}),e&&e.addEventListener(`click`,t=>{t.target===e&&e.classList.remove(`active`)});let i=document.getElementById(`reflection-journal-form`),a=document.getElementById(`journal-status`);i&&i.addEventListener(`submit`,e=>{e.preventDefault(),a&&(a.style.display=`block`,setTimeout(()=>{a.style.display=`none`,i.reset()},3e3))})}function U(){return`
     <!-- ═══ SECTION A: HERO AUTO-SCROLL BANNER (Restored Original Layout & Aspect Ratio) ═══ -->
     <section id="er-hero-banner" style="position:relative; width:100%; overflow:hidden; background:#0e3a24;">
 
@@ -494,23 +690,23 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
 
         <!-- SLIDE 1 — FOUNDATION COURSES BANNER -->
         <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-11-a7030a92-dc08-48c2-b85c-b8e62024f50c.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          <img src="https://cdn.phototourl.com/free/2026-08-11-9182f96d-b0d3-40b7-a92d-52fa39089fe8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
         </a>
 
         <!-- SLIDE 2 — NEET BATCH -->
         <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-11-9182f96d-b0d3-40b7-a92d-52fa39089fe8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          <img src="https://cdn.phototourl.com/free/2026-08-11-e4468359-9693-4f56-9f6a-88775f0b4e55.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
         </a>
 
 
         <!-- SLIDE 3 — FOUNDATION COURSES BANNER -->
         <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-11-e4468359-9693-4f56-9f6a-88775f0b4e55.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          <img src="https://cdn.phototourl.com/free/2026-08-11-619f7a94-6a9a-453c-908b-1651484fe7d5.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
         </a>
 
         <!-- SLIDE 4 — JOURNEY & INTROSPECTION -->
         <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-11-619f7a94-6a9a-453c-908b-1651484fe7d5.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          <img src="https://cdn.phototourl.com/free/2026-08-14-1e9adc87-cc2a-4bcf-8378-cb876b01aba8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
         </a>
 
       </div>
@@ -537,7 +733,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
         <button class="er-dot" data-index="3" aria-label="Slide 4"></button>
       </div>
     </section>
-  `}function B(){let e=document.getElementById(`er-slider-track`),t=document.querySelectorAll(`.er-dot`),n=document.querySelectorAll(`.er-slide`),r=document.getElementById(`er-arrow-prev`),i=document.getElementById(`er-arrow-next`);if(!e||!n.length)return;let a=0,o;function s(r){a=(r%n.length+n.length)%n.length,e.style.transform=`translateX(-${a*100}%)`,t.forEach((e,t)=>{e.classList.toggle(`er-dot-active`,t===a)})}function c(){l(),o=setInterval(()=>s(a+1),3500)}function l(){clearInterval(o)}t.forEach(e=>{e.addEventListener(`click`,()=>{l(),s(parseInt(e.dataset.index)),c()})}),r&&r.addEventListener(`click`,e=>{e.preventDefault(),l(),s(a-1),c()}),i&&i.addEventListener(`click`,e=>{e.preventDefault(),l(),s(a+1),c()});let u=0;e.addEventListener(`touchstart`,e=>{u=e.changedTouches[0].screenX},{passive:!0}),e.addEventListener(`touchend`,e=>{let t=u-e.changedTouches[0].screenX;Math.abs(t)>50&&(l(),s(a+(t>0?1:-1)),c())}),e.addEventListener(`mouseenter`,l),e.addEventListener(`mouseleave`,c),s(0),c()}function V(){return`
+  `}function W(){let e=document.getElementById(`er-slider-track`),t=document.querySelectorAll(`.er-dot`),n=document.querySelectorAll(`.er-slide`),r=document.getElementById(`er-arrow-prev`),i=document.getElementById(`er-arrow-next`);if(!e||!n.length)return;let a=0,o;function s(r){a=(r%n.length+n.length)%n.length,e.style.transform=`translateX(-${a*100}%)`,t.forEach((e,t)=>{e.classList.toggle(`er-dot-active`,t===a)})}function c(){l(),o=setInterval(()=>s(a+1),3500)}function l(){clearInterval(o)}t.forEach(e=>{e.addEventListener(`click`,()=>{l(),s(parseInt(e.dataset.index)),c()})}),r&&r.addEventListener(`click`,e=>{e.preventDefault(),l(),s(a-1),c()}),i&&i.addEventListener(`click`,e=>{e.preventDefault(),l(),s(a+1),c()});let u=0;e.addEventListener(`touchstart`,e=>{u=e.changedTouches[0].screenX},{passive:!0}),e.addEventListener(`touchend`,e=>{let t=u-e.changedTouches[0].screenX;Math.abs(t)>50&&(l(),s(a+(t>0?1:-1)),c())}),e.addEventListener(`mouseenter`,l),e.addEventListener(`mouseleave`,c),s(0),c()}function G(){return`
     <!-- ═══ SECTION B: POPULAR COURSES ═══ -->
     <section id="er-popular-courses" class="er-section" style="background:linear-gradient(160deg,#e8f5ee 0%,#d4eddf 50%,#c5e8d5 100%);">
         <div class="er-container">
@@ -574,7 +770,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
             </div>
         </div>
     </section>
-    `}function H(){return`
+    `}function K(){return`
     <!-- ═══ SECTION C: BOOK FREE DEMO ═══ -->
     <section id="er-free-demo" class="er-section" style="background:linear-gradient(135deg,#f0faf4 0%,#d8f3e3 100%);">
         <div class="er-container">
@@ -628,7 +824,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
             </div>
         </div>
     </section>
-    `}function U(){return`
+    `}function q(){return`
     <!-- ═══ FACULTY SECTION ═══ -->
     <section id="er-faculty" class="er-section" style="background: linear-gradient(180deg, #f0faf4 0%, #ffffff 100%); padding: 4.236rem 0;">
         <div class="er-container">
@@ -651,7 +847,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 
                 <div class="er-faculty-track-container" id="er-faculty-container">
                     <div class="er-faculty-grid" id="er-faculty-track">
-                        ${[{name:`Mrs. Ritu ma'am`,subject:`Chemistry`,exp:`14 Years Exp.`,desc:`She is dedicated to building strong fundamentals and developing problem-solving excellence in students.`,avatarBg:`linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)`,icon:`🧪`},{name:`Mr. Diwakar sir`,subject:`Physics`,exp:`15 Years Exp.`,desc:`He is recognized for his concept-driven teaching approach and consistent success in guiding NEET aspirants toward top ranks.`,avatarBg:`linear-gradient(135deg, #065f46 0%, #10b981 100%)`,icon:`⚡`},{name:`Mr. Nitin sir`,subject:`Biology`,exp:`16 Years Exp.`,desc:`A highly respected Biology mentor, He is known for making complex concepts simple and helping students achieve NEET results.`,avatarBg:`linear-gradient(135deg, #7c2d12 0%, #f97316 100%)`,icon:`🧬`},{name:`Dr. Aakash Sharma`,subject:`Organic Chemistry`,exp:`12 Years Exp.`,desc:`Specialist in reaction mechanisms, helping students master organic chemistry with logical flow and memory maps.`,avatarBg:`linear-gradient(135deg, #581c87 0%, #a855f7 100%)`,icon:`🔬`},{name:`Ms. Priya Verma`,subject:`Mathematics`,exp:`10 Years Exp.`,desc:`Focused on short-cut techniques and speed math for JEE Advanced, building student confidence step-by-step.`,avatarBg:`linear-gradient(135deg, #831843 0%, #ec4899 100%)`,icon:`📐`},{name:`Mr. Rajesh Kumar`,subject:`Physical Chemistry`,exp:`14 Years Exp.`,desc:`Simplifies numerical problem solving and formula applications with real-world practical illustrations.`,avatarBg:`linear-gradient(135deg, #1e293b 0%, #64748b 100%)`,icon:`⚗️`}].map((e,t)=>{let n=e.name.replace(/^(Mr\.|Mrs\.|Ms\.|Dr\.)\s*/,``).split(` `).map(e=>e[0]).join(``);return`
+                        ${[{name:`Mr. Manoj sir`,subject:`English`,exp:`14 Years Exp.`,desc:`He is a passionate English mentor dedicated to mastering language skills, literature, and communication excellence.`,avatarBg:`linear-gradient(135deg, #4c1d95 0%, #8b5cf6 100%)`,icon:`📖`},{name:`Mrs. Ritu ma'am`,subject:`Chemistry`,exp:`14 Years Exp.`,desc:`She is dedicated to building strong fundamentals and developing problem-solving excellence in students.`,avatarBg:`linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)`,icon:`🧪`},{name:`Mr. Diwakar sir`,subject:`Physics`,exp:`15 Years Exp.`,desc:`He is recognized for his concept-driven teaching approach and consistent success in guiding NEET aspirants toward top ranks.`,avatarBg:`linear-gradient(135deg, #065f46 0%, #10b981 100%)`,icon:`⚡`},{name:`Mr. Nitin sir`,subject:`Biology`,exp:`16 Years Exp.`,desc:`A highly respected Biology mentor, He is known for making complex concepts simple and helping students achieve NEET results.`,avatarBg:`linear-gradient(135deg, #7c2d12 0%, #f97316 100%)`,icon:`🧬`},{name:`Ms. Khushbu ma'am`,subject:`Social Studies`,exp:`5 Years Exp.`,desc:`Passionate Social Studies mentor with 5 years of teaching experience, making History, Civics, and Geography engaging and accessible.`,avatarBg:`linear-gradient(135deg, #0284c7 0%, #38bdf8 100%)`,icon:`🌍`},{name:`Mr. Sujeet sir`,subject:`Mathematics`,exp:`15 Years Exp.`,desc:`A highly experienced Mathematics teacher with 15 years of experience, specializing in Foundation classes (6th to 10th).`,avatarBg:`linear-gradient(135deg, #0f766e 0%, #14b8a6 100%)`,icon:`📐`},{name:`Mr. Debashish Banerjee sir`,subject:`Mathematics`,exp:`13 Years Exp.`,desc:`Expert Mathematics mentor with 13 years of experience, specializing in Class 11th & 12th and JEE preparation.`,avatarBg:`linear-gradient(135deg, #4338ca 0%, #6366f1 100%)`,icon:`🔢`}].map((e,t)=>{let n=e.name.replace(/^(Mr\.|Mrs\.|Ms\.|Dr\.)\s*/,``).split(` `).map(e=>e[0]).join(``);return`
         <div class="er-faculty-card glass-card er-reveal visible">
             <div class="er-faculty-img-wrap" style="background: ${e.avatarBg};">
                 <div class="er-faculty-avatar-fallback" style="display:flex;">
@@ -678,7 +874,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
             </div>
         </div>
     </section>
-    `}function W(){let e=document.getElementById(`er-faculty-container`),t=document.getElementById(`er-faculty-track`),n=document.getElementById(`er-faculty-prev`),r=document.getElementById(`er-faculty-next`);if(!e||!t)return;let i=null;function a(){let t=e.scrollWidth-e.clientWidth;e.scrollLeft>=t-20?e.scrollTo({left:0,behavior:`smooth`}):e.scrollBy({left:340,behavior:`smooth`})}function o(){if(e.scrollLeft<=10){let t=e.scrollWidth-e.clientWidth;e.scrollTo({left:t,behavior:`smooth`})}else e.scrollBy({left:-340,behavior:`smooth`})}function s(){c(),i=setInterval(a,3500)}function c(){i&&=(clearInterval(i),null)}n&&n.addEventListener(`click`,()=>{o(),c(),s()}),r&&r.addEventListener(`click`,()=>{a(),c(),s()}),e.addEventListener(`mouseenter`,c),e.addEventListener(`mouseleave`,s),e.addEventListener(`touchstart`,c,{passive:!0}),e.addEventListener(`touchend`,s,{passive:!0}),s()}function G(){let e=[{name:`Kavya Sen.`,rating:5,quote:`Yahan ke experienced teachers har concept ko detail mein samjhate hain aur doubts ko patiently clear karte hain. Regular tests, detailed performance analysis, aur consistent guidance ne meri accuracy aur confidence dono ko improve kiya .`,bg:`linear-gradient(135deg, #10b981 0%, #059669 100%)`},{name:`Vivek Singh`,rating:4,quote:`I was struggling with Biology and Chemistry before joining EduRain and teachers explained every topic in a very simple way and doubt sessions were really helpful. Highly recommended for NEET aspirants.`,bg:`linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)`},{name:`Neha Yadav`,rating:4,quote:`Mujhe sabse achha yeh laga ki teachers sirf syllabus complete karne par focus nahi karte, balki concepts ko achhe se clear karwate hain. NEET preparation ke liye EduRain perfect platform hai`,bg:`linear-gradient(135deg, #ec4899 0%, #be185d 100%)`},{name:`Aarav Sharma`,rating:5,quote:`The mock test series and detailed rank analysis gave me real exam environment experience. Solved all my doubts instantly in live sessions.`,bg:`linear-gradient(135deg, #f59e0b 0%, #d97706 100%)`},{name:`Ananya Roy`,rating:5,quote:`EduRain's interactive live classes and recorded sessions gave me the flexibility to revise complex physics formulas anytime. Scored 680+ in NEET!`,bg:`linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)`},{name:`Rohan Gupta`,rating:5,quote:`Faculty members are super approachable. They solved every single doubt even after class hours. Best platform for JEE preparation.`,bg:`linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)`}],t=e=>{let t=``;for(let n=0;n<5;n++)t+=n<e?`★`:`☆`;return t};return`
+    `}function J(){let e=document.getElementById(`er-faculty-container`),t=document.getElementById(`er-faculty-track`),n=document.getElementById(`er-faculty-prev`),r=document.getElementById(`er-faculty-next`);if(!e||!t)return;let i=null;function a(){let t=e.scrollWidth-e.clientWidth;e.scrollLeft>=t-20?e.scrollTo({left:0,behavior:`smooth`}):e.scrollBy({left:340,behavior:`smooth`})}function o(){if(e.scrollLeft<=10){let t=e.scrollWidth-e.clientWidth;e.scrollTo({left:t,behavior:`smooth`})}else e.scrollBy({left:-340,behavior:`smooth`})}function s(){c(),i=setInterval(a,3500)}function c(){i&&=(clearInterval(i),null)}n&&n.addEventListener(`click`,()=>{o(),c(),s()}),r&&r.addEventListener(`click`,()=>{a(),c(),s()}),e.addEventListener(`mouseenter`,c),e.addEventListener(`mouseleave`,s),e.addEventListener(`touchstart`,c,{passive:!0}),e.addEventListener(`touchend`,s,{passive:!0}),s()}function Y(){let e=[{name:`Kavya Sen.`,rating:5,quote:`Yahan ke experienced teachers har concept ko detail mein samjhate hain aur doubts ko patiently clear karte hain. Regular tests, detailed performance analysis, aur consistent guidance ne meri accuracy aur confidence dono ko improve kiya .`,bg:`linear-gradient(135deg, #10b981 0%, #059669 100%)`},{name:`Vivek Singh`,rating:4,quote:`I was struggling with Biology and Chemistry before joining EduRain and teachers explained every topic in a very simple way and doubt sessions were really helpful. Highly recommended for NEET aspirants.`,bg:`linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)`},{name:`Neha Yadav`,rating:4,quote:`Mujhe sabse achha yeh laga ki teachers sirf syllabus complete karne par focus nahi karte, balki concepts ko achhe se clear karwate hain. NEET preparation ke liye EduRain perfect platform hai`,bg:`linear-gradient(135deg, #ec4899 0%, #be185d 100%)`},{name:`Aarav Sharma`,rating:5,quote:`The mock test series and detailed rank analysis gave me real exam environment experience. Solved all my doubts instantly in live sessions.`,bg:`linear-gradient(135deg, #f59e0b 0%, #d97706 100%)`},{name:`Ananya Roy`,rating:5,quote:`EduRain's interactive live classes and recorded sessions gave me the flexibility to revise complex physics formulas anytime. Scored 680+ in NEET!`,bg:`linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)`},{name:`Rohan Gupta`,rating:5,quote:`Faculty members are super approachable. They solved every single doubt even after class hours. Best platform for JEE preparation.`,bg:`linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)`}],t=e=>{let t=``;for(let n=0;n<5;n++)t+=n<e?`★`:`☆`;return t};return`
     <!-- ═══ REVIEWS SECTION ═══ -->
     <section id="er-home-reviews" class="er-section" style="background: #f8fafc; padding: 4.236rem 0;">
         <div class="er-container">
@@ -733,7 +929,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
             </div>
         </div>
     </section>
-    `}function K(){let e=document.getElementById(`er-home-reviews-track`),t=document.getElementById(`er-reviews-wrapper`),n=document.getElementById(`er-reviews-prev`),r=document.getElementById(`er-reviews-next`);if(!e||!t)return;let i=null;function a(){let e=t.scrollWidth-t.clientWidth;t.scrollLeft>=e-20?t.scrollTo({left:0,behavior:`smooth`}):t.scrollBy({left:380,behavior:`smooth`})}function o(){if(t.scrollLeft<=10){let e=t.scrollWidth-t.clientWidth;t.scrollTo({left:e,behavior:`smooth`})}else t.scrollBy({left:-380,behavior:`smooth`})}function s(){c(),i=setInterval(a,3500)}function c(){i&&=(clearInterval(i),null)}n&&n.addEventListener(`click`,()=>{o(),c(),s()}),r&&r.addEventListener(`click`,()=>{a(),c(),s()});let l=!1,u,d;t.addEventListener(`mousedown`,e=>{l=!0,u=e.pageX-t.offsetLeft,d=t.scrollLeft,c()}),t.addEventListener(`mouseleave`,()=>{l=!1,s()}),t.addEventListener(`mouseenter`,c),t.addEventListener(`mouseup`,()=>{l=!1,s()}),t.addEventListener(`mousemove`,e=>{if(!l)return;e.preventDefault();let n=(e.pageX-t.offsetLeft-u)*2;t.scrollLeft=d-n}),t.addEventListener(`touchstart`,c,{passive:!0}),t.addEventListener(`touchend`,s,{passive:!0}),s()}function q(){return`
+    `}function X(){let e=document.getElementById(`er-home-reviews-track`),t=document.getElementById(`er-reviews-wrapper`),n=document.getElementById(`er-reviews-prev`),r=document.getElementById(`er-reviews-next`);if(!e||!t)return;let i=null;function a(){let e=t.scrollWidth-t.clientWidth;t.scrollLeft>=e-20?t.scrollTo({left:0,behavior:`smooth`}):t.scrollBy({left:380,behavior:`smooth`})}function o(){if(t.scrollLeft<=10){let e=t.scrollWidth-t.clientWidth;t.scrollTo({left:e,behavior:`smooth`})}else t.scrollBy({left:-380,behavior:`smooth`})}function s(){c(),i=setInterval(a,3500)}function c(){i&&=(clearInterval(i),null)}n&&n.addEventListener(`click`,()=>{o(),c(),s()}),r&&r.addEventListener(`click`,()=>{a(),c(),s()});let l=!1,u,d;t.addEventListener(`mousedown`,e=>{l=!0,u=e.pageX-t.offsetLeft,d=t.scrollLeft,c()}),t.addEventListener(`mouseleave`,()=>{l=!1,s()}),t.addEventListener(`mouseenter`,c),t.addEventListener(`mouseup`,()=>{l=!1,s()}),t.addEventListener(`mousemove`,e=>{if(!l)return;e.preventDefault();let n=(e.pageX-t.offsetLeft-u)*2;t.scrollLeft=d-n}),t.addEventListener(`touchstart`,c,{passive:!0}),t.addEventListener(`touchend`,s,{passive:!0}),s()}function Z(){return`
     <!-- ═══ SECTION D: IMPACT NUMBERS ═══ -->
     <section id="er-impact" class="er-section" style="background:#ffffff; padding: 4.236rem 0;">
         <div class="er-container">
@@ -817,11 +1013,10 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
             </div>
         </div>
     </section>
-    `}function J(){let e=document.querySelectorAll(`.er-count`),t=!1;function n(e){let t=parseInt(e.dataset.target,10),n=e.dataset.suffix||``,r=0;function i(e){return t>=1e6?(e/1e6).toFixed(0)+n:e.toLocaleString(`en-IN`)+n}e.textContent=i(0);let a=setInterval(()=>{r=Math.min(r+Math.ceil(t/80),t),e.textContent=i(r),r>=t&&(clearInterval(a),e.textContent=i(t),e.style.animation=`erCountPing 0.4s ease-out`,setTimeout(()=>{e.style.animation=``},400))},25)}let r=document.getElementById(`er-impact`);r&&(new IntersectionObserver(r=>{r.forEach(r=>{r.isIntersecting&&!t&&(t=!0,e.forEach(e=>n(e)))})},{threshold:.25}).observe(r),document.querySelectorAll(`.er-impact-card`).forEach(e=>{let t=e.querySelector(`.er-impact-bar`);e.addEventListener(`mouseenter`,()=>{t&&t.classList.add(`er-bar-expanded`),e.style.transform=`translateY(-6px)`}),e.addEventListener(`mouseleave`,()=>{t&&t.classList.remove(`er-bar-expanded`),e.style.transform=`translateY(0)`})}))}function Y(){return`
-    <!-- ═══ SECTION E: APP DOWNLOAD ═══ -->
+    `}function Q(){let e=document.querySelectorAll(`.er-count`),t=!1;function n(e){let t=parseInt(e.dataset.target,10),n=e.dataset.suffix||``,r=0;function i(e){return t>=1e6?(e/1e6).toFixed(0)+n:e.toLocaleString(`en-IN`)+n}e.textContent=i(0);let a=setInterval(()=>{r=Math.min(r+Math.ceil(t/80),t),e.textContent=i(r),r>=t&&(clearInterval(a),e.textContent=i(t),e.style.animation=`erCountPing 0.4s ease-out`,setTimeout(()=>{e.style.animation=``},400))},25)}let r=document.getElementById(`er-impact`);r&&(new IntersectionObserver(r=>{r.forEach(r=>{r.isIntersecting&&!t&&(t=!0,e.forEach(e=>n(e)))})},{threshold:.25}).observe(r),document.querySelectorAll(`.er-impact-card`).forEach(e=>{let t=e.querySelector(`.er-impact-bar`);e.addEventListener(`mouseenter`,()=>{t&&t.classList.add(`er-bar-expanded`),e.style.transform=`translateY(-6px)`}),e.addEventListener(`mouseleave`,()=>{t&&t.classList.remove(`er-bar-expanded`),e.style.transform=`translateY(0)`})}))}function $(){return`
+
     <section id="er-app-download" class="er-section er-app-bg">
 
-        <!-- Background decorative blobs -->
         <div class="er-app-blob er-app-blob-1"></div>
         <div class="er-app-blob er-app-blob-2"></div>
 
@@ -830,7 +1025,6 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
 
                 <!-- LEFT — Text & store buttons -->
                 <div class="er-app-text er-reveal visible">
-                    <div class="er-app-platform-badge">📱 Now Available on All Platforms</div>
 
                     <h2 class="er-app-heading">
                         Learn from
@@ -917,14 +1111,14 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
             </div>
         </div>
     </section>
-    `}var X={"#home":{render:()=>z()+V()+H()+U()+G()+q()+Y(),postRender:()=>{B(),W(),K(),J(),Z()}},"#courses":{render:()=>E(),postRender:()=>D()},"#blogs":{render:()=>k(),postRender:()=>{}},"#journey":{render:()=>L(),postRender:()=>R()},"#about":{render:()=>A(),postRender:()=>{}},"#reviews":{render:()=>M(),postRender:()=>N()},"#contact":{render:()=>ee(),postRender:()=>P()}};function Z(){let e=document.querySelectorAll(`.er-reveal`);if(!e.length)return;let t=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.classList.add(`visible`),t.unobserve(e.target))})},{threshold:.12});e.forEach(e=>t.observe(e))}var Q=()=>{let e=document.getElementById(`app`),t=()=>{let t=window.location.hash;if(!t||t===`#`){t=`#home`,window.location.hash=t;return}let n=t.split(`?`)[0],r=X[n]||{render:()=>`<div class="page-404"><h1>404</h1><p>Page not found</p><a href="#home" class="btn btn-accent">Go Home</a></div>`,postRender:()=>{}},i=S(),a=r.render(),o=w(),s=F();e.innerHTML=`
+    `}var te={"#home":{render:()=>U()+G()+K()+q()+Y()+Z()+$(),postRender:()=>{W(),J(),X(),Q(),ne()}},"#courses":{render:()=>D(),postRender:()=>O()},"#blogs":{render:()=>j(),postRender:()=>N()},"#journey":{render:()=>V(),postRender:()=>H()},"#about":{render:()=>P(),postRender:()=>{}},"#reviews":{render:()=>I(),postRender:()=>ee()},"#contact":{render:()=>L(),postRender:()=>R()}};function ne(){let e=document.querySelectorAll(`.er-reveal`);if(!e.length)return;let t=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.classList.add(`visible`),t.unobserve(e.target))})},{threshold:.12});e.forEach(e=>t.observe(e))}var re=()=>{let e=document.getElementById(`app`),t=()=>{let t=window.location.hash;if(!t||t===`#`){t=`#home`,window.location.hash=t;return}let n=t.split(`?`)[0].split(`/`)[0],r=te[n]||{render:()=>`<div class="page-404"><h1>404</h1><p>Page not found</p><a href="#home" class="btn btn-accent">Go Home</a></div>`,postRender:()=>{}},i=S(),a=r.render(),o=w(),s=z();e.innerHTML=`
       ${i}
       <main class="main-content fade-in-section">
         ${a}
       </main>
       ${o}
       ${s}
-    `,requestAnimationFrame(()=>{let t=e.querySelector(`.main-content`);t&&t.classList.add(`visible`)}),document.querySelectorAll(`.nav-link`).forEach(e=>{e.classList.toggle(`active`,e.getAttribute(`href`)===n)}),window.scrollTo({top:0,behavior:`instant`}),C(),I(),r.postRender(),window.observeFadeElements&&window.observeFadeElements()};window.addEventListener(`hashchange`,t),t()};function $(){let e=document.createElement(`div`);e.id=`er-fab-container`,e.innerHTML=`
+    `,requestAnimationFrame(()=>{let t=e.querySelector(`.main-content`);t&&t.classList.add(`visible`)}),document.querySelectorAll(`.nav-link`).forEach(e=>{e.classList.toggle(`active`,e.getAttribute(`href`)===n)}),window.scrollTo({top:0,behavior:`instant`}),C(),B(),T(),r.postRender(),window.observeFadeElements&&window.observeFadeElements()};window.addEventListener(`hashchange`,t),t()};function ie(){let e=document.createElement(`div`);e.id=`er-fab-container`,e.innerHTML=`
         <!-- AI Chat Window (Hidden by default) -->
         <div id="er-chat-window" class="er-chat-hidden">
             <div class="er-chat-header">
@@ -968,7 +1162,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><circle cx="9" cy="11" r="1" fill="currentColor"/><circle cx="15" cy="11" r="1" fill="currentColor"/><path d="M9 15c.5 1 2 1.5 3 1.5s2.5-.5 3-1.5"/></svg>
             </button>
         </div>
-    `,document.body.appendChild(e);let t=document.getElementById(`er-fab-scroll`),n=document.getElementById(`er-fab-chat`),r=document.getElementById(`er-chat-close`),i=document.getElementById(`er-chat-window`);window.addEventListener(`scroll`,()=>{window.scrollY>300?t.classList.add(`er-fab-visible`):t.classList.remove(`er-fab-visible`)}),t.addEventListener(`click`,()=>{window.scrollTo({top:0,behavior:`smooth`})});let a=()=>{i.classList.toggle(`er-chat-hidden`)};n.addEventListener(`click`,a),r.addEventListener(`click`,a)}document.addEventListener(`DOMContentLoaded`,()=>{Q(),$(),x(e=>{let t=document.getElementById(`auth-btn-area`);if(t)if(e)t.innerHTML=`
+    `,document.body.appendChild(e);let t=document.getElementById(`er-fab-scroll`),n=document.getElementById(`er-fab-chat`),r=document.getElementById(`er-chat-close`),i=document.getElementById(`er-chat-window`);window.addEventListener(`scroll`,()=>{window.scrollY>300?t.classList.add(`er-fab-visible`):t.classList.remove(`er-fab-visible`)}),t.addEventListener(`click`,()=>{window.scrollTo({top:0,behavior:`smooth`})});let a=()=>{i.classList.toggle(`er-chat-hidden`)};n.addEventListener(`click`,a),r.addEventListener(`click`,a)}document.addEventListener(`DOMContentLoaded`,()=>{re(),ie(),x(e=>{let t=document.getElementById(`auth-btn-area`);if(t)if(e)t.innerHTML=`
         <span class="user-greeting">Hi, ${e.displayName||e.email.split(`@`)[0]}</span>
         <button class="btn btn-outline btn-sm" id="logout-btn">Logout</button>
       `;else{t.innerHTML=`
