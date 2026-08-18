@@ -11,7 +11,7 @@ export function renderNavbar() {
                             <div>
                                 <span class="text-white">Edu</span><span class="text-accent">Rain</span>
                             </div>
-                            <span style="font-size: 0.65rem; color: #a7f3d0; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Victory Starts Here</span>
+                            <span style="font-size: 0.45rem; color: #a7f3d0; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Victory Starts Here</span>
                         </div>
                     </a>
                 </div>
@@ -22,8 +22,8 @@ export function renderNavbar() {
                     <a href="#about" class="nav-link">About Us</a>
                     <a href="#contact" class="nav-link">Contact Us</a>
                 </div>
-                <div class="auth-btn-area" id="auth-btn-area">
-                    <button class="btn btn-accent" id="login-btn">Login/Signup</button>
+                <div class="auth-btn-area">
+                    <button class="btn btn-accent login-btn">Login</button>
                 </div>
                 <button class="hamburger" id="hamburger-btn">
                     <span></span>
@@ -31,54 +31,89 @@ export function renderNavbar() {
                     <span></span>
                 </button>
             </div>
-            <div class="mobile-menu" id="mobile-menu">
+        </nav>
+        <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-header">
+                <div class="logo">
+                    <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                        <img src="./images/logo.png" alt="EduRain Logo" style="height: 40px; width: auto; max-width: 50px; object-fit: contain;">
+                        <div style="display: flex; flex-direction: column; line-height: 1.2;">
+                            <div>
+                                <span class="text-white">Edu</span><span class="text-accent">Rain</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <button class="mobile-menu-close" id="mobile-menu-close">&times;</button>
+            </div>
+            <div class="mobile-menu-body">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#courses" class="nav-link">Our Courses</a>
                 <a href="#blogs" class="nav-link">Blogs</a>
                 <a href="#about" class="nav-link">About Us</a>
                 <a href="#contact" class="nav-link">Contact Us</a>
             </div>
-        </nav>
+            <div class="mobile-menu-footer auth-btn-area">
+                <button class="btn btn-accent login-btn" style="width: 100%;">Login/Register</button>
+            </div>
+        </div>
     `;
 }
 
 export function initNavbar() {
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
     const navLinks = document.querySelectorAll('.mobile-menu .nav-link');
-    const loginBtn = document.getElementById('login-btn');
-    const authBtnArea = document.getElementById('auth-btn-area');
+    const loginBtns = document.querySelectorAll('.login-btn');
+    const authBtnAreas = document.querySelectorAll('.auth-btn-area');
     const navbar = document.getElementById('main-nav');
 
+    const toggleMenu = () => {
+        hamburgerBtn.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        if (mobileMenuOverlay) mobileMenuOverlay.classList.toggle('active');
+    };
+
+    const closeMenu = () => {
+        if (hamburgerBtn) hamburgerBtn.classList.remove('active');
+        if (mobileMenu) mobileMenu.classList.remove('active');
+        if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('active');
+    };
+
     if (hamburgerBtn && mobileMenu) {
-        hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
+        hamburgerBtn.addEventListener('click', toggleMenu);
+    }
+    
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', closeMenu);
+    }
+    
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', closeMenu);
     }
 
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (hamburgerBtn && mobileMenu) {
-                hamburgerBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
+        link.addEventListener('click', closeMenu);
+    });
+
+    loginBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.dispatchEvent(new CustomEvent('open-auth-modal'));
+            closeMenu();
+        });
+    });
+    
+    authBtnAreas.forEach(area => {
+        area.addEventListener('click', (e) => {
+            if(e.target.classList.contains('logout-btn')) {
+                logoutUser();
+                closeMenu();
             }
         });
     });
-
-    if (loginBtn) {
-        loginBtn.addEventListener('click', () => {
-            document.dispatchEvent(new CustomEvent('open-auth-modal'));
-        });
-    }
-    
-    if (authBtnArea) {
-        authBtnArea.addEventListener('click', (e) => {
-            if(e.target.id === 'logout-btn') {
-                logoutUser();
-            }
-        });
-    }
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {

@@ -18,27 +18,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Listen to Auth State Changes and update navbar
   onAuthChange((user) => {
-    const authBtnArea = document.getElementById('auth-btn-area');
-    if (!authBtnArea) return;
-
-    if (user) {
-      const displayName = user.displayName || user.email.split('@')[0];
-      authBtnArea.innerHTML = `
-        <span class="user-greeting">Hi, ${displayName}</span>
-        <button class="btn btn-outline btn-sm" id="logout-btn">Logout</button>
-      `;
-    } else {
-      authBtnArea.innerHTML = `
-        <button class="btn btn-accent" id="login-btn">Login</button>
-      `;
-      // Re-attach login button event
-      const loginBtn = document.getElementById('login-btn');
-      if (loginBtn) {
-        loginBtn.addEventListener('click', () => {
-          document.dispatchEvent(new CustomEvent('open-auth-modal'));
-        });
+    const authBtnAreas = document.querySelectorAll('.auth-btn-area');
+    
+    authBtnAreas.forEach(area => {
+      const isMobileMenu = area.classList.contains('mobile-menu-footer');
+      if (user) {
+        const displayName = user.displayName || user.email.split('@')[0];
+        area.innerHTML = `
+          <span class="user-greeting">Hi, ${displayName}</span>
+          <button class="btn btn-outline btn-sm logout-btn" ${isMobileMenu ? 'style="width: 100%;"' : ''}>Logout</button>
+        `;
+      } else {
+        area.innerHTML = `
+          <button class="btn btn-accent login-btn" ${isMobileMenu ? 'style="width: 100%;"' : ''}>${isMobileMenu ? 'Login/Register' : 'Login'}</button>
+        `;
+        // Re-attach login button event within this area
+        const loginBtn = area.querySelector('.login-btn');
+        if (loginBtn) {
+          loginBtn.addEventListener('click', () => {
+            document.dispatchEvent(new CustomEvent('open-auth-modal'));
+          });
+        }
       }
-    }
+    });
   });
 
   // Setup Intersection Observer for scroll animations

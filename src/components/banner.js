@@ -7,23 +7,23 @@ export function renderBanner() {
 
         <!-- SLIDE 1 — FOUNDATION COURSES BANNER -->
         <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-11-9182f96d-b0d3-40b7-a92d-52fa39089fe8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          <img src="https://cdn.phototourl.com/free/2026-08-11-9182f96d-b0d3-40b7-a92d-52fa39089fe8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
         </a>
 
         <!-- SLIDE 2 — NEET BATCH -->
         <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-11-e4468359-9693-4f56-9f6a-88775f0b4e55.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          <img src="https://cdn.phototourl.com/free/2026-08-11-e4468359-9693-4f56-9f6a-88775f0b4e55.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
         </a>
 
 
         <!-- SLIDE 3 — FOUNDATION COURSES BANNER -->
         <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-11-619f7a94-6a9a-453c-908b-1651484fe7d5.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          <img src="https://cdn.phototourl.com/free/2026-08-11-619f7a94-6a9a-453c-908b-1651484fe7d5.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
         </a>
 
         <!-- SLIDE 4 — JOURNEY & INTROSPECTION -->
         <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-14-1e9adc87-cc2a-4bcf-8378-cb876b01aba8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          <img src="https://cdn.phototourl.com/free/2026-08-14-1e9adc87-cc2a-4bcf-8378-cb876b01aba8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
         </a>
 
       </div>
