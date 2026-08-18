@@ -4,15 +4,10 @@ export function initMobileAppPopup() {
         return;
     }
 
-    // Check if the user has already dismissed the popup in this session
-    if (sessionStorage.getItem('edurain_app_popup_dismissed') === 'true') {
-        return;
-    }
-
-    // Wait a bit before showing the popup to not overwhelm the user immediately
+    // Wait exactly 3 seconds before showing the popup
     setTimeout(() => {
         showPopup();
-    }, 2500);
+    }, 3000);
 }
 
 function showPopup() {
@@ -113,7 +108,6 @@ function showPopup() {
         clearInterval(textInterval);
         overlay.classList.remove('visible');
         content.classList.remove('visible');
-        sessionStorage.setItem('edurain_app_popup_dismissed', 'true');
         
         // Remove from DOM after transition
         setTimeout(() => {
