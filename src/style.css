@@ -61,7 +61,7 @@
   --radius-full: 50%;
 
   /* Navbar height — must match actual nav padding+content height exactly */
-  --navbar-height: 90px;
+  --navbar-height: 76px;
 
   /* Transitions */
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
@@ -536,7 +536,10 @@ textarea {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 0.75rem var(--space-xl);
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-xl);
   transition: all var(--duration) var(--ease);
   background: rgba(4, 36, 23, 0.95);
   backdrop-filter: blur(16px);
@@ -550,10 +553,12 @@ textarea {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
-  padding: 0.6rem var(--space-xl);
+  padding: 0 var(--space-xl);
+  height: 66px;
 }
 
 .navbar-container {
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
@@ -2747,8 +2752,12 @@ textarea {
     margin-right: var(--space-md);
   }
 
+  :root {
+    --navbar-height: 65px;
+  }
+
   .navbar {
-    padding: var(--space-sm) var(--space-md);
+    padding: 0 var(--space-md);
   }
 
   .hide-on-mobile {
