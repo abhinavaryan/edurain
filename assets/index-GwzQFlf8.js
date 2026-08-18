@@ -8,7 +8,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                             <div>
                                 <span class="text-white">Edu</span><span class="text-accent">Rain</span>
                             </div>
-                            <span style="font-size: 0.65rem; color: #a7f3d0; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Victory Starts Here</span>
+                            <span style="font-size: 0.45rem; color: #a7f3d0; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Victory Starts Here</span>
                         </div>
                     </a>
                 </div>
@@ -19,8 +19,8 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                     <a href="#about" class="nav-link">About Us</a>
                     <a href="#contact" class="nav-link">Contact Us</a>
                 </div>
-                <div class="auth-btn-area" id="auth-btn-area">
-                    <button class="btn btn-accent" id="login-btn">Login/Signup</button>
+                <div class="auth-btn-area">
+                    <button class="btn btn-accent login-btn">Login</button>
                 </div>
                 <button class="hamburger" id="hamburger-btn">
                     <span></span>
@@ -28,15 +28,34 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                     <span></span>
                 </button>
             </div>
-            <div class="mobile-menu" id="mobile-menu">
+        </nav>
+        <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-header">
+                <div class="logo">
+                    <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                        <img src="./images/logo.png" alt="EduRain Logo" style="height: 40px; width: auto; max-width: 50px; object-fit: contain;">
+                        <div style="display: flex; flex-direction: column; line-height: 1.2;">
+                            <div>
+                                <span class="text-white">Edu</span><span class="text-accent">Rain</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <button class="mobile-menu-close" id="mobile-menu-close">&times;</button>
+            </div>
+            <div class="mobile-menu-body">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#courses" class="nav-link">Our Courses</a>
                 <a href="#blogs" class="nav-link">Blogs</a>
                 <a href="#about" class="nav-link">About Us</a>
                 <a href="#contact" class="nav-link">Contact Us</a>
             </div>
-        </nav>
-    `}function x(){let e=document.getElementById(`hamburger-btn`),t=document.getElementById(`mobile-menu`),n=document.querySelectorAll(`.mobile-menu .nav-link`),r=document.getElementById(`login-btn`),i=document.getElementById(`auth-btn-area`),a=document.getElementById(`main-nav`);e&&t&&e.addEventListener(`click`,()=>{e.classList.toggle(`active`),t.classList.toggle(`active`)}),n.forEach(n=>{n.addEventListener(`click`,()=>{e&&t&&(e.classList.remove(`active`),t.classList.remove(`active`))})}),r&&r.addEventListener(`click`,()=>{document.dispatchEvent(new CustomEvent(`open-auth-modal`))}),i&&i.addEventListener(`click`,e=>{e.target.id===`logout-btn`&&b()}),window.addEventListener(`scroll`,()=>{window.scrollY>50?a.classList.add(`scrolled`):a.classList.remove(`scrolled`)})}function S(){return`
+            <div class="mobile-menu-footer auth-btn-area">
+                <button class="btn btn-accent login-btn" style="width: 100%;">Login/Register</button>
+            </div>
+        </div>
+    `}function x(){let e=document.getElementById(`hamburger-btn`),t=document.getElementById(`mobile-menu`),n=document.getElementById(`mobile-menu-overlay`),r=document.getElementById(`mobile-menu-close`),i=document.querySelectorAll(`.mobile-menu .nav-link`),a=document.querySelectorAll(`.login-btn`),o=document.querySelectorAll(`.auth-btn-area`),s=document.getElementById(`main-nav`),c=()=>{e.classList.toggle(`active`),t.classList.toggle(`active`),n&&n.classList.toggle(`active`)},l=()=>{e&&e.classList.remove(`active`),t&&t.classList.remove(`active`),n&&n.classList.remove(`active`)};e&&t&&e.addEventListener(`click`,c),n&&n.addEventListener(`click`,l),r&&r.addEventListener(`click`,l),i.forEach(e=>{e.addEventListener(`click`,l)}),a.forEach(e=>{e.addEventListener(`click`,()=>{document.dispatchEvent(new CustomEvent(`open-auth-modal`)),l()})}),o.forEach(e=>{e.addEventListener(`click`,e=>{e.target.classList.contains(`logout-btn`)&&(b(),l())})}),window.addEventListener(`scroll`,()=>{window.scrollY>50?s.classList.add(`scrolled`):s.classList.remove(`scrolled`)})}function S(){return`
         <div class="footer-separator"></div>
         <footer class="site-footer">
             <div class="footer-grid">
@@ -44,7 +63,10 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                     <div class="logo" style="margin-bottom: 1rem;">
                         <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
                             <img src="./images/logo.png" alt="EduRain Logo" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
-                            <span class="text-white">Edu</span><span class="text-accent">Rain</span>
+                            <div>
+                                <span class="text-white">Edu</span><span class="text-accent">Rain</span>
+                                <div style="font-size: 0.45rem; color: #a7f3d0; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Victory Starts Here</div>
+                            </div>
                         </a>
                     </div>
                     <p>Empowering learners across India with accessible,<br>high-quality education and expert guidance.</p>
@@ -1092,23 +1114,23 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
 
         <!-- SLIDE 1 — FOUNDATION COURSES BANNER -->
         <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-11-9182f96d-b0d3-40b7-a92d-52fa39089fe8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          <img src="https://cdn.phototourl.com/free/2026-08-11-9182f96d-b0d3-40b7-a92d-52fa39089fe8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
         </a>
 
         <!-- SLIDE 2 — NEET BATCH -->
         <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-11-e4468359-9693-4f56-9f6a-88775f0b4e55.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          <img src="https://cdn.phototourl.com/free/2026-08-11-e4468359-9693-4f56-9f6a-88775f0b4e55.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
         </a>
 
 
         <!-- SLIDE 3 — FOUNDATION COURSES BANNER -->
         <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-11-619f7a94-6a9a-453c-908b-1651484fe7d5.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          <img src="https://cdn.phototourl.com/free/2026-08-11-619f7a94-6a9a-453c-908b-1651484fe7d5.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
         </a>
 
         <!-- SLIDE 4 — JOURNEY & INTROSPECTION -->
         <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-14-1e9adc87-cc2a-4bcf-8378-cb876b01aba8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          <img src="https://cdn.phototourl.com/free/2026-08-14-1e9adc87-cc2a-4bcf-8378-cb876b01aba8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
         </a>
 
       </div>
@@ -1564,9 +1586,9 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><circle cx="9" cy="11" r="1" fill="currentColor"/><circle cx="15" cy="11" r="1" fill="currentColor"/><path d="M9 15c.5 1 2 1.5 3 1.5s2.5-.5 3-1.5"/></svg>
             </button>
         </div>
-    `,document.body.appendChild(e);let t=document.getElementById(`er-fab-scroll`),n=document.getElementById(`er-fab-chat`),r=document.getElementById(`er-chat-close`),i=document.getElementById(`er-chat-window`);window.addEventListener(`scroll`,()=>{window.scrollY>300?t.classList.add(`er-fab-visible`):t.classList.remove(`er-fab-visible`)}),t.addEventListener(`click`,()=>{window.scrollTo({top:0,behavior:`smooth`})});let a=()=>{i.classList.toggle(`er-chat-hidden`)};n.addEventListener(`click`,a),r.addEventListener(`click`,a)}`scrollRestoration`in history&&(history.scrollRestoration=`manual`),document.addEventListener(`DOMContentLoaded`,()=>{fe(),pe(),ee(e=>{let t=document.getElementById(`auth-btn-area`);if(t)if(e)t.innerHTML=`
-        <span class="user-greeting">Hi, ${e.displayName||e.email.split(`@`)[0]}</span>
-        <button class="btn btn-outline btn-sm" id="logout-btn">Logout</button>
-      `;else{t.innerHTML=`
-        <button class="btn btn-accent" id="login-btn">Login</button>
-      `;let e=document.getElementById(`login-btn`);e&&e.addEventListener(`click`,()=>{document.dispatchEvent(new CustomEvent(`open-auth-modal`))})}});let e=new IntersectionObserver(t=>{t.forEach(t=>{t.isIntersecting&&(t.target.classList.add(`visible`),e.unobserve(t.target))})},{root:null,rootMargin:`0px`,threshold:.1});window.observeFadeElements=()=>{document.querySelectorAll(`.fade-in-section:not(.visible)`).forEach(t=>e.observe(t))},window.observeFadeElements()});
+    `,document.body.appendChild(e);let t=document.getElementById(`er-fab-scroll`),n=document.getElementById(`er-fab-chat`),r=document.getElementById(`er-chat-close`),i=document.getElementById(`er-chat-window`);window.addEventListener(`scroll`,()=>{window.scrollY>300?t.classList.add(`er-fab-visible`):t.classList.remove(`er-fab-visible`)}),t.addEventListener(`click`,()=>{window.scrollTo({top:0,behavior:`smooth`})});let a=()=>{i.classList.toggle(`er-chat-hidden`)};n.addEventListener(`click`,a),r.addEventListener(`click`,a)}`scrollRestoration`in history&&(history.scrollRestoration=`manual`),document.addEventListener(`DOMContentLoaded`,()=>{fe(),pe(),ee(e=>{document.querySelectorAll(`.auth-btn-area`).forEach(t=>{let n=t.classList.contains(`mobile-menu-footer`);if(e)t.innerHTML=`
+          <span class="user-greeting">Hi, ${e.displayName||e.email.split(`@`)[0]}</span>
+          <button class="btn btn-outline btn-sm logout-btn" ${n?`style="width: 100%;"`:``}>Logout</button>
+        `;else{t.innerHTML=`
+          <button class="btn btn-accent login-btn" ${n?`style="width: 100%;"`:``}>${n?`Login/Register`:`Login`}</button>
+        `;let e=t.querySelector(`.login-btn`);e&&e.addEventListener(`click`,()=>{document.dispatchEvent(new CustomEvent(`open-auth-modal`))})}})});let e=new IntersectionObserver(t=>{t.forEach(t=>{t.isIntersecting&&(t.target.classList.add(`visible`),e.unobserve(t.target))})},{root:null,rootMargin:`0px`,threshold:.1});window.observeFadeElements=()=>{document.querySelectorAll(`.fade-in-section:not(.visible)`).forEach(t=>e.observe(t))},window.observeFadeElements()});
