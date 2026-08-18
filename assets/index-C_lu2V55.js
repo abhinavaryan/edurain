@@ -1519,7 +1519,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                         <div class="er-phone-notch"></div>
                         <!-- Screen -->
                         <div class="er-phone-screen">
-                            <img src="images/app_screenshot.jpg" alt="EduRain App" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                            <img src="./images/floating%20phone.jpeg" alt="EduRain App" style="width:100%; height:100%; object-fit:cover; display:block;" />
                         </div>
                     </div>
 
