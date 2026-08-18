@@ -5,7 +5,7 @@ export function renderFaculty() {
             subject: "English",
             exp: "14 Years Exp.",
             desc: "He is a passionate English mentor dedicated to mastering language skills, literature, and communication excellence.",
-            avatarBg: "linear-gradient(135deg, #4c1d95 0%, #8b5cf6 100%)",
+            image: "./images/home teachers image/1.png",
             icon: "📖"
         },
         {
@@ -13,7 +13,7 @@ export function renderFaculty() {
             subject: "Chemistry",
             exp: "14 Years Exp.",
             desc: "She is dedicated to building strong fundamentals and developing problem-solving excellence in students.",
-            avatarBg: "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)",
+            image: "./images/home teachers image/2.png",
             icon: "🧪"
         },
         {
@@ -21,7 +21,7 @@ export function renderFaculty() {
             subject: "Physics",
             exp: "15 Years Exp.",
             desc: "He is recognized for his concept-driven teaching approach and consistent success in guiding NEET aspirants toward top ranks.",
-            avatarBg: "linear-gradient(135deg, #065f46 0%, #10b981 100%)",
+            image: "./images/home teachers image/3.png",
             icon: "⚡"
         },
         {
@@ -29,7 +29,7 @@ export function renderFaculty() {
             subject: "Biology",
             exp: "16 Years Exp.",
             desc: "A highly respected Biology mentor, He is known for making complex concepts simple and helping students achieve NEET results.",
-            avatarBg: "linear-gradient(135deg, #7c2d12 0%, #f97316 100%)",
+            image: "./images/home teachers image/4.png",
             icon: "🧬"
         },
         {
@@ -37,7 +37,7 @@ export function renderFaculty() {
             subject: "Social Studies",
             exp: "5 Years Exp.",
             desc: "Passionate Social Studies mentor with 5 years of teaching experience, making History, Civics, and Geography engaging and accessible.",
-            avatarBg: "linear-gradient(135deg, #0284c7 0%, #38bdf8 100%)",
+            image: "./images/home teachers image/5.png",
             icon: "🌍"
         },
         {
@@ -45,7 +45,7 @@ export function renderFaculty() {
             subject: "Mathematics",
             exp: "13 Years Exp.",
             desc: "Expert Mathematics mentor with 13 years of experience, specializing in Class 11th & 12th and JEE preparation.",
-            avatarBg: "linear-gradient(135deg, #4338ca 0%, #6366f1 100%)",
+            image: "./images/home teachers image/6.png",
             icon: "🔢"
         }
 
@@ -56,14 +56,10 @@ export function renderFaculty() {
 
         return `
         <div class="er-faculty-card glass-card er-reveal visible">
-            <div class="er-faculty-img-wrap" style="background: ${f.avatarBg};">
-                <div class="er-faculty-avatar-fallback" style="display:flex;">
-                    <div class="er-avatar-circle">
-                        <span class="er-avatar-initials">${initials}</span>
-                    </div>
-                    <div class="er-faculty-studio-badge">
-                        <span class="er-studio-icon">${f.icon}</span> ${f.subject} Specialist
-                    </div>
+            <div class="er-faculty-img-wrap">
+                <img src="${f.image}" class="er-faculty-img" alt="${f.name}" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+                <div class="er-faculty-studio-badge" style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 2; width: max-content;">
+                    <span class="er-studio-icon">${f.icon}</span> ${f.subject} Specialist
                 </div>
             </div>
             <div class="er-faculty-info">
