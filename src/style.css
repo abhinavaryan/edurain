@@ -3182,6 +3182,12 @@ textarea {
   }
 }
 
+@media (max-width: 768px) {
+  .er-faculty-card {
+    width: calc(100vw - 32px);
+  }
+}
+
 
 /* ============================================================
    SECTION B — POPULAR COURSES

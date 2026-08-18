@@ -56,9 +56,11 @@ export function initReviews() {
     const prevBtn = document.querySelector('.carousel-prev');
     const nextBtn = document.querySelector('.carousel-next');
     const dots = document.querySelectorAll('.carousel-dots .dot');
+    const reviewSection = document.getElementById('er-reviews') || track?.closest('section');
     let currentIndex = 0;
     const totalReviews = dots.length;
     let interval;
+    let isIntersecting = false;
 
     if (!track || totalReviews === 0) return;
 
@@ -79,11 +81,17 @@ export function initReviews() {
     }
 
     function startAutoScroll() {
-        interval = setInterval(nextSlide, 4000);
+        stopAutoScroll();
+        if (isIntersecting) {
+            interval = setInterval(nextSlide, 4000);
+        }
     }
 
     function stopAutoScroll() {
-        clearInterval(interval);
+        if (interval) {
+            clearInterval(interval);
+            interval = null;
+        }
     }
 
     if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); stopAutoScroll(); startAutoScroll(); });
@@ -108,6 +116,31 @@ export function initReviews() {
     let touchStartX = 0;
     if (track) {
         track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
+        track.addEventListener('touchend', e => {
+            const touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) nextSlide();
+            if (touchStartX - touchEndX < -50) prevSlide();
+        });
+    }
+
+    // Intersection Observer to only scroll when visible
+    if ('IntersectionObserver' in window && reviewSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isIntersecting = entry.isIntersecting;
+                if (isIntersecting) {
+                    startAutoScroll();
+                } else {
+                    stopAutoScroll();
+                }
+            });
+        }, { threshold: 0.1 });
+        observer.observe(reviewSection);
+    } else {
+        isIntersecting = true;
+        startAutoScroll();
+    }
+}
         track.addEventListener('touchend', e => {
             const touchEndX = e.changedTouches[0].screenX;
             if (touchStartX - touchEndX > 50) nextSlide();

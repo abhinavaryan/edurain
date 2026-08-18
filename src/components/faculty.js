@@ -123,18 +123,34 @@ export function initFaculty() {
     const track = document.getElementById('er-faculty-track');
     const prevBtn = document.getElementById('er-faculty-prev');
     const nextBtn = document.getElementById('er-faculty-next');
+    const facultySection = document.getElementById('er-faculty');
 
     if (!container || !track) return;
 
-    const cardWidth = 340;
     let autoScrollInterval = null;
+    let isIntersecting = false;
+
+    // Dynamically calculate the card width + gap based on the first card
+    function getScrollAmount() {
+        const firstCard = track.querySelector('.er-faculty-card');
+        if (!firstCard) return 340; // fallback
+        const style = window.getComputedStyle(firstCard);
+        const margin = parseFloat(style.marginRight) || 0;
+        // The container gap is applied via Flexbox, so we measure the distance between two cards if possible.
+        // But simply taking offsetWidth + a rough gap estimate or just clientWidth of container is safer for 100% width cards.
+        // For mobile (100% width), we want to scroll the exact container width.
+        // For desktop, it's card width + gap.
+        const cardWidth = firstCard.offsetWidth;
+        const gap = 32; // var(--space-lg) is usually 2rem (32px)
+        return cardWidth + gap;
+    }
 
     function scrollNext() {
         const maxScroll = container.scrollWidth - container.clientWidth;
         if (container.scrollLeft >= maxScroll - 20) {
             container.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
-            container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            container.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
         }
     }
 
@@ -143,13 +159,16 @@ export function initFaculty() {
             const maxScroll = container.scrollWidth - container.clientWidth;
             container.scrollTo({ left: maxScroll, behavior: 'smooth' });
         } else {
-            container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            container.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
         }
     }
 
     function startAutoScroll() {
         stopAutoScroll();
-        autoScrollInterval = setInterval(scrollNext, 3500);
+        // Only start if the section is visible
+        if (isIntersecting) {
+            autoScrollInterval = setInterval(scrollNext, 3500);
+        }
     }
 
     function stopAutoScroll() {
@@ -181,6 +200,22 @@ export function initFaculty() {
     container.addEventListener('touchstart', stopAutoScroll, { passive: true });
     container.addEventListener('touchend', startAutoScroll, { passive: true });
 
-    // Start auto scrolling loop
-    startAutoScroll();
+    // Intersection Observer to only scroll when visible
+    if ('IntersectionObserver' in window && facultySection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isIntersecting = entry.isIntersecting;
+                if (isIntersecting) {
+                    startAutoScroll();
+                } else {
+                    stopAutoScroll();
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger when 10% visible
+        observer.observe(facultySection);
+    } else {
+        // Fallback for older browsers
+        isIntersecting = true;
+        startAutoScroll();
+    }
 }

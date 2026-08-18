@@ -66,20 +66,7 @@ export function renderAppDownload() {
                         <div class="er-phone-notch"></div>
                         <!-- Screen -->
                         <div class="er-phone-screen">
-                            <div class="er-phone-content">
-                                <div style="font-size:2.5rem;margin-bottom:0.5rem;">📱</div>
-                                <p style="font-weight:800;font-size:1rem;color:#fff;">EduRain App</p>
-                                <p style="font-size:0.7rem;color:#a7f3d0;margin-top:0.25rem;">Victory Starts Here</p>
-                                <div class="er-phone-icons">
-                                    <div class="er-phone-icon">📚</div>
-                                    <div class="er-phone-icon">🧪</div>
-                                    <div class="er-phone-icon">📐</div>
-                                    <div class="er-phone-icon">🎬</div>
-                                    <div class="er-phone-icon er-phone-icon-accent">⭐</div>
-                                    <div class="er-phone-icon">📊</div>
-                                </div>
-                                <div style="margin-top:1rem;background:rgba(255,255,255,0.1);border-radius:8px;padding:0.4rem 0.75rem;font-size:0.7rem;color:#FACC15;font-weight:600;">🔴 LIVE Class starting now</div>
-                            </div>
+                            <img src="images/app_screenshot.jpg" alt="EduRain App" style="width:100%; height:100%; object-fit:cover; display:block;" />
                         </div>
                     </div>
 
