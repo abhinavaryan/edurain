@@ -1123,55 +1123,58 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
         </section>
     `}function K(){return G(`JEE Courses`,`Comprehensive preparation for IIT-JEE exams. Build a strong foundation and master the concepts to secure your seat in top engineering colleges.`,`JEE`)}function q(){return G(`NEET Courses`,`Focused coaching for medical aspirants. In-depth coverage of Biology, Physics, and Chemistry to help you crack NEET with top scores.`,`NEET`)}function J(){return G(`Foundation Courses`,`Strengthen your core concepts in Science and Mathematics from Class 6 to 10. The perfect stepping stone for future competitive exams.`,`FOUNDATION`)}function Y(){return`
     <!-- ═══ SECTION A: HERO AUTO-SCROLL BANNER (Restored Original Layout & Aspect Ratio) ═══ -->
-    <section id="er-hero-banner" style="position:relative; width:100%; overflow:hidden; background:#0e3a24;">
+    <div class="er-hero-banner-wrapper">
+      <section id="er-hero-banner" style="position:relative; width:100%; overflow:hidden; background:#0e3a24;">
 
-      <div id="er-slider-track" style="display:flex; transition:transform 0.7s cubic-bezier(0.4,0,0.2,1); will-change:transform;">
+        <div id="er-slider-track" style="display:flex; transition:transform 0.7s cubic-bezier(0.4,0,0.2,1); will-change:transform;">
 
-        <!-- SLIDE 1 — FOUNDATION COURSES BANNER -->
-        <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-11-9182f96d-b0d3-40b7-a92d-52fa39089fe8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
-        </a>
+          <!-- SLIDE 1 — FOUNDATION COURSES BANNER -->
+          <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+            <img src="https://cdn.phototourl.com/free/2026-08-11-9182f96d-b0d3-40b7-a92d-52fa39089fe8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
+          </a>
 
-        <!-- SLIDE 2 — NEET BATCH -->
-        <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-11-e4468359-9693-4f56-9f6a-88775f0b4e55.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
-        </a>
+          <!-- SLIDE 2 — NEET BATCH -->
+          <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+            <img src="https://cdn.phototourl.com/free/2026-08-11-e4468359-9693-4f56-9f6a-88775f0b4e55.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
+          </a>
 
 
-        <!-- SLIDE 3 — FOUNDATION COURSES BANNER -->
-        <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-11-619f7a94-6a9a-453c-908b-1651484fe7d5.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
-        </a>
+          <!-- SLIDE 3 — FOUNDATION COURSES BANNER -->
+          <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+            <img src="https://cdn.phototourl.com/free/2026-08-11-619f7a94-6a9a-453c-908b-1651484fe7d5.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
+          </a>
 
-        <!-- SLIDE 4 — JOURNEY & INTROSPECTION -->
-        <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-          <img src="https://cdn.phototourl.com/free/2026-08-14-1e9adc87-cc2a-4bcf-8378-cb876b01aba8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
-        </a>
+          <!-- SLIDE 4 — JOURNEY & INTROSPECTION -->
+          <a href="#courses?filter=Foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+            <img src="https://cdn.phototourl.com/free/2026-08-14-1e9adc87-cc2a-4bcf-8378-cb876b01aba8.png" alt="Foundation Courses for Class 6th - 10th" style="width:100%; height:100%; object-fit:contain; display:block;" />
+          </a>
 
-      </div>
+        </div>
 
-      <!-- LEFT arrow -->
-      <button id="er-arrow-prev" class="er-arrow er-arrow-prev" aria-label="Previous slide">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
-        </svg>
-      </button>
+        <!-- LEFT arrow -->
+        <button id="er-arrow-prev" class="er-arrow er-arrow-prev" aria-label="Previous slide">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
 
-      <!-- RIGHT arrow -->
-      <button id="er-arrow-next" class="er-arrow er-arrow-next" aria-label="Next slide">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-        </svg>
-      </button>
+        <!-- RIGHT arrow -->
+        <button id="er-arrow-next" class="er-arrow er-arrow-next" aria-label="Next slide">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
 
-      <!-- Dot pagination (Desktop: absolute inside, Mobile: relative below) -->
+      </section>
+
+      <!-- Dot pagination (Outside the banner) -->
       <div id="er-dots" class="er-banner-dots">
         <button class="er-dot er-dot-active" data-index="0" aria-label="Slide 1"></button>
         <button class="er-dot" data-index="1" aria-label="Slide 2"></button>
         <button class="er-dot" data-index="2" aria-label="Slide 3"></button>
         <button class="er-dot" data-index="3" aria-label="Slide 4"></button>
       </div>
-    </section>
+    </div>
   `}function X(){let e=document.getElementById(`er-slider-track`),t=document.querySelectorAll(`.er-dot`),n=document.querySelectorAll(`.er-slide`),r=document.getElementById(`er-arrow-prev`),i=document.getElementById(`er-arrow-next`);if(!e||!n.length)return;let a=0,o;function s(r){a=(r%n.length+n.length)%n.length,e.style.transform=`translateX(-${a*100}%)`,t.forEach((e,t)=>{e.classList.toggle(`er-dot-active`,t===a)})}function c(){l(),o=setInterval(()=>s(a+1),3500)}function l(){clearInterval(o)}t.forEach(e=>{e.addEventListener(`click`,()=>{l(),s(parseInt(e.dataset.index)),c()})}),r&&r.addEventListener(`click`,e=>{e.preventDefault(),l(),s(a-1),c()}),i&&i.addEventListener(`click`,e=>{e.preventDefault(),l(),s(a+1),c()});let u=0;e.addEventListener(`touchstart`,e=>{u=e.changedTouches[0].screenX},{passive:!0}),e.addEventListener(`touchend`,e=>{let t=u-e.changedTouches[0].screenX;Math.abs(t)>50&&(l(),s(a+(t>0?1:-1)),c())}),e.addEventListener(`mouseenter`,l),e.addEventListener(`mouseleave`,c),s(0),c()}function Z(){return`
     <!-- ═══ SECTION B: POPULAR COURSES ═══ -->
     <section id="er-popular-courses" class="er-section" style="background:linear-gradient(160deg,#e8f5ee 0%,#d4eddf 50%,#c5e8d5 100%);">
