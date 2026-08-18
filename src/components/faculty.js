@@ -33,11 +33,12 @@ export function renderFaculty() {
             icon: "🧬"
         },
         {
-            name: "Ms. Khushbu ma'am",
+            name: "Ms. Kushboo ma'am",
             subject: "Social Studies",
             exp: "5 Years Exp.",
             desc: "Passionate Social Studies mentor with 5 years of teaching experience, making History, Civics, and Geography engaging and accessible.",
             image: "./images/home teachers image/5.png",
+            imgStyle: "transform: scale(1.2) translateY(5px); transform-origin: bottom center;",
             icon: "🌍"
         },
         {
@@ -57,7 +58,7 @@ export function renderFaculty() {
         return `
         <div class="er-faculty-card glass-card er-reveal visible">
             <div class="er-faculty-img-wrap">
-                <img src="${f.image}" class="er-faculty-img" alt="${f.name}" style="width: 100%; height: 100%; object-fit: contain; object-position: bottom center;">
+                <img src="${f.image}" class="er-faculty-img" alt="${f.name}" style="width: 100%; height: 100%; object-fit: contain; object-position: bottom center; ${f.imgStyle || ''}">
                 <div class="er-faculty-studio-badge" style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 2; width: max-content;">
                     <span class="er-studio-icon">${f.icon}</span> ${f.subject} Specialist
                 </div>
