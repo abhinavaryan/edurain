@@ -124,15 +124,28 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 <div class="footer-col">
                     <h4>Get the App</h4>
                     <p>Learn on the go. Download the EduRain app today.</p>
-                    <div class="app-buttons">
-                        <a href="https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN" target="_blank" rel="noopener noreferrer" class="btn-store">
-                            <i class="fab fa-google-play"></i>
-                            <span><small>GET IT ON</small><br>Google Play</span>
+                    <div class="er-store-buttons" style="margin-top: 0.75rem;">
+                        <a href="https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN" target="_blank" rel="noopener noreferrer" class="er-store-btn er-store-btn-play">
+                            <svg class="er-store-icon" viewBox="0 0 48 48">
+                                <path fill="#00D2FF" d="M7.705,4.043C7.292,4.15,7,4.507,7,5.121c0,1.802,0,18.795,0,18.795S7,42.28,7,43.091c0,0.446,0.197,0.745,0.5,0.856l20.181-20.064L7.705,4.043z"></path>
+                                <path fill="#00E676" d="M33.237,18.36l-8.307-4.796c0,0-15.245-8.803-16.141-9.32C8.401,4.02,8.019,3.961,7.705,4.043l19.977,19.84L33.237,18.36z"></path>
+                                <path fill="#FF3D00" d="M8.417,43.802c0.532-0.308,15.284-8.825,24.865-14.357l-5.601-5.562L7.5,43.947C7.748,44.038,8.066,44.004,8.417,43.802z"></path>
+                                <path fill="#FFC107" d="M41.398,23.071c-0.796-0.429-8.1-4.676-8.1-4.676l-0.061-0.035l-5.556,5.523l5.601,5.562c4.432-2.559,7.761-4.48,8.059-4.653C42.285,24.248,42.194,23.5,41.398,23.071z"></path>
+                            </svg>
+                            <div>
+                                <div class="er-store-small">GET IT ON</div>
+                                <div class="er-store-name">Google Play</div>
+                            </div>
                         </a>
-                        <button type="button" class="btn-store">
-                            <i class="fab fa-apple"></i>
-                            <span><small>Download on the</small><br>App Store</span>
-                        </button>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="er-store-btn er-store-btn-apple">
+                            <svg class="er-store-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.2 1.28-2.18 3.81.03 3.02 2.65 4.03 2.68 4.04l-.05.13zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                            <div>
+                                <div class="er-store-small">DOWNLOAD ON THE</div>
+                                <div class="er-store-name">App Store</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1588,7 +1601,46 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><circle cx="9" cy="11" r="1" fill="currentColor"/><circle cx="15" cy="11" r="1" fill="currentColor"/><path d="M9 15c.5 1 2 1.5 3 1.5s2.5-.5 3-1.5"/></svg>
             </button>
         </div>
-    `,document.body.appendChild(e);let t=document.getElementById(`er-fab-scroll`),n=document.getElementById(`er-fab-chat`),r=document.getElementById(`er-chat-close`),i=document.getElementById(`er-chat-window`);window.addEventListener(`scroll`,()=>{window.scrollY>300?t.classList.add(`er-fab-visible`):t.classList.remove(`er-fab-visible`)}),t.addEventListener(`click`,()=>{window.scrollTo({top:0,behavior:`smooth`})});let a=()=>{i.classList.toggle(`er-chat-hidden`)};n.addEventListener(`click`,a),r.addEventListener(`click`,a)}`scrollRestoration`in history&&(history.scrollRestoration=`manual`),document.addEventListener(`DOMContentLoaded`,()=>{fe(),pe(),ee(e=>{document.querySelectorAll(`.auth-btn-area`).forEach(t=>{let n=t.classList.contains(`mobile-menu-footer`);if(e)t.innerHTML=`
+    `,document.body.appendChild(e);let t=document.getElementById(`er-fab-scroll`),n=document.getElementById(`er-fab-chat`),r=document.getElementById(`er-chat-close`),i=document.getElementById(`er-chat-window`);window.addEventListener(`scroll`,()=>{window.scrollY>300?t.classList.add(`er-fab-visible`):t.classList.remove(`er-fab-visible`)}),t.addEventListener(`click`,()=>{window.scrollTo({top:0,behavior:`smooth`})});let a=()=>{i.classList.toggle(`er-chat-hidden`)};n.addEventListener(`click`,a),r.addEventListener(`click`,a)}function me(){window.innerWidth>768||sessionStorage.getItem(`edurain_app_popup_dismissed`)!==`true`&&setTimeout(()=>{he()},2500)}function he(){if(document.getElementById(`mobile-app-popup-overlay`))return;let e=document.createElement(`div`);e.id=`mobile-app-popup-overlay`,e.className=`mobile-popup-overlay`;let t=document.createElement(`div`);t.className=`mobile-popup-content`,t.innerHTML=`
+        <div class="mobile-popup-banner">
+            <img src="./images/mobile_popup_banner.png" alt="EduRain App on Mobile Phones">
+        </div>
+        <div class="mobile-popup-body">
+            <div class="mobile-popup-title">Get EduRain App for</div>
+            <div class="mobile-popup-subtitle">Access live & recorded classes on the go</div>
+            
+            <div class="mobile-popup-dynamic-text-container">
+                <div id="popup-dynamic-text" class="mobile-popup-dynamic-text">Exclusive App-Only Features</div>
+            </div>
+
+            <button class="btn btn-primary mobile-popup-btn-open" id="popup-btn-open">
+                Open in App
+            </button>
+            
+            <button class="mobile-popup-btn-close" id="popup-btn-close">
+                Continue in Web
+            </button>
+        </div>
+        
+        <!-- iOS Org Code View (Initially Hidden) -->
+        <div class="mobile-popup-ios-view" id="mobile-popup-ios-view" style="display: none; padding: 1.5rem; text-align: center;">
+            <div class="mobile-popup-title" style="font-size: 1.1rem; color: #1a1a1a; font-weight: 600; margin-bottom: 1rem;">
+                Almost there!
+            </div>
+            <div class="mobile-popup-subtitle" style="font-size: 0.95rem; line-height: 1.4; margin-bottom: 1.5rem;">
+                You will be redirected to the <strong>MyInstitute</strong> app. To access EduRain, please enter our organization code:
+            </div>
+            <div style="background: #f0f4f8; padding: 1rem; border-radius: 8px; font-size: 1.5rem; font-weight: 800; letter-spacing: 2px; color: #5a4bda; margin-bottom: 1.5rem; user-select: all; text-transform: uppercase;">
+                rwoaln
+            </div>
+            <button class="btn btn-primary mobile-popup-btn-open" id="popup-btn-ios-continue">
+                Copy Code & Go to App Store
+            </button>
+            <button class="mobile-popup-btn-close" id="popup-btn-ios-cancel">
+                Cancel
+            </button>
+        </div>
+    `,e.appendChild(t),document.body.appendChild(e),setTimeout(()=>{e.classList.add(`visible`),t.classList.add(`visible`)},50);let n=[`Exclusive App-Only Features`,`Your Entire Prep in One App`,`Learning Anytime, Anywhere`],r=0,i=document.getElementById(`popup-dynamic-text`),a=setInterval(()=>{if(!i){clearInterval(a);return}i.style.opacity=`0`,i.style.transform=`translateY(10px)`,setTimeout(()=>{r=(r+1)%n.length,i.textContent=n[r],i.style.opacity=`1`,i.style.transform=`translateY(0)`},300)},3e3),o=()=>{clearInterval(a),e.classList.remove(`visible`),t.classList.remove(`visible`),sessionStorage.setItem(`edurain_app_popup_dismissed`,`true`),setTimeout(()=>{e.parentNode&&e.parentNode.removeChild(e)},400)};document.getElementById(`popup-btn-close`).addEventListener(`click`,o),e.addEventListener(`click`,t=>{t.target===e&&o()});let s=/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream;document.getElementById(`popup-btn-open`).addEventListener(`click`,()=>{s?(document.querySelector(`.mobile-popup-body`).style.display=`none`,document.getElementById(`mobile-popup-ios-view`).style.display=`block`):(window.open(`https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN`,`_blank`),o())}),document.getElementById(`popup-btn-ios-cancel`).addEventListener(`click`,()=>{document.getElementById(`mobile-popup-ios-view`).style.display=`none`,document.querySelector(`.mobile-popup-body`).style.display=`block`}),document.getElementById(`popup-btn-ios-continue`).addEventListener(`click`,()=>{navigator.clipboard.writeText(`rwoaln`).catch(e=>console.log(`Clipboard error:`,e)),window.open(`https://apps.apple.com/in/app/myinstitute/id1472483563`,`_blank`),o()})}`scrollRestoration`in history&&(history.scrollRestoration=`manual`),document.addEventListener(`DOMContentLoaded`,()=>{fe(),pe(),me(),ee(e=>{document.querySelectorAll(`.auth-btn-area`).forEach(t=>{let n=t.classList.contains(`mobile-menu-footer`);if(e)t.innerHTML=`
           <span class="user-greeting">Hi, ${e.displayName||e.email.split(`@`)[0]}</span>
           <button class="btn btn-outline btn-sm logout-btn" ${n?`style="width: 100%;"`:``}>Logout</button>
         `;else{t.innerHTML=`
