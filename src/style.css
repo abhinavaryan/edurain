@@ -206,6 +206,37 @@ textarea {
 }
 
 /* ===== LOW-LIGHT JOURNEY / REFLECTION PAGE (User Rule) ===== */
+.er-dot-active {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  width: 32px !important;
+  border-radius: 12px !important;
+}
+
+/* Banner Dots Positioning */
+.er-banner-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+}
+
+@media (max-width: 768px) {
+  .er-banner-dots {
+    position: relative;
+    bottom: auto;
+    left: 0;
+    transform: none;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    background: transparent;
+  }
+}
+
 .low-light-page {
   background-color: #121212 !important;
   color: #f3f4f6 !important;
@@ -2895,6 +2926,18 @@ textarea {
   color: #4a6156;
   font-size: 1.05rem;
   margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .er-section-heading {
+    text-wrap: balance;
+    line-height: 1.25;
+  }
+  .er-section-sub {
+    font-size: 0.95rem;
+    padding: 0 10px;
+    text-wrap: balance;
+  }
 }
 
 /* Scroll reveal */
