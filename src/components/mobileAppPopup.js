@@ -29,6 +29,9 @@ function showPopup() {
     content.className = 'mobile-popup-content';
 
     content.innerHTML = `
+        <button class="mobile-popup-close-x" id="popup-btn-x" aria-label="Close">
+            <i class="fas fa-times"></i>
+        </button>
         <div class="mobile-popup-banner">
             <img src="./images/mobile_popup_banner.png" alt="EduRain App on Mobile Phones">
         </div>
@@ -121,6 +124,7 @@ function showPopup() {
     };
 
     document.getElementById('popup-btn-close').addEventListener('click', dismissPopup);
+    document.getElementById('popup-btn-x').addEventListener('click', dismissPopup);
     
     // If they click the overlay (outside the modal), also dismiss it
     overlay.addEventListener('click', (e) => {
