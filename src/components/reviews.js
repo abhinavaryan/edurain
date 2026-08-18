@@ -141,12 +141,3 @@ export function initReviews() {
         startAutoScroll();
     }
 }
-        track.addEventListener('touchend', e => {
-            const touchEndX = e.changedTouches[0].screenX;
-            if (touchStartX - touchEndX > 50) nextSlide();
-            if (touchEndX - touchStartX > 50) prevSlide();
-        });
-    }
-
-    startAutoScroll();
-}
