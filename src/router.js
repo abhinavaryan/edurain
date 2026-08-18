@@ -20,6 +20,7 @@ import { renderFaculty, initFaculty } from './components/faculty.js';
 import { renderHomeReviews, initHomeReviews } from './components/homeReviews.js';
 import { renderImpact, initImpact } from './components/impact.js';
 import { renderAppDownload } from './components/appDownload.js';
+import { initIosAppPopup } from './components/iosAppPopup.js';
 
 // Helper to update SEO meta tags dynamically
 function setMetaTags(title, description) {
@@ -165,6 +166,7 @@ export const initRouter = () => {
     initNavbar();
     initAuthModal();
     initFooter();
+    initIosAppPopup();
     route.postRender();
 
     if (window.observeFadeElements) {
