@@ -7,6 +7,10 @@ import { renderReviews, initReviews } from './components/reviews.js';
 import { renderContact, initContact } from './components/contact.js';
 import { renderAuthModal, initAuthModal } from './components/authModal.js';
 import { renderJourney, initJourney } from './components/journey.js';
+import { renderPrivacy } from './components/privacy.js';
+import { renderTerms } from './components/terms.js';
+import { renderSitemap } from './components/sitemap.js';
+import { renderJEECourses, renderNEETCourses, renderFoundationCourses } from './components/categoryCourses.js';
 
 // ── HOME PAGE SECTIONS (exact order) ──
 import { renderBanner, initBanner } from './components/banner.js';
@@ -16,6 +20,18 @@ import { renderFaculty, initFaculty } from './components/faculty.js';
 import { renderHomeReviews, initHomeReviews } from './components/homeReviews.js';
 import { renderImpact, initImpact } from './components/impact.js';
 import { renderAppDownload } from './components/appDownload.js';
+
+// Helper to update SEO meta tags dynamically
+function setMetaTags(title, description) {
+  document.title = title;
+  let metaDesc = document.querySelector('meta[name="description"]');
+  if (!metaDesc) {
+    metaDesc = document.createElement('meta');
+    metaDesc.name = 'description';
+    document.head.appendChild(metaDesc);
+  }
+  metaDesc.content = description;
+}
 
 const routes = {
   '#home': {
@@ -59,6 +75,30 @@ const routes = {
   '#contact': {
     render: () => renderContact(),
     postRender: () => initContact()
+  },
+  '#privacy': {
+    render: () => renderPrivacy(),
+    postRender: () => { }
+  },
+  '#terms': {
+    render: () => renderTerms(),
+    postRender: () => setMetaTags("Terms and Conditions - EduRain", "Terms and conditions of use for Edurain")
+  },
+  '#sitemap': {
+    render: () => renderSitemap(),
+    postRender: () => setMetaTags("Sitemap - EduRain", "Sitemap for EduRain")
+  },
+  '#jeecourses': {
+    render: () => renderJEECourses(),
+    postRender: () => setMetaTags("JEE Courses - EduRain", "Comprehensive preparation for IIT-JEE exams. Build a strong foundation and master the concepts to secure your seat in top engineering colleges.")
+  },
+  '#neetcourses': {
+    render: () => renderNEETCourses(),
+    postRender: () => setMetaTags("NEET Courses - EduRain", "Focused coaching for medical aspirants. In-depth coverage of Biology, Physics, and Chemistry to help you crack NEET with top scores.")
+  },
+  '#foundationcourses': {
+    render: () => renderFoundationCourses(),
+    postRender: () => setMetaTags("Foundation Courses - EduRain", "Strengthen your core concepts in Science and Mathematics from Class 6 to 10. The perfect stepping stone for future competitive exams.")
   }
 };
 

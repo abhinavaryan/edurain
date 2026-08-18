@@ -24,30 +24,6 @@
     "link": "https://courses.edurain.in/courses/857872"
   },
   {
-    "id": "c4",
-    "title": "CLASS 12TH Physics",
-    "instructor": "Mr.Diwakar Sir",
-    "rating": 4.7,
-    "students": 236,
-    "price": "₹2,520",
-    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786706990678_43a19880_Abhinav_Figma_class_plus__phy.webp",
-    "category": "NEET",
-    "description": "Learn to build modern web applications from scratch using MERN stack.",
-    "link": "https://courses.edurain.in/courses/865098"
-  },
-  {
-    "id": "c5",
-    "title": "BIOLOGY CLASS 12TH",
-    "instructor": "Mr.Nitin Sir",
-    "rating": 4.6,
-    "students": 150,
-    "price": "2,520",
-    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786707177596_0f003a03_faculty_2__7_.jpg",
-    "category": "NEET",
-    "description": "Improve your spoken English skills for professional and everyday use.",
-    "link": "https://courses.edurain.in/courses/857877"
-  },
-  {
     "id": "c6",
     "title": "CLASS 12TH MATHEMATICS",
     "instructor": "Mr.Banarjee Sir",
@@ -214,42 +190,6 @@
     "category": "NEET",
     "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
     "link": "https://courses.edurain.in/courses/814073"
-  },
-  {
-    "id": "c20",
-    "title": "CLASS 10TH ENGLISH",
-    "instructor": "Mr.Manoj Sir",
-    "rating": 4.2,
-    "students": 120,
-    "price": "₹3,020",
-    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708889429_9888c881_unnamed.webp",
-    "category": "FOUNDATION",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
-    "link": "https://courses.edurain.in/courses/813859"
-  },
-  {
-    "id": "c21",
-    "title": "CHEMISTRY CLASS 11TH ",
-    "instructor": "Ms.Ritu ma'am",
-    "rating": 4.7,
-    "students": 304,
-    "price": "₹3,020",
-    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786709148253_00a742d4_unnamed.webp",
-    "category": "NEET",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
-    "link": "https://courses.edurain.in/courses/813844"
-  },
-  {
-    "id": "c22",
-    "title": "CHEMISTRY CLASS 12TH",
-    "instructor": "Ms.Ritu ma'am",
-    "rating": 4.0,
-    "students": 321,
-    "price": "₹3,620",
-    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708966455_36f61966_unnamed.webp",
-    "category": "NEET",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
-    "link": "https://courses.edurain.in/courses/813836"
   },
   {
     "id": "c23",

@@ -4,8 +4,11 @@ export function renderFooter() {
         <footer class="site-footer">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="logo">
-                        <span class="text-white">Edu</span><span class="text-accent">Rain</span>
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                            <img src="./images/logo.png" alt="EduRain Logo" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
+                            <span class="text-white">Edu</span><span class="text-accent">Rain</span>
+                        </a>
                     </div>
                     <p>Empowering learners across India with accessible,<br>high-quality education and expert guidance.</p>
                     <div class="social-icons">
@@ -40,17 +43,22 @@ export function renderFooter() {
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="https://edurain.in/jeecourse" target="_blank" rel="noopener noreferrer">&gt; JEE Courses</a></li>
-                        <li><a href="https://edurain.in/neetcources" target="_blank" rel="noopener noreferrer">&gt; NEET Courses</a></li>
-                        <li><a href="https://edurain.in/foundationcources" target="_blank" rel="noopener noreferrer">&gt; Foundation Courses</a></li>
+                        <li><a href="#jeecourses">&gt; JEE Courses</a></li>
+                        <li><a href="#neetcourses">&gt; NEET Courses</a></li>
+                        <li><a href="#foundationcourses">&gt; Foundation Courses</a></li>
                         <li><a href="#blogs">&gt; Blogs</a></li>
                         <li><a href="#about">&gt; About</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contact Us</h4>
-                    <p><i class="fas fa-phone"></i> +91 87974 43910</p>
-                    <p><i class="fas fa-envelope"></i> support@edurain.in</p>
+                    <p>
+                        <i class="fas fa-phone"></i> 
+                        <a href="tel:+918797443910" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">+91 87974 43910</a>
+                        <span style="margin: 0 5px; opacity: 0.5;">|</span>
+                        <a href="https://wa.me/918797443910" target="_blank" rel="noopener noreferrer" style="color: #25D366; text-decoration: none; font-size: 1.1em;" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:support@edurain.in" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">support@edurain.in</a></p>
                 </div>
                 <div class="footer-col">
                     <h4>Get the App</h4>
@@ -71,8 +79,7 @@ export function renderFooter() {
                 <p>&copy; 2026 <span class="text-accent">EduRain</span>. All rights reserved.</p>
                 <div class="legal-links">
                     <a href="#privacy">Privacy Policy</a> |
-                    <a href="#terms">Terms of Service</a> |
-                    <a href="#sitemap">Sitemap</a>
+                    <a href="#terms">Terms and Conditions</a>
                 </div>
             </div>
         </footer>

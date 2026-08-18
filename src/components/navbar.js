@@ -5,7 +5,15 @@ export function renderNavbar() {
         <nav class="navbar" id="main-nav">
             <div class="navbar-container">
                 <div class="logo">
-                    <span class="text-white">Edu</span><span class="text-accent">Rain</span>
+                    <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                        <img src="./images/logo.png" alt="EduRain Logo" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
+                        <div style="display: flex; flex-direction: column; line-height: 1.2;">
+                            <div>
+                                <span class="text-white">Edu</span><span class="text-accent">Rain</span>
+                            </div>
+                            <span style="font-size: 0.65rem; color: #a7f3d0; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Victory Starts Here</span>
+                        </div>
+                    </a>
                 </div>
                 <div class="nav-links">
                     <a href="#home" class="nav-link active">Home</a>

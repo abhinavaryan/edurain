@@ -4,6 +4,11 @@ import { initRouter } from './router.js';
 import { onAuthChange } from './firebase/auth.js';
 import { initFab } from './components/fab.js';
 
+// Prevent browser from automatically restoring scroll position on reload
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize SPA Router
   initRouter();

@@ -16,14 +16,18 @@ export function renderContact() {
                             <span class="contact-icon">📧</span>
                             <div>
                                 <strong>Email</strong>
-                                <p>support@edurain.in</p>
+                                <p><a href="mailto:support@edurain.in" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">support@edurain.in</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">📞</span>
                             <div>
                                 <strong>Phone</strong>
-                                <p>+91 87974 43910</p>
+                                <p>
+                                    <a href="tel:+918797443910" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">+91 87974 43910</a>
+                                    <span style="margin: 0 5px; opacity: 0.5;">|</span>
+                                    <a href="https://wa.me/918797443910" target="_blank" rel="noopener noreferrer" style="color: #25D366; text-decoration: none; font-size: 1.1em;" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                                </p>
                             </div>
                         </div>
                         <div class="contact-item">

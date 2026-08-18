@@ -11,7 +11,7 @@ export function renderCourses() {
             <div class="glass-card course-card fade-in-section" data-category="${course.category}" data-link="${course.link || '#'}">
                 <div class="course-thumb">
                     <a href="${course.link || '#'}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
-                        <img src="${course.thumbnail || '/images/course-1.jpg'}" alt="${course.title}" />
+                        <img src="${course.thumbnail || 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80'}" alt="${course.title}" />
                     </a>
                 </div>
                 <span class="course-category">${course.category}</span>
@@ -42,10 +42,10 @@ export function renderCourses() {
                 <p>Explore our comprehensive course catalog</p>
             </div>
             <div class="filter-row">
-                <button class="filter-btn active" data-filter="All">All</button>
-                <button class="filter-btn" data-filter="JEE">JEE</button>
-                <button class="filter-btn" data-filter="NEET">NEET</button>
-                <button class="filter-btn" data-filter="FOUNDATION">FOUNDATION</button>
+                <a href="#courses" class="filter-btn active" style="text-decoration: none;">All</a>
+                <a href="#jeecourses" class="filter-btn" style="text-decoration: none;">JEE</a>
+                <a href="#neetcourses" class="filter-btn" style="text-decoration: none;">NEET</a>
+                <a href="#foundationcourses" class="filter-btn" style="text-decoration: none;">FOUNDATION</a>
             </div>
             <div class="courses-grid" id="courses-grid">
                 ${coursesHtml}
@@ -55,49 +55,9 @@ export function renderCourses() {
 }
 
 export function initCourses() {
-    const filterBtns = document.querySelectorAll('.filter-btn');
     const courseCards = document.querySelectorAll('.course-card');
-
-    function applyFilter(filter) {
-        let matched = false;
-        filterBtns.forEach(b => {
-            const isMatch = b.dataset.filter === filter;
-            b.classList.toggle('active', isMatch);
-            if (isMatch) matched = true;
-        });
-
-        if (!matched && filterBtns.length) {
-            filterBtns[0].classList.add('active');
-            filter = 'All';
-        }
-
-        courseCards.forEach(card => {
-            if (filter === 'All' || card.dataset.category === filter) {
-                card.style.display = '';
-                card.classList.add('fade-in-section', 'visible');
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
-
-    let initialFilter = 'All';
-    const hash = window.location.hash;
-    if (hash.includes('?filter=')) {
-        initialFilter = decodeURIComponent(hash.split('?filter=')[1]);
-    }
-
-    applyFilter(initialFilter);
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const filter = btn.dataset.filter;
-            applyFilter(filter);
-            const targetHash = filter === 'All' ? '#courses' : `#courses?filter=${filter}`;
-            if (window.location.hash !== targetHash) {
-                history.replaceState(null, '', targetHash);
-            }
-        });
+    courseCards.forEach(card => {
+        card.classList.add('fade-in-section', 'visible');
     });
 
     courseCards.forEach(card => {
