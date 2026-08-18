@@ -57,7 +57,7 @@ export function renderFaculty() {
         return `
         <div class="er-faculty-card glass-card er-reveal visible">
             <div class="er-faculty-img-wrap">
-                <img src="${f.image}" class="er-faculty-img" alt="${f.name}" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+                <img src="${f.image}" class="er-faculty-img" alt="${f.name}" style="width: 100%; height: 100%; object-fit: contain; object-position: bottom center;">
                 <div class="er-faculty-studio-badge" style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 2; width: max-content;">
                     <span class="er-studio-icon">${f.icon}</span> ${f.subject} Specialist
                 </div>
