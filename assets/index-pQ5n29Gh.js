@@ -1164,8 +1164,8 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
         </svg>
       </button>
 
-      <!-- Dot pagination -->
-      <div id="er-dots" style="position:absolute; bottom:16px; left:50%; transform:translateX(-50%); display:flex; gap:10px; z-index:20;">
+      <!-- Dot pagination (Desktop: absolute inside, Mobile: relative below) -->
+      <div id="er-dots" class="er-banner-dots">
         <button class="er-dot er-dot-active" data-index="0" aria-label="Slide 1"></button>
         <button class="er-dot" data-index="1" aria-label="Slide 2"></button>
         <button class="er-dot" data-index="2" aria-label="Slide 3"></button>
@@ -1176,7 +1176,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
     <!-- ═══ SECTION B: POPULAR COURSES ═══ -->
     <section id="er-popular-courses" class="er-section" style="background:linear-gradient(160deg,#e8f5ee 0%,#d4eddf 50%,#c5e8d5 100%);">
         <div class="er-container">
-            <h2 class="er-section-heading er-reveal visible" style="color:#0e3a24; font-weight: 800;"> Explore Our Popular <span style="color:#1f7d4e;">Courses</span></h2>
+            <h2 class="er-section-heading er-reveal visible" style="color:#0e3a24; font-weight: 800;"> Explore Our <span style="color:#1f7d4e;">Courses</span></h2>
             <p class="er-section-sub er-reveal visible" style="color:#2a5e3a;">
                 Find the best course for your JEE, NEET, or foundation preparation and start learning today.
             </p>
