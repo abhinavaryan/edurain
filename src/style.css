@@ -2438,6 +2438,13 @@ textarea {
   transform: translateY(0);
 }
 
+/* Contact section dropdown should open downwards */
+.contact-section .social-dropdown-menu {
+  bottom: auto;
+  top: 125%;
+  transform: translateY(-10px);
+}
+
 .social-dropdown-menu .dropdown-header {
   font-size: 0.7rem;
   font-weight: 700;
