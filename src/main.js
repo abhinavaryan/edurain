@@ -3,6 +3,7 @@ import './fab.css';
 import { initRouter } from './router.js';
 import { onAuthChange } from './firebase/auth.js';
 import { initFab } from './components/fab.js';
+import { initMobileAppPopup } from './components/mobileAppPopup.js';
 
 // Prevent browser from automatically restoring scroll position on reload
 if ('scrollRestoration' in history) {
@@ -15,6 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize Floating Action Buttons & Chat
   initFab();
+
+  // Initialize Mobile App Pop-up
+  initMobileAppPopup();
 
   // Listen to Auth State Changes and update navbar
   onAuthChange((user) => {

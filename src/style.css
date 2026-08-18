@@ -3735,6 +3735,22 @@ textarea {
   line-height: 1.3;
 }
 
+/* Footer specific overrides for app buttons */
+.site-footer .er-store-btn {
+  padding: 0.4rem 0.75rem;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+}
+.site-footer .er-store-icon {
+  width: 22px;
+  height: 22px;
+}
+.site-footer .er-store-small {
+  font-size: 0.5rem;
+}
+.site-footer .er-store-name {
+  font-size: 0.75rem;
+}
 /* Phone mockup */
 .er-app-phone-wrap {
   display: flex;
@@ -4401,4 +4417,124 @@ textarea {
     font-weight: 800;
     margin-top: var(--space-lg);
     color: var(--primary, #064E3B);
+}
+
+/* ============================================
+   MOBILE APP POPUP
+   ============================================ */
+.mobile-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.mobile-popup-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-popup-content {
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px 20px 0 0;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 -5px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.mobile-popup-content.visible {
+    transform: translateY(0);
+}
+
+.mobile-popup-banner {
+    width: 100%;
+    height: 140px;
+    background: #e6f0fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.mobile-popup-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mobile-popup-body {
+    padding: 1.5rem;
+    text-align: center;
+    color: #1a1a1a;
+}
+
+.mobile-popup-title {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.mobile-popup-subtitle {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.mobile-popup-dynamic-text-container {
+    height: 30px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-popup-dynamic-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-popup-btn-open {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-decoration: none;
+    background: #5a4bda; /* Similar to PW purple/blue */
+    color: white;
+}
+
+.mobile-popup-btn-open:hover {
+    background: #4a3bc0;
+}
+
+.mobile-popup-btn-close {
+    background: none;
+    border: none;
+    color: #5a4bda;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.5rem;
+    cursor: pointer;
+    text-decoration: underline;
+    opacity: 0.8;
 }
