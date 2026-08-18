@@ -2124,6 +2124,11 @@ textarea {
   padding: var(--space-xl);
 }
 
+.contact-form .form-group input::placeholder,
+.contact-form .form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
 .form-group {
   margin-bottom: var(--space-md);
 }

@@ -41,7 +41,26 @@ export function renderContact() {
                     <div class="social-links">
                         <a href="https://www.instagram.com/edurain_official/" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/company/edurainofficial/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.youtube.com/@Eduraininstitute" target="_blank" rel="noopener noreferrer" class="social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <div class="social-dropdown-wrapper">
+                            <button type="button" class="social-icon social-dropdown-toggle" title="YouTube Channels" aria-label="YouTube Channels">
+                                <i class="fab fa-youtube"></i>
+                            </button>
+                            <div class="social-dropdown-menu">
+                                <div class="dropdown-header">YouTube Channels</div>
+                                <a href="https://www.youtube.com/@Eduraininstitute" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>EduRain Institute</span>
+                                </a>
+                                <a href="https://www.youtube.com/@EduRain9th10th" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>EduRain 9th &amp; 10th</span>
+                                </a>
+                                <a href="https://www.youtube.com/@EduRainNEETJEE" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>EduRain NEET / JEE</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
