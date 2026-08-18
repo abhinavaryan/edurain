@@ -41,21 +41,13 @@ export function renderFaculty() {
             icon: "🌍"
         },
         {
-            name: "Mr. Sujeet sir",
-            subject: "Mathematics",
-            exp: "15 Years Exp.",
-            desc: "A highly experienced Mathematics teacher with 15 years of experience, specializing in Foundation classes (6th to 10th).",
-            avatarBg: "linear-gradient(135deg, #0f766e 0%, #14b8a6 100%)",
-            icon: "📐"
-        },
-        {
             name: "Mr. Debashish Banerjee sir",
             subject: "Mathematics",
             exp: "13 Years Exp.",
             desc: "Expert Mathematics mentor with 13 years of experience, specializing in Class 11th & 12th and JEE preparation.",
             avatarBg: "linear-gradient(135deg, #4338ca 0%, #6366f1 100%)",
             icon: "🔢"
-        },
+        }
 
     ];
 
