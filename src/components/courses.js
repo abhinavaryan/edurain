@@ -39,7 +39,7 @@ export function renderCourses() {
         <section class="courses-section" id="courses-page">
             <div class="section-header">
                 <h1>Our Courses</h1>
-                <p>Explore our comprehensive course catalog</p>
+                <h2 style="font-size: var(--fs-lg); color: var(--text-secondary); font-weight: 400;">Explore our comprehensive course catalog</h2>
             </div>
             <div class="filter-row">
                 <a href="/courses" class="filter-btn active" style="text-decoration: none;">All</a>
