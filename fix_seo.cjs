@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+const fs = require('fs');
+const path = require('path');
+
+// Fix index.html
+const indexHtmlPath = path.join(__dirname, 'index.html');
+const indexHtmlContent = `<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -25,4 +30,29 @@
   <script type="module" src="/src/main.js"></script>
 </body>
 
-</html>
+</html>`;
+fs.writeFileSync(indexHtmlPath, indexHtmlContent, 'utf8');
+
+
+// Add robots to jeecourse, neetcourse, foundationcourse
+const addRobots = (filename) => {
+  const filePath = path.join(__dirname, filename);
+  let content = fs.readFileSync(filePath, 'utf8');
+  if (!content.includes('<meta name="robots"')) {
+    content = content.replace('<head>', '<head>\\n    <meta name="robots" content="index, follow" />');
+    fs.writeFileSync(filePath, content, 'utf8');
+  }
+};
+
+addRobots('jeecourse/index.html');
+addRobots('neetcourse/index.html');
+addRobots('foundationcourse/index.html');
+
+
+// Fix router.js
+const routerPath = path.join(__dirname, 'src', 'router.js');
+let routerCode = fs.readFileSync(routerPath, 'utf8');
+routerCode = routerCode.replace('"https://edurain.in/"', '"https://www.edurain.in/"');
+fs.writeFileSync(routerPath, routerCode, 'utf8');
+
+console.log('Done');

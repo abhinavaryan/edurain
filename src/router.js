@@ -61,7 +61,7 @@ const routes = {
       initHomeReviews();
       initImpact();
       initScrollReveal();
-      setMetaTags("Best Online Coaching for IIT-JEE, NEET & Class 6-10 | EduRain", "EduRain offers online coaching for Class 6-10, foundation courses, IIT-JEE preparation, NEET coaching, board exams and competitive exam preparation.", "https://edurain.in/");
+      setMetaTags("Best Online Coaching for IIT-JEE, NEET & Class 6-10 | EduRain", "EduRain offers online coaching for Class 6-10, foundation courses, IIT-JEE preparation, NEET coaching, board exams and competitive exam preparation.", "https://www.edurain.in/");
     }
   },
   '/courses': {
