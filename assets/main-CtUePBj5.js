@@ -13,11 +13,11 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                     </a>
                 </div>
                 <div class="nav-links">
-                    <a href="#home" class="nav-link active">Home</a>
-                    <a href="#courses" class="nav-link">Our Courses</a>
-                    <a href="#blogs" class="nav-link">Blogs</a>
-                    <a href="#about" class="nav-link">About Us</a>
-                    <a href="#contact" class="nav-link">Contact Us</a>
+                    <a href="/" class="nav-link active">Home</a>
+                    <a href="/courses" class="nav-link">Our Courses</a>
+                    <a href="/blogs" class="nav-link">Blogs</a>
+                    <a href="/about" class="nav-link">About Us</a>
+                    <a href="/contact" class="nav-link">Contact Us</a>
                 </div>
                 <div class="auth-btn-area">
                     <button class="btn btn-accent login-btn">Login</button>
@@ -45,11 +45,11 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 <button class="mobile-menu-close" id="mobile-menu-close">&times;</button>
             </div>
             <div class="mobile-menu-body">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#courses" class="nav-link">Our Courses</a>
-                <a href="#blogs" class="nav-link">Blogs</a>
-                <a href="#about" class="nav-link">About Us</a>
-                <a href="#contact" class="nav-link">Contact Us</a>
+                <a href="/" class="nav-link active">Home</a>
+                <a href="/courses" class="nav-link">Our Courses</a>
+                <a href="/blogs" class="nav-link">Blogs</a>
+                <a href="/about" class="nav-link">About Us</a>
+                <a href="/contact" class="nav-link">Contact Us</a>
             </div>
             <div class="mobile-menu-footer auth-btn-area">
                 <button class="btn btn-accent login-btn" style="width: 100%;">Login/Register</button>
@@ -104,20 +104,20 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#jeecourses">&gt; JEE Courses</a></li>
-                        <li><a href="#neetcourses">&gt; NEET Courses</a></li>
-                        <li><a href="#foundationcourses">&gt; Foundation Courses</a></li>
-                        <li><a href="#blogs">&gt; Blogs</a></li>
-                        <li><a href="#about">&gt; About</a></li>
+                        <li><a href="/jeecourses">&gt; JEE Courses</a></li>
+                        <li><a href="/neetcourses">&gt; NEET Courses</a></li>
+                        <li><a href="/foundationcourses">&gt; Foundation Courses</a></li>
+                        <li><a href="/blogs">&gt; Blogs</a></li>
+                        <li><a href="/about">&gt; About</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contact Us</h4>
                     <p>
                         <i class="fas fa-phone"></i> 
-                        <a href="tel:+918797443910" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">+91 87974 43910</a>
+                        <a href="tel:+918796443910" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">+91 87964 43910</a>
                         <span style="margin: 0 5px; opacity: 0.5;">|</span>
-                        <a href="https://wa.me/918797443910" target="_blank" rel="noopener noreferrer" style="color: #25D366; text-decoration: none; font-size: 1.1em;" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/918796443910" target="_blank" rel="noopener noreferrer" style="color: #25D366; text-decoration: none; font-size: 1.1em;" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:support@edurain.in" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">support@edurain.in</a></p>
                 </div>
@@ -152,8 +152,8 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
             <div class="footer-bottom">
                 <p>&copy; 2026 <span class="text-accent">EduRain</span>. All rights reserved.</p>
                 <div class="legal-links">
-                    <a href="#privacy">Privacy Policy</a> |
-                    <a href="#terms">Terms and Conditions</a>
+                    <a href="/privacy">Privacy Policy</a> |
+                    <a href="/terms">Terms and Conditions</a>
                 </div>
             </div>
         </footer>
@@ -164,10 +164,10 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 <p>Explore our comprehensive course catalog</p>
             </div>
             <div class="filter-row">
-                <a href="#courses" class="filter-btn active" style="text-decoration: none;">All</a>
-                <a href="#jeecourses" class="filter-btn" style="text-decoration: none;">JEE</a>
-                <a href="#neetcourses" class="filter-btn" style="text-decoration: none;">NEET</a>
-                <a href="#foundationcourses" class="filter-btn" style="text-decoration: none;">FOUNDATION</a>
+                <a href="/courses" class="filter-btn active" style="text-decoration: none;">All</a>
+                <a href="/jeecourses" class="filter-btn" style="text-decoration: none;">JEE</a>
+                <a href="/neetcourses" class="filter-btn" style="text-decoration: none;">NEET</a>
+                <a href="/foundationcourses" class="filter-btn" style="text-decoration: none;">FOUNDATION</a>
             </div>
             <div class="courses-grid" id="courses-grid">
                 ${w.map(e=>{let t=`⭐`.repeat(Math.round(e.rating)),n=e.students>=1e3?`${(e.students/1e3).toFixed(1)}K`:e.students;return`
@@ -246,7 +246,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                             <div class="pw-sidebar-widget">
                                 <div class="pw-sidebar-widget-header">
                                     <h3>Recommended for you</h3>
-                                    <a href="#courses" class="pw-see-all">See All &rarr;</a>
+                                    <a href="/courses" class="pw-see-all">See All &rarr;</a>
                                 </div>
                                 <div class="pw-sidebar-courses-list">
                                     ${w.slice(0,3).map(e=>`
@@ -270,7 +270,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                             <div class="pw-sidebar-widget pw-app-promo-widget">
                                 <h3>EduRain Learning App</h3>
                                 <p>Get live classes, DPPs, doubt solving & mock test series on your phone.</p>
-                                <a href="#appDownload" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; margin-top: 0.5rem; background: #16a34a; border: none; border-radius: 8px;">
+                                <a href="/appDownload" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; margin-top: 0.5rem; background: #16a34a; border: none; border-radius: 8px;">
                                     Download App Free
                                 </a>
                             </div>
@@ -315,7 +315,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 </div>
             `),a.innerHTML=`
             <div class="pw-article-breadcrumbs">
-                <a href="#home">Home</a> &rsaquo; <a href="#blogs">Blogs</a> &rsaquo; <span>${n.title}</span>
+                <a href="/">Home</a> &rsaquo; <a href="/blogs">Blogs</a> &rsaquo; <span>${n.title}</span>
             </div>
 
             <h1 class="pw-article-h1">${n.title}</h1>
@@ -477,9 +477,9 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                             <div>
                                 <strong>Phone</strong>
                                 <p>
-                                    <a href="tel:+918797443910" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">+91 87974 43910</a>
+                                    <a href="tel:+918796443910" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">+91 87964 43910</a>
                                     <span style="margin: 0 5px; opacity: 0.5;">|</span>
-                                    <a href="https://wa.me/918797443910" target="_blank" rel="noopener noreferrer" style="color: #25D366; text-decoration: none; font-size: 1.1em;" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="https://wa.me/918796443910" target="_blank" rel="noopener noreferrer" style="color: #25D366; text-decoration: none; font-size: 1.1em;" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
                                 </p>
                             </div>
                         </div>
@@ -1061,13 +1061,13 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                         <div>
                             <h2 style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">Main Pages</h2>
                             <ul style="list-style: none; padding: 0;">
-                                <li style="margin-bottom: 0.5rem;"><a href="#home" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Home</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="#about" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">About Us</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="#courses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">All Courses</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="#blogs" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Blogs</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="#journey" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Journey & Reflection</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="#reviews" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Student Reviews</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="#contact" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Contact Us</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Home</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/about" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">About Us</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/courses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">All Courses</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/blogs" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Blogs</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/journey" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Journey & Reflection</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/reviews" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Student Reviews</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/contact" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Contact Us</a></li>
                             </ul>
                         </div>
 
@@ -1075,9 +1075,9 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                         <div>
                             <h2 style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">Course Categories</h2>
                             <ul style="list-style: none; padding: 0;">
-                                <li style="margin-bottom: 0.5rem;"><a href="#jeecourses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">JEE Preparation</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="#neetcourses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">NEET Preparation</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="#foundationcourses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Foundation (6th-10th)</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/jeecourses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">JEE Preparation</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/neetcourses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">NEET Preparation</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/foundationcourses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Foundation (6th-10th)</a></li>
                             </ul>
                         </div>
 
@@ -1085,8 +1085,8 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                         <div>
                             <h2 style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">Legal & Support</h2>
                             <ul style="list-style: none; padding: 0;">
-                                <li style="margin-bottom: 0.5rem;"><a href="#privacy" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="#terms" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Terms and Conditions</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/privacy" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/terms" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Terms and Conditions</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1126,10 +1126,10 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 <p>${t}</p>
             </div>
             <div class="filter-row">
-                <a href="#courses" class="filter-btn" style="text-decoration: none;">All</a>
-                <a href="#jeecourses" class="filter-btn ${n===`JEE`?`active`:``}" style="text-decoration: none;">JEE</a>
-                <a href="#neetcourses" class="filter-btn ${n===`NEET`?`active`:``}" style="text-decoration: none;">NEET</a>
-                <a href="#foundationcourses" class="filter-btn ${n===`FOUNDATION`?`active`:``}" style="text-decoration: none;">FOUNDATION</a>
+                <a href="/courses" class="filter-btn" style="text-decoration: none;">All</a>
+                <a href="/jeecourses" class="filter-btn ${n===`JEE`?`active`:``}" style="text-decoration: none;">JEE</a>
+                <a href="/neetcourses" class="filter-btn ${n===`NEET`?`active`:``}" style="text-decoration: none;">NEET</a>
+                <a href="/foundationcourses" class="filter-btn ${n===`FOUNDATION`?`active`:``}" style="text-decoration: none;">FOUNDATION</a>
             </div>
             <div class="courses-grid" style="margin-top: 40px;">
                 ${i}
@@ -1143,23 +1143,23 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
         <div id="er-slider-track" style="display:flex; transition:transform 0.7s cubic-bezier(0.4,0,0.2,1); will-change:transform;">
 
           <!-- SLIDE 1 — FOUNDATION COURSES BANNER -->
-          <a href="#foundationcourses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+          <a href="/foundationcourses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <img src="https://cdn.phototourl.com/free/2026-08-19-a7d0b97b-514f-440f-a353-c2002218aa92.jpg" alt="Foundation Courses" style="width:100%; height:100%; object-fit:contain; display:block;" />
           </a>
 
           <!-- SLIDE 2 — NEET BATCH -->
-          <a href="#neetcourses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+          <a href="/neetcourses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <img src="https://cdn.phototourl.com/free/2026-08-19-b81703e4-9625-45ba-9dd9-a78611892cbe.jpg" alt="NEET Courses" style="width:100%; height:100%; object-fit:contain; display:block;" />
           </a>
 
 
           <!-- SLIDE 3 — JEE COURSES BANNER -->
-          <a href="#jeecourses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+          <a href="/jeecourses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <img src="https://cdn.phototourl.com/free/2026-08-19-d0350913-854a-4e54-a80e-ca16951ba57d.jpg" alt="JEE Courses" style="width:100%; height:100%; object-fit:contain; display:block;" />
           </a>
 
           <!-- SLIDE 4 — JOURNEY & INTROSPECTION -->
-          <a href="#journey" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+          <a href="/journey" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <img src="https://cdn.phototourl.com/free/2026-08-14-1e9adc87-cc2a-4bcf-8378-cb876b01aba8.png" alt="Journey" style="width:100%; height:100%; object-fit:contain; display:block;" />
           </a>
 
@@ -1222,7 +1222,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
     `).join(``)}
             </div>
             <div style="text-align:center;margin-top:3rem;" class="er-reveal visible">
-                <a href="#courses" class="er-view-all-btn">View All Courses →</a>
+                <a href="/courses" class="er-view-all-btn">View All Courses →</a>
             </div>
         </div>
     </section>
@@ -1252,7 +1252,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                         <li><span class="er-check">✓</span> Learn free, experience it, then decide</li>
                     </ul>
 
-                    <a href="#contact" class="er-demo-cta">
+                    <a href="/contact" class="er-demo-cta">
                         📅 Book a Free Demo
                     </a>
                 </div>
@@ -1576,14 +1576,14 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 Cancel
             </button>
         </div>
-    `,e.appendChild(t),document.body.appendChild(e),setTimeout(()=>{e.classList.add(`visible`),t.classList.add(`visible`)},50);let n=()=>{e.classList.remove(`visible`),t.classList.remove(`visible`),setTimeout(()=>{e.parentNode&&e.parentNode.removeChild(e)},400)};document.getElementById(`ios-popup-btn-cancel`).addEventListener(`click`,n),document.getElementById(`ios-popup-btn-x`).addEventListener(`click`,n),e.addEventListener(`click`,t=>{t.target===e&&n()}),document.getElementById(`ios-popup-btn-continue`).addEventListener(`click`,()=>{navigator.clipboard.writeText(`rwoaln`).catch(e=>console.log(`Clipboard error:`,e)),window.open(`https://apps.apple.com/in/app/myinstitute/id1472483563`,`_blank`),n()})}function Q(e,t){document.title=e;let n=document.querySelector(`meta[name="description"]`);n||(n=document.createElement(`meta`),n.name=`description`,document.head.appendChild(n)),n.content=t}var pe={"#home":{render:()=>Y()+Z()+re()+ie()+oe()+ce()+ue(),postRender:()=>{X(),ae(),se(),le(),$()}},"#courses":{render:()=>T(),postRender:()=>E()},"#blogs":{render:()=>k(),postRender:()=>j()},"#journey":{render:()=>B(),postRender:()=>V()},"#about":{render:()=>M(),postRender:()=>{}},"#reviews":{render:()=>P(),postRender:()=>F()},"#contact":{render:()=>I(),postRender:()=>L()},"#privacy":{render:()=>H(),postRender:()=>{}},"#terms":{render:()=>U(),postRender:()=>Q(`Terms and Conditions - EduRain`,`Terms and conditions of use for Edurain`)},"#sitemap":{render:()=>W(),postRender:()=>Q(`Sitemap - EduRain`,`Sitemap for EduRain`)},"#jeecourses":{render:()=>K(),postRender:()=>Q(`JEE Courses - EduRain`,`Comprehensive preparation for IIT-JEE exams. Build a strong foundation and master the concepts to secure your seat in top engineering colleges.`)},"#neetcourses":{render:()=>q(),postRender:()=>Q(`NEET Courses - EduRain`,`Focused coaching for medical aspirants. In-depth coverage of Biology, Physics, and Chemistry to help you crack NEET with top scores.`)},"#foundationcourses":{render:()=>J(),postRender:()=>Q(`Foundation Courses - EduRain`,`Strengthen your core concepts in Science and Mathematics from Class 6 to 10. The perfect stepping stone for future competitive exams.`)}};function $(){let e=document.querySelectorAll(`.er-reveal`);if(!e.length)return;let t=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.classList.add(`visible`),t.unobserve(e.target))})},{threshold:.12});e.forEach(e=>t.observe(e))}var me=()=>{let e=document.getElementById(`app`),t=()=>{let t=window.location.hash;if(!t||t===`#`){t=`#home`,window.location.hash=t;return}let n=t.split(`?`)[0].split(`/`)[0],r=pe[n]||{render:()=>`<div class="page-404"><h1>404</h1><p>Page not found</p><a href="#home" class="btn btn-accent">Go Home</a></div>`,postRender:()=>{}},i=te(),a=r.render(),o=S(),s=R();e.innerHTML=`
-      ${i}
+    `,e.appendChild(t),document.body.appendChild(e),setTimeout(()=>{e.classList.add(`visible`),t.classList.add(`visible`)},50);let n=()=>{e.classList.remove(`visible`),t.classList.remove(`visible`),setTimeout(()=>{e.parentNode&&e.parentNode.removeChild(e)},400)};document.getElementById(`ios-popup-btn-cancel`).addEventListener(`click`,n),document.getElementById(`ios-popup-btn-x`).addEventListener(`click`,n),e.addEventListener(`click`,t=>{t.target===e&&n()}),document.getElementById(`ios-popup-btn-continue`).addEventListener(`click`,()=>{navigator.clipboard.writeText(`rwoaln`).catch(e=>console.log(`Clipboard error:`,e)),window.open(`https://apps.apple.com/in/app/myinstitute/id1472483563`,`_blank`),n()})}function Q(e,t){document.title=e;let n=document.querySelector(`meta[name="description"]`);n||(n=document.createElement(`meta`),n.name=`description`,document.head.appendChild(n)),n.content=t}var pe={"/":{render:()=>Y()+Z()+re()+ie()+oe()+ce()+ue(),postRender:()=>{X(),ae(),se(),le(),$()}},"/courses":{render:()=>T(),postRender:()=>E()},"/blogs":{render:()=>k(),postRender:()=>j()},"/journey":{render:()=>B(),postRender:()=>V()},"/about":{render:()=>M(),postRender:()=>{}},"/reviews":{render:()=>P(),postRender:()=>F()},"/contact":{render:()=>I(),postRender:()=>L()},"/privacy":{render:()=>H(),postRender:()=>{}},"/terms":{render:()=>U(),postRender:()=>Q(`Terms and Conditions - EduRain`,`Terms and conditions of use for Edurain`)},"/sitemap":{render:()=>W(),postRender:()=>Q(`Sitemap - EduRain`,`Sitemap for EduRain`)},"/jeecourses":{render:()=>K(),postRender:()=>Q(`JEE Courses - EduRain`,`Comprehensive preparation for IIT-JEE exams. Build a strong foundation and master the concepts to secure your seat in top engineering colleges.`)},"/neetcourses":{render:()=>q(),postRender:()=>Q(`NEET Courses - EduRain`,`Focused coaching for medical aspirants. In-depth coverage of Biology, Physics, and Chemistry to help you crack NEET with top scores.`)},"/foundationcourses":{render:()=>J(),postRender:()=>Q(`Foundation Courses - EduRain`,`Strengthen your core concepts in Science and Mathematics from Class 6 to 10. The perfect stepping stone for future competitive exams.`)}};function $(){let e=document.querySelectorAll(`.er-reveal`);if(!e.length)return;let t=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.classList.add(`visible`),t.unobserve(e.target))})},{threshold:.12});e.forEach(e=>t.observe(e))}var me=e=>{window.history.pushState({},``,e),window.renderRoute&&window.renderRoute()},he=()=>{let e=document.getElementById(`app`),t=new URLSearchParams(window.location.search).get(`p`);t&&window.history.replaceState(null,null,t),document.body.addEventListener(`click`,e=>{if(e.defaultPrevented)return;let t=e.target.closest(`a`);if(t&&t.href){if(t.getAttribute(`href`)===`#`)return;try{let n=new URL(t.href);if(n.origin===window.location.origin){if(t.target===`_blank`||n.pathname.startsWith(`/jeecourse/`)||n.pathname.startsWith(`/neetcourse/`)||n.pathname.startsWith(`/foundationcourse/`))return;e.preventDefault(),me(n.pathname)}}catch{}}}),window.renderRoute=()=>{let t=window.location.pathname;t===``||t===`/`?t=`/`:t.endsWith(`/`)&&(t=t.slice(0,-1));let n=pe[t]||{render:()=>`<div class="page-404"><h1>404</h1><p>Page not found</p><a href="/" class="btn btn-accent">Go Home</a></div>`,postRender:()=>{}},r=te(),i=n.render(),a=S(),o=R();e.innerHTML=`
+      ${r}
       <main class="main-content fade-in-section">
-        ${a}
+        ${i}
       </main>
+      ${a}
       ${o}
-      ${s}
-    `,requestAnimationFrame(()=>{let t=e.querySelector(`.main-content`);t&&t.classList.add(`visible`)}),document.querySelectorAll(`.nav-link`).forEach(e=>{e.classList.toggle(`active`,e.getAttribute(`href`)===n)}),window.scrollTo({top:0,behavior:`instant`}),x(),z(),C(),de(),r.postRender(),window.observeFadeElements&&window.observeFadeElements()};window.addEventListener(`hashchange`,t),t()};function he(){let e=document.createElement(`div`);e.id=`er-fab-container`,e.innerHTML=`
+    `,requestAnimationFrame(()=>{let t=e.querySelector(`.main-content`);t&&t.classList.add(`visible`)}),document.querySelectorAll(`.nav-link`).forEach(e=>{try{let n=new URL(e.href).pathname,r=n.endsWith(`/`)&&n!==`/`?n.slice(0,-1):n;e.classList.toggle(`active`,r===t)}catch{}}),window.scrollTo({top:0,behavior:`instant`}),x(),z(),C(),de(),n.postRender(),window.observeFadeElements&&window.observeFadeElements()},window.addEventListener(`popstate`,window.renderRoute),window.renderRoute()};function ge(){let e=document.createElement(`div`);e.id=`er-fab-container`,e.innerHTML=`
         <!-- AI Chat Window (Hidden by default) -->
         <div id="er-chat-window" class="er-chat-hidden">
             <div class="er-chat-header">
@@ -1619,7 +1619,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
             <button class="er-fab-btn er-fab-small" id="er-fab-scroll" aria-label="Scroll to top" title="Scroll to Top">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
             </button>
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="er-fab-btn er-fab-whatsapp" aria-label="WhatsApp" title="Chat on WhatsApp">
+            <a href="https://wa.me/918796443910" target="_blank" rel="noopener noreferrer" class="er-fab-btn er-fab-whatsapp" aria-label="WhatsApp" title="Chat on WhatsApp">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
             </a>
             <button class="er-fab-btn er-fab-chat" id="er-fab-chat" aria-label="AI Assistant" title="AI Assistant">
@@ -1627,7 +1627,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><circle cx="9" cy="11" r="1" fill="currentColor"/><circle cx="15" cy="11" r="1" fill="currentColor"/><path d="M9 15c.5 1 2 1.5 3 1.5s2.5-.5 3-1.5"/></svg>
             </button>
         </div>
-    `,document.body.appendChild(e);let t=document.getElementById(`er-fab-scroll`),n=document.getElementById(`er-fab-chat`),r=document.getElementById(`er-chat-close`),i=document.getElementById(`er-chat-window`);window.addEventListener(`scroll`,()=>{window.scrollY>300?t.classList.add(`er-fab-visible`):t.classList.remove(`er-fab-visible`)}),t.addEventListener(`click`,()=>{window.scrollTo({top:0,behavior:`smooth`})});let a=()=>{i.classList.toggle(`er-chat-hidden`)};n.addEventListener(`click`,a),r.addEventListener(`click`,a)}function ge(){window.innerWidth>768||setTimeout(()=>{_e()},3e3)}function _e(){if(document.getElementById(`mobile-app-popup-overlay`))return;let e=document.createElement(`div`);e.id=`mobile-app-popup-overlay`,e.className=`mobile-popup-overlay`;let t=document.createElement(`div`);t.className=`mobile-popup-content`,t.innerHTML=`
+    `,document.body.appendChild(e);let t=document.getElementById(`er-fab-scroll`),n=document.getElementById(`er-fab-chat`),r=document.getElementById(`er-chat-close`),i=document.getElementById(`er-chat-window`);window.addEventListener(`scroll`,()=>{window.scrollY>300?t.classList.add(`er-fab-visible`):t.classList.remove(`er-fab-visible`)}),t.addEventListener(`click`,()=>{window.scrollTo({top:0,behavior:`smooth`})});let a=()=>{i.classList.toggle(`er-chat-hidden`)};n.addEventListener(`click`,a),r.addEventListener(`click`,a)}function _e(){window.innerWidth>768||setTimeout(()=>{ve()},3e3)}function ve(){if(document.getElementById(`mobile-app-popup-overlay`))return;let e=document.createElement(`div`);e.id=`mobile-app-popup-overlay`,e.className=`mobile-popup-overlay`;let t=document.createElement(`div`);t.className=`mobile-popup-content`,t.innerHTML=`
         <button class="mobile-popup-close-x" id="popup-btn-x" aria-label="Close">
             <i class="fas fa-times"></i>
         </button>
@@ -1669,7 +1669,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 Cancel
             </button>
         </div>
-    `,e.appendChild(t),document.body.appendChild(e),setTimeout(()=>{e.classList.add(`visible`),t.classList.add(`visible`)},50);let n=[`Exclusive App-Only Features`,`Your Entire Prep in One App`,`Learning Anytime, Anywhere`],r=0,i=document.getElementById(`popup-dynamic-text`),a=setInterval(()=>{if(!i){clearInterval(a);return}i.style.opacity=`0`,i.style.transform=`translateY(10px)`,setTimeout(()=>{r=(r+1)%n.length,i.textContent=n[r],i.style.opacity=`1`,i.style.transform=`translateY(0)`},300)},3e3),o=()=>{clearInterval(a),e.classList.remove(`visible`),t.classList.remove(`visible`),setTimeout(()=>{e.parentNode&&e.parentNode.removeChild(e)},400)};document.getElementById(`popup-btn-close`).addEventListener(`click`,o),document.getElementById(`popup-btn-x`).addEventListener(`click`,o),e.addEventListener(`click`,t=>{t.target===e&&o()});let s=/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream;document.getElementById(`popup-btn-open`).addEventListener(`click`,()=>{s?(document.querySelector(`.mobile-popup-body`).style.display=`none`,document.getElementById(`mobile-popup-ios-view`).style.display=`block`):(window.open(`https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN`,`_blank`),o())}),document.getElementById(`popup-btn-ios-cancel`).addEventListener(`click`,()=>{document.getElementById(`mobile-popup-ios-view`).style.display=`none`,document.querySelector(`.mobile-popup-body`).style.display=`block`}),document.getElementById(`popup-btn-ios-continue`).addEventListener(`click`,()=>{navigator.clipboard.writeText(`rwoaln`).catch(e=>console.log(`Clipboard error:`,e)),window.open(`https://apps.apple.com/in/app/myinstitute/id1472483563`,`_blank`),o()})}`scrollRestoration`in history&&(history.scrollRestoration=`manual`),document.addEventListener(`DOMContentLoaded`,()=>{me(),he(),ge(),ee(e=>{document.querySelectorAll(`.auth-btn-area`).forEach(t=>{let n=t.classList.contains(`mobile-menu-footer`);if(e)t.innerHTML=`
+    `,e.appendChild(t),document.body.appendChild(e),setTimeout(()=>{e.classList.add(`visible`),t.classList.add(`visible`)},50);let n=[`Exclusive App-Only Features`,`Your Entire Prep in One App`,`Learning Anytime, Anywhere`],r=0,i=document.getElementById(`popup-dynamic-text`),a=setInterval(()=>{if(!i){clearInterval(a);return}i.style.opacity=`0`,i.style.transform=`translateY(10px)`,setTimeout(()=>{r=(r+1)%n.length,i.textContent=n[r],i.style.opacity=`1`,i.style.transform=`translateY(0)`},300)},3e3),o=()=>{clearInterval(a),e.classList.remove(`visible`),t.classList.remove(`visible`),setTimeout(()=>{e.parentNode&&e.parentNode.removeChild(e)},400)};document.getElementById(`popup-btn-close`).addEventListener(`click`,o),document.getElementById(`popup-btn-x`).addEventListener(`click`,o),e.addEventListener(`click`,t=>{t.target===e&&o()});let s=/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream;document.getElementById(`popup-btn-open`).addEventListener(`click`,()=>{s?(document.querySelector(`.mobile-popup-body`).style.display=`none`,document.getElementById(`mobile-popup-ios-view`).style.display=`block`):(window.open(`https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN`,`_blank`),o())}),document.getElementById(`popup-btn-ios-cancel`).addEventListener(`click`,()=>{document.getElementById(`mobile-popup-ios-view`).style.display=`none`,document.querySelector(`.mobile-popup-body`).style.display=`block`}),document.getElementById(`popup-btn-ios-continue`).addEventListener(`click`,()=>{navigator.clipboard.writeText(`rwoaln`).catch(e=>console.log(`Clipboard error:`,e)),window.open(`https://apps.apple.com/in/app/myinstitute/id1472483563`,`_blank`),o()})}`scrollRestoration`in history&&(history.scrollRestoration=`manual`),document.addEventListener(`DOMContentLoaded`,()=>{he(),ge(),_e(),ee(e=>{document.querySelectorAll(`.auth-btn-area`).forEach(t=>{let n=t.classList.contains(`mobile-menu-footer`);if(e)t.innerHTML=`
           <span class="user-greeting">Hi, ${e.displayName||e.email.split(`@`)[0]}</span>
           <button class="btn btn-outline btn-sm logout-btn" ${n?`style="width: 100%;"`:``}>Logout</button>
         `;else{t.innerHTML=`
