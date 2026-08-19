@@ -88,7 +88,7 @@ export function renderBlogs() {
                             <div class="pw-sidebar-widget">
                                 <div class="pw-sidebar-widget-header">
                                     <h3>Recommended for you</h3>
-                                    <a href="#courses" class="pw-see-all">See All &rarr;</a>
+                                    <a href="/courses" class="pw-see-all">See All &rarr;</a>
                                 </div>
                                 <div class="pw-sidebar-courses-list">
                                     ${recommendedCoursesHtml}
@@ -98,7 +98,7 @@ export function renderBlogs() {
                             <div class="pw-sidebar-widget pw-app-promo-widget">
                                 <h3>EduRain Learning App</h3>
                                 <p>Get live classes, DPPs, doubt solving & mock test series on your phone.</p>
-                                <a href="#appDownload" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; margin-top: 0.5rem; background: #16a34a; border: none; border-radius: 8px;">
+                                <a href="/appDownload" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; margin-top: 0.5rem; background: #16a34a; border: none; border-radius: 8px;">
                                     Download App Free
                                 </a>
                             </div>
@@ -259,7 +259,7 @@ export function initBlogs() {
 
         modalMain.innerHTML = `
             <div class="pw-article-breadcrumbs">
-                <a href="#home">Home</a> &rsaquo; <a href="#blogs">Blogs</a> &rsaquo; <span>${blog.title}</span>
+                <a href="/">Home</a> &rsaquo; <a href="/blogs">Blogs</a> &rsaquo; <span>${blog.title}</span>
             </div>
 
             <h1 class="pw-article-h1">${blog.title}</h1>

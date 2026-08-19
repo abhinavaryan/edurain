@@ -35,7 +35,7 @@ function setMetaTags(title, description) {
 }
 
 const routes = {
-  '#home': {
+  '/': {
     // ORDER: Banner → Popular Courses → Free Demo → Faculty → Student Reviews → Impact → App Download
     render: () =>
       renderBanner() +
@@ -53,51 +53,51 @@ const routes = {
       initScrollReveal();
     }
   },
-  '#courses': {
+  '/courses': {
     render: () => renderCourses(),
     postRender: () => initCourses()
   },
-  '#blogs': {
+  '/blogs': {
     render: () => renderBlogs(),
     postRender: () => initBlogs()
   },
-  '#journey': {
+  '/journey': {
     render: () => renderJourney(),
     postRender: () => initJourney()
   },
-  '#about': {
+  '/about': {
     render: () => renderAbout(),
     postRender: () => { }
   },
-  '#reviews': {
+  '/reviews': {
     render: () => renderReviews(),
     postRender: () => initReviews()
   },
-  '#contact': {
+  '/contact': {
     render: () => renderContact(),
     postRender: () => initContact()
   },
-  '#privacy': {
+  '/privacy': {
     render: () => renderPrivacy(),
     postRender: () => { }
   },
-  '#terms': {
+  '/terms': {
     render: () => renderTerms(),
     postRender: () => setMetaTags("Terms and Conditions - EduRain", "Terms and conditions of use for Edurain")
   },
-  '#sitemap': {
+  '/sitemap': {
     render: () => renderSitemap(),
     postRender: () => setMetaTags("Sitemap - EduRain", "Sitemap for EduRain")
   },
-  '#jeecourses': {
+  '/jeecourses': {
     render: () => renderJEECourses(),
     postRender: () => setMetaTags("JEE Courses - EduRain", "Comprehensive preparation for IIT-JEE exams. Build a strong foundation and master the concepts to secure your seat in top engineering colleges.")
   },
-  '#neetcourses': {
+  '/neetcourses': {
     render: () => renderNEETCourses(),
     postRender: () => setMetaTags("NEET Courses - EduRain", "Focused coaching for medical aspirants. In-depth coverage of Biology, Physics, and Chemistry to help you crack NEET with top scores.")
   },
-  '#foundationcourses': {
+  '/foundationcourses': {
     render: () => renderFoundationCourses(),
     postRender: () => setMetaTags("Foundation Courses - EduRain", "Strengthen your core concepts in Science and Mathematics from Class 6 to 10. The perfect stepping stone for future competitive exams.")
   }
@@ -118,23 +118,64 @@ function initScrollReveal() {
   els.forEach(el => obs.observe(el));
 }
 
-export const navigateTo = (hash) => {
-  window.location.hash = hash;
+export const navigateTo = (path) => {
+  window.history.pushState({}, "", path);
+  if (window.renderRoute) {
+    window.renderRoute();
+  }
 };
 
 export const initRouter = () => {
   const app = document.getElementById('app');
 
-  const render = () => {
-    let hash = window.location.hash;
-    if (!hash || hash === '#') {
-      hash = '#home';
-      window.location.hash = hash;
-      return;
+  // Handle GitHub Pages 404 redirect hack
+  const urlParams = new URLSearchParams(window.location.search);
+  const redirectPath = urlParams.get('p');
+  if (redirectPath) {
+    window.history.replaceState(null, null, redirectPath);
+  }
+
+  // Intercept all clicks on internal links for SPA
+  document.body.addEventListener('click', e => {
+    if (e.defaultPrevented) return;
+    const link = e.target.closest('a');
+    if (link && link.href) {
+      const hrefAttr = link.getAttribute('href');
+      if (hrefAttr === '#') return; // Ignore empty hash links used for JS actions
+      
+      try {
+        const url = new URL(link.href);
+        // Ensure it's the same origin
+        if (url.origin === window.location.origin) {
+          // Exclude target="_blank" and standalone multi-page folders
+          if (link.target === "_blank") return;
+          if (url.pathname.startsWith('/jeecourse/') || 
+              url.pathname.startsWith('/neetcourse/') || 
+              url.pathname.startsWith('/foundationcourse/')) {
+             return; 
+          }
+          // Prevent full page reload
+          e.preventDefault();
+          navigateTo(url.pathname);
+        }
+      } catch (err) {
+        // Ignore invalid URLs
+      }
     }
-    const routeKey = hash.split('?')[0].split('/')[0];
-    const route = routes[routeKey] || {
-      render: () => `<div class="page-404"><h1>404</h1><p>Page not found</p><a href="#home" class="btn btn-accent">Go Home</a></div>`,
+  });
+
+  window.renderRoute = () => {
+    let path = window.location.pathname;
+    
+    // Normalize path
+    if (path === '' || path === '/') {
+      path = '/';
+    } else if (path.endsWith('/')) {
+      path = path.slice(0, -1);
+    }
+
+    const route = routes[path] || {
+      render: () => `<div class="page-404"><h1>404</h1><p>Page not found</p><a href="/" class="btn btn-accent">Go Home</a></div>`,
       postRender: () => { }
     };
 
@@ -158,7 +199,11 @@ export const initRouter = () => {
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === routeKey);
+      try {
+        const linkPath = new URL(link.href).pathname;
+        const normalizedLinkPath = linkPath.endsWith('/') && linkPath !== '/' ? linkPath.slice(0, -1) : linkPath;
+        link.classList.toggle('active', normalizedLinkPath === path);
+      } catch (e) {}
     });
 
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -174,6 +219,6 @@ export const initRouter = () => {
     }
   };
 
-  window.addEventListener('hashchange', render);
-  render();
+  window.addEventListener('popstate', window.renderRoute);
+  window.renderRoute();
 };

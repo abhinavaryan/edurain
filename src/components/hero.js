@@ -13,7 +13,7 @@ export function renderHero() {
                     </div>
                     <div class="cta-buttons">
                         <button class="btn btn-accent btn-lg">Download App</button>
-                        <a href="#courses" class="btn btn-outline btn-lg">Explore Courses</a>
+                        <a href="/courses" class="btn btn-outline btn-lg">Explore Courses</a>
                     </div>
                     <div class="stats-row">
                         <div class="stat-item"><strong>10K+</strong> Students</div>

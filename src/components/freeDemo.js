@@ -25,7 +25,7 @@ export function renderFreeDemo() {
                         <li><span class="er-check">✓</span> Learn free, experience it, then decide</li>
                     </ul>
 
-                    <a href="#contact" class="er-demo-cta">
+                    <a href="/contact" class="er-demo-cta">
                         📅 Book a Free Demo
                     </a>
                 </div>

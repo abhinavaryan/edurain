@@ -42,10 +42,10 @@ export function renderCourses() {
                 <p>Explore our comprehensive course catalog</p>
             </div>
             <div class="filter-row">
-                <a href="#courses" class="filter-btn active" style="text-decoration: none;">All</a>
-                <a href="#jeecourses" class="filter-btn" style="text-decoration: none;">JEE</a>
-                <a href="#neetcourses" class="filter-btn" style="text-decoration: none;">NEET</a>
-                <a href="#foundationcourses" class="filter-btn" style="text-decoration: none;">FOUNDATION</a>
+                <a href="/courses" class="filter-btn active" style="text-decoration: none;">All</a>
+                <a href="/jeecourses" class="filter-btn" style="text-decoration: none;">JEE</a>
+                <a href="/neetcourses" class="filter-btn" style="text-decoration: none;">NEET</a>
+                <a href="/foundationcourses" class="filter-btn" style="text-decoration: none;">FOUNDATION</a>
             </div>
             <div class="courses-grid" id="courses-grid">
                 ${coursesHtml}

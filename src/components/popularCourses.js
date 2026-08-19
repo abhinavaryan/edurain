@@ -52,7 +52,7 @@ export function renderPopularCourses() {
                 ${cards}
             </div>
             <div style="text-align:center;margin-top:3rem;" class="er-reveal visible">
-                <a href="#courses" class="er-view-all-btn">View All Courses →</a>
+                <a href="/courses" class="er-view-all-btn">View All Courses →</a>
             </div>
         </div>
     </section>

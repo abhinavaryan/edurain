@@ -48,20 +48,20 @@ export function renderFooter() {
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#jeecourses">&gt; JEE Courses</a></li>
-                        <li><a href="#neetcourses">&gt; NEET Courses</a></li>
-                        <li><a href="#foundationcourses">&gt; Foundation Courses</a></li>
-                        <li><a href="#blogs">&gt; Blogs</a></li>
-                        <li><a href="#about">&gt; About</a></li>
+                        <li><a href="/jeecourses">&gt; JEE Courses</a></li>
+                        <li><a href="/neetcourses">&gt; NEET Courses</a></li>
+                        <li><a href="/foundationcourses">&gt; Foundation Courses</a></li>
+                        <li><a href="/blogs">&gt; Blogs</a></li>
+                        <li><a href="/about">&gt; About</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contact Us</h4>
                     <p>
                         <i class="fas fa-phone"></i> 
-                        <a href="tel:+918797443910" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">+91 87974 43910</a>
+                        <a href="tel:+918796443910" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">+91 87964 43910</a>
                         <span style="margin: 0 5px; opacity: 0.5;">|</span>
-                        <a href="https://wa.me/918797443910" target="_blank" rel="noopener noreferrer" style="color: #25D366; text-decoration: none; font-size: 1.1em;" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/918796443910" target="_blank" rel="noopener noreferrer" style="color: #25D366; text-decoration: none; font-size: 1.1em;" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:support@edurain.in" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">support@edurain.in</a></p>
                 </div>
@@ -96,8 +96,8 @@ export function renderFooter() {
             <div class="footer-bottom">
                 <p>&copy; 2026 <span class="text-accent">EduRain</span>. All rights reserved.</p>
                 <div class="legal-links">
-                    <a href="#privacy">Privacy Policy</a> |
-                    <a href="#terms">Terms and Conditions</a>
+                    <a href="/privacy">Privacy Policy</a> |
+                    <a href="/terms">Terms and Conditions</a>
                 </div>
             </div>
         </footer>
