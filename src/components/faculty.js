@@ -3,7 +3,7 @@ export function renderFaculty() {
         {
             name: "Mr. Manoj sir",
             subject: "English",
-            exp: "14 Years Exp.",
+            exp: "15+ Years Exp.",
             desc: "He is a passionate English mentor dedicated to mastering language skills, literature, and communication excellence.",
             image: "/images/home teachers image/1.png",
             icon: "📖"
@@ -27,7 +27,7 @@ export function renderFaculty() {
         {
             name: "Mr. Diwakar sir",
             subject: "Physics",
-            exp: "15 Years Exp.",
+            exp: "17+ Years Exp.",
             desc: "He is recognized for his concept-driven teaching approach and consistent success in guiding NEET aspirants toward top ranks.",
             image: "/images/home teachers image/3.png",
             icon: "⚡"
@@ -35,7 +35,7 @@ export function renderFaculty() {
         {
             name: "Mr. Nitin sir",
             subject: "Biology",
-            exp: "16 Years Exp.",
+            exp: "15+ Years Exp.",
             desc: "A highly respected Biology mentor, He is known for making complex concepts simple and helping students achieve NEET results.",
             image: "/images/home teachers image/4.png",
             icon: "🧬"

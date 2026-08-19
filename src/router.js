@@ -56,7 +56,10 @@ const routes = {
   },
   '/courses': {
     render: () => renderCourses(),
-    postRender: () => initCourses()
+    postRender: () => {
+      initCourses();
+      setMetaTags("Explore All Courses – IIT JEE, NEET & Foundation (Class 6-10)", "Explore IIT JEE, NEET & Foundation courses for Class 6-10 with expert faculty, structured curriculum & proven results. Take the first step toward success");
+    }
   },
   '/blogs': {
     render: () => renderBlogs(),
@@ -99,7 +102,7 @@ const routes = {
   },
   '/courses/neet': {
     render: () => renderNEETCourses(),
-    postRender: () => setMetaTags("NEET Courses - EduRain", "Focused coaching for medical aspirants. In-depth coverage of Biology, Physics, and Chemistry to help you crack NEET with top scores.")
+    postRender: () => setMetaTags("NEET 2027-28 Complete Online Preparation with EduRain", "Start your NEET 2027-28 online preparation with EduRain: live classes, expert faculty, and structured NCERT-based material with regular mock tests.")
   },
   '/courses/foundation': {
     render: () => renderFoundationCourses(),

@@ -23,9 +23,9 @@ export function renderBanner() {
           </a>
 
           <!-- SLIDE 4 — JOURNEY & INTROSPECTION -->
-          <a href="/journey" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+          <div class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <img src="https://cdn.phototourl.com/free/2026-08-14-1e9adc87-cc2a-4bcf-8378-cb876b01aba8.png" alt="Journey" style="width:100%; height:100%; object-fit:contain; display:block;" />
-          </a>
+          </div>
 
         </div>
 
