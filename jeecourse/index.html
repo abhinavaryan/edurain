@@ -1,0 +1,2015 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NHNLCSKT');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2853349708154684');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=2853349708154684&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EDURAIN - Victory Starts Here">
+    <title>EDURAIN - Victory Starts Here</title>
+    <style>
+        /* ============================================
+            CSS VARIABLES & RESET
+            ============================================ */
+        :root {
+            --primary-color: #FFC107;
+            /* Yellow */
+            --primary-dark: #FFA000;
+            --secondary-color: #2E7D32;
+            /* Green */
+            --secondary-dark: #1B5E20;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --text-light: #666666;
+            --light-bg: #f9f9f9;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin: 0 auto 40px auto;
+            color: var(--secondary-color);
+            position: relative;
+            width: fit-content;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .bg-light {
+            background-color: var(--light-bg);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #333;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+            NAVIGATION
+            ============================================ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
+        }
+
+        .logo span {
+            color: var(--primary-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links li a {
+            font-weight: 600;
+            color: var(--text-color);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-btn {
+            background-color: var(--primary-color);
+            color: #333 !important;
+            padding: 8px 20px !important;
+            border-radius: 25px;
+            box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
+        }
+
+        .nav-btn:hover {
+            background-color: var(--primary-dark);
+            color: #fff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 193, 7, 0.5);
+        }
+
+        .nav-links li a:not(.nav-btn)::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links li a:not(.nav-btn):hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links li a:not(.nav-btn):hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        /* ============================================
+            HERO & COMBINED TOP SECTION LAYOUT
+            ============================================ */
+        .hero-section-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(46, 125, 50, 0.05) 100%);
+            padding-top: 120px;
+            padding-bottom: 60px;
+        }
+
+        .hero-section-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background-color: rgba(255, 193, 7, 0.15);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .hero-section-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background-color: rgba(46, 125, 50, 0.1);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .main-top-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Desktop Layout Grid */
+        @media (min-width: 769px) {
+            .main-top-grid {
+                display: grid;
+                grid-template-columns: 1fr 450px;
+                gap: 40px;
+                align-items: center;
+            }
+
+            .hero-left-col {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .hero-right-col {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            .results-col {
+                grid-column: 1 / -1;
+                grid-row: 2;
+                margin-top: 60px;
+            }
+        }
+
+        /* Mobile Layout Reordering: Form (1) -> Results (2) -> Text (3) */
+        @media (max-width: 768px) {
+            .main-top-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .hero-right-col {
+                order: 1;
+                width: 100%;
+            }
+
+            .results-col {
+                order: 2;
+                width: 100%;
+            }
+
+            .hero-left-col {
+                order: 3;
+                width: 100%;
+            }
+        }
+
+        .hero-heading {
+            font-size: 45px !important;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Enquiry Form Styles */
+        .form-outer-title {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .enquiry-form {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .enquiry-form::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            z-index: -1;
+            border-radius: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+            background-color: #fff;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.36%22%20height%3D%22292.36%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            background-size: 12px;
+            cursor: pointer;
+        }
+
+        @keyframes pulse {
+            50% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.4);
+            }
+
+            80% {
+                transform: scale(1.04);
+                box-shadow: 0 0 0 10px rgba(46, 125, 50, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(46, 125, 50, 0);
+            }
+        }
+
+        .submit-btn {
+            width: 70%;
+            font-size: 1.3rem;
+            margin-top: 2px;
+            margin-left: 17%;
+            animation: pulse 2s infinite;
+        }
+
+        /* ============================================
+            SECTION 2: BEST STUDENT RESULTS (ARROW SLIDER)
+            ============================================ */
+        .results-section-wrapper {
+            position: relative;
+            max-width: 100%;
+            padding: 0 50px;
+        }
+
+        .results-grid {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding-bottom: 20px;
+            padding-top: 10px;
+            scrollbar-width: none;
+        }
+
+        .results-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        .result-card {
+            flex: 0 0 calc(33.333% - 20px);
+            min-width: 280px;
+            scroll-snap-align: start;
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        .result-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .result-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .student-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 4px solid var(--light-bg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .result-card:hover .student-photo {
+            transform: scale(1.1);
+        }
+
+        .student-name {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .student-course {
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .student-rank {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .student-achievement {
+            font-size: 0.95rem;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-color);
+            color: #333;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slider-btn:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: 0;
+        }
+
+        .next-btn {
+            right: 0;
+        }
+
+        @media (max-width: 768px) {
+            .result-card {
+                flex: 0 0 100%;
+            }
+
+            .results-section-wrapper {
+                padding: 0 10px;
+            }
+
+            .slider-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 1.2rem;
+                top: 40%;
+            }
+
+            .prev-btn {
+                left: -10px;
+            }
+
+            .next-btn {
+                right: -10px;
+            }
+        }
+
+        /* ============================================
+            SECTION 3: OUR FACULTY
+            ============================================ */
+        #faculty {
+            position: relative;
+            overflow: hidden;
+            background-color: #f6faf6;
+        }
+
+        .faculty-bg-icon {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.05;
+            color: var(--secondary-color);
+        }
+
+        .faculty-bg-icon.left {
+            top: -10%;
+            left: -50px;
+            width: 350px;
+            transform: rotate(15deg);
+        }
+
+        .faculty-bg-icon.right {
+            bottom: -5%;
+            right: -50px;
+            width: 300px;
+            transform: rotate(-20deg);
+        }
+
+        .faculty-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .faculty-card {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-bottom: 5px solid var(--secondary-color);
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .faculty-photo-wrapper {
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(46, 125, 50, 0.15) 0%, rgba(255, 255, 255, 1) 100%);
+            padding-top: 20px;
+        }
+
+        .faculty-photo {
+            width: 90%;
+            height: 250px;
+            object-fit: cover;
+            margin: 0 auto;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .faculty-card:hover .faculty-photo {
+            transform: scale(1.03);
+        }
+
+        .faculty-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .faculty-name {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .faculty-subject {
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .faculty-exp {
+            display: inline-block;
+            background-color: rgba(46, 125, 50, 0.1);
+            color: var(--secondary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .faculty-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* ============================================
+            SECTION 4: WHY CHOOSE EDURAIN
+            ============================================ */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 193, 7, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .feature-info h4 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        .feature-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* ============================================
+            SECTION 4.5: OUR COURSES
+            ============================================ */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-color);
+            position: relative;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-bottom-color: var(--secondary-color);
+        }
+
+        .course-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(46, 125, 50, 0.1);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+
+        .course-card:hover .course-icon {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+
+        .course-title {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .course-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #333;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 4px 15px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .course-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+            SECTION 5: TESTIMONIALS
+            ============================================ */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            color: rgba(255, 193, 7, 0.3);
+            line-height: 1;
+        }
+
+        .stars {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .student-reviewer {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .reviewer-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .reviewer-name {
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        /* ============================================
+            SECTION 6: FAQ
+            ============================================ */
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .faq-item {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 22px 30px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .faq-question h4 {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 0;
+            transition: var(--transition);
+        }
+
+        .faq-item.open .faq-question h4 {
+            color: var(--secondary-color);
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1;
+            transition: var(--transition);
+        }
+
+        .faq-item.open .faq-icon {
+            background-color: var(--secondary-color);
+            color: #fff;
+            transform: rotate(135deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding: 0 30px 22px;
+            color: var(--text-light);
+            font-size: 0.98rem;
+        }
+
+        /* ============================================
+            SECTION 7: CONTACT INFORMATION
+            ============================================ */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 40px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            text-align: left !important;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-align: left !important;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .contact-text h5 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+            text-align: left !important;
+        }
+
+        .contact-text p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+
+        .banner-container {
+            flex: 1.5;
+            min-width: 300px;
+            min-height: 480px;
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .banner-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .banner-container:hover img {
+            transform: scale(1.02);
+        }
+
+        .banner-dots .dot.active {
+            background-color: var(--primary-color) !important;
+            width: 22px !important;
+            border-radius: 5px !important;
+        }
+
+        /* ============================================
+            FOOTER
+            ============================================ */
+        footer {
+            background-color: #222;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-logo {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+
+        .footer-tagline {
+            color: var(--primary-color);
+            font-style: normal;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            color: #fff;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            color: #222;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .back-to-top {
+            position: absolute;
+            right: 0;
+            top: 10px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-color);
+            color: #222;
+        }
+
+        /* ============================================
+            FLOATING ELEMENTS
+            ============================================ */
+        .floating-contact {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            position: relative;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        .float-whatsapp {
+            background-color: #25D366;
+        }
+
+        .float-call {
+            background-color: #007BFF;
+        }
+
+        .float-email {
+            background-color: #EA4335;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .float-btn::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 60px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .float-btn:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ============================================
+            RESPONSIVE DESIGN
+            ============================================ */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 250px;
+                height: 100vh;
+                background-color: #fff;
+                flex-direction: column;
+                padding: 30px;
+                box-shadow: -5px 0 10px rgba(0, 0, 0, 0.05);
+                transition: var(--transition);
+                gap: 20px;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 6px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -6px);
+            }
+
+            .hero-heading {
+                font-size: 2.5rem !important;
+            }
+
+            .floating-contact {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .banner-container,
+            .banner-slides,
+            .banner-slide {
+                min-height: 300px !important;
+                height: 100% !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHNLCSKT" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- NAVIGATION -->
+    <header id="header">
+        <div class="container navbar">
+            <a href="https://edurain.in/" class="logo" style="align-items: center;">
+                <img src="https://www.image2url.com/r2/default/images/1784033920157-f5e3aa8b-2298-4f08-b189-48a884cc971a.png"
+                    alt="Logo" style="height: 60px; width: auto;">
+                <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+                    <div style="font-size: 2.20rem;">Edu<span>Rain</span></div>
+                    <div
+                        style="font-size: 0.72rem; font-weight: 600; color: var(--text-light); letter-spacing: 1.0px; text-transform: uppercase;">
+                        Victory Starts Here</div>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="https://edurain.in/">Home</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#faculty">Faculty</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#courses">Our Courses</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact" class="nav-btn">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO & RESULTS REORDER WRAPPER -->
+    <div class="hero-section-wrapper" id="home">
+        <div class="main-top-grid">
+
+            <!-- 1. Hero Left Text Column (Order 3 on Mobile) -->
+            <div class="hero-left-col reveal">
+                <h1 class="hero-heading">Confused About JEE Preparation? Let's Simplify It.</h1>
+                <p class="hero-desc">Your JEE success starts with the right strategy. EduRain brings together everything
+                    a JEE aspirant needs a structured preparation roadmap, live interactive classes, expert faculty,
+                    instant doubt solving, comprehensive study material, regular test series, performance tracking,
+                    revision sessions, and personalized mentorship to help you stay focused, improve consistently, and
+                    achieve your dream rank. <strong>Your IIT journey starts here. Fill out the form to connect with our
+                        experts and begin your preparation.</strong></p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                    <a href="#courses" class="btn btn-primary">Our Courses</a>
+                </div>
+            </div>
+
+            <!-- 2. Hero Right Form Column (Order 1 on Mobile) -->
+            <div class="hero-right-col reveal">
+                <h3 class="form-outer-title" id="formTitle">Start Your IIT Journey</h3>
+                <div class="enquiry-form">
+                    <form id="enquiryForm">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="contact" class="form-control" placeholder="Contact Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="category" class="form-control" required>
+                                <option value="" disabled selected>Select Batch</option>
+                                <option value="Class 11">Class 11(JEE 2028)</option>
+                                <option value="Class 12">Class 12(JEE 2027)</option>
+                                <option value="Dropper">JEE Dropper</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-secondary submit-btn">Be a IITIAN</button>
+                    </form>
+                    <div id="successMessage" style="display: none; text-align: center; padding: 20px;">
+                        <img src="https://cdn.phototourl.com/free/2026-07-19-f036e465-c23a-4393-8fcf-c284ff0a1010.png"
+                            style="width: 65%; margin: 0 auto;" alt="Success">
+                        <h3 style="color: var(--secondary-color); margin: 15px 0;">Our student advisor will reach out to
+                            you!</h3>
+                        <p style="margin-bottom: 20px;">EduRain - Victory Starts Here</p>
+                        <div style="display: flex; gap: 10px; flex-direction: column;">
+                            <a href="#courses" class="btn btn-secondary">Browse Courses</a>
+                            <button onclick="handleAppDownload()" class="btn btn-primary"
+                                style="animation: none;">Download Our App</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Results Section Column (Order 2 on Mobile) -->
+            <div class="results-col reveal" id="results">
+                <div style="max-width: 1200px; margin: 0 auto;">
+                    <h2 class="section-title">Our Best Results</h2>
+                    <div class="results-section-wrapper">
+                        <button class="slider-btn prev-btn" id="prevBtn">&#10094;</button>
+                        <div class="results-grid" id="resultsGrid">
+                            <!-- Result 1 -->
+                            <div class="result-card">
+                                <img src="https://cdn.phototourl.com/member/2026-07-21-0f734b79-5782-4db7-95aa-8bcdf544e7e7.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Neha Rathi</h3>
+                                <p class="student-course">JEE MAINS</p>
+                                <div class="student-rank">97.3 %tile</div>
+                                <p class="student-achievement">Outstanding performance in Physics.</p>
+                            </div>
+                            <!-- Result 2 -->
+                            <div class="result-card">
+                                <img src="https://cdn.phototourl.com/member/2026-07-21-c0b1b3f8-2a2a-4620-bc47-8df6500e2d6e.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Kushi Verma</h3>
+                                <p class="student-course">JEE MAINS</p>
+                                <div class="student-rank">95.45 %tile</div>
+                                <p class="student-achievement">Consistent performer throughout preparation.</p>
+                            </div>
+                            <!-- Result 3 -->
+                            <div class="result-card">
+                                <img src="https://cdn.phototourl.com/member/2026-07-21-5bab2cee-e733-40f0-8861-c0f33a69a7bc.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Sneha Mor</h3>
+                                <p class="student-course">JEE MAINS</p>
+                                <div class="student-rank">93.5 %tile</div>
+                                <p class="student-achievement">Achieved excellence with hard work.</p>
+                            </div>
+                            <!-- Result 4 -->
+                            <div class="result-card">
+                                <img src="https://cdn.phototourl.com/member/2026-07-21-c3cbd65a-dd85-4a39-9896-acf4bd5f5e1a.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Sumit Yadav</h3>
+                                <p class="student-course">JEE MAINS</p>
+                                <div class="student-rank">93.4 %tile</div>
+                                <p class="student-achievement">Dedicated and consistent performer.</p>
+                            </div>
+                            <!-- Result 5 -->
+                            <div class="result-card">
+                                <img src="https://cdn.phototourl.com/member/2026-07-21-6982125c-9294-4600-b721-cfd5ab274b00.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Harshit Tripathi</h3>
+                                <p class="student-course">JEE MAINS</p>
+                                <div class="student-rank">92.45 %</div>
+                                <p class="student-achievement">Among top 100 nationally.</p>
+                            </div>
+                            <!-- Result 6 -->
+                            <div class="result-card">
+                                <img src="https://cdn.phototourl.com/member/2026-07-21-6319fb54-962a-4de1-ac7c-ddf1d4b3e11f.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Vikash Kumar</h3>
+                                <p class="student-course">JEE MAINS</p>
+                                <div class="student-rank">90.6 %tile</div>
+                                <p class="student-achievement">Exceptional problem-solving skills</p>
+                            </div>
+                        </div>
+                        <button class="slider-btn next-btn" id="nextBtn">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SECTION 3: OUR FACULTY -->
+    <section class="section-padding" id="faculty">
+        <svg class="faculty-bg-icon left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+            <path
+                d="M512 32c0 0-41.2 0-96.1 19.3-51.5 18-97.8 53-131 99.8-33.1-46.8-79.5-81.8-131-99.8C99.2 32 58 32 58 32s0 41.2 19.3 96.1c18 51.5 53 97.8 99.8 131-46.8 33.1-81.8 79.5-99.8 131C58 445 58 486.2 58 486.2s41.2 0 96.1-19.3c51.5-18 97.8-53 131-99.8 33.1 46.8 79.5 81.8 131 99.8 54.9 19.3 96.1 19.3 96.1 19.3s0-41.2-19.3-96.1c-18-51.5-53-97.8-99.8-131 46.8-33.1 81.8-79.5 99.8-131C492.7 73.2 512 32 512 32z" />
+        </svg>
+        <svg class="faculty-bg-icon right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+            <path
+                d="M272 96c-78.6 0-145.1 51.5-167.7 122.5C83.6 253.8 24 330.1 24 416c0 13.3 10.7 24 24 24s24-10.7 24-24c0-70.7 57.3-128 128-128h16v128c0 13.3 10.7 24 24 24s24-10.7 24-24V144c16.3-10.3 35.8-16 56-16 43.6 0 80.5 27.6 92.6 66.8 4.2 13.6 18.7 21.2 32.3 17s21.2-18.7 17-32.3C445.6 122 364.5 96 272 96z" />
+        </svg>
+        <div class="container">
+            <h2 class="section-title reveal">Meet Our Faculty</h2>
+            <div class="faculty-grid">
+                <div class="faculty-card reveal">
+                    <div class="faculty-photo-wrapper">
+                        <img src="https://www.image2url.com/r2/default/images/1784010346513-6bd6bf14-f335-4c07-b9f6-f1088993fe17.webp"
+                            alt="Faculty" class="faculty-photo">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mrs. Ritu ma'am</h3>
+                        <p class="faculty-subject">Chemistry</p>
+                        <span class="faculty-exp"><strong>14 Years Exp.</strong></span>
+                        <p class="faculty-desc">She is dedicated to building strong fundamentals and developing
+                            problem-solving excellence in students.</p>
+                    </div>
+                </div>
+                <div class="faculty-card reveal">
+                    <div class="faculty-photo-wrapper">
+                        <img src="https://www.image2url.com/r2/default/images/1784009526362-6300c2ae-ad6e-4b3d-9d21-906b1827e046.jpg"
+                            alt="Faculty" class="faculty-photo">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Diwakar sir</h3>
+                        <p class="faculty-subject">Physics</p>
+                        <span class="faculty-exp"><strong>15 Years Exp.</strong></span>
+                        <p class="faculty-desc">He is recognized for his concept-driven teaching approach and consistent
+                            success in guiding JEE aspirants toward top ranks.</p>
+                    </div>
+                </div>
+                <div class="faculty-card reveal">
+                    <div class="faculty-photo-wrapper">
+                        <img src="https://cdn.phototourl.com/free/2026-07-21-044453ae-b241-4ecd-8bb2-cb9c1104de86.png"
+                            alt="Faculty" class="faculty-photo">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Debashish sir</h3>
+                        <p class="faculty-subject">Math</p>
+                        <span class="faculty-exp"><strong>16 Years Exp.</strong></span>
+                        <p class="faculty-desc">A highly respected Math mentor, known for making complex concepts simple
+                            and helping students achieve JEE results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: WHY CHOOSE EDURAIN -->
+    <section class="section-padding bg-light" id="features">
+        <div class="container">
+            <h2 class="section-title reveal">Why Choose EduRain?</h2>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <div class="feature-info">
+                        <h4>Expert Faculty</h4>
+                        <p>Learn from experienced educators with strong subject expertise and proven teaching
+                            methodologies for board and competitive exams.</p>
+                    </div>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">👥</div>
+                    <div class="feature-info">
+                        <h4>Small Batch Size</h4>
+                        <p>We ensure individual attention by maintaining a limited number of students per batch.</p>
+                    </div>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">📝</div>
+                    <div class="feature-info">
+                        <h4>Result-Oriented Preparation</h4>
+                        <p>Focused instruction, frequent evaluations, and tried-and-true strategies to support students
+                            in achieving the best outcomes.</p>
+                    </div>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">🤝</div>
+                    <div class="feature-info">
+                        <h4>Personal Mentorship</h4>
+                        <p>Individual guidance, regular doubt-solving sessions, and continuous academic support to help
+                            every student reach their full potential.</p>
+                    </div>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">🖥️</div>
+                    <div class="feature-info">
+                        <h4>Integrated Board + Competitive Preparation</h4>
+                        <p>Specialized coaching for Classes 6–12, IIT-JEE, NEET, and CUET with a balanced approach to
+                            school and entrance exam success.</p>
+                    </div>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">🏆</div>
+                    <div class="feature-info">
+                        <h4>Regular Tests & Performance Tracking</h4>
+                        <p>Chapter-wise tests, mock exams, and detailed performance analysis to identify strengths and
+                            improve weak areas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4.5: OUR COURSES -->
+    <section class="section-padding" id="courses">
+        <div class="container">
+            <h2 class="section-title reveal">Our Courses</h2>
+            <div class="courses-grid">
+                <div class="course-card reveal">
+                    <div class="course-icon">🏠</div>
+                    <div class="course-badge">Foundation Batch</div>
+                    <h3 class="course-title">JEE MANTRA 3.0 BATCH 2028</h3>
+                    <p class="course-desc">Focused JEE Mantra 3.0 program (Batch 2028) covering the entire syllabus with
+                        regular practice tests and expert mentorship to help you secure a top engineering rank.</p>
+                </div>
+                <div class="course-card reveal">
+                    <div class="course-icon">🚀</div>
+                    <div class="course-badge">Dropper Batch</div>
+                    <h3 class="course-title">DROPPER JEE 2027 BATCH</h3>
+                    <p class="course-desc">A dedicated batch for JEE aspirants taking a drop year, offering focused
+                        preparation, expert mentorship, and rigorous practice to crack JEE 2027 with top ranks.</p>
+                </div>
+                <div class="course-card reveal">
+                    <div class="course-icon">🎯</div>
+                    <div class="course-badge">Target Batch</div>
+                    <h3 class="course-title">TARGET JEE 2027 BATCH</h3>
+                    <p class="course-desc">A batch for students preparing for JEE 2027, with clear teaching and regular
+                        practice to build strong basics. Guided by experienced teachers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: TESTIMONIALS -->
+    <section class="section-padding bg-light" id="testimonials">
+        <div class="container">
+            <h2 class="section-title reveal">What Our Students Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="quote-icon">❞</div>
+                    <div class="stars" style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                        <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" width="20"
+                            height="20" alt="Google">
+                        <span style="color: #FABB05; font-size: 20px;">★★★★★</span>
+                    </div>
+                    <p class="review-text">Maine kaafi bade bade coaching centers dekhe, par Edurain mein jo personal
+                        attention milti hai wo kahin nahi hai. Maths ke complex calculus topics ko sir ne itna simplify
+                        kar diya ki ab numericals solve karne mein maza aata hai.</p>
+                    <div class="student-reviewer">
+                        <img src="https://cdn.phototourl.com/member/2026-07-21-6319fb54-962a-4de1-ac7c-ddf1d4b3e11f.png"
+                            alt="Reviewer" class="reviewer-img">
+                        <div class="reviewer-name">Vikas Kumar</div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="quote-icon">❞</div>
+                    <div class="stars" style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                        <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" width="20"
+                            height="20" alt="Google">
+                        <span style="color: #FABB05; font-size: 20px;">★★★★</span>
+                    </div>
+                    <p class="review-text">Managing school and JEE was a nightmare until I joined Edurain. I had a huge
+                        backlog in 11th Physics. The way their curriculum is structured helped me clear my old concepts
+                        while staying on track with 12th.</p>
+                    <div class="student-reviewer">
+                        <img src="https://cdn.phototourl.com/member/2026-07-21-5bab2cee-e733-40f0-8861-c0f33a69a7bc.png"
+                            alt="Reviewer" class="reviewer-img">
+                        <div class="reviewer-name">Sneha Verma</div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="quote-icon">❞</div>
+                    <div class="stars" style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                        <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" width="20"
+                            height="20" alt="Google">
+                        <span style="color: #FABB05; font-size: 20px;">★★★★</span>
+                    </div>
+                    <p class="review-text">Being a dropper, mere paas time kam tha. Edurain ke recorded lectures aur
+                        instant doubt support ne mera saal bacha liya. Inorganic chemistry, jo mujhe sabse boring lagti
+                        thi, ab meri fav hai.</p>
+                    <div class="student-reviewer">
+                        <img src="https://cdn.phototourl.com/member/2026-07-21-6982125c-9294-4600-b721-cfd5ab274b00.png"
+                            alt="Reviewer" class="reviewer-img">
+                        <div class="reviewer-name">Harshit Tripathi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: FAQ -->
+    <section class="section-padding" id="faq">
+        <div class="container">
+            <h2 class="section-title reveal">Frequently Asked Questions</h2>
+            <div class="faq-container reveal">
+                <div class="faq-item open">
+                    <div class="faq-question">
+                        <h4>Who is eligible to join the JEE 2027 batch?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The course is ideal for students preparing for JEE 2027, including Class 11 students and
+                            anyone looking for a structured online preparation program.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What subjects and study materials are included in this course?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The course covers the complete JEE syllabus in physics, chemistry, and math, along with study
+                            materials, regular practice questions, and mock tests.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Will I be able to access class recordings if I miss a live session?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, all live classes are recorded and shared with enrolled students, allowing you to revise
+                            concepts or catch up on missed lessons anytime.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: CONTACT INFORMATION -->
+    <section class="section-padding bg-light" id="contact">
+        <div class="container">
+            <h2 class="section-title reveal">Get in Touch</h2>
+            <div class="contact-container reveal">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            <h5>Phone Number</h5>
+                            <p>+91 95990 22849</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-text">
+                            <h5>Email</h5>
+                            <p>support@edurain.in</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div class="contact-text">
+                            <h5>Working Hours</h5>
+                            <p>Monday - Saturday <br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-container">
+                    <!-- Slides Wrapper -->
+                    <div class="banner-slides" style="position: relative; width: 100%; height: 100%;">
+                        <img src="https://www.image2url.com/r2/default/images/1784785832245-2cf66298-7836-4049-971e-a8efb83bf18d.png"
+                            class="banner-slide active" alt="Banner 1"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; transition: opacity 0.8s ease-in-out;">
+                        <img src="https://www.image2url.com/r2/default/images/1784786214147-2a27bd93-543d-420d-8ab7-8a10978c677c.png"
+                            class="banner-slide" alt="Banner 2"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease-in-out;">
+                        <img src="https://www.image2url.com/r2/default/images/1784787249126-b326533e-b23b-45a1-9ad5-b358d59f6baa.webp"
+                            class="banner-slide" alt="Banner 3"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease-in-out;">
+                    </div>
+                    <!-- Dots Navigation -->
+                    <div class="banner-dots"
+                        style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10;">
+                        <span class="dot active"
+                            style="width: 10px; height: 10px; background-color: rgba(255,255,255,0.6); border-radius: 50%; transition: 0.3s; cursor: pointer;"></span>
+                        <span class="dot"
+                            style="width: 10px; height: 10px; background-color: rgba(255,255,255,0.6); border-radius: 50%; transition: 0.3s; cursor: pointer;"></span>
+                        <span class="dot"
+                            style="width: 10px; height: 10px; background-color: rgba(255,255,255,0.6); border-radius: 50%; transition: 0.3s; cursor: pointer;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">EDU<span>RAIN</span></a>
+                    <p class="footer-tagline">Victory Starts Here</p>
+                    <p>Dedicated to providing the best education and mentoring to help students achieve their goals and
+                        build a bright future.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/edurain_official" class="social-icon">IG</a>
+                        <a href="https://www.youtube.com/@Eduraininstitute" class="social-icon">YT</a>
+                        <a href="https://www.linkedin.com/company/edurainofficial/" class="social-icon">IN</a>
+                        <a href="https://www.facebook.com/edu.rain.71/" class="social-icon">FB</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#results">Results</a></li>
+                        <li><a href="#faculty">Faculty</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Courses</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://courses.edurain.in/courses/814178">Target Batch (JEE 27)</a></li>
+                        <li><a href="https://edurain.in/neetcourse">White Coat Batch (NEET 27)</a></li>
+                        <li><a href="https://courses.edurain.in/courses/814577">NEEV Batch (9th class)</a></li>
+                        <li><a href="https://courses.edurain.in/courses/814204">Dhisha Batch (10th class Board)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li>📍 Sec 132, Noida</li>
+                        <li>📞 +91 9599022849</li>
+                        <li>📩 support@edurain.in</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EDURAIN. All Rights Reserved.</p>
+                <button class="back-to-top" id="backToTop" title="Go to top">↑</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING ELEMENTS -->
+    <div class="floating-contact">
+        <a href="https://api.whatsapp.com/send/?phone=919599022849&text&type=phone_number&app_absent=0"
+            class="float-btn float-whatsapp" data-tooltip="Chat on WhatsApp">💬</a>
+        <a href="tel:+919599022849" class="float-btn float-call" data-tooltip="Call Now">📞</a>
+        <a href="mailto:Support@edurain.in" class="float-btn float-email" data-tooltip="Send Email">✉️</a>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-links li a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Form Submit Logic
+            document.getElementById('enquiryForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                var form = this;
+                var formData = new FormData(form);
+                var submitBtn = form.querySelector('.submit-btn');
+
+                submitBtn.innerHTML = "Becoming...";
+
+                fetch('https://script.google.com/macros/s/AKfycbyK50OH5gviBU1jd1YmIsF3EsvWcTJW6qF1l2dFfuG4YirEBe8DJh-zvcYLFsqoKsZU/exec', {
+                    method: 'POST',
+                    body: new URLSearchParams(formData)
+                })
+                    .then(response => {
+                        document.getElementById('formTitle').innerText = "Thank You!";
+                        document.getElementById('enquiryForm').style.display = 'none';
+                        document.getElementById('successMessage').style.display = 'block';
+                    })
+                    .catch(error => {
+                        alert("Error submitting form. Please try again.");
+                        submitBtn.innerHTML = "Submit";
+                    });
+            });
+
+            // Header Shadow on Scroll
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                    header.style.padding = '5px 0';
+                } else {
+                    header.style.boxShadow = 'none';
+                    header.style.padding = '0';
+                }
+            });
+
+            // Results Slider Controls
+            const resultsGrid = document.getElementById('resultsGrid');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            if (resultsGrid && prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', () => {
+                    const cardWidth = resultsGrid.querySelector('.result-card').offsetWidth + 30;
+                    resultsGrid.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    const cardWidth = resultsGrid.querySelector('.result-card').offsetWidth + 30;
+                    resultsGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                });
+
+                let autoSlide = setInterval(() => {
+                    const cardWidth = resultsGrid.querySelector('.result-card').offsetWidth + 30;
+                    if (resultsGrid.scrollLeft + resultsGrid.clientWidth >= resultsGrid.scrollWidth - 10) {
+                        resultsGrid.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        resultsGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                    }
+                }, 1500);
+
+                const wrapper = document.querySelector('.results-section-wrapper');
+                wrapper.addEventListener('mouseenter', () => clearInterval(autoSlide));
+                wrapper.addEventListener('mouseleave', () => {
+                    autoSlide = setInterval(() => {
+                        const cardWidth = resultsGrid.querySelector('.result-card').offsetWidth + 30;
+                        if (resultsGrid.scrollLeft + resultsGrid.clientWidth >= resultsGrid.scrollWidth - 10) {
+                            resultsGrid.scrollTo({ left: 0, behavior: 'smooth' });
+                        } else {
+                            resultsGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                        }
+                    }, 1500);
+                });
+                wrapper.addEventListener('touchstart', () => clearInterval(autoSlide));
+            }
+
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const wasOpen = item.classList.contains('open');
+                    faqItems.forEach(i => i.classList.remove('open'));
+                    if (!wasOpen) {
+                        item.classList.add('open');
+                    }
+                });
+            });
+
+            // Scroll Reveal Animation
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+                reveals.forEach(reveal => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll();
+
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('backToTop');
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Promotional Banner Auto Slide with Dots
+            const slides = document.querySelectorAll('.banner-slide');
+            const dots = document.querySelectorAll('.banner-dots .dot');
+            let currentBannerIndex = 0;
+
+            function nextBannerSlide() {
+                if (slides.length === 0) return;
+                slides[currentBannerIndex].classList.remove('active');
+                slides[currentBannerIndex].style.opacity = '0';
+                dots[currentBannerIndex].classList.remove('active');
+
+                currentBannerIndex = (currentBannerIndex + 1) % slides.length;
+
+                slides[currentBannerIndex].classList.add('active');
+                slides[currentBannerIndex].style.opacity = '1';
+                dots[currentBannerIndex].classList.add('active');
+            }
+
+            if (slides.length > 0) {
+                setInterval(nextBannerSlide, 3000);
+            }
+        });
+
+        // App Download Detection Function
+        function handleAppDownload() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            let url = "";
+            if (/android/i.test(userAgent)) {
+                url = "https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                url = "https://apps.apple.com/in/app/myinstitute/id1472483563";
+            } else {
+                url = "https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN";
+            }
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+
+</html>

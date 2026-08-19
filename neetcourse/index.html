@@ -1,0 +1,2145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NHNLCSKT');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2853349708154684');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=2853349708154684&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EDURAIN - Victory Starts Here ">
+    <title>EDURAIN - Victory Starts Here</title>
+    <style>
+        /* ============================================
+            CSS VARIABLES & RESET
+            ============================================ */
+        :root {
+            --primary-color: #FFC107;
+            /* Yellow */
+            --primary-dark: #FFA000;
+            --secondary-color: #2E7D32;
+            /* Green */
+            --secondary-dark: #1B5E20;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --text-light: #666666;
+            --light-bg: #f9f9f9;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ============================================
+            TYPOGRAPHY & SMART DYNAMIC HEADINGS
+            ============================================ */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin: 0 auto 40px auto;
+            color: var(--secondary-color);
+            position: relative;
+            width: fit-content;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .bg-light {
+            background-color: var(--light-bg);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #333;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+            NAVIGATION
+            ============================================ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
+        }
+
+        .logo span {
+            color: var(--primary-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links li a {
+            font-weight: 600;
+            color: var(--text-color);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        /* CATCHY HEADER BUTTON CSS */
+        .nav-btn {
+            background-color: var(--primary-color);
+            color: #333 !important;
+            padding: 8px 20px !important;
+            border-radius: 25px;
+            box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
+        }
+
+        .nav-btn:hover {
+            background-color: var(--primary-dark);
+            color: #fff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 193, 7, 0.5);
+        }
+
+        .nav-links li a:not(.nav-btn)::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links li a:not(.nav-btn):hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links li a:not(.nav-btn):hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        /* ============================================
+            HERO SECTION & MOBILE REORDER (DESKTOP & MOBILE)
+            ============================================ */
+        .hero-section-wrapper {
+            position: relative;
+            padding-top: 120px;
+            padding-bottom: 30px;
+            min-height: 85vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(46, 125, 50, 0.05) 100%);
+        }
+
+        .hero-section-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background-color: rgba(255, 193, 7, 0.15);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .hero-section-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background-color: rgba(46, 125, 50, 0.1);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .main-top-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Desktop Grid Layout */
+        @media (min-width: 769px) {
+            .main-top-grid {
+                display: grid;
+                grid-template-columns: 1fr 450px;
+                gap: 40px;
+                align-items: center;
+            }
+
+            .hero-left-col {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .hero-right-col {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            .results-col {
+                grid-column: 1 / -1;
+                grid-row: 2;
+                margin-top: 60px;
+            }
+        }
+
+        /* Mobile Layout Reordering: 1) Form, 2) Results, 3) Description Text */
+        @media (max-width: 768px) {
+            .main-top-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .hero-right-col {
+                order: 1;
+                width: 100%;
+            }
+
+            .results-col {
+                order: 2;
+                width: 100%;
+            }
+
+            .hero-left-col {
+                order: 3;
+                width: 100%;
+            }
+        }
+
+        .hero-heading {
+            font-size: 4rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .hero-tagline {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-outer-title {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .enquiry-form {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .enquiry-form::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            z-index: -1;
+            border-radius: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
+        }
+
+        /* Submit Button Pulse Animation */
+        @keyframes pulse {
+            50% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.4);
+            }
+
+            80% {
+                transform: scale(1.04);
+                box-shadow: 0 0 0 10px rgba(46, 125, 50, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(46, 125, 50, 0);
+            }
+        }
+
+        .submit-btn {
+            width: 70%;
+            font-size: 1.3rem;
+            margin-top: 2px;
+            margin-left: 17%;
+            animation: pulse 2s infinite;
+        }
+
+        /* ============================================
+            SECTION 2: BEST STUDENT RESULTS (ARROW SLIDER)
+            ============================================ */
+        .results-section-wrapper {
+            position: relative;
+            max-width: 100%;
+            padding: 0 50px;
+        }
+
+        .results-grid {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding-bottom: 20px;
+            padding-top: 10px;
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .results-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        .result-card {
+            flex: 0 0 calc(33.333% - 20px);
+            min-width: 280px;
+            scroll-snap-align: start;
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        .result-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .result-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .student-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 4px solid var(--light-bg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .result-card:hover .student-photo {
+            transform: scale(1.1);
+        }
+
+        .student-name {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .student-course {
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .student-rank {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .student-achievement {
+            font-size: 0.95rem;
+        }
+
+        /* Slider Arrows CSS */
+        .slider-btn {
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-color);
+            color: #333;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slider-btn:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: 0;
+        }
+
+        .next-btn {
+            right: 0;
+        }
+
+        @media (max-width: 768px) {
+            .result-card {
+                flex: 0 0 100%;
+            }
+
+            .results-section-wrapper {
+                padding: 0 10px;
+            }
+
+            .slider-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 1.2rem;
+                top: 40%;
+            }
+
+            .prev-btn {
+                left: -10px;
+            }
+
+            .next-btn {
+                right: -10px;
+            }
+        }
+
+        /* ============================================
+            SECTION 3: OUR FACULTY
+            ============================================ */
+        #faculty {
+            position: relative;
+            overflow: hidden;
+            background-color: #f6faf6;
+        }
+
+        .faculty-bg-icon {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.05;
+            color: var(--secondary-color);
+        }
+
+        .faculty-bg-icon.left {
+            top: -10%;
+            left: -50px;
+            width: 350px;
+            transform: rotate(15deg);
+        }
+
+        .faculty-bg-icon.right {
+            bottom: -5%;
+            right: -50px;
+            width: 300px;
+            transform: rotate(-20deg);
+        }
+
+        .faculty-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .faculty-card {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-bottom: 5px solid var(--secondary-color);
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .faculty-photo-wrapper {
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(46, 125, 50, 0.15) 0%, rgba(255, 255, 255, 1) 100%);
+            padding-top: 20px;
+        }
+
+        .faculty-photo {
+            width: 90%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 0% 0% 0 0;
+            margin: 0 auto;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .faculty-card:hover .faculty-photo {
+            transform: scale(1.03);
+        }
+
+        .faculty-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .faculty-name {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .faculty-subject {
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .faculty-exp {
+            display: inline-block;
+            background-color: rgba(46, 125, 50, 0.1);
+            color: var(--secondary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .faculty-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* ============================================
+            SECTION 4: WHY CHOOSE EDURAIN
+            ============================================ */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 193, 7, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .feature-info h4 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        .feature-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* ============================================
+            SECTION 4.5: OUR COURSES
+            ============================================ */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-color);
+            position: relative;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-bottom-color: var(--secondary-color);
+        }
+
+        .course-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(46, 125, 50, 0.1);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+
+        .course-card:hover .course-icon {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+
+        .course-title {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .course-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #333;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 4px 15px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .course-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+            SECTION 5: TESTIMONIALS
+            ============================================ */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            color: rgba(255, 193, 7, 0.3);
+            line-height: 1;
+        }
+
+        .stars {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .student-reviewer {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .reviewer-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .reviewer-name {
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        /* ============================================
+    SECTION 6: FAQ
+    ============================================ */
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .faq-item {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 22px 30px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .faq-question h4 {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 0;
+            transition: var(--transition);
+        }
+
+        .faq-item.open .faq-question h4 {
+            color: var(--secondary-color);
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1;
+            transition: var(--transition);
+        }
+
+        .faq-item.open .faq-icon {
+            background-color: var(--secondary-color);
+            color: #fff;
+            transform: rotate(135deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding: 0 30px 22px;
+            color: var(--text-light);
+            font-size: 0.98rem;
+        }
+
+        /* ============================================
+            SECTION 7: CONTACT INFORMATION
+            ============================================ */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 40px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            text-align: left !important;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-align: left !important;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .contact-text h5 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+            text-align: left !important;
+        }
+
+        .contact-text p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+
+        .banner-container {
+            flex: 1.5;
+            min-width: 300px;
+            min-height: 400px;
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .banner-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition)
+        }
+
+        .banner-container:hover img {
+            transform: scale(1.02);
+        }
+
+        /* ============================================
+            FOOTER
+            ============================================ */
+        footer {
+            background-color: #222;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+
+            .banner-container,
+            .banner-slides,
+            .banner-slide {
+                min-height: 300px !important;
+                height: 100% !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+        }
+
+        /* FOOTER LOGO (Yellow & White) */
+        .footer-logo {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            /* White EDU */
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .footer-logo span {
+            color: var(--primary-color);
+            /* Yellow RAIN */
+        }
+
+        /* UPDATED FOOTER TAGLINE (Straight and Matched) */
+        .footer-tagline {
+            color: var(--primary-color);
+            font-style: normal;
+            /* Made straight */
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            color: #fff;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            color: #222;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .back-to-top {
+            position: absolute;
+            right: 0;
+            top: 10px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-color);
+            color: #222;
+        }
+
+        /* ============================================
+            FLOATING ELEMENTS
+            ============================================ */
+        .floating-contact {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            position: relative;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        .float-whatsapp {
+            background-color: #25D366;
+        }
+
+        .float-call {
+            background-color: #007BFF;
+        }
+
+        .float-email {
+            background-color: #EA4335;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .float-btn::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 60px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .float-btn:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ============================================
+            RESPONSIVE DESIGN
+            ============================================ */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 250px;
+                height: 100vh;
+                background-color: #fff;
+                flex-direction: column;
+                padding: 30px;
+                box-shadow: -5px 0 10px rgba(0, 0, 0, 0.05);
+                transition: var(--transition);
+                gap: 20px;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 6px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -6px);
+            }
+
+            .hero-heading {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.5rem;
+            }
+
+            /* Mobile Reordering: Form (1) -> Results (2) -> Description Text (3) */
+            .main-top-grid {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .hero-right-col {
+                order: 1;
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .results-col {
+                order: 2;
+                width: 100%;
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+
+            .hero-left-col {
+                order: 3;
+                width: 100%;
+            }
+
+            .floating-contact {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHNLCSKT" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- ============================================
+         NAVIGATION
+         ============================================ -->
+    <header id="header">
+        <div class="container navbar">
+            <a href="https://edurain.in/" class="logo" style="align-items: center;">
+                <img src="https://www.image2url.com/r2/default/images/1784033920157-f5e3aa8b-2298-4f08-b189-48a884cc971a.png"
+                    alt="Logo" style="height: 60px; width: auto;">
+                <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
+                    <div style="font-size: 2.20rem;">Edu<span>Rain</span></div>
+                    <div
+                        style="font-size: 0.72rem; font-weight: 600; color: var(--text-light); letter-spacing: 1.0px; text-transform: uppercase;">
+                        Victory Starts Here</div>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="https://edurain.in/">Home</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#faculty">Faculty</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#courses">Our Courses</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact" class="nav-btn">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero-section-wrapper" id="home">
+        <div class="main-top-grid">
+
+            <!-- 1. Hero Left Text Column (Order 3 on Mobile) -->
+            <div class="hero-left-col reveal">
+                <h1 class="hero-heading" style="font-size: 45px !important;">Turn Your Dream of Becoming a Doctor into
+                    Reality </h1>
+                <p class="hero-tagline"> <strong></strong></p><br>
+                <p class="hero-desc">
+                    Yes, now you can make it possible with our result-focused NEET preparation. We provide expert
+                    faculty, small batch sizes, regular mock tests, and dedicated doubt-solving to help you improve
+                    every day. We give personal attention to every student and regularly track your progress. We help
+                    you improve weak subjects and make your strong subjects even better. With our proven study plans and
+                    consistent mentorship, you’ll stay confident and exam-ready <strong>Fill out the form to get
+                        complete details and expert guidance.</strong></p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                    <a href="#courses" class="btn btn-primary">Our Courses</a>
+                </div>
+            </div>
+
+            <!-- 2. Hero Right Form Column (Order 1 on Mobile) -->
+            <div class="hero-right-col reveal">
+                <h3 class="form-outer-title" id="formTitle">Start Your MBBS Journey</h3>
+                <div class="enquiry-form">
+                    <form id="enquiryForm">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="contact" class="form-control" placeholder="Contact Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="category" class="form-control" required>
+                                <option value="" disabled selected>Select Batch</option>
+                                <option value="CLASS 11">Class 11(NEET 2028)</option>
+                                <option value="CLASS 12">Class 12(NEET 2027)</option>
+                                <option value="Dropper">Neet Dropper</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-secondary submit-btn">Be a Docter</button>
+                    </form>
+                    <div id="successMessage" style="display: none; text-align: center; padding: 20px;">
+                        <img src="https://cdn.phototourl.com/free/2026-07-19-f036e465-c23a-4393-8fcf-c284ff0a1010.png"
+                            style="width: 65%; margin: 0 auto;" alt="Success">
+                        <h3 style="color: var(--secondary-color); margin: 15px 0;">Our student advisor will reach out to
+                            you!</h3>
+                        <p style="margin-bottom: 20px;">EduRain - Victory Starts Here</p>
+                        <div style="display: flex; gap: 10px; flex-direction: column;">
+                            <a href="#courses" class="btn btn-secondary">Browse Courses</a>
+                            <button onclick="handleAppDownload()" class="btn btn-primary"
+                                style="animation: none;">Download Our App</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Results Section Column (Order 2 on Mobile) -->
+            <div class="results-col reveal" id="results">
+                <div style="max-width: 1200px; margin: 0 auto;">
+                    <h2 class="section-title">Our Best Results</h2>
+
+                    <div class="results-section-wrapper">
+                        <button class="slider-btn prev-btn" id="prevBtn">&#10094;</button>
+
+                        <div class="results-grid" id="resultsGrid">
+                            <!-- Result 1 -->
+                            <div class="result-card">
+                                <img src="https://www.image2url.com/r2/default/images/1784015863775-701c8386-ef32-4427-b2bf-a6f38f0a756b.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Pooja Reddy</h3>
+                                <p class="student-course">NEET SCORE</p>
+                                <div class="student-rank">710/720</div>
+                                <p class="student-achievement">Dedicated and consistent performer.</p>
+                            </div>
+                            <!-- Result 2 -->
+                            <div class="result-card">
+                                <img src="https://www.image2url.com/r2/default/images/1784019882574-29b8a024-da4c-4ec9-9137-7fd43c2c7d6a.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Aditya Nair</h3>
+                                <p class="student-course">NEET SCORE</p>
+                                <div class="student-rank">707/720</div>
+                                <p class="student-achievement">Achieved excellence with hard work.</p>
+                            </div>
+                            <!-- Result 3 -->
+                            <div class="result-card">
+                                <img src="https://www.image2url.com/r2/default/images/1784013504306-c41aff41-f899-4587-a588-2fef7ea95df9.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Vivek Singh</h3>
+                                <p class="student-course">NEET SCORE</p>
+                                <div class="student-rank">705/720</div>
+                                <p class="student-achievement">Exceptional problem-solving skills</p>
+                            </div>
+                            <!-- Result 4 -->
+                            <div class="result-card">
+                                <img src="https://www.image2url.com/r2/default/images/1784015965252-47a92a74-9a02-4aed-a5ac-5739318986bf.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Kunal Joshi</h3>
+                                <p class="student-course">NEET SCORE</p>
+                                <div class="student-rank">701/720</div>
+                                <p class="student-achievement">Consistent performer throughout preparation.</p>
+                            </div>
+                            <!-- Result 5 -->
+                            <div class="result-card">
+                                <img src="https://www.image2url.com/r2/default/images/1784014941695-f30d0c14-d3d1-4dda-aab9-64819e711271.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Neha Yadav</h3>
+                                <p class="student-course">NEET SCORE</p>
+                                <div class="student-rank">700/720</div>
+                                <p class="student-achievement">Outstanding performance in Physics.</p>
+                            </div>
+                            <!-- Result 6 -->
+                            <div class="result-card">
+                                <img src="https://www.image2url.com/r2/default/images/1784015457675-e089e1bd-c091-4150-8da5-8fcab124c6e1.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Kavya Sen</h3>
+                                <p class="student-course">NEET SCORE</p>
+                                <div class="student-rank">695/720</div>
+                                <p class="student-achievement">Among top 100 nationally.</p>
+                            </div>
+                        </div>
+                        <button class="slider-btn next-btn" id="nextBtn">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 3: OUR FACULTY
+         ============================================ -->
+    <section class="section-padding" id="faculty">
+        <svg class="faculty-bg-icon left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+            <path
+                d="M512 32c0 0-41.2 0-96.1 19.3-51.5 18-97.8 53-131 99.8-33.1-46.8-79.5-81.8-131-99.8C99.2 32 58 32 58 32s0 41.2 19.3 96.1c18 51.5 53 97.8 99.8 131-46.8 33.1-81.8 79.5-99.8 131C58 445 58 486.2 58 486.2s41.2 0 96.1-19.3c51.5-18 97.8-53 131-99.8 33.1 46.8 79.5 81.8 131 99.8 54.9 19.3 96.1 19.3 96.1 19.3s0-41.2-19.3-96.1c-18-51.5-53-97.8-99.8-131 46.8-33.1 81.8-79.5 99.8-131C492.7 73.2 512 32 512 32z" />
+        </svg>
+        <svg class="faculty-bg-icon right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
+            <path
+                d="M272 96c-78.6 0-145.1 51.5-167.7 122.5C83.6 253.8 24 330.1 24 416c0 13.3 10.7 24 24 24s24-10.7 24-24c0-70.7 57.3-128 128-128h16v128c0 13.3 10.7 24 24 24s24-10.7 24-24V144c16.3-10.3 35.8-16 56-16 43.6 0 80.5 27.6 92.6 66.8 4.2 13.6 18.7 21.2 32.3 17s21.2-18.7 17-32.3C445.6 122 364.5 96 272 96z" />
+        </svg>
+
+        <div class="container">
+            <h2 class="section-title reveal">Meet Our Faculty</h2>
+            <div class="faculty-grid">
+                <!-- Faculty 1 -->
+                <div class="faculty-card reveal">
+                    <div class="faculty-photo-wrapper">
+                        <img src="https://www.image2url.com/r2/default/images/1784010346513-6bd6bf14-f335-4c07-b9f6-f1088993fe17.webp"
+                            alt="Faculty" class="faculty-photo">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mrs. Ritu ma'am</h3>
+                        <p class="faculty-subject">Chemistry</p>
+                        <span class="faculty-exp"><strong>14 Years Exp.</strong></span>
+                        <p class="faculty-desc"> She is dedicated to building strong fundamentals and developing
+                            problem-solving excellence in students.</p>
+                    </div>
+                </div>
+                <!-- Faculty 2 -->
+                <div class="faculty-card reveal">
+                    <div class="faculty-photo-wrapper">
+                        <img src="https://www.image2url.com/r2/default/images/1784009526362-6300c2ae-ad6e-4b3d-9d21-906b1827e046.jpg"
+                            alt="Faculty" class="faculty-photo">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Diwakar sir</h3>
+                        <p class="faculty-subject">Physics</p>
+                        <span class="faculty-exp"><strong>15 Years Exp.</strong></span>
+                        <p class="faculty-desc"> He is recognized for his concept-driven teaching approach and
+                            consistent success in guiding NEET aspirants toward top ranks.</p>
+                    </div>
+                </div>
+                <!-- Faculty 3 -->
+                <div class="faculty-card reveal">
+                    <div class="faculty-photo-wrapper">
+                        <img src="https://www.image2url.com/r2/default/images/1784011827462-4a4f1b7b-79e8-4c4b-b0be-40411d3eb0ec.jpg"
+                            alt="Faculty" class="faculty-photo">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Nitin sir</h3>
+                        <p class="faculty-subject">Biology </p>
+                        <span class="faculty-exp"><strong>16 Years Exp.</strong></span>
+                        <p class="faculty-desc"> A highly respected Biology mentor, He is known for making complex
+                            concepts simple and helping students achieve NEET results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============================================
+         SECTION 4: WHY CHOOSE EDURAIN
+         ============================================ -->
+    <section class="section-padding bg-light" id="features">
+        <div class="container">
+            <h2 class="section-title reveal">Why Choose EduRain?</h2>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <div class="feature-info">
+                        <h4>Expert Faculty</h4>
+                        <p>Learn from experienced educators with strong subject expertise and proven teaching
+                            methodologies for board and competitive exams.</p>
+                    </div>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">👥</div>
+                    <div class="feature-info">
+                        <h4>Small Batch Size</h4>
+                        <p>We ensure individual attention by maintaining a limited number of students per batch.</p>
+                    </div>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">📝</div>
+                    <div class="feature-info">
+                        <h4>Result-Oriented Preparation</h4>
+                        <p>Focused instruction, frequent evaluations, and tried-and-true strategies to support students
+                            in achieving the best outcomes.</p>
+                    </div>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">🤝</div>
+                    <div class="feature-info">
+                        <h4> Personal Mentorship</h4>
+                        <p>Individual guidance, regular doubt-solving sessions, and continuous academic support to help
+                            every student reach their full potential..</p>
+                    </div>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">🖥️</div>
+                    <div class="feature-info">
+                        <h4> Integrated Board + Competitive Preparation</h4>
+                        <p>Specialized coaching for Classes 6–12, IIT-JEE, NEET, and CUET with a balanced approach to
+                            school and entrance exam success.</p>
+                    </div>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">🏆</div>
+                    <div class="feature-info">
+                        <h4>Regular Tests & Performance Tracking</h4>
+                        <p>Chapter-wise tests, mock exams, and detailed performance analysis to identify strengths and
+                            improve weak areas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============================================
+         SECTION 4.5: OUR COURSES
+         ============================================ -->
+    <section class="section-padding" id="courses">
+        <div class="container">
+            <h2 class="section-title reveal">Our Courses</h2>
+            <div class="courses-grid">
+
+                <!-- Course 1 -->
+                <div class="course-card reveal">
+                    <div class="course-icon">🩺</div>
+                    <div class="course-badge">Target Batch</div>
+                    <h3 class="course-title">White Coat Batch 27</h3>
+                    <p class="course-desc">Focused NEET 2027 program covering the entire syllabus with regular practice
+                        tests and expert mentorship to help you get a top medical rank.</p>
+                </div>
+                <!-- Course 2 -->
+                <div class="course-card reveal">
+                    <div class="course-icon">🚀</div>
+                    <div class="course-badge">Dropper Batch</div>
+                    <h3 class="course-title">Dropper NEET 2027</h3>
+                    <p class="course-desc">This batch is meant for droppers. It includes a complete revision of
+                        concepts, advanced problem solving and rigorous testing to boost your NEET score significantly.
+                    </p>
+                </div>
+                <!-- Course 3 -->
+                <div class="course-card reveal">
+                    <div class="course-icon">🌱</div>
+                    <div class="course-badge">Foundation Batch</div>
+                    <h3 class="course-title">Mission NEET 3.0 Batch 28</h3>
+                    <p class="course-desc">A strong foundational batch for NEET 2028 aspirants that combines core
+                        concepts with board exam preparation in a structured, step-by-step manner. </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ============================================
+         SECTION 5: TESTIMONIALS
+         ============================================ -->
+    <section class="section-padding bg-light" id="testimonials">
+        <div class="container">
+            <h2 class="section-title reveal">What Our Students Say</h2>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card reveal">
+                    <div class="quote-icon">❞ </div>
+
+                    <div class="stars" style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                        <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" width="20"
+                            height="20" alt="Google">
+                        <span style="color: #FABB05; font-size: 20px;">★★★★★</span>
+                    </div>
+                    <p class="review-text">Yahan ke experienced teachers har concept ko detail mein samjhate hain aur
+                        doubts ko patiently clear karte hain. Regular tests, detailed performance analysis, aur
+                        consistent guidance ne meri accuracy aur confidence dono ko improve .</p>
+
+                    <div class="student-reviewer">
+                        <img src="https://www.image2url.com/r2/default/images/1784015457675-e089e1bd-c091-4150-8da5-8fcab124c6e1.png"
+                            alt="Reviewer" class="reviewer-img">
+                        <div class="reviewer-name">Kavya Sen.</div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card reveal">
+                    <div class="quote-icon">❞ </div>
+
+                    <div class="stars" style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                        <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" width="20"
+                            height="20" alt="Google">
+                        <span style="color: #FABB05; font-size: 20px;">★★★★</span>
+                    </div>
+                    <p class="review-text">I was struggling with Biology and Chemistry before joining EduRain and
+                        teachers explained every topic in a very simple way and doubt sessions were really helpful.
+                        Highly recommended for NEET aspirants.</p>
+
+                    <div class="student-reviewer">
+                        <img src="https://www.image2url.com/r2/default/images/1784013504306-c41aff41-f899-4587-a588-2fef7ea95df9.png"
+                            alt="Reviewer" class="reviewer-img">
+                        <div class="reviewer-name">Vivek Singh</div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card reveal">
+                    <div class="quote-icon">❞ </div>
+
+                    <div class="stars" style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                        <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" width="20"
+                            height="20" alt="Google">
+                        <span style="color: #FABB05; font-size: 20px;">★★★★</span>
+                    </div>
+                    <p class="review-text">Mujhe sabse achha yeh laga ki teachers sirf syllabus complete karne par focus
+                        nahi karte, balki concepts ko achhe se clear karwate hain. NEET preparation ke liye EduRain
+                        perfect platform hai </p>
+
+                    <div class="student-reviewer">
+                        <img src="https://www.image2url.com/r2/default/images/1784014941695-f30d0c14-d3d1-4dda-aab9-64819e711271.png"
+                            alt="Reviewer" class="reviewer-img">
+                        <div class="reviewer-name">Neha Yadav</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- ============================================
+         SECTION 6: FAQ
+         ============================================ -->
+    <section class="section-padding" id="faq">
+        <div class="container">
+            <h2 class="section-title reveal">Frequently Asked Questions</h2>
+            <div class="faq-container reveal">
+                <div class="faq-item open">
+                    <div class="faq-question">
+                        <h4>Who is eligible to join the White Coat Batch for NEET 2027? </h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The White Coat Batch is ideal for students preparing for NEET 2027, including Class 11
+                            students and anyone looking for a structured online preparation program.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What subjects and study materials are included in this course?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The course covers the complete NEET syllabus in physics, chemistry, and biology, along with
+                            study materials, regular practice questions, mock tests, and revision sessions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Will I be able to access class recordings if I miss a live session? </h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, all live classes are recorded and shared with enrolled students, allowing you to revise
+                            concepts or catch up on missed lessons anytime</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you conduct tests and doubt-clearing sessions?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, regular chapter-wise tests, mock exams and doubt-clearing sessions are part of every
+                            course, along with detailed performance analysis to track your progress.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What is the fee for a course?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Fees vary by course and batch. Reach out to us by phone, email or WhatsApp and our team will
+                            share the current fee structure and any ongoing offers.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How do I get admission or book a demo class?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply fill out the Admission Enquiry form at the top of this page, or call or message us
+                            directly — our counsellors will guide you through the demo class and enrolment process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- ============================================
+         SECTION 7: CONTACT INFORMATION
+         ============================================ -->
+    <section class="section-padding bg-light" id="contact">
+        <div class="container">
+            <h2 class="section-title reveal"> Get in Touch</h2>
+            <div class="contact-container reveal">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            <h5>Phone Number</h5>
+                            <p>+91 95990 22849</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-text">
+                            <h5>Email</h5>
+                            <p>support@edurain.in<br></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div class="contact-text">
+                            <h5>Working Hours</h5>
+                            <p>Monday - Saturday <br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-container">
+                    <img src="https://www.image2url.com/r2/default/images/1784033051387-61b3c74d-1d5a-4132-bb46-c00164ddb7d9.jpg"
+                        alt="EduRain Promotional Banner">
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">EDU<span>RAIN</span></a>
+                    <p class="footer-tagline">Victory Starts Here</p>
+                    <p>Dedicated to providing the best education and mentoring to help students achieve their goals and
+                        build a bright future.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/edurain_official " class="Instagram"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                            </svg></a>
+                        <a href="https://www.youtube.com/@Eduraininstitute" class="Youtube"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-youtube" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+                            </svg></a>
+                        <a href="https://www.linkedin.com/company/edurainofficial/" class="Linkedin"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-linkedin" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                            </svg></a>
+                        <a href="https://www.facebook.com/edu.rain.71/" class="Facebook"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#results">Results</a></li>
+                        <li><a href="#faculty">Faculty</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Courses</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://courses.edurain.in/courses/814178">Target Batch (JEE 27)</a></li>
+                        <li><a href="https://edurain.in/neetcourse">White Coat Batch (NEET 27)</a></li>
+                        <li><a href="https://courses.edurain.in/courses/814577"> NEEV Batch (9th class)</a></li>
+                        <li><a href="https://courses.edurain.in/courses/814204">Dhisha Batch ( 10th class Board Exam
+                                Prep)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li>📍 Sec 132, Noida</li>
+                        <li>📞 +91 9599022849</li>
+                        <li>📩 support@edurain.in </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EDURAIN. All Rights Reserved.</p>
+                <button class="back-to-top" id="backToTop" title="Go to top">↑</button>
+            </div>
+        </div>
+    </footer>
+    <!-- ============================================
+         FLOATING ELEMENTS
+         ============================================ -->
+    <div class="floating-contact">
+        <a href="https://api.whatsapp.com/send/?phone=919599022849&text&type=phone_number&app_absent=0"
+            class="float-btn float-whatsapp" data-tooltip="Chat on WhatsApp">💬</a>
+        <a href="tel:+919599022849" class="float-btn float-call" data-tooltip="Call Now">📞</a>
+        <a href="mailto:Support@edurain.in" class="float-btn float-email" data-tooltip="Send Email">✉️</a>
+    </div>
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close mobile menu when a link is clicked
+            document.querySelectorAll('.nav-links li a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Form Submit Logic
+            document.getElementById('enquiryForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var form = this;
+                var formData = new FormData(form);
+                var submitBtn = form.querySelector('.submit-btn');
+
+                submitBtn.innerHTML = "Becoming....";
+
+                fetch('https://script.google.com/macros/s/AKfycbzGyF5SVnVKwYpbwzQD0wYk1cebkOftbAbXC7mRFjd6YD9ZOTEyWgImTnoF0TFA0jCh/exec', {
+                    method: 'POST',
+                    body: new URLSearchParams(formData)
+                })
+                    .then(response => {
+
+                        document.getElementById('formTitle').innerText = "Thank You!";
+
+                        document.getElementById('enquiryForm').style.display = 'none';
+
+                        document.getElementById('successMessage').style.display = 'block';
+                    })
+                    .catch(error => {
+                        alert("Error submitting form. Please try again.");
+                        submitBtn.innerHTML = "Submit";
+                    });
+            });
+
+
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                    header.style.padding = '5px 0';
+                } else {
+                    header.style.boxShadow = 'none';
+                    header.style.padding = '0';
+                }
+            });
+
+
+            const resultsGrid = document.getElementById('resultsGrid');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            if (resultsGrid && prevBtn && nextBtn) {
+                // Button Clicks
+                prevBtn.addEventListener('click', () => {
+                    const cardWidth = resultsGrid.querySelector('.result-card').offsetWidth + 30;
+                    resultsGrid.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    const cardWidth = resultsGrid.querySelector('.result-card').offsetWidth + 30;
+                    resultsGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                });
+
+                // Fast Auto Slide Feature (Changed to 2000)
+                let autoSlide = setInterval(() => {
+                    const cardWidth = resultsGrid.querySelector('.result-card').offsetWidth + 30;
+                    if (resultsGrid.scrollLeft + resultsGrid.clientWidth >= resultsGrid.scrollWidth - 10) {
+                        resultsGrid.scrollTo({ left: 0, behavior: 'smooth' }); // Rewind to start
+                    } else {
+                        resultsGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                    }
+                }, 1500);
+
+                // Pause Slider on hover or touch
+                const wrapper = document.querySelector('.results-section-wrapper');
+                wrapper.addEventListener('mouseenter', () => clearInterval(autoSlide));
+                wrapper.addEventListener('mouseleave', () => {
+                    autoSlide = setInterval(() => {
+                        const cardWidth = resultsGrid.querySelector('.result-card').offsetWidth + 30;
+                        if (resultsGrid.scrollLeft + resultsGrid.clientWidth >= resultsGrid.scrollWidth - 10) {
+                            resultsGrid.scrollTo({ left: 0, behavior: 'smooth' });
+                        } else {
+                            resultsGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                        }
+                    }, 900);
+                });
+                wrapper.addEventListener('touchstart', () => clearInterval(autoSlide));
+            }
+
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const wasOpen = item.classList.contains('open');
+                    faqItems.forEach(i => i.classList.remove('open'));
+                    if (!wasOpen) {
+                        item.classList.add('open');
+                    }
+                });
+            });
+            // Scroll Reveal Animation
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+                reveals.forEach(reveal => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll();
+
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('backToTop');
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Function
+        function handleAppDownload() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            let url = "";
+
+            // Android Detection
+            if (/android/i.test(userAgent)) {
+                url = "https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN";
+            }
+            // iOS Detection
+            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                url = "https://apps.apple.com/in/app/myinstitute/id1472483563";
+            }
+            // Default (PC/Other) - Play Store
+            else {
+                url = "https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN";
+            }
+            window.open(url, '_blank');
+        }
+        // Promotional Banner Auto Slide with Dots
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.banner-slide');
+            const dots = document.querySelectorAll('.banner-dots .dot');
+            let currentBannerIndex = 0;
+
+            function nextBannerSlide() {
+                if (slides.length === 0) return;
+
+                // Purane slide aur dot se active hatao
+                slides[currentBannerIndex].classList.remove('active');
+                slides[currentBannerIndex].style.opacity = '0';
+                dots[currentBannerIndex].classList.remove('active');
+
+                // Next index calculate karo (Total 4 slides)
+                currentBannerIndex = (currentBannerIndex + 1) % slides.length;
+
+                // Naye slide aur dot par active lagao
+                slides[currentBannerIndex].classList.add('active');
+                slides[currentBannerIndex].style.opacity = '1';
+                dots[currentBannerIndex].classList.add('active');
+            }
+
+            // Speed Control: 3000ms matlab har 3 second mein poster change hoga
+            if (slides.length > 0) {
+                setInterval(nextBannerSlide, 3000);
+            }
+        });
+    </script>
+</body>
+
+</html>
