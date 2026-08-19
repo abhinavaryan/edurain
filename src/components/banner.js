@@ -1,14 +1,4 @@
 export function renderBanner() {
-  const isMobile = window.innerWidth <= 768;
-  const slide5Html = isMobile ? `
-          <!-- SLIDE 5 — MOBILE ONLY BANNER -->
-          <a href="#appDownload" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-            <img src="https://cdn.phototourl.com/free/2026-08-19-ee9828c6-8b2b-462d-9031-6ebc47017cad.png" alt="Download App" style="width:100%; height:100%; object-fit:contain; display:block;" />
-          </a>
-  ` : '';
-
-  const dot5Html = isMobile ? `<button class="er-dot" data-index="4" aria-label="Slide 5"></button>` : '';
-
   return `
     <!-- ═══ SECTION A: HERO AUTO-SCROLL BANNER (Restored Original Layout & Aspect Ratio) ═══ -->
     <div class="er-hero-banner-wrapper">
@@ -37,7 +27,6 @@ export function renderBanner() {
             <img src="https://cdn.phototourl.com/free/2026-08-14-1e9adc87-cc2a-4bcf-8378-cb876b01aba8.png" alt="Journey" style="width:100%; height:100%; object-fit:contain; display:block;" />
           </a>
 
-          ${slide5Html}
         </div>
 
         <!-- LEFT arrow -->
@@ -62,7 +51,6 @@ export function renderBanner() {
         <button class="er-dot" data-index="1" aria-label="Slide 2"></button>
         <button class="er-dot" data-index="2" aria-label="Slide 3"></button>
         <button class="er-dot" data-index="3" aria-label="Slide 4"></button>
-        ${dot5Html}
       </div>
     </div>
   `;
