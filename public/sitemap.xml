@@ -1,53 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://www.edurain.in/#home</loc>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
+        <loc>https://www.edurain.in/</loc>
     </url>
     <url>
-        <loc>https://www.edurain.in/#about</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <loc>https://www.edurain.in/courses</loc>
     </url>
     <url>
-        <loc>https://www.edurain.in/#courses</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <loc>https://www.edurain.in/courses/iit-jee</loc>
     </url>
     <url>
-        <loc>https://www.edurain.in/#jeecourses</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <loc>https://www.edurain.in/courses/neet</loc>
     </url>
     <url>
-        <loc>https://www.edurain.in/#neetcourses</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <loc>https://www.edurain.in/courses/foundation</loc>
     </url>
     <url>
-        <loc>https://www.edurain.in/#foundationcourses</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <loc>https://www.edurain.in/blogs</loc>
     </url>
     <url>
-        <loc>https://www.edurain.in/#blogs</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://www.edurain.in/about-us</loc>
     </url>
     <url>
-        <loc>https://www.edurain.in/#journey</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.edurain.in/#reviews</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://www.edurain.in/#contact</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <loc>https://www.edurain.in/contact-us</loc>
     </url>
 </urlset>

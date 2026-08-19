@@ -23,7 +23,7 @@ import { renderAppDownload } from './components/appDownload.js';
 import { initIosAppPopup } from './components/iosAppPopup.js';
 
 // Helper to update SEO meta tags dynamically
-function setMetaTags(title, description) {
+function setMetaTags(title, description, canonicalUrl) {
   document.title = title;
   let metaDesc = document.querySelector('meta[name="description"]');
   if (!metaDesc) {
@@ -32,6 +32,16 @@ function setMetaTags(title, description) {
     document.head.appendChild(metaDesc);
   }
   metaDesc.content = description;
+
+  if (canonicalUrl) {
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = 'canonical';
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.href = canonicalUrl;
+  }
 }
 
 const routes = {
@@ -51,21 +61,21 @@ const routes = {
       initHomeReviews();
       initImpact();
       initScrollReveal();
-      setMetaTags("Best Online Coaching for IIT-JEE, NEET & Class 6-10 | EduRain", "EduRain offers online coaching for Class 6-10, foundation courses, IIT-JEE preparation, NEET coaching, board exams and competitive exam preparation.");
+      setMetaTags("Best Online Coaching for IIT-JEE, NEET & Class 6-10 | EduRain", "EduRain offers online coaching for Class 6-10, foundation courses, IIT-JEE preparation, NEET coaching, board exams and competitive exam preparation.", "https://edurain.in/");
     }
   },
   '/courses': {
     render: () => renderCourses(),
     postRender: () => {
       initCourses();
-      setMetaTags("Explore All Courses – IIT JEE, NEET & Foundation (Class 6-10)", "Explore IIT JEE, NEET & Foundation courses for Class 6-10 with expert faculty, structured curriculum & proven results. Take the first step toward success");
+      setMetaTags("Explore All Courses – IIT JEE, NEET & Foundation (Class 6-10)", "Explore IIT JEE, NEET & Foundation courses for Class 6-10 with expert faculty, structured curriculum & proven results. Take the first step toward success", "https://www.edurain.in/courses");
     }
   },
   '/blogs': {
     render: () => renderBlogs(),
     postRender: () => {
       initBlogs();
-      setMetaTags("IIT JEE, NEET & Foundation Blogs | EduRain", "Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides");
+      setMetaTags("IIT JEE, NEET & Foundation Blogs | EduRain", "Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides", "https://www.edurain.in/blogs");
     }
   },
   '/journey': {
@@ -74,7 +84,7 @@ const routes = {
   },
   '/about-us': {
     render: () => renderAbout(),
-    postRender: () => { }
+    postRender: () => setMetaTags("About Us - EduRain", "About EduRain", "https://www.edurain.in/about-us")
   },
   '/reviews': {
     render: () => renderReviews(),
@@ -98,15 +108,15 @@ const routes = {
   },
   '/courses/iit-jee': {
     render: () => renderJEECourses(),
-    postRender: () => setMetaTags("Best IIT JEE Online Coaching for JEE Main & Advanced | EduRain", "Crack IIT JEE with EduRain: live classes, expert faculty, and structured material for complete JEE Main & Advanced exam preparation")
+    postRender: () => setMetaTags("Best IIT JEE Online Coaching for JEE Main & Advanced | EduRain", "Crack IIT JEE with EduRain: live classes, expert faculty, and structured material for complete JEE Main & Advanced exam preparation", "https://www.edurain.in/courses/iit-jee")
   },
   '/courses/neet': {
     render: () => renderNEETCourses(),
-    postRender: () => setMetaTags("NEET 2027-28 Complete Online Preparation with EduRain", "Start your NEET 2027-28 online preparation with EduRain: live classes, expert faculty, and structured NCERT-based material with regular mock tests.")
+    postRender: () => setMetaTags("NEET 2027-28 Complete Online Preparation with EduRain", "Start your NEET 2027-28 online preparation with EduRain: live classes, expert faculty, and structured NCERT-based material with regular mock tests.", "https://www.edurain.in/courses/neet")
   },
   '/courses/foundation': {
     render: () => renderFoundationCourses(),
-    postRender: () => setMetaTags("Best Online Coaching for Class 6 to 10, IIT JEE & NEET Ready", "Live online classes for Class 6 to 10 with expert-led Math, Science & more: building a strong IIT JEE & NEET foundation. Interactive learning, real results")
+    postRender: () => setMetaTags("Best Online Coaching for Class 6 to 10, IIT JEE & NEET Ready", "Live online classes for Class 6 to 10 with expert-led Math, Science & more: building a strong IIT JEE & NEET foundation. Interactive learning, real results", "https://www.edurain.in/courses/foundation")
   }
 };
 
