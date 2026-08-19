@@ -106,7 +106,7 @@ const routes = {
   },
   '/courses/foundation': {
     render: () => renderFoundationCourses(),
-    postRender: () => setMetaTags("Foundation Courses - EduRain", "Strengthen your core concepts in Science and Mathematics from Class 6 to 10. The perfect stepping stone for future competitive exams.")
+    postRender: () => setMetaTags("Best Online Coaching for Class 6 to 10, IIT JEE & NEET Ready", "Live online classes for Class 6 to 10 with expert-led Math, Science & more: building a strong IIT JEE & NEET foundation. Interactive learning, real results")
   }
 };
 
