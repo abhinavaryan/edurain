@@ -137,7 +137,7 @@ export function initContact() {
                     console.error('Google Sheets saving error:', sheetErr);
                 }
 
-                messageArea.textContent = '✅ Message sent successfully! We will get back to you soon.';
+                messageArea.textContent = '✅ Thanks for your enquiry! Our consultant will connect with you shortly.';
                 messageArea.className = 'form-message success';
                 form.reset();
             } catch (err) {
