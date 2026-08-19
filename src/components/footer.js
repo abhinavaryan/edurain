@@ -48,11 +48,11 @@ export function renderFooter() {
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="/jeecourses">&gt; JEE Courses</a></li>
-                        <li><a href="/neetcourses">&gt; NEET Courses</a></li>
-                        <li><a href="/foundationcourses">&gt; Foundation Courses</a></li>
+                        <li><a href="/courses/iit-jee">&gt; JEE Courses</a></li>
+                        <li><a href="/courses/neet">&gt; NEET Courses</a></li>
+                        <li><a href="/courses/foundation">&gt; Foundation Courses</a></li>
                         <li><a href="/blogs">&gt; Blogs</a></li>
-                        <li><a href="/about">&gt; About</a></li>
+                        <li><a href="/about-us">&gt; About</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

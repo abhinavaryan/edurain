@@ -48,9 +48,9 @@ function renderCategoryPage(title, description, categoryKey) {
             </div>
             <div class="filter-row">
                 <a href="/courses" class="filter-btn" style="text-decoration: none;">All</a>
-                <a href="/jeecourses" class="filter-btn ${categoryKey === 'JEE' ? 'active' : ''}" style="text-decoration: none;">JEE</a>
-                <a href="/neetcourses" class="filter-btn ${categoryKey === 'NEET' ? 'active' : ''}" style="text-decoration: none;">NEET</a>
-                <a href="/foundationcourses" class="filter-btn ${categoryKey === 'FOUNDATION' ? 'active' : ''}" style="text-decoration: none;">FOUNDATION</a>
+                <a href="/courses/iit-jee" class="filter-btn ${categoryKey === 'JEE' ? 'active' : ''}" style="text-decoration: none;">JEE</a>
+                <a href="/courses/neet" class="filter-btn ${categoryKey === 'NEET' ? 'active' : ''}" style="text-decoration: none;">NEET</a>
+                <a href="/courses/foundation" class="filter-btn ${categoryKey === 'FOUNDATION' ? 'active' : ''}" style="text-decoration: none;">FOUNDATION</a>
             </div>
             <div class="courses-grid" style="margin-top: 40px;">
                 ${coursesHtml}

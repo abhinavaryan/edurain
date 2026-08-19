@@ -7,18 +7,18 @@ export function renderBanner() {
         <div id="er-slider-track" style="display:flex; transition:transform 0.7s cubic-bezier(0.4,0,0.2,1); will-change:transform;">
 
           <!-- SLIDE 1 — FOUNDATION COURSES BANNER -->
-          <a href="/foundationcourses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+          <a href="/courses/foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <img src="https://cdn.phototourl.com/free/2026-08-19-a7d0b97b-514f-440f-a353-c2002218aa92.jpg" alt="Foundation Courses" style="width:100%; height:100%; object-fit:contain; display:block;" />
           </a>
 
           <!-- SLIDE 2 — NEET BATCH -->
-          <a href="/neetcourses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+          <a href="/courses/neet" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <img src="https://cdn.phototourl.com/free/2026-08-19-b81703e4-9625-45ba-9dd9-a78611892cbe.jpg" alt="NEET Courses" style="width:100%; height:100%; object-fit:contain; display:block;" />
           </a>
 
 
           <!-- SLIDE 3 — JEE COURSES BANNER -->
-          <a href="/jeecourses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+          <a href="/courses/iit-jee" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <img src="https://cdn.phototourl.com/free/2026-08-19-d0350913-854a-4e54-a80e-ca16951ba57d.jpg" alt="JEE Courses" style="width:100%; height:100%; object-fit:contain; display:block;" />
           </a>
 

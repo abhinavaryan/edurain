@@ -12,12 +12,12 @@ export function renderSitemap() {
                             <h2 style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">Main Pages</h2>
                             <ul style="list-style: none; padding: 0;">
                                 <li style="margin-bottom: 0.5rem;"><a href="/" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Home</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="/about" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">About Us</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/about-us" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">About Us</a></li>
                                 <li style="margin-bottom: 0.5rem;"><a href="/courses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">All Courses</a></li>
                                 <li style="margin-bottom: 0.5rem;"><a href="/blogs" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Blogs</a></li>
                                 <li style="margin-bottom: 0.5rem;"><a href="/journey" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Journey & Reflection</a></li>
                                 <li style="margin-bottom: 0.5rem;"><a href="/reviews" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Student Reviews</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="/contact" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Contact Us</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/contact-us" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Contact Us</a></li>
                             </ul>
                         </div>
 
@@ -25,9 +25,9 @@ export function renderSitemap() {
                         <div>
                             <h2 style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">Course Categories</h2>
                             <ul style="list-style: none; padding: 0;">
-                                <li style="margin-bottom: 0.5rem;"><a href="/jeecourses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">JEE Preparation</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="/neetcourses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">NEET Preparation</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="/foundationcourses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Foundation (6th-10th)</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/courses/iit-jee" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">JEE Preparation</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/courses/neet" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">NEET Preparation</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/courses/foundation" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Foundation (6th-10th)</a></li>
                             </ul>
                         </div>
 

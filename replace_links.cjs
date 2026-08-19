@@ -5,20 +5,11 @@ const componentsDir = path.join(__dirname, 'src/components');
 const routerFile = path.join(__dirname, 'src/router.js');
 
 const routes = [
-    { from: 'href="#home"', to: 'href="/"' },
-    { from: 'href="#courses"', to: 'href="/courses"' },
-    { from: 'href="#blogs"', to: 'href="/blogs"' },
-    { from: 'href="#about"', to: 'href="/about"' },
-    { from: 'href="#contact"', to: 'href="/contact"' },
-    { from: 'href="#jeecourses"', to: 'href="/jeecourses"' },
-    { from: 'href="#neetcourses"', to: 'href="/neetcourses"' },
-    { from: 'href="#foundationcourses"', to: 'href="/foundationcourses"' },
-    { from: 'href="#journey"', to: 'href="/journey"' },
-    { from: 'href="#reviews"', to: 'href="/reviews"' },
-    { from: 'href="#privacy"', to: 'href="/privacy"' },
-    { from: 'href="#terms"', to: 'href="/terms"' },
-    { from: 'href="#sitemap"', to: 'href="/sitemap"' },
-    { from: 'href="#appDownload"', to: 'href="/appDownload"' },
+    { from: 'href="/about"', to: 'href="/about-us"' },
+    { from: 'href="/contact"', to: 'href="/contact-us"' },
+    { from: 'href="/jeecourses"', to: 'href="/courses/iit-jee"' },
+    { from: 'href="/neetcourses"', to: 'href="/courses/neet"' },
+    { from: 'href="/foundationcourses"', to: 'href="/courses/foundation"' },
 ];
 
 function processFile(filePath) {
@@ -44,6 +35,4 @@ fs.readdirSync(componentsDir).forEach(file => {
     }
 });
 
-// Process router.js
-// Wait, router.js had `<a href="#home"` which I might have missed
 processFile(routerFile);

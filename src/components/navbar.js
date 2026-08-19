@@ -19,8 +19,8 @@ export function renderNavbar() {
                     <a href="/" class="nav-link active">Home</a>
                     <a href="/courses" class="nav-link">Our Courses</a>
                     <a href="/blogs" class="nav-link">Blogs</a>
-                    <a href="/about" class="nav-link">About Us</a>
-                    <a href="/contact" class="nav-link">Contact Us</a>
+                    <a href="/about-us" class="nav-link">About Us</a>
+                    <a href="/contact-us" class="nav-link">Contact Us</a>
                 </div>
                 <div class="auth-btn-area">
                     <button class="btn btn-accent login-btn">Login</button>
@@ -51,8 +51,8 @@ export function renderNavbar() {
                 <a href="/" class="nav-link active">Home</a>
                 <a href="/courses" class="nav-link">Our Courses</a>
                 <a href="/blogs" class="nav-link">Blogs</a>
-                <a href="/about" class="nav-link">About Us</a>
-                <a href="/contact" class="nav-link">Contact Us</a>
+                <a href="/about-us" class="nav-link">About Us</a>
+                <a href="/contact-us" class="nav-link">Contact Us</a>
             </div>
             <div class="mobile-menu-footer auth-btn-area">
                 <button class="btn btn-accent login-btn" style="width: 100%;">Login/Register</button>

@@ -65,7 +65,7 @@ const routes = {
     render: () => renderJourney(),
     postRender: () => initJourney()
   },
-  '/about': {
+  '/about-us': {
     render: () => renderAbout(),
     postRender: () => { }
   },
@@ -73,7 +73,7 @@ const routes = {
     render: () => renderReviews(),
     postRender: () => initReviews()
   },
-  '/contact': {
+  '/contact-us': {
     render: () => renderContact(),
     postRender: () => initContact()
   },
@@ -89,15 +89,15 @@ const routes = {
     render: () => renderSitemap(),
     postRender: () => setMetaTags("Sitemap - EduRain", "Sitemap for EduRain")
   },
-  '/jeecourses': {
+  '/courses/iit-jee': {
     render: () => renderJEECourses(),
     postRender: () => setMetaTags("JEE Courses - EduRain", "Comprehensive preparation for IIT-JEE exams. Build a strong foundation and master the concepts to secure your seat in top engineering colleges.")
   },
-  '/neetcourses': {
+  '/courses/neet': {
     render: () => renderNEETCourses(),
     postRender: () => setMetaTags("NEET Courses - EduRain", "Focused coaching for medical aspirants. In-depth coverage of Biology, Physics, and Chemistry to help you crack NEET with top scores.")
   },
-  '/foundationcourses': {
+  '/courses/foundation': {
     render: () => renderFoundationCourses(),
     postRender: () => setMetaTags("Foundation Courses - EduRain", "Strengthen your core concepts in Science and Mathematics from Class 6 to 10. The perfect stepping stone for future competitive exams.")
   }
@@ -149,9 +149,9 @@ export const initRouter = () => {
         if (url.origin === window.location.origin) {
           // Exclude target="_blank" and standalone multi-page folders
           if (link.target === "_blank") return;
-          if (url.pathname.startsWith('/jeecourse/') || 
-              url.pathname.startsWith('/neetcourse/') || 
-              url.pathname.startsWith('/foundationcourse/')) {
+          if (url.pathname.startsWith('/jeecourse') || 
+              url.pathname.startsWith('/neetcourse') || 
+              url.pathname.startsWith('/foundationcourse')) {
              return; 
           }
           // Prevent full page reload
