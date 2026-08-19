@@ -4,7 +4,7 @@ export function renderContact() {
     return `
         <section class="contact-section" id="contact">
             <div class="section-header">
-                <h2>Get In Touch</h2>
+                <h1>Get In Touch</h1>
                 <p>We'd love to hear from you</p>
             </div>
             <div class="contact-layout">

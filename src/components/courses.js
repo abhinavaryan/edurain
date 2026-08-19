@@ -38,7 +38,7 @@ export function renderCourses() {
     return `
         <section class="courses-section" id="courses-page">
             <div class="section-header">
-                <h2>Our Courses</h2>
+                <h1>Our Courses</h1>
                 <p>Explore our comprehensive course catalog</p>
             </div>
             <div class="filter-row">
