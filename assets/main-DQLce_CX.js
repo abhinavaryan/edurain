@@ -16,8 +16,8 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                     <a href="/" class="nav-link active">Home</a>
                     <a href="/courses" class="nav-link">Our Courses</a>
                     <a href="/blogs" class="nav-link">Blogs</a>
-                    <a href="/about" class="nav-link">About Us</a>
-                    <a href="/contact" class="nav-link">Contact Us</a>
+                    <a href="/about-us" class="nav-link">About Us</a>
+                    <a href="/contact-us" class="nav-link">Contact Us</a>
                 </div>
                 <div class="auth-btn-area">
                     <button class="btn btn-accent login-btn">Login</button>
@@ -48,8 +48,8 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 <a href="/" class="nav-link active">Home</a>
                 <a href="/courses" class="nav-link">Our Courses</a>
                 <a href="/blogs" class="nav-link">Blogs</a>
-                <a href="/about" class="nav-link">About Us</a>
-                <a href="/contact" class="nav-link">Contact Us</a>
+                <a href="/about-us" class="nav-link">About Us</a>
+                <a href="/contact-us" class="nav-link">Contact Us</a>
             </div>
             <div class="mobile-menu-footer auth-btn-area">
                 <button class="btn btn-accent login-btn" style="width: 100%;">Login/Register</button>
@@ -104,11 +104,11 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="/jeecourses">&gt; JEE Courses</a></li>
-                        <li><a href="/neetcourses">&gt; NEET Courses</a></li>
-                        <li><a href="/foundationcourses">&gt; Foundation Courses</a></li>
+                        <li><a href="/courses/iit-jee">&gt; JEE Courses</a></li>
+                        <li><a href="/courses/neet">&gt; NEET Courses</a></li>
+                        <li><a href="/courses/foundation">&gt; Foundation Courses</a></li>
                         <li><a href="/blogs">&gt; Blogs</a></li>
-                        <li><a href="/about">&gt; About</a></li>
+                        <li><a href="/about-us">&gt; About</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -165,9 +165,9 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
             </div>
             <div class="filter-row">
                 <a href="/courses" class="filter-btn active" style="text-decoration: none;">All</a>
-                <a href="/jeecourses" class="filter-btn" style="text-decoration: none;">JEE</a>
-                <a href="/neetcourses" class="filter-btn" style="text-decoration: none;">NEET</a>
-                <a href="/foundationcourses" class="filter-btn" style="text-decoration: none;">FOUNDATION</a>
+                <a href="/courses/iit-jee" class="filter-btn" style="text-decoration: none;">JEE</a>
+                <a href="/courses/neet" class="filter-btn" style="text-decoration: none;">NEET</a>
+                <a href="/courses/foundation" class="filter-btn" style="text-decoration: none;">FOUNDATION</a>
             </div>
             <div class="courses-grid" id="courses-grid">
                 ${w.map(e=>{let t=`⭐`.repeat(Math.round(e.rating)),n=e.students>=1e3?`${(e.students/1e3).toFixed(1)}K`:e.students;return`
@@ -1062,12 +1062,12 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                             <h2 style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">Main Pages</h2>
                             <ul style="list-style: none; padding: 0;">
                                 <li style="margin-bottom: 0.5rem;"><a href="/" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Home</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="/about" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">About Us</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/about-us" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">About Us</a></li>
                                 <li style="margin-bottom: 0.5rem;"><a href="/courses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">All Courses</a></li>
                                 <li style="margin-bottom: 0.5rem;"><a href="/blogs" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Blogs</a></li>
                                 <li style="margin-bottom: 0.5rem;"><a href="/journey" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Journey & Reflection</a></li>
                                 <li style="margin-bottom: 0.5rem;"><a href="/reviews" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Student Reviews</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="/contact" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Contact Us</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/contact-us" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Contact Us</a></li>
                             </ul>
                         </div>
 
@@ -1075,9 +1075,9 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                         <div>
                             <h2 style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">Course Categories</h2>
                             <ul style="list-style: none; padding: 0;">
-                                <li style="margin-bottom: 0.5rem;"><a href="/jeecourses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">JEE Preparation</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="/neetcourses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">NEET Preparation</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="/foundationcourses" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Foundation (6th-10th)</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/courses/iit-jee" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">JEE Preparation</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/courses/neet" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">NEET Preparation</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/courses/foundation" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Foundation (6th-10th)</a></li>
                             </ul>
                         </div>
 
@@ -1127,9 +1127,9 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
             </div>
             <div class="filter-row">
                 <a href="/courses" class="filter-btn" style="text-decoration: none;">All</a>
-                <a href="/jeecourses" class="filter-btn ${n===`JEE`?`active`:``}" style="text-decoration: none;">JEE</a>
-                <a href="/neetcourses" class="filter-btn ${n===`NEET`?`active`:``}" style="text-decoration: none;">NEET</a>
-                <a href="/foundationcourses" class="filter-btn ${n===`FOUNDATION`?`active`:``}" style="text-decoration: none;">FOUNDATION</a>
+                <a href="/courses/iit-jee" class="filter-btn ${n===`JEE`?`active`:``}" style="text-decoration: none;">JEE</a>
+                <a href="/courses/neet" class="filter-btn ${n===`NEET`?`active`:``}" style="text-decoration: none;">NEET</a>
+                <a href="/courses/foundation" class="filter-btn ${n===`FOUNDATION`?`active`:``}" style="text-decoration: none;">FOUNDATION</a>
             </div>
             <div class="courses-grid" style="margin-top: 40px;">
                 ${i}
@@ -1143,18 +1143,18 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
         <div id="er-slider-track" style="display:flex; transition:transform 0.7s cubic-bezier(0.4,0,0.2,1); will-change:transform;">
 
           <!-- SLIDE 1 — FOUNDATION COURSES BANNER -->
-          <a href="/foundationcourses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+          <a href="/courses/foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <img src="https://cdn.phototourl.com/free/2026-08-19-a7d0b97b-514f-440f-a353-c2002218aa92.jpg" alt="Foundation Courses" style="width:100%; height:100%; object-fit:contain; display:block;" />
           </a>
 
           <!-- SLIDE 2 — NEET BATCH -->
-          <a href="/neetcourses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+          <a href="/courses/neet" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <img src="https://cdn.phototourl.com/free/2026-08-19-b81703e4-9625-45ba-9dd9-a78611892cbe.jpg" alt="NEET Courses" style="width:100%; height:100%; object-fit:contain; display:block;" />
           </a>
 
 
           <!-- SLIDE 3 — JEE COURSES BANNER -->
-          <a href="/jeecourses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+          <a href="/courses/iit-jee" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <img src="https://cdn.phototourl.com/free/2026-08-19-d0350913-854a-4e54-a80e-ca16951ba57d.jpg" alt="JEE Courses" style="width:100%; height:100%; object-fit:contain; display:block;" />
           </a>
 
@@ -1252,7 +1252,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                         <li><span class="er-check">✓</span> Learn free, experience it, then decide</li>
                     </ul>
 
-                    <a href="/contact" class="er-demo-cta">
+                    <a href="/contact-us" class="er-demo-cta">
                         📅 Book a Free Demo
                     </a>
                 </div>
@@ -1576,7 +1576,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 Cancel
             </button>
         </div>
-    `,e.appendChild(t),document.body.appendChild(e),setTimeout(()=>{e.classList.add(`visible`),t.classList.add(`visible`)},50);let n=()=>{e.classList.remove(`visible`),t.classList.remove(`visible`),setTimeout(()=>{e.parentNode&&e.parentNode.removeChild(e)},400)};document.getElementById(`ios-popup-btn-cancel`).addEventListener(`click`,n),document.getElementById(`ios-popup-btn-x`).addEventListener(`click`,n),e.addEventListener(`click`,t=>{t.target===e&&n()}),document.getElementById(`ios-popup-btn-continue`).addEventListener(`click`,()=>{navigator.clipboard.writeText(`rwoaln`).catch(e=>console.log(`Clipboard error:`,e)),window.open(`https://apps.apple.com/in/app/myinstitute/id1472483563`,`_blank`),n()})}function Q(e,t){document.title=e;let n=document.querySelector(`meta[name="description"]`);n||(n=document.createElement(`meta`),n.name=`description`,document.head.appendChild(n)),n.content=t}var pe={"/":{render:()=>Y()+Z()+re()+ie()+oe()+ce()+ue(),postRender:()=>{X(),ae(),se(),le(),$()}},"/courses":{render:()=>T(),postRender:()=>E()},"/blogs":{render:()=>k(),postRender:()=>j()},"/journey":{render:()=>B(),postRender:()=>V()},"/about":{render:()=>M(),postRender:()=>{}},"/reviews":{render:()=>P(),postRender:()=>F()},"/contact":{render:()=>I(),postRender:()=>L()},"/privacy":{render:()=>H(),postRender:()=>{}},"/terms":{render:()=>U(),postRender:()=>Q(`Terms and Conditions - EduRain`,`Terms and conditions of use for Edurain`)},"/sitemap":{render:()=>W(),postRender:()=>Q(`Sitemap - EduRain`,`Sitemap for EduRain`)},"/jeecourses":{render:()=>K(),postRender:()=>Q(`JEE Courses - EduRain`,`Comprehensive preparation for IIT-JEE exams. Build a strong foundation and master the concepts to secure your seat in top engineering colleges.`)},"/neetcourses":{render:()=>q(),postRender:()=>Q(`NEET Courses - EduRain`,`Focused coaching for medical aspirants. In-depth coverage of Biology, Physics, and Chemistry to help you crack NEET with top scores.`)},"/foundationcourses":{render:()=>J(),postRender:()=>Q(`Foundation Courses - EduRain`,`Strengthen your core concepts in Science and Mathematics from Class 6 to 10. The perfect stepping stone for future competitive exams.`)}};function $(){let e=document.querySelectorAll(`.er-reveal`);if(!e.length)return;let t=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.classList.add(`visible`),t.unobserve(e.target))})},{threshold:.12});e.forEach(e=>t.observe(e))}var me=e=>{window.history.pushState({},``,e),window.renderRoute&&window.renderRoute()},he=()=>{let e=document.getElementById(`app`),t=new URLSearchParams(window.location.search).get(`p`);t&&window.history.replaceState(null,null,t),document.body.addEventListener(`click`,e=>{if(e.defaultPrevented)return;let t=e.target.closest(`a`);if(t&&t.href){if(t.getAttribute(`href`)===`#`)return;try{let n=new URL(t.href);if(n.origin===window.location.origin){if(t.target===`_blank`||n.pathname.startsWith(`/jeecourse/`)||n.pathname.startsWith(`/neetcourse/`)||n.pathname.startsWith(`/foundationcourse/`))return;e.preventDefault(),me(n.pathname)}}catch{}}}),window.renderRoute=()=>{let t=window.location.pathname;t===``||t===`/`?t=`/`:t.endsWith(`/`)&&(t=t.slice(0,-1));let n=pe[t]||{render:()=>`<div class="page-404"><h1>404</h1><p>Page not found</p><a href="/" class="btn btn-accent">Go Home</a></div>`,postRender:()=>{}},r=te(),i=n.render(),a=S(),o=R();e.innerHTML=`
+    `,e.appendChild(t),document.body.appendChild(e),setTimeout(()=>{e.classList.add(`visible`),t.classList.add(`visible`)},50);let n=()=>{e.classList.remove(`visible`),t.classList.remove(`visible`),setTimeout(()=>{e.parentNode&&e.parentNode.removeChild(e)},400)};document.getElementById(`ios-popup-btn-cancel`).addEventListener(`click`,n),document.getElementById(`ios-popup-btn-x`).addEventListener(`click`,n),e.addEventListener(`click`,t=>{t.target===e&&n()}),document.getElementById(`ios-popup-btn-continue`).addEventListener(`click`,()=>{navigator.clipboard.writeText(`rwoaln`).catch(e=>console.log(`Clipboard error:`,e)),window.open(`https://apps.apple.com/in/app/myinstitute/id1472483563`,`_blank`),n()})}function Q(e,t){document.title=e;let n=document.querySelector(`meta[name="description"]`);n||(n=document.createElement(`meta`),n.name=`description`,document.head.appendChild(n)),n.content=t}var pe={"/":{render:()=>Y()+Z()+re()+ie()+oe()+ce()+ue(),postRender:()=>{X(),ae(),se(),le(),$()}},"/courses":{render:()=>T(),postRender:()=>E()},"/blogs":{render:()=>k(),postRender:()=>j()},"/journey":{render:()=>B(),postRender:()=>V()},"/about-us":{render:()=>M(),postRender:()=>{}},"/reviews":{render:()=>P(),postRender:()=>F()},"/contact-us":{render:()=>I(),postRender:()=>L()},"/privacy":{render:()=>H(),postRender:()=>{}},"/terms":{render:()=>U(),postRender:()=>Q(`Terms and Conditions - EduRain`,`Terms and conditions of use for Edurain`)},"/sitemap":{render:()=>W(),postRender:()=>Q(`Sitemap - EduRain`,`Sitemap for EduRain`)},"/courses/iit-jee":{render:()=>K(),postRender:()=>Q(`JEE Courses - EduRain`,`Comprehensive preparation for IIT-JEE exams. Build a strong foundation and master the concepts to secure your seat in top engineering colleges.`)},"/courses/neet":{render:()=>q(),postRender:()=>Q(`NEET Courses - EduRain`,`Focused coaching for medical aspirants. In-depth coverage of Biology, Physics, and Chemistry to help you crack NEET with top scores.`)},"/courses/foundation":{render:()=>J(),postRender:()=>Q(`Foundation Courses - EduRain`,`Strengthen your core concepts in Science and Mathematics from Class 6 to 10. The perfect stepping stone for future competitive exams.`)}};function $(){let e=document.querySelectorAll(`.er-reveal`);if(!e.length)return;let t=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.classList.add(`visible`),t.unobserve(e.target))})},{threshold:.12});e.forEach(e=>t.observe(e))}var me=e=>{window.history.pushState({},``,e),window.renderRoute&&window.renderRoute()},he=()=>{let e=document.getElementById(`app`),t=new URLSearchParams(window.location.search).get(`p`);t&&window.history.replaceState(null,null,t),document.body.addEventListener(`click`,e=>{if(e.defaultPrevented)return;let t=e.target.closest(`a`);if(t&&t.href){if(t.getAttribute(`href`)===`#`)return;try{let n=new URL(t.href);if(n.origin===window.location.origin){if(t.target===`_blank`||n.pathname.startsWith(`/jeecourse`)||n.pathname.startsWith(`/neetcourse`)||n.pathname.startsWith(`/foundationcourse`))return;e.preventDefault(),me(n.pathname)}}catch{}}}),window.renderRoute=()=>{let t=window.location.pathname;t===``||t===`/`?t=`/`:t.endsWith(`/`)&&(t=t.slice(0,-1));let n=pe[t]||{render:()=>`<div class="page-404"><h1>404</h1><p>Page not found</p><a href="/" class="btn btn-accent">Go Home</a></div>`,postRender:()=>{}},r=te(),i=n.render(),a=S(),o=R();e.innerHTML=`
       ${r}
       <main class="main-content fade-in-section">
         ${i}
