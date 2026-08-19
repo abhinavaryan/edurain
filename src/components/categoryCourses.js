@@ -41,7 +41,7 @@ function renderCategoryPage(title, description, categoryKey) {
         : '<p style="text-align: center; width: 100%; color: var(--text-muted);">No courses available in this category yet.</p>';
 
     return `
-        <section class="courses-section" style="padding-top: 120px;">
+        <section class="courses-section">
             <div class="section-header">
                 <h2>${title}</h2>
                 <p>${description}</p>

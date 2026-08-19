@@ -66,7 +66,7 @@ export function renderAppDownload() {
                         <div class="er-phone-notch"></div>
                         <!-- Screen -->
                         <div class="er-phone-screen">
-                            <img src="./images/floating%20phone.jpeg" alt="EduRain App" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                            <img src="./images/floating%20phone.jpg" alt="EduRain App" style="width:100%; height:100%; object-fit:cover; display:block;" />
                         </div>
                     </div>
 

@@ -2781,8 +2781,9 @@ textarea {
     --navbar-height: 65px;
   }
 
-  .navbar {
+  .navbar, .navbar.scrolled {
     padding: 0 var(--space-md);
+    height: var(--navbar-height);
   }
 
   .hide-on-mobile {
