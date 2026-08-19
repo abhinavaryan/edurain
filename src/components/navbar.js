@@ -6,7 +6,7 @@ export function renderNavbar() {
             <div class="navbar-container">
                 <div class="logo">
                     <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                        <img src="./images/logo.png" alt="EduRain Logo" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
+                        <img src="/images/logo.png" alt="EduRain Logo" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
                         <div style="display: flex; flex-direction: column; line-height: 1.2;">
                             <div>
                                 <span class="text-white">Edu</span><span class="text-accent">Rain</span>
@@ -37,7 +37,7 @@ export function renderNavbar() {
             <div class="mobile-menu-header">
                 <div class="logo">
                     <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                        <img src="./images/logo.png" alt="EduRain Logo" style="height: 40px; width: auto; max-width: 50px; object-fit: contain;">
+                        <img src="/images/logo.png" alt="EduRain Logo" style="height: 40px; width: auto; max-width: 50px; object-fit: contain;">
                         <div style="display: flex; flex-direction: column; line-height: 1.2;">
                             <div>
                                 <span class="text-white">Edu</span><span class="text-accent">Rain</span>

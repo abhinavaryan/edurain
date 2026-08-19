@@ -5,7 +5,7 @@ export function renderFaculty() {
             subject: "English",
             exp: "14 Years Exp.",
             desc: "He is a passionate English mentor dedicated to mastering language skills, literature, and communication excellence.",
-            image: "./images/home teachers image/1.png",
+            image: "/images/home teachers image/1.png",
             icon: "📖"
         },
         {
@@ -13,7 +13,7 @@ export function renderFaculty() {
             subject: "Chemistry",
             exp: "14 Years Exp.",
             desc: "She is dedicated to building strong fundamentals and developing problem-solving excellence in students.",
-            image: "./images/home teachers image/2.png",
+            image: "/images/home teachers image/2.png",
             icon: "🧪"
         },
         {
@@ -21,7 +21,7 @@ export function renderFaculty() {
             subject: "Mathematics",
             exp: "18 Years Exp.",
             desc: "Expert Mathematics mentor with 18 years of experience, specializing in Class 11th & 12th and JEE preparation.",
-            image: "./images/home teachers image/6.png",
+            image: "/images/home teachers image/6.png",
             icon: "🔢"
         },
         {
@@ -29,7 +29,7 @@ export function renderFaculty() {
             subject: "Physics",
             exp: "15 Years Exp.",
             desc: "He is recognized for his concept-driven teaching approach and consistent success in guiding NEET aspirants toward top ranks.",
-            image: "./images/home teachers image/3.png",
+            image: "/images/home teachers image/3.png",
             icon: "⚡"
         },
         {
@@ -37,7 +37,7 @@ export function renderFaculty() {
             subject: "Biology",
             exp: "16 Years Exp.",
             desc: "A highly respected Biology mentor, He is known for making complex concepts simple and helping students achieve NEET results.",
-            image: "./images/home teachers image/4.png",
+            image: "/images/home teachers image/4.png",
             icon: "🧬"
         },
         {
@@ -45,7 +45,7 @@ export function renderFaculty() {
             subject: "Social Studies",
             exp: "5 Years Exp.",
             desc: "Passionate Social Studies mentor with 5 years of teaching experience, making History, Civics, and Geography engaging and accessible.",
-            image: "./images/home teachers image/5.png",
+            image: "/images/home teachers image/5.png",
             imgStyle: "transform: scale(1.2) translateY(5px); transform-origin: bottom center;",
             icon: "🌍"
         }

@@ -5,28 +5,28 @@ export function renderHomeReviews() {
             rating: 5,
             quote: "Yahan ke experienced teachers har concept ko detail mein samjhate hain aur doubts ko patiently clear karte hain. Regular tests, detailed performance analysis, aur consistent guidance ne meri accuracy aur confidence dono ko improve kiya .",
             bg: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
-            avatar: "./images/student result detail/kavya sen.png"
+            avatar: "/images/student result detail/kavya sen.png"
         },
         {
             name: "Vivek Singh",
             rating: 4,
             quote: "I was struggling with Biology and Chemistry before joining EduRain and teachers explained every topic in a very simple way and doubt sessions were really helpful. Highly recommended for NEET aspirants.",
             bg: "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)",
-            avatar: "./images/student result detail/vivek singh.png"
+            avatar: "/images/student result detail/vivek singh.png"
         },
         {
             name: "Neha Yadav",
             rating: 4,
             quote: "Mujhe sabse achha yeh laga ki teachers sirf syllabus complete karne par focus nahi karte, balki concepts ko achhe se clear karwate hain. NEET preparation ke liye EduRain perfect platform hai",
             bg: "linear-gradient(135deg, #ec4899 0%, #be185d 100%)",
-            avatar: "./images/student result detail/neha yadav.png"
+            avatar: "/images/student result detail/neha yadav.png"
         },
         {
             name: "Aditi Sharma",
             rating: 5,
             quote: "The mock test series and detailed rank analysis gave me real exam environment experience. Solved all my doubts instantly in live sessions.",
             bg: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
-            avatar: "./images/student result detail/aditi sharma.png"
+            avatar: "/images/student result detail/aditi sharma.png"
         },
         {
             name: "Ananya Roy",
@@ -40,7 +40,7 @@ export function renderHomeReviews() {
             rating: 5,
             quote: "Faculty members are super approachable. They solved every single doubt even after class hours. Best platform for JEE preparation.",
             bg: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
-            avatar: "./images/student result detail/vikash kumar.png"
+            avatar: "/images/student result detail/vikash kumar.png"
         }
     ];
 
