@@ -388,13 +388,11 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                     <!-- Left Column: Who we are & Story -->
                     <div class="er-about-col-left">
                         <div class="er-glass-card er-about-card">
-                            <div class="er-card-icon"></div>
                             <h2>Who We Are</h2>
                             <p>At EduRain, we believe quality education shouldn't depend on where you live or how much you can afford to spend on coaching. We started EduRain with one simple goal: to bring foundation learning for Classes 6 to 10 and online coaching for IIT-JEE and NEET preparation to every student who's serious about their future, no matter which city or town they're studying from.</p>
                         </div>
                         
                         <div class="er-glass-card er-about-card">
-                            <div class="er-card-icon"></div>
                             <h2>Our Story</h2>
                             <p>We saw how the internet was changing the way students in India prepare for competitive exams. We also saw a gap: many students still struggle to find a platform that combines strong fundamentals with focused JEE and NEET preparation, at a pace and price that actually works for them. That's the gap we built EduRain to fill.</p>
                         </div>
@@ -403,7 +401,6 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                     <!-- Right Column: What we offer & Why Us -->
                     <div class="er-about-col-right">
                         <div class="er-glass-card er-about-card er-card-highlight">
-                            <div class="er-card-icon"></div>
                             <h2>What We Offer</h2>
                             <ul class="er-about-list">
                                 <li><strong>Foundation Courses (Classes 6–10):</strong> We help students build strong concepts in Maths and Science early on, so the transition to JEE and NEET preparation later feels natural, not overwhelming.</li>
@@ -414,7 +411,6 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                         </div>
                         
                         <div class="er-glass-card er-about-card">
-                            <div class="er-card-icon"></div>
                             <h2>Why Students Choose EduRain</h2>
                             <p>We're not trying to be the biggest online coaching platform. We're trying to be the one that genuinely cares whether a student understands a concept, not just whether they've watched a video. Our teachers focus on building a strong foundation first, because we've seen that students who understand the "why" behind a formula perform far better in JEE and NEET than those who simply memorize.</p>
                         </div>
@@ -423,7 +419,6 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
 
                 <!-- Promise Section (Full width at bottom) -->
                 <div class="er-glass-card er-about-promise-card text-center">
-                    <div class="er-card-icon"></div>
                     <h2>Our Promise</h2>
                     <p>Every student who comes to EduRain gets the same thing from us: honest teaching, real support, and a team that wants to see them succeed. Whether a student is in Class 6 just starting to enjoy Maths, or in Class 12 preparing for the final NEET or JEE attempt, our focus stays the same.</p>
                     <h3 class="er-promise-tagline">EduRain — Foundation today, results tomorrow.</h3>
@@ -538,7 +533,7 @@ import{a as e,c as t,d as n,f as r,i,l as a,n as o,o as s,p as c,r as l,s as u,t
                 </div>
             </div>
         </section>
-    `}function L(){let e=document.getElementById(`contact-form`),t=document.getElementById(`form-message`);e&&e.addEventListener(`submit`,async n=>{n.preventDefault();let r=document.getElementById(`contact-name`).value.trim(),i=document.getElementById(`contact-email`).value.trim(),a=document.getElementById(`contact-message`).value.trim();if(r.length<2){t.textContent=`Please enter your name (min 2 characters).`,t.className=`form-message error`;return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(i)){t.textContent=`Please enter a valid email address.`,t.className=`form-message error`;return}if(a.length<10){t.textContent=`Message must be at least 10 characters.`,t.className=`form-message error`;return}let o=document.getElementById(`contact-submit`);o.disabled=!0,o.textContent=`Sending...`;try{await _(r,i,a),t.textContent=`✅ Message sent successfully! We will get back to you soon.`,t.className=`form-message success`,e.reset()}catch{t.textContent=`❌ Failed to send message. Please try again.`,t.className=`form-message error`}finally{o.disabled=!1,o.textContent=`Send Message`}})}function R(){return`
+    `}function L(){let e=document.getElementById(`contact-form`),t=document.getElementById(`form-message`);e&&e.addEventListener(`submit`,async n=>{n.preventDefault();let r=document.getElementById(`contact-name`).value.trim(),i=document.getElementById(`contact-email`).value.trim(),a=document.getElementById(`contact-message`).value.trim();if(r.length<2){t.textContent=`Please enter your name (min 2 characters).`,t.className=`form-message error`;return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(i)){t.textContent=`Please enter a valid email address.`,t.className=`form-message error`;return}if(a.length<10){t.textContent=`Message must be at least 10 characters.`,t.className=`form-message error`;return}let o=document.getElementById(`contact-submit`);o.disabled=!0,o.textContent=`Sending...`;try{await _(r,i,a);try{let e=new URLSearchParams;e.append(`name`,r),e.append(`email`,i),e.append(`message`,a),await fetch(`https://script.google.com/macros/s/AKfycbxspWFgxEFlxdDa1O5GXLHwjeBAsytPeAwAWpOqTlum_hQ0_P4_wIHtcj-HPMTZrJNY/exec`,{method:`POST`,body:e,mode:`no-cors`})}catch(e){console.error(`Google Sheets saving error:`,e)}t.textContent=`✅ Message sent successfully! We will get back to you soon.`,t.className=`form-message success`,e.reset()}catch{t.textContent=`❌ Failed to send message. Please try again.`,t.className=`form-message error`}finally{o.disabled=!1,o.textContent=`Send Message`}})}function R(){return`
         <div class="auth-modal-overlay" id="auth-modal" style="display:none;">
             <div class="auth-modal glass-card">
                 <button class="modal-close" id="modal-close">&times;</button>
