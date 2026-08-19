@@ -51,6 +51,7 @@ const routes = {
       initHomeReviews();
       initImpact();
       initScrollReveal();
+      setMetaTags("Best Online Coaching for IIT-JEE, NEET & Class 6-10 | EduRain", "EduRain offers online coaching for Class 6-10, foundation courses, IIT-JEE preparation, NEET coaching, board exams and competitive exam preparation.");
     }
   },
   '/courses': {
@@ -59,7 +60,10 @@ const routes = {
   },
   '/blogs': {
     render: () => renderBlogs(),
-    postRender: () => initBlogs()
+    postRender: () => {
+      initBlogs();
+      setMetaTags("IIT JEE, NEET & Foundation Blogs | EduRain", "Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides");
+    }
   },
   '/journey': {
     render: () => renderJourney(),
@@ -91,7 +95,7 @@ const routes = {
   },
   '/courses/iit-jee': {
     render: () => renderJEECourses(),
-    postRender: () => setMetaTags("JEE Courses - EduRain", "Comprehensive preparation for IIT-JEE exams. Build a strong foundation and master the concepts to secure your seat in top engineering colleges.")
+    postRender: () => setMetaTags("Best IIT JEE Online Coaching for JEE Main & Advanced | EduRain", "Crack IIT JEE with EduRain: live classes, expert faculty, and structured material for complete JEE Main & Advanced exam preparation")
   },
   '/courses/neet': {
     render: () => renderNEETCourses(),
