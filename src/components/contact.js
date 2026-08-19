@@ -117,7 +117,26 @@ export function initContact() {
             submitBtn.textContent = 'Sending...';
 
             try {
+                // 1. Save to Firebase
                 await saveContactMessage(name, email, message);
+                
+                // 2. Save to Google Spreadsheet
+                try {
+                    const scriptUrl = 'https://script.google.com/macros/s/AKfycbxspWFgxEFlxdDa1O5GXLHwjeBAsytPeAwAWpOqTlum_hQ0_P4_wIHtcj-HPMTZrJNY/exec';
+                    const formData = new URLSearchParams();
+                    formData.append('name', name);
+                    formData.append('email', email);
+                    formData.append('message', message);
+                    
+                    await fetch(scriptUrl, {
+                        method: 'POST',
+                        body: formData,
+                        mode: 'no-cors' // Important for Google Apps Script to prevent CORS errors on the frontend
+                    });
+                } catch (sheetErr) {
+                    console.error('Google Sheets saving error:', sheetErr);
+                }
+
                 messageArea.textContent = '✅ Message sent successfully! We will get back to you soon.';
                 messageArea.className = 'form-message success';
                 form.reset();
