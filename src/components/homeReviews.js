@@ -4,37 +4,43 @@ export function renderHomeReviews() {
             name: "Kavya Sen.",
             rating: 5,
             quote: "Yahan ke experienced teachers har concept ko detail mein samjhate hain aur doubts ko patiently clear karte hain. Regular tests, detailed performance analysis, aur consistent guidance ne meri accuracy aur confidence dono ko improve kiya .",
-            bg: "linear-gradient(135deg, #10b981 0%, #059669 100%)"
+            bg: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+            avatar: "./images/student result detail/kavya sen.png"
         },
         {
             name: "Vivek Singh",
             rating: 4,
             quote: "I was struggling with Biology and Chemistry before joining EduRain and teachers explained every topic in a very simple way and doubt sessions were really helpful. Highly recommended for NEET aspirants.",
-            bg: "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)"
+            bg: "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)",
+            avatar: "./images/student result detail/vivek singh.png"
         },
         {
             name: "Neha Yadav",
             rating: 4,
             quote: "Mujhe sabse achha yeh laga ki teachers sirf syllabus complete karne par focus nahi karte, balki concepts ko achhe se clear karwate hain. NEET preparation ke liye EduRain perfect platform hai",
-            bg: "linear-gradient(135deg, #ec4899 0%, #be185d 100%)"
+            bg: "linear-gradient(135deg, #ec4899 0%, #be185d 100%)",
+            avatar: "./images/student result detail/neha yadav.png"
         },
         {
-            name: "Aarav Sharma",
+            name: "Aditi Sharma",
             rating: 5,
             quote: "The mock test series and detailed rank analysis gave me real exam environment experience. Solved all my doubts instantly in live sessions.",
-            bg: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
+            bg: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
+            avatar: "./images/student result detail/aditi sharma.png"
         },
         {
             name: "Ananya Roy",
             rating: 5,
             quote: "EduRain's interactive live classes and recorded sessions gave me the flexibility to revise complex physics formulas anytime. Scored 680+ in NEET!",
-            bg: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)"
+            bg: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
+            avatar: null
         },
         {
-            name: "Rohan Gupta",
+            name: "Vikash Kumar",
             rating: 5,
             quote: "Faculty members are super approachable. They solved every single doubt even after class hours. Best platform for JEE preparation.",
-            bg: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)"
+            bg: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
+            avatar: "./images/student result detail/vikash kumar.png"
         }
     ];
 
@@ -47,6 +53,10 @@ export function renderHomeReviews() {
     };
 
     const cardsHtml = reviews.map((r) => {
+        const avatarContent = r.avatar 
+            ? `<img src="${r.avatar}" alt="${r.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;" />`
+            : `${r.name[0]}`;
+
         return `
         <div class="er-review-card er-reveal visible" style="background: #ffffff !important; border: 1px solid #e5e7eb; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08);">
             <div class="er-review-card-top">
@@ -65,8 +75,8 @@ export function renderHomeReviews() {
             <p class="er-review-quote" style="color: #1f2937; font-size: 0.95rem; line-height: 1.6; font-style: italic;">"${r.quote}"</p>
 
             <div class="er-review-author">
-                <div class="er-review-avatar-badge" style="background: ${r.bg}; color: #ffffff;">
-                    ${r.name[0]}
+                <div class="er-review-avatar-badge" style="background: ${r.bg}; color: #ffffff; padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                    ${avatarContent}
                 </div>
                 <span class="er-review-author-name" style="color: #0e3a24; font-weight: 700; font-size: 1rem;">${r.name}</span>
             </div>
