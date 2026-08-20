@@ -28,12 +28,14 @@ if (!fs.existsSync(indexHtmlPath)) {
 
 const indexHtml = fs.readFileSync(indexHtmlPath, 'utf8');
 
+const indexHtmlWithoutSchema = indexHtml.replace(/<!-- JSON-LD Schema Markup -->[\s\S]*?<\/script>/, '');
+
 routes.forEach(route => {
   const routeDir = path.join(distDir, route);
   if (!fs.existsSync(routeDir)) {
     fs.mkdirSync(routeDir, { recursive: true });
   }
-  fs.writeFileSync(path.join(routeDir, 'index.html'), indexHtml);
+  fs.writeFileSync(path.join(routeDir, 'index.html'), indexHtmlWithoutSchema);
 });
 
 console.log('Successfully generated static index.html files for SPA routes.');
