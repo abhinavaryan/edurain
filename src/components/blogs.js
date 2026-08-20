@@ -53,9 +53,9 @@ export function renderBlogs() {
                         <input type="text" id="er-blog-search-input" class="er-pw-search-input" placeholder="Search articles, exam tips, PYQs, or topics..." />
                     </div>
 
-                    <!-- Our Popular Tags Filter -->
+                    <!-- Our Categories Filter -->
                     <div class="er-pw-tags-section">
-                        <div class="er-pw-tags-label">#Ourpopulartags</div>
+                        <div class="er-pw-tags-label">#OurCategories</div>
                         <div class="er-pw-tags-list" id="er-tags-container">
                             ${tagsHtml}
                         </div>

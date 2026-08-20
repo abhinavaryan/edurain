@@ -86,7 +86,7 @@ const routes = {
   },
   '/about-us': {
     render: () => renderAbout(),
-    postRender: () => setMetaTags("About Us - EduRain", "About EduRain", "https://www.edurain.in/about-us")
+    postRender: () => setMetaTags("About Us | EduRain's Mission to Make Learning Accessible", "At EduRain, our mission is to make quality education accessible for every student from Class 6-10 foundation to IIT-JEE & NEET success. Know our story", "https://www.edurain.in/about-us")
   },
   '/reviews': {
     render: () => renderReviews(),
@@ -94,7 +94,10 @@ const routes = {
   },
   '/contact-us': {
     render: () => renderContact(),
-    postRender: () => initContact()
+    postRender: () => { 
+      initContact(); 
+      setMetaTags("Contact Us | Get in Touch with EduRain", "Have questions about our courses for Class 6-10, IIT-JEE or NEET? Contact EduRain's team for admissions support, course details or a free demo class", "https://www.edurain.in/contact-us"); 
+    }
   },
   '/privacy': {
     render: () => renderPrivacy(),
