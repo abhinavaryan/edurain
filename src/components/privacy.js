@@ -11,7 +11,7 @@ export function renderPrivacy() {
                     
                     <p style="margin-bottom: 2rem; font-size: 1.1rem;">Please read the following Privacy Policy carefully before using the services available on <strong><a href="https://edurain.in" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);">https://edurain.in</a></strong> or the EduRain mobile application (collectively referred to as the <strong>"Platform"</strong>).</p>
                     
-                    <p style="margin-bottom: 2rem; font-size: 1.1rem;">This Privacy Policy explains how <strong>EduRain Institute Private Limited ("EduRain", "We", "Us", or "Our")</strong> collects, uses, stores, and protects Your information when You access or use Our Platform.</p>
+                    <p style="margin-bottom: 2rem; font-size: 1.1rem;">This Privacy Policy explains how <strong>EduRain Private Limited ("EduRain", "We", "Us", or "Our")</strong> collects, uses, stores, and protects Your information when You access or use Our Platform.</p>
                     
                     <p style="margin-bottom: 2rem; font-size: 1.1rem;">By accessing or using the Platform, You agree to the collection, use, and disclosure of Your information in accordance with this Privacy Policy. If You do not agree with any part of this Privacy Policy, please do not use the Platform.</p>
                     
@@ -153,7 +153,7 @@ export function renderPrivacy() {
                     <p style="margin-bottom: 1.5rem;">If You have any questions, concerns, or requests regarding this Privacy Policy, You may contact Us:</p>
                     
                     <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: center;">
-                        <h3 style="color: var(--text-main); font-size: 1.4rem; margin-bottom: 1rem;">EduRain Institute Private Limited</h3>
+                        <h3 style="color: var(--text-main); font-size: 1.4rem; margin-bottom: 1rem;">EduRain Private Limited</h3>
                         <p style="margin-bottom: 0.5rem;"><i class="fas fa-globe" style="color: var(--accent); margin-right: 10px;"></i> <a href="https://edurain.in" target="_blank" rel="noopener noreferrer" style="color: var(--text-main); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-main)'">https://edurain.in</a></p>
                         <p style="margin-bottom: 0.5rem;"><i class="fas fa-envelope" style="color: var(--accent); margin-right: 10px;"></i> <a href="mailto:support@edurain.in" style="color: var(--text-main); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-main)'">support@edurain.in</a></p>
                         <p style="margin-bottom: 0.5rem;">

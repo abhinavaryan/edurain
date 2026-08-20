@@ -31,7 +31,7 @@ export function renderFooter() {
                                 <div class="dropdown-header">YouTube Channels</div>
                                 <a href="https://www.youtube.com/@Eduraininstitute" target="_blank" rel="noopener noreferrer" class="dropdown-item">
                                     <i class="fab fa-youtube"></i>
-                                    <span>EduRain Institute</span>
+                                    <span>EduRain</span>
                                 </a>
                                 <a href="https://www.youtube.com/@EduRain9th10th" target="_blank" rel="noopener noreferrer" class="dropdown-item">
                                     <i class="fab fa-youtube"></i>

@@ -34,7 +34,7 @@ export function renderContact() {
                             <span class="contact-icon">📍</span>
                             <div>
                                 <strong>Location</strong>
-                                <p>Delhi, India</p>
+                                <p>Noida, Uttar Pradesh, India</p>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ export function renderContact() {
                                 <div class="dropdown-header">YouTube Channels</div>
                                 <a href="https://www.youtube.com/@Eduraininstitute" target="_blank" rel="noopener noreferrer" class="dropdown-item">
                                     <i class="fab fa-youtube"></i>
-                                    <span>EduRain Institute</span>
+                                    <span>EduRain</span>
                                 </a>
                                 <a href="https://www.youtube.com/@EduRain9th10th" target="_blank" rel="noopener noreferrer" class="dropdown-item">
                                     <i class="fab fa-youtube"></i>
