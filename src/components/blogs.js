@@ -1,5 +1,6 @@
-import blogsData from '../data/blogs.json';
 import coursesData from '../data/courses.json';
+import { db } from '../firebase/config.js';
+import { collection, getDocs, query, orderBy, where } from 'firebase/firestore';
 
 const POPULAR_TAGS = [
     "All Blogs",
@@ -11,22 +12,15 @@ const POPULAR_TAGS = [
     "Foundation 9th-10th"
 ];
 
+let liveBlogsData = []; // To store fetched blogs
+
 export function renderBlogs() {
-    const publishedBlogs = blogsData.filter(b => b.isPublished !== false);
-
-    // Group blogs by main categories for PW-style sectioning
-    const categories = Array.from(new Set(publishedBlogs.map(b => b.category || 'General')));
-
     const tagsHtml = POPULAR_TAGS.map((tag, idx) => `
         <button class="er-tag-pill ${idx === 0 ? 'active' : ''}" data-tag="${tag}">
             ${tag}
         </button>
     `).join('');
 
-    // Initial render of all blogs in grid
-    const initialGridHtml = renderBlogGridItems(publishedBlogs);
-
-    // Recommended courses for sidebar
     const recommendedCourses = coursesData.slice(0, 3);
     const recommendedCoursesHtml = recommendedCourses.map(course => `
         <div class="pw-sidebar-course-card">
@@ -70,7 +64,9 @@ export function renderBlogs() {
 
                 <!-- Blog Grid Section -->
                 <div class="er-pw-grid-section" id="er-blogs-grid-container">
-                    ${initialGridHtml}
+                    <div style="text-align: center; padding: 4rem; color: #94a3b8; font-size: 1.2rem;">
+                        <span class="er-loader"></span> Fetching latest blogs...
+                    </div>
                 </div>
 
             </div>
@@ -123,24 +119,28 @@ function renderBlogGridItems(blogs) {
         `;
     }
 
-    // Group by category if showing all, or flat grid if searching
     const items = blogs.map(blog => {
-        const date = new Date(blog.date).toLocaleDateString('en-IN', {
-            year: 'numeric', month: 'long', day: 'numeric'
-        });
+        let dateStr = 'Recently';
+        if (blog.date) {
+            // Check if it's a Firestore Timestamp
+            const d = blog.date.toDate ? blog.date.toDate() : new Date(blog.date);
+            dateStr = d.toLocaleDateString('en-IN', {
+                year: 'numeric', month: 'long', day: 'numeric'
+            });
+        }
 
         return `
-            <div class="er-pw-blog-card glass-card fade-in-section" data-blog-id="${blog.id}">
+            <div class="er-pw-blog-card glass-card fade-in-section" data-blog-id="${blog.id}" style="cursor:pointer;">
                 <div class="er-pw-card-cover">
-                    <img src="${blog.coverImage}" alt="${blog.title}" class="er-pw-card-img" />
+                    <img src="${blog.coverImage || '/images/default-blog.jpg'}" alt="${blog.title}" class="er-pw-card-img" style="width:100%; height:200px; object-fit:cover;" />
                     <span class="er-pw-card-badge">${blog.category || 'Exam Prep'}</span>
                 </div>
                 <div class="er-pw-card-body">
-                    <h3 class="er-pw-card-title">${blog.title}</h3>
-                    <p class="er-pw-card-excerpt">${blog.excerpt}</p>
+                    <h3 class="er-pw-card-title" style="font-size:1.2rem; margin-bottom:0.5rem;">${blog.title}</h3>
+                    <p class="er-pw-card-excerpt" style="font-size:0.95rem; color:#64748b; margin-bottom:1rem; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;">${blog.excerpt || ''}</p>
                     <div class="er-pw-card-meta">
-                        <span class="er-pw-card-author">By ${blog.author}</span>
-                        <span class="er-pw-card-date">${date}</span>
+                        <span class="er-pw-card-author">By ${blog.author || 'EduRain Team'}</span>
+                        <span class="er-pw-card-date">${dateStr}</span>
                     </div>
                 </div>
             </div>
@@ -154,7 +154,7 @@ function renderBlogGridItems(blogs) {
     `;
 }
 
-export function initBlogs() {
+export async function initBlogs() {
     const searchInput = document.getElementById('er-blog-search-input');
     const tagsContainer = document.getElementById('er-tags-container');
     const gridContainer = document.getElementById('er-blogs-grid-container');
@@ -168,18 +168,40 @@ export function initBlogs() {
     let activeTag = "All Blogs";
     let searchQuery = "";
 
-    function filterAndRender() {
-        const published = blogsData.filter(b => b.isPublished !== false);
+    // Fetch live blogs from Firestore
+    try {
+        const blogsRef = collection(db, 'blogs');
+        const q = query(blogsRef, where('status', '==', 'published'), orderBy('date', 'desc'));
+        const snapshot = await getDocs(q);
         
-        let filtered = published.filter(b => {
+        liveBlogsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        filterAndRender();
+
+        // Check if URL has a blog ID on initial load after data is fetched
+        const hashParts = window.location.hash.split('?')[0].split('/');
+        if (hashParts.length > 1 && hashParts[0] === '#blogs') {
+            const initialBlogId = hashParts[1];
+            openBlog(initialBlogId, false);
+        }
+
+    } catch (error) {
+        console.error("Error fetching blogs:", error);
+        gridContainer.innerHTML = `<div style="text-align: center; padding: 2rem; color: #ef4444;">Failed to load blogs. Please try again later.</div>`;
+    }
+
+    function filterAndRender() {
+        let filtered = liveBlogsData.filter(b => {
+            // In Firestore schema, tags is an array. Handling both array and string (for old data)
+            const tags = Array.isArray(b.tags) ? b.tags.map(t=>t.toLowerCase()) : ((b.tag || '').toLowerCase().split(',').map(t=>t.trim()));
+            
             const matchesTag = (activeTag === "All Blogs") || 
                 (b.category && b.category.toLowerCase().includes(activeTag.toLowerCase())) ||
-                (b.tag && b.tag.toLowerCase().includes(activeTag.toLowerCase())) ||
+                (tags.includes(activeTag.toLowerCase())) ||
                 (b.title && b.title.toLowerCase().includes(activeTag.toLowerCase()));
             
             const matchesQuery = !searchQuery || 
-                b.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                b.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                (b.title && b.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
+                (b.excerpt && b.excerpt.toLowerCase().includes(searchQuery.toLowerCase())) ||
                 (b.category && b.category.toLowerCase().includes(searchQuery.toLowerCase()));
 
             return matchesTag && matchesQuery;
@@ -189,7 +211,6 @@ export function initBlogs() {
         attachCardClickListeners();
     }
 
-    // Search Input Listener
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             searchQuery = e.target.value.trim();
@@ -197,7 +218,6 @@ export function initBlogs() {
         });
     }
 
-    // Tag Filter Listener
     if (tagsContainer) {
         tagsContainer.addEventListener('click', (e) => {
             const btn = e.target.closest('.er-tag-pill');
@@ -211,95 +231,75 @@ export function initBlogs() {
     }
 
     function openBlog(blogId, updateUrl = true) {
-        const blog = blogsData.find(b => b.id === blogId) || blogsData[0];
+        const blog = liveBlogsData.find(b => b.id === blogId);
         if (!blog) return;
 
-        const date = new Date(blog.date).toLocaleDateString('en-IN', {
-            year: 'numeric', month: 'long', day: 'numeric'
-        });
+        let dateStr = 'Recently';
+        if (blog.date) {
+            const d = blog.date.toDate ? blog.date.toDate() : new Date(blog.date);
+            dateStr = d.toLocaleDateString('en-IN', {
+                year: 'numeric', month: 'long', day: 'numeric'
+            });
+        }
 
+        // Support both old JSON format and new Quill HTML format
         let contentHtml = '';
         if (Array.isArray(blog.content)) {
+            // Old JSON array of objects format
             contentHtml = blog.content.map(block => {
-                if (block.type === 'heading') {
-                    return `<h3 class="pw-article-h3">${block.text}</h3>`;
-                }
+                if (block.type === 'heading') return `<h3 class="pw-article-h3">${block.text}</h3>`;
                 return `<p class="pw-article-p">${block.text}</p>`;
             }).join('');
         } else {
-            contentHtml = `<p class="pw-article-p">${blog.excerpt}</p>`;
+            // New Quill HTML format
+            contentHtml = `<div class="quill-content">${blog.content || `<p class="pw-article-p">${blog.excerpt}</p>`}</div>`;
         }
 
-        let takeawaysHtml = '';
-        if (Array.isArray(blog.keyTakeaways) && blog.keyTakeaways.length > 0) {
-            takeawaysHtml = `
-                <div class="pw-takeaways-box">
-                    <h4>💡 Key Takeaways & Action Plan</h4>
-                    <ul>
-                        ${blog.keyTakeaways.map(t => `<li>${t}</li>`).join('')}
-                    </ul>
-                </div>
-            `;
+        // Apply SEO Meta Tags dynamically
+        if (blog.seo) {
+            document.title = blog.seo.metaTitle || blog.title;
+            let metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) metaDesc.content = blog.seo.metaDescription || blog.excerpt;
         }
-
-        // FAQs Section
-        const faqsHtml = `
-            <div class="pw-article-faqs">
-                <h3 class="pw-faqs-title">Frequently Asked Questions (FAQs)</h3>
-                <div class="pw-faq-item">
-                    <div class="pw-faq-q">Q1. How often are EduRain study materials and blogs updated?</div>
-                    <div class="pw-faq-a">Our editorial and academic teams update materials daily in accordance with the latest NTA (JEE/NEET) and CBSE guidelines.</div>
-                </div>
-                <div class="pw-faq-item">
-                    <div class="pw-faq-q">Q2. Where can I solve topic-wise Previous Year Questions (PYQs)?</div>
-                    <div class="pw-faq-a">You can download chapter-wise PYQ PDFs and attempt mock test series directly on the EduRain App and Web platform.</div>
-                </div>
-            </div>
-        `;
 
         modalMain.innerHTML = `
             <div class="pw-article-breadcrumbs">
-                <a href="/">Home</a> &rsaquo; <a href="/blogs">Blogs</a> &rsaquo; <span>${blog.title}</span>
+                <a href="/">Home</a> &rsaquo; <button id="btn-bc-blogs" style="background:none;border:none;color:#2563eb;cursor:pointer;padding:0;">Blogs</button> &rsaquo; <span style="color:#64748b;">${blog.title}</span>
             </div>
 
-            <h1 class="pw-article-h1">${blog.title}</h1>
+            <h1 class="pw-article-h1" style="font-size:2.5rem; margin: 1rem 0; color:#1e293b; font-weight:800;">${blog.title}</h1>
             
-            <div class="pw-article-meta-header">
-                <span>By <strong>${blog.author}</strong></span>
-                <span>•</span>
-                <span>📅 ${date}</span>
-                <span>•</span>
-                <span>⏱️ ${blog.readTime || '5 min read'}</span>
+            <div class="pw-article-meta-header" style="margin-bottom: 2rem; color: #64748b; font-size: 0.95rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem;">
+                <span>By <strong>${blog.author || 'EduRain Team'}</strong></span>
+                <span style="margin: 0 10px;">•</span>
+                <span>📅 ${dateStr}</span>
             </div>
 
-            <div class="pw-article-cover-banner">
-                <img src="${blog.coverImage}" alt="${blog.title}" />
+            <div class="pw-article-cover-banner" style="margin-bottom: 2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">
+                <img src="${blog.coverImage}" alt="${blog.title}" style="width: 100%; display: block;" />
             </div>
 
-            <div class="pw-article-body">
+            <div class="pw-article-body" style="font-size: 1.1rem; line-height: 1.8; color: #334155;">
                 ${contentHtml}
-                ${takeawaysHtml}
-                ${faqsHtml}
             </div>
 
-            <div class="pw-article-footer-bar">
-                <button id="btn-close-modal-bottom" class="btn btn-primary" style="background: #16a34a; border: none; padding: 0.5rem 1.35rem; border-radius: 8px; font-weight: 600; cursor: pointer;">
+            <div class="pw-article-footer-bar" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e2e8f0;">
+                <button id="btn-close-modal-bottom" class="btn btn-primary" style="background: #16a34a; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer;">
                     &larr; Back to All Blogs
                 </button>
             </div>
         `;
 
-        // Related Blogs
-        const related = blogsData.filter(b => b.id !== blog.id).slice(0, 3);
+        const related = liveBlogsData.filter(b => b.id !== blog.id).slice(0, 3);
         modalRelated.innerHTML = `
-            <h3 class="pw-related-title">Related Articles</h3>
-            <div class="pw-related-grid">
+            <h3 class="pw-related-title" style="margin-bottom: 1.5rem; color: #1e293b;">Related Articles</h3>
+            <div class="pw-related-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
                 ${related.map(r => `
-                    <div class="pw-related-card btn-open-blog" data-blog-id="${r.id}">
-                        <img src="${r.coverImage}" alt="${r.title}" />
-                        <div class="pw-related-info">
-                            <h4>${r.title}</h4>
-                            <span>${new Date(r.date).toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                    <div class="pw-related-card btn-open-blog" data-blog-id="${r.id}" style="cursor:pointer; background:white; border-radius:12px; overflow:hidden; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1); border:1px solid #e2e8f0; transition: transform 0.2s;">
+                        <img src="${r.coverImage}" alt="${r.title}" style="width:100%; height:160px; object-fit:cover;" />
+                        <div class="pw-related-info" style="padding: 1rem;">
+                            <h4 style="margin:0 0 0.5rem 0; font-size:1.05rem; color:#1e293b;">${r.title}</h4>
+                            <span style="font-size:0.85rem; color:#64748b;">${r.date?.toDate ? r.date.toDate().toLocaleDateString() : 'Recently'}</span>
                         </div>
                     </div>
                 `).join('')}
@@ -309,18 +309,13 @@ export function initBlogs() {
         listView.style.display = 'none';
         readerView.style.display = 'block';
 
-        // Scroll to the top of the blogs section smoothly
         const blogsSection = document.getElementById('blogs');
-        if (blogsSection) {
-            blogsSection.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        if (blogsSection) blogsSection.scrollIntoView({ behavior: 'smooth' });
+        else window.scrollTo({ top: 0, behavior: 'smooth' });
 
-        const bottomCloseBtn = document.getElementById('btn-close-modal-bottom');
-        if (bottomCloseBtn) bottomCloseBtn.addEventListener('click', closeBlog);
+        document.getElementById('btn-bc-blogs')?.addEventListener('click', closeBlog);
+        document.getElementById('btn-close-modal-bottom')?.addEventListener('click', closeBlog);
         
-        // Add listeners for related cards inside reader
         modalRelated.querySelectorAll('.btn-open-blog').forEach(c => {
             c.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -329,21 +324,21 @@ export function initBlogs() {
             });
         });
 
-        if (updateUrl) {
-            history.pushState(null, null, '#blogs/' + blog.id);
-        }
+        if (updateUrl) history.pushState(null, null, '#blogs/' + blog.id);
     }
 
     function closeBlog() {
         readerView.style.display = 'none';
         listView.style.display = 'block';
-        
         history.pushState(null, null, '#blogs');
         
+        // Reset SEO Tags to default blogs page
+        document.title = "IIT JEE, NEET & Foundation Blogs | EduRain";
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.content = "Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides";
+        
         const blogsSection = document.getElementById('blogs');
-        if (blogsSection) {
-            blogsSection.scrollIntoView({ behavior: 'smooth' });
-        }
+        if (blogsSection) blogsSection.scrollIntoView({ behavior: 'smooth' });
     }
 
     function attachCardClickListeners() {
@@ -355,14 +350,5 @@ export function initBlogs() {
                 if (blogId) openBlog(blogId);
             });
         });
-    }
-
-    attachCardClickListeners();
-
-    // Check if URL has a blog ID on initial load
-    const hashParts = window.location.hash.split('?')[0].split('/');
-    if (hashParts.length > 1 && hashParts[0] === '#blogs') {
-        const initialBlogId = hashParts[1];
-        openBlog(initialBlogId, false);
     }
 }

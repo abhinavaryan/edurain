@@ -13,7 +13,9 @@ const routes = [
   'sitemap',
   'courses/iit-jee',
   'courses/neet',
-  'courses/foundation'
+  'courses/foundation',
+  'blogadmin',
+  'blogadmin/login'
 ];
 
 const distDir = path.join(__dirname, 'dist');

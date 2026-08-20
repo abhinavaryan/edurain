@@ -11,6 +11,8 @@ import { renderPrivacy } from './components/privacy.js';
 import { renderTerms } from './components/terms.js';
 import { renderSitemap } from './components/sitemap.js';
 import { renderJEECourses, renderNEETCourses, renderFoundationCourses } from './components/categoryCourses.js';
+import { renderBlogAdmin, initBlogAdmin } from './components/blogAdmin.js';
+import { renderBlogAdminLogin, initBlogAdminLogin } from './components/blogAdminLogin.js';
 
 // ── HOME PAGE SECTIONS (exact order) ──
 import { renderBanner, initBanner } from './components/banner.js';
@@ -117,6 +119,14 @@ const routes = {
   '/courses/foundation': {
     render: () => renderFoundationCourses(),
     postRender: () => setMetaTags("Best Online Coaching for Classes 6 to 10 | Live Interactive Classes", "Live online classes for Class 6 to 10 with expert-led Math, Science & more: building a strong IIT JEE & NEET foundation. Interactive learning, real results", "https://www.edurain.in/courses/foundation")
+  },
+  '/blogadmin': {
+    render: () => renderBlogAdmin(),
+    postRender: () => initBlogAdmin()
+  },
+  '/blogadmin/login': {
+    render: () => renderBlogAdminLogin(),
+    postRender: () => initBlogAdminLogin()
   }
 };
 
@@ -196,14 +206,14 @@ export const initRouter = () => {
       postRender: () => { }
     };
 
-    const navbarHTML = renderNavbar();
+    const navbarHTML = path.startsWith('/blogadmin') ? '' : renderNavbar();
+    const footerHTML = path.startsWith('/blogadmin') ? '' : renderFooter();
+    const authModalHTML = path.startsWith('/blogadmin') ? '' : renderAuthModal();
     const pageHTML = route.render();
-    const footerHTML = renderFooter();
-    const authModalHTML = renderAuthModal();
 
     app.innerHTML = `
       ${navbarHTML}
-      <main class="main-content fade-in-section">
+      <main class="main-content fade-in-section" ${path.startsWith('/blogadmin') ? 'style="padding:0; margin:0; max-width: 100%;"' : ''}>
         ${pageHTML}
       </main>
       ${footerHTML}
