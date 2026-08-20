@@ -2324,7 +2324,7 @@ textarea {
    ============================================ */
 /* FOOTER SEPARATOR (20px White Bar) */
 .footer-separator {
-  height: 20px;
+  height: 4px;
   background: #ffffff;
   width: 100%;
   position: relative;

@@ -28,7 +28,6 @@ export function initFab() {
             </div>
             
             <div class="er-chat-footer">
-                <button class="er-chat-live-btn">Connect to Live Executive</button>
                 <div class="er-chat-input-area">
                     <input type="text" id="er-chat-input" placeholder="Type your message..." autocomplete="off">
                     <button id="er-chat-send">
@@ -81,4 +80,111 @@ export function initFab() {
 
     btnChat.addEventListener('click', toggleChat);
     btnClose.addEventListener('click', toggleChat);
+
+    const chatInput = document.getElementById('er-chat-input');
+    const chatSendBtn = document.getElementById('er-chat-send');
+    const chatBody = document.getElementById('er-chat-body');
+
+    const playSound = (type = 'send') => {
+        try {
+            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            oscillator.type = 'sine';
+            if (type === 'send') {
+                oscillator.frequency.setValueAtTime(400, audioCtx.currentTime);
+                oscillator.frequency.exponentialRampToValueAtTime(600, audioCtx.currentTime + 0.1);
+            } else {
+                oscillator.frequency.setValueAtTime(600, audioCtx.currentTime);
+                oscillator.frequency.exponentialRampToValueAtTime(400, audioCtx.currentTime + 0.1);
+            }
+            
+            gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1);
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            
+            oscillator.start();
+            oscillator.stop(audioCtx.currentTime + 0.1);
+        } catch(e) { console.log(e); }
+    };
+
+    const handleSendMessage = () => {
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        playSound('send');
+
+        // User Message
+        const userMsgDiv = document.createElement('div');
+        userMsgDiv.className = 'er-chat-msg er-msg-user chat-msg-enter';
+        userMsgDiv.innerHTML = `<p>${text}</p>`;
+        chatBody.appendChild(userMsgDiv);
+        
+        // Clear input and scroll down
+        chatInput.value = '';
+        chatBody.scrollTop = chatBody.scrollHeight;
+
+        // Typing Indicator
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'er-typing-indicator chat-msg-enter';
+        typingDiv.innerHTML = `Edurain is typing<span class="typing-dots"></span>`;
+        chatBody.appendChild(typingDiv);
+        chatBody.scrollTop = chatBody.scrollHeight;
+
+        // AI Message
+        setTimeout(() => {
+            if (typingDiv.parentNode) {
+                typingDiv.parentNode.removeChild(typingDiv);
+            }
+
+            playSound('receive');
+
+            const aiMsgDiv = document.createElement('div');
+            aiMsgDiv.className = 'er-chat-msg er-msg-ai chat-msg-enter';
+            
+            const replyText = `WELCOME TO EDURAIN
+Empowering Dreams | Building Futures | Creating Success
+
+Hello,
+
+At Edurain, we help students achieve academic excellence and competitive exam success through expert mentorship and personalized guidance.
+
+PROGRAMS OFFERED:
+- Classes 6th to 12th (All Boards)
+- IIT-JEE & NEET Preparation
+- Foundation & Olympiads
+- English Speaking & Personality Development
+
+WHY EDURAIN:
+- Live Interactive Classes
+- Experienced Faculty
+- Daily Doubt Solving
+- Mentorship & Career Guidance
+- Premium Study Materials
+
+CONNECT WITH US:
+- Website: <a href="https://edurain.in/" target="_blank">https://edurain.in/</a>
+- App: <a href="https://play.google.com/store/apps/details?id=co.lynde.fpdwe" target="_blank">Download EduRain App</a>
+- Instagram: <a href="https://www.instagram.com/edurain_official" target="_blank">@edurain_official</a>
+- YouTube: <a href="https://youtube.com/@eduraininstitute" target="_blank">EduRain YouTube</a>
+- Facebook: <a href="https://www.facebook.com/share/18r8aY7qDH/" target="_blank">EduRain Facebook</a>
+
+Please reply to this message for Course Details, Fee Structure, Demo Classes, or Admissions Assistance.
+
+Warm Regards,
+Team Edurain`.replace(/\n/g, '<br>');
+
+            aiMsgDiv.innerHTML = `<p style="font-size: 0.9em; line-height: 1.4;">${replyText}</p>`;
+            chatBody.appendChild(aiMsgDiv);
+            // Intentionally not auto-scrolling so the user stays at the top of the message
+        }, 1200);
+    };
+
+    chatSendBtn.addEventListener('click', handleSendMessage);
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleSendMessage();
+    });
 }
