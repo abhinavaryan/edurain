@@ -54,7 +54,7 @@ export function renderHomeReviews() {
 
     const cardsHtml = reviews.map((r) => {
         const avatarContent = r.avatar 
-            ? `<img src="${r.avatar}" alt="${r.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;" />`
+            ? `<img loading="lazy" src="${r.avatar}" alt="${r.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;" />`
             : `${r.name[0]}`;
 
         return `

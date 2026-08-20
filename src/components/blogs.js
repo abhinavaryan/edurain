@@ -24,7 +24,7 @@ export function renderBlogs() {
     const recommendedCourses = coursesData.slice(0, 3);
     const recommendedCoursesHtml = recommendedCourses.map(course => `
         <div class="pw-sidebar-course-card">
-            <img src="${course.thumbnail}" alt="${course.title}" class="pw-sidebar-course-img" />
+            <img loading="lazy" src="${course.thumbnail}" alt="${course.title}" class="pw-sidebar-course-img" />
             <div class="pw-sidebar-course-info">
                 <h4 class="pw-sidebar-course-title">${course.title}</h4>
                 <div class="pw-sidebar-course-price">
@@ -135,7 +135,7 @@ function renderBlogGridItems(blogs) {
         return `
             <div class="er-pw-blog-card glass-card" data-blog-id="${blog.id}" style="cursor:pointer; animation: fadeIn 0.5s ease forwards;">
                 <div class="er-pw-card-cover">
-                    <img src="${blog.coverImage || '/images/default-blog.jpg'}" onerror="this.onerror=null; this.src='https://placehold.co/600x400/064e3b/ffffff?text=EduRain+Blog';" alt="${blog.title}" class="er-pw-card-img" style="width:100%; height:200px; object-fit:cover;" />
+                    <img loading="lazy" src="${blog.coverImage || '/images/default-blog.jpg'}" onerror="this.onerror=null; this.src='https://placehold.co/600x400/064e3b/ffffff?text=EduRain+Blog';" alt="${blog.title}" class="er-pw-card-img" style="width:100%; height:200px; object-fit:cover;" />
                     <span class="er-pw-card-badge">${blog.category || 'Exam Prep'}</span>
                 </div>
                 <div class="er-pw-card-body">
@@ -283,7 +283,7 @@ export async function initBlogs() {
             </div>
 
             <div class="pw-article-cover-banner" style="margin-bottom: 2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">
-                <img src="${blog.coverImage}" alt="${blog.title}" style="width: 100%; display: block;" />
+                <img loading="lazy" src="${blog.coverImage}" alt="${blog.title}" style="width: 100%; display: block;" />
             </div>
 
             <div class="pw-article-body" style="font-size: 1.1rem; line-height: 1.8; color: #334155;">
@@ -303,7 +303,7 @@ export async function initBlogs() {
             <div class="pw-related-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
                 ${related.map(r => `
                     <div class="pw-related-card btn-open-blog" data-blog-id="${r.id}" style="cursor:pointer; background:white; border-radius:12px; overflow:hidden; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1); border:1px solid #e2e8f0; transition: transform 0.2s;">
-                        <img src="${r.coverImage}" alt="${r.title}" style="width:100%; height:160px; object-fit:cover;" />
+                        <img loading="lazy" src="${r.coverImage}" alt="${r.title}" style="width:100%; height:160px; object-fit:cover;" />
                         <div class="pw-related-info" style="padding: 1rem;">
                             <h4 style="margin:0 0 0.5rem 0; font-size:1.05rem; color:#1e293b;">${r.title}</h4>
                             <span style="font-size:0.85rem; color:#64748b;">${r.date?.toDate ? r.date.toDate().toLocaleDateString() : 'Recently'}</span>

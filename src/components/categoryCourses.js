@@ -10,7 +10,7 @@ function renderCourseCard(course) {
         <div class="glass-card course-card fade-in-section visible" data-category="${course.category}" data-link="${course.link || '#'}">
             <div class="course-thumb">
                 <a href="${course.link || '#'}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
-                    <img src="${course.thumbnail || 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80'}" alt="${course.title}" />
+                    <img loading="lazy" src="${course.thumbnail || 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80'}" alt="${course.title}" />
                 </a>
             </div>
             <span class="course-category">${course.category}</span>
