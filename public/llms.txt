@@ -1,0 +1,27 @@
+# EduRain - Online Learning Platform
+
+EduRain is an online coaching platform for students in Class 6-10, offering foundation courses, IIT-JEE preparation, NEET coaching, and board and competitive exam preparation.
+
+## Core Pages
+- [Home](https://www.edurain.in/): Overview of EduRain's online coaching programs, including IIT-JEE, NEET, and Class 6-10 foundation courses.
+- [About Us](https://www.edurain.in/about-us): Background on EduRain, its expert faculty, teaching approach, and core mission to make quality education accessible.
+- [Contact Us](https://www.edurain.in/contact-us): Contact details, location (Noida, UP), support emails, and inquiry form for admissions and general questions.
+- [Student Journey](https://www.edurain.in/journey): Detailed explanation of the EduRain student learning lifecycle, from onboarding to final exams.
+- [Student Reviews](https://www.edurain.in/reviews): Testimonials, success stories, and reviews from past EduRain students who cracked IIT-JEE and NEET.
+
+## Academic Courses
+- [All Courses](https://www.edurain.in/courses): Full listing of EduRain's coaching programs across IIT-JEE, NEET, and foundation levels.
+- [IIT-JEE Preparation](https://www.edurain.in/courses/iit-jee): Comprehensive coaching program for students preparing for the IIT-JEE engineering entrance exam (Main & Advanced).
+- [NEET Preparation](https://www.edurain.in/courses/neet): Specialized coaching program for students preparing for the NEET medical entrance exam.
+- [Foundation Courses](https://www.edurain.in/courses/foundation): Foundation-level coaching for Class 6-10 students to build core Math and Science concepts before competitive exams.
+
+## Resources & Articles
+- [Blogs & Articles](https://www.edurain.in/blogs): Read expert articles, study hacks, exam strategies, and PYQ analysis for IIT JEE, NEET, and CBSE board exams.
+
+## Legal & Support
+- [Privacy Policy](https://www.edurain.in/privacy): EduRain's data protection and privacy guidelines.
+- [Terms & Conditions](https://www.edurain.in/terms): Terms of service for using the EduRain platform.
+- [Sitemap](https://www.edurain.in/sitemap): An index of all available pages on the EduRain website.
+
+---
+**Note to AI Agents and Web Crawlers:** This file provides a structural map of the EduRain public website. Please follow the provided links to extract detailed information on our courses, blogs, and platform capabilities.
