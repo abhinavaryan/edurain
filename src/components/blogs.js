@@ -73,6 +73,9 @@ export function renderBlogs() {
 
             <!-- PW Style Full Article Reader View (Inline) -->
             <div id="blog-reader-view" class="blog-reader-view-container" style="display: none;">
+                <style>
+                    .pw-article-body img { max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; }
+                </style>
                 <div class="pw-reader-container">
                     
                     <div class="pw-reader-layout">
@@ -130,9 +133,9 @@ function renderBlogGridItems(blogs) {
         }
 
         return `
-            <div class="er-pw-blog-card glass-card fade-in-section" data-blog-id="${blog.id}" style="cursor:pointer;">
+            <div class="er-pw-blog-card glass-card" data-blog-id="${blog.id}" style="cursor:pointer; animation: fadeIn 0.5s ease forwards;">
                 <div class="er-pw-card-cover">
-                    <img src="${blog.coverImage || '/images/default-blog.jpg'}" alt="${blog.title}" class="er-pw-card-img" style="width:100%; height:200px; object-fit:cover;" />
+                    <img src="${blog.coverImage || '/images/default-blog.jpg'}" onerror="this.onerror=null; this.src='https://placehold.co/600x400/064e3b/ffffff?text=EduRain+Blog';" alt="${blog.title}" class="er-pw-card-img" style="width:100%; height:200px; object-fit:cover;" />
                     <span class="er-pw-card-badge">${blog.category || 'Exam Prep'}</span>
                 </div>
                 <div class="er-pw-card-body">
@@ -171,10 +174,14 @@ export async function initBlogs() {
     // Fetch live blogs from Firestore
     try {
         const blogsRef = collection(db, 'blogs');
-        const q = query(blogsRef, where('status', '==', 'published'), orderBy('date', 'desc'));
+        // Only order by date. Filtering by status is done client-side to avoid manual Firestore Index creation.
+        const q = query(blogsRef, orderBy('date', 'desc'));
         const snapshot = await getDocs(q);
         
-        liveBlogsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        liveBlogsData = snapshot.docs
+            .map(doc => ({ id: doc.id, ...doc.data() }))
+            .filter(b => b.status === 'published'); // Client-side filter
+
         filterAndRender();
 
         // Check if URL has a blog ID on initial load after data is fetched

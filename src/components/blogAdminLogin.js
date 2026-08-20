@@ -68,8 +68,7 @@ export function initBlogAdminLogin() {
         try {
             await signInWithEmailAndPassword(auth, email, password);
             // On success, redirect to dashboard
-            window.location.hash = '#blogadmin';
-            // the router handles rendering the dashboard
+            window.location.href = '/blogadmin';
         } catch (error) {
             console.error('Login Error:', error);
             errorDiv.textContent = 'Invalid credentials or login failed.';

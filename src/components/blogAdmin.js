@@ -118,8 +118,11 @@ export function renderBlogAdmin() {
                                     <option value="draft" style="color: black;">Draft</option>
                                 </select>
                                 
-                                <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Cover Image URL</label>
-                                <input type="url" id="blog-cover" placeholder="https://..." style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
+                                <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Cover Image</label>
+                                <span style="display: block; font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.5rem;">Recommended size: 800x400 pixels (JPG/PNG only, Max 2MB)</span>
+                                <input type="file" id="blog-cover-file" accept=".jpg,.jpeg,.png" style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
+                                <input type="url" id="blog-cover" placeholder="Or enter image URL manually" style="width: 100%; padding: 0.75rem; margin-bottom: 0.5rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
+                                <div id="cover-upload-status" style="font-size: 0.85rem; color: #4ade80; margin-bottom: 1rem;"></div>
                                 
                                 <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Category</label>
                                 <input type="text" id="blog-category" placeholder="e.g. Exam Prep" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
@@ -178,14 +181,14 @@ export function initBlogAdmin() {
             loadBlogs();
         } else {
             // Not logged in or wrong email -> Redirect to login
-            window.location.hash = '#blogadmin/login';
+            window.location.href = '/blogadmin/login';
         }
     });
 
     // Logout
     document.getElementById('admin-logout-btn')?.addEventListener('click', async () => {
         await signOut(auth);
-        window.location.hash = '#blogadmin/login';
+        window.location.href = '/blogadmin/login';
     });
 
     // Setup Admin Panel Logic
@@ -274,6 +277,58 @@ export function initBlogAdmin() {
             btnMigrate.disabled = false;
         });
 
+        // Cover Image Upload Handler
+        const coverInput = document.getElementById('blog-cover-file');
+        const coverUrlInput = document.getElementById('blog-cover');
+        const coverStatus = document.getElementById('cover-upload-status');
+        
+        coverInput.addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            // Validate File Type
+            const validTypes = ['image/jpeg', 'image/jpg', 'image/png'];
+            if (!validTypes.includes(file.type)) {
+                alert("Please select a valid JPG or PNG image.");
+                coverInput.value = '';
+                return;
+            }
+
+            // Validate File Size (Max 2MB)
+            const maxSizeInBytes = 2 * 1024 * 1024;
+            if (file.size > maxSizeInBytes) {
+                alert("File size is too large. Please upload an image smaller than 2MB.");
+                coverInput.value = '';
+                return;
+            }
+
+            coverStatus.textContent = "Uploading image...";
+                coverStatus.style.color = "#facc15";
+                try {
+                    const storageRef = ref(storage, `blog_covers/${Date.now()}_${file.name}`);
+                    const uploadTask = uploadBytesResumable(storageRef, file);
+                    
+                    uploadTask.on('state_changed', 
+                        (snapshot) => {}, 
+                        (error) => {
+                            console.error("Cover image upload failed:", error);
+                            coverStatus.textContent = "Upload failed!";
+                            coverStatus.style.color = "#ef4444";
+                        }, 
+                        async () => {
+                            const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+                            coverUrlInput.value = downloadURL;
+                            coverStatus.textContent = "Image uploaded successfully!";
+                            coverStatus.style.color = "#4ade80";
+                        }
+                    );
+                } catch (err) {
+                    console.error(err);
+                    coverStatus.textContent = "Error uploading image.";
+                    coverStatus.style.color = "#ef4444";
+                }
+        });
+
         // Form Submit
         const form = document.getElementById('admin-blog-form');
         form.addEventListener('submit', handleSaveBlog);
@@ -339,6 +394,7 @@ export function initBlogAdmin() {
         document.getElementById('blog-id').value = '';
         document.getElementById('editor-title').textContent = 'Create New Blog';
         document.getElementById('save-status').textContent = '';
+        document.getElementById('cover-upload-status').textContent = '';
         if(quill) {
             quill.root.innerHTML = '';
         }
