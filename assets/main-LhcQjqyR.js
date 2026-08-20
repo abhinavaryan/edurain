@@ -56,7 +56,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
             </div>
         </div>
     `}function D(){let e=document.getElementById(`hamburger-btn`),t=document.getElementById(`mobile-menu`),n=document.getElementById(`mobile-menu-overlay`),r=document.getElementById(`mobile-menu-close`),i=document.querySelectorAll(`.mobile-menu .nav-link`),a=document.querySelectorAll(`.login-btn`),o=document.querySelectorAll(`.auth-btn-area`),s=document.getElementById(`main-nav`),c=()=>{e.classList.toggle(`active`),t.classList.toggle(`active`),n&&n.classList.toggle(`active`)},l=()=>{e&&e.classList.remove(`active`),t&&t.classList.remove(`active`),n&&n.classList.remove(`active`)};e&&t&&e.addEventListener(`click`,c),n&&n.addEventListener(`click`,l),r&&r.addEventListener(`click`,l),i.forEach(e=>{e.addEventListener(`click`,l)}),a.forEach(e=>{e.addEventListener(`click`,()=>{document.dispatchEvent(new CustomEvent(`open-auth-modal`)),l()})}),o.forEach(e=>{e.addEventListener(`click`,e=>{e.target.classList.contains(`logout-btn`)&&(ee(),l())})}),window.addEventListener(`scroll`,()=>{window.scrollY>50?s.classList.add(`scrolled`):s.classList.remove(`scrolled`)})}function O(){return`
-        <div class="footer-separator"></div>
+        ${window.location.pathname.includes(`/contact-us`)?``:`<div class="footer-separator"></div>`}
         <footer class="site-footer">
             <div class="footer-grid">
                 <div class="footer-col">
@@ -1787,7 +1787,6 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
             </div>
             
             <div class="er-chat-footer">
-                <button class="er-chat-live-btn">Connect to Live Executive</button>
                 <div class="er-chat-input-area">
                     <input type="text" id="er-chat-input" placeholder="Type your message..." autocomplete="off">
                     <button id="er-chat-send">
@@ -1810,7 +1809,37 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><circle cx="9" cy="11" r="1" fill="currentColor"/><circle cx="15" cy="11" r="1" fill="currentColor"/><path d="M9 15c.5 1 2 1.5 3 1.5s2.5-.5 3-1.5"/></svg>
             </button>
         </div>
-    `,document.body.appendChild(e);let t=document.getElementById(`er-fab-scroll`),n=document.getElementById(`er-fab-chat`),r=document.getElementById(`er-chat-close`),i=document.getElementById(`er-chat-window`);window.addEventListener(`scroll`,()=>{window.scrollY>300?t.classList.add(`er-fab-visible`):t.classList.remove(`er-fab-visible`)}),t.addEventListener(`click`,()=>{window.scrollTo({top:0,behavior:`smooth`})});let a=()=>{i.classList.toggle(`er-chat-hidden`)};n.addEventListener(`click`,a),r.addEventListener(`click`,a)}function ke(){window.innerWidth>768||setTimeout(()=>{Ae()},3e3)}function Ae(){if(document.getElementById(`mobile-app-popup-overlay`))return;let e=document.createElement(`div`);e.id=`mobile-app-popup-overlay`,e.className=`mobile-popup-overlay`;let t=document.createElement(`div`);t.className=`mobile-popup-content`,t.innerHTML=`
+    `,document.body.appendChild(e);let t=document.getElementById(`er-fab-scroll`),n=document.getElementById(`er-fab-chat`),r=document.getElementById(`er-chat-close`),i=document.getElementById(`er-chat-window`);window.addEventListener(`scroll`,()=>{window.scrollY>300?t.classList.add(`er-fab-visible`):t.classList.remove(`er-fab-visible`)}),t.addEventListener(`click`,()=>{window.scrollTo({top:0,behavior:`smooth`})});let a=()=>{i.classList.toggle(`er-chat-hidden`)};n.addEventListener(`click`,a),r.addEventListener(`click`,a);let o=document.getElementById(`er-chat-input`),s=document.getElementById(`er-chat-send`),c=document.getElementById(`er-chat-body`),l=(e=`send`)=>{try{let t=new(window.AudioContext||window.webkitAudioContext),n=t.createOscillator(),r=t.createGain();n.type=`sine`,e===`send`?(n.frequency.setValueAtTime(400,t.currentTime),n.frequency.exponentialRampToValueAtTime(600,t.currentTime+.1)):(n.frequency.setValueAtTime(600,t.currentTime),n.frequency.exponentialRampToValueAtTime(400,t.currentTime+.1)),r.gain.setValueAtTime(.1,t.currentTime),r.gain.exponentialRampToValueAtTime(.01,t.currentTime+.1),n.connect(r),r.connect(t.destination),n.start(),n.stop(t.currentTime+.1)}catch(e){console.log(e)}},u=()=>{let e=o.value.trim();if(!e)return;l(`send`);let t=document.createElement(`div`);t.className=`er-chat-msg er-msg-user chat-msg-enter`,t.innerHTML=`<p>${e}</p>`,c.appendChild(t),o.value=``,c.scrollTop=c.scrollHeight;let n=document.createElement(`div`);n.className=`er-typing-indicator chat-msg-enter`,n.innerHTML=`Edurain is typing<span class="typing-dots"></span>`,c.appendChild(n),c.scrollTop=c.scrollHeight,setTimeout(()=>{n.parentNode&&n.parentNode.removeChild(n),l(`receive`);let e=document.createElement(`div`);e.className=`er-chat-msg er-msg-ai chat-msg-enter`,e.innerHTML=`<p style="font-size: 0.9em; line-height: 1.4;">${`WELCOME TO EDURAIN
+Empowering Dreams | Building Futures | Creating Success
+
+Hello,
+
+At Edurain, we help students achieve academic excellence and competitive exam success through expert mentorship and personalized guidance.
+
+PROGRAMS OFFERED:
+- Classes 6th to 12th (All Boards)
+- IIT-JEE & NEET Preparation
+- Foundation & Olympiads
+- English Speaking & Personality Development
+
+WHY EDURAIN:
+- Live Interactive Classes
+- Experienced Faculty
+- Daily Doubt Solving
+- Mentorship & Career Guidance
+- Premium Study Materials
+
+CONNECT WITH US:
+- Website: <a href="https://edurain.in/" target="_blank">https://edurain.in/</a>
+- App: <a href="https://play.google.com/store/apps/details?id=co.lynde.fpdwe" target="_blank">Download EduRain App</a>
+- Instagram: <a href="https://www.instagram.com/edurain_official" target="_blank">@edurain_official</a>
+- YouTube: <a href="https://youtube.com/@eduraininstitute" target="_blank">EduRain YouTube</a>
+- Facebook: <a href="https://www.facebook.com/share/18r8aY7qDH/" target="_blank">EduRain Facebook</a>
+
+Please reply to this message for Course Details, Fee Structure, Demo Classes, or Admissions Assistance.
+
+Warm Regards,
+Team Edurain`.replace(/\n/g,`<br>`)}</p>`,c.appendChild(e)},1200)};s.addEventListener(`click`,u),o.addEventListener(`keypress`,e=>{e.key===`Enter`&&u()})}function ke(){window.innerWidth>768||setTimeout(()=>{Ae()},3e3)}function Ae(){if(document.getElementById(`mobile-app-popup-overlay`))return;let e=document.createElement(`div`);e.id=`mobile-app-popup-overlay`,e.className=`mobile-popup-overlay`;let t=document.createElement(`div`);t.className=`mobile-popup-content`,t.innerHTML=`
         <button class="mobile-popup-close-x" id="popup-btn-x" aria-label="Close">
             <i class="fas fa-times"></i>
         </button>
