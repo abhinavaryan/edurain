@@ -62,7 +62,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
                 <div class="footer-col">
                     <div class="logo" style="margin-bottom: 1rem;">
                         <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                            <img src="/images/logo.png" alt="EduRain Logo" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
+                            <img loading="lazy" src="/images/logo.png" alt="EduRain Logo" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
                             <div style="display: flex; flex-direction: column; line-height: 1.2;">
                                 <div>
                                     <span class="text-white">Edu</span><span class="text-accent">Rain</span>
@@ -174,7 +174,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
             <div class="glass-card course-card fade-in-section" data-category="${e.category}" data-link="${e.link||`#`}">
                 <div class="course-thumb">
                     <a href="${e.link||`#`}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
-                        <img src="${e.thumbnail||`https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80`}" alt="${e.title}" />
+                        <img loading="lazy" src="${e.thumbnail||`https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80`}" alt="${e.title}" />
                     </a>
                 </div>
                 <span class="course-category">${e.category}</span>
@@ -256,7 +256,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
                                 <div class="pw-sidebar-courses-list">
                                     ${A.slice(0,3).map(e=>`
         <div class="pw-sidebar-course-card">
-            <img src="${e.thumbnail}" alt="${e.title}" class="pw-sidebar-course-img" />
+            <img loading="lazy" src="${e.thumbnail}" alt="${e.title}" class="pw-sidebar-course-img" />
             <div class="pw-sidebar-course-info">
                 <h4 class="pw-sidebar-course-title">${e.title}</h4>
                 <div class="pw-sidebar-course-price">
@@ -297,7 +297,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
             ${e.map(e=>{let t=`Recently`;return e.date&&(t=(e.date.toDate?e.date.toDate():new Date(e.date)).toLocaleDateString(`en-IN`,{year:`numeric`,month:`long`,day:`numeric`})),`
             <div class="er-pw-blog-card glass-card" data-blog-id="${e.id}" style="cursor:pointer; animation: fadeIn 0.5s ease forwards;">
                 <div class="er-pw-card-cover">
-                    <img src="${e.coverImage||`/images/default-blog.jpg`}" onerror="this.onerror=null; this.src='https://placehold.co/600x400/064e3b/ffffff?text=EduRain+Blog';" alt="${e.title}" class="er-pw-card-img" style="width:100%; height:200px; object-fit:cover;" />
+                    <img loading="lazy" src="${e.coverImage||`/images/default-blog.jpg`}" onerror="this.onerror=null; this.src='https://placehold.co/600x400/064e3b/ffffff?text=EduRain+Blog';" alt="${e.title}" class="er-pw-card-img" style="width:100%; height:200px; object-fit:cover;" />
                     <span class="er-pw-card-badge">${e.category||`Exam Prep`}</span>
                 </div>
                 <div class="er-pw-card-body">
@@ -325,7 +325,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
             </div>
 
             <div class="pw-article-cover-banner" style="margin-bottom: 2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">
-                <img src="${n.coverImage}" alt="${n.title}" style="width: 100%; display: block;" />
+                <img loading="lazy" src="${n.coverImage}" alt="${n.title}" style="width: 100%; display: block;" />
             </div>
 
             <div class="pw-article-body" style="font-size: 1.1rem; line-height: 1.8; color: #334155;">
@@ -342,7 +342,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
             <div class="pw-related-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
                 ${l.map(e=>`
                     <div class="pw-related-card btn-open-blog" data-blog-id="${e.id}" style="cursor:pointer; background:white; border-radius:12px; overflow:hidden; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1); border:1px solid #e2e8f0; transition: transform 0.2s;">
-                        <img src="${e.coverImage}" alt="${e.title}" style="width:100%; height:160px; object-fit:cover;" />
+                        <img loading="lazy" src="${e.coverImage}" alt="${e.title}" style="width:100%; height:160px; object-fit:cover;" />
                         <div class="pw-related-info" style="padding: 1rem;">
                             <h4 style="margin:0 0 0.5rem 0; font-size:1.05rem; color:#1e293b;">${e.title}</h4>
                             <span style="font-size:0.85rem; color:#64748b;">${e.date?.toDate?e.date.toDate().toLocaleDateString():`Recently`}</span>
@@ -1080,7 +1080,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
         <div class="glass-card course-card fade-in-section visible" data-category="${e.category}" data-link="${e.link||`#`}">
             <div class="course-thumb">
                 <a href="${e.link||`#`}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
-                    <img src="${e.thumbnail||`https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80`}" alt="${e.title}" />
+                    <img loading="lazy" src="${e.thumbnail||`https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80`}" alt="${e.title}" />
                 </a>
             </div>
             <span class="course-category">${e.category}</span>
@@ -1443,7 +1443,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
                 <!-- RIGHT — Image placeholder -->
                 <div class="er-demo-image-wrap er-reveal visible">
                     <div class="er-demo-glow-ring"></div>
-                    <img
+                    <img loading="lazy"
                         src="https://cdn.phototourl.com/free/2026-07-29-95aea96d-d417-49bd-a2f3-cd7f4725e628.png"
                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                         alt="Free Demo — Teacher with student"
@@ -1489,7 +1489,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
                         ${[{name:`Mr. Manoj sir`,subject:`English`,exp:`15+ Years Exp.`,desc:`He is a passionate English mentor dedicated to mastering language skills, literature, and communication excellence.`,image:`/images/home teachers image/1.png`,icon:`📖`},{name:`Mrs. Ritu ma'am`,subject:`Chemistry`,exp:`14 Years Exp.`,desc:`She is dedicated to building strong fundamentals and developing problem-solving excellence in students.`,image:`/images/home teachers image/2.png`,icon:`🧪`},{name:`Mr. Debashish Banerjee sir`,subject:`Mathematics`,exp:`18 Years Exp.`,desc:`Expert Mathematics mentor with 18 years of experience, specializing in Class 11th & 12th and JEE preparation.`,image:`/images/home teachers image/6.png`,icon:`🔢`},{name:`Mr. Diwakar sir`,subject:`Physics`,exp:`17+ Years Exp.`,desc:`He is recognized for his concept-driven teaching approach and consistent success in guiding NEET aspirants toward top ranks.`,image:`/images/home teachers image/3.png`,icon:`⚡`},{name:`Mr. Nitin sir`,subject:`Biology`,exp:`15+ Years Exp.`,desc:`A highly respected Biology mentor, He is known for making complex concepts simple and helping students achieve NEET results.`,image:`/images/home teachers image/4.png`,icon:`🧬`},{name:`Ms. Khushboo ma'am`,subject:`Social Studies`,exp:`5 Years Exp.`,desc:`Passionate Social Studies mentor with 5 years of teaching experience, making History, Civics, and Geography engaging and accessible.`,image:`/images/home teachers image/5.png`,imgStyle:`transform: scale(1.2) translateY(5px); transform-origin: bottom center;`,icon:`🌍`}].map((e,t)=>(e.name.replace(/^(Mr\.|Mrs\.|Ms\.|Dr\.)\s*/,``).split(` `).map(e=>e[0]).join(``),`
         <div class="er-faculty-card glass-card er-reveal visible">
             <div class="er-faculty-img-wrap">
-                <img src="${e.image}" class="er-faculty-img" alt="${e.name} - ${e.subject} Specialist, ${e.exp}" style="width: 100%; height: 100%; object-fit: contain; object-position: bottom center; ${e.imgStyle||``}">
+                <img loading="lazy" src="${e.image}" class="er-faculty-img" alt="${e.name} - ${e.subject} Specialist, ${e.exp}" style="width: 100%; height: 100%; object-fit: contain; object-position: bottom center; ${e.imgStyle||``}">
                 <div class="er-faculty-studio-badge" style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 2; width: max-content;">
                     <span class="er-studio-icon">${e.icon}</span> ${e.subject} Specialist
                 </div>
@@ -1532,7 +1532,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
 
                 <div class="er-reviews-marquee-wrapper" id="er-reviews-wrapper">
                     <div class="er-reviews-grid" id="er-home-reviews-track">
-                        ${e.map(e=>{let n=e.avatar?`<img src="${e.avatar}" alt="${e.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;" />`:`${e.name[0]}`;return`
+                        ${e.map(e=>{let n=e.avatar?`<img loading="lazy" src="${e.avatar}" alt="${e.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;" />`:`${e.name[0]}`;return`
         <div class="er-review-card er-reveal visible" style="background: #ffffff !important; border: 1px solid #e5e7eb; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08);">
             <div class="er-review-card-top">
                 <div class="er-google-rating">
@@ -1715,7 +1715,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
                         <div class="er-phone-notch"></div>
                         <!-- Screen -->
                         <div class="er-phone-screen">
-                            <img src="/images/floating%20phone.jpg" alt="EduRain App" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                            <img loading="lazy" src="/images/floating%20phone.jpg" alt="EduRain App" style="width:100%; height:100%; object-fit:cover; display:block;" />
                         </div>
                     </div>
 
