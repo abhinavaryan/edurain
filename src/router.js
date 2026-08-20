@@ -68,7 +68,7 @@ const routes = {
     render: () => renderCourses(),
     postRender: () => {
       initCourses();
-      setMetaTags("Explore All Courses – IIT JEE, NEET & Foundation (Class 6-10)", "Explore IIT JEE, NEET & Foundation courses for Class 6-10 with expert faculty, structured curriculum & proven results. Take the first step toward success", "https://www.edurain.in/courses");
+      setMetaTags("Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-10)", "Explore IIT JEE, NEET & Foundation courses for Class 6-10 with expert faculty, structured curriculum & proven results. Take the first step toward success", "https://www.edurain.in/courses");
     }
   },
   '/blogs': {
@@ -112,11 +112,11 @@ const routes = {
   },
   '/courses/neet': {
     render: () => renderNEETCourses(),
-    postRender: () => setMetaTags("NEET 2027-28 Complete Online Preparation with EduRain", "Start your NEET 2027-28 online preparation with EduRain: live classes, expert faculty, and structured NCERT-based material with regular mock tests.", "https://www.edurain.in/courses/neet")
+    postRender: () => setMetaTags("NEET 2027-28 Complete Online Preparation with EduRain", "Start your NEET 2027-28 online preparation with EduRain: live classes, expert faculty, and structured NCERT-based material with regular tests.", "https://www.edurain.in/courses/neet")
   },
   '/courses/foundation': {
     render: () => renderFoundationCourses(),
-    postRender: () => setMetaTags("Best Online Coaching for Class 6 to 10, IIT JEE & NEET Ready", "Live online classes for Class 6 to 10 with expert-led Math, Science & more: building a strong IIT JEE & NEET foundation. Interactive learning, real results", "https://www.edurain.in/courses/foundation")
+    postRender: () => setMetaTags("Best Online Coaching for Classes 6 to 10 | Live Interactive Classes", "Live online classes for Class 6 to 10 with expert-led Math, Science & more: building a strong IIT JEE & NEET foundation. Interactive learning, real results", "https://www.edurain.in/courses/foundation")
   }
 };
 
