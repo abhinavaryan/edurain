@@ -1,7 +1,7 @@
 import { auth, db, storage } from '../firebase/config.js';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, serverTimestamp, query, orderBy } from 'firebase/firestore';
-import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import blogsDataJson from '../data/blogs.json';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
@@ -118,11 +118,9 @@ export function renderBlogAdmin() {
                                     <option value="draft" style="color: black;">Draft</option>
                                 </select>
                                 
-                                <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Cover Image</label>
-                                <span style="display: block; font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.5rem;">Recommended size: 800x400 pixels (JPG/PNG only, Max 2MB)</span>
-                                <input type="file" id="blog-cover-file" accept=".jpg,.jpeg,.png" style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
-                                <input type="url" id="blog-cover" placeholder="Or enter image URL manually" style="width: 100%; padding: 0.75rem; margin-bottom: 0.5rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
-                                <div id="cover-upload-status" style="font-size: 0.85rem; color: #4ade80; margin-bottom: 1rem;"></div>
+                                <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Cover Image URL</label>
+                                <span style="display: block; font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.5rem;">Upload your image to postimages.org or imgur.com and paste the "Direct Link" (ending in .jpg or .png) here.</span>
+                                <input type="url" id="blog-cover" placeholder="https://i.imgur.com/your-image.jpg" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
                                 
                                 <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Category</label>
                                 <input type="text" id="blog-category" placeholder="e.g. Exam Prep" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
@@ -145,6 +143,9 @@ export function renderBlogAdmin() {
                                 
                                 <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Primary Keyword</label>
                                 <input type="text" id="seo-keyword" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
+                                
+                                <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Secondary Keyword</label>
+                                <input type="text" id="seo-secondary-keyword" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
                             </div>
                             
                             <button type="submit" id="btn-save-blog" style="width: 100%; padding: 1rem; background: #16a34a; color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s;">
@@ -277,57 +278,7 @@ export function initBlogAdmin() {
             btnMigrate.disabled = false;
         });
 
-        // Cover Image Upload Handler
-        const coverInput = document.getElementById('blog-cover-file');
-        const coverUrlInput = document.getElementById('blog-cover');
-        const coverStatus = document.getElementById('cover-upload-status');
-        
-        coverInput.addEventListener('change', async (e) => {
-            const file = e.target.files[0];
-            if (!file) return;
-            
-            // Validate File Type
-            const validTypes = ['image/jpeg', 'image/jpg', 'image/png'];
-            if (!validTypes.includes(file.type)) {
-                alert("Please select a valid JPG or PNG image.");
-                coverInput.value = '';
-                return;
-            }
-
-            // Validate File Size (Max 2MB)
-            const maxSizeInBytes = 2 * 1024 * 1024;
-            if (file.size > maxSizeInBytes) {
-                alert("File size is too large. Please upload an image smaller than 2MB.");
-                coverInput.value = '';
-                return;
-            }
-
-            coverStatus.textContent = "Uploading image...";
-                coverStatus.style.color = "#facc15";
-                try {
-                    const storageRef = ref(storage, `blog_covers/${Date.now()}_${file.name}`);
-                    const uploadTask = uploadBytesResumable(storageRef, file);
-                    
-                    uploadTask.on('state_changed', 
-                        (snapshot) => {}, 
-                        (error) => {
-                            console.error("Cover image upload failed:", error);
-                            coverStatus.textContent = "Upload failed!";
-                            coverStatus.style.color = "#ef4444";
-                        }, 
-                        async () => {
-                            const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-                            coverUrlInput.value = downloadURL;
-                            coverStatus.textContent = "Image uploaded successfully!";
-                            coverStatus.style.color = "#4ade80";
-                        }
-                    );
-                } catch (err) {
-                    console.error(err);
-                    coverStatus.textContent = "Error uploading image.";
-                    coverStatus.style.color = "#ef4444";
-                }
-        });
+        // File upload removed - using manual URL exclusively.
 
         // Form Submit
         const form = document.getElementById('admin-blog-form');
@@ -358,35 +309,11 @@ export function initBlogAdmin() {
 
     // Handle Image Upload to Firebase Storage from Quill
     function imageHandler() {
-        const input = document.createElement('input');
-        input.setAttribute('type', 'file');
-        input.setAttribute('accept', 'image/*');
-        input.click();
-
-        input.onchange = async () => {
-            const file = input.files[0];
-            if (/^image\//.test(file.type)) {
-                // Upload to Firebase Storage
-                const storageRef = ref(storage, `blog_images/${Date.now()}_${file.name}`);
-                const uploadTask = uploadBytesResumable(storageRef, file);
-                
-                // You could show a loading spinner here
-                uploadTask.on('state_changed', 
-                    (snapshot) => {}, 
-                    (error) => {
-                        console.error("Image upload failed:", error);
-                        alert("Image upload failed!");
-                    }, 
-                    async () => {
-                        const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-                        const range = quill.getSelection();
-                        quill.insertEmbed(range.index, 'image', downloadURL);
-                    }
-                );
-            } else {
-                alert('You can only upload images.');
-            }
-        };
+        const url = prompt("Please enter the Direct URL of the image (ending in .jpg or .png):");
+        if (url) {
+            const range = quill.getSelection();
+            quill.insertEmbed(range.index, 'image', url);
+        }
     }
 
     function resetForm() {
@@ -394,7 +321,6 @@ export function initBlogAdmin() {
         document.getElementById('blog-id').value = '';
         document.getElementById('editor-title').textContent = 'Create New Blog';
         document.getElementById('save-status').textContent = '';
-        document.getElementById('cover-upload-status').textContent = '';
         if(quill) {
             quill.root.innerHTML = '';
         }
@@ -482,6 +408,7 @@ export function initBlogAdmin() {
             document.getElementById('seo-title').value = data.seo.metaTitle || '';
             document.getElementById('seo-desc').value = data.seo.metaDescription || '';
             document.getElementById('seo-keyword').value = data.seo.primaryKeyword || '';
+            document.getElementById('seo-secondary-keyword').value = data.seo.secondaryKeyword || '';
         }
 
         // Show edit view
@@ -519,7 +446,8 @@ export function initBlogAdmin() {
             const seo = {
                 metaTitle: document.getElementById('seo-title').value,
                 metaDescription: document.getElementById('seo-desc').value,
-                primaryKeyword: document.getElementById('seo-keyword').value
+                primaryKeyword: document.getElementById('seo-keyword').value,
+                secondaryKeyword: document.getElementById('seo-secondary-keyword').value
             };
 
             const blogData = {
