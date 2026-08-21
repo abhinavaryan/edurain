@@ -72,10 +72,10 @@ export function renderContact() {
                 <div class="contact-form-wrapper">
                     <form class="contact-form glass-card" id="contact-form">
                         <div class="form-group">
-                            <input type="text" id="contact-name" placeholder="Your Name" required minlength="2" />
+                            <input type="text" id="contact-name" aria-label="Your Name" placeholder="Your Name" required minlength="2" />
                         </div>
                         <div class="form-group">
-                            <input type="email" id="contact-email" placeholder="Your Email" required />
+                            <input type="email" id="contact-email" aria-label="Your Email" placeholder="Your Email" required />
                         </div>
                         <div class="form-group">
                             <textarea id="contact-message" placeholder="Your Message" required minlength="10" rows="5"></textarea>

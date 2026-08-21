@@ -50,7 +50,7 @@ export function renderBlogs() {
                     <!-- Search Bar -->
                     <div class="er-pw-search-wrapper">
                         <span class="er-pw-search-icon">🔍</span>
-                        <input type="text" id="er-blog-search-input" class="er-pw-search-input" placeholder="Search articles, exam tips, PYQs, or topics..." />
+                        <input type="text" id="er-blog-search-input" class="er-pw-search-input" aria-label="Search blogs" placeholder="Search articles, exam tips, PYQs, or topics..." />
                     </div>
 
                     <!-- Our Categories Filter -->
