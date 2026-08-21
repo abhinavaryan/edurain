@@ -26,9 +26,24 @@ export function renderAppDownload() {
                     <p class="er-app-desc">Study from anywhere at your convenience — offline videos, live classes, AI-powered practice, and doubt solving all in one place.</p>
 
                     <ul class="er-app-features">
-                        <li><span class="er-app-check">✔</span> Offline video downloads</li>
-                        <li><span class="er-app-check">✔</span> Live doubt solving 24/7</li>
-                        <li><span class="er-app-check">✔</span> AI-powered personalised practice</li>
+                        <li style="display: flex; align-items: center; margin-bottom: 12px;">
+                            <span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg, #10B981, #059669);color:white;margin-right:12px;box-shadow:0 2px 8px rgba(16,185,129,0.4);flex-shrink:0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </span>
+                            Offline video downloads
+                        </li>
+                        <li style="display: flex; align-items: center; margin-bottom: 12px;">
+                            <span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg, #10B981, #059669);color:white;margin-right:12px;box-shadow:0 2px 8px rgba(16,185,129,0.4);flex-shrink:0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </span>
+                            Live doubt solving 24/7
+                        </li>
+                        <li style="display: flex; align-items: center; margin-bottom: 12px;">
+                            <span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg, #10B981, #059669);color:white;margin-right:12px;box-shadow:0 2px 8px rgba(16,185,129,0.4);flex-shrink:0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </span>
+                            AI-powered personalised practice
+                        </li>
                     </ul>
 
                     <!-- Store Buttons -->

@@ -13,14 +13,18 @@ export function renderContact() {
                     <p>Have questions about our courses or platform? Reach out to our team and we'll get back to you within 24 hours.</p>
                     <div class="contact-items">
                         <div class="contact-item">
-                            <span class="contact-icon">📧</span>
+                            <span class="contact-icon" style="background: rgba(33, 150, 243, 0.15); color: #2196F3; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0; box-shadow: 0 4px 15px rgba(33, 150, 243, 0.1);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            </span>
                             <div>
                                 <strong>Email</strong>
                                 <p><a href="mailto:support@edurain.in" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">support@edurain.in</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-icon">📞</span>
+                            <span class="contact-icon" style="background: rgba(76, 175, 80, 0.15); color: #4CAF50; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.1);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </span>
                             <div>
                                 <strong>Phone</strong>
                                 <p>
@@ -31,7 +35,9 @@ export function renderContact() {
                             </div>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-icon">📍</span>
+                            <span class="contact-icon" style="background: rgba(244, 67, 54, 0.15); color: #F44336; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0; box-shadow: 0 4px 15px rgba(244, 67, 54, 0.1);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </span>
                             <div>
                                 <strong>Location</strong>
                                 <p>Noida, Uttar Pradesh, India</p>
