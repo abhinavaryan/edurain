@@ -34,12 +34,13 @@
   <!-- Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Preload LCP Hero Banner Images -->
-  <link rel="preload" as="image" href="/images/mobile%20banner%20images/1.webp" media="(max-width: 640px)">
-  <link rel="preload" as="image" href="https://cdn.phototourl.com/free/2026-08-19-a7d0b97b-514f-440f-a353-c2002218aa92.jpg" media="(min-width: 641px)">
+  <link rel="preload" as="image" href="/images/mobile%20banner%20images/1.webp" media="(max-width: 640px)" fetchpriority="high">
+  <link rel="preload" as="image" href="https://cdn.phototourl.com/free/2026-08-21-e1e824c4-9305-4f2c-94d1-571c81f25773.webp" media="(min-width: 641px)" fetchpriority="high">
 
   <!-- JSON-LD Schema Markup -->
   <script type="application/ld+json">
