@@ -22,7 +22,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
                 <div class="auth-btn-area">
                     <button class="btn btn-accent login-btn">Login</button>
                 </div>
-                <button class="hamburger" id="hamburger-btn">
+                <button class="hamburger" id="hamburger-btn" aria-label="Open Mobile Menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -42,7 +42,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
                         </div>
                     </a>
                 </div>
-                <button class="mobile-menu-close" id="mobile-menu-close">&times;</button>
+                <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close Mobile Menu">&times;</button>
             </div>
             <div class="mobile-menu-body">
                 <a href="/" class="nav-link active">Home</a>
@@ -443,7 +443,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
                 <p>Real stories from our learners</p>
             </div>
             <div class="reviews-carousel">
-                <button class="carousel-btn carousel-prev">&larr;</button>
+                <button class="carousel-btn carousel-prev" aria-label="Previous Review">&larr;</button>
                 <div class="carousel-viewport">
                     <div class="carousel-track" id="review-track">
                         ${V.map((e,t)=>{let n=[`linear-gradient(135deg, #10b981 0%, #059669 100%)`,`linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)`,`linear-gradient(135deg, #ec4899 0%, #be185d 100%)`,`linear-gradient(135deg, #f59e0b 0%, #d97706 100%)`,`linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)`,`linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)`];return`
@@ -453,13 +453,13 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
             </div>
             <div class="review-stars">⭐⭐⭐⭐⭐</div>
             <p class="review-quote">"${e.quote}"</p>
-            <h4>${e.name}</h4>
+            <h3>${e.name}</h3>
             <p class="review-course">${e.course}</p>
         </div>
         `}).join(``)}
                     </div>
                 </div>
-                <button class="carousel-btn carousel-next">&rarr;</button>
+                <button class="carousel-btn carousel-next" aria-label="Next Review">&rarr;</button>
                 <div class="carousel-dots" id="carousel-dots">
                     ${V.map((e,t)=>`<span class="dot ${t===0?`active`:``}" data-index="${t}"></span>`).join(``)}
                 </div>
@@ -732,7 +732,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
         </div>
 
     </div>
-    `}function Y(){let e=document.getElementById(`architecture-modal`),t=document.getElementById(`modal-close-btn`),n=document.getElementById(`modal-title`),r=document.getElementById(`mermaid-diagram-container`);document.querySelectorAll(`.view-architecture-btn`).forEach(t=>{t.addEventListener(`click`,()=>{let i=t.dataset.project,a=`System Architecture`,o=``;if(i===`credit-risk`?(a=`💳 Credit Risk Assessment — Multi-Agent Architecture`,o=`
+    `}function Y(){let e=document.getElementById(`architecture-modal`),t=document.getElementById(`modal-close-btn`),n=document.getElementById(`modal-title`),r=document.getElementById(`mermaid-diagram-container`);document.querySelectorAll(`.view-architecture-btn`).forEach(t=>{t.addEventListener(`click`,()=>{let i=t.dataset.project,a=`System Architecture`,o=``;i===`credit-risk`?(a=`💳 Credit Risk Assessment — Multi-Agent Architecture`,o=`
     graph TD
         A["Input Data: Credit Bureau & Bank Statements"] --> B["Data Preprocessing Agent"]
         B --> C["Feature Extraction & Risk Scoring Agent"]
@@ -763,7 +763,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
         style D fill:#831843,stroke:#f472b6,stroke-width:2px,color:#ffffff
         style E fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#ffffff
         style H fill:#065f46,stroke:#34d399,stroke-width:2px,color:#ffffff
-    `),n.textContent=a,r.innerHTML=`<div class="mermaid">${o}</div>`,e.classList.add(`active`),window.mermaid)try{window.mermaid.initialize({startOnLoad:!1,theme:`dark`}),window.mermaid.run({nodes:r.querySelectorAll(`.mermaid`)})}catch(e){console.error(`Mermaid render error:`,e)}})}),t&&t.addEventListener(`click`,()=>{e.classList.remove(`active`)}),e&&e.addEventListener(`click`,t=>{t.target===e&&e.classList.remove(`active`)});let i=document.getElementById(`reflection-journal-form`),a=document.getElementById(`journal-status`);i&&i.addEventListener(`submit`,e=>{e.preventDefault(),a&&(a.style.display=`block`,setTimeout(()=>{a.style.display=`none`,i.reset()},3e3))})}function X(){return`
+    `),n.textContent=a,r.innerHTML=`<div class="mermaid">${o}</div>`,e.classList.add(`active`);let s=()=>{if(window.mermaid)try{window.mermaid.initialize({startOnLoad:!1,theme:`dark`}),window.mermaid.run({nodes:r.querySelectorAll(`.mermaid`)})}catch(e){console.error(`Mermaid render error:`,e)}};if(window.mermaid)s();else{let e=document.createElement(`script`);e.src=`https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js`,e.onload=s,document.head.appendChild(e)}})}),t&&t.addEventListener(`click`,()=>{e.classList.remove(`active`)}),e&&e.addEventListener(`click`,t=>{t.target===e&&e.classList.remove(`active`)});let i=document.getElementById(`reflection-journal-form`),a=document.getElementById(`journal-status`);i&&i.addEventListener(`submit`,e=>{e.preventDefault(),a&&(a.style.display=`block`,setTimeout(()=>{a.style.display=`none`,i.reset()},3e3))})}function X(){return`
         <section class="er-privacy-section fade-in-section visible" id="privacy" style="padding: 120px 5%; background: var(--bg-dark); color: var(--text-main); min-height: 100vh;">
             <div class="er-privacy-container" style="max-width: 1000px; margin: 0 auto;">
                 <div class="er-privacy-header text-center" style="margin-bottom: 60px;">
@@ -1358,16 +1358,16 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
           <!-- SLIDE 1 — FOUNDATION COURSES BANNER -->
           <a href="/courses/foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
-              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/1.webp">
-              <img src="https://cdn.phototourl.com/free/2026-08-19-a7d0b97b-514f-440f-a353-c2002218aa92.jpg" alt="Foundation Courses" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/1.webp" width="780" height="346">
+              <img src="https://cdn.phototourl.com/free/2026-08-19-a7d0b97b-514f-440f-a353-c2002218aa92.jpg" alt="Foundation Courses" fetchpriority="high" loading="eager" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </a>
 
           <!-- SLIDE 2 — NEET BATCH -->
           <a href="/courses/neet" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
-              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/2.webp">
-              <img src="https://cdn.phototourl.com/free/2026-08-19-b81703e4-9625-45ba-9dd9-a78611892cbe.jpg" alt="NEET Courses" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/2.webp" width="780" height="346">
+              <img src="https://cdn.phototourl.com/free/2026-08-19-b81703e4-9625-45ba-9dd9-a78611892cbe.jpg" alt="NEET Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </a>
 
@@ -1375,16 +1375,16 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
           <!-- SLIDE 3 — JEE COURSES BANNER -->
           <a href="/courses/iit-jee" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
-              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/3.webp">
-              <img src="https://cdn.phototourl.com/free/2026-08-19-d0350913-854a-4e54-a80e-ca16951ba57d.jpg" alt="JEE Courses" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/3.webp" width="780" height="346">
+              <img src="https://cdn.phototourl.com/free/2026-08-19-d0350913-854a-4e54-a80e-ca16951ba57d.jpg" alt="JEE Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </a>
 
           <!-- SLIDE 4 — JOURNEY & INTROSPECTION -->
           <div class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
-              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/4.webp">
-              <img src="https://cdn.phototourl.com/free/2026-08-14-1e9adc87-cc2a-4bcf-8378-cb876b01aba8.png" alt="Journey" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/4.webp" width="780" height="346">
+              <img src="https://cdn.phototourl.com/free/2026-08-14-1e9adc87-cc2a-4bcf-8378-cb876b01aba8.png" alt="Journey" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </div>
 
@@ -1418,7 +1418,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
     <!-- ═══ SECTION B: POPULAR COURSES ═══ -->
     <section id="er-popular-courses" class="er-section" style="background:linear-gradient(160deg,#e8f5ee 0%,#d4eddf 50%,#c5e8d5 100%);">
         <div class="er-container">
-            <h1 class="er-section-heading er-reveal visible" style="color:#0e3a24; font-weight: 800;"> Explore Our <span style="color:#1f7d4e;">Courses</span></h1>
+            <h2 class="er-section-heading er-reveal visible" style="color:#0e3a24; font-weight: 800;"> Explore Our <span style="color:#1f7d4e;">Courses</span></h2>
             <p class="er-section-sub er-reveal visible" style="color:#2a5e3a;">
                 Find the best course for your JEE, NEET, or foundation preparation and start learning today.
             </p>
@@ -1831,7 +1831,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
             <div class="er-chat-footer">
                 <div class="er-chat-input-area">
                     <input type="text" id="er-chat-input" placeholder="Type your message..." autocomplete="off">
-                    <button id="er-chat-send">
+                    <button id="er-chat-send" aria-label="Send message">
                         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
                     </button>
                 </div>
