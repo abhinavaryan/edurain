@@ -80,7 +80,7 @@ export function renderNEETCourses() {
 export function renderFoundationCourses() {
     return renderCategoryPage(
         "Foundation Courses",
-        "Strengthen your core concepts in Science and Mathematics from Class 6 to 10. The perfect stepping stone for future competitive exams.",
+        "A strong foundation changes everything. From Class 6 to 10, we make sure your concepts in Science, Maths, and English are crystal clear, the perfect stepping stone for future competitive exams.",
         "FOUNDATION"
     );
 }

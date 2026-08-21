@@ -10,7 +10,7 @@ export function renderBanner() {
           <a href="/courses/foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
               <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/1.webp" width="780" height="346">
-              <img src="https://cdn.phototourl.com/free/2026-08-21-7d960ce3-4329-4dc2-ab80-0738cf95f8af.webp" alt="Foundation Courses" fetchpriority="high" loading="eager" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="https://cdn.phototourl.com/free/2026-08-21-e1e824c4-9305-4f2c-94d1-571c81f25773.webp" alt="Foundation Courses" fetchpriority="high" loading="eager" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </a>
 
@@ -18,7 +18,7 @@ export function renderBanner() {
           <a href="/courses/neet" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
               <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/2.webp" width="780" height="346">
-              <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_webp/cloudinary-tools-uploads/t3bbhirmm4lijkyzna4k" alt="NEET Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="https://cdn.phototourl.com/free/2026-08-21-274d5d83-fe71-4e62-a475-a1f104e2301d.webp" alt="NEET Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </a>
 
@@ -27,7 +27,7 @@ export function renderBanner() {
           <a href="/courses/iit-jee" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
               <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/3.webp" width="780" height="346">
-              <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_webp/cloudinary-tools-uploads/ec1y2hnm97jsd1t7zu2p" alt="JEE Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="https://cdn.phototourl.com/free/2026-08-21-f1aec8fe-4134-4b91-8e86-aa7347b8640d.webp" alt="JEE Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </a>
 
@@ -35,7 +35,7 @@ export function renderBanner() {
           <div class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
               <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/4.webp" width="780" height="346">
-              <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/ts98oi70vdtw4biz10hq" alt="Journey" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="https://cdn.phototourl.com/free/2026-08-21-dfdd2f3b-ad00-442a-8933-f958f8c33eca.webp" alt="Journey" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </div>
 
