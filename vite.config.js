@@ -5,7 +5,7 @@ export default defineConfig({
   root: '.',
   base: '/',
   publicDir: 'public',
-  build: { 
+  build: {
     outDir: 'dist',
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
