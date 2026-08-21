@@ -34,7 +34,7 @@ export function renderFreeDemo() {
                 <div class="er-demo-image-wrap er-reveal visible">
                     <div class="er-demo-glow-ring"></div>
                     <img loading="lazy"
-                        src="https://cdn.phototourl.com/free/2026-07-29-95aea96d-d417-49bd-a2f3-cd7f4725e628.png"
+                        src="https://cdn.phototourl.com/free/2026-08-21-b8e864e2-f1b7-48a0-ba5d-51f1a0ab8d4c.webp"
                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                         alt="Free Demo — Teacher with student"
                         class="er-demo-img"

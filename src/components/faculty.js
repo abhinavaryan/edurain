@@ -5,7 +5,7 @@ export function renderFaculty() {
             subject: "English",
             exp: "15+ Years Exp.",
             desc: "He is a passionate English mentor dedicated to mastering language skills, literature, and communication excellence.",
-            image: "/images/home teachers image/1.png",
+            image: "/images/home teachers image/1.webp",
             icon: "📖"
         },
         {

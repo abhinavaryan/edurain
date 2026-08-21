@@ -8,7 +8,7 @@ export function renderFooter() {
                 <div class="footer-col">
                     <div class="logo" style="margin-bottom: 1rem;">
                         <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 4px;">
-                            <img loading="lazy" src="/images/logo.png" alt="EduRain Logo" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
+                            <img loading="lazy" src="/images/logo.webp" alt="EduRain Logo" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
                             <div style="display: flex; flex-direction: column; line-height: 1.2; align-items: center;">
                                 <div>
                                     <span class="text-white">Edu</span><span class="text-accent">Rain</span>
