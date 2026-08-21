@@ -13,6 +13,7 @@ import { renderSitemap } from './components/sitemap.js';
 import { renderJEECourses, renderNEETCourses, renderFoundationCourses } from './components/categoryCourses.js';
 import { renderBlogAdmin, initBlogAdmin } from './components/blogAdmin.js';
 import { renderBlogAdminLogin, initBlogAdminLogin } from './components/blogAdminLogin.js';
+import { initFAQ } from './components/faq.js';
 
 // ── HOME PAGE SECTIONS (exact order) ──
 import { renderBanner, initBanner } from './components/banner.js';
@@ -113,15 +114,15 @@ const routes = {
   },
   '/courses/iit-jee': {
     render: () => renderJEECourses(),
-    postRender: () => setMetaTags("Best IIT JEE Online Coaching for JEE Main & Advanced | EduRain", "Crack IIT JEE with EduRain: live classes, expert faculty, and structured material for complete JEE Main & Advanced exam preparation", "https://www.edurain.in/courses/iit-jee")
+    postRender: () => { initFAQ(); setMetaTags("Best IIT JEE Online Coaching for JEE Main & Advanced | EduRain", "Crack IIT JEE with EduRain: live classes, expert faculty, and structured material for complete JEE Main & Advanced exam preparation", "https://www.edurain.in/courses/iit-jee"); }
   },
   '/courses/neet': {
     render: () => renderNEETCourses(),
-    postRender: () => setMetaTags("NEET 2027-28 Complete Online Preparation with EduRain", "Start your NEET 2027-28 online preparation with EduRain: live classes, expert faculty, and structured NCERT-based material with regular tests.", "https://www.edurain.in/courses/neet")
+    postRender: () => { initFAQ(); setMetaTags("NEET 2027-28 Complete Online Preparation with EduRain", "Start your NEET 2027-28 online preparation with EduRain: live classes, expert faculty, and structured NCERT-based material with regular tests.", "https://www.edurain.in/courses/neet"); }
   },
   '/courses/foundation': {
     render: () => renderFoundationCourses(),
-    postRender: () => setMetaTags("Best Online Coaching for Classes 6 to 10 | Live Interactive Classes", "Live online classes for Class 6 to 10 with expert-led Math, Science & more: building a strong IIT JEE & NEET foundation. Interactive learning, real results", "https://www.edurain.in/courses/foundation")
+    postRender: () => { initFAQ(); setMetaTags("Best Online Coaching for Classes 6 to 10 | Live Interactive Classes", "Live online classes for Class 6 to 10 with expert-led Math, Science & more: building a strong IIT JEE & NEET foundation. Interactive learning, real results", "https://www.edurain.in/courses/foundation"); }
   },
   '/blogadmin': {
     render: () => renderBlogAdmin(),

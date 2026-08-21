@@ -1,4 +1,5 @@
 import coursesData from '../data/courses.json';
+import { renderFAQ, initFAQ } from './faq.js';
 
 export function renderCourses() {
     const coursesHtml = coursesData.map(course => {
@@ -51,6 +52,7 @@ export function renderCourses() {
                 ${coursesHtml}
             </div>
         </section>
+        ${renderFAQ()}
     `;
 }
 
@@ -70,4 +72,6 @@ export function initCourses() {
             }
         });
     });
+
+    initFAQ();
 }

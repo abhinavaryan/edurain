@@ -1,4 +1,5 @@
 import coursesData from '../data/courses.json';
+import { renderFAQ } from './faq.js';
 
 function renderCourseCard(course) {
     const stars = '⭐'.repeat(Math.round(course.rating));
@@ -56,6 +57,7 @@ function renderCategoryPage(title, description, categoryKey) {
                 ${coursesHtml}
             </div>
         </section>
+        ${renderFAQ(categoryKey)}
     `;
 }
 
