@@ -1357,23 +1357,35 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
 
           <!-- SLIDE 1 — FOUNDATION COURSES BANNER -->
           <a href="/courses/foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-            <img src="https://cdn.phototourl.com/free/2026-08-19-a7d0b97b-514f-440f-a353-c2002218aa92.jpg" alt="Foundation Courses" style="width:100%; height:100%; object-fit:contain; display:block;" />
+            <picture style="width:100%; height:100%; display:block;">
+              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/1.png">
+              <img src="https://cdn.phototourl.com/free/2026-08-19-a7d0b97b-514f-440f-a353-c2002218aa92.jpg" alt="Foundation Courses" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </picture>
           </a>
 
           <!-- SLIDE 2 — NEET BATCH -->
           <a href="/courses/neet" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-            <img src="https://cdn.phototourl.com/free/2026-08-19-b81703e4-9625-45ba-9dd9-a78611892cbe.jpg" alt="NEET Courses" style="width:100%; height:100%; object-fit:contain; display:block;" />
+            <picture style="width:100%; height:100%; display:block;">
+              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/2.png">
+              <img src="https://cdn.phototourl.com/free/2026-08-19-b81703e4-9625-45ba-9dd9-a78611892cbe.jpg" alt="NEET Courses" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </picture>
           </a>
 
 
           <!-- SLIDE 3 — JEE COURSES BANNER -->
           <a href="/courses/iit-jee" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-            <img src="https://cdn.phototourl.com/free/2026-08-19-d0350913-854a-4e54-a80e-ca16951ba57d.jpg" alt="JEE Courses" style="width:100%; height:100%; object-fit:contain; display:block;" />
+            <picture style="width:100%; height:100%; display:block;">
+              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/3.png">
+              <img src="https://cdn.phototourl.com/free/2026-08-19-d0350913-854a-4e54-a80e-ca16951ba57d.jpg" alt="JEE Courses" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </picture>
           </a>
 
           <!-- SLIDE 4 — JOURNEY & INTROSPECTION -->
           <div class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-            <img src="https://cdn.phototourl.com/free/2026-08-14-1e9adc87-cc2a-4bcf-8378-cb876b01aba8.png" alt="Journey" style="width:100%; height:100%; object-fit:contain; display:block;" />
+            <picture style="width:100%; height:100%; display:block;">
+              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/4.png">
+              <img src="https://cdn.phototourl.com/free/2026-08-14-1e9adc87-cc2a-4bcf-8378-cb876b01aba8.png" alt="Journey" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </picture>
           </div>
 
         </div>
