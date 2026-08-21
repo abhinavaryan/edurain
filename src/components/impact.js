@@ -16,7 +16,7 @@ export function renderImpact() {
                 <div class="er-impact-card glass-card er-reveal visible" data-color="#166534" style="background: #f0fdf4 !important; border: 1px solid rgba(22, 101, 52, 0.25); border-radius: 1.618rem; padding: 1.618rem; box-shadow: 0 10px 25px -5px rgba(22, 101, 52, 0.1); position: relative; overflow: hidden; transition: all 0.3s ease;">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
                         <span style="font-size: 2.5rem;">🎓</span>
-                        <span style="background: rgba(22, 163, 74, 0.15); color: #15803d; border-radius: 50px; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700;">Community</span>
+                        <span style="background: rgba(22, 163, 74, 0.15); color: #14532d; border-radius: 50px; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700;">Community</span>
                     </div>
                     <div>
                         <p class="er-impact-number" style="color:#0e3a24; font-size: 2.5rem; font-weight: 800; margin: 0; line-height: 1.2;">

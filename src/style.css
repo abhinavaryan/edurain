@@ -4540,7 +4540,7 @@ textarea {
 
 .mobile-popup-subtitle {
     font-size: 1rem;
-    color: #888;
+    color: #555; /* Darkened for Lighthouse a11y */
     margin-bottom: 1rem;
 }
 
