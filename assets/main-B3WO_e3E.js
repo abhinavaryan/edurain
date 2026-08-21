@@ -1359,7 +1359,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
           <a href="/courses/foundation" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
               <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/1.webp" width="780" height="346">
-              <img src="https://cdn.phototourl.com/free/2026-08-19-a7d0b97b-514f-440f-a353-c2002218aa92.jpg" alt="Foundation Courses" fetchpriority="high" loading="eager" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_webp/cloudinary-tools-uploads/fjhdyx7khrfx90gctq1i" alt="Foundation Courses" fetchpriority="high" loading="eager" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </a>
 
@@ -1367,7 +1367,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
           <a href="/courses/neet" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
               <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/2.webp" width="780" height="346">
-              <img src="https://cdn.phototourl.com/free/2026-08-19-b81703e4-9625-45ba-9dd9-a78611892cbe.jpg" alt="NEET Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_webp/cloudinary-tools-uploads/t3bbhirmm4lijkyzna4k" alt="NEET Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </a>
 
@@ -1376,7 +1376,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
           <a href="/courses/iit-jee" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
               <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/3.webp" width="780" height="346">
-              <img src="https://cdn.phototourl.com/free/2026-08-19-d0350913-854a-4e54-a80e-ca16951ba57d.jpg" alt="JEE Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_webp/cloudinary-tools-uploads/ec1y2hnm97jsd1t7zu2p" alt="JEE Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </a>
 
@@ -1384,7 +1384,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
           <div class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
               <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/4.webp" width="780" height="346">
-              <img src="https://cdn.phototourl.com/free/2026-08-14-1e9adc87-cc2a-4bcf-8378-cb876b01aba8.png" alt="Journey" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/ts98oi70vdtw4biz10hq" alt="Journey" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </div>
 
@@ -1528,7 +1528,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
                 
                 <div class="er-faculty-track-container" id="er-faculty-container">
                     <div class="er-faculty-grid" id="er-faculty-track">
-                        ${[{name:`Mr. Manoj sir`,subject:`English`,exp:`15+ Years Exp.`,desc:`He is a passionate English mentor dedicated to mastering language skills, literature, and communication excellence.`,image:`/images/home teachers image/1.webp`,icon:`📖`},{name:`Mrs. Ritu ma'am`,subject:`Chemistry`,exp:`14 Years Exp.`,desc:`She is dedicated to building strong fundamentals and developing problem-solving excellence in students.`,image:`/images/home teachers image/2.png`,icon:`🧪`},{name:`Mr. Debashish Banerjee sir`,subject:`Mathematics`,exp:`18 Years Exp.`,desc:`Expert Mathematics mentor with 18 years of experience, specializing in Class 11th & 12th and JEE preparation.`,image:`/images/home teachers image/6.png`,icon:`🔢`},{name:`Mr. Diwakar sir`,subject:`Physics`,exp:`17+ Years Exp.`,desc:`He is recognized for his concept-driven teaching approach and consistent success in guiding NEET aspirants toward top ranks.`,image:`/images/home teachers image/3.png`,icon:`⚡`},{name:`Mr. Nitin sir`,subject:`Biology`,exp:`15+ Years Exp.`,desc:`A highly respected Biology mentor, He is known for making complex concepts simple and helping students achieve NEET results.`,image:`/images/home teachers image/4.png`,icon:`🧬`},{name:`Ms. Khushboo ma'am`,subject:`Social Studies`,exp:`5 Years Exp.`,desc:`Passionate Social Studies mentor with 5 years of teaching experience, making History, Civics, and Geography engaging and accessible.`,image:`/images/home teachers image/5.png`,imgStyle:`transform: scale(1.2) translateY(5px); transform-origin: bottom center;`,icon:`🌍`}].map((e,t)=>(e.name.replace(/^(Mr\.|Mrs\.|Ms\.|Dr\.)\s*/,``).split(` `).map(e=>e[0]).join(``),`
+                        ${[{name:`Mr. Manoj sir`,subject:`English`,exp:`15+ Years Exp.`,desc:`He is a passionate English mentor dedicated to mastering language skills, literature, and communication excellence.`,image:`/images/home teachers image/1.webp`,icon:`📖`},{name:`Mrs. Ritu ma'am`,subject:`Chemistry`,exp:`14 Years Exp.`,desc:`She is dedicated to building strong fundamentals and developing problem-solving excellence in students.`,image:`/images/home teachers image/2.png`,icon:`🧪`},{name:`Mr. Debashish Banerjee sir`,subject:`Mathematics`,exp:`18 Years Exp.`,desc:`Expert Mathematics mentor with 18 years of experience, specializing in Class 11th & 12th and JEE preparation.`,image:`/images/home teachers image/6.webp`,icon:`🔢`},{name:`Mr. Diwakar sir`,subject:`Physics`,exp:`17+ Years Exp.`,desc:`He is recognized for his concept-driven teaching approach and consistent success in guiding NEET aspirants toward top ranks.`,image:`/images/home teachers image/3.png`,icon:`⚡`},{name:`Mr. Nitin sir`,subject:`Biology`,exp:`15+ Years Exp.`,desc:`A highly respected Biology mentor, He is known for making complex concepts simple and helping students achieve NEET results.`,image:`/images/home teachers image/4.png`,icon:`🧬`},{name:`Ms. Khushboo ma'am`,subject:`Social Studies`,exp:`5 Years Exp.`,desc:`Passionate Social Studies mentor with 5 years of teaching experience, making History, Civics, and Geography engaging and accessible.`,image:`/images/home teachers image/5.webp`,imgStyle:`transform: scale(1.2) translateY(5px); transform-origin: bottom center;`,icon:`🌍`}].map((e,t)=>(e.name.replace(/^(Mr\.|Mrs\.|Ms\.|Dr\.)\s*/,``).split(` `).map(e=>e[0]).join(``),`
         <div class="er-faculty-card glass-card er-reveal visible">
             <div class="er-faculty-img-wrap">
                 <img loading="lazy" src="${e.image}" class="er-faculty-img" alt="${e.name} - ${e.subject} Specialist, ${e.exp}" style="width: 100%; height: 100%; object-fit: contain; object-position: bottom center; ${e.imgStyle||``}">
@@ -1757,7 +1757,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
                         <div class="er-phone-notch"></div>
                         <!-- Screen -->
                         <div class="er-phone-screen">
-                            <img loading="lazy" src="/images/floating%20phone.jpg" alt="EduRain App" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                            <img loading="lazy" src="/images/floating%20phone.webp" alt="EduRain App" style="width:100%; height:100%; object-fit:cover; display:block;" />
                         </div>
                     </div>
 
