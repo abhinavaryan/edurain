@@ -1,31 +1,10 @@
+// Global Shell Components (Eagerly loaded)
 import { renderNavbar, initNavbar } from './components/navbar.js';
 import { renderFooter, initFooter } from './components/footer.js';
-import { renderCourses, initCourses } from './components/courses.js';
-import { renderBlogs, initBlogs } from './components/blogs.js';
-import { renderAbout } from './components/about.js';
-import { renderReviews, initReviews } from './components/reviews.js';
-import { renderContact, initContact } from './components/contact.js';
 import { renderAuthModal, initAuthModal } from './components/authModal.js';
-import { renderJourney, initJourney } from './components/journey.js';
-import { renderPrivacy } from './components/privacy.js';
-import { renderTerms } from './components/terms.js';
-import { renderSitemap } from './components/sitemap.js';
-import { renderJEECourses, renderNEETCourses, renderFoundationCourses } from './components/categoryCourses.js';
-import { renderBlogAdmin, initBlogAdmin } from './components/blogAdmin.js';
-import { renderBlogAdminLogin, initBlogAdminLogin } from './components/blogAdminLogin.js';
-import { initFAQ } from './components/faq.js';
-
-// ── HOME PAGE SECTIONS (exact order) ──
-import { renderBanner, initBanner } from './components/banner.js';
-import { renderPopularCourses } from './components/popularCourses.js';
-import { renderFreeDemo } from './components/freeDemo.js';
-import { renderFaculty, initFaculty } from './components/faculty.js';
-import { renderHomeReviews, initHomeReviews } from './components/homeReviews.js';
-import { renderImpact, initImpact } from './components/impact.js';
-import { renderAppDownload } from './components/appDownload.js';
 import { initIosAppPopup } from './components/iosAppPopup.js';
 
-// Helper to update SEO meta tags dynamically
+// Helper to update SEO meta tags dynamically (DO NOT CHANGE)
 function setMetaTags(title, description, canonicalUrl) {
   document.title = title;
   let metaDesc = document.querySelector('meta[name="description"]');
@@ -47,90 +26,151 @@ function setMetaTags(title, description, canonicalUrl) {
   }
 }
 
+// Caching Object
+const routeCache = {};
+
 const routes = {
   '/': {
-    // ORDER: Banner → Popular Courses → Free Demo → Faculty → Student Reviews → Impact → App Download
-    render: () =>
-      renderBanner() +
-      renderPopularCourses() +
-      renderFreeDemo() +
-      renderFaculty() +
-      renderHomeReviews() +
-      renderImpact() +
-      renderAppDownload(),
-    postRender: () => {
-      initBanner();
-      initFaculty();
-      initHomeReviews();
-      initImpact();
-      initScrollReveal();
-      setMetaTags("EduRain – Online Learning & Exam Preparation", "EduRain is an online education platform providing academic learning and exam preparation for Class 6–12, Foundation, NEET and IIT-JEE.", "https://www.edurain.in/");
+    load: async () => {
+      const [
+        { renderBanner, initBanner },
+        { renderPopularCourses },
+        { renderFreeDemo },
+        { renderFaculty, initFaculty },
+        { renderHomeReviews, initHomeReviews },
+        { renderImpact, initImpact },
+        { renderAppDownload }
+      ] = await Promise.all([
+        import('./components/banner.js'),
+        import('./components/popularCourses.js'),
+        import('./components/freeDemo.js'),
+        import('./components/faculty.js'),
+        import('./components/homeReviews.js'),
+        import('./components/impact.js'),
+        import('./components/appDownload.js')
+      ]);
+      return {
+        render: () => renderBanner() + renderPopularCourses() + renderFreeDemo() + renderFaculty() + renderHomeReviews() + renderImpact() + renderAppDownload(),
+        postRender: () => {
+          initBanner(); initFaculty(); initHomeReviews(); initImpact(); initScrollReveal();
+          setMetaTags("EduRain – Online Learning & Exam Preparation", "EduRain is an online education platform providing academic learning and exam preparation for Class 6–12, Foundation, NEET and IIT-JEE.", "https://www.edurain.in/");
+        }
+      };
     }
   },
   '/courses': {
-    render: () => renderCourses(),
-    postRender: () => {
-      initCourses();
-      setMetaTags("Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-10)", "Explore IIT JEE, NEET & Foundation courses for Class 6-10 with expert faculty, structured curriculum & proven results. Take the first step toward success", "https://www.edurain.in/courses");
+    load: async () => {
+      const { renderCourses, initCourses } = await import('./components/courses.js');
+      return {
+        render: () => renderCourses(),
+        postRender: () => {
+          initCourses();
+          setMetaTags("Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-10)", "Explore IIT JEE, NEET & Foundation courses for Class 6-10 with expert faculty, structured curriculum & proven results. Take the first step toward success", "https://www.edurain.in/courses");
+        }
+      };
     }
   },
   '/blogs': {
-    render: () => renderBlogs(),
-    postRender: () => {
-      initBlogs();
-      setMetaTags("IIT JEE, NEET & Foundation Blogs | EduRain", "Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides", "https://www.edurain.in/blogs");
+    load: async () => {
+      const { renderBlogs, initBlogs } = await import('./components/blogs.js');
+      return {
+        render: () => renderBlogs(),
+        postRender: () => {
+          initBlogs();
+          setMetaTags("IIT JEE, NEET & Foundation Blogs | EduRain", "Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides", "https://www.edurain.in/blogs");
+        }
+      };
     }
   },
   '/journey': {
-    render: () => renderJourney(),
-    postRender: () => initJourney()
+    load: async () => {
+      const { renderJourney, initJourney } = await import('./components/journey.js');
+      return { render: () => renderJourney(), postRender: () => initJourney() };
+    }
   },
   '/about-us': {
-    render: () => renderAbout(),
-    postRender: () => setMetaTags("About Us | EduRain's Mission to Make Learning Accessible", "At EduRain, our mission is to make quality education accessible for every student from Class 6-10 foundation to IIT-JEE & NEET success. Know our story", "https://www.edurain.in/about-us")
+    load: async () => {
+      const { renderAbout } = await import('./components/about.js');
+      return { 
+        render: () => renderAbout(), 
+        postRender: () => setMetaTags("About Us | EduRain's Mission to Make Learning Accessible", "At EduRain, our mission is to make quality education accessible for every student from Class 6-10 foundation to IIT-JEE & NEET success. Know our story", "https://www.edurain.in/about-us") 
+      };
+    }
   },
   '/reviews': {
-    render: () => renderReviews(),
-    postRender: () => initReviews()
+    load: async () => {
+      const { renderReviews, initReviews } = await import('./components/reviews.js');
+      return { render: () => renderReviews(), postRender: () => initReviews() };
+    }
   },
   '/contact-us': {
-    render: () => renderContact(),
-    postRender: () => { 
-      initContact(); 
-      setMetaTags("Contact Us | Get in Touch with EduRain", "Have questions about our courses for Class 6-10, IIT-JEE or NEET? Contact EduRain's team for admissions support, course details or a free demo class", "https://www.edurain.in/contact-us"); 
+    load: async () => {
+      const { renderContact, initContact } = await import('./components/contact.js');
+      return {
+        render: () => renderContact(),
+        postRender: () => { 
+          initContact(); 
+          setMetaTags("Contact Us | Get in Touch with EduRain", "Have questions about our courses for Class 6-10, IIT-JEE or NEET? Contact EduRain's team for admissions support, course details or a free demo class", "https://www.edurain.in/contact-us"); 
+        }
+      };
     }
   },
   '/privacy': {
-    render: () => renderPrivacy(),
-    postRender: () => setMetaTags("Privacy Policy - EduRain", "Privacy policy of EduRain", "https://www.edurain.in/privacy")
+    load: async () => {
+      const { renderPrivacy } = await import('./components/privacy.js');
+      return { render: () => renderPrivacy(), postRender: () => setMetaTags("Privacy Policy - EduRain", "Privacy policy of EduRain", "https://www.edurain.in/privacy") };
+    }
   },
   '/terms': {
-    render: () => renderTerms(),
-    postRender: () => setMetaTags("Terms and Conditions - EduRain", "Terms and conditions of use for Edurain")
+    load: async () => {
+      const { renderTerms } = await import('./components/terms.js');
+      return { render: () => renderTerms(), postRender: () => setMetaTags("Terms and Conditions - EduRain", "Terms and conditions of use for Edurain") };
+    }
   },
   '/sitemap': {
-    render: () => renderSitemap(),
-    postRender: () => setMetaTags("Sitemap - EduRain", "Sitemap for EduRain")
+    load: async () => {
+      const { renderSitemap } = await import('./components/sitemap.js');
+      return { render: () => renderSitemap(), postRender: () => setMetaTags("Sitemap - EduRain", "Sitemap for EduRain") };
+    }
   },
   '/courses/iit-jee': {
-    render: () => renderJEECourses(),
-    postRender: () => { initFAQ(); setMetaTags("Best IIT JEE Online Coaching for JEE Main & Advanced | EduRain", "Crack IIT JEE with EduRain: live classes, expert faculty, and structured material for complete JEE Main & Advanced exam preparation", "https://www.edurain.in/courses/iit-jee"); }
+    load: async () => {
+      const [{ renderJEECourses }, { initFAQ }] = await Promise.all([import('./components/categoryCourses.js'), import('./components/faq.js')]);
+      return {
+        render: () => renderJEECourses(),
+        postRender: () => { initFAQ(); setMetaTags("Best IIT JEE Online Coaching for JEE Main & Advanced | EduRain", "Crack IIT JEE with EduRain: live classes, expert faculty, and structured material for complete JEE Main & Advanced exam preparation", "https://www.edurain.in/courses/iit-jee"); }
+      };
+    }
   },
   '/courses/neet': {
-    render: () => renderNEETCourses(),
-    postRender: () => { initFAQ(); setMetaTags("NEET 2027-28 Complete Online Preparation with EduRain", "Start your NEET 2027-28 online preparation with EduRain: live classes, expert faculty, and structured NCERT-based material with regular tests.", "https://www.edurain.in/courses/neet"); }
+    load: async () => {
+      const [{ renderNEETCourses }, { initFAQ }] = await Promise.all([import('./components/categoryCourses.js'), import('./components/faq.js')]);
+      return {
+        render: () => renderNEETCourses(),
+        postRender: () => { initFAQ(); setMetaTags("NEET 2027-28 Complete Online Preparation with EduRain", "Start your NEET 2027-28 online preparation with EduRain: live classes, expert faculty, and structured NCERT-based material with regular tests.", "https://www.edurain.in/courses/neet"); }
+      };
+    }
   },
   '/courses/foundation': {
-    render: () => renderFoundationCourses(),
-    postRender: () => { initFAQ(); setMetaTags("Best Online Coaching for Classes 6 to 10 | Live Interactive Classes", "Live online classes for Class 6 to 10 with expert-led Math, Science & more: building a strong IIT JEE & NEET foundation. Interactive learning, real results", "https://www.edurain.in/courses/foundation"); }
+    load: async () => {
+      const [{ renderFoundationCourses }, { initFAQ }] = await Promise.all([import('./components/categoryCourses.js'), import('./components/faq.js')]);
+      return {
+        render: () => renderFoundationCourses(),
+        postRender: () => { initFAQ(); setMetaTags("Best Online Coaching for Classes 6 to 10 | Live Interactive Classes", "Live online classes for Class 6 to 10 with expert-led Math, Science & more: building a strong IIT JEE & NEET foundation. Interactive learning, real results", "https://www.edurain.in/courses/foundation"); }
+      };
+    }
   },
   '/blogadmin': {
-    render: () => renderBlogAdmin(),
-    postRender: () => initBlogAdmin()
+    load: async () => {
+      const { renderBlogAdmin, initBlogAdmin } = await import('./components/blogAdmin.js');
+      return { render: () => renderBlogAdmin(), postRender: () => initBlogAdmin() };
+    }
   },
   '/blogadmin/login': {
-    render: () => renderBlogAdminLogin(),
-    postRender: () => initBlogAdminLogin()
+    load: async () => {
+      const { renderBlogAdminLogin, initBlogAdminLogin } = await import('./components/blogAdminLogin.js');
+      return { render: () => renderBlogAdminLogin(), postRender: () => initBlogAdminLogin() };
+    }
   }
 };
 
@@ -149,6 +189,13 @@ function initScrollReveal() {
   els.forEach(el => obs.observe(el));
 }
 
+// Global prefetch utility
+window.prefetchRoute = (path) => {
+  if (routes[path] && !routeCache[path]) {
+    routes[path].load(); // Trigger the import without waiting for render
+  }
+};
+
 export const navigateTo = (path) => {
   window.history.pushState({}, "", path);
   if (window.renderRoute) {
@@ -166,7 +213,21 @@ export const initRouter = () => {
     window.history.replaceState(null, null, redirectPath);
   }
 
-  // Intercept all clicks on internal links for SPA
+  // Intercept all clicks and handle intent-based prefetching
+  document.body.addEventListener('mouseover', e => {
+    const link = e.target.closest('a');
+    if (link && link.href) {
+      try {
+        const url = new URL(link.href);
+        if (url.origin === window.location.origin) {
+          let path = url.pathname;
+          if (path.endsWith('/') && path !== '/') path = path.slice(0, -1);
+          window.prefetchRoute(path);
+        }
+      } catch (err) {}
+    }
+  });
+
   document.body.addEventListener('click', e => {
     if (e.defaultPrevented) return;
     const link = e.target.closest('a');
@@ -195,7 +256,7 @@ export const initRouter = () => {
     }
   });
 
-  window.renderRoute = () => {
+  window.renderRoute = async () => {
     let path = window.location.pathname;
     
     // Normalize path
@@ -205,14 +266,25 @@ export const initRouter = () => {
       path = path.slice(0, -1);
     }
 
-    const route = routes[path] || {
-      render: () => `<div class="page-404"><h1>404</h1><p>Page not found</p><a href="/" class="btn btn-accent">Go Home</a></div>`,
-      postRender: () => { }
-    };
+    const routeConfig = routes[path];
+    let route;
+    
+    if (routeConfig) {
+      if (!routeCache[path]) {
+        routeCache[path] = await routeConfig.load();
+      }
+      route = routeCache[path];
+    } else {
+      route = {
+        render: () => `<div class="page-404"><h1>404</h1><p>Page not found</p><a href="/" class="btn btn-accent">Go Home</a></div>`,
+        postRender: () => { }
+      };
+    }
 
     const navbarHTML = path.startsWith('/blogadmin') ? '' : renderNavbar();
     const footerHTML = path.startsWith('/blogadmin') ? '' : renderFooter();
     const authModalHTML = path.startsWith('/blogadmin') ? '' : renderAuthModal();
+    
     const pageHTML = route.render();
 
     app.innerHTML = `
