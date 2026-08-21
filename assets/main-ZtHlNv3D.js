@@ -331,7 +331,7 @@ import{_ as e,a as t,b as n,c as r,d as i,f as a,g as o,h as s,i as c,l,m as u,n
                 </div>
                 <div class="er-pw-card-body">
                     <h3 class="er-pw-card-title" style="font-size:1.2rem; margin-bottom:0.5rem;">${e.title}</h3>
-                    <p class="er-pw-card-excerpt" style="font-size:0.95rem; color:#64748b; margin-bottom:1rem; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;">${e.excerpt||``}</p>
+                    <p class="er-pw-card-excerpt" style="font-size:0.95rem; color:#64748b; margin-bottom:1rem; display:-webkit-box; -webkit-line-clamp:3; line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;">${e.excerpt||``}</p>
                     <div class="er-pw-card-meta">
                         <span class="er-pw-card-author">By ${e.author||`EduRain Team`}</span>
                         <span class="er-pw-card-date">${t}</span>
