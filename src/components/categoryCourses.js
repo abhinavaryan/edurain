@@ -72,7 +72,7 @@ export function renderJEECourses() {
 export function renderNEETCourses() {
     return renderCategoryPage(
         "NEET Courses",
-        "Focused coaching for medical aspirants. In-depth coverage of Biology, Physics, and Chemistry to help you crack NEET with top scores.",
+        "Crack NEET UG with expert-led coaching in Biology, Physics, and Chemistry designed to help medical aspirants secure top scores and a seat in India's best medical colleges.",
         "NEET"
     );
 }

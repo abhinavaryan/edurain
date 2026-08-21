@@ -69,7 +69,7 @@ export function renderFooter() {
                 </div>
                 <div class="footer-col">
                     <h4>Get the App</h4>
-                    <p>Learn on the go. Download the EduRain app today.</p>
+                    <p>Take your lessons anywhere. Download the EduRain app</p>
                     <div class="er-store-buttons" style="margin-top: 0.75rem;">
                         <a href="https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN" target="_blank" rel="noopener noreferrer" class="er-store-btn er-store-btn-play">
                             <svg class="er-store-icon" viewBox="0 0 48 48">
@@ -108,7 +108,7 @@ export function renderFooter() {
 
 export function initFooter() {
     const toggleBtns = document.querySelectorAll('.social-dropdown-toggle');
-    
+
     toggleBtns.forEach(btn => {
         const wrapper = btn.closest('.social-dropdown-wrapper');
         if (wrapper) {
