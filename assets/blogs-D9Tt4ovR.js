@@ -1,4 +1,4 @@
-import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from"./main-CP1lFDI3.js";import{t as a}from"./courses-BD523hjT.js";var o=[`All Blogs`,`Study Hacks`,`JEE Mains PYQ`,`NEET Test Series`,`CBSE Class 10 PYQ`,`CBSE Class 12 PYQ`,`Foundation 9th-10th`],s=[];function c(){return`
+import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from"./main-CSx5MoBE.js";import{t as a}from"./courses-BD523hjT.js";var o=[`All Blogs`,`Study Hacks`,`JEE Mains PYQ`,`NEET Test Series`,`CBSE Class 10 PYQ`,`CBSE Class 12 PYQ`,`Foundation 9th-10th`],s=[];function c(){return`
         <section class="blogs-section" id="blogs">
             <div class="er-pw-blog-container" id="blog-list-view">
                 
@@ -10,7 +10,7 @@ import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from
                     <!-- Search Bar -->
                     <div class="er-pw-search-wrapper">
                         <span class="er-pw-search-icon">🔍</span>
-                        <input type="text" id="er-blog-search-input" class="er-pw-search-input" placeholder="Search articles, exam tips, PYQs, or topics..." />
+                        <input type="text" id="er-blog-search-input" class="er-pw-search-input" aria-label="Search blogs" placeholder="Search articles, exam tips, PYQs, or topics..." />
                     </div>
 
                     <!-- Our Categories Filter -->
