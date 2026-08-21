@@ -21,7 +21,7 @@ export function renderFaculty() {
             subject: "Mathematics",
             exp: "18 Years Exp.",
             desc: "Expert Mathematics mentor with 18 years of experience, specializing in Class 11th & 12th and JEE preparation.",
-            image: "/images/home teachers image/6.png",
+            image: "/images/home teachers image/6.webp",
             icon: "🔢"
         },
         {
@@ -45,7 +45,7 @@ export function renderFaculty() {
             subject: "Social Studies",
             exp: "5 Years Exp.",
             desc: "Passionate Social Studies mentor with 5 years of teaching experience, making History, Civics, and Geography engaging and accessible.",
-            image: "/images/home teachers image/5.png",
+            image: "/images/home teachers image/5.webp",
             imgStyle: "transform: scale(1.2) translateY(5px); transform-origin: bottom center;",
             icon: "🌍"
         }
