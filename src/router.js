@@ -53,7 +53,7 @@ const routes = {
         render: () => renderBanner() + renderPopularCourses() + renderFreeDemo() + renderFaculty() + renderHomeReviews() + renderImpact() + renderAppDownload(),
         postRender: () => {
           initBanner(); initFaculty(); initHomeReviews(); initImpact(); initScrollReveal();
-          setMetaTags("EduRain – Online Learning & Exam Preparation", "EduRain is an online education platform providing academic learning and exam preparation for Class 6–12, Foundation, NEET and IIT-JEE.", "https://www.edurain.in/");
+          setMetaTags("Best Online Coaching for IIT-JEE, NEET & Class 6-10 | EduRain", "EduRain is an online education platform providing academic learning and exam preparation for Class 6–12, Foundation, NEET and IIT-JEE.", "https://www.edurain.in/");
         }
       };
     }
