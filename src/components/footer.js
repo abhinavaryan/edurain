@@ -7,7 +7,7 @@ export function renderFooter() {
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="logo" style="margin-bottom: 1rem;">
-                        <a href="https://www.edurain.in" aria-label="EduRain Home" style="text-decoration: none; display: flex; align-items: center; gap: 4px;">
+                        <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 4px;">
                             <img loading="lazy" src="/images/logo.webp" alt="EduRain Logo" width="65" height="55" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
                             <div style="display: flex; flex-direction: column; line-height: 1.2; align-items: center;">
                                 <div>
@@ -48,7 +48,7 @@ export function renderFooter() {
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
+                    <h2 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Quick Links</h2>
                     <ul class="footer-links">
                         <li><a href="/courses/iit-jee">&gt; JEE Courses</a></li>
                         <li><a href="/courses/neet">&gt; NEET Courses</a></li>
@@ -58,7 +58,7 @@ export function renderFooter() {
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact Us</h4>
+                    <h2 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Contact Us</h2>
                     <p>
                         <i class="fas fa-phone"></i> 
                         <a href="tel:+918796443910" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">+91 87964 43910</a>
@@ -68,7 +68,7 @@ export function renderFooter() {
                     <p><i class="fas fa-envelope"></i> <a href="mailto:support@edurain.in" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">support@edurain.in</a></p>
                 </div>
                 <div class="footer-col">
-                    <h4>Get the App</h4>
+                    <h2 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Get the App</h2>
                     <p>Take your lessons anywhere. Download the EduRain app</p>
                     <div class="er-store-buttons" style="margin-top: 0.75rem;">
                         <a href="https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN" target="_blank" rel="noopener noreferrer" class="er-store-btn er-store-btn-play">

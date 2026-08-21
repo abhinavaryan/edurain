@@ -2660,7 +2660,7 @@ textarea {
   right: 16px;
 }
 
-.er-dot {
+.er-dot { position: relative; 
   width: 10px;
   height: 10px;
   border-radius: 999px;
@@ -4067,7 +4067,7 @@ textarea {
 
 .er-faculty-desc {
   font-size: 0.875rem;
-  color: #4b5563;
+  color: #374151; /* Darkened for a11y */
   line-height: 1.5;
 }
 
@@ -4653,4 +4653,5 @@ textarea {
     color: #ffffff;
     line-height: 1.6;
     margin: 0;
-}
+}
+.er-dot::after { content: ''; position: absolute; top: -16px; left: -16px; right: -16px; bottom: -16px; }
