@@ -64,18 +64,262 @@ export function renderFAQ(category = 'ALL') {
             </div>
         </section>
         <script type="application/ld+json">
-        ${JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": currentFaqs.map(faq => ({
-                "@type": "Question",
-                "name": faq.question,
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": faq.answer
-                }
-            }))
-        })}
+        ${JSON.stringify(
+            category === 'ALL' ? {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "CollectionPage",
+                        "@id": "https://www.edurain.in/courses/#webpage",
+                        "url": "https://www.edurain.in/courses/",
+                        "name": "Online Courses for Class 6-10, IIT-JEE & NEET | EduRain",
+                        "description": "EduRain offers online coaching for Class 6-10, foundation courses, IIT-JEE preparation, NEET coaching, board exams and competitive exam preparation.",
+                        "isPartOf": {
+                            "@id": "https://www.edurain.in/#website"
+                        },
+                        "about": {
+                            "@id": "https://www.edurain.in/#organization"
+                        },
+                        "inLanguage": "en-IN"
+                    },
+                    {
+                        "@type": "ItemList",
+                        "@id": "https://www.edurain.in/courses/#courses",
+                        "name": "EduRain Courses",
+                        "description": "Online courses offered by EduRain for Class 6-12 academics, Foundation, IIT-JEE, NEET, board exams and competitive exam preparation."
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://www.edurain.in/courses/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://www.edurain.in/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Courses",
+                                "item": "https://www.edurain.in/courses/"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "FAQPage",
+                        "@id": "https://www.edurain.in/courses/#faq",
+                        "mainEntity": currentFaqs.map(faq => ({
+                            "@type": "Question",
+                            "name": faq.question,
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": faq.answer
+                            }
+                        }))
+                    }
+                ]
+            } : category === 'JEE' ? {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "https://www.edurain.in/courses/iit-jee/#webpage",
+                        "url": "https://www.edurain.in/courses/iit-jee/",
+                        "name": "IIT-JEE Online Preparation | EduRain",
+                        "description": "EduRain offers online IIT-JEE preparation with Physics, Chemistry and Mathematics classes, live and recorded lectures, mock tests, weekly tests and exam preparation support.",
+                        "isPartOf": {
+                            "@id": "https://www.edurain.in/#website"
+                        },
+                        "about": {
+                            "@id": "https://www.edurain.in/#organization"
+                        },
+                        "mainEntity": {
+                            "@id": "https://www.edurain.in/courses/iit-jee/#course"
+                        },
+                        "inLanguage": "en-IN"
+                    },
+                    {
+                        "@type": "Course",
+                        "@id": "https://www.edurain.in/courses/iit-jee/#course",
+                        "name": "IIT-JEE Online Preparation",
+                        "description": "Online IIT-JEE preparation covering Physics, Chemistry and Mathematics with live classes, recorded lectures, mock tests, weekly tests and structured exam preparation.",
+                        "url": "https://www.edurain.in/courses/iit-jee/",
+                        "provider": {
+                            "@type": "Organization",
+                            "@id": "https://www.edurain.in/#organization",
+                            "name": "EduRain",
+                            "url": "https://www.edurain.in/"
+                        },
+                        "inLanguage": "en-IN",
+                        "about": [
+                            "JEE Main",
+                            "JEE Advanced",
+                            "Physics",
+                            "Chemistry",
+                            "Mathematics"
+                        ]
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://www.edurain.in/courses/iit-jee/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://www.edurain.in/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Courses",
+                                "item": "https://www.edurain.in/courses/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "IIT-JEE",
+                                "item": "https://www.edurain.in/courses/iit-jee/"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "FAQPage",
+                        "@id": "https://www.edurain.in/courses/iit-jee/#faq",
+                        "mainEntity": currentFaqs.map(faq => ({
+                            "@type": "Question",
+                            "name": faq.question,
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": faq.answer
+                            }
+                        }))
+                    }
+                ]
+            } : category === 'NEET' ? {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "https://www.edurain.in/courses/neet/#webpage",
+                        "url": "https://www.edurain.in/courses/neet/",
+                        "name": "NEET Online Preparation | EduRain",
+                        "description": "EduRain offers online NEET preparation covering Physics, Chemistry and Biology with live classes, recorded lectures, mock tests, weekly tests and structured exam preparation.",
+                        "isPartOf": {
+                            "@id": "https://www.edurain.in/#website"
+                        },
+                        "about": {
+                            "@id": "https://www.edurain.in/#organization"
+                        },
+                        "mainEntity": {
+                            "@id": "https://www.edurain.in/courses/neet/#course"
+                        },
+                        "inLanguage": "en-IN"
+                    },
+                    {
+                        "@type": "Course",
+                        "@id": "https://www.edurain.in/courses/neet/#course",
+                        "name": "NEET Online Preparation",
+                        "description": "Online NEET preparation covering Physics, Chemistry and Biology with live classes, recorded lectures, mock tests, weekly tests and structured exam preparation.",
+                        "url": "https://www.edurain.in/courses/neet/",
+                        "provider": {
+                            "@id": "https://www.edurain.in/#organization"
+                        },
+                        "inLanguage": "en-IN",
+                        "about": [
+                            "NEET",
+                            "Physics",
+                            "Chemistry",
+                            "Biology"
+                        ]
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://www.edurain.in/courses/neet/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://www.edurain.in/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Courses",
+                                "item": "https://www.edurain.in/courses/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "NEET",
+                                "item": "https://www.edurain.in/courses/neet/"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "FAQPage",
+                        "@id": "https://www.edurain.in/courses/neet/#faq",
+                        "mainEntity": currentFaqs.map(faq => ({
+                            "@type": "Question",
+                            "name": faq.question,
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": faq.answer
+                            }
+                        }))
+                    }
+                ]
+            } : category === 'FOUNDATION' ? {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "Course",
+                        "@id": "https://www.edurain.in/courses/foundation/#course",
+                        "name": "Foundation Course for Class 6 to 10",
+                        "description": "EduRain Foundation Course is designed for students in Class 6th to 10th to build a strong foundation in Maths, Science and English while preparing early for future competitive exams such as IIT-JEE and NEET.",
+                        "url": "https://www.edurain.in/courses/foundation/",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "EduRain",
+                            "url": "https://www.edurain.in/"
+                        },
+                        "educationalLevel": "Class 6 to Class 10",
+                        "teaches": [
+                            "Mathematics",
+                            "Science",
+                            "English",
+                            "Foundation Preparation for IIT-JEE",
+                            "Foundation Preparation for NEET"
+                        ]
+                    },
+                    {
+                        "@type": "FAQPage",
+                        "@id": "https://www.edurain.in/courses/foundation/#faq",
+                        "mainEntity": currentFaqs.map(faq => ({
+                            "@type": "Question",
+                            "name": faq.question,
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": faq.answer
+                            }
+                        }))
+                    }
+                ]
+            } : {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": currentFaqs.map(faq => ({
+                    "@type": "Question",
+                    "name": faq.question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.answer
+                    }
+                }))
+            }
+        )}
         </script>
     `;
 }

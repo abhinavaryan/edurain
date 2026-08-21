@@ -102,7 +102,7 @@ const routes = {
   },
   '/privacy': {
     render: () => renderPrivacy(),
-    postRender: () => { }
+    postRender: () => setMetaTags("Privacy Policy - EduRain", "Privacy policy of EduRain", "https://www.edurain.in/privacy")
   },
   '/terms': {
     render: () => renderTerms(),
