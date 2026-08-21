@@ -25,7 +25,7 @@ export function renderNavbar() {
                 <div class="auth-btn-area">
                     <button class="btn btn-accent login-btn">Login</button>
                 </div>
-                <button class="hamburger" id="hamburger-btn">
+                <button class="hamburger" id="hamburger-btn" aria-label="Open Mobile Menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -45,7 +45,7 @@ export function renderNavbar() {
                         </div>
                     </a>
                 </div>
-                <button class="mobile-menu-close" id="mobile-menu-close">&times;</button>
+                <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close Mobile Menu">&times;</button>
             </div>
             <div class="mobile-menu-body">
                 <a href="/" class="nav-link active">Home</a>

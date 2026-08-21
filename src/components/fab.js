@@ -30,7 +30,7 @@ export function initFab() {
             <div class="er-chat-footer">
                 <div class="er-chat-input-area">
                     <input type="text" id="er-chat-input" placeholder="Type your message..." autocomplete="off">
-                    <button id="er-chat-send">
+                    <button id="er-chat-send" aria-label="Send message">
                         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
                     </button>
                 </div>

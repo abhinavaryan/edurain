@@ -9,7 +9,7 @@ export function renderHero() {
                     <p>Join EduRain to access world-class education from anywhere. Empowering millions to achieve their dreams with interactive courses and expert guidance.</p>
                     <div class="search-bar">
                         <input type="text" placeholder="Search courses..." />
-                        <button class="search-icon-btn">🔍</button>
+                        <button class="search-icon-btn" aria-label="Search">🔍</button>
                     </div>
                     <div class="cta-buttons">
                         <button class="btn btn-accent btn-lg">Download App</button>

@@ -199,15 +199,26 @@ export function initJourney() {
 
             modal.classList.add('active');
 
-            if (window.mermaid) {
-                try {
-                    window.mermaid.initialize({ startOnLoad: false, theme: 'dark' });
-                    window.mermaid.run({
-                        nodes: diagramContainer.querySelectorAll('.mermaid')
-                    });
-                } catch (e) {
-                    console.error('Mermaid render error:', e);
+            const renderDiagram = () => {
+                if (window.mermaid) {
+                    try {
+                        window.mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+                        window.mermaid.run({
+                            nodes: diagramContainer.querySelectorAll('.mermaid')
+                        });
+                    } catch (e) {
+                        console.error('Mermaid render error:', e);
+                    }
                 }
+            };
+
+            if (!window.mermaid) {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+                script.onload = renderDiagram;
+                document.head.appendChild(script);
+            } else {
+                renderDiagram();
             }
         });
     });

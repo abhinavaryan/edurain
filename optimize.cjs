@@ -27,7 +27,6 @@ filesToUpdate.forEach(file => {
 const indexPath = path.join(workspacePath, 'index.html');
 if(fs.existsSync(indexPath)) {
     let indexContent = fs.readFileSync(indexPath, 'utf8');
-    indexContent = indexContent.replace('<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>', '<script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>');
     fs.writeFileSync(indexPath, indexContent, 'utf8');
 }
 console.log('Optimizations applied.');

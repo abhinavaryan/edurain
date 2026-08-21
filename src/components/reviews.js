@@ -19,7 +19,7 @@ export function renderReviews() {
             </div>
             <div class="review-stars">⭐⭐⭐⭐⭐</div>
             <p class="review-quote">"${review.quote}"</p>
-            <h4>${review.name}</h4>
+            <h3>${review.name}</h3>
             <p class="review-course">${review.course}</p>
         </div>
         `;
@@ -36,13 +36,13 @@ export function renderReviews() {
                 <p>Real stories from our learners</p>
             </div>
             <div class="reviews-carousel">
-                <button class="carousel-btn carousel-prev">&larr;</button>
+                <button class="carousel-btn carousel-prev" aria-label="Previous Review">&larr;</button>
                 <div class="carousel-viewport">
                     <div class="carousel-track" id="review-track">
                         ${reviewsHtml}
                     </div>
                 </div>
-                <button class="carousel-btn carousel-next">&rarr;</button>
+                <button class="carousel-btn carousel-next" aria-label="Next Review">&rarr;</button>
                 <div class="carousel-dots" id="carousel-dots">
                     ${dotsHtml}
                 </div>
