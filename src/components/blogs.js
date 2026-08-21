@@ -140,7 +140,7 @@ function renderBlogGridItems(blogs) {
                 </div>
                 <div class="er-pw-card-body">
                     <h3 class="er-pw-card-title" style="font-size:1.2rem; margin-bottom:0.5rem;">${blog.title}</h3>
-                    <p class="er-pw-card-excerpt" style="font-size:0.95rem; color:#64748b; margin-bottom:1rem; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;">${blog.excerpt || ''}</p>
+                    <p class="er-pw-card-excerpt" style="font-size:0.95rem; color:#64748b; margin-bottom:1rem; display:-webkit-box; -webkit-line-clamp:3; line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;">${blog.excerpt || ''}</p>
                     <div class="er-pw-card-meta">
                         <span class="er-pw-card-author">By ${blog.author || 'EduRain Team'}</span>
                         <span class="er-pw-card-date">${dateStr}</span>
