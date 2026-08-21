@@ -5,13 +5,13 @@ export function renderNavbar() {
         <nav class="navbar" id="main-nav">
             <div class="navbar-container">
                 <div class="logo">
-                    <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                    <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 4px;">
                         <img src="/images/logo.png" alt="EduRain Logo" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
-                        <div style="display: flex; flex-direction: column; line-height: 1.2;">
+                        <div style="display: flex; flex-direction: column; line-height: 1.2; align-items: center;">
                             <div>
                                 <span class="text-white">Edu</span><span class="text-accent">Rain</span>
                             </div>
-                            <span style="font-size: 0.45rem; color: #a7f3d0; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Victory Starts Here</span>
+                            <span style="font-size: 0.45rem; color: #a7f3d0; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; margin-left: -4px;">Victory Starts Here</span>
                         </div>
                     </a>
                 </div>
