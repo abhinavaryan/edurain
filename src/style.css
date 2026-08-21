@@ -2604,21 +2604,21 @@ textarea {
 
 /* ===== HERO BANNER SLIDER (Restored Original Aspect Ratio & Sizing) ===== */
 .er-slide-aspect {
-  aspect-ratio: 4096 / 1200;
+  aspect-ratio: 4096 / 773;
   max-height: 480px;
 }
 
 @media (max-width: 1024px) {
   .er-slide-aspect {
-    aspect-ratio: 21 / 9;
+    aspect-ratio: 4096 / 773;
     max-height: 380px;
   }
 }
 
 @media (max-width: 640px) {
   .er-slide-aspect {
-    aspect-ratio: 16 / 9;
-    max-height: 280px;
+    aspect-ratio: 390 / 173;
+    max-height: none;
   }
 }
 
@@ -3955,22 +3955,6 @@ textarea {
 }
 
 
-/* Responsive Banner Aspect Ratio */
-.er-slide-aspect {
-  aspect-ratio: 4096 / 773;
-}
-
-@media (max-width: 1024px) {
-  .er-slide-aspect {
-    aspect-ratio: 4096 / 773;
-  }
-}
-
-@media (max-width: 640px) {
-  .er-slide-aspect {
-    aspect-ratio: 4096 / 773;
-  }
-}
 
 /* ===== FACULTY SECTION STYLES ===== */
 .er-faculty-carousel-wrapper {
