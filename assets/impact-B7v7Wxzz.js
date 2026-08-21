@@ -12,7 +12,7 @@ function e(){return`
             <div class="er-impact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.618rem; margin-top: 2.618rem;">
 
                 <!-- Card 1 — Students -->
-                <div class="er-impact-card glass-card er-reveal visible" data-color="#16a34a" style="background: #f0fdf4 !important; border: 1px solid rgba(22, 163, 74, 0.25); border-radius: 1.618rem; padding: 1.618rem; box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.1); position: relative; overflow: hidden; transition: all 0.3s ease;">
+                <div class="er-impact-card glass-card er-reveal visible" data-color="#166534" style="background: #f0fdf4 !important; border: 1px solid rgba(22, 101, 52, 0.25); border-radius: 1.618rem; padding: 1.618rem; box-shadow: 0 10px 25px -5px rgba(22, 101, 52, 0.1); position: relative; overflow: hidden; transition: all 0.3s ease;">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
                         <span style="font-size: 2.5rem;">🎓</span>
                         <span style="background: rgba(22, 163, 74, 0.15); color: #15803d; border-radius: 50px; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700;">Community</span>
@@ -29,7 +29,7 @@ function e(){return`
                 </div>
 
                 <!-- Card 2 — Mock Tests -->
-                <div class="er-impact-card glass-card er-reveal visible" data-color="#ef4444" style="background: #fef2f2 !important; border: 1px solid rgba(239, 68, 68, 0.25); border-radius: 1.618rem; padding: 1.618rem; box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.1); position: relative; overflow: hidden; transition: all 0.3s ease;">
+                <div class="er-impact-card glass-card er-reveal visible" data-color="#b91c1c" style="background: #fef2f2 !important; border: 1px solid rgba(185, 28, 28, 0.25); border-radius: 1.618rem; padding: 1.618rem; box-shadow: 0 10px 25px -5px rgba(185, 28, 28, 0.1); position: relative; overflow: hidden; transition: all 0.3s ease;">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
                         <span style="font-size: 2.5rem;">📝</span>
                         <span style="background: rgba(239, 68, 68, 0.15); color: #b91c1c; border-radius: 50px; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700;">Test Series</span>
@@ -46,7 +46,7 @@ function e(){return`
                 </div>
 
                 <!-- Card 3 — Video Lectures -->
-                <div class="er-impact-card glass-card er-reveal visible" data-color="#0284c7" style="background: #f0f9ff !important; border: 1px solid rgba(2, 132, 199, 0.25); border-radius: 1.618rem; padding: 1.618rem; box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.1); position: relative; overflow: hidden; transition: all 0.3s ease;">
+                <div class="er-impact-card glass-card er-reveal visible" data-color="#0369a1" style="background: #f0f9ff !important; border: 1px solid rgba(3, 105, 161, 0.25); border-radius: 1.618rem; padding: 1.618rem; box-shadow: 0 10px 25px -5px rgba(3, 105, 161, 0.1); position: relative; overflow: hidden; transition: all 0.3s ease;">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
                         <span style="font-size: 2.5rem;">🎬</span>
                         <span style="background: rgba(2, 132, 199, 0.15); color: #0369a1; border-radius: 50px; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700;">Content</span>
@@ -63,7 +63,7 @@ function e(){return`
                 </div>
 
                 <!-- Card 4 — Practice Papers -->
-                <div class="er-impact-card glass-card er-reveal visible" data-color="#7c3aed" style="background: #faf5ff !important; border: 1px solid rgba(124, 58, 237, 0.25); border-radius: 1.618rem; padding: 1.618rem; box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.1); position: relative; overflow: hidden; transition: all 0.3s ease;">
+                <div class="er-impact-card glass-card er-reveal visible" data-color="#5b21b6" style="background: #faf5ff !important; border: 1px solid rgba(91, 33, 182, 0.25); border-radius: 1.618rem; padding: 1.618rem; box-shadow: 0 10px 25px -5px rgba(91, 33, 182, 0.1); position: relative; overflow: hidden; transition: all 0.3s ease;">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
                         <span style="font-size: 2.5rem;">📄</span>
                         <span style="background: rgba(124, 58, 237, 0.15); color: #6d28d9; border-radius: 50px; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700;">Practice</span>

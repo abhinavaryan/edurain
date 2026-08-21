@@ -11,7 +11,7 @@ function e(){return`
         <div class="er-course-card glass-card er-reveal visible" style="background: #ffffff !important; border: 1px solid rgba(22, 163, 74, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
             <div class="er-course-blob" style="background:${e.blobColor};"></div>
             <div class="er-course-icon" style="background:${e.iconBg}; color: #ffffff;">${e.icon}</div>
-            <span class="er-course-cat" style="color: #15803d; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em;">${e.category}</span>
+            <span class="er-course-cat" style="color: #14532d; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em;">${e.category}</span>
             <h3 class="er-course-title" style="color: #0e3a24; font-weight: 800; font-size: 1.5rem; margin-top: 0.25rem;">${e.title}</h3>
           
             <!-- Tags Section -->
@@ -23,7 +23,7 @@ function e(){return`
                 `).join(``)}
             </div>
 
-            <a href="${e.link}" class="er-explore-link" style="color: #16a34a; font-weight: 700;">
+            <a href="${e.link}" class="er-explore-link" style="color: #166534; font-weight: 700;">
                 Explore Course
                 <span class="er-explore-arrow" style="background: #16a34a; color: #ffffff;">→</span>
             </a>
