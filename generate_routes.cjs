@@ -106,11 +106,14 @@ Object.keys(routesMeta).forEach(route => {
   finalHtml = finalHtml.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${meta.title}">`);
   finalHtml = finalHtml.replace(/<meta name="twitter:description"[\s\S]*?content="[^"]*">/, `<meta name="twitter:description" content="${meta.desc}">`);
 
-  const routeDir = path.join(distDir, route);
-  if (!fs.existsSync(routeDir)) {
-    fs.mkdirSync(routeDir, { recursive: true });
+  const htmlPath = path.join(distDir, route + '.html');
+  const dirPath = path.dirname(htmlPath);
+  
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true });
   }
-  fs.writeFileSync(path.join(routeDir, 'index.html'), finalHtml);
+  
+  fs.writeFileSync(htmlPath, finalHtml);
 });
 
-console.log('Successfully generated static index.html files for SPA routes with injected SEO metadata.');
+console.log('Successfully generated static HTML files (without trailing slashes) for SPA routes with injected SEO metadata.');
