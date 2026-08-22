@@ -135,6 +135,10 @@ export function renderBlogAdmin() {
                             <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
                                 <h3 style="margin-top: 0; color: #4ade80;">SEO Meta Data</h3>
                                 
+                                <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Custom URL Slug</label>
+                                <span style="display: block; font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.5rem;">e.g., polynomials-class-10-made-easy (leave empty to auto-generate from ID)</span>
+                                <input type="text" id="blog-slug" placeholder="custom-url-slug" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
+                                
                                 <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Meta Title</label>
                                 <input type="text" id="seo-title" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
                                 
@@ -403,6 +407,7 @@ export function initBlogAdmin() {
         document.getElementById('blog-category').value = data.category || '';
         document.getElementById('blog-tags').value = (data.tags || []).join(', ');
         document.getElementById('blog-author').value = data.author || 'EduRain Team';
+        document.getElementById('blog-slug').value = data.slug || '';
         
         if (data.seo) {
             document.getElementById('seo-title').value = data.seo.metaTitle || '';
@@ -443,6 +448,11 @@ export function initBlogAdmin() {
             const tags = document.getElementById('blog-tags').value.split(',').map(t => t.trim()).filter(t => t);
             const author = document.getElementById('blog-author').value;
             
+            let slug = document.getElementById('blog-slug').value.trim().toLowerCase();
+            if (slug) {
+                slug = slug.replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+            }
+            
             const seo = {
                 metaTitle: document.getElementById('seo-title').value,
                 metaDescription: document.getElementById('seo-desc').value,
@@ -452,6 +462,7 @@ export function initBlogAdmin() {
 
             const blogData = {
                 title,
+                slug,
                 excerpt,
                 content,
                 status,

@@ -272,7 +272,12 @@ export const initRouter = () => {
       window.history.replaceState(window.history.state, "", path + window.location.search + window.location.hash);
     }
 
-    const routeConfig = routes[path];
+    let routeConfig = routes[path];
+    
+    if (!routeConfig && path.startsWith('/blogs/')) {
+      routeConfig = routes['/blogs'];
+    }
+    
     let route;
     
     if (routeConfig) {

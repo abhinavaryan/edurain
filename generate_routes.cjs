@@ -72,48 +72,101 @@ const routesMeta = {
   }
 };
 
-const distDir = path.join(__dirname, 'dist');
-const indexHtmlPath = path.join(distDir, 'index.html');
+const https = require('https');
 
-if (!fs.existsSync(indexHtmlPath)) {
-  console.error('dist/index.html not found!');
-  process.exit(1);
+function fetchBlogs() {
+    return new Promise((resolve, reject) => {
+        https.get('https://firestore.googleapis.com/v1/projects/edurain-pvt/databases/(default)/documents/blogs', (res) => {
+            let data = '';
+            res.on('data', chunk => data += chunk);
+            res.on('end', () => {
+                try {
+                    const json = JSON.parse(data);
+                    resolve(json.documents || []);
+                } catch(e) {
+                    reject(e);
+                }
+            });
+        }).on('error', err => reject(err));
+    });
 }
 
-const indexHtml = fs.readFileSync(indexHtmlPath, 'utf8');
-const indexHtmlWithoutSchema = indexHtml.replace(/<!-- JSON-LD Schema Markup -->[\s\S]*?<\/script>/, '');
-
-Object.keys(routesMeta).forEach(route => {
-  const meta = routesMeta[route];
-  let finalHtml = indexHtmlWithoutSchema;
-
-  // Replace Canonical URL
-  finalHtml = finalHtml.replace(/<link rel="canonical" href="[^"]*"\s*\/>/, `<link rel="canonical" href="${meta.canonical}" />`);
-  
-  // Replace Title
-  finalHtml = finalHtml.replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`);
-  
-  // Replace Description (multiline match)
-  finalHtml = finalHtml.replace(/<meta name="description"[\s\S]*?content="[^"]*"[\s\S]*?>/, `<meta name="description" content="${meta.desc}" />`);
-
-  // Replace Open Graph Tags
-  finalHtml = finalHtml.replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${meta.canonical}">`);
-  finalHtml = finalHtml.replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${meta.title}">`);
-  finalHtml = finalHtml.replace(/<meta property="og:description"[\s\S]*?content="[^"]*">/, `<meta property="og:description" content="${meta.desc}">`);
-
-  // Replace Twitter Tags
-  finalHtml = finalHtml.replace(/<meta name="twitter:url" content="[^"]*">/, `<meta name="twitter:url" content="${meta.canonical}">`);
-  finalHtml = finalHtml.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${meta.title}">`);
-  finalHtml = finalHtml.replace(/<meta name="twitter:description"[\s\S]*?content="[^"]*">/, `<meta name="twitter:description" content="${meta.desc}">`);
-
-  const htmlPath = path.join(distDir, route + '.html');
-  const dirPath = path.dirname(htmlPath);
-  
-  if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath, { recursive: true });
+(async function generate() {
+  try {
+    const blogs = await fetchBlogs();
+    blogs.forEach(doc => {
+      const fields = doc.fields;
+      if (fields && fields.status && fields.status.stringValue === 'published') {
+        const id = doc.name.split('/').pop();
+        const slug = (fields.slug && fields.slug.stringValue) ? fields.slug.stringValue : id;
+        
+        let metaTitle = fields.title && fields.title.stringValue ? fields.title.stringValue : 'EduRain Blog';
+        let metaDesc = fields.excerpt && fields.excerpt.stringValue ? fields.excerpt.stringValue : 'Read this blog on EduRain';
+        
+        if (fields.seo && fields.seo.mapValue && fields.seo.mapValue.fields) {
+            if (fields.seo.mapValue.fields.metaTitle && fields.seo.mapValue.fields.metaTitle.stringValue) {
+                metaTitle = fields.seo.mapValue.fields.metaTitle.stringValue;
+            }
+            if (fields.seo.mapValue.fields.metaDescription && fields.seo.mapValue.fields.metaDescription.stringValue) {
+                metaDesc = fields.seo.mapValue.fields.metaDescription.stringValue;
+            }
+        }
+        
+        routesMeta[`blogs/${slug}`] = {
+            title: metaTitle,
+            desc: metaDesc,
+            canonical: `https://www.edurain.in/blogs/${slug}`
+        };
+      }
+    });
+    console.log(`Fetched ${blogs.length} blogs from Firebase for SEO generation.`);
+  } catch(e) {
+    console.error("Error fetching blogs for SEO generation:", e);
   }
-  
-  fs.writeFileSync(htmlPath, finalHtml);
-});
 
-console.log('Successfully generated static HTML files (without trailing slashes) for SPA routes with injected SEO metadata.');
+  const distDir = path.join(__dirname, 'dist');
+  const indexHtmlPath = path.join(distDir, 'index.html');
+
+  if (!fs.existsSync(indexHtmlPath)) {
+    console.error('dist/index.html not found!');
+    process.exit(1);
+  }
+
+  const indexHtml = fs.readFileSync(indexHtmlPath, 'utf8');
+  const indexHtmlWithoutSchema = indexHtml.replace(/<!-- JSON-LD Schema Markup -->[\s\S]*?<\/script>/, '');
+
+  Object.keys(routesMeta).forEach(route => {
+    const meta = routesMeta[route];
+    let finalHtml = indexHtmlWithoutSchema;
+
+    // Replace Canonical URL
+    finalHtml = finalHtml.replace(/<link rel="canonical" href="[^"]*"\s*\/>/, `<link rel="canonical" href="${meta.canonical}" />`);
+    
+    // Replace Title
+    finalHtml = finalHtml.replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`);
+    
+    // Replace Description (multiline match)
+    finalHtml = finalHtml.replace(/<meta name="description"[\s\S]*?content="[^"]*"[\s\S]*?>/, `<meta name="description" content="${meta.desc}" />`);
+
+    // Replace Open Graph Tags
+    finalHtml = finalHtml.replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${meta.canonical}">`);
+    finalHtml = finalHtml.replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${meta.title}">`);
+    finalHtml = finalHtml.replace(/<meta property="og:description"[\s\S]*?content="[^"]*">/, `<meta property="og:description" content="${meta.desc}">`);
+
+    // Replace Twitter Tags
+    finalHtml = finalHtml.replace(/<meta name="twitter:url" content="[^"]*">/, `<meta name="twitter:url" content="${meta.canonical}">`);
+    finalHtml = finalHtml.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${meta.title}">`);
+    finalHtml = finalHtml.replace(/<meta name="twitter:description"[\s\S]*?content="[^"]*">/, `<meta name="twitter:description" content="${meta.desc}">`);
+
+    const htmlPath = path.join(distDir, route + '.html');
+    const dirPath = path.dirname(htmlPath);
+    
+    if (!fs.existsSync(dirPath)) {
+      fs.mkdirSync(dirPath, { recursive: true });
+    }
+    
+    fs.writeFileSync(htmlPath, finalHtml);
+  });
+
+  console.log('Successfully generated static HTML files (without trailing slashes) for SPA routes with injected SEO metadata.');
+})();

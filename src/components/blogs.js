@@ -97,7 +97,7 @@ export function renderBlogs() {
                             <div class="pw-sidebar-widget pw-app-promo-widget">
                                 <h3>EduRain Learning App</h3>
                                 <p>Get live classes, DPPs, doubt solving & mock test series on your phone.</p>
-                                <a href="/appDownload" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; margin-top: 0.5rem; background: #16a34a; border: none; border-radius: 8px;">
+                                <a href="https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; margin-top: 0.5rem; background: #16a34a; border: none; border-radius: 8px;">
                                     Download App Free
                                 </a>
                             </div>
@@ -184,11 +184,18 @@ export async function initBlogs() {
 
         filterAndRender();
 
-        // Check if URL has a blog ID on initial load after data is fetched
-        const hashParts = window.location.hash.split('?')[0].split('/');
-        if (hashParts.length > 1 && hashParts[0] === '#blogs') {
-            const initialBlogId = hashParts[1];
-            openBlog(initialBlogId, false);
+        // Check if URL has a slug or ID on initial load
+        const pathParts = window.location.pathname.split('/');
+        if (pathParts.length > 2 && pathParts[1] === 'blogs') {
+            const initialSlug = pathParts[2];
+            openBlog(initialSlug, false);
+        } else {
+            // Fallback for old hash URLs
+            const hashParts = window.location.hash.split('?')[0].split('/');
+            if (hashParts.length > 1 && hashParts[0] === '#blogs') {
+                const initialBlogId = hashParts[1];
+                openBlog(initialBlogId, false);
+            }
         }
 
     } catch (error) {
@@ -238,7 +245,7 @@ export async function initBlogs() {
     }
 
     function openBlog(blogId, updateUrl = true) {
-        const blog = liveBlogsData.find(b => b.id === blogId);
+        const blog = liveBlogsData.find(b => b.id === blogId || b.slug === blogId);
         if (!blog) return;
 
         let dateStr = 'Recently';
@@ -331,13 +338,13 @@ export async function initBlogs() {
             });
         });
 
-        if (updateUrl) history.pushState(null, null, '#blogs/' + blog.id);
+        if (updateUrl) history.pushState(null, null, '/blogs/' + (blog.slug || blog.id));
     }
 
     function closeBlog() {
         readerView.style.display = 'none';
         listView.style.display = 'block';
-        history.pushState(null, null, '#blogs');
+        history.pushState(null, null, '/blogs');
         
         // Reset SEO Tags to default blogs page
         document.title = "IIT JEE, NEET & Foundation Blogs | EduRain";
