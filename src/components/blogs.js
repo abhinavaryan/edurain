@@ -89,7 +89,7 @@ export function renderBlogs() {
                                     <h3>Recommended for you</h3>
                                     <a href="/courses" class="pw-see-all">See All &rarr;</a>
                                 </div>
-                                <div class="pw-sidebar-courses-list">
+                                <div class="pw-sidebar-courses-list" id="pw-sidebar-courses-list">
                                     ${recommendedCoursesHtml}
                                 </div>
                             </div>
@@ -101,6 +101,9 @@ export function renderBlogs() {
                                     Download App Free
                                 </a>
                             </div>
+
+                            <!-- Custom Sidebar Banner Container -->
+                            <div id="pw-sidebar-banner-container" style="display: none; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);"></div>
                         </div>
                     </div>
 
@@ -282,6 +285,54 @@ export async function initBlogs() {
             document.title = blog.seo.metaTitle || blog.title;
             let metaDesc = document.querySelector('meta[name="description"]');
             if (metaDesc) metaDesc.content = blog.seo.metaDescription || blog.excerpt;
+        }
+
+        // Populate recommended courses dynamically
+        const coursesListEl = document.getElementById('pw-sidebar-courses-list');
+        if (coursesListEl) {
+            let activeCourses = [];
+            if (Array.isArray(blog.recommendedCourses) && blog.recommendedCourses.length > 0) {
+                // Filter the courses from coursesData that are selected
+                activeCourses = coursesData.filter(c => blog.recommendedCourses.includes(c.id));
+            }
+            
+            // Fallback to first 3 if none specified or not found
+            if (activeCourses.length === 0) {
+                activeCourses = coursesData.slice(0, 3);
+            }
+
+            coursesListEl.innerHTML = activeCourses.map(course => `
+                <div class="pw-sidebar-course-card">
+                    <img loading="lazy" src="${course.thumbnail}" alt="${course.title}" class="pw-sidebar-course-img" />
+                    <div class="pw-sidebar-course-info">
+                        <h4 class="pw-sidebar-course-title">${course.title}</h4>
+                        <div class="pw-sidebar-course-price">
+                            <span class="price-current">${course.price}</span>
+                            <span class="price-discount-badge">25% OFF</span>
+                        </div>
+                        <a href="${course.link || '#courses'}" target="_blank" rel="noopener" class="pw-sidebar-enroll-btn">
+                            Enroll Now
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Populate custom banner dynamically
+        const bannerContainerEl = document.getElementById('pw-sidebar-banner-container');
+        if (bannerContainerEl) {
+            if (blog.sidebarBannerImage) {
+                const targetLink = blog.sidebarBannerLink || '#';
+                bannerContainerEl.innerHTML = `
+                    <a href="${targetLink}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%;">
+                        <img loading="lazy" src="${blog.sidebarBannerImage}" alt="Promo Banner" style="width: 100%; display: block; border-radius: 12px; object-fit: cover;" />
+                    </a>
+                `;
+                bannerContainerEl.style.display = 'block';
+            } else {
+                bannerContainerEl.style.display = 'none';
+                bannerContainerEl.innerHTML = '';
+            }
         }
 
         modalMain.innerHTML = `
