@@ -4298,19 +4298,52 @@ textarea {
 }
 
 /* ============================================
-   ABOUT US SECTION (CLEAN & MINIMAL)
+   ABOUT US SECTION (PREMIUM & DYNAMIC)
    ============================================ */
 .er-about-hero {
     position: relative;
-    background: #ffffff;
+    background: var(--primary-dark);
     min-height: 100vh;
     padding: calc(var(--space-xl) * 1.618) var(--space-md);
     overflow: hidden;
-    color: var(--charcoal, #121212);
+    color: var(--text-primary);
 }
 
 .er-about-bg-mesh {
-    display: none; /* Removed flashy orbs as requested */
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    display: block;
+}
+
+.mesh-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: erFloat 10s infinite alternate ease-in-out;
+}
+
+.mesh-orb-1 {
+    top: -10%; left: -10%;
+    width: 50vw; height: 50vw;
+    background: radial-gradient(circle, var(--primary-light), transparent 70%);
+    animation-delay: 0s;
+}
+
+.mesh-orb-2 {
+    bottom: -10%; right: -10%;
+    width: 60vw; height: 60vw;
+    background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+    animation-delay: -3s;
+}
+
+.mesh-orb-3 {
+    top: 40%; left: 60%;
+    width: 40vw; height: 40vw;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.2), transparent 70%);
+    animation-delay: -5s;
 }
 
 .er-about-container {
@@ -4321,29 +4354,33 @@ textarea {
 }
 
 .er-about-header {
-    margin-bottom: var(--space-xl);
+    margin-bottom: calc(var(--space-xl) * 1.618);
     text-align: center;
+    animation: fadeInUp var(--duration-slow) var(--ease);
 }
 
 .er-about-title {
-    font-size: 3.5rem;
+    font-size: var(--fs-4xl);
     font-weight: 800;
     letter-spacing: -1px;
-    color: var(--primary, #064E3B);
+    background: linear-gradient(to right, #fff, var(--text-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: var(--space-sm);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .er-about-subtitle {
-    font-size: 1.25rem;
-    color: var(--text-muted, #6B7280);
+    font-size: var(--fs-xl);
+    color: var(--text-secondary);
     font-weight: 500;
 }
 
 .er-about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-lg);
-    margin-bottom: var(--space-lg);
+    gap: calc(var(--space-lg) * 1.618);
+    margin-bottom: calc(var(--space-lg) * 1.618);
 }
 
 @media (max-width: 900px) {
@@ -4355,39 +4392,72 @@ textarea {
 .er-about-col-left, .er-about-col-right {
     display: flex;
     flex-direction: column;
-    gap: var(--space-lg);
+    gap: calc(var(--space-lg) * 1.618);
 }
 
+/* Strict adherence to the requested glassmorphism rule: bg-white/10 backdrop-blur-md border border-white/20 */
 .er-glass-card {
-    /* Strict adherence to the requested glassmorphism rule */
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    /* Soft shadow to make the white glass card visible on white background */
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
-    border-radius: 24px;
-    padding: calc(var(--space-lg) * 1.2);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: var(--radius-lg);
+    padding: calc(var(--space-lg) * 1.618);
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+    color: var(--text-primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.er-glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    opacity: 0.5;
 }
 
 .er-glass-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 30px 50px -15px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 40px var(--primary-glow);
+    border-color: rgba(255, 255, 255, 0.35) !important;
 }
 
+.er-card-highlight {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05)) !important;
+    border: 1px solid rgba(250, 204, 21, 0.4) !important;
+}
+
+.er-card-highlight:hover {
+    border-color: var(--accent) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 50px var(--accent-glow) !important;
+}
 
 .er-about-card h2 {
-    font-size: 1.75rem;
+    font-size: var(--fs-2xl);
     font-weight: 700;
-    margin-bottom: var(--space-sm);
-    color: var(--charcoal, #121212);
+    margin-bottom: var(--space-md);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.er-about-card h2::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
 }
 
 .er-about-card p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #475569;
+    font-size: var(--fs-lg);
+    line-height: 1.618;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .er-about-list {
@@ -4401,42 +4471,50 @@ textarea {
 }
 
 .er-about-list li {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: #475569;
-    padding-left: 1.5rem;
+    font-size: var(--fs-lg);
+    line-height: 1.618;
+    color: rgba(255, 255, 255, 0.85);
+    padding-left: 2rem;
     position: relative;
+    transition: transform 0.3s var(--ease);
+}
+
+.er-about-list li:hover {
+    transform: translateX(8px);
 }
 
 .er-about-list li::before {
-    content: '✓';
-    color: var(--primary, #064E3B);
-    font-weight: bold;
+    content: '✦';
+    color: var(--accent);
     position: absolute;
     left: 0;
     top: 2px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    filter: drop-shadow(0 0 5px var(--accent-glow));
 }
 
 .er-about-list li strong {
-    color: var(--charcoal, #121212);
+    color: var(--white);
     font-weight: 700;
+    letter-spacing: 0.02em;
 }
 
 .er-about-promise-card {
-    padding: calc(var(--space-xl) * 1.2);
+    background: linear-gradient(to right, rgba(6, 78, 59, 0.5), rgba(2, 44, 34, 0.5)) !important;
+    padding: calc(var(--space-xl) * 1.618);
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #f8fafc; /* slightly off-white for the promise card to stand out */
+    border-top: 2px solid rgba(250, 204, 21, 0.5) !important;
 }
 
 .er-promise-tagline {
-    font-size: 2rem;
+    font-size: var(--fs-3xl);
     font-weight: 800;
     margin-top: var(--space-lg);
-    color: var(--primary, #064E3B);
+    color: var(--accent);
+    text-shadow: 0 0 20px var(--accent-glow);
 }
 
 /* ============================================
