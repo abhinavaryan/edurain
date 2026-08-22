@@ -307,6 +307,10 @@ export function initBlogAdmin() {
 
     // Initialize Quill Rich Text Editor
     function initQuill() {
+        // Use inline styles for alignment to preserve formatting and work natively on frontend
+        const AlignStyle = Quill.import('attributors/style/align');
+        Quill.register(AlignStyle, true);
+
         quill = new Quill('#quill-editor', {
             theme: 'snow',
             modules: {
@@ -315,6 +319,7 @@ export function initBlogAdmin() {
                         [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
                         ['bold', 'italic', 'underline', 'strike'],
                         [{ 'color': [] }, { 'background': [] }],
+                        [{ 'align': [] }], // Added text alignment
                         [{ 'list': 'ordered'}, { 'list': 'bullet' }],
                         ['link', 'image', 'video'],
                         ['clean']
@@ -322,6 +327,9 @@ export function initBlogAdmin() {
                     handlers: {
                         image: imageHandler
                     }
+                },
+                clipboard: {
+                    matchVisual: false // Improves pasting from Word/Blogger
                 }
             }
         });
@@ -392,9 +400,14 @@ export function initBlogAdmin() {
             });
             tbody.innerHTML = html;
             
-            const datalist = document.getElementById('category-options');
-            if (datalist) {
-                datalist.innerHTML = Array.from(categories).map(c => `<option value="${c}">`).join('');
+            const selectList = document.getElementById('blog-category-select');
+            if (selectList) {
+                const optionsHtml = Array.from(categories).map(c => `<option value="${c}" style="color: black;">${c}</option>`).join('');
+                selectList.innerHTML = `
+                    <option value="" style="color: black;">Select Category...</option>
+                    ${optionsHtml}
+                    <option value="_add_new_" style="color: black; font-weight: bold;">+ Add New Category</option>
+                `;
             }
 
             // Attach listeners
