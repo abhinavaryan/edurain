@@ -123,8 +123,11 @@ export function renderBlogAdmin() {
                                 <input type="url" id="blog-cover" placeholder="https://i.imgur.com/your-image.jpg" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
                                 
                                 <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Category</label>
-                                <input type="text" id="blog-category" list="category-options" placeholder="e.g. Exam Prep" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
-                                <datalist id="category-options"></datalist>
+                                <select id="blog-category-select" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
+                                    <option value="" style="color: black;">Select Category...</option>
+                                    <option value="_add_new_" style="color: black; font-weight: bold;">+ Add New Category</option>
+                                </select>
+                                <input type="text" id="blog-category-new" placeholder="Enter new category name" style="display: none; width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
 
                                 <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Tags (Comma separated)</label>
                                 <input type="text" id="blog-tags" placeholder="e.g. NEET, Strategy" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
@@ -285,6 +288,18 @@ export function initBlogAdmin() {
 
         // File upload removed - using manual URL exclusively.
 
+        // Category select logic
+        const catSelect = document.getElementById('blog-category-select');
+        const catNew = document.getElementById('blog-category-new');
+        catSelect.addEventListener('change', (e) => {
+            if (e.target.value === '_add_new_') {
+                catNew.style.display = 'block';
+                catNew.focus();
+            } else {
+                catNew.style.display = 'none';
+            }
+        });
+
         // Form Submit
         const form = document.getElementById('admin-blog-form');
         form.addEventListener('submit', handleSaveBlog);
@@ -326,6 +341,10 @@ export function initBlogAdmin() {
         document.getElementById('blog-id').value = '';
         document.getElementById('editor-title').textContent = 'Create New Blog';
         document.getElementById('save-status').textContent = '';
+        document.getElementById('blog-category-select').value = '';
+        document.getElementById('blog-category-new').value = '';
+        document.getElementById('blog-category-new').style.display = 'none';
+        
         if(quill) {
             quill.root.innerHTML = '';
         }
@@ -414,7 +433,21 @@ export function initBlogAdmin() {
         document.getElementById('blog-excerpt').value = data.excerpt || '';
         document.getElementById('blog-status').value = data.status || 'draft';
         document.getElementById('blog-cover').value = data.coverImage || '';
-        document.getElementById('blog-category').value = data.category || '';
+        const categorySelect = document.getElementById('blog-category-select');
+        const categoryNew = document.getElementById('blog-category-new');
+        if (data.category && Array.from(categorySelect.options).some(o => o.value === data.category)) {
+            categorySelect.value = data.category;
+            categoryNew.style.display = 'none';
+            categoryNew.value = '';
+        } else if (data.category) {
+            categorySelect.value = '_add_new_';
+            categoryNew.style.display = 'block';
+            categoryNew.value = data.category;
+        } else {
+            categorySelect.value = '';
+            categoryNew.style.display = 'none';
+            categoryNew.value = '';
+        }
         document.getElementById('blog-tags').value = (data.tags || []).join(', ');
         document.getElementById('blog-author').value = data.author || 'EduRain Team';
         document.getElementById('blog-slug').value = data.slug || '';
@@ -454,7 +487,12 @@ export function initBlogAdmin() {
             const content = quill.root.innerHTML;
             const status = document.getElementById('blog-status').value;
             const coverImage = document.getElementById('blog-cover').value;
-            const category = document.getElementById('blog-category').value;
+            
+            let category = document.getElementById('blog-category-select').value;
+            if (category === '_add_new_') {
+                category = document.getElementById('blog-category-new').value.trim();
+            }
+            
             const tags = document.getElementById('blog-tags').value.split(',').map(t => t.trim()).filter(t => t);
             const author = document.getElementById('blog-author').value;
             
