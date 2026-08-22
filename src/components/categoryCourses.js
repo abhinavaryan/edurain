@@ -44,7 +44,7 @@ function renderCategoryPage(title, description, categoryKey) {
     return `
         <section class="courses-section">
             <div class="section-header">
-                <h2>${title}</h2>
+                <h1>${title}</h1>
                 <p>${description}</p>
             </div>
             <div class="filter-row">
