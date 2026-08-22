@@ -4365,6 +4365,7 @@ textarea {
     letter-spacing: -1px;
     background: linear-gradient(to right, #fff, var(--text-secondary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: var(--space-sm);
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
