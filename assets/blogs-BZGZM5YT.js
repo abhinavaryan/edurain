@@ -1,4 +1,4 @@
-import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from"./main-DSTKO0SB.js";import{t as a}from"./courses-BD523hjT.js";var o=[`All Blogs`,`Study Hacks`,`JEE Mains PYQ`,`NEET Test Series`,`CBSE Class 10 PYQ`,`CBSE Class 12 PYQ`,`Foundation 9th-10th`],s=[];function c(){return`
+import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from"./main-CvezqLB0.js";import{t as a}from"./courses-BD523hjT.js";var o=[`All Blogs`,`Study Hacks`,`JEE Mains PYQ`,`NEET Test Series`,`CBSE Class 10 PYQ`,`CBSE Class 12 PYQ`,`Foundation 9th-10th`],s=[];function c(){return`
         <section class="blogs-section" id="blogs">
             <div class="er-pw-blog-container" id="blog-list-view">
                 
@@ -103,7 +103,7 @@ import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from
                 <div class="er-pw-card-body">
                     <h3 class="er-pw-card-title" style="font-size:1.2rem; margin-bottom:0.5rem;">${e.title}</h3>
                     <p class="er-pw-card-excerpt" style="font-size:0.95rem; color:#64748b; margin-bottom:1rem; display:-webkit-box; -webkit-line-clamp:3; line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;">${e.excerpt||``}</p>
-                    <div class="er-pw-card-meta">
+                    <div class="er-pw-card-meta" style="color: #fbbf24;">
                         <span class="er-pw-card-author">By ${e.author||`EduRain Team`}</span>
                         <span class="er-pw-card-date">${t}</span>
                     </div>
