@@ -26,7 +26,7 @@ import{t as e}from"./courses-BD523hjT.js";import{renderFAQ as t}from"./faq-Bo7AT
     `}function r(r,i,a){let o=e.filter(e=>e.category===a),s=o.length>0?o.map(n).join(``):`<p style="text-align: center; width: 100%; color: var(--text-muted);">No courses available in this category yet.</p>`;return`
         <section class="courses-section">
             <div class="section-header">
-                <h2>${r}</h2>
+                <h1>${r}</h1>
                 <p>${i}</p>
             </div>
             <div class="filter-row">
