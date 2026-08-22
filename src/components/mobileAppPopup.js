@@ -28,7 +28,7 @@ function showPopup() {
             <i class="fas fa-times"></i>
         </button>
         <div class="mobile-popup-banner">
-            <img src="/images/mobile_popup_banner.png" alt="EduRain App on Mobile Phones" width="600" height="300" style="width:100%; height:auto;">
+            <img src="/images/mobile_popup_banner.webp" alt="EduRain App on Mobile Phones" width="390" height="280" style="width:100%; max-width:390px; height:auto; display:block; margin:0 auto;">
         </div>
         <div class="mobile-popup-body">
             <div class="mobile-popup-title">Get EduRain App for</div>
