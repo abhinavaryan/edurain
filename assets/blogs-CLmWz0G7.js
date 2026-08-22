@@ -1,4 +1,4 @@
-import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from"./main-0qblAaBq.js";import{t as a}from"./courses-BD523hjT.js";var o=[`All Blogs`,`Study Hacks`,`JEE Mains PYQ`,`NEET Test Series`,`CBSE Class 10 PYQ`,`CBSE Class 12 PYQ`,`Foundation 9th-10th`],s=[];function c(){return`
+import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from"./main-or8bh6Aq.js";import{t as a}from"./courses-BD523hjT.js";var o=[`All Blogs`,`Study Hacks`,`JEE Mains PYQ`,`NEET Test Series`,`CBSE Class 10 PYQ`,`CBSE Class 12 PYQ`,`Foundation 9th-10th`],s=[];function c(){return`
         <section class="blogs-section" id="blogs">
             <div class="er-pw-blog-container" id="blog-list-view">
                 
@@ -53,7 +53,7 @@ import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from
                                     <h3>Recommended for you</h3>
                                     <a href="/courses" class="pw-see-all">See All &rarr;</a>
                                 </div>
-                                <div class="pw-sidebar-courses-list">
+                                <div class="pw-sidebar-courses-list" id="pw-sidebar-courses-list">
                                     ${a.slice(0,3).map(e=>`
         <div class="pw-sidebar-course-card">
             <img loading="lazy" src="${e.thumbnail}" alt="${e.title}" class="pw-sidebar-course-img" />
@@ -79,6 +79,9 @@ import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from
                                     Download App Free
                                 </a>
                             </div>
+
+                            <!-- Custom Sidebar Banner Container -->
+                            <div id="pw-sidebar-banner-container" style="display: none; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);"></div>
                         </div>
                     </div>
 
@@ -111,10 +114,28 @@ import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from
             </div>
         `}).join(``)}
         </div>
-    `}async function u(){let a=document.getElementById(`er-blog-search-input`),o=document.getElementById(`er-tags-container`),c=document.getElementById(`er-blogs-grid-container`),u=document.getElementById(`blog-list-view`),d=document.getElementById(`blog-reader-view`),f=document.getElementById(`pw-reader-main-content`),p=document.getElementById(`pw-reader-related-container`);if(!c||!d)return;let m=`All Blogs`,h=``;try{s=(await e(n(r(i,`blogs`),t(`date`,`desc`)))).docs.map(e=>({id:e.id,...e.data()})).filter(e=>e.status===`published`);let a=[...new Set(s.map(e=>e.category).filter(e=>e))];o&&(o.innerHTML=`
+    `}async function u(){let o=document.getElementById(`er-blog-search-input`),c=document.getElementById(`er-tags-container`),u=document.getElementById(`er-blogs-grid-container`),d=document.getElementById(`blog-list-view`),f=document.getElementById(`blog-reader-view`),p=document.getElementById(`pw-reader-main-content`),m=document.getElementById(`pw-reader-related-container`);if(!u||!f)return;let h=`All Blogs`,g=``;try{s=(await e(n(r(i,`blogs`),t(`date`,`desc`)))).docs.map(e=>({id:e.id,...e.data()})).filter(e=>e.status===`published`);let a=[...new Set(s.map(e=>e.category).filter(e=>e))];c&&(c.innerHTML=`
                 <button class="er-tag-pill active" data-tag="All Blogs">All Blogs</button>
                 ${a.map(e=>`<button class="er-tag-pill" data-tag="${e}">${e}</button>`).join(``)}
-            `),g();let c=window.location.pathname.split(`/`);if(c.length>2&&c[1]===`blogs`){let e=c[2];_(e,!1)}else{let e=window.location.hash.split(`?`)[0].split(`/`);if(e.length>1&&e[0]===`#blogs`){let t=e[1];_(t,!1)}}}catch(e){console.error(`Error fetching blogs:`,e),c.innerHTML=`<div style="text-align: center; padding: 2rem; color: #ef4444;">Failed to load blogs. Please try again later.</div>`}function g(){let e=s.filter(e=>{let t=Array.isArray(e.tags)?e.tags.map(e=>e.toLowerCase()):(e.tag||``).toLowerCase().split(`,`).map(e=>e.trim()),n=m===`All Blogs`||e.category&&e.category.toLowerCase().includes(m.toLowerCase())||t.includes(m.toLowerCase())||e.title&&e.title.toLowerCase().includes(m.toLowerCase()),r=!h||e.title&&e.title.toLowerCase().includes(h.toLowerCase())||e.excerpt&&e.excerpt.toLowerCase().includes(h.toLowerCase())||e.category&&e.category.toLowerCase().includes(h.toLowerCase());return n&&r});c.innerHTML=l(e),y()}a&&a.addEventListener(`input`,e=>{h=e.target.value.trim(),g()}),o&&o.addEventListener(`click`,e=>{let t=e.target.closest(`.er-tag-pill`);t&&(o.querySelectorAll(`.er-tag-pill`).forEach(e=>e.classList.remove(`active`)),t.classList.add(`active`),m=t.getAttribute(`data-tag`),g())});function _(e,t=!0){let n=s.find(t=>t.id===e||t.slug===e);if(!n)return;let r=`Recently`;n.date&&(r=(n.date.toDate?n.date.toDate():new Date(n.date)).toLocaleDateString(`en-IN`,{year:`numeric`,month:`long`,day:`numeric`}));let i=``;if(i=Array.isArray(n.content)?n.content.map(e=>e.type===`heading`?`<h3 class="pw-article-h3">${e.text}</h3>`:`<p class="pw-article-p">${e.text}</p>`).join(``):`<div class="quill-content">${n.content||`<p class="pw-article-p">${n.excerpt}</p>`}</div>`,n.seo){document.title=n.seo.metaTitle||n.title;let e=document.querySelector(`meta[name="description"]`);e&&(e.content=n.seo.metaDescription||n.excerpt)}f.innerHTML=`
+            `),_();let o=window.location.pathname.split(`/`);if(o.length>2&&o[1]===`blogs`){let e=o[2];v(e,!1)}else{let e=window.location.hash.split(`?`)[0].split(`/`);if(e.length>1&&e[0]===`#blogs`){let t=e[1];v(t,!1)}}}catch(e){console.error(`Error fetching blogs:`,e),u.innerHTML=`<div style="text-align: center; padding: 2rem; color: #ef4444;">Failed to load blogs. Please try again later.</div>`}function _(){let e=s.filter(e=>{let t=Array.isArray(e.tags)?e.tags.map(e=>e.toLowerCase()):(e.tag||``).toLowerCase().split(`,`).map(e=>e.trim()),n=h===`All Blogs`||e.category&&e.category.toLowerCase().includes(h.toLowerCase())||t.includes(h.toLowerCase())||e.title&&e.title.toLowerCase().includes(h.toLowerCase()),r=!g||e.title&&e.title.toLowerCase().includes(g.toLowerCase())||e.excerpt&&e.excerpt.toLowerCase().includes(g.toLowerCase())||e.category&&e.category.toLowerCase().includes(g.toLowerCase());return n&&r});u.innerHTML=l(e),b()}o&&o.addEventListener(`input`,e=>{g=e.target.value.trim(),_()}),c&&c.addEventListener(`click`,e=>{let t=e.target.closest(`.er-tag-pill`);t&&(c.querySelectorAll(`.er-tag-pill`).forEach(e=>e.classList.remove(`active`)),t.classList.add(`active`),h=t.getAttribute(`data-tag`),_())});function v(e,t=!0){let n=s.find(t=>t.id===e||t.slug===e);if(!n)return;let r=`Recently`;n.date&&(r=(n.date.toDate?n.date.toDate():new Date(n.date)).toLocaleDateString(`en-IN`,{year:`numeric`,month:`long`,day:`numeric`}));let i=``;if(i=Array.isArray(n.content)?n.content.map(e=>e.type===`heading`?`<h3 class="pw-article-h3">${e.text}</h3>`:`<p class="pw-article-p">${e.text}</p>`).join(``):`<div class="quill-content">${n.content||`<p class="pw-article-p">${n.excerpt}</p>`}</div>`,n.seo){document.title=n.seo.metaTitle||n.title;let e=document.querySelector(`meta[name="description"]`);e&&(e.content=n.seo.metaDescription||n.excerpt)}let o=document.getElementById(`pw-sidebar-courses-list`);if(o){let e=[];Array.isArray(n.recommendedCourses)&&n.recommendedCourses.length>0&&(e=a.filter(e=>n.recommendedCourses.includes(e.id))),e.length===0&&(e=a.slice(0,3)),o.innerHTML=e.map(e=>`
+                <div class="pw-sidebar-course-card">
+                    <img loading="lazy" src="${e.thumbnail}" alt="${e.title}" class="pw-sidebar-course-img" />
+                    <div class="pw-sidebar-course-info">
+                        <h4 class="pw-sidebar-course-title">${e.title}</h4>
+                        <div class="pw-sidebar-course-price">
+                            <span class="price-current">${e.price}</span>
+                            <span class="price-discount-badge">25% OFF</span>
+                        </div>
+                        <a href="${e.link||`#courses`}" target="_blank" rel="noopener" class="pw-sidebar-enroll-btn">
+                            Enroll Now
+                        </a>
+                    </div>
+                </div>
+            `).join(``)}let c=document.getElementById(`pw-sidebar-banner-container`);c&&(n.sidebarBannerImage?(c.innerHTML=`
+                    <a href="${n.sidebarBannerLink||`#`}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%;">
+                        <img loading="lazy" src="${n.sidebarBannerImage}" alt="Promo Banner" style="width: 100%; display: block; border-radius: 12px; object-fit: cover;" />
+                    </a>
+                `,c.style.display=`block`):(c.style.display=`none`,c.innerHTML=``)),p.innerHTML=`
             <div class="pw-article-breadcrumbs">
                 <a href="/">Home</a> &rsaquo; <button id="btn-bc-blogs" style="background:none;border:none;color:#2563eb;cursor:pointer;padding:0;">Blogs</button> &rsaquo; <span style="color:#64748b;">${n.title}</span>
             </div>
@@ -140,10 +161,10 @@ import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from
                     &larr; Back to All Blogs
                 </button>
             </div>
-        `;let a=s.filter(e=>e.id!==n.id).slice(0,3);p.innerHTML=`
+        `;let l=s.filter(e=>e.id!==n.id).slice(0,3);m.innerHTML=`
             <h3 class="pw-related-title" style="margin-bottom: 1.5rem; color: #1e293b;">Related Articles</h3>
             <div class="pw-related-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
-                ${a.map(e=>`
+                ${l.map(e=>`
                     <div class="pw-related-card btn-open-blog" data-blog-id="${e.id}" style="cursor:pointer; background:white; border-radius:12px; overflow:hidden; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1); border:1px solid #e2e8f0; transition: transform 0.2s;">
                         <img loading="lazy" src="${e.coverImage}" alt="${e.title}" style="width:100%; height:160px; object-fit:cover;" />
                         <div class="pw-related-info" style="padding: 1rem;">
@@ -153,4 +174,4 @@ import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from
                     </div>
                 `).join(``)}
             </div>
-        `,u.style.display=`none`,d.style.display=`block`;let o=document.getElementById(`blogs`);o?o.scrollIntoView({behavior:`smooth`}):window.scrollTo({top:0,behavior:`smooth`}),document.getElementById(`btn-bc-blogs`)?.addEventListener(`click`,v),document.getElementById(`btn-close-modal-bottom`)?.addEventListener(`click`,v),p.querySelectorAll(`.btn-open-blog`).forEach(e=>{e.addEventListener(`click`,t=>{t.stopPropagation();let n=e.getAttribute(`data-blog-id`);n&&_(n)})}),t&&history.pushState(null,null,`/blogs/`+(n.slug||n.id))}function v(){d.style.display=`none`,u.style.display=`block`,history.pushState(null,null,`/blogs`),document.title=`IIT JEE, NEET & Foundation Blogs | EduRain`;let e=document.querySelector(`meta[name="description"]`);e&&(e.content=`Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides`);let t=document.getElementById(`blogs`);t&&t.scrollIntoView({behavior:`smooth`})}function y(){c.querySelectorAll(`.er-pw-blog-card`).forEach(e=>{e.addEventListener(`click`,t=>{t.preventDefault(),t.stopPropagation();let n=e.getAttribute(`data-blog-id`);n&&_(n)})})}}export{u as initBlogs,c as renderBlogs};
+        `,d.style.display=`none`,f.style.display=`block`;let u=document.getElementById(`blogs`);u?u.scrollIntoView({behavior:`smooth`}):window.scrollTo({top:0,behavior:`smooth`}),document.getElementById(`btn-bc-blogs`)?.addEventListener(`click`,y),document.getElementById(`btn-close-modal-bottom`)?.addEventListener(`click`,y),m.querySelectorAll(`.btn-open-blog`).forEach(e=>{e.addEventListener(`click`,t=>{t.stopPropagation();let n=e.getAttribute(`data-blog-id`);n&&v(n)})}),t&&history.pushState(null,null,`/blogs/`+(n.slug||n.id))}function y(){f.style.display=`none`,d.style.display=`block`,history.pushState(null,null,`/blogs`),document.title=`IIT JEE, NEET & Foundation Blogs | EduRain`;let e=document.querySelector(`meta[name="description"]`);e&&(e.content=`Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides`);let t=document.getElementById(`blogs`);t&&t.scrollIntoView({behavior:`smooth`})}function b(){u.querySelectorAll(`.er-pw-blog-card`).forEach(e=>{e.addEventListener(`click`,t=>{t.preventDefault(),t.stopPropagation();let n=e.getAttribute(`data-blog-id`);n&&v(n)})})}}export{u as initBlogs,c as renderBlogs};
