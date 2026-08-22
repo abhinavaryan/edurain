@@ -38,6 +38,8 @@ export function renderFreeDemo() {
                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                         alt="Free Demo — Teacher with student"
                         class="er-demo-img"
+                        width="400"
+                        height="400"
                     />
                     <!-- Fallback placeholder shown when no image exists -->
                     <div class="er-demo-placeholder" style="display:none;">
