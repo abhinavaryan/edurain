@@ -177,10 +177,18 @@ export async function initBlogs() {
         // Only order by date. Filtering by status is done client-side to avoid manual Firestore Index creation.
         const q = query(blogsRef, orderBy('date', 'desc'));
         const snapshot = await getDocs(q);
-        
+
         liveBlogsData = snapshot.docs
             .map(doc => ({ id: doc.id, ...doc.data() }))
             .filter(b => b.status === 'published'); // Client-side filter
+            
+        const uniqueCategories = [...new Set(liveBlogsData.map(b => b.category).filter(c => c))];
+        if (tagsContainer) {
+            tagsContainer.innerHTML = `
+                <button class="er-tag-pill active" data-tag="All Blogs">All Blogs</button>
+                ${uniqueCategories.map(cat => `<button class="er-tag-pill" data-tag="${cat}">${cat}</button>`).join('')}
+            `;
+        }
 
         filterAndRender();
 
@@ -206,14 +214,14 @@ export async function initBlogs() {
     function filterAndRender() {
         let filtered = liveBlogsData.filter(b => {
             // In Firestore schema, tags is an array. Handling both array and string (for old data)
-            const tags = Array.isArray(b.tags) ? b.tags.map(t=>t.toLowerCase()) : ((b.tag || '').toLowerCase().split(',').map(t=>t.trim()));
-            
-            const matchesTag = (activeTag === "All Blogs") || 
+            const tags = Array.isArray(b.tags) ? b.tags.map(t => t.toLowerCase()) : ((b.tag || '').toLowerCase().split(',').map(t => t.trim()));
+
+            const matchesTag = (activeTag === "All Blogs") ||
                 (b.category && b.category.toLowerCase().includes(activeTag.toLowerCase())) ||
                 (tags.includes(activeTag.toLowerCase())) ||
                 (b.title && b.title.toLowerCase().includes(activeTag.toLowerCase()));
-            
-            const matchesQuery = !searchQuery || 
+
+            const matchesQuery = !searchQuery ||
                 (b.title && b.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
                 (b.excerpt && b.excerpt.toLowerCase().includes(searchQuery.toLowerCase())) ||
                 (b.category && b.category.toLowerCase().includes(searchQuery.toLowerCase()));
@@ -329,7 +337,7 @@ export async function initBlogs() {
 
         document.getElementById('btn-bc-blogs')?.addEventListener('click', closeBlog);
         document.getElementById('btn-close-modal-bottom')?.addEventListener('click', closeBlog);
-        
+
         modalRelated.querySelectorAll('.btn-open-blog').forEach(c => {
             c.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -345,12 +353,12 @@ export async function initBlogs() {
         readerView.style.display = 'none';
         listView.style.display = 'block';
         history.pushState(null, null, '/blogs');
-        
+
         // Reset SEO Tags to default blogs page
         document.title = "IIT JEE, NEET & Foundation Blogs | EduRain";
         let metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) metaDesc.content = "Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides";
-        
+
         const blogsSection = document.getElementById('blogs');
         if (blogsSection) blogsSection.scrollIntoView({ behavior: 'smooth' });
     }

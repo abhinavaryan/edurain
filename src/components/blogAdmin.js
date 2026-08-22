@@ -123,7 +123,8 @@ export function renderBlogAdmin() {
                                 <input type="url" id="blog-cover" placeholder="https://i.imgur.com/your-image.jpg" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
                                 
                                 <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Category</label>
-                                <input type="text" id="blog-category" placeholder="e.g. Exam Prep" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
+                                <input type="text" id="blog-category" list="category-options" placeholder="e.g. Exam Prep" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
+                                <datalist id="category-options"></datalist>
 
                                 <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Tags (Comma separated)</label>
                                 <input type="text" id="blog-tags" placeholder="e.g. NEET, Strategy" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
@@ -344,9 +345,13 @@ export function initBlogAdmin() {
             }
 
             let html = '';
+            let categories = new Set();
             snapshot.forEach(doc => {
                 const data = doc.data();
                 const id = doc.id;
+                
+                if (data.category) categories.add(data.category);
+                
                 const date = data.date?.toDate ? data.date.toDate().toLocaleDateString() : 'Draft';
                 
                 const statusBadge = data.status === 'published' 
@@ -367,6 +372,11 @@ export function initBlogAdmin() {
                 `;
             });
             tbody.innerHTML = html;
+            
+            const datalist = document.getElementById('category-options');
+            if (datalist) {
+                datalist.innerHTML = Array.from(categories).map(c => `<option value="${c}">`).join('');
+            }
 
             // Attach listeners
             document.querySelectorAll('.btn-edit-blog').forEach(btn => {
