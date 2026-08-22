@@ -258,12 +258,18 @@ export const initRouter = () => {
 
   window.renderRoute = async () => {
     let path = window.location.pathname;
+    const originalPath = path;
     
     // Normalize path
     if (path === '' || path === '/') {
       path = '/';
     } else if (path.endsWith('/')) {
       path = path.slice(0, -1);
+    }
+
+    // Remove trailing slash from URL bar silently
+    if (originalPath !== path && path !== '/') {
+      window.history.replaceState(window.history.state, "", path + window.location.search + window.location.hash);
     }
 
     const routeConfig = routes[path];
