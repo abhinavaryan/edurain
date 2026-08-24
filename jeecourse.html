@@ -1,6 +1,7 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; object-src 'none'; base-uri 'self'; frame-src 'self' https:;"></head><body>\n    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.edurain.in/courses/neet">
-    <link rel="icon" type="image/png" href="/images/logo.webp">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -11,6 +12,7 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-NHNLCSKT');</script>
     <!-- End Google Tag Manager -->
+
     <!-- Meta Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {
@@ -27,12 +29,14 @@
         fbq('init', '2853349708154684');
         fbq('track', 'PageView');
     </script>
-
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=2853349708154684&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Start your NEET 2027-28 online preparation with EduRain: live classes, expert faculty, and structured NCERT-based material with regular tests.">
-    <title>NEET 2027-28 Complete Online Preparation with EduRain</title>
+    <meta name="description" content="EDURAIN - Victory Starts Here">
+    <title>EDURAIN - Victory Starts Here</title>
     <style>
         /* ============================================
             CSS VARIABLES & RESET
@@ -94,9 +98,6 @@
             padding: 0 20px;
         }
 
-        /* ============================================
-            TYPOGRAPHY & SMART DYNAMIC HEADINGS
-            ============================================ */
         h1,
         h2,
         h3,
@@ -234,7 +235,6 @@
             position: relative;
         }
 
-        /* CATCHY HEADER BUTTON CSS */
         .nav-btn {
             background-color: var(--primary-color);
             color: #333 !important;
@@ -285,15 +285,14 @@
         }
 
         /* ============================================
-            HERO SECTION & MOBILE REORDER (DESKTOP & MOBILE)
+            HERO & COMBINED TOP SECTION LAYOUT
             ============================================ */
         .hero-section-wrapper {
             position: relative;
-            padding-top: 120px;
-            padding-bottom: 30px;
-            min-height: 85vh;
             overflow: hidden;
             background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(46, 125, 50, 0.05) 100%);
+            padding-top: 120px;
+            padding-bottom: 60px;
         }
 
         .hero-section-wrapper::before {
@@ -326,7 +325,7 @@
             padding: 0 20px;
         }
 
-        /* Desktop Grid Layout */
+        /* Desktop Layout Grid */
         @media (min-width: 769px) {
             .main-top-grid {
                 display: grid;
@@ -352,7 +351,7 @@
             }
         }
 
-        /* Mobile Layout Reordering: 1) Form, 2) Results, 3) Description Text */
+        /* Mobile Layout Reordering: Form (1) -> Results (2) -> Text (3) */
         @media (max-width: 768px) {
             .main-top-grid {
                 display: flex;
@@ -377,23 +376,15 @@
         }
 
         .hero-heading {
-            font-size: 4rem;
+            font-size: 45px !important;
             color: var(--secondary-color);
             margin-bottom: 10px;
-        }
-
-        .hero-tagline {
-            font-size: 2rem;
-            font-weight: 300;
-            color: var(--text-color);
-            margin-bottom: 20px;
         }
 
         .hero-desc {
             font-size: 1.1rem;
             color: var(--text-light);
             margin-bottom: 30px;
-            max-width: 500px;
         }
 
         .hero-buttons {
@@ -401,6 +392,7 @@
             gap: 15px;
         }
 
+        /* Enquiry Form Styles */
         .form-outer-title {
             font-size: 1.8rem;
             text-align: center;
@@ -440,6 +432,7 @@
             font-size: 1rem;
             outline: none;
             transition: var(--transition);
+            background-color: #fff;
         }
 
         .form-control:focus {
@@ -447,7 +440,15 @@
             box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
         }
 
-        /* Submit Button Pulse Animation */
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.36%22%20height%3D%22292.36%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            background-size: 12px;
+            cursor: pointer;
+        }
+
         @keyframes pulse {
             50% {
                 transform: scale(1);
@@ -491,10 +492,7 @@
             scroll-behavior: smooth;
             padding-bottom: 20px;
             padding-top: 10px;
-            -ms-overflow-style: none;
-            /* IE and Edge */
             scrollbar-width: none;
-            /* Firefox */
         }
 
         .results-grid::-webkit-scrollbar {
@@ -568,7 +566,6 @@
             font-size: 0.95rem;
         }
 
-        /* Slider Arrows CSS */
         .slider-btn {
             position: absolute;
             top: 45%;
@@ -691,7 +688,6 @@
             width: 90%;
             height: 250px;
             object-fit: cover;
-            border-radius: 0% 0% 0 0;
             margin: 0 auto;
             box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
@@ -923,8 +919,8 @@
         }
 
         /* ============================================
-    SECTION 6: FAQ
-    ============================================ */
+            SECTION 6: FAQ
+            ============================================ */
         .faq-container {
             max-width: 850px;
             margin: 0 auto;
@@ -1059,7 +1055,7 @@
         .banner-container {
             flex: 1.5;
             min-width: 300px;
-            min-height: 400px;
+            min-height: 480px;
             position: relative;
             border-radius: var(--border-radius);
             overflow: hidden;
@@ -1073,11 +1069,17 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition)
+            transition: var(--transition);
         }
 
         .banner-container:hover img {
             transform: scale(1.02);
+        }
+
+        .banner-dots .dot.active {
+            background-color: var(--primary-color) !important;
+            width: 22px !important;
+            border-radius: 5px !important;
         }
 
         /* ============================================
@@ -1114,38 +1116,21 @@
             background-color: var(--primary-color);
         }
 
-        @media (max-width: 768px) {
-
-            .banner-container,
-            .banner-slides,
-            .banner-slide {
-                min-height: 300px !important;
-                height: 100% !important;
-                width: 100% !important;
-                max-width: 100% !important;
-            }
-        }
-
-        /* FOOTER LOGO (Yellow & White) */
         .footer-logo {
             font-size: 2.2rem;
             font-weight: 800;
             color: #fff;
-            /* White EDU */
             margin-bottom: 5px;
             display: block;
         }
 
         .footer-logo span {
             color: var(--primary-color);
-            /* Yellow RAIN */
         }
 
-        /* UPDATED FOOTER TAGLINE (Straight and Matched) */
         .footer-tagline {
             color: var(--primary-color);
             font-style: normal;
-            /* Made straight */
             font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 0.5px;
@@ -1322,65 +1307,42 @@
             }
 
             .hero-heading {
-                font-size: 2.5rem;
-            }
-
-            .hero-tagline {
-                font-size: 1.5rem;
-            }
-
-            /* Mobile Reordering: Form (1) -> Results (2) -> Description Text (3) */
-            .main-top-grid {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .hero-right-col {
-                order: 1;
-                width: 100%;
-                max-width: 100%;
-                margin-bottom: 20px;
-            }
-
-            .results-col {
-                order: 2;
-                width: 100%;
-                margin-top: 0;
-                margin-bottom: 20px;
-            }
-
-            .hero-left-col {
-                order: 3;
-                width: 100%;
+                font-size: 2.5rem !important;
             }
 
             .floating-contact {
                 bottom: 20px;
                 right: 20px;
             }
+
+            .banner-container,
+            .banner-slides,
+            .banner-slide {
+                min-height: 300px !important;
+                height: 100% !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
         }
     </style>
+</head>
 
-
-
+<body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHNLCSKT" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <!-- Meta Pixel Code (noscript) -->
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=2853349708154684&ev=PageView&noscript=1" /></noscript>
-    <!-- End Meta Pixel Code (noscript) -->
-    <!-- ============================================
-         NAVIGATION
-         ============================================ -->
+
+    <!-- NAVIGATION -->
     <header id="header">
         <div class="container navbar">
             <a href="https://edurain.in/" class="logo" style="align-items: center;">
-                <img src="https://www.image2url.com/r2/default/images/1784033920157-f5e3aa8b-2298-4f08-b189-48a884cc971a.png" alt="Logo" style="height: 60px; width: auto;">
+                <img src="https://www.image2url.com/r2/default/images/1784033920157-f5e3aa8b-2298-4f08-b189-48a884cc971a.png"
+                    alt="Logo" style="height: 60px; width: auto;">
                 <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1.1;">
                     <div style="font-size: 2.20rem;">Edu<span>Rain</span></div>
-                    <div style="font-size: 0.72rem; font-weight: 600; color: var(--text-light); letter-spacing: 1.0px; text-transform: uppercase;">
+                    <div
+                        style="font-size: 0.72rem; font-weight: 600; color: var(--text-light); letter-spacing: 1.0px; text-transform: uppercase;">
                         Victory Starts Here</div>
                 </div>
             </a>
@@ -1400,24 +1362,20 @@
             </div>
         </div>
     </header>
-    <!-- ============================================
-         HERO SECTION
-         ============================================ -->
-    <section class="hero-section-wrapper" id="home">
+
+    <!-- HERO & RESULTS REORDER WRAPPER -->
+    <div class="hero-section-wrapper" id="home">
         <div class="main-top-grid">
 
             <!-- 1. Hero Left Text Column (Order 3 on Mobile) -->
             <div class="hero-left-col reveal">
-                <h1 class="hero-heading" style="font-size: 45px !important;">Turn Your Dream of Becoming a Doctor into
-                    Reality </h1>
-                <p class="hero-tagline"> <strong></strong></p><br>
-                <p class="hero-desc">
-                    Yes, now you can make it possible with our result-focused NEET preparation. We provide expert
-                    faculty, small batch sizes, regular mock tests, and dedicated doubt-solving to help you improve
-                    every day. We give personal attention to every student and regularly track your progress. We help
-                    you improve weak subjects and make your strong subjects even better. With our proven study plans and
-                    consistent mentorship, you’ll stay confident and exam-ready <strong>Fill out the form to get
-                        complete details and expert guidance.</strong></p>
+                <h1 class="hero-heading">Confused About JEE Preparation? Let's Simplify It.</h1>
+                <p class="hero-desc">Your JEE success starts with the right strategy. EduRain brings together everything
+                    a JEE aspirant needs a structured preparation roadmap, live interactive classes, expert faculty,
+                    instant doubt solving, comprehensive study material, regular test series, performance tracking,
+                    revision sessions, and personalized mentorship to help you stay focused, improve consistently, and
+                    achieve your dream rank. <strong>Your IIT journey starts here. Fill out the form to connect with our
+                        experts and begin your preparation.</strong></p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-secondary">Contact Us</a>
                     <a href="#courses" class="btn btn-primary">Our Courses</a>
@@ -1426,33 +1384,35 @@
 
             <!-- 2. Hero Right Form Column (Order 1 on Mobile) -->
             <div class="hero-right-col reveal">
-                <h3 class="form-outer-title" id="formTitle">Start Your MBBS Journey</h3>
+                <h3 class="form-outer-title" id="formTitle">Start Your IIT Journey</h3>
                 <div class="enquiry-form">
                     <form id="enquiryForm">
                         <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Full Name" required="">
+                            <input type="text" name="name" class="form-control" placeholder="Full Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" name="contact" class="form-control" placeholder="Contact Number" required="">
+                            <input type="tel" name="contact" class="form-control" placeholder="Contact Number" required>
                         </div>
                         <div class="form-group">
-                            <select name="category" class="form-control" required="">
-                                <option value="" disabled="" selected="">Select Batch</option>
-                                <option value="CLASS 11">Class 11(NEET 2028)</option>
-                                <option value="CLASS 12">Class 12(NEET 2027)</option>
-                                <option value="Dropper">Neet Dropper</option>
+                            <select name="category" class="form-control" required>
+                                <option value="" disabled selected>Select Batch</option>
+                                <option value="Class 11">Class 11(JEE 2028)</option>
+                                <option value="Class 12">Class 12(JEE 2027)</option>
+                                <option value="Dropper">JEE Dropper</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-secondary submit-btn">Be a Docter</button>
+                        <button type="submit" class="btn btn-secondary submit-btn">Be a IITIAN</button>
                     </form>
                     <div id="successMessage" style="display: none; text-align: center; padding: 20px;">
-                        <img src="https://cdn.phototourl.com/free/2026-07-19-f036e465-c23a-4393-8fcf-c284ff0a1010.png" style="width: 65%; margin: 0 auto;" alt="Success">
+                        <img src="https://cdn.phototourl.com/free/2026-07-19-f036e465-c23a-4393-8fcf-c284ff0a1010.png"
+                            style="width: 65%; margin: 0 auto;" alt="Success">
                         <h3 style="color: var(--secondary-color); margin: 15px 0;">Our student advisor will reach out to
                             you!</h3>
                         <p style="margin-bottom: 20px;">EduRain - Victory Starts Here</p>
                         <div style="display: flex; gap: 10px; flex-direction: column;">
                             <a href="#courses" class="btn btn-secondary">Browse Courses</a>
-                            <button onclick="handleAppDownload()" class="btn btn-primary" style="animation: none;">Download Our App</button>
+                            <button onclick="handleAppDownload()" class="btn btn-primary"
+                                style="animation: none;">Download Our App</button>
                         </div>
                     </div>
                 </div>
@@ -1462,127 +1422,129 @@
             <div class="results-col reveal" id="results">
                 <div style="max-width: 1200px; margin: 0 auto;">
                     <h2 class="section-title">Our Best Results</h2>
-
                     <div class="results-section-wrapper">
-                        <button class="slider-btn prev-btn" id="prevBtn">❮</button>
-
+                        <button class="slider-btn prev-btn" id="prevBtn">&#10094;</button>
                         <div class="results-grid" id="resultsGrid">
                             <!-- Result 1 -->
                             <div class="result-card">
-                                <img src="https://www.image2url.com/r2/default/images/1784015863775-701c8386-ef32-4427-b2bf-a6f38f0a756b.png" alt="Successful Student: Pooja Reddy 710/720" class="student-photo">
-                                <h3 class="student-name">Pooja Reddy</h3>
-                                <p class="student-course">NEET SCORE</p>
-                                <div class="student-rank">710/720</div>
-                                <p class="student-achievement">Dedicated and consistent performer.</p>
+                                <img src="https://cdn.phototourl.com/member/2026-07-21-0f734b79-5782-4db7-95aa-8bcdf544e7e7.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Neha Rathi</h3>
+                                <p class="student-course">JEE MAINS</p>
+                                <div class="student-rank">97.3 %tile</div>
+                                <p class="student-achievement">Outstanding performance in Physics.</p>
                             </div>
                             <!-- Result 2 -->
                             <div class="result-card">
-                                <img src="https://www.image2url.com/r2/default/images/1784019882574-29b8a024-da4c-4ec9-9137-7fd43c2c7d6a.png" alt="Successful Student: Aditya Nair 707/720" class="student-photo">
-                                <h3 class="student-name">Aditya Nair</h3>
-                                <p class="student-course">NEET SCORE</p>
-                                <div class="student-rank">707/720</div>
-                                <p class="student-achievement">Achieved excellence with hard work.</p>
+                                <img src="https://cdn.phototourl.com/member/2026-07-21-c0b1b3f8-2a2a-4620-bc47-8df6500e2d6e.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Kushi Verma</h3>
+                                <p class="student-course">JEE MAINS</p>
+                                <div class="student-rank">95.45 %tile</div>
+                                <p class="student-achievement">Consistent performer throughout preparation.</p>
                             </div>
                             <!-- Result 3 -->
                             <div class="result-card">
-                                <img src="https://www.image2url.com/r2/default/images/1784013504306-c41aff41-f899-4587-a588-2fef7ea95df9.png" alt="Successful Student: Vivek Singh 705/720" class="student-photo">
-                                <h3 class="student-name">Vivek Singh</h3>
-                                <p class="student-course">NEET SCORE</p>
-                                <div class="student-rank">705/720</div>
-                                <p class="student-achievement">Exceptional problem-solving skills</p>
+                                <img src="https://cdn.phototourl.com/member/2026-07-21-5bab2cee-e733-40f0-8861-c0f33a69a7bc.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Sneha Mor</h3>
+                                <p class="student-course">JEE MAINS</p>
+                                <div class="student-rank">93.5 %tile</div>
+                                <p class="student-achievement">Achieved excellence with hard work.</p>
                             </div>
                             <!-- Result 4 -->
                             <div class="result-card">
-                                <img src="https://www.image2url.com/r2/default/images/1784015965252-47a92a74-9a02-4aed-a5ac-5739318986bf.png" alt="Successful Student: Kunal Joshi 701/720" class="student-photo">
-                                <h3 class="student-name">Kunal Joshi</h3>
-                                <p class="student-course">NEET SCORE</p>
-                                <div class="student-rank">701/720</div>
-                                <p class="student-achievement">Consistent performer throughout preparation.</p>
+                                <img src="https://cdn.phototourl.com/member/2026-07-21-c3cbd65a-dd85-4a39-9896-acf4bd5f5e1a.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Sumit Yadav</h3>
+                                <p class="student-course">JEE MAINS</p>
+                                <div class="student-rank">93.4 %tile</div>
+                                <p class="student-achievement">Dedicated and consistent performer.</p>
                             </div>
                             <!-- Result 5 -->
                             <div class="result-card">
-                                <img src="https://www.image2url.com/r2/default/images/1784014941695-f30d0c14-d3d1-4dda-aab9-64819e711271.png" alt="Successful Student: Neha Yadav 700/720" class="student-photo">
-                                <h3 class="student-name">Neha Yadav</h3>
-                                <p class="student-course">NEET SCORE</p>
-                                <div class="student-rank">700/720</div>
-                                <p class="student-achievement">Outstanding performance in Physics.</p>
+                                <img src="https://cdn.phototourl.com/member/2026-07-21-6982125c-9294-4600-b721-cfd5ab274b00.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Harshit Tripathi</h3>
+                                <p class="student-course">JEE MAINS</p>
+                                <div class="student-rank">92.45 %</div>
+                                <p class="student-achievement">Among top 100 nationally.</p>
                             </div>
                             <!-- Result 6 -->
                             <div class="result-card">
-                                <img src="https://www.image2url.com/r2/default/images/1784015457675-e089e1bd-c091-4150-8da5-8fcab124c6e1.png" alt="Successful Student: Kavya Sen 695/720" class="student-photo">
-                                <h3 class="student-name">Kavya Sen</h3>
-                                <p class="student-course">NEET SCORE</p>
-                                <div class="student-rank">695/720</div>
-                                <p class="student-achievement">Among top 100 nationally.</p>
+                                <img src="https://cdn.phototourl.com/member/2026-07-21-6319fb54-962a-4de1-ac7c-ddf1d4b3e11f.png"
+                                    alt="Student" class="student-photo">
+                                <h3 class="student-name">Vikash Kumar</h3>
+                                <p class="student-course">JEE MAINS</p>
+                                <div class="student-rank">90.6 %tile</div>
+                                <p class="student-achievement">Exceptional problem-solving skills</p>
                             </div>
                         </div>
-                        <button class="slider-btn next-btn" id="nextBtn">❯</button>
+                        <button class="slider-btn next-btn" id="nextBtn">&#10095;</button>
                     </div>
                 </div>
             </div>
 
         </div>
-    </section>
+    </div>
 
-    <!-- ============================================
-         SECTION 3: OUR FACULTY
-         ============================================ -->
+    <!-- SECTION 3: OUR FACULTY -->
     <section class="section-padding" id="faculty">
         <svg class="faculty-bg-icon left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
-            <path d="M512 32c0 0-41.2 0-96.1 19.3-51.5 18-97.8 53-131 99.8-33.1-46.8-79.5-81.8-131-99.8C99.2 32 58 32 58 32s0 41.2 19.3 96.1c18 51.5 53 97.8 99.8 131-46.8 33.1-81.8 79.5-99.8 131C58 445 58 486.2 58 486.2s41.2 0 96.1-19.3c51.5-18 97.8-53 131-99.8 33.1 46.8 79.5 81.8 131 99.8 54.9 19.3 96.1 19.3 96.1 19.3s0-41.2-19.3-96.1c-18-51.5-53-97.8-99.8-131 46.8-33.1 81.8-79.5 99.8-131C492.7 73.2 512 32 512 32z"></path>
+            <path
+                d="M512 32c0 0-41.2 0-96.1 19.3-51.5 18-97.8 53-131 99.8-33.1-46.8-79.5-81.8-131-99.8C99.2 32 58 32 58 32s0 41.2 19.3 96.1c18 51.5 53 97.8 99.8 131-46.8 33.1-81.8 79.5-99.8 131C58 445 58 486.2 58 486.2s41.2 0 96.1-19.3c51.5-18 97.8-53 131-99.8 33.1 46.8 79.5 81.8 131 99.8 54.9 19.3 96.1 19.3 96.1 19.3s0-41.2-19.3-96.1c-18-51.5-53-97.8-99.8-131 46.8-33.1 81.8-79.5 99.8-131C492.7 73.2 512 32 512 32z" />
         </svg>
         <svg class="faculty-bg-icon right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
-            <path d="M272 96c-78.6 0-145.1 51.5-167.7 122.5C83.6 253.8 24 330.1 24 416c0 13.3 10.7 24 24 24s24-10.7 24-24c0-70.7 57.3-128 128-128h16v128c0 13.3 10.7 24 24 24s24-10.7 24-24V144c16.3-10.3 35.8-16 56-16 43.6 0 80.5 27.6 92.6 66.8 4.2 13.6 18.7 21.2 32.3 17s21.2-18.7 17-32.3C445.6 122 364.5 96 272 96z"></path>
+            <path
+                d="M272 96c-78.6 0-145.1 51.5-167.7 122.5C83.6 253.8 24 330.1 24 416c0 13.3 10.7 24 24 24s24-10.7 24-24c0-70.7 57.3-128 128-128h16v128c0 13.3 10.7 24 24 24s24-10.7 24-24V144c16.3-10.3 35.8-16 56-16 43.6 0 80.5 27.6 92.6 66.8 4.2 13.6 18.7 21.2 32.3 17s21.2-18.7 17-32.3C445.6 122 364.5 96 272 96z" />
         </svg>
-
         <div class="container">
             <h2 class="section-title reveal">Meet Our Faculty</h2>
             <div class="faculty-grid">
-                <!-- Faculty 1 -->
                 <div class="faculty-card reveal">
                     <div class="faculty-photo-wrapper">
-                        <img src="https://www.image2url.com/r2/default/images/1784010346513-6bd6bf14-f335-4c07-b9f6-f1088993fe17.webp" alt="Mrs. Ritu ma'am - Chemistry Specialist, 14 Years Exp." class="faculty-photo">
+                        <img src="https://www.image2url.com/r2/default/images/1784010346513-6bd6bf14-f335-4c07-b9f6-f1088993fe17.webp"
+                            alt="Faculty" class="faculty-photo">
                     </div>
                     <div class="faculty-info">
                         <h3 class="faculty-name">Mrs. Ritu ma'am</h3>
                         <p class="faculty-subject">Chemistry</p>
                         <span class="faculty-exp"><strong>14 Years Exp.</strong></span>
-                        <p class="faculty-desc"> She is dedicated to building strong fundamentals and developing
+                        <p class="faculty-desc">She is dedicated to building strong fundamentals and developing
                             problem-solving excellence in students.</p>
                     </div>
                 </div>
-                <!-- Faculty 2 -->
                 <div class="faculty-card reveal">
                     <div class="faculty-photo-wrapper">
-                        <img src="https://www.image2url.com/r2/default/images/1784009526362-6300c2ae-ad6e-4b3d-9d21-906b1827e046.jpg" alt="Mr. Diwakar sir - Physics Specialist, 15 Years Exp." class="faculty-photo">
+                        <img src="https://www.image2url.com/r2/default/images/1784009526362-6300c2ae-ad6e-4b3d-9d21-906b1827e046.jpg"
+                            alt="Faculty" class="faculty-photo">
                     </div>
                     <div class="faculty-info">
                         <h3 class="faculty-name">Mr. Diwakar sir</h3>
                         <p class="faculty-subject">Physics</p>
                         <span class="faculty-exp"><strong>15 Years Exp.</strong></span>
-                        <p class="faculty-desc"> He is recognized for his concept-driven teaching approach and
-                            consistent success in guiding NEET aspirants toward top ranks.</p>
+                        <p class="faculty-desc">He is recognized for his concept-driven teaching approach and consistent
+                            success in guiding JEE aspirants toward top ranks.</p>
                     </div>
                 </div>
-                <!-- Faculty 3 -->
                 <div class="faculty-card reveal">
                     <div class="faculty-photo-wrapper">
-                        <img src="https://www.image2url.com/r2/default/images/1784011827462-4a4f1b7b-79e8-4c4b-b0be-40411d3eb0ec.jpg" alt="Mr. Nitin sir - Biology Specialist, 16 Years Exp." class="faculty-photo">
+                        <img src="https://cdn.phototourl.com/free/2026-07-21-044453ae-b241-4ecd-8bb2-cb9c1104de86.png"
+                            alt="Faculty" class="faculty-photo">
                     </div>
                     <div class="faculty-info">
-                        <h3 class="faculty-name">Mr. Nitin sir</h3>
-                        <p class="faculty-subject">Biology </p>
+                        <h3 class="faculty-name">Mr. Debashish sir</h3>
+                        <p class="faculty-subject">Math</p>
                         <span class="faculty-exp"><strong>16 Years Exp.</strong></span>
-                        <p class="faculty-desc"> A highly respected Biology mentor, He is known for making complex
-                            concepts simple and helping students achieve NEET results.</p>
+                        <p class="faculty-desc">A highly respected Math mentor, known for making complex concepts simple
+                            and helping students achieve JEE results.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ============================================
-         SECTION 4: WHY CHOOSE EDURAIN
-         ============================================ -->
+
+    <!-- SECTION 4: WHY CHOOSE EDURAIN -->
     <section class="section-padding bg-light" id="features">
         <div class="container">
             <h2 class="section-title reveal">Why Choose EduRain?</h2>
@@ -1613,15 +1575,15 @@
                 <div class="feature-card reveal">
                     <div class="feature-icon">🤝</div>
                     <div class="feature-info">
-                        <h4> Personal Mentorship</h4>
+                        <h4>Personal Mentorship</h4>
                         <p>Individual guidance, regular doubt-solving sessions, and continuous academic support to help
-                            every student reach their full potential..</p>
+                            every student reach their full potential.</p>
                     </div>
                 </div>
                 <div class="feature-card reveal">
                     <div class="feature-icon">🖥️</div>
                     <div class="feature-info">
-                        <h4> Integrated Board + Competitive Preparation</h4>
+                        <h4>Integrated Board + Competitive Preparation</h4>
                         <p>Specialized coaching for Classes 6–12, IIT-JEE, NEET, and CUET with a balanced approach to
                             school and entrance exam success.</p>
                     </div>
@@ -1629,7 +1591,7 @@
                 <div class="feature-card reveal">
                     <div class="feature-icon">🏆</div>
                     <div class="feature-info">
-                        <h4>Regular Tests &amp; Performance Tracking</h4>
+                        <h4>Regular Tests & Performance Tracking</h4>
                         <p>Chapter-wise tests, mock exams, and detailed performance analysis to identify strengths and
                             improve weak areas.</p>
                     </div>
@@ -1637,120 +1599,107 @@
             </div>
         </div>
     </section>
-    <!-- ============================================
-         SECTION 4.5: OUR COURSES
-         ============================================ -->
+
+    <!-- SECTION 4.5: OUR COURSES -->
     <section class="section-padding" id="courses">
         <div class="container">
             <h2 class="section-title reveal">Our Courses</h2>
             <div class="courses-grid">
-
-                <!-- Course 1 -->
                 <div class="course-card reveal">
-                    <div class="course-icon">🩺</div>
-                    <div class="course-badge">Target Batch</div>
-                    <h3 class="course-title">White Coat Batch 27</h3>
-                    <p class="course-desc">Focused NEET 2027 program covering the entire syllabus with regular practice
-                        tests and expert mentorship to help you get a top medical rank.</p>
+                    <div class="course-icon">🏠</div>
+                    <div class="course-badge">Foundation Batch</div>
+                    <h3 class="course-title">JEE MANTRA 3.0 BATCH 2028</h3>
+                    <p class="course-desc">Focused JEE Mantra 3.0 program (Batch 2028) covering the entire syllabus with
+                        regular practice tests and expert mentorship to help you secure a top engineering rank.</p>
                 </div>
-                <!-- Course 2 -->
                 <div class="course-card reveal">
                     <div class="course-icon">🚀</div>
                     <div class="course-badge">Dropper Batch</div>
-                    <h3 class="course-title">Dropper NEET 2027</h3>
-                    <p class="course-desc">This batch is meant for droppers. It includes a complete revision of
-                        concepts, advanced problem solving and rigorous testing to boost your NEET score significantly.
-                    </p>
+                    <h3 class="course-title">DROPPER JEE 2027 BATCH</h3>
+                    <p class="course-desc">A dedicated batch for JEE aspirants taking a drop year, offering focused
+                        preparation, expert mentorship, and rigorous practice to crack JEE 2027 with top ranks.</p>
                 </div>
-                <!-- Course 3 -->
                 <div class="course-card reveal">
-                    <div class="course-icon">🌱</div>
-                    <div class="course-badge">Foundation Batch</div>
-                    <h3 class="course-title">Mission NEET 3.0 Batch 28</h3>
-                    <p class="course-desc">A strong foundational batch for NEET 2028 aspirants that combines core
-                        concepts with board exam preparation in a structured, step-by-step manner. </p>
+                    <div class="course-icon">🎯</div>
+                    <div class="course-badge">Target Batch</div>
+                    <h3 class="course-title">TARGET JEE 2027 BATCH</h3>
+                    <p class="course-desc">A batch for students preparing for JEE 2027, with clear teaching and regular
+                        practice to build strong basics. Guided by experienced teachers.</p>
                 </div>
-
             </div>
         </div>
     </section>
-    <!-- ============================================
-         SECTION 5: TESTIMONIALS
-         ============================================ -->
+
+    <!-- SECTION 5: TESTIMONIALS -->
     <section class="section-padding bg-light" id="testimonials">
         <div class="container">
             <h2 class="section-title reveal">What Our Students Say</h2>
             <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
                 <div class="testimonial-card reveal">
-                    <div class="quote-icon">❞ </div>
-
+                    <div class="quote-icon">❞</div>
                     <div class="stars" style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <img src="https://img.icons8.com/?size=100&amp;id=17949&amp;format=png&amp;color=000000" width="20" height="20" alt="Google">
+                        <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" width="20"
+                            height="20" alt="Google">
                         <span style="color: #FABB05; font-size: 20px;">★★★★★</span>
                     </div>
-                    <p class="review-text">Yahan ke experienced teachers har concept ko detail mein samjhate hain aur
-                        doubts ko patiently clear karte hain. Regular tests, detailed performance analysis, aur
-                        consistent guidance ne meri accuracy aur confidence dono ko improve .</p>
-
+                    <p class="review-text">Maine kaafi bade bade coaching centers dekhe, par Edurain mein jo personal
+                        attention milti hai wo kahin nahi hai. Maths ke complex calculus topics ko sir ne itna simplify
+                        kar diya ki ab numericals solve karne mein maza aata hai.</p>
                     <div class="student-reviewer">
-                        <img src="https://www.image2url.com/r2/default/images/1784015457675-e089e1bd-c091-4150-8da5-8fcab124c6e1.png" alt="Reviewer" class="reviewer-img">
-                        <div class="reviewer-name">Kavya Sen.</div>
+                        <img src="https://cdn.phototourl.com/member/2026-07-21-6319fb54-962a-4de1-ac7c-ddf1d4b3e11f.png"
+                            alt="Reviewer" class="reviewer-img">
+                        <div class="reviewer-name">Vikas Kumar</div>
                     </div>
                 </div>
-                <!-- Testimonial 2 -->
                 <div class="testimonial-card reveal">
-                    <div class="quote-icon">❞ </div>
-
+                    <div class="quote-icon">❞</div>
                     <div class="stars" style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <img src="https://img.icons8.com/?size=100&amp;id=17949&amp;format=png&amp;color=000000" width="20" height="20" alt="Google">
+                        <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" width="20"
+                            height="20" alt="Google">
                         <span style="color: #FABB05; font-size: 20px;">★★★★</span>
                     </div>
-                    <p class="review-text">I was struggling with Biology and Chemistry before joining EduRain and
-                        teachers explained every topic in a very simple way and doubt sessions were really helpful.
-                        Highly recommended for NEET aspirants.</p>
-
+                    <p class="review-text">Managing school and JEE was a nightmare until I joined Edurain. I had a huge
+                        backlog in 11th Physics. The way their curriculum is structured helped me clear my old concepts
+                        while staying on track with 12th.</p>
                     <div class="student-reviewer">
-                        <img src="https://www.image2url.com/r2/default/images/1784013504306-c41aff41-f899-4587-a588-2fef7ea95df9.png" alt="Reviewer" class="reviewer-img">
-                        <div class="reviewer-name">Vivek Singh</div>
+                        <img src="https://cdn.phototourl.com/member/2026-07-21-5bab2cee-e733-40f0-8861-c0f33a69a7bc.png"
+                            alt="Reviewer" class="reviewer-img">
+                        <div class="reviewer-name">Sneha Verma</div>
                     </div>
                 </div>
-                <!-- Testimonial 3 -->
                 <div class="testimonial-card reveal">
-                    <div class="quote-icon">❞ </div>
-
+                    <div class="quote-icon">❞</div>
                     <div class="stars" style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <img src="https://img.icons8.com/?size=100&amp;id=17949&amp;format=png&amp;color=000000" width="20" height="20" alt="Google">
+                        <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" width="20"
+                            height="20" alt="Google">
                         <span style="color: #FABB05; font-size: 20px;">★★★★</span>
                     </div>
-                    <p class="review-text">Mujhe sabse achha yeh laga ki teachers sirf syllabus complete karne par focus
-                        nahi karte, balki concepts ko achhe se clear karwate hain. NEET preparation ke liye EduRain
-                        perfect platform hai </p>
-
+                    <p class="review-text">Being a dropper, mere paas time kam tha. Edurain ke recorded lectures aur
+                        instant doubt support ne mera saal bacha liya. Inorganic chemistry, jo mujhe sabse boring lagti
+                        thi, ab meri fav hai.</p>
                     <div class="student-reviewer">
-                        <img src="https://www.image2url.com/r2/default/images/1784014941695-f30d0c14-d3d1-4dda-aab9-64819e711271.png" alt="Reviewer" class="reviewer-img">
-                        <div class="reviewer-name">Neha Yadav</div>
+                        <img src="https://cdn.phototourl.com/member/2026-07-21-6982125c-9294-4600-b721-cfd5ab274b00.png"
+                            alt="Reviewer" class="reviewer-img">
+                        <div class="reviewer-name">Harshit Tripathi</div>
                     </div>
                 </div>
             </div>
         </div>
-        
     </section>
-    <!-- ============================================
-         SECTION 6: FAQ
-         ============================================ -->
+
+    <!-- SECTION 6: FAQ -->
     <section class="section-padding" id="faq">
         <div class="container">
             <h2 class="section-title reveal">Frequently Asked Questions</h2>
             <div class="faq-container reveal">
                 <div class="faq-item open">
                     <div class="faq-question">
-                        <h4>Who is eligible to join the White Coat Batch for NEET 2027? </h4>
+                        <h4>Who is eligible to join the JEE 2027 batch?</h4>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>The White Coat Batch is ideal for students preparing for NEET 2027, including Class 11
-                            students and anyone looking for a structured online preparation program.</p>
+                        <p>The course is ideal for students preparing for JEE 2027, including Class 11 students and
+                            anyone looking for a structured online preparation program.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1759,65 +1708,31 @@
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>The course covers the complete NEET syllabus in physics, chemistry, and biology, along with
-                            study materials, regular practice questions, mock tests, and revision sessions.</p>
+                        <p>The course covers the complete JEE syllabus in physics, chemistry, and math, along with study
+                            materials, regular practice questions, and mock tests.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>Will I be able to access class recordings if I miss a live session? </h4>
+                        <h4>Will I be able to access class recordings if I miss a live session?</h4>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
                         <p>Yes, all live classes are recorded and shared with enrolled students, allowing you to revise
-                            concepts or catch up on missed lessons anytime</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Do you conduct tests and doubt-clearing sessions?</h4>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, regular chapter-wise tests, mock exams and doubt-clearing sessions are part of every
-                            course, along with detailed performance analysis to track your progress.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>What is the fee for a course?</h4>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Fees vary by course and batch. Reach out to us by phone, email or WhatsApp and our team will
-                            share the current fee structure and any ongoing offers.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>How do I get admission or book a demo class?</h4>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Simply fill out the Admission Enquiry form at the top of this page, or call or message us
-                            directly — our counsellors will guide you through the demo class and enrolment process.</p>
+                            concepts or catch up on missed lessons anytime.</p>
                     </div>
                 </div>
             </div>
         </div>
-        
     </section>
-    <!-- ============================================
-         SECTION 7: CONTACT INFORMATION
-         ============================================ -->
+
+    <!-- SECTION 7: CONTACT INFORMATION -->
     <section class="section-padding bg-light" id="contact">
         <div class="container">
-            <h2 class="section-title reveal"> Get in Touch</h2>
+            <h2 class="section-title reveal">Get in Touch</h2>
             <div class="contact-container reveal">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <div class="contact-item">
-                    </div>
                     <div class="contact-item">
                         <div class="contact-icon">📞</div>
                         <div class="contact-text">
@@ -1829,7 +1744,7 @@
                         <div class="contact-icon">✉️</div>
                         <div class="contact-text">
                             <h5>Email</h5>
-                            <p>support@edurain.in<br></p>
+                            <p>support@edurain.in</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1841,16 +1756,34 @@
                     </div>
                 </div>
                 <div class="banner-container">
-                    <img src="https://www.image2url.com/r2/default/images/1784033051387-61b3c74d-1d5a-4132-bb46-c00164ddb7d9.jpg" alt="EduRain Promotional Banner">
+                    <!-- Slides Wrapper -->
+                    <div class="banner-slides" style="position: relative; width: 100%; height: 100%;">
+                        <img src="https://www.image2url.com/r2/default/images/1784785832245-2cf66298-7836-4049-971e-a8efb83bf18d.png"
+                            class="banner-slide active" alt="Banner 1"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; transition: opacity 0.8s ease-in-out;">
+                        <img src="https://www.image2url.com/r2/default/images/1784786214147-2a27bd93-543d-420d-8ab7-8a10978c677c.png"
+                            class="banner-slide" alt="Banner 2"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease-in-out;">
+                        <img src="https://www.image2url.com/r2/default/images/1784787249126-b326533e-b23b-45a1-9ad5-b358d59f6baa.webp"
+                            class="banner-slide" alt="Banner 3"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease-in-out;">
+                    </div>
+                    <!-- Dots Navigation -->
+                    <div class="banner-dots"
+                        style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10;">
+                        <span class="dot active"
+                            style="width: 10px; height: 10px; background-color: rgba(255,255,255,0.6); border-radius: 50%; transition: 0.3s; cursor: pointer;"></span>
+                        <span class="dot"
+                            style="width: 10px; height: 10px; background-color: rgba(255,255,255,0.6); border-radius: 50%; transition: 0.3s; cursor: pointer;"></span>
+                        <span class="dot"
+                            style="width: 10px; height: 10px; background-color: rgba(255,255,255,0.6); border-radius: 50%; transition: 0.3s; cursor: pointer;"></span>
+                    </div>
                 </div>
             </div>
         </div>
-        
     </section>
 
-    <!-- ============================================
-         FOOTER
-         ============================================ -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -1860,18 +1793,10 @@
                     <p>Dedicated to providing the best education and mentoring to help students achieve their goals and
                         build a bright future.</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/edurain_official " class="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"></path>
-                            </svg></a>
-                        <a href="https://www.youtube.com/@Eduraininstitute" class="Youtube"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
-                                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"></path>
-                            </svg></a>
-                        <a href="https://www.linkedin.com/company/edurainofficial/" class="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"></path>
-                            </svg></a>
-                        <a href="https://www.facebook.com/edu.rain.71/" class="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path>
-                            </svg></a>
+                        <a href="https://www.instagram.com/edurain_official" class="social-icon">IG</a>
+                        <a href="https://www.youtube.com/@Eduraininstitute" class="social-icon">YT</a>
+                        <a href="https://www.linkedin.com/company/edurainofficial/" class="social-icon">IN</a>
+                        <a href="https://www.facebook.com/edu.rain.71/" class="social-icon">FB</a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -1888,9 +1813,8 @@
                     <ul class="footer-links">
                         <li><a href="https://courses.edurain.in/courses/814178">Target Batch (JEE 27)</a></li>
                         <li><a href="https://edurain.in/neetcourse">White Coat Batch (NEET 27)</a></li>
-                        <li><a href="https://courses.edurain.in/courses/814577"> NEEV Batch (9th class)</a></li>
-                        <li><a href="https://courses.edurain.in/courses/814204">Dhisha Batch ( 10th class Board Exam
-                                Prep)</a></li>
+                        <li><a href="https://courses.edurain.in/courses/814577">NEEV Batch (9th class)</a></li>
+                        <li><a href="https://courses.edurain.in/courses/814204">Dhisha Batch (10th class Board)</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1898,27 +1822,26 @@
                     <ul class="footer-links">
                         <li>📍 Sec 132, Noida</li>
                         <li>📞 +91 9599022849</li>
-                        <li>📩 support@edurain.in </li>
+                        <li>📩 support@edurain.in</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 EDURAIN. All Rights Reserved.</p>
+                <p>&copy; 2026 EDURAIN. All Rights Reserved.</p>
                 <button class="back-to-top" id="backToTop" title="Go to top">↑</button>
             </div>
         </div>
     </footer>
-    <!-- ============================================
-         FLOATING ELEMENTS
-         ============================================ -->
+
+    <!-- FLOATING ELEMENTS -->
     <div class="floating-contact">
-        <a href="https://api.whatsapp.com/send/?phone=918796443910&amp;text&amp;type=phone_number&amp;app_absent=0" class="float-btn float-whatsapp" data-tooltip="Chat on WhatsApp">💬</a>
-        <a href="tel:+918796443910" class="float-btn float-call" data-tooltip="Call Now">📞</a>
+        <a href="https://api.whatsapp.com/send/?phone=919599022849&text&type=phone_number&app_absent=0"
+            class="float-btn float-whatsapp" data-tooltip="Chat on WhatsApp">💬</a>
+        <a href="tel:+919599022849" class="float-btn float-call" data-tooltip="Call Now">📞</a>
         <a href="mailto:Support@edurain.in" class="float-btn float-email" data-tooltip="Send Email">✉️</a>
     </div>
-    <!-- ============================================
-         JAVASCRIPT
-         ============================================ -->
+
+    <!-- JAVASCRIPT -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Mobile Menu Toggle
@@ -1930,7 +1853,6 @@
                 navLinks.classList.toggle('active');
             });
 
-            // Close mobile menu when a link is clicked
             document.querySelectorAll('.nav-links li a').forEach(link => {
                 link.addEventListener('click', () => {
                     hamburger.classList.remove('active');
@@ -1941,24 +1863,18 @@
             // Form Submit Logic
             document.getElementById('enquiryForm').addEventListener('submit', function (e) {
                 e.preventDefault();
-
                 var form = this;
                 var formData = new FormData(form);
                 var submitBtn = form.querySelector('.submit-btn');
 
-                submitBtn.innerHTML = "Becoming....";
+                submitBtn.innerHTML = "Becoming...";
 
-                fetch('https://script.google.com/macros/s/AKfycbzGyF5SVnVKwYpbwzQD0wYk1cebkOftbAbXC7mRFjd6YD9ZOTEyWgImTnoF0TFA0jCh/exec', {
+                fetch('https://script.google.com/macros/s/AKfycbyK50OH5gviBU1jd1YmIsF3EsvWcTJW6qF1l2dFfuG4YirEBe8DJh-zvcYLFsqoKsZU/exec', {
                     method: 'POST',
                     body: new URLSearchParams(formData)
                 })
                     .then(response => {
-
-                        document.getElementById('formTitle').innerText = "Thank You!";
-
-                        document.getElementById('enquiryForm').style.display = 'none';
-
-                        document.getElementById('successMessage').style.display = 'block';
+                        window.location.href = "/thank-you.html";
                     })
                     .catch(error => {
                         alert("Error submitting form. Please try again.");
@@ -1966,7 +1882,7 @@
                     });
             });
 
-
+            // Header Shadow on Scroll
             const header = document.getElementById('header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -1978,13 +1894,12 @@
                 }
             });
 
-
+            // Results Slider Controls
             const resultsGrid = document.getElementById('resultsGrid');
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
 
             if (resultsGrid && prevBtn && nextBtn) {
-                // Button Clicks
                 prevBtn.addEventListener('click', () => {
                     const cardWidth = resultsGrid.querySelector('.result-card').offsetWidth + 30;
                     resultsGrid.scrollBy({ left: -cardWidth, behavior: 'smooth' });
@@ -1995,17 +1910,15 @@
                     resultsGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
                 });
 
-                // Fast Auto Slide Feature (Changed to 2000)
                 let autoSlide = setInterval(() => {
                     const cardWidth = resultsGrid.querySelector('.result-card').offsetWidth + 30;
                     if (resultsGrid.scrollLeft + resultsGrid.clientWidth >= resultsGrid.scrollWidth - 10) {
-                        resultsGrid.scrollTo({ left: 0, behavior: 'smooth' }); // Rewind to start
+                        resultsGrid.scrollTo({ left: 0, behavior: 'smooth' });
                     } else {
                         resultsGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
                     }
                 }, 1500);
 
-                // Pause Slider on hover or touch
                 const wrapper = document.querySelector('.results-section-wrapper');
                 wrapper.addEventListener('mouseenter', () => clearInterval(autoSlide));
                 wrapper.addEventListener('mouseleave', () => {
@@ -2016,7 +1929,7 @@
                         } else {
                             resultsGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
                         }
-                    }, 900);
+                    }, 1500);
                 });
                 wrapper.addEventListener('touchstart', () => clearInterval(autoSlide));
             }
@@ -2033,6 +1946,7 @@
                     }
                 });
             });
+
             // Scroll Reveal Animation
             const reveals = document.querySelectorAll('.reveal');
             const revealOnScroll = () => {
@@ -2056,57 +1970,44 @@
                     behavior: 'smooth'
                 });
             });
-        });
 
-        // Function
-        function handleAppDownload() {
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-            let url = "";
-
-            // Android Detection
-            if (/android/i.test(userAgent)) {
-                url = "https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN";
-            }
-            // iOS Detection
-            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                url = "https://apps.apple.com/in/app/myinstitute/id1472483563";
-            }
-            // Default (PC/Other) - Play Store
-            else {
-                url = "https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN";
-            }
-            window.open(url, '_blank');
-        }
-        // Promotional Banner Auto Slide with Dots
-        document.addEventListener('DOMContentLoaded', () => {
+            // Promotional Banner Auto Slide with Dots
             const slides = document.querySelectorAll('.banner-slide');
             const dots = document.querySelectorAll('.banner-dots .dot');
             let currentBannerIndex = 0;
 
             function nextBannerSlide() {
                 if (slides.length === 0) return;
-
-                // Purane slide aur dot se active hatao
                 slides[currentBannerIndex].classList.remove('active');
                 slides[currentBannerIndex].style.opacity = '0';
                 dots[currentBannerIndex].classList.remove('active');
 
-                // Next index calculate karo (Total 4 slides)
                 currentBannerIndex = (currentBannerIndex + 1) % slides.length;
 
-                // Naye slide aur dot par active lagao
                 slides[currentBannerIndex].classList.add('active');
                 slides[currentBannerIndex].style.opacity = '1';
                 dots[currentBannerIndex].classList.add('active');
             }
 
-            // Speed Control: 3000ms matlab har 3 second mein poster change hoga
             if (slides.length > 0) {
                 setInterval(nextBannerSlide, 3000);
             }
         });
+
+        // App Download Detection Function
+        function handleAppDownload() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            let url = "";
+            if (/android/i.test(userAgent)) {
+                url = "https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                url = "https://apps.apple.com/in/app/myinstitute/id1472483563";
+            } else {
+                url = "https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN";
+            }
+            window.open(url, '_blank');
+        }
     </script>
+</body>
 
-
-</body></html>
+</html>
