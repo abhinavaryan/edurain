@@ -13,7 +13,8 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         jeecourse: resolve(__dirname, 'jeecourse.html'),
         neetcourse: resolve(__dirname, 'neetcourse.html'),
-        foundationcourse: resolve(__dirname, 'foundationcourse.html')
+        foundationcourse: resolve(__dirname, 'foundationcourse.html'),
+        thankyou: resolve(__dirname, 'thank-you.html')
       },
       output: {
         manualChunks(id) {
