@@ -4734,3 +4734,43 @@ textarea {
     margin: 0;
 }
 .er-dot::after { content: ''; position: absolute; top: -16px; left: -16px; right: -16px; bottom: -16px; }
+
+/* Styling for Quill Editor and Rendered Blog Content */
+.ql-editor p, .quill-content p, 
+#quill-editor .ql-editor p, #pw-reader-main-content .quill-content p {
+    margin-bottom: 1em !important;
+    line-height: 1.6 !important;
+}
+.ql-editor h1, .quill-content h1, #quill-editor .ql-editor h1,
+.ql-editor h2, .quill-content h2, #quill-editor .ql-editor h2,
+.ql-editor h3, .quill-content h3, #quill-editor .ql-editor h3,
+.ql-editor h4, .quill-content h4, #quill-editor .ql-editor h4 {
+    margin-top: 1.5em !important;
+    margin-bottom: 0.8em !important;
+    font-weight: 600 !important;
+}
+.ql-editor h1, .quill-content h1 { font-size: 2em !important; }
+.ql-editor h2, .quill-content h2 { font-size: 1.5em !important; }
+.ql-editor h3, .quill-content h3 { font-size: 1.17em !important; }
+.ql-editor ul, .quill-content ul,
+.ql-editor ol, .quill-content ol,
+#quill-editor .ql-editor ul, #quill-editor .ql-editor ol {
+    margin-bottom: 1em !important;
+    padding-left: 2em !important;
+}
+.ql-editor li, .quill-content li,
+#quill-editor .ql-editor li {
+    margin-bottom: 0.25em !important;
+}
+.ql-editor blockquote, .quill-content blockquote {
+    border-left: 4px solid var(--accent, #FACC15) !important;
+    padding-left: 1em !important;
+    margin: 1em 0 !important;
+    color: var(--text-muted, #6B7280) !important;
+}
+.quill-content img {
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+    margin: 1.5em 0 !important;
+}
