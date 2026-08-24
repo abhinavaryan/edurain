@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - EduRain</title>
+    <style>
+        :root {
+            --primary-color: #FFC107;
+            --primary-dark: #FFA000;
+            --secondary-color: #2E7D32;
+            --secondary-dark: #1B5E20;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9faf0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .thank-you-card {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+            text-align: center;
+            width: 90%;
+            max-width: 450px;
+        }
+
+        /* Gradient Border Effect */
+        .thank-you-card::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            z-index: -1;
+            border-radius: 18px;
+        }
+
+        .thank-you-img {
+            width: 65%;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .message-title {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .message-subtitle {
+            margin-bottom: 25px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #333;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="page-title">Thank You!</h1>
+
+    <div class="thank-you-card">
+        <img src="https://cdn.phototourl.com/free/2026-07-19-f036e465-c23a-4393-8fcf-c284ff0a1010.png" alt="Success"
+            class="thank-you-img">
+        <h3 class="message-title">Our student advisor will reach out to you!</h3>
+        <p class="message-subtitle">EduRain - Victory Starts Here</p>
+
+        <div class="btn-group">
+            <a href="/#courses" class="btn btn-secondary">Browse Courses</a>
+            <button onclick="handleAppDownload()" class="btn btn-primary">Download Our App</button>
+        </div>
+    </div>
+
+    <script>
+        // App Download Function
+        function handleAppDownload() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            let url = "";
+            if (/android/i.test(userAgent)) {
+                url = "https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                url = "https://apps.apple.com/in/app/myinstitute/id1472483563";
+            } else {
+                url = "https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN";
+            }
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+
+</html>
