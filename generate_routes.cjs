@@ -1,7 +1,7 @@
 
-
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
 
 const routesMeta = {
   'courses': {
@@ -63,16 +63,9 @@ const routesMeta = {
     title: "Student Reviews | EduRain",
     desc: "Read what our students have to say about EduRain's courses and faculty.",
     canonical: 'https://www.edurain.in/reviews'
-  },
-  'blogadmin': {
-    title: "Blog Admin", desc: "Admin", canonical: "https://www.edurain.in/blogadmin"
-  },
-  'blogadmin/login': {
-    title: "Blog Admin Login", desc: "Admin", canonical: "https://www.edurain.in/blogadmin/login"
   }
+  // blogadmin routes intentionally excluded - should NOT be indexed
 };
-
-const https = require('https');
 
 function fetchBlogs() {
     return new Promise((resolve, reject) => {
@@ -92,6 +85,9 @@ function fetchBlogs() {
 }
 
 (async function generate() {
+  const today = new Date().toISOString().split('T')[0];
+  const blogSlugs = []; // collect for sitemap
+
   try {
     const blogs = await fetchBlogs();
     blogs.forEach(doc => {
@@ -117,6 +113,7 @@ function fetchBlogs() {
             desc: metaDesc,
             canonical: `https://www.edurain.in/blogs/${slug}`
         };
+        blogSlugs.push(slug);
       }
     });
     console.log(`Fetched ${blogs.length} blogs from Firebase for SEO generation.`);
@@ -158,15 +155,54 @@ function fetchBlogs() {
     finalHtml = finalHtml.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${meta.title}">`);
     finalHtml = finalHtml.replace(/<meta name="twitter:description"[\s\S]*?content="[^"]*">/, `<meta name="twitter:description" content="${meta.desc}">`);
 
-    const htmlPath = path.join(distDir, route + '.html');
-    const dirPath = path.dirname(htmlPath);
-    
-    if (!fs.existsSync(dirPath)) {
-      fs.mkdirSync(dirPath, { recursive: true });
+    // ---------------------------------------------------------
+    // KEY FIX: Write as folder/index.html so GitHub Pages can
+    // serve it directly WITHOUT a 404 redirect hack.
+    // e.g. dist/courses/iit-jee/index.html  → edurain.in/courses/iit-jee
+    // ---------------------------------------------------------
+    const folderPath = path.join(distDir, route);
+    if (!fs.existsSync(folderPath)) {
+      fs.mkdirSync(folderPath, { recursive: true });
     }
-    
-    fs.writeFileSync(htmlPath, finalHtml);
+    fs.writeFileSync(path.join(folderPath, 'index.html'), finalHtml);
   });
 
-  console.log('Successfully generated static HTML files (without trailing slashes) for SPA routes with injected SEO metadata.');
+  // ---------------------------------------------------------
+  // Generate dynamic sitemap.xml with all routes + blog pages
+  // ---------------------------------------------------------
+  const staticUrls = [
+    { loc: 'https://www.edurain.in/', priority: '1.0', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/courses', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/courses/iit-jee', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/courses/neet', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/courses/foundation', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/blogs', priority: '0.8', changefreq: 'daily' },
+    { loc: 'https://www.edurain.in/about-us', priority: '0.7', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/contact-us', priority: '0.7', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/reviews', priority: '0.6', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/journey', priority: '0.6', changefreq: 'monthly' },
+  ];
+
+  const blogUrls = blogSlugs.map(slug => ({
+    loc: `https://www.edurain.in/blogs/${slug}`,
+    priority: '0.8',
+    changefreq: 'monthly'
+  }));
+
+  const allUrls = [...staticUrls, ...blogUrls];
+
+  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${allUrls.map(u => `    <url>
+        <loc>${u.loc}</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>${u.changefreq}</changefreq>
+        <priority>${u.priority}</priority>
+    </url>`).join('\n')}
+</urlset>`;
+
+  fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml);
+  console.log(`Generated sitemap.xml with ${allUrls.length} URLs (${blogUrls.length} blog pages).`);
+
+  console.log('Successfully generated static HTML files (folder-based, no trailing slash issues) for SPA routes with injected SEO metadata.');
 })();
