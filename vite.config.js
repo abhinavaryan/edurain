@@ -11,9 +11,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        jeecourse: resolve(__dirname, 'jeecourse/index.html'),
-        neetcourse: resolve(__dirname, 'neetcourse/index.html'),
-        foundationcourse: resolve(__dirname, 'foundationcourse/index.html')
+        jeecourse: resolve(__dirname, 'jeecourse.html'),
+        neetcourse: resolve(__dirname, 'neetcourse.html'),
+        foundationcourse: resolve(__dirname, 'foundationcourse.html')
       },
       output: {
         manualChunks(id) {
