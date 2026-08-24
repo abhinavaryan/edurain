@@ -2,11 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Redirecting...</title>
+    <title>EduRain</title>
     <script>
-      // Single Page Apps for GitHub Pages 404 Hack
+      // GitHub Pages SPA redirect — only for truly unknown paths
+      // Known routes (courses/iit-jee, blogs/slug etc.) now have their own
+      // index.html so they will NEVER hit this 404 page.
       var l = window.location;
-      var redirectUrl = l.protocol + '//' + l.host + '/?p=' + l.pathname;
+      var redirectUrl = l.protocol + '//' + l.host + '/?p=' + l.pathname + l.search;
       l.replace(redirectUrl);
     </script>
   </head>
