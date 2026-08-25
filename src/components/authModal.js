@@ -1,5 +1,79 @@
 import { loginUser, registerUser } from '../firebase/auth.js';
 
+function playPremiumLoadingAnimation(onComplete) {
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        background: var(--charcoal); z-index: 99999;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        color: white; font-family: var(--font-family);
+    `;
+    
+    overlay.innerHTML = `
+        <div class="logo-container" style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem; opacity: 0; transform: translateY(20px);">
+            <span class="text-white">Edu</span><span class="text-accent">Rain</span>
+        </div>
+        <div class="text-container" style="font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-secondary); letter-spacing: 0.5px; opacity: 0;">Configuring your premium dashboard...</div>
+        <div style="width: 300px; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; position: relative; margin-bottom: 1rem; opacity: 0;" class="bar-container">
+            <div id="loading-progress-bar" style="width: 0%; height: 100%; background: var(--accent); border-radius: 4px; box-shadow: 0 0 15px var(--accent);"></div>
+        </div>
+        <div id="loading-progress-text" style="font-weight: bold; color: var(--accent); font-size: 1.5rem; text-shadow: 0 0 10px rgba(250, 204, 21, 0.5); opacity: 0;" class="text-counter">0%</div>
+    `;
+    document.body.appendChild(overlay);
+
+    if (window.anime) {
+        anime.timeline({
+            easing: 'easeOutExpo'
+        })
+        .add({
+            targets: '.logo-container',
+            opacity: [0, 1],
+            translateY: [20, 0],
+            duration: 800
+        })
+        .add({
+            targets: '.text-container, .bar-container, .text-counter',
+            opacity: [0, 1],
+            translateY: [10, 0],
+            duration: 600,
+            delay: anime.stagger(100)
+        }, '-=400');
+
+        const progressObj = { val: 0 };
+        anime({
+            targets: progressObj,
+            val: 100,
+            round: 1,
+            easing: 'easeInOutSine',
+            duration: 1500,
+            delay: 1000,
+            update: function() {
+                const textEl = document.getElementById('loading-progress-text');
+                const barEl = document.getElementById('loading-progress-bar');
+                if (textEl) textEl.innerHTML = progressObj.val + '%';
+                if (barEl) barEl.style.width = progressObj.val + '%';
+            },
+            complete: function() {
+                anime({
+                    targets: overlay,
+                    opacity: 0,
+                    duration: 500,
+                    easing: 'easeInQuad',
+                    complete: function() {
+                        if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+                        if (onComplete) onComplete();
+                    }
+                });
+            }
+        });
+    } else {
+        setTimeout(() => {
+            if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+            if (onComplete) onComplete();
+        }, 1000);
+    }
+}
+
 export function renderAuthModal() {
     return `
         <div class="auth-modal-overlay" id="auth-modal" style="display:none;">
@@ -134,6 +208,13 @@ export function initAuthModal() {
                 await loginUser(email, password);
                 closeModal();
                 loginForm.reset();
+                playPremiumLoadingAnimation(() => {
+                    if (window.appRouter) {
+                        window.appRouter.navigate('/study');
+                    } else {
+                        window.location.href = '/study';
+                    }
+                });
             } catch (err) {
                 errorDiv.textContent = err.message || 'Login failed. Please try again.';
             } finally {
@@ -183,6 +264,13 @@ export function initAuthModal() {
                 await registerUser(name, email, password);
                 closeModal();
                 signupForm.reset();
+                playPremiumLoadingAnimation(() => {
+                    if (window.appRouter) {
+                        window.appRouter.navigate('/study');
+                    } else {
+                        window.location.href = '/study';
+                    }
+                });
             } catch (err) {
                 errorDiv.textContent = err.message || 'Registration failed. Please try again.';
             } finally {

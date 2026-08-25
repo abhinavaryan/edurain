@@ -23,7 +23,7 @@ export function renderNavbar() {
                     <a href="/contact-us" class="nav-link">Contact Us</a>
                 </div>
                 <div class="auth-btn-area">
-                    <button class="btn btn-accent login-btn">Login</button>
+                    ${import.meta.env.DEV ? '<button class="btn btn-accent login-btn">Login</button>' : ''}
                 </div>
                 <button class="hamburger" id="hamburger-btn" aria-label="Open Mobile Menu">
                     <span></span>
@@ -55,7 +55,7 @@ export function renderNavbar() {
                 <a href="/contact-us" class="nav-link">Contact Us</a>
             </div>
             <div class="mobile-menu-footer auth-btn-area">
-                <button class="btn btn-accent login-btn" style="width: 100%;">Login/Register</button>
+                ${import.meta.env.DEV ? '<button class="btn btn-accent login-btn" style="width: 100%;">Login/Register</button>' : ''}
             </div>
         </div>
     `;

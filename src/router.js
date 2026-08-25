@@ -174,6 +174,35 @@ const routes = {
   }
 };
 
+// DEV ONLY: Safely load the Student Dashboard (Study Panel)
+if (import.meta.env.DEV) {
+  routes['/study'] = {
+    load: async () => {
+      const { renderDashboard, initDashboard } = await import('./components/dashboard.js');
+      return { 
+        render: () => renderDashboard(), 
+        postRender: () => {
+          if (typeof initDashboard === 'function') initDashboard();
+          setMetaTags("Study | EduRain", "Your personal study dashboard", "https://www.edurain.in/study");
+        } 
+      };
+    }
+  };
+  
+  routes['/study/x-panel'] = {
+    load: async () => {
+      const { renderXPanel } = await import('./components/xPanel.js');
+      return { 
+        render: () => renderXPanel(), 
+        postRender: () => {
+          setMetaTags("X Panel | EduRain", "Exclusive Elite Member Area", "https://www.edurain.in/study/x-panel");
+        } 
+      };
+    }
+  };
+
+}
+
 // ── Scroll reveal for .er-reveal elements ──
 function initScrollReveal() {
   const els = document.querySelectorAll('.er-reveal');
@@ -292,15 +321,16 @@ export const initRouter = () => {
       };
     }
 
-    const navbarHTML = path.startsWith('/blogadmin') ? '' : renderNavbar();
-    const footerHTML = path.startsWith('/blogadmin') ? '' : renderFooter();
-    const authModalHTML = path.startsWith('/blogadmin') ? '' : renderAuthModal();
+    const isStandalonePage = path.startsWith('/blogadmin') || path.startsWith('/study');
+    const navbarHTML = isStandalonePage ? '' : renderNavbar();
+    const footerHTML = isStandalonePage ? '' : renderFooter();
+    const authModalHTML = (!path.startsWith('/blogadmin') && import.meta.env.DEV) ? renderAuthModal() : '';
     
     const pageHTML = route.render();
 
     app.innerHTML = `
       ${navbarHTML}
-      <main class="main-content fade-in-section" ${path.startsWith('/blogadmin') ? 'style="padding:0; margin:0; max-width: 100%;"' : ''}>
+      <main class="main-content fade-in-section" ${isStandalonePage ? 'style="padding:0; margin:0; max-width: 100%;"' : ''}>
         ${pageHTML}
       </main>
       ${footerHTML}
