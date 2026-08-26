@@ -7,7 +7,7 @@ function e(){return`
                 Find the best course for your JEE, NEET, or foundation preparation and start learning today.
             </p>
             <div class="er-courses-grid">
-                ${[{icon:`🔬`,iconBg:`#ef4444`,blobColor:`#fca5a5`,category:`Medical`,title:`NEET 2027`,link:`#courses?filter=NEET`,tags:[`Class 11`,`Class 12`,`Dropper`]},{icon:`📐`,iconBg:`#3b82f6`,blobColor:`#93c5fd`,category:`Engineering`,title:`JEE 2027`,link:`#courses?filter=JEE`,tags:[`Class 11`,`Class 12`,`Dropper`]},{icon:`📚`,iconBg:`#f59e0b`,blobColor:`#fde68a`,category:`School`,title:`Foundation (6-10)`,link:`#courses?filter=FOUNDATION`,tags:[`Class 8`,`Class 9`,`Class 10`]}].map((e,t)=>`
+                ${[{icon:`🔬`,iconBg:`#ef4444`,blobColor:`#fca5a5`,category:`Medical`,title:`NEET 2027`,link:`/courses/neet`,tags:[`Class 11`,`Class 12`,`Dropper`]},{icon:`📐`,iconBg:`#3b82f6`,blobColor:`#93c5fd`,category:`Engineering`,title:`JEE 2027`,link:`/courses/iit-jee`,tags:[`Class 11`,`Class 12`,`Dropper`]},{icon:`📚`,iconBg:`#f59e0b`,blobColor:`#fde68a`,category:`School`,title:`Foundation (6-10)`,link:`/courses/foundation`,tags:[`Class 8`,`Class 9`,`Class 10`]}].map((e,t)=>`
         <div class="er-course-card glass-card er-reveal visible" style="background: #ffffff !important; border: 1px solid rgba(22, 163, 74, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
             <div class="er-course-blob" style="background:${e.blobColor};"></div>
             <div class="er-course-icon" style="background:${e.iconBg}; color: #ffffff;">${e.icon}</div>
