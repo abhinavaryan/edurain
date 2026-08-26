@@ -111,11 +111,95 @@ export function renderDashboard() {
             </div>
           </div>
 
+          <!-- STUDY RESOURCES (MOCK DATA) -->
+          <div style="margin-top: var(--space-xl); margin-bottom: var(--space-xl);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-lg);">
+              <h2 style="font-size: var(--fs-lg); font-weight: 600;">Study Resources</h2>
+              <a href="#" style="color: var(--accent); font-size: 0.9rem; text-decoration: none; font-weight: 600;">View All</a>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: calc(var(--space-md) * 1.618);">
+              
+              <!-- Notes -->
+              <div class="resource-card" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: var(--space-lg); transition: all 0.3s ease; cursor: pointer; display: flex; flex-direction: column; gap: var(--space-md); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: radial-gradient(circle, rgba(52, 211, 153, 0.2) 0%, transparent 70%); transform: translate(30%, -30%);"></div>
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <div style="width: 48px; height: 48px; background: rgba(52, 211, 153, 0.1); color: #34d399; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 1px solid rgba(52, 211, 153, 0.2);">
+                    <i class="fas fa-file-pdf"></i>
+                  </div>
+                  <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">12 PDFs</span>
+                </div>
+                <div>
+                  <h3 style="font-size: 1.1rem; margin-bottom: 4px; font-weight: 600;">Physics Notes</h3>
+                  <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Thermodynamics & Optics (Chapter 4-6)</p>
+                </div>
+                <div style="margin-top: auto; display: flex; align-items: center; gap: 8px; color: var(--accent); font-size: 0.9rem; font-weight: 600;">
+                  <span>Open Notes</span> <i class="fas fa-arrow-right" style="font-size: 0.8rem; transition: transform 0.2s;"></i>
+                </div>
+              </div>
+
+              <!-- E-Books -->
+              <div class="resource-card" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: var(--space-lg); transition: all 0.3s ease; cursor: pointer; display: flex; flex-direction: column; gap: var(--space-md); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: radial-gradient(circle, rgba(96, 165, 250, 0.2) 0%, transparent 70%); transform: translate(30%, -30%);"></div>
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <div style="width: 48px; height: 48px; background: rgba(96, 165, 250, 0.1); color: #60a5fa; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 1px solid rgba(96, 165, 250, 0.2);">
+                    <i class="fas fa-book"></i>
+                  </div>
+                  <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">3 Books</span>
+                </div>
+                <div>
+                  <h3 style="font-size: 1.1rem; margin-bottom: 4px; font-weight: 600;">Chemistry E-Books</h3>
+                  <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Organic Chemistry Vol. 1 & 2</p>
+                </div>
+                <div style="margin-top: auto; display: flex; align-items: center; gap: 8px; color: var(--accent); font-size: 0.9rem; font-weight: 600;">
+                  <span>Read Now</span> <i class="fas fa-arrow-right" style="font-size: 0.8rem; transition: transform 0.2s;"></i>
+                </div>
+              </div>
+
+              <!-- Mock Test -->
+              <div class="resource-card" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: var(--space-lg); transition: all 0.3s ease; cursor: pointer; display: flex; flex-direction: column; gap: var(--space-md); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: radial-gradient(circle, rgba(244, 63, 94, 0.2) 0%, transparent 70%); transform: translate(30%, -30%);"></div>
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <div style="width: 48px; height: 48px; background: rgba(244, 63, 94, 0.1); color: #f43f5e; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 1px solid rgba(244, 63, 94, 0.2);">
+                    <i class="fas fa-stopwatch"></i>
+                  </div>
+                  <span style="background: rgba(244, 63, 94, 0.2); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; color: #fecdd3; animation: pulse-red 2s infinite;">Live Now</span>
+                </div>
+                <div>
+                  <h3 style="font-size: 1.1rem; margin-bottom: 4px; font-weight: 600;">Weekly Mock Test</h3>
+                  <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">JEE Mains Full Syllabus Test #04</p>
+                </div>
+                <div style="margin-top: auto; display: flex; align-items: center; gap: 8px; color: var(--accent); font-size: 0.9rem; font-weight: 600;">
+                  <span>Start Test</span> <i class="fas fa-arrow-right" style="font-size: 0.8rem; transition: transform 0.2s;"></i>
+                </div>
+              </div>
+
+              <!-- Live Classes -->
+              <div class="resource-card" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: var(--space-lg); transition: all 0.3s ease; cursor: pointer; display: flex; flex-direction: column; gap: var(--space-md); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: radial-gradient(circle, rgba(167, 139, 250, 0.2) 0%, transparent 70%); transform: translate(30%, -30%);"></div>
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <div style="width: 48px; height: 48px; background: rgba(167, 139, 250, 0.1); color: #a78bfa; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 1px solid rgba(167, 139, 250, 0.2);">
+                    <i class="fas fa-video"></i>
+                  </div>
+                  <span style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; color: var(--text-secondary);">In 2 hrs</span>
+                </div>
+                <div>
+                  <h3 style="font-size: 1.1rem; margin-bottom: 4px; font-weight: 600;">Mathematics Live</h3>
+                  <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Calculus Integration Techniques</p>
+                </div>
+                <div style="margin-top: auto; display: flex; align-items: center; gap: 8px; color: var(--accent); font-size: 0.9rem; font-weight: 600;">
+                  <span>Join Room</span> <i class="fas fa-arrow-right" style="font-size: 0.8rem; transition: transform 0.2s;"></i>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
           <!-- BOOST YOUR LEARNING SECTION -->
           <h2 style="font-size: var(--fs-lg); margin-bottom: var(--space-md);">Boost Your Learning</h2>
           <div class="boost-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-md);">
             
-            <div class="glass-card er-reveal" style="padding: var(--space-md); border-radius: 12px; display: flex; gap: 16px; align-items: center; background: linear-gradient(135deg, rgba(6,78,59,0.2), rgba(250,204,21,0.05)); border: 1px solid rgba(255,255,255,0.05);">
+            <div class="glass-card" style="padding: var(--space-md); border-radius: 12px; display: flex; gap: 16px; align-items: center; background: linear-gradient(135deg, rgba(6,78,59,0.2), rgba(250,204,21,0.05)); border: 1px solid rgba(255,255,255,0.05);">
                <div style="width: 60px; height: 60px; background: rgba(0,0,0,0.3); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--accent);">
                  <i class="fas fa-chart-line"></i>
                </div>
@@ -125,7 +209,7 @@ export function renderDashboard() {
                </div>
             </div>
 
-            <div class="glass-card er-reveal" style="padding: var(--space-md); border-radius: 12px; display: flex; gap: 16px; align-items: center; background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(0,0,0,0.1)); border: 1px solid rgba(255,255,255,0.05);">
+            <div class="glass-card" style="padding: var(--space-md); border-radius: 12px; display: flex; gap: 16px; align-items: center; background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(0,0,0,0.1)); border: 1px solid rgba(255,255,255,0.05);">
                <div style="width: 60px; height: 60px; background: rgba(0,0,0,0.3); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #a78bfa;">
                  <i class="fas fa-trophy"></i>
                </div>
@@ -147,8 +231,16 @@ export function renderDashboard() {
       }
       .learning-card:hover {
         transform: translateY(-4px);
-        background: rgba(255,255,255,0.05) !important;
-        border-color: rgba(255,255,255,0.2) !important;
+        background: rgba(255,255,255,0.03) !important;
+      }
+      .resource-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        border-color: rgba(250,204,21,0.4) !important;
+        background: rgba(255,255,255,0.08) !important;
+      }
+      .resource-card:hover .fa-arrow-right {
+        transform: translateX(5px);
       }
       @keyframes pulse-red {
         0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
