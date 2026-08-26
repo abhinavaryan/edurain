@@ -7,7 +7,7 @@ export function renderDashboard() {
       <!-- LEFT SIDEBAR -->
       <aside class="dashboard-sidebar" style="width: 250px; background: rgba(0,0,0,0.3); backdrop-filter: blur(10px); border-right: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; padding: var(--space-md) 0;">
         <div style="padding: 0 var(--space-md); margin-bottom: var(--space-xl); text-align: center;">
-          <img src="images/logo.png" alt="EduRain" style="max-height: 40px; filter: drop-shadow(0 0 8px var(--primary-glow));">
+          <img src="/images/logo.png" alt="EduRain" style="max-height: 40px; filter: drop-shadow(0 0 8px var(--primary-glow));">
         </div>
         
         <nav class="sidebar-nav" style="display: flex; flex-direction: column; gap: var(--space-xs);">
