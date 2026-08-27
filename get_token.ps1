@@ -3,5 +3,6 @@ $vault = New-Object Windows.Security.Credentials.PasswordVault
 $creds = $vault.FindAllByResource('gemini:antigravity')
 foreach ($cred in $creds) {
     $cred.RetrievePassword()
-    Write-Output "TOKEN=$($cred.Password)"
+    $env:AGY_OAUTH_TOKEN = $cred.Password
+    Write-Output "Token retrieved successfully."
 }

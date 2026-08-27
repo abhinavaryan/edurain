@@ -8,5 +8,5 @@
 - [x] Fix `src/components/dashboard.js` `if (user)` check to handle null in `initDashboard`.
 - [x] Fix `src/components/dashboard.js` state update error. (Updated `courseData` and set `loading` to false)
 - [x] blog must have to open in full page 
-- [x] i want the blog edge not sharp has rounder egdes and showdow blog page looks good in terms of ui/ux brainstorm it with agent and use of skills 
+- [x] Blog page should use rounded edges and a shadow to improve its UI/UX.
 

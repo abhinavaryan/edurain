@@ -15,3 +15,12 @@
 [2026-08-27 17:50] Started: Task - Courses section typography, glassmorphism, and AnimeJS animation
 [2026-08-27 17:50] Completed: Task - Courses section typography, glassmorphism, and AnimeJS animation
 [2026-08-27 17:50] ralph-done-e7b2c
+[2026-08-27 17:57] Started: Task - Apply IIT-JEE specific UI block to /courses/iit-jee route
+[2026-08-27 17:57] Completed: Task - Apply IIT-JEE specific UI block to /courses/iit-jee route
+[2026-08-27 17:57] ralph-done-f8c3d
+[2026-08-27 18:02] Started: Task - Apply NEET and Foundation UI blocks
+[2026-08-27 18:02] Completed: Task - Apply NEET and Foundation UI blocks
+[2026-08-27 18:02] ralph-done-g9d4e
+[2026-08-27 18:05] Started: Task - Add links to NEET course batches
+[2026-08-27 18:05] Completed: Task - Add links to NEET course batches
+[2026-08-27 18:05] ralph-done-h0e5f

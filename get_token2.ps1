@@ -43,13 +43,17 @@ public class CredentialManager {
 
 $token = [CredentialManager]::GetCredential('gemini:antigravity')
 if ($token) {
-    Write-Output "Extracted Token: $token"
+    Write-Output "Token successfully extracted!"
     # Overwrite the settings.json automatically!
-    $settingsPath = "C:\Users\abhin\.gemini\antigravity\scratch\edurain\.vscode\settings.json"
-    $json = Get-Content $settingsPath -Raw | ConvertFrom-Json
-    $json."ralphLoop.antigravity.oauthToken" = $token
-    $json | ConvertTo-Json | Set-Content $settingsPath
-    Write-Output "Injected into settings.json!"
+    $settingsPath = Join-Path -Path $PSScriptRoot -ChildPath ".vscode\settings.json"
+    if (Test-Path $settingsPath) {
+        $json = Get-Content $settingsPath -Raw | ConvertFrom-Json
+        $json."ralphLoop.antigravity.oauthToken" = $token
+        $json | ConvertTo-Json -Depth 10 | Set-Content $settingsPath -Encoding UTF8
+        Write-Output "Injected into settings.json!"
+    } else {
+        Write-Output "settings.json not found at $settingsPath"
+    }
 } else {
     Write-Output "Token not found!"
 }

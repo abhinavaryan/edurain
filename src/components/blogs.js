@@ -294,7 +294,7 @@ export async function initBlogs() {
             let recCoursesArray = [];
             
             if (Array.isArray(blog.recommendedCourses)) {
-                recCoursesArray = blog.recommendedCourses;
+                recCoursesArray = blog.recommendedCourses.map(id => String(id).trim());
             } else if (typeof blog.recommendedCourses === 'string' && blog.recommendedCourses.trim() !== '') {
                 recCoursesArray = blog.recommendedCourses.split(',').map(s => s.trim());
             }

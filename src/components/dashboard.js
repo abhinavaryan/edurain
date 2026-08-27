@@ -256,7 +256,7 @@ export function initDashboard() {
     const nameEl = document.getElementById('dashboard-user-name');
     if (nameEl) {
       if (user) {
-        nameEl.textContent = 'Hi, ' + (user.displayName || user.email.split('@')[0]);
+        nameEl.textContent = 'Hi, ' + (user.displayName || user.email?.split('@')[0] || 'Student');
         // Mock state update: set loading to false, update courseData
         nameEl.dataset.loading = "false";
         nameEl.dataset.courseData = "loaded";

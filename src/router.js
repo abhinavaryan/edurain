@@ -138,7 +138,20 @@ const routes = {
       const [{ renderJEECourses }, { initFAQ }] = await Promise.all([import('./components/categoryCourses.js'), import('./components/faq.js')]);
       return {
         render: () => renderJEECourses(),
-        postRender: () => { initFAQ(); setMetaTags("Best IIT JEE Online Coaching for JEE Main & Advanced | EduRain", "Crack IIT JEE with EduRain: live classes, expert faculty, and structured material for complete JEE Main & Advanced exam preparation", "https://www.edurain.in/courses/iit-jee"); }
+        postRender: () => { 
+            initFAQ(); 
+            setMetaTags("Best IIT JEE Online Coaching for JEE Main & Advanced | EduRain", "Crack IIT JEE with EduRain: live classes, expert faculty, and structured material for complete JEE Main & Advanced exam preparation", "https://www.edurain.in/courses/iit-jee"); 
+            if (window.anime) {
+                window.anime({
+                    targets: '.er-anime-reveal',
+                    translateY: [40, 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutExpo',
+                    duration: 1200,
+                    delay: window.anime.stagger(150, {start: 300})
+                });
+            }
+        }
       };
     }
   },
@@ -147,7 +160,20 @@ const routes = {
       const [{ renderNEETCourses }, { initFAQ }] = await Promise.all([import('./components/categoryCourses.js'), import('./components/faq.js')]);
       return {
         render: () => renderNEETCourses(),
-        postRender: () => { initFAQ(); setMetaTags("NEET 2027-28 Complete Online Preparation with EduRain", "Start your NEET 2027-28 online preparation with EduRain: live classes, expert faculty, and structured NCERT-based material with regular tests.", "https://www.edurain.in/courses/neet"); }
+        postRender: () => { 
+            initFAQ(); 
+            setMetaTags("NEET 2027-28 Complete Online Preparation with EduRain", "Start your NEET 2027-28 online preparation with EduRain: live classes, expert faculty, and structured NCERT-based material with regular tests.", "https://www.edurain.in/courses/neet"); 
+            if (window.anime) {
+                window.anime({
+                    targets: '.er-anime-reveal',
+                    translateY: [40, 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutExpo',
+                    duration: 1200,
+                    delay: window.anime.stagger(150, {start: 300})
+                });
+            }
+        }
       };
     }
   },
@@ -156,7 +182,20 @@ const routes = {
       const [{ renderFoundationCourses }, { initFAQ }] = await Promise.all([import('./components/categoryCourses.js'), import('./components/faq.js')]);
       return {
         render: () => renderFoundationCourses(),
-        postRender: () => { initFAQ(); setMetaTags("Best Online Coaching for Classes 6 to 10 | Live Interactive Classes", "Live online classes for Class 6 to 10 with expert-led Math, Science & more: building a strong IIT JEE & NEET foundation. Interactive learning, real results", "https://www.edurain.in/courses/foundation"); }
+        postRender: () => { 
+            initFAQ(); 
+            setMetaTags("Best Online Coaching for Classes 6 to 10 | Live Interactive Classes", "Live online classes for Class 6 to 10 with expert-led Math, Science & more: building a strong IIT JEE & NEET foundation. Interactive learning, real results", "https://www.edurain.in/courses/foundation"); 
+            if (window.anime) {
+                window.anime({
+                    targets: '.er-anime-reveal',
+                    translateY: [40, 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutExpo',
+                    duration: 1200,
+                    delay: window.anime.stagger(150, {start: 300})
+                });
+            }
+        }
       };
     }
   },
