@@ -291,9 +291,17 @@ export async function initBlogs() {
         const coursesListEl = document.getElementById('pw-sidebar-courses-list');
         if (coursesListEl) {
             let activeCourses = [];
-            if (Array.isArray(blog.recommendedCourses) && blog.recommendedCourses.length > 0) {
+            let recCoursesArray = [];
+            
+            if (Array.isArray(blog.recommendedCourses)) {
+                recCoursesArray = blog.recommendedCourses;
+            } else if (typeof blog.recommendedCourses === 'string' && blog.recommendedCourses.trim() !== '') {
+                recCoursesArray = blog.recommendedCourses.split(',').map(s => s.trim());
+            }
+
+            if (recCoursesArray.length > 0) {
                 // Filter the courses from coursesData that are selected
-                activeCourses = coursesData.filter(c => blog.recommendedCourses.includes(c.id));
+                activeCourses = coursesData.filter(c => recCoursesArray.includes(String(c.id)));
             }
             
             // Fallback to first 3 if none specified or not found

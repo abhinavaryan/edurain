@@ -253,10 +253,17 @@ export function renderDashboard() {
 
 export function initDashboard() {
   onAuthChange((user) => {
-    if (user) {
-      const nameEl = document.getElementById('dashboard-user-name');
-      if (nameEl) {
+    const nameEl = document.getElementById('dashboard-user-name');
+    if (nameEl) {
+      if (user) {
         nameEl.textContent = 'Hi, ' + (user.displayName || user.email.split('@')[0]);
+        // Mock state update: set loading to false, update courseData
+        nameEl.dataset.loading = "false";
+        nameEl.dataset.courseData = "loaded";
+      } else {
+        nameEl.textContent = 'Hi, Guest';
+        nameEl.dataset.loading = "false";
+        delete nameEl.dataset.courseData;
       }
     }
   });
