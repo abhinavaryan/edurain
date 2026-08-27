@@ -280,6 +280,41 @@ export async function initBlogs() {
             contentHtml = `<div class="quill-content">${blog.content || `<p class="pw-article-p">${blog.excerpt}</p>`}</div>`;
         }
 
+        // Inject YouTube play overlay for hyperlinked images inside blog content
+        contentHtml = contentHtml.replace(/<a([^>]*href=["'](?:https?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)[^"']*["'][^>]*)>(.*?)<\/a>/gi, (match, aAttrs, innerHtml) => {
+            if (innerHtml.includes('<img')) {
+                let newAttrs = aAttrs;
+                if (!newAttrs.includes('style=')) {
+                    newAttrs += ' style="position: relative; display: block; width: 100%; text-align: center;"';
+                } else {
+                    newAttrs = newAttrs.replace(/style=["']/, '$&position: relative; display: block; width: 100%; text-align: center; ');
+                }
+                
+                if (!newAttrs.includes('class=')) {
+                    newAttrs += ' class="content-yt-link-wrapper"';
+                } else {
+                    newAttrs = newAttrs.replace(/class=["']/, '$&content-yt-link-wrapper ');
+                }
+
+                const overlayHtml = `
+                    <style>
+                        .content-yt-link-wrapper:hover .yt-play-overlay {
+                            transform: translate(-50%, -50%) scale(1.1) !important;
+                            background: rgba(255,255,255,0.25) !important;
+                            border-color: rgba(255,255,255,0.5) !important;
+                        }
+                    </style>
+                    <div class="yt-play-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease; pointer-events: none;">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="#ef4444" style="margin-left: 4px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                `;
+                return `<a${newAttrs}>${innerHtml}${overlayHtml}</a>`;
+            }
+            return match;
+        });
+
         // Apply SEO Meta Tags dynamically
         if (blog.seo) {
             document.title = blog.seo.metaTitle || blog.title;

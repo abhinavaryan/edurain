@@ -578,6 +578,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .logo {
@@ -603,6 +604,9 @@ textarea {
   display: flex;
   gap: var(--space-lg);
   align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-link {

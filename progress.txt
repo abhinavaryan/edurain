@@ -42,3 +42,6 @@
 [2026-08-27 18:38] Started: Task - Add YouTube glassmorphism play icon to blog sidebar banners
 [2026-08-27 18:38] Completed: Task - Add YouTube glassmorphism play icon to blog sidebar banners
 [2026-08-27 18:38] ralph-done-n6m1n
+[2026-08-27 18:49] Started: Task - Center nav menu and fix in-content YT images
+[2026-08-27 18:49] Completed: Task - Center nav menu and fix in-content YT images
+[2026-08-27 18:49] ralph-done-o7n2o
