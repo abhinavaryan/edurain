@@ -1,4 +1,4 @@
-import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from"./main-B-ZXg_7U.js";import{t as a}from"./courses-BKPhEzz0.js";var o=[`All Blogs`,`Study Hacks`,`JEE Mains PYQ`,`NEET Test Series`,`CBSE Class 10 PYQ`,`CBSE Class 12 PYQ`,`Foundation 9th-10th`],s=[];function c(){return`
+import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from"./main-Daj-Ghyt.js";import{t as a}from"./courses-BKPhEzz0.js";var o=[`All Blogs`,`Study Hacks`,`JEE Mains PYQ`,`NEET Test Series`,`CBSE Class 10 PYQ`,`CBSE Class 12 PYQ`,`Foundation 9th-10th`],s=[];function c(){return`
         <section class="blogs-section" id="blogs">
             <div class="er-pw-blog-container" id="blog-list-view">
                 
@@ -131,11 +131,25 @@ import{a as e,o as t,s as n,u as r}from"./vendor-Boxe3_tG.js";import{r as i}from
                         </a>
                     </div>
                 </div>
-            `).join(``)}let c=document.getElementById(`pw-sidebar-banner-container`);c&&(n.sidebarBannerImage?(c.innerHTML=`
-                    <a href="${n.sidebarBannerLink||`#`}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%;">
+            `).join(``)}let c=document.getElementById(`pw-sidebar-banner-container`);if(c)if(n.sidebarBannerImage){let e=n.sidebarBannerLink||`#`,t=e.includes(`youtube.com`)||e.includes(`youtu.be`)?`
+                    <div class="yt-play-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 64px; height: 64px; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease; pointer-events: none;">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="#ef4444" style="margin-left: 4px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                `:``;c.innerHTML=`
+                    <style>
+                        .sidebar-banner-link-wrapper:hover .yt-play-overlay {
+                            transform: translate(-50%, -50%) scale(1.1) !important;
+                            background: rgba(255,255,255,0.25) !important;
+                            border-color: rgba(255,255,255,0.5) !important;
+                        }
+                    </style>
+                    <a href="${e}" target="_blank" rel="noopener noreferrer" class="sidebar-banner-link-wrapper" style="display: block; width: 100%; position: relative;">
                         <img loading="lazy" src="${n.sidebarBannerImage}" alt="Promo Banner" style="width: 100%; display: block; border-radius: 12px; object-fit: cover;" />
+                        ${t}
                     </a>
-                `,c.style.display=`block`):(c.style.display=`none`,c.innerHTML=``)),p.innerHTML=`
+                `,c.style.display=`block`}else c.style.display=`none`,c.innerHTML=``;p.innerHTML=`
             <div class="pw-article-breadcrumbs">
                 <a href="/">Home</a> &rsaquo; <button id="btn-bc-blogs" style="background:none;border:none;color:#2563eb;cursor:pointer;padding:0;">Blogs</button> &rsaquo; <span style="color:#64748b;">${n.title}</span>
             </div>
