@@ -138,7 +138,7 @@ function renderBlogGridItems(blogs) {
         return `
             <div class="er-pw-blog-card glass-card" data-blog-id="${blog.id}" style="cursor:pointer; animation: fadeIn 0.5s ease forwards;">
                 <div class="er-pw-card-cover">
-                    <img loading="lazy" src="${blog.coverImage || '/images/default-blog.jpg'}" onerror="this.onerror=null; this.src='https://placehold.co/600x400/064e3b/ffffff?text=EduRain+Blog';" alt="${blog.title}" class="er-pw-card-img" style="width:100%; height:200px; object-fit:cover;" />
+                    <img loading="lazy" src="${blog.coverImage || '/images/default-blog.jpg'}" onerror="this.onerror=null; this.src='https://placehold.co/600x400/064e3b/ffffff?text=EduRain+Blog';" alt="${blog.title}" class="er-pw-card-img" style="width:100%; height:auto; object-fit:contain;" />
                     <span class="er-pw-card-badge">${blog.category || 'Exam Prep'}</span>
                 </div>
                 <div class="er-pw-card-body">

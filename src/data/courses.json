@@ -72,6 +72,30 @@
     "link": "https://courses.edurain.in/courses/846771"
   },
   {
+    "id": "c13",
+    "title": "CLASS 6TH",
+    "instructor": "Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir",
+    "rating": 4.6,
+    "students": 234,
+    "price": "₹3,520",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708440388_cfb42854_unnamed.webp",
+    "category": "FOUNDATION",
+    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
+    "link": "https://courses.edurain.in/courses/830607"
+  },
+  {
+    "id": "c11",
+    "title": "CLASS 7TH",
+    "instructor": "Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir",
+    "rating": 4.9,
+    "students": 320,
+    "price": "₹3,520",
+    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708358028_b62b8226_unnamed.webp",
+    "category": "FOUNDATION",
+    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
+    "link": "https://courses.edurain.in/courses/830943"
+  },
+  {
     "id": "c10",
     "title": "CLASS 8TH",
     "instructor": "Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir",
@@ -84,18 +108,6 @@
     "link": "https://courses.edurain.in/courses/830945"
   },
   {
-    "id": "c11",
-    "title": "CLASS 7TH",
-    "instructor": "Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir",
-    "rating": 4.9,
-    "students": 320,
-    "price": "₹3,520",
-    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708358028_b62b8226_unnamed.webp",
-    "category": "NEET",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
-    "link": "https://courses.edurain.in/courses/830943"
-  },
-  {
     "id": "c12",
     "title": "CLASS 12TH English",
     "instructor": "Mr.Manoj Sir",
@@ -106,18 +118,6 @@
     "category": "ALL",
     "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
     "link": "https://courses.edurain.in/courses/830941"
-  },
-  {
-    "id": "c13",
-    "title": "CLASS 6TH",
-    "instructor": "Manoj Sir,Khushbu ma'am ,Nandini ma'am,Sujeet sir",
-    "rating": 4.6,
-    "students": 234,
-    "price": "₹3,520",
-    "thumbnail": "https://xrmvmgtcgjjhljcmnhsn.supabase.co/storage/v1/object/public/images/1786708440388_cfb42854_unnamed.webp",
-    "category": "FOUNDATION",
-    "description": "Comprehensive biology course designed specifically for medical aspirants targeting NEET.",
-    "link": "https://courses.edurain.in/courses/830607"
   },
   {
     "id": "c14",
