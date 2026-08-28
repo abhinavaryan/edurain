@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "push": "git add . && (git commit -m \"Update site\" || cd .) && git push && npm run deploy"
+    "sync-wiki": "node wiki/scripts/extract_chats.cjs",
+    "push": "npm run sync-wiki && git add . && git commit -a -m \"Update site\" --allow-empty && git push && npm run deploy"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",

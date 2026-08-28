@@ -17,7 +17,3 @@ I created EduRain site that is a premium EdTech platform frontend designed to be
 - **Frontend Framework:** Vanilla JavaScript & HTML (No heavy frameworks)
 - **Styling:** Custom Vanilla CSS with responsive variables
 - **Build Tool:** Vite
-
-   npm run build
-   ```
-   This will generate a `dist` folder containing the compiled, minified static files ready for deployment.

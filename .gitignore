@@ -37,3 +37,7 @@ progress.txt
 .env.example
 *.ps1
 PRD.md
+
+# Obsidian & Wiki
+wiki/
+.obsidian/
