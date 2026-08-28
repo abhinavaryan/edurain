@@ -18,21 +18,6 @@ I created EduRain site that is a premium EdTech platform frontend designed to be
 - **Styling:** Custom Vanilla CSS with responsive variables
 - **Build Tool:** Vite
 
-##  How to Run Locally
-
-1. **Install Dependencies:**
-   ```bash
-   npm install
-   ```
-
-2. **Start Development Server:**
-   ```bash
-   npm run dev
-   ```
-   The site will be available at `http://localhost:5173/`.
-
-3. **Build for Production:**
-   ```bash
    npm run build
    ```
    This will generate a `dist` folder containing the compiled, minified static files ready for deployment.
