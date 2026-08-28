@@ -31,4 +31,9 @@ dist-ssr
 PROJECT_RULES.md
 GSD-STYLE.md
 
-
+# Prompts and Notes
+prompt.md
+progress.txt
+.env.example
+*.ps1
+PRD.md
