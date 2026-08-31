@@ -280,40 +280,44 @@ export async function initBlogs() {
             contentHtml = `<div class="quill-content">${blog.content || `<p class="pw-article-p">${blog.excerpt}</p>`}</div>`;
         }
 
-        // Inject YouTube play overlay for hyperlinked images inside blog content
-        contentHtml = contentHtml.replace(/<a([^>]*href=["'](?:https?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)[^"']*["'][^>]*)>(.*?)<\/a>/gi, (match, aAttrs, innerHtml) => {
-            if (innerHtml.includes('<img')) {
-                let newAttrs = aAttrs;
-                if (!newAttrs.includes('style=')) {
-                    newAttrs += ' style="position: relative; display: block; width: 100%; text-align: center;"';
-                } else {
-                    newAttrs = newAttrs.replace(/style=["']/, '$&position: relative; display: block; width: 100%; text-align: center; ');
-                }
+        // Inject YouTube play overlay for hyperlinked images inside blog content using robust DOM parsing
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = contentHtml;
+        const ytLinks = tempDiv.querySelectorAll('a[href*="youtube.com"], a[href*="youtu.be"]');
+        let styleAdded = false;
+        
+        ytLinks.forEach(a => {
+            const img = a.querySelector('img');
+            if (img && !img.parentElement.classList.contains('yt-play-overlay-wrapper')) {
+                // Wrap ONLY the image in a relative container so the play button centers exactly on the image,
+                // even if the <a> tag also contains paragraphs of text.
+                const wrapper = document.createElement('div');
+                wrapper.className = 'yt-play-overlay-wrapper';
+                wrapper.style.position = 'relative';
+                wrapper.style.display = 'inline-block';
+                wrapper.style.width = '100%';
+                wrapper.style.textAlign = 'center';
                 
-                if (!newAttrs.includes('class=')) {
-                    newAttrs += ' class="content-yt-link-wrapper"';
-                } else {
-                    newAttrs = newAttrs.replace(/class=["']/, '$&content-yt-link-wrapper ');
+                // Move img inside wrapper
+                img.parentNode.insertBefore(wrapper, img);
+                wrapper.appendChild(img);
+                
+                // Create and append overlay
+                const overlay = document.createElement('div');
+                overlay.className = 'yt-play-overlay';
+                overlay.style.cssText = 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease; pointer-events: none;';
+                overlay.innerHTML = '<svg viewBox="0 0 24 24" width="40" height="40" fill="#ef4444" style="margin-left: 4px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));"><path d="M8 5v14l11-7z"/></svg>';
+                wrapper.appendChild(overlay);
+                
+                if (!styleAdded) {
+                    const style = document.createElement('style');
+                    style.textContent = '.yt-play-overlay-wrapper:hover .yt-play-overlay { transform: translate(-50%, -50%) scale(1.1) !important; background: rgba(255,255,255,0.25) !important; border-color: rgba(255,255,255,0.5) !important; }';
+                    tempDiv.prepend(style);
+                    styleAdded = true;
                 }
-
-                const overlayHtml = `
-                    <style>
-                        .content-yt-link-wrapper:hover .yt-play-overlay {
-                            transform: translate(-50%, -50%) scale(1.1) !important;
-                            background: rgba(255,255,255,0.25) !important;
-                            border-color: rgba(255,255,255,0.5) !important;
-                        }
-                    </style>
-                    <div class="yt-play-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease; pointer-events: none;">
-                        <svg viewBox="0 0 24 24" width="40" height="40" fill="#ef4444" style="margin-left: 4px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                `;
-                return `<a${newAttrs}>${innerHtml}${overlayHtml}</a>`;
             }
-            return match;
         });
+        contentHtml = tempDiv.innerHTML;
 
         // Apply SEO Meta Tags dynamically
         if (blog.seo) {
