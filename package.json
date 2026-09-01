@@ -13,13 +13,23 @@
     "push": "npm run sync-wiki && git add . && git commit -a -m \"Update site\" --allow-empty && git push && npm run deploy"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "autoprefixer": "^10.5.4",
     "gh-pages": "^6.3.0",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^4.3.3",
     "vite": "^8.1.1"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "cheerio": "^1.2.0",
     "firebase": "^12.16.0",
+    "framer-motion": "^13.1.1",
+    "lucide-react": "^1.38.0",
     "quill": "^2.0.3",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.3",
     "sharp": "^0.35.3"
   }
 }

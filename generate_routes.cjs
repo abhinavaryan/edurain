@@ -12,7 +12,7 @@ const routesMeta = {
   'blogs': {
     title: 'IIT JEE, NEET & Foundation Blogs | EduRain',
     desc: 'Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides',
-    canonical: 'https://www.edurain.in/blogs'
+    canonical: 'https://www.edurain.in/blogs/'
   },
   'courses/iit-jee': {
     title: 'Best IIT JEE Online Coaching for JEE Main & Advanced | EduRain',
@@ -111,7 +111,7 @@ function fetchBlogs() {
         routesMeta[`blogs/${slug}`] = {
             title: metaTitle,
             desc: metaDesc,
-            canonical: `https://www.edurain.in/blogs/${slug}`
+            canonical: `https://www.edurain.in/blogs/${slug}/`
         };
         blogSlugs.push(slug);
       }
@@ -176,7 +176,7 @@ function fetchBlogs() {
     { loc: 'https://www.edurain.in/courses/iit-jee', priority: '0.9', changefreq: 'weekly' },
     { loc: 'https://www.edurain.in/courses/neet', priority: '0.9', changefreq: 'weekly' },
     { loc: 'https://www.edurain.in/courses/foundation', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://www.edurain.in/blogs', priority: '0.8', changefreq: 'daily' },
+    { loc: 'https://www.edurain.in/blogs/', priority: '0.8', changefreq: 'daily' },
     { loc: 'https://www.edurain.in/about-us', priority: '0.7', changefreq: 'monthly' },
     { loc: 'https://www.edurain.in/contact-us', priority: '0.7', changefreq: 'monthly' },
     { loc: 'https://www.edurain.in/reviews', priority: '0.6', changefreq: 'monthly' },
@@ -184,7 +184,7 @@ function fetchBlogs() {
   ];
 
   const blogUrls = blogSlugs.map(slug => ({
-    loc: `https://www.edurain.in/blogs/${slug}`,
+    loc: `https://www.edurain.in/blogs/${slug}/`,
     priority: '0.8',
     changefreq: 'monthly'
   }));
