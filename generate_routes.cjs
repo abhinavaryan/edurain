@@ -7,7 +7,7 @@ const routesMeta = {
   'courses': {
     title: 'Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-10)',
     desc: 'Explore IIT JEE, NEET & Foundation courses for Class 6-10 with expert faculty, structured curriculum & proven results. Take the first step toward success',
-    canonical: 'https://www.edurain.in/courses'
+    canonical: 'https://www.edurain.in/courses/'
   },
   'blogs': {
     title: 'IIT JEE, NEET & Foundation Blogs | EduRain',
@@ -17,52 +17,52 @@ const routesMeta = {
   'courses/iit-jee': {
     title: 'Best IIT JEE Online Coaching for JEE Main & Advanced | EduRain',
     desc: 'Crack IIT JEE with EduRain: live classes, expert faculty, and structured material for complete JEE Main & Advanced exam preparation',
-    canonical: 'https://www.edurain.in/courses/iit-jee'
+    canonical: 'https://www.edurain.in/courses/iit-jee/'
   },
   'courses/neet': {
     title: 'NEET 2027-28 Complete Online Preparation with EduRain',
     desc: 'Start your NEET 2027-28 online preparation with EduRain: live classes, expert faculty, and structured NCERT-based material with regular mock tests.',
-    canonical: 'https://www.edurain.in/courses/neet'
+    canonical: 'https://www.edurain.in/courses/neet/'
   },
   'courses/foundation': {
     title: 'Best Online Coaching for Classes 6 to 10 | Live Interactive Classes',
     desc: 'Live online classes for Class 6 to 10 with expert-led Math, Science & more: building a strong IIT JEE & NEET foundation. Interactive learning, real results',
-    canonical: 'https://www.edurain.in/courses/foundation'
+    canonical: 'https://www.edurain.in/courses/foundation/'
   },
   'about-us': {
     title: "About Us | EduRain's Mission to Make Learning Accessible",
     desc: "At EduRain, our mission is to make quality education accessible for every student from Class 6-10 foundation to IIT-JEE & NEET success. Know our story",
-    canonical: 'https://www.edurain.in/about-us'
+    canonical: 'https://www.edurain.in/about-us/'
   },
   'contact-us': {
     title: "Contact Us | Get in Touch with EduRain",
     desc: "Have questions about our courses for Class 6-10, IIT-JEE or NEET? Contact EduRain's team for admissions support, course details or a free demo class",
-    canonical: 'https://www.edurain.in/contact-us'
+    canonical: 'https://www.edurain.in/contact-us/'
   },
   'privacy': {
     title: "Privacy Policy - EduRain",
     desc: "Privacy policy of EduRain",
-    canonical: 'https://www.edurain.in/privacy'
+    canonical: 'https://www.edurain.in/privacy/'
   },
   'terms': {
     title: "Terms and Conditions - EduRain",
     desc: "Terms and conditions of use for Edurain",
-    canonical: 'https://www.edurain.in/terms'
+    canonical: 'https://www.edurain.in/terms/'
   },
   'sitemap': {
     title: "Sitemap - EduRain",
     desc: "Sitemap for EduRain",
-    canonical: 'https://www.edurain.in/sitemap'
+    canonical: 'https://www.edurain.in/sitemap/'
   },
   'journey': {
     title: "Our Journey | EduRain",
     desc: "Learn about the journey and growth of EduRain.",
-    canonical: 'https://www.edurain.in/journey'
+    canonical: 'https://www.edurain.in/journey/'
   },
   'reviews': {
     title: "Student Reviews | EduRain",
     desc: "Read what our students have to say about EduRain's courses and faculty.",
-    canonical: 'https://www.edurain.in/reviews'
+    canonical: 'https://www.edurain.in/reviews/'
   }
   // blogadmin routes intentionally excluded - should NOT be indexed
 };
@@ -172,15 +172,15 @@ function fetchBlogs() {
   // ---------------------------------------------------------
   const staticUrls = [
     { loc: 'https://www.edurain.in', priority: '1.0', changefreq: 'weekly' },
-    { loc: 'https://www.edurain.in/courses', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://www.edurain.in/courses/iit-jee', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://www.edurain.in/courses/neet', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://www.edurain.in/courses/foundation', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/courses/', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/courses/iit-jee/', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/courses/neet/', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/courses/foundation/', priority: '0.9', changefreq: 'weekly' },
     { loc: 'https://www.edurain.in/blogs/', priority: '0.8', changefreq: 'daily' },
-    { loc: 'https://www.edurain.in/about-us', priority: '0.7', changefreq: 'monthly' },
-    { loc: 'https://www.edurain.in/contact-us', priority: '0.7', changefreq: 'monthly' },
-    { loc: 'https://www.edurain.in/reviews', priority: '0.6', changefreq: 'monthly' },
-    { loc: 'https://www.edurain.in/journey', priority: '0.6', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/about-us/', priority: '0.7', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/contact-us/', priority: '0.7', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/reviews/', priority: '0.6', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/journey/', priority: '0.6', changefreq: 'monthly' },
   ];
 
   const blogUrls = blogSlugs.map(slug => ({
