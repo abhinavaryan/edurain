@@ -42,3 +42,9 @@ PRD.md
 wiki/
 .obsidian/
 temp_video.mp4
+
+# Video Parts (local only)
+parts/
+
+# Lighthouse Reports (local only)
+lh-*.json
