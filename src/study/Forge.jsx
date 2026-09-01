@@ -180,22 +180,12 @@ const TheForge = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-6">
-        <div className="glass-panel p-5 rounded-xl col-span-2">
+      <div className="grid grid-cols-1 gap-6">
+        <div className="glass-panel p-5 rounded-xl">
           <h3 className="text-lg font-bold text-white mb-4">Lecture Intelligence</h3>
           <p className="text-sm text-gray-400 leading-relaxed">
             This module covers the second law of thermodynamics. The Oracle predicts a high probability of questions from this specific section in the upcoming JEE Advanced paper. 
             Maintain focus to earn maximum Pits.
-          </p>
-        </div>
-        
-        <div className="glass-panel p-5 rounded-xl border-warning/30 bg-warning/5">
-          <div className="flex items-center gap-2 mb-2">
-            <ShieldAlert className="text-warning" size={20} />
-            <h3 className="text-sm font-bold text-warning uppercase">Focus Lock Active</h3>
-          </div>
-          <p className="text-xs text-gray-400">
-            Switching tabs will pause the watch-time engine and halt Pit generation. Stay locked in.
           </p>
         </div>
       </div>
