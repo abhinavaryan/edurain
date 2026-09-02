@@ -34,12 +34,13 @@ export function renderFreeDemo() {
                 <div class="er-demo-image-wrap er-reveal visible">
                     <div class="er-demo-glow-ring"></div>
                     <img loading="lazy"
-                        src="https://cdn.phototourl.com/free/2026-08-21-b8e864e2-f1b7-48a0-ba5d-51f1a0ab8d4c.webp"
+                        src="https://cdn.phototourl.com/free/2026-09-02-642661d4-2066-48d1-affe-4cdc2475a563.webp"
                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                         alt="Free Demo — Teacher with student"
                         class="er-demo-img"
                         width="400"
                         height="400"
+                        style="object-fit: contain; object-position: bottom;"
                     />
                     <!-- Fallback placeholder shown when no image exists -->
                     <div class="er-demo-placeholder" style="display:none;">
