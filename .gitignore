@@ -48,3 +48,7 @@ parts/
 
 # Lighthouse Reports (local only)
 lh-*.json
+
+# Post Signup Web App
+study.html
+src/study/
