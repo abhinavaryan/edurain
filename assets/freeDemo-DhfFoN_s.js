@@ -33,13 +33,11 @@ function e(){return`
                 <div class="er-demo-image-wrap er-reveal visible">
                     <div class="er-demo-glow-ring"></div>
                     <img loading="lazy"
-                        src="https://cdn.phototourl.com/free/2026-09-02-642661d4-2066-48d1-affe-4cdc2475a563.webp"
+                        src="https://cdn.phototourl.com/free/2026-09-02-6cb7642c-7e57-43b7-8624-5640a7b44293.webp"
                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                         alt="Free Demo — Teacher with student"
                         class="er-demo-img"
-                        width="400"
-                        height="400"
-                        style="object-fit: contain; object-position: bottom;"
+                        style="width: 400px; height: 400px; object-fit: contain; object-position: bottom; --zoom: 1; transform: scale(var(--zoom)); transform-origin: bottom center;"
                     />
                     <!-- Fallback placeholder shown when no image exists -->
                     <div class="er-demo-placeholder" style="display:none;">
