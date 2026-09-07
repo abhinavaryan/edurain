@@ -111,7 +111,8 @@ function fetchBlogs() {
         routesMeta[`blogs/${slug}`] = {
             title: metaTitle,
             desc: metaDesc,
-            canonical: `https://www.edurain.in/blogs/${slug}/`
+            canonical: `https://www.edurain.in/blogs/${slug}/`,
+            content: fields.content && fields.content.stringValue ? fields.content.stringValue : ''
         };
         blogSlugs.push(slug);
       }
@@ -181,6 +182,14 @@ function fetchBlogs() {
 
     // Inject hidden SEO links right before </body> to ensure crawlability
     finalHtml = finalHtml.replace('</body>', `${seoLinksHtml}</body>`);
+
+    // Inject the raw blog content for Googlebot (SEO)
+    if (meta.content) {
+        // Strip out any <script> tags for safety
+        const safeContent = meta.content.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+        const seoContentHtml = `\n  <article id="seo-blog-content" style="display:none;" aria-hidden="true">\n    <h1>${meta.title}</h1>\n    ${safeContent}\n  </article>\n`;
+        finalHtml = finalHtml.replace('<div id="app"></div>', `<div id="app"></div>${seoContentHtml}`);
+    }
 
     // ---------------------------------------------------------
     // KEY FIX: Write as folder/index.html so GitHub Pages can
