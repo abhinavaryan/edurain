@@ -132,6 +132,30 @@ function fetchBlogs() {
   const indexHtml = fs.readFileSync(indexHtmlPath, 'utf8');
   const indexHtmlWithoutSchema = indexHtml.replace(/<!-- JSON-LD Schema Markup -->[\s\S]*?<\/script>/, '');
 
+  const staticUrls = [
+    { loc: 'https://www.edurain.in', priority: '1.0', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/courses/', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/courses/iit-jee/', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/courses/neet/', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/courses/foundation/', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/blogs/', priority: '0.8', changefreq: 'daily' },
+    { loc: 'https://www.edurain.in/about-us/', priority: '0.7', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/contact-us/', priority: '0.7', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/reviews/', priority: '0.6', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/journey/', priority: '0.6', changefreq: 'monthly' },
+  ];
+
+  const blogUrls = blogSlugs.map(slug => ({
+    loc: `https://www.edurain.in/blogs/${slug}/`,
+    priority: '0.8',
+    changefreq: 'monthly'
+  }));
+
+  const allUrls = [...staticUrls, ...blogUrls];
+
+  // Generate a hidden block of internal links for SEO crawlers (so all pages are discoverable naturally without sitemap)
+  const seoLinksHtml = `\n  <div id="seo-links" style="display:none;" aria-hidden="true">\n${allUrls.map(u => `    <a href="${u.loc}">${u.loc}</a>`).join('\n')}\n  </div>\n`;
+
   Object.keys(routesMeta).forEach(route => {
     const meta = routesMeta[route];
     let finalHtml = indexHtmlWithoutSchema;
@@ -155,6 +179,9 @@ function fetchBlogs() {
     finalHtml = finalHtml.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${meta.title}">`);
     finalHtml = finalHtml.replace(/<meta name="twitter:description"[\s\S]*?content="[^"]*">/, `<meta name="twitter:description" content="${meta.desc}">`);
 
+    // Inject hidden SEO links right before </body> to ensure crawlability
+    finalHtml = finalHtml.replace('</body>', `${seoLinksHtml}</body>`);
+
     // ---------------------------------------------------------
     // KEY FIX: Write as folder/index.html so GitHub Pages can
     // serve it directly WITHOUT a 404 redirect hack.
@@ -170,27 +197,6 @@ function fetchBlogs() {
   // ---------------------------------------------------------
   // Generate dynamic sitemap.xml with all routes + blog pages
   // ---------------------------------------------------------
-  const staticUrls = [
-    { loc: 'https://www.edurain.in', priority: '1.0', changefreq: 'weekly' },
-    { loc: 'https://www.edurain.in/courses/', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://www.edurain.in/courses/iit-jee/', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://www.edurain.in/courses/neet/', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://www.edurain.in/courses/foundation/', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://www.edurain.in/blogs/', priority: '0.8', changefreq: 'daily' },
-    { loc: 'https://www.edurain.in/about-us/', priority: '0.7', changefreq: 'monthly' },
-    { loc: 'https://www.edurain.in/contact-us/', priority: '0.7', changefreq: 'monthly' },
-    { loc: 'https://www.edurain.in/reviews/', priority: '0.6', changefreq: 'monthly' },
-    { loc: 'https://www.edurain.in/journey/', priority: '0.6', changefreq: 'monthly' },
-  ];
-
-  const blogUrls = blogSlugs.map(slug => ({
-    loc: `https://www.edurain.in/blogs/${slug}/`,
-    priority: '0.8',
-    changefreq: 'monthly'
-  }));
-
-  const allUrls = [...staticUrls, ...blogUrls];
-
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allUrls.map(u => `    <url>
