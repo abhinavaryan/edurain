@@ -189,7 +189,7 @@ function fetchBlogs() {
     changefreq: 'monthly'
   }));
 
-  const allUrls = [...staticUrls];
+  const allUrls = [...staticUrls, ...blogUrls];
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
