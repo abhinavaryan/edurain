@@ -82,12 +82,7 @@ const routes = {
       };
     }
   },
-  '/journey': {
-    load: async () => {
-      const { renderJourney, initJourney } = await import('./components/journey.js');
-      return { render: () => renderJourney(), postRender: () => initJourney() };
-    }
-  },
+
   '/about-us': {
     load: async () => {
       const { renderAbout } = await import('./components/about.js');
@@ -97,12 +92,7 @@ const routes = {
       };
     }
   },
-  '/reviews': {
-    load: async () => {
-      const { renderReviews, initReviews } = await import('./components/reviews.js');
-      return { render: () => renderReviews(), postRender: () => initReviews() };
-    }
-  },
+
   '/contact-us': {
     load: async () => {
       const { renderContact, initContact } = await import('./components/contact.js');

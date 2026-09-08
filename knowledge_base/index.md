@@ -1,4 +1,4 @@
-﻿# Knowledge Base Index
+# Knowledge Base Index
 
 ## Sources
 *Raw, unmodified source files and documentation.*
@@ -8,3 +8,4 @@
 
 ## Concepts
 *Synthesized concept markdown pages.*
+- [Architecture and SEO Updates](file:///c:/Users/abhin/.gemini/antigravity/scratch/edurain/knowledge_base/concepts/architecture-and-seo.md)

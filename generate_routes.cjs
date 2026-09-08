@@ -53,16 +53,6 @@ const routesMeta = {
     title: "Sitemap - EduRain",
     desc: "Sitemap for EduRain",
     canonical: 'https://www.edurain.in/sitemap/'
-  },
-  'journey': {
-    title: "Our Journey | EduRain",
-    desc: "Learn about the journey and growth of EduRain.",
-    canonical: 'https://www.edurain.in/journey/'
-  },
-  'reviews': {
-    title: "Student Reviews | EduRain",
-    desc: "Read what our students have to say about EduRain's courses and faculty.",
-    canonical: 'https://www.edurain.in/reviews/'
   }
   // blogadmin routes intentionally excluded - should NOT be indexed
 };
@@ -141,9 +131,7 @@ function fetchBlogs() {
     { loc: 'https://www.edurain.in/courses/foundation/', priority: '0.9', changefreq: 'weekly' },
     { loc: 'https://www.edurain.in/blogs/', priority: '0.8', changefreq: 'daily' },
     { loc: 'https://www.edurain.in/about-us/', priority: '0.7', changefreq: 'monthly' },
-    { loc: 'https://www.edurain.in/contact-us/', priority: '0.7', changefreq: 'monthly' },
-    { loc: 'https://www.edurain.in/reviews/', priority: '0.6', changefreq: 'monthly' },
-    { loc: 'https://www.edurain.in/journey/', priority: '0.6', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/contact-us/', priority: '0.7', changefreq: 'monthly' }
   ];
 
   const blogUrls = blogSlugs.map(slug => ({
@@ -206,18 +194,44 @@ function fetchBlogs() {
   // ---------------------------------------------------------
   // Generate dynamic sitemap.xml with all routes + blog pages
   // ---------------------------------------------------------
-  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+  const sitemap0Xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allUrls.map(u => `    <url>
+${staticUrls.map(u => `    <url>
         <loc>${u.loc}</loc>
         <lastmod>${today}</lastmod>
         <changefreq>${u.changefreq}</changefreq>
         <priority>${u.priority}</priority>
     </url>`).join('\n')}
 </urlset>`;
+  fs.writeFileSync(path.join(distDir, 'sitemap-0.xml'), sitemap0Xml);
+
+  const blogsSitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${blogUrls.map(u => `    <url>
+        <loc>${u.loc}</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>${u.changefreq}</changefreq>
+        <priority>${u.priority}</priority>
+    </url>`).join('\n')}
+</urlset>`;
+  const blogsDir = path.join(distDir, 'blogs');
+  if (!fs.existsSync(blogsDir)) {
+    fs.mkdirSync(blogsDir, { recursive: true });
+  }
+  fs.writeFileSync(path.join(blogsDir, 'sitemap-index.xml'), blogsSitemapXml);
+
+  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <sitemap>
+        <loc>https://www.edurain.in/sitemap-0.xml</loc>
+    </sitemap>
+    <sitemap>
+        <loc>https://www.edurain.in/blogs/sitemap-index.xml</loc>
+    </sitemap>
+</sitemapindex>`;
 
   fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml);
-  console.log(`Generated sitemap.xml with ${allUrls.length} URLs (${blogUrls.length} blog pages).`);
+  console.log(`Generated sitemap.xml index and split sitemaps (${staticUrls.length} static URLs, ${blogUrls.length} blog URLs).`);
 
   console.log('Successfully generated static HTML files (folder-based, no trailing slash issues) for SPA routes with injected SEO metadata.');
 })();
