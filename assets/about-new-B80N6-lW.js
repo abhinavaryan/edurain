@@ -12,10 +12,7 @@ function e(){return`
 <!-- SECTION 1: Mission and Vision -->
 <section class="relative animate-fade-up" data-purpose="mission-vision-container" id="vision-mission">
 <div class="text-center max-w-2xl mx-auto mb-7 sm:mb-8">
-<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-mono uppercase tracking-wider mb-3 shadow-sm">
-<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-        Core Manifesto
-      </div>
+
 <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
         Built on Mission. Driven by Purpose.
       </h2>
@@ -48,10 +45,7 @@ function e(){return`
 </li>
 </ul>
 </div>
-<div class="pt-4 border-t border-emerald-900/60 flex items-center justify-between text-xs text-emerald-300/80">
-<span>Commitment: Radical Affordability</span>
-<span class="text-yellow-400 font-semibold flex items-center gap-1">Verified Impact →</span>
-</div>
+
 </div>
 <!-- Card 2: Our Vision -->
 <div class="glass-emerald-card rounded-2xl p-6 sm:p-7 relative overflow-hidden flex flex-col justify-between smooth-hover animate-fade-up delay-200" data-purpose="vision-card">
@@ -79,10 +73,7 @@ function e(){return`
 </li>
 </ul>
 </div>
-<div class="pt-4 border-t border-emerald-900/60 flex items-center justify-between text-xs text-emerald-300/80">
-<span>Goal: 100% Student Potential Realized</span>
-<span class="text-emerald-400 font-semibold flex items-center gap-1">The 2030 Roadmap →</span>
-</div>
+
 </div>
 </div>
 </section>
@@ -130,9 +121,7 @@ function e(){return`
         </div>
 <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Meet Our Founders</h2>
 </div>
-<p class="text-slate-300 max-w-lg text-xs sm:text-sm leading-relaxed">
-        Educators at heart, engineers by discipline. Leaving corporate chairs to spend over a decade shaping the future of Indian education.
-      </p>
+
 </div>
 <!-- Founders Grid -->
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6">
@@ -209,7 +198,7 @@ function e(){return`
 <a class="w-8 h-8 rounded-md bg-emerald-950/80 hover:bg-emerald-400 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-all text-xs font-mono font-bold border border-emerald-800/40" href="#" title="LinkedIn Profile">in</a>
 <a class="w-8 h-8 rounded-md bg-emerald-950/80 hover:bg-emerald-400 hover:text-slate-950 flex items-center justify-center text-slate-300 transition-all text-xs font-bold border border-emerald-800/40" href="#" title="GitHub &amp; Patents">💻</a>
 </div>
-<span class="text-xs text-emerald-400 font-semibold cursor-pointer hover:underline">Tech Manifesto →</span>
+
 </div>
 </article>
 </div>
@@ -227,11 +216,7 @@ function e(){return`
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
 <!-- Left: Content & Actions (7 cols) -->
 <div class="lg:col-span-7 space-y-5">
-<!-- Badge -->
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-400/30 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider">
-<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          MOBILE EXPERIENCE • ACCESSIBLE ANYWHERE
-        </div>
+
 <!-- Headline & Subtitle -->
 <div>
 <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
