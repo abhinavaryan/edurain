@@ -320,10 +320,10 @@ export async function initBlogs() {
         contentHtml = tempDiv.innerHTML;
 
         // Apply SEO Meta Tags dynamically
-        if (blog.seo) {
-            document.title = blog.seo.metaTitle || blog.title;
-            let metaDesc = document.querySelector('meta[name="description"]');
-            if (metaDesc) metaDesc.content = blog.seo.metaDescription || blog.excerpt;
+        document.title = (blog.seo && blog.seo.metaTitle) ? blog.seo.metaTitle : blog.title;
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+            metaDesc.content = (blog.seo && blog.seo.metaDescription) ? blog.seo.metaDescription : (blog.excerpt || "Read this insightful blog on EduRain");
         }
 
         // Populate recommended courses dynamically

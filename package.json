@@ -13,11 +13,12 @@
     "push": "npm run sync-wiki && git add . && git commit -a -m \"Update site\" --allow-empty && git push && npm run deploy"
   },
   "devDependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.11",
     "@vitejs/plugin-react": "^6.1.1",
     "autoprefixer": "^10.5.4",
     "gh-pages": "^6.3.0",
     "postcss": "^8.5.26",
-    "tailwindcss": "^4.3.3",
     "vite": "^8.1.1"
   },
   "dependencies": {

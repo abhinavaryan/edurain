@@ -77,7 +77,9 @@ const routes = {
         render: () => renderBlogs(),
         postRender: () => {
           initBlogs();
-          setMetaTags("IIT JEE, NEET & Foundation Blogs | EduRain", "Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides", "https://www.edurain.in/blogs");
+          if (window.location.pathname === '/blogs' || window.location.pathname === '/blogs/') {
+            setMetaTags("IIT JEE, NEET & Foundation Blogs | EduRain", "Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides", "https://www.edurain.in/blogs");
+          }
         }
       };
     }
@@ -89,6 +91,19 @@ const routes = {
       return { 
         render: () => renderAbout(), 
         postRender: () => setMetaTags("About Us | EduRain's Mission to Make Learning Accessible", "At EduRain, our mission is to make quality education accessible for every student from Class 6-10 foundation to IIT-JEE & NEET success. Know our story", "https://www.edurain.in/about-us") 
+      };
+    }
+  },
+
+  '/about-new': {
+    load: async () => {
+      const { renderAbout, initAboutNew } = await import('./components/about-new.js');
+      return { 
+        render: () => renderAbout(), 
+        postRender: () => {
+          setMetaTags("About Us (New) | EduRain", "Check out our new About Us page.", "https://www.edurain.in/about-new");
+          if (initAboutNew) initAboutNew();
+        }
       };
     }
   },
@@ -200,37 +215,16 @@ const routes = {
       const { renderBlogAdminLogin, initBlogAdminLogin } = await import('./components/blogAdminLogin.js');
       return { render: () => renderBlogAdminLogin(), postRender: () => initBlogAdminLogin() };
     }
+  },
+  '/study': {
+    load: async () => {
+      window.location.href = '/study/';
+      return { render: () => '', postRender: () => {} };
+    }
   }
 };
 
-// DEV ONLY: Safely load the Student Dashboard (Study Panel)
-if (import.meta.env.DEV) {
-  routes['/study'] = {
-    load: async () => {
-      const { renderDashboard, initDashboard } = await import('./components/dashboard.js');
-      return { 
-        render: () => renderDashboard(), 
-        postRender: () => {
-          if (typeof initDashboard === 'function') initDashboard();
-          setMetaTags("Study | EduRain", "Your personal study dashboard", "https://www.edurain.in/study");
-        } 
-      };
-    }
-  };
-  
-  routes['/study/x-panel'] = {
-    load: async () => {
-      const { renderXPanel } = await import('./components/xPanel.js');
-      return { 
-        render: () => renderXPanel(), 
-        postRender: () => {
-          setMetaTags("X Panel | EduRain", "Exclusive Elite Member Area", "https://www.edurain.in/study/x-panel");
-        } 
-      };
-    }
-  };
-
-}
+// Removed DEV ONLY block for /study as it is now a separate React app
 
 // ── Scroll reveal for .er-reveal elements ──
 function initScrollReveal() {
@@ -301,7 +295,8 @@ export const initRouter = () => {
           if (link.target === "_blank") return;
           if (url.pathname.startsWith('/jeecourse') || 
               url.pathname.startsWith('/neetcourse') || 
-              url.pathname.startsWith('/foundationcourse')) {
+              url.pathname.startsWith('/foundationcourse') ||
+              url.pathname.startsWith('/study')) {
              return; 
           }
           // Prevent full page reload
