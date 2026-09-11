@@ -461,13 +461,13 @@ export async function initBlogs() {
             });
         });
 
-        if (updateUrl) history.pushState(null, null, '/blogs/' + (blog.slug || blog.id));
+        // URL is kept as /blogs/ per user request
     }
 
     function closeBlog() {
         readerView.style.display = 'none';
         listView.style.display = 'block';
-        history.pushState(null, null, '/blogs');
+        // No history push needed as URL stays /blogs/
 
         // Reset SEO Tags to default blogs page
         document.title = "IIT JEE, NEET & Foundation Blogs | EduRain";
