@@ -259,6 +259,11 @@ export async function initBlogs() {
         const blog = liveBlogsData.find(b => b.id === blogId || b.slug === blogId);
         if (!blog) return;
 
+        if (updateUrl) {
+            const identifier = blog.slug || blog.id;
+            window.history.pushState({}, "", `/blogs/${identifier}`);
+        }
+
         let dateStr = 'Recently';
         if (blog.date) {
             const d = blog.date.toDate ? blog.date.toDate() : new Date(blog.date);
@@ -320,11 +325,30 @@ export async function initBlogs() {
         contentHtml = tempDiv.innerHTML;
 
         // Apply SEO Meta Tags dynamically
-        document.title = (blog.seo && blog.seo.metaTitle) ? blog.seo.metaTitle : blog.title;
+        const seoTitle = (blog.seo && blog.seo.metaTitle && blog.seo.metaTitle.trim()) ? blog.seo.metaTitle.trim() : (blog.title || "EduRain Blog");
+        document.title = seoTitle;
+        const seoDesc = (blog.seo && blog.seo.metaDescription && blog.seo.metaDescription.trim()) ? blog.seo.metaDescription.trim() : (blog.excerpt || "Read this insightful blog on EduRain");
+
         let metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-            metaDesc.content = (blog.seo && blog.seo.metaDescription) ? blog.seo.metaDescription : (blog.excerpt || "Read this insightful blog on EduRain");
-        }
+        if (metaDesc) metaDesc.content = seoDesc;
+
+        // Apply Open Graph & Twitter Tags dynamically for client-side routing
+        const ogUrl = window.location.origin + `/blogs/${blog.slug || blog.id}`;
+        const ogImage = blog.coverImage || window.location.origin + "/images/og-banner.png";
+
+        let mOgTitle = document.querySelector('meta[property="og:title"]');
+        if (mOgTitle) mOgTitle.content = seoTitle;
+        let mOgDesc = document.querySelector('meta[property="og:description"]');
+        if (mOgDesc) mOgDesc.content = seoDesc;
+        let mOgUrl = document.querySelector('meta[property="og:url"]');
+        if (mOgUrl) mOgUrl.content = ogUrl;
+        let mOgImage = document.querySelector('meta[property="og:image"]');
+        if (mOgImage) mOgImage.content = ogImage;
+
+        let mTwTitle = document.querySelector('meta[name="twitter:title"]');
+        if (mTwTitle) mTwTitle.content = seoTitle;
+        let mTwDesc = document.querySelector('meta[name="twitter:description"]');
+        if (mTwDesc) mTwDesc.content = seoDesc;
 
         // Populate recommended courses dynamically
         const coursesListEl = document.getElementById('pw-sidebar-courses-list');
