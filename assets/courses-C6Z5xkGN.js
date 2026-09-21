@@ -1,4 +1,4 @@
-import{t as e}from"./courses-DbietNMO.js";import{initFAQ as t,renderFAQ as n}from"./faq-Bo7AT8JC.js";function r(){return`
+import{t as e}from"./courses-BQAdFido.js";import{initFAQ as t,renderFAQ as n}from"./faq-Bo7AT8JC.js";function r(){return`
         <section class="courses-section" id="courses-page">
             <div class="section-header">
                 <h1>Our Courses</h1>
