@@ -1,4 +1,4 @@
-import{ht as e,mt as t,pt as n,vt as r}from"./vendor-BpCc1Cic.js";import{r as i}from"./main-CaGw5Frh.js";import{t as a}from"./courses-BQAdFido.js";var o=[`All Blogs`,`Study Hacks`,`JEE Mains PYQ`,`NEET Test Series`,`CBSE Class 10 PYQ`,`CBSE Class 12 PYQ`,`Foundation 9th-10th`],s=[];function c(){return`
+import{ht as e,mt as t,pt as n,vt as r}from"./vendor-BpCc1Cic.js";import{r as i}from"./main-BnTgnmsk.js";import{t as a}from"./courses-3qduAExM.js";var o=[`All Blogs`,`Study Hacks`,`JEE Mains PYQ`,`NEET Test Series`,`CBSE Class 10 PYQ`,`CBSE Class 12 PYQ`,`Foundation 9th-10th`],s=[];function c(){return`
         <section class="blogs-section" id="blogs">
             <div class="er-pw-blog-container" id="blog-list-view">
                 
