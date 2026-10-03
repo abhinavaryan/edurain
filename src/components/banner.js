@@ -10,7 +10,7 @@ export function renderBanner() {
           <a href="/courses/foundation" aria-label="Foundation Courses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
               <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/1.webp" width="780" height="346">
-              <img src="https://cdn.phototourl.com/free/2026-08-21-e1e824c4-9305-4f2c-94d1-571c81f25773.webp" alt="Foundation Courses" fetchpriority="high" loading="eager" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="/images/web%20banner/1.png" alt="Foundation Courses" fetchpriority="high" loading="eager" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </a>
 
@@ -18,7 +18,7 @@ export function renderBanner() {
           <a href="/courses/neet" aria-label="NEET Courses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
               <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/2.webp" width="780" height="346">
-              <img src="https://cdn.phototourl.com/free/2026-08-21-274d5d83-fe71-4e62-a475-a1f104e2301d.webp" alt="NEET Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="/images/web%20banner/2.png" alt="NEET Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </a>
 
@@ -27,7 +27,7 @@ export function renderBanner() {
           <a href="/courses/iit-jee" aria-label="JEE Courses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
               <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/3.webp" width="780" height="346">
-              <img src="https://cdn.phototourl.com/free/2026-08-21-f1aec8fe-4134-4b91-8e86-aa7347b8640d.webp" alt="JEE Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="/images/web%20banner/3.png" alt="JEE Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </a>
 
@@ -35,7 +35,7 @@ export function renderBanner() {
           <div class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
               <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/4.webp" width="780" height="346">
-              <img src="https://cdn.phototourl.com/free/2026-08-21-dfdd2f3b-ad00-442a-8933-f958f8c33eca.webp" alt="Journey" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="/images/web%20banner/4.png" alt="Journey" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </div>
 
