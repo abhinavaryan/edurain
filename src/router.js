@@ -132,6 +132,12 @@ const routes = {
       return { render: () => renderTerms(), postRender: () => setMetaTags("Terms and Conditions - EduRain", "Terms and conditions of use for Edurain") };
     }
   },
+  '/refund-policy': {
+    load: async () => {
+      const { renderRefund } = await import('./components/refund.js');
+      return { render: () => renderRefund(), postRender: () => setMetaTags("Refund/Cancellation Policy - EduRain", "Refund and cancellation policy for EduRain", "https://www.edurain.in/refund-policy") };
+    }
+  },
   '/sitemap': {
     load: async () => {
       const { renderSitemap } = await import('./components/sitemap.js');

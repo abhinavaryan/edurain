@@ -49,6 +49,11 @@ const routesMeta = {
     desc: "Terms and conditions of use for Edurain",
     canonical: 'https://www.edurain.in/terms/'
   },
+  'refund-policy': {
+    title: "Refund/Cancellation Policy - EduRain",
+    desc: "Refund and cancellation policy for EduRain",
+    canonical: 'https://www.edurain.in/refund-policy/'
+  },
   'sitemap': {
     title: "Sitemap - EduRain",
     desc: "Sitemap for EduRain",
@@ -131,7 +136,8 @@ function fetchBlogs() {
     { loc: 'https://www.edurain.in/courses/foundation/', priority: '0.9', changefreq: 'weekly' },
     { loc: 'https://www.edurain.in/blogs/', priority: '0.8', changefreq: 'daily' },
     { loc: 'https://www.edurain.in/about-us/', priority: '0.7', changefreq: 'monthly' },
-    { loc: 'https://www.edurain.in/contact-us/', priority: '0.7', changefreq: 'monthly' }
+    { loc: 'https://www.edurain.in/contact-us/', priority: '0.7', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/refund-policy/', priority: '0.5', changefreq: 'monthly' }
   ];
 
   const blogUrls = blogSlugs.map(slug => ({

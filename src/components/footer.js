@@ -99,7 +99,9 @@ export function renderFooter() {
                 <p>&copy; 2026 <span class="text-accent">EduRain</span>. All rights reserved.</p>
                 <div class="legal-links">
                     <a href="/privacy">Privacy Policy</a> |
-                    <a href="/terms">Terms and Conditions</a>
+                    <a href="/terms">Terms and Conditions</a> |
+                    <a href="/refund-policy">Refund/Cancellation Policy</a> |
+                    <a href="/contact-us">Contact Us</a>
                 </div>
             </div>
         </footer>
