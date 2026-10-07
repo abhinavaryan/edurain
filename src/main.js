@@ -33,9 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <button class="btn btn-outline btn-sm logout-btn" ${isMobileMenu ? 'style="width: 100%;"' : ''}>Logout</button>
         `;
       } else {
-        area.innerHTML = `
-          <button class="btn btn-accent login-btn" ${isMobileMenu ? 'style="width: 100%;"' : ''}>${isMobileMenu ? 'Login/Register' : 'Login'}</button>
-        `;
+        area.innerHTML = '';
+        /* 
+        // Temporarily disabled login button
+        area.innerHTML = \`
+          <button class="btn btn-accent login-btn" \${isMobileMenu ? 'style="width: 100%;"' : ''}>\${isMobileMenu ? 'Login/Register' : 'Login'}</button>
+        \`;
         // Re-attach login button event within this area
         const loginBtn = area.querySelector('.login-btn');
         if (loginBtn) {
@@ -43,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.dispatchEvent(new CustomEvent('open-auth-modal'));
           });
         }
+        */
       }
     });
   });
