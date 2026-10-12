@@ -38,7 +38,7 @@ export function renderFreeDemo() {
                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                         alt="Free Demo — Teacher with student"
                         class="er-demo-img"
-                        style="width: 400px; height: 400px; object-fit: contain; object-position: bottom; --zoom: 1; transform: scale(var(--zoom)); transform-origin: bottom center;"
+                        style="width: 400px; max-width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: contain; object-position: bottom; --zoom: 1; transform: scale(var(--zoom)); transform-origin: bottom center;"
                     />
                     <!-- Fallback placeholder shown when no image exists -->
                     <div class="er-demo-placeholder" style="display:none;">
