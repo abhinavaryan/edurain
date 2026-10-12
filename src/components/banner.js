@@ -10,7 +10,7 @@ export function renderBanner() {
           <a href="/courses/foundation" aria-label="Foundation Courses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
               <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/1.webp" width="780" height="346">
-              <img src="/images/web%20banner/1.png" alt="Foundation Courses" fetchpriority="high" loading="eager" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="/images/web%20banner/1.webp" alt="Foundation Courses" fetchpriority="high" loading="eager" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </a>
 
@@ -18,7 +18,7 @@ export function renderBanner() {
           <a href="/courses/neet" aria-label="NEET Courses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
               <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/2.jpeg" width="780" height="346">
-              <img src="/images/web%20banner/2.png" alt="NEET Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="/images/web%20banner/2.webp" alt="NEET Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </a>
 
@@ -27,7 +27,7 @@ export function renderBanner() {
           <a href="/courses/iit-jee" aria-label="JEE Courses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
             <picture style="width:100%; height:100%; display:block;">
               <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/3.jpg" width="780" height="346">
-              <img src="/images/web%20banner/3.png" alt="JEE Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="/images/web%20banner/3.webp" alt="JEE Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </picture>
           </a>
 
