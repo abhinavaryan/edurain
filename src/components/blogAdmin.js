@@ -280,6 +280,8 @@ export function initBlogAdmin() {
     if (!wrapper) return;
 
     let quill; // Quill instance
+    let activeUploadsCount = 0;
+    let currentDraftSessionId = 0;
 
     // 1. Authentication Check
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -444,6 +446,9 @@ export function initBlogAdmin() {
             const file = e.target.files?.[0];
             if (!file) return;
 
+            const thisSessionId = currentDraftSessionId;
+            activeUploadsCount++;
+
             btnUploadCover.disabled = true;
             btnUploadCover.innerHTML = '<span>⏳ Uploading to S3...</span>';
             coverStatus.style.display = 'block';
@@ -452,16 +457,23 @@ export function initBlogAdmin() {
 
             try {
                 const s3Url = await uploadToS3(file, 'website blogs');
+                if (thisSessionId !== currentDraftSessionId || document.getElementById('view-add-blog')?.style.display === 'none') {
+                    console.warn('Cover upload completed but draft session or view changed. Discarding stale completion.');
+                    return;
+                }
                 coverInput.value = s3Url;
                 coverPreviewImg.src = s3Url;
                 coverPreviewContainer.style.display = 'block';
                 coverStatus.style.color = '#4ade80';
                 coverStatus.textContent = '✅ Uploaded to AWS S3 successfully!';
             } catch (err) {
-                console.error('S3 Cover upload failed:', err);
-                coverStatus.style.color = '#f87171';
-                coverStatus.textContent = '❌ Upload failed: ' + (err.message || 'Error');
+                if (thisSessionId === currentDraftSessionId) {
+                    console.error('S3 Cover upload failed:', err);
+                    coverStatus.style.color = '#f87171';
+                    coverStatus.textContent = '❌ Upload failed: ' + (err.message || 'Error');
+                }
             } finally {
+                activeUploadsCount = Math.max(0, activeUploadsCount - 1);
                 btnUploadCover.disabled = false;
                 btnUploadCover.innerHTML = '<span>☁️ Upload Image to AWS S3</span>';
                 coverFileInput.value = '';
@@ -493,6 +505,9 @@ export function initBlogAdmin() {
             const file = e.target.files?.[0];
             if (!file) return;
 
+            const thisSessionId = currentDraftSessionId;
+            activeUploadsCount++;
+
             btnUploadSidebarBanner.disabled = true;
             btnUploadSidebarBanner.innerHTML = '<span>⏳ Uploading to S3...</span>';
             sidebarBannerStatus.style.display = 'block';
@@ -501,16 +516,23 @@ export function initBlogAdmin() {
 
             try {
                 const s3Url = await uploadToS3(file, 'website blogs');
+                if (thisSessionId !== currentDraftSessionId || document.getElementById('view-add-blog')?.style.display === 'none') {
+                    console.warn('Sidebar banner upload completed but draft session or view changed. Discarding stale completion.');
+                    return;
+                }
                 sidebarBannerInput.value = s3Url;
                 sidebarBannerPreviewImg.src = s3Url;
                 sidebarBannerPreviewContainer.style.display = 'block';
                 sidebarBannerStatus.style.color = '#4ade80';
                 sidebarBannerStatus.textContent = '✅ Uploaded to AWS S3 successfully!';
             } catch (err) {
-                console.error('S3 Sidebar banner upload failed:', err);
-                sidebarBannerStatus.style.color = '#f87171';
-                sidebarBannerStatus.textContent = '❌ Upload failed: ' + (err.message || 'Error');
+                if (thisSessionId === currentDraftSessionId) {
+                    console.error('S3 Sidebar banner upload failed:', err);
+                    sidebarBannerStatus.style.color = '#f87171';
+                    sidebarBannerStatus.textContent = '❌ Upload failed: ' + (err.message || 'Error');
+                }
             } finally {
+                activeUploadsCount = Math.max(0, activeUploadsCount - 1);
                 btnUploadSidebarBanner.disabled = false;
                 btnUploadSidebarBanner.innerHTML = '<span>☁️ Upload Banner to AWS S3</span>';
                 sidebarBannerFileInput.value = '';
@@ -591,6 +613,8 @@ export function initBlogAdmin() {
         input.onchange = async () => {
             const file = input.files?.[0];
             if (!file) return;
+            const thisSessionId = currentDraftSessionId;
+            activeUploadsCount++;
             const range = quill.getSelection(true) || { index: quill.getLength() };
             const statusDiv = document.getElementById('save-status');
             if (statusDiv) {
@@ -599,6 +623,10 @@ export function initBlogAdmin() {
             }
             try {
                 const s3Url = await uploadToS3(file, 'website blogs');
+                if (thisSessionId !== currentDraftSessionId || document.getElementById('view-add-blog')?.style.display === 'none') {
+                    console.warn('Quill image upload completed but draft session or view changed. Discarding stale completion.');
+                    return;
+                }
                 quill.insertEmbed(range.index, 'image', s3Url);
                 quill.setSelection(range.index + 1);
                 if (statusDiv) {
@@ -607,12 +635,16 @@ export function initBlogAdmin() {
                     setTimeout(() => { if (statusDiv && statusDiv.textContent.includes('inserted')) statusDiv.textContent = ''; }, 3000);
                 }
             } catch (err) {
-                console.error('Editor image upload failed:', err);
-                alert('Failed to upload image to S3: ' + (err.message || 'Error'));
-                if (statusDiv) {
-                    statusDiv.style.color = '#f87171';
-                    statusDiv.textContent = '❌ Upload failed';
+                if (thisSessionId === currentDraftSessionId) {
+                    console.error('Editor image upload failed:', err);
+                    alert('Failed to upload image to S3: ' + (err.message || 'Error'));
+                    if (statusDiv) {
+                        statusDiv.style.color = '#f87171';
+                        statusDiv.textContent = '❌ Upload failed';
+                    }
                 }
+            } finally {
+                activeUploadsCount = Math.max(0, activeUploadsCount - 1);
             }
         };
     }
@@ -833,6 +865,7 @@ export function initBlogAdmin() {
     }
 
     function resetForm() {
+        currentDraftSessionId++;
         document.getElementById('admin-blog-form').reset();
         document.getElementById('blog-id').value = '';
         document.getElementById('editor-title').textContent = 'Create New Blog';
@@ -942,6 +975,7 @@ export function initBlogAdmin() {
     }
 
     async function loadBlogForEdit(id, snapshot) {
+        currentDraftSessionId++;
         const docSnap = snapshot.docs.find(d => d.id === id);
         if (!docSnap) return;
         
@@ -1024,6 +1058,10 @@ export function initBlogAdmin() {
 
     async function handleSaveBlog(e) {
         e.preventDefault();
+        if (activeUploadsCount > 0) {
+            alert('Please wait for all image uploads to finish before saving the blog.');
+            return;
+        }
         const btnSave = document.getElementById('btn-save-blog');
         const statusDiv = document.getElementById('save-status');
         

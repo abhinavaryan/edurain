@@ -7,23 +7,29 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 
-// Read .env if exists
+// Read .env if exists with quote stripping
 const envPath = path.join(rootDir, '.env');
 const envVars = {};
 if (fs.existsSync(envPath)) {
   const envContent = fs.readFileSync(envPath, 'utf8');
   envContent.split(/\r?\n/).forEach(line => {
-    const match = line.match(/^\s*([\w.-]+)\s*=\s*(.*)?\s*$/);
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) return;
+    const match = trimmed.match(/^([\w.-]+)\s*=\s*(.*)$/);
     if (match) {
-      envVars[match[1]] = match[2] || '';
+      let val = match[2].trim();
+      if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+        val = val.slice(1, -1);
+      }
+      envVars[match[1]] = val;
     }
   });
 }
 
-const REGION = process.env.AWS_REGION || envVars.AWS_REGION || process.env.VITE_AWS_REGION || envVars.VITE_AWS_REGION || 'ap-south-1';
-const BUCKET = process.env.AWS_S3_BUCKET || envVars.AWS_S3_BUCKET || process.env.VITE_AWS_S3_BUCKET || envVars.VITE_AWS_S3_BUCKET || 'edurain-notification';
-const ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID || envVars.AWS_ACCESS_KEY_ID || process.env.VITE_AWS_ACCESS_KEY_ID || envVars.VITE_AWS_ACCESS_KEY_ID;
-const SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY || envVars.AWS_SECRET_ACCESS_KEY || process.env.VITE_AWS_SECRET_ACCESS_KEY || envVars.VITE_AWS_SECRET_ACCESS_KEY;
+const REGION = process.env.AWS_REGION || envVars.AWS_REGION || 'ap-south-1';
+const BUCKET = process.env.AWS_S3_BUCKET || envVars.AWS_S3_BUCKET || 'edurain-notification';
+const ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID || envVars.AWS_ACCESS_KEY_ID;
+const SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY || envVars.AWS_SECRET_ACCESS_KEY;
 
 if (!ACCESS_KEY_ID || !SECRET_ACCESS_KEY) {
   console.error('Error: AWS credentials missing in .env');
@@ -93,8 +99,8 @@ async function main() {
       const publicUrl = await uploadBufferToS3(buffer, s3Key, contentType);
       console.log(` -> S3 URL: ${publicUrl}`);
 
-      // Try matching course by id or matching filename
-      const matchedCourse = courses.find(c => c.id.toLowerCase() === baseName.toLowerCase() || c.title.toLowerCase().includes(baseName.toLowerCase()));
+      // Match course strictly by unique id
+      const matchedCourse = courses.find(c => c.id.toLowerCase() === baseName.toLowerCase());
       if (matchedCourse) {
         matchedCourse.thumbnail = publicUrl;
         updatedCount++;
@@ -108,26 +114,52 @@ async function main() {
   // 2. If --migrate-existing is requested, download third-party thumbnails and upload to S3
   if (migrateExisting) {
     console.log(`\nMigrating third-party course thumbnails to S3...`);
+    const MAX_THUMBNAIL_BYTES = 10 * 1024 * 1024; // 10MB limit
+    const supportedTypes = {
+      'image/jpeg': '.jpg',
+      'image/jpg': '.jpg',
+      'image/png': '.png',
+      'image/webp': '.webp',
+      'image/svg+xml': '.svg'
+    };
+
     for (const course of courses) {
       if (course.thumbnail && !course.thumbnail.includes(BUCKET)) {
         console.log(`\nDownloading thumbnail for [${course.id}] ${course.title}...`);
         console.log(`  Source: ${course.thumbnail}`);
         try {
           const res = await fetch(course.thumbnail, {
+            signal: AbortSignal.timeout(15000), // 15s timeout
             headers: {
               'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
             }
           });
           if (!res.ok) {
-            console.error(`  Failed to fetch: ${res.statusText}`);
+            console.error(`  Failed to fetch: ${res.status} ${res.statusText}`);
             continue;
           }
+
+          const contentLength = parseInt(res.headers.get('content-length') || '0', 10);
+          if (contentLength > MAX_THUMBNAIL_BYTES) {
+            console.error(`  Thumbnail exceeds maximum size limit (${contentLength} bytes). Skipping.`);
+            continue;
+          }
+
+          const rawContentType = (res.headers.get('content-type') || '').split(';')[0].trim().toLowerCase();
+          if (!supportedTypes[rawContentType]) {
+            console.error(`  Unsupported or non-image content-type: "${rawContentType}". Skipping.`);
+            continue;
+          }
+
           const arrayBuffer = await res.arrayBuffer();
+          if (arrayBuffer.byteLength > MAX_THUMBNAIL_BYTES) {
+            console.error(`  Downloaded thumbnail exceeds maximum size limit (${arrayBuffer.byteLength} bytes). Skipping.`);
+            continue;
+          }
+
           const buffer = Buffer.from(arrayBuffer);
-          const contentType = res.headers.get('content-type') || 'image/webp';
-          let ext = '.webp';
-          if (contentType.includes('png')) ext = '.png';
-          else if (contentType.includes('jpeg') || contentType.includes('jpg')) ext = '.jpg';
+          const ext = supportedTypes[rawContentType];
+          const contentType = rawContentType;
 
           const fileName = `${course.id}${ext}`;
           const s3Key = `website cources/${fileName}`;
