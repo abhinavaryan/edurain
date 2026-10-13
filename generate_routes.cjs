@@ -83,6 +83,14 @@ function fetchBlogs() {
   const today = new Date().toISOString().split('T')[0];
   const blogSlugs = []; // collect for sitemap
 
+  let blogMigrationMap = {};
+  const mapPath = path.join(__dirname, 'src', 'data', 'blog_s3_migration_map.json');
+  if (fs.existsSync(mapPath)) {
+    try {
+      blogMigrationMap = JSON.parse(fs.readFileSync(mapPath, 'utf8'));
+    } catch (e) {}
+  }
+
   try {
     const blogs = await fetchBlogs();
     blogs.forEach(doc => {
@@ -103,11 +111,15 @@ function fetchBlogs() {
             }
         }
         
+        const mapped = blogMigrationMap[id];
+        const coverImg = (mapped && mapped.s3Cover) ? mapped.s3Cover : (fields.coverImage && fields.coverImage.stringValue ? fields.coverImage.stringValue : 'https://www.edurain.in/images/og-banner.png');
+
         routesMeta[`blogs/${slug}`] = {
             title: metaTitle,
             desc: metaDesc,
             canonical: `https://www.edurain.in/blogs/${slug}/`,
-            content: fields.content && fields.content.stringValue ? fields.content.stringValue : ''
+            content: fields.content && fields.content.stringValue ? fields.content.stringValue : '',
+            image: coverImg
         };
         blogSlugs.push(slug);
       }
@@ -173,6 +185,12 @@ function fetchBlogs() {
     finalHtml = finalHtml.replace(/<meta name="twitter:url" content="[^"]*">/, `<meta name="twitter:url" content="${meta.canonical}">`);
     finalHtml = finalHtml.replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${meta.title}">`);
     finalHtml = finalHtml.replace(/<meta name="twitter:description"[\s\S]*?content="[^"]*">/, `<meta name="twitter:description" content="${meta.desc}">`);
+
+    // Replace Image Tags if provided
+    if (meta.image) {
+      finalHtml = finalHtml.replace(/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${meta.image}">`);
+      finalHtml = finalHtml.replace(/<meta name="twitter:image" content="[^"]*">/, `<meta name="twitter:image" content="${meta.image}">`);
+    }
 
     // Inject hidden SEO links right before </body> to ensure crawlability
     finalHtml = finalHtml.replace('</body>', `${seoLinksHtml}</body>`);

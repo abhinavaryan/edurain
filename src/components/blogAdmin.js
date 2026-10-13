@@ -4,6 +4,7 @@ import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, serverTimestamp
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import blogsDataJson from '../data/blogs.json';
 import coursesData from '../data/courses.json';
+import blogS3MigrationMap from '../data/blog_s3_migration_map.json';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
 import { uploadToS3, getStoredS3Config, saveStoredS3Config } from '../utils/s3Upload.js';
@@ -64,6 +65,9 @@ export function renderBlogAdmin() {
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
                     <h1 style="font-size: 2rem; margin: 0;">Manage Blogs</h1>
                     <div>
+                        <button id="btn-sync-s3-covers" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid #38bdf8; padding: 0.75rem 1rem; border-radius: 8px; font-weight: bold; cursor: pointer; margin-right: 1rem;">
+                            ☁️ Sync S3 Covers to DB
+                        </button>
                         <button id="btn-migrate-blogs" style="background: transparent; color: #94a3b8; border: 1px solid #94a3b8; padding: 0.75rem 1rem; border-radius: 8px; font-weight: bold; cursor: pointer; margin-right: 1rem;">
                             Migrate JSON Blogs
                         </button>
@@ -430,6 +434,38 @@ export function initBlogAdmin() {
             }
             btnMigrate.textContent = "Migrate JSON Blogs";
             btnMigrate.disabled = false;
+        });
+
+        // Sync Migrated S3 Covers to Firestore
+        const btnSyncS3Covers = document.getElementById('btn-sync-s3-covers');
+        btnSyncS3Covers?.addEventListener('click', async () => {
+            const mappedEntries = Object.entries(blogS3MigrationMap).filter(([_, val]) => val && val.s3Cover);
+            if (!confirm(`Found ${mappedEntries.length} migrated S3 blog cover images. Sync them to Firestore? (Expired links will remain untouched)`)) return;
+
+            btnSyncS3Covers.disabled = true;
+            btnSyncS3Covers.textContent = '⏳ Syncing to DB...';
+            let syncedCount = 0;
+            try {
+                for (const [blogId, val] of mappedEntries) {
+                    try {
+                        await updateDoc(doc(db, 'blogs', blogId), {
+                            coverImage: val.s3Cover,
+                            updatedAt: serverTimestamp()
+                        });
+                        syncedCount++;
+                    } catch (e) {
+                        console.warn(`Could not update blog ${blogId}:`, e);
+                    }
+                }
+                alert(`✅ Successfully synced ${syncedCount} blog cover images to AWS S3 in Firestore!`);
+                loadBlogs();
+            } catch (err) {
+                console.error('Error syncing S3 covers:', err);
+                alert('Sync failed: ' + err.message);
+            } finally {
+                btnSyncS3Covers.disabled = false;
+                btnSyncS3Covers.textContent = '☁️ Sync S3 Covers to DB';
+            }
         });
 
         // Setup S3 File Upload for Cover Image
@@ -925,9 +961,12 @@ export function initBlogAdmin() {
                     ? '<span style="background:#16a34a; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Published</span>'
                     : '<span style="background:#94a3b8; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Draft</span>';
 
+                const isS3Cover = (data.coverImage && data.coverImage.includes('edurain-notification.s3')) || (blogS3MigrationMap[id] && blogS3MigrationMap[id].s3Cover);
+                const s3Badge = isS3Cover ? '<span title="Hosted on AWS S3" style="font-size:0.75rem; background:rgba(56,189,248,0.2); color:#38bdf8; border:1px solid rgba(56,189,248,0.4); padding:2px 6px; border-radius:4px; margin-left:8px; vertical-align:middle;">☁️ S3</span>' : '';
+
                 html += `
                     <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-                        <td style="padding: 1rem; font-weight: 600;">${data.title}</td>
+                        <td style="padding: 1rem; font-weight: 600;">${data.title} ${s3Badge}</td>
                         <td style="padding: 1rem;">${data.category || 'General'}</td>
                         <td style="padding: 1rem;">${statusBadge}</td>
                         <td style="padding: 1rem; color: #94a3b8;">${date}</td>
