@@ -6,6 +6,7 @@ import blogsDataJson from '../data/blogs.json';
 import coursesData from '../data/courses.json';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
+import { uploadToS3 } from '../utils/s3Upload.js';
 
 export function renderBlogAdmin() {
     return `
@@ -142,9 +143,19 @@ export function renderBlogAdmin() {
                                     <option value="draft" style="color: black;">Draft</option>
                                 </select>
                                 
-                                <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Cover Image URL</label>
-                                <span style="display: block; font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.5rem;">Upload your image to postimages.org or imgur.com and paste the "Direct Link" (ending in .jpg or .png) here.</span>
-                                <input type="url" id="blog-cover" placeholder="https://i.imgur.com/your-image.jpg" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
+                                <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Cover Image</label>
+                                <div style="margin-bottom: 0.75rem;">
+                                    <input type="file" id="blog-cover-file" accept="image/*" style="display: none;">
+                                    <button type="button" id="btn-upload-cover" style="width: 100%; padding: 0.75rem 1rem; background: linear-gradient(135deg, #16a34a, #15803d); color: white; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: 0.2s;">
+                                        <span>☁️ Upload Image to AWS S3</span>
+                                    </button>
+                                    <div id="cover-upload-status" style="font-size: 0.8rem; margin-top: 0.4rem; color: #94a3b8; display: none;"></div>
+                                    <div id="cover-preview-container" style="display: none; margin-top: 0.5rem; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.2); max-height: 160px; position: relative;">
+                                        <img id="cover-preview-img" src="" alt="Cover Preview" style="width: 100%; height: 160px; object-fit: cover; display: block;">
+                                    </div>
+                                </div>
+                                <span style="display: block; font-size: 0.75rem; color: #94a3b8; margin-bottom: 0.25rem;">Or S3 Image URL:</span>
+                                <input type="url" id="blog-cover" placeholder="https://edurain-notification.s3.ap-south-1.amazonaws.com/..." style="width: 100%; padding: 0.65rem 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none; font-size: 0.85rem;">
                                 
                                 <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Category</label>
                                 <select id="blog-category-select" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
@@ -199,8 +210,19 @@ export function renderBlogAdmin() {
                                 <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Sidebar Custom Banner</label>
                                 <span style="display: block; font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.5rem;">Provide an image URL and a target destination URL to display a custom banner in the sidebar.</span>
                                 
-                                <label style="display: block; margin-bottom: 0.25rem; color: #cbd5e1; font-size: 0.85rem;">Banner Image URL</label>
-                                <input type="url" id="blog-sidebar-banner-img" placeholder="https://i.imgur.com/banner.jpg" style="width: 100%; padding: 0.75rem; margin-bottom: 0.75rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
+                                <label style="display: block; margin-bottom: 0.25rem; color: #cbd5e1; font-size: 0.85rem;">Banner Image</label>
+                                <div style="margin-bottom: 0.75rem;">
+                                    <input type="file" id="blog-sidebar-banner-file" accept="image/*" style="display: none;">
+                                    <button type="button" id="btn-upload-sidebar-banner" style="width: 100%; padding: 0.65rem 1rem; background: linear-gradient(135deg, #16a34a, #15803d); color: white; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: 0.2s;">
+                                        <span>☁️ Upload Banner to AWS S3</span>
+                                    </button>
+                                    <div id="sidebar-banner-upload-status" style="font-size: 0.8rem; margin-top: 0.4rem; color: #94a3b8; display: none;"></div>
+                                    <div id="sidebar-banner-preview-container" style="display: none; margin-top: 0.5rem; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.2); max-height: 140px; position: relative;">
+                                        <img id="sidebar-banner-preview-img" src="" alt="Sidebar Banner Preview" style="width: 100%; height: 140px; object-fit: cover; display: block;">
+                                    </div>
+                                </div>
+                                <span style="display: block; font-size: 0.75rem; color: #94a3b8; margin-bottom: 0.25rem;">Or S3 Banner URL:</span>
+                                <input type="url" id="blog-sidebar-banner-img" placeholder="https://edurain-notification.s3.ap-south-1.amazonaws.com/..." style="width: 100%; padding: 0.65rem 0.75rem; margin-bottom: 0.75rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none; font-size: 0.85rem;">
                                 
                                 <label style="display: block; margin-bottom: 0.25rem; color: #cbd5e1; font-size: 0.85rem;">Banner Target Link</label>
                                 <input type="url" id="blog-sidebar-banner-link" placeholder="https://courses.edurain.in/..." style="width: 100%; padding: 0.75rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; outline: none;">
@@ -386,7 +408,103 @@ export function initBlogAdmin() {
             btnMigrate.disabled = false;
         });
 
-        // File upload removed - using manual URL exclusively.
+        // Setup S3 File Upload for Cover Image
+        const coverFileInput = document.getElementById('blog-cover-file');
+        const btnUploadCover = document.getElementById('btn-upload-cover');
+        const coverStatus = document.getElementById('cover-upload-status');
+        const coverInput = document.getElementById('blog-cover');
+        const coverPreviewContainer = document.getElementById('cover-preview-container');
+        const coverPreviewImg = document.getElementById('cover-preview-img');
+
+        btnUploadCover?.addEventListener('click', () => coverFileInput?.click());
+
+        coverFileInput?.addEventListener('change', async (e) => {
+            const file = e.target.files?.[0];
+            if (!file) return;
+
+            btnUploadCover.disabled = true;
+            btnUploadCover.innerHTML = '<span>⏳ Uploading to S3...</span>';
+            coverStatus.style.display = 'block';
+            coverStatus.style.color = '#38bdf8';
+            coverStatus.textContent = `Uploading ${file.name} to AWS S3 (website blogs)...`;
+
+            try {
+                const s3Url = await uploadToS3(file, 'website blogs');
+                coverInput.value = s3Url;
+                coverPreviewImg.src = s3Url;
+                coverPreviewContainer.style.display = 'block';
+                coverStatus.style.color = '#4ade80';
+                coverStatus.textContent = '✅ Uploaded to AWS S3 successfully!';
+            } catch (err) {
+                console.error('S3 Cover upload failed:', err);
+                coverStatus.style.color = '#f87171';
+                coverStatus.textContent = '❌ Upload failed: ' + (err.message || 'Error');
+            } finally {
+                btnUploadCover.disabled = false;
+                btnUploadCover.innerHTML = '<span>☁️ Upload Image to AWS S3</span>';
+                coverFileInput.value = '';
+                alignEditorHeight();
+            }
+        });
+
+        coverInput?.addEventListener('input', () => {
+            const val = coverInput.value.trim();
+            if (val && (val.startsWith('http://') || val.startsWith('https://') || val.startsWith('/'))) {
+                coverPreviewImg.src = val;
+                coverPreviewContainer.style.display = 'block';
+            } else {
+                coverPreviewContainer.style.display = 'none';
+            }
+        });
+
+        // Setup S3 File Upload for Sidebar Banner
+        const sidebarBannerFileInput = document.getElementById('blog-sidebar-banner-file');
+        const btnUploadSidebarBanner = document.getElementById('btn-upload-sidebar-banner');
+        const sidebarBannerStatus = document.getElementById('sidebar-banner-upload-status');
+        const sidebarBannerInput = document.getElementById('blog-sidebar-banner-img');
+        const sidebarBannerPreviewContainer = document.getElementById('sidebar-banner-preview-container');
+        const sidebarBannerPreviewImg = document.getElementById('sidebar-banner-preview-img');
+
+        btnUploadSidebarBanner?.addEventListener('click', () => sidebarBannerFileInput?.click());
+
+        sidebarBannerFileInput?.addEventListener('change', async (e) => {
+            const file = e.target.files?.[0];
+            if (!file) return;
+
+            btnUploadSidebarBanner.disabled = true;
+            btnUploadSidebarBanner.innerHTML = '<span>⏳ Uploading to S3...</span>';
+            sidebarBannerStatus.style.display = 'block';
+            sidebarBannerStatus.style.color = '#38bdf8';
+            sidebarBannerStatus.textContent = `Uploading ${file.name} to AWS S3...`;
+
+            try {
+                const s3Url = await uploadToS3(file, 'website blogs');
+                sidebarBannerInput.value = s3Url;
+                sidebarBannerPreviewImg.src = s3Url;
+                sidebarBannerPreviewContainer.style.display = 'block';
+                sidebarBannerStatus.style.color = '#4ade80';
+                sidebarBannerStatus.textContent = '✅ Uploaded to AWS S3 successfully!';
+            } catch (err) {
+                console.error('S3 Sidebar banner upload failed:', err);
+                sidebarBannerStatus.style.color = '#f87171';
+                sidebarBannerStatus.textContent = '❌ Upload failed: ' + (err.message || 'Error');
+            } finally {
+                btnUploadSidebarBanner.disabled = false;
+                btnUploadSidebarBanner.innerHTML = '<span>☁️ Upload Banner to AWS S3</span>';
+                sidebarBannerFileInput.value = '';
+                alignEditorHeight();
+            }
+        });
+
+        sidebarBannerInput?.addEventListener('input', () => {
+            const val = sidebarBannerInput.value.trim();
+            if (val && (val.startsWith('http://') || val.startsWith('https://') || val.startsWith('/'))) {
+                sidebarBannerPreviewImg.src = val;
+                sidebarBannerPreviewContainer.style.display = 'block';
+            } else {
+                sidebarBannerPreviewContainer.style.display = 'none';
+            }
+        });
 
         // Category select logic
         const catSelect = document.getElementById('blog-category-select');
@@ -442,13 +560,39 @@ export function initBlogAdmin() {
         });
     }
 
-    // Handle Image Upload to Firebase Storage from Quill
+    // Handle Image Upload to AWS S3 from Quill
     function imageHandler() {
-        const url = prompt("Please enter the Direct URL of the image (ending in .jpg or .png):");
-        if (url) {
-            const range = quill.getSelection();
-            quill.insertEmbed(range.index, 'image', url);
-        }
+        const input = document.createElement('input');
+        input.setAttribute('type', 'file');
+        input.setAttribute('accept', 'image/*');
+        input.click();
+        input.onchange = async () => {
+            const file = input.files?.[0];
+            if (!file) return;
+            const range = quill.getSelection(true) || { index: quill.getLength() };
+            const statusDiv = document.getElementById('save-status');
+            if (statusDiv) {
+                statusDiv.style.color = '#38bdf8';
+                statusDiv.textContent = '⏳ Uploading editor image to S3 (website blogs)...';
+            }
+            try {
+                const s3Url = await uploadToS3(file, 'website blogs');
+                quill.insertEmbed(range.index, 'image', s3Url);
+                quill.setSelection(range.index + 1);
+                if (statusDiv) {
+                    statusDiv.style.color = '#4ade80';
+                    statusDiv.textContent = '✅ Image inserted from AWS S3!';
+                    setTimeout(() => { if (statusDiv && statusDiv.textContent.includes('inserted')) statusDiv.textContent = ''; }, 3000);
+                }
+            } catch (err) {
+                console.error('Editor image upload failed:', err);
+                alert('Failed to upload image to S3: ' + (err.message || 'Error'));
+                if (statusDiv) {
+                    statusDiv.style.color = '#f87171';
+                    statusDiv.textContent = '❌ Upload failed';
+                }
+            }
+        };
     }
 
     function initSEOAnalyzer() {
@@ -682,6 +826,17 @@ export function initBlogAdmin() {
         // Reset custom banner inputs
         document.getElementById('blog-sidebar-banner-img').value = '';
         document.getElementById('blog-sidebar-banner-link').value = '';
+
+        // Reset image previews and upload messages
+        const coverPreview = document.getElementById('cover-preview-container');
+        if (coverPreview) coverPreview.style.display = 'none';
+        const coverStatus = document.getElementById('cover-upload-status');
+        if (coverStatus) coverStatus.style.display = 'none';
+
+        const sidebarBannerPreview = document.getElementById('sidebar-banner-preview-container');
+        if (sidebarBannerPreview) sidebarBannerPreview.style.display = 'none';
+        const sidebarBannerStatus = document.getElementById('sidebar-banner-upload-status');
+        if (sidebarBannerStatus) sidebarBannerStatus.style.display = 'none';
         
         if(quill) {
             quill.root.innerHTML = '';
@@ -776,6 +931,15 @@ export function initBlogAdmin() {
         document.getElementById('blog-excerpt').value = data.excerpt || '';
         document.getElementById('blog-status').value = data.status || 'draft';
         document.getElementById('blog-cover').value = data.coverImage || '';
+        const coverPreview = document.getElementById('cover-preview-container');
+        const coverPreviewImg = document.getElementById('cover-preview-img');
+        if (data.coverImage) {
+            coverPreviewImg.src = data.coverImage;
+            coverPreview.style.display = 'block';
+        } else if (coverPreview) {
+            coverPreview.style.display = 'none';
+        }
+
         const categorySelect = document.getElementById('blog-category-select');
         const categoryNew = document.getElementById('blog-category-new');
         if (data.category && Array.from(categorySelect.options).some(o => o.value === data.category)) {
@@ -805,6 +969,14 @@ export function initBlogAdmin() {
         // Populate custom banner fields
         document.getElementById('blog-sidebar-banner-img').value = data.sidebarBannerImage || '';
         document.getElementById('blog-sidebar-banner-link').value = data.sidebarBannerLink || '';
+        const bannerPreview = document.getElementById('sidebar-banner-preview-container');
+        const bannerPreviewImg = document.getElementById('sidebar-banner-preview-img');
+        if (data.sidebarBannerImage) {
+            bannerPreviewImg.src = data.sidebarBannerImage;
+            bannerPreview.style.display = 'block';
+        } else if (bannerPreview) {
+            bannerPreview.style.display = 'none';
+        }
         
         if (data.seo) {
             document.getElementById('seo-title').value = data.seo.metaTitle || '';
