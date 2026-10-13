@@ -20,10 +20,10 @@ if (fs.existsSync(envPath)) {
   });
 }
 
-const REGION = process.env.VITE_AWS_REGION || envVars.VITE_AWS_REGION || 'ap-south-1';
-const BUCKET = process.env.VITE_AWS_S3_BUCKET || envVars.VITE_AWS_S3_BUCKET || 'edurain-notification';
-const ACCESS_KEY_ID = process.env.VITE_AWS_ACCESS_KEY_ID || envVars.VITE_AWS_ACCESS_KEY_ID;
-const SECRET_ACCESS_KEY = process.env.VITE_AWS_SECRET_ACCESS_KEY || envVars.VITE_AWS_SECRET_ACCESS_KEY;
+const REGION = process.env.AWS_REGION || envVars.AWS_REGION || process.env.VITE_AWS_REGION || envVars.VITE_AWS_REGION || 'ap-south-1';
+const BUCKET = process.env.AWS_S3_BUCKET || envVars.AWS_S3_BUCKET || process.env.VITE_AWS_S3_BUCKET || envVars.VITE_AWS_S3_BUCKET || 'edurain-notification';
+const ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID || envVars.AWS_ACCESS_KEY_ID || process.env.VITE_AWS_ACCESS_KEY_ID || envVars.VITE_AWS_ACCESS_KEY_ID;
+const SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY || envVars.AWS_SECRET_ACCESS_KEY || process.env.VITE_AWS_SECRET_ACCESS_KEY || envVars.VITE_AWS_SECRET_ACCESS_KEY;
 
 if (!ACCESS_KEY_ID || !SECRET_ACCESS_KEY) {
   console.error('Error: AWS credentials missing in .env');

@@ -6,7 +6,7 @@ import blogsDataJson from '../data/blogs.json';
 import coursesData from '../data/courses.json';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
-import { uploadToS3 } from '../utils/s3Upload.js';
+import { uploadToS3, getStoredS3Config, saveStoredS3Config } from '../utils/s3Upload.js';
 
 export function renderBlogAdmin() {
     return `
@@ -34,6 +34,11 @@ export function renderBlogAdmin() {
                     <li style="margin-bottom: 0.5rem;">
                         <button id="nav-add-blog" class="admin-nav-btn" style="width: 100%; text-align: left; padding: 0.85rem 1rem; background: transparent; color: #cbd5e1; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s;">
                             ✍️ Add New Blog
+                        </button>
+                    </li>
+                    <li style="margin-bottom: 0.5rem;">
+                        <button id="nav-s3-settings" class="admin-nav-btn" style="width: 100%; text-align: left; padding: 0.85rem 1rem; background: transparent; color: #cbd5e1; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s;">
+                            ⚙️ AWS S3 Settings
                         </button>
                     </li>
                     <li style="margin-bottom: 0.5rem;">
@@ -361,6 +366,23 @@ export function initBlogAdmin() {
         btnCreateNew.addEventListener('click', () => {
             resetForm();
             showView('add');
+        });
+
+        document.getElementById('nav-s3-settings')?.addEventListener('click', () => {
+            const current = getStoredS3Config();
+            const key = prompt('AWS S3 Access Key ID:', current.accessKeyId || '');
+            if (key === null) return;
+            const secret = prompt('AWS S3 Secret Access Key (leave empty to keep current):', '');
+            if (secret === null) return;
+            
+            saveStoredS3Config({
+                accessKeyId: key.trim(),
+                secretAccessKey: secret.trim() ? secret.trim() : current.secretAccessKey,
+                region: current.region,
+                bucket: current.bucket
+            });
+            alert('AWS S3 configuration saved successfully in your browser!');
+            autoCloseSidebar();
         });
 
         const btnMigrate = document.getElementById('btn-migrate-blogs');
