@@ -66,6 +66,8 @@ async function uploadBufferToS3(buffer, key, contentType) {
 async function main() {
   const args = process.argv.slice(2);
   const migrateExisting = args.includes('--migrate-existing') || args.includes('--all');
+  const force = args.includes('--force');
+  const targetFilter = args.find(a => !a.startsWith('--'));
 
   console.log(`=== EduRain S3 Courses Sync ===`);
   console.log(`Bucket: ${BUCKET}`);
@@ -83,6 +85,31 @@ async function main() {
       if (!['.jpg', '.jpeg', '.png', '.webp', '.svg'].includes(ext)) continue;
 
       const baseName = path.basename(file, ext);
+      if (targetFilter && baseName.toLowerCase() !== targetFilter.toLowerCase()) {
+        continue;
+      }
+
+      const bannerAliasMap = {
+        'c2': 'c7',
+        'c3': 'c14'
+      };
+
+      // Match course strictly by unique id or mapped alias
+      const effectiveId = bannerAliasMap[baseName.toLowerCase()] || baseName.toLowerCase();
+      const matchedCourse = courses.find(c => c.id.toLowerCase() === effectiveId);
+      if (!matchedCourse) {
+        console.log(`Skipping ${file}: no matching course ID in courses.json`);
+        continue;
+      }
+
+      const encodedKey = `website cources/${file}`.split('/').map(part => encodeURIComponent(part)).join('/');
+      const expectedUrl = `https://${BUCKET}.s3.${REGION}.amazonaws.com/${encodedKey}`;
+
+      if (matchedCourse.thumbnail === expectedUrl && !force) {
+        console.log(`[${matchedCourse.id}] Already synced to S3: ${expectedUrl}`);
+        continue;
+      }
+
       const filePath = path.join(coursesBannerDir, file);
       const buffer = fs.readFileSync(filePath);
       const mimeTypes = {
@@ -99,13 +126,9 @@ async function main() {
       const publicUrl = await uploadBufferToS3(buffer, s3Key, contentType);
       console.log(` -> S3 URL: ${publicUrl}`);
 
-      // Match course strictly by unique id
-      const matchedCourse = courses.find(c => c.id.toLowerCase() === baseName.toLowerCase());
-      if (matchedCourse) {
-        matchedCourse.thumbnail = publicUrl;
-        updatedCount++;
-        console.log(` -> Assigned to course: [${matchedCourse.id}] ${matchedCourse.title}`);
-      }
+      matchedCourse.thumbnail = publicUrl;
+      updatedCount++;
+      console.log(` -> Assigned to course: [${matchedCourse.id}] ${matchedCourse.title}`);
     }
   } else {
     console.log(`No files found in local public/images/courses banner/ yet.`);
