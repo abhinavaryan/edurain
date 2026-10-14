@@ -91,7 +91,8 @@ async function main() {
 
       const bannerAliasMap = {
         'c2': 'c7',
-        'c3': 'c14'
+        'c3': 'c14',
+        'c4': 'c12'
       };
 
       // Match course strictly by unique id or mapped alias
