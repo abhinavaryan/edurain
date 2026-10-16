@@ -2612,21 +2612,41 @@ textarea {
   }
 }
 
-/* ===== HERO BANNER SLIDER (Restored Original Aspect Ratio & Sizing) ===== */
-.er-slide-aspect {
+/* ===== HERO BANNER SLIDER (Web 6 Banners & Mobile 4 Banners) ===== */
+.er-banner-web {
+  display: block;
+}
+
+.er-banner-mobile {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .er-banner-web {
+    display: none !important;
+  }
+  .er-banner-mobile {
+    display: block !important;
+  }
+}
+
+.er-slide-aspect,
+.er-slide-aspect-web {
   aspect-ratio: 4096 / 773;
   max-height: 480px;
 }
 
 @media (max-width: 1024px) {
-  .er-slide-aspect {
+  .er-slide-aspect,
+  .er-slide-aspect-web {
     aspect-ratio: 4096 / 773;
     max-height: 380px;
   }
 }
 
 @media (max-width: 640px) {
-  .er-slide-aspect {
+  .er-slide-aspect,
+  .er-slide-aspect-mobile {
     aspect-ratio: 390 / 173;
     max-height: none;
   }

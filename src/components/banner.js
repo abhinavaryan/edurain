@@ -1,115 +1,225 @@
 export function renderBanner() {
   return `
-    <!-- ═══ SECTION A: HERO AUTO-SCROLL BANNER (Restored Original Layout & Aspect Ratio) ═══ -->
+    <!-- ═══ SECTION A: HERO AUTO-SCROLL BANNER ═══ -->
     <div class="er-hero-banner-wrapper">
-      <section id="er-hero-banner" style="position:relative; width:100%; overflow:hidden; background:#0e3a24;">
 
-        <div id="er-slider-track" style="display:flex; transition:transform 0.7s cubic-bezier(0.4,0,0.2,1); will-change:transform;">
+      <!-- ─── DESKTOP / WEB HERO BANNER (6 Slides) ─── -->
+      <div class="er-banner-web">
+        <section id="er-hero-banner-web" style="position:relative; width:100%; overflow:hidden; background:#0e3a24;">
 
-          <!-- SLIDE 1 — FOUNDATION COURSES BANNER -->
-          <a href="/courses/foundation" aria-label="Foundation Courses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-            <picture style="width:100%; height:100%; display:block;">
-              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/1.webp" width="780" height="346">
-              <img src="/images/web%20banner/1.webp" alt="Foundation Courses" fetchpriority="high" loading="eager" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
-            </picture>
-          </a>
+          <div id="er-slider-track-web" style="display:flex; transition:transform 0.7s cubic-bezier(0.4,0,0.2,1); will-change:transform;">
 
-          <!-- SLIDE 2 — NEET BATCH -->
-          <a href="/courses/neet" aria-label="NEET Courses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-            <picture style="width:100%; height:100%; display:block;">
-              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/2.jpeg" width="780" height="346">
-              <img src="/images/web%20banner/2.webp" alt="NEET Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
-            </picture>
-          </a>
+            <!-- SLIDE 1 — JEE MANTRA 3.0 BATCH (CLASS 11TH) -->
+            <a href="/courses/iit-jee" aria-label="JEE Mantra 3.0 Batch 2027-28 for Class 11th" class="er-slide-web er-slide-aspect-web" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/web%20banner/1.webp" alt="JEE Mantra 3.0 Batch 2027-28 for Class 11th" fetchpriority="high" loading="eager" width="12800" height="2416" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </a>
 
+            <!-- SLIDE 2 — MISSION-NEET 3.0 BATCH (CLASS 11TH) -->
+            <a href="/courses/neet" aria-label="Mission-NEET 3.0 Batch 2027-28 for Class 11th" class="er-slide-web er-slide-aspect-web" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/web%20banner/2.webp" alt="Mission-NEET 3.0 Batch 2027-28 for Class 11th" loading="lazy" width="12800" height="2416" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </a>
 
-          <!-- SLIDE 3 — JEE COURSES BANNER -->
-          <a href="/courses/iit-jee" aria-label="JEE Courses" class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-            <picture style="width:100%; height:100%; display:block;">
-              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/3.jpg" width="780" height="346">
-              <img src="/images/web%20banner/3.webp" alt="JEE Courses" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
-            </picture>
-          </a>
+            <!-- SLIDE 3 — NEET WHITE COAT BATCH (CLASS 12TH) -->
+            <a href="/courses/neet" aria-label="NEET White Coat Batch 2026-27 for Class 12th" class="er-slide-web er-slide-aspect-web" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/web%20banner/3.webp" alt="NEET White Coat Batch 2026-27 for Class 12th" loading="lazy" width="12800" height="2416" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </a>
 
-          <!-- SLIDE 4 — JOURNEY & INTROSPECTION -->
-          <div class="er-slide er-slide-aspect" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-            <picture style="width:100%; height:100%; display:block;">
-              <source media="(max-width: 640px)" srcset="/images/mobile%20banner%20images/4.webp" width="780" height="346">
-              <img src="/images/web%20banner/4.png" alt="Journey" loading="lazy" width="4096" height="773" style="width:100%; height:100%; object-fit:cover; display:block;" />
-            </picture>
+            <!-- SLIDE 4 — JEE TARGET BATCH (CLASS 12TH) -->
+            <a href="/courses/iit-jee" aria-label="JEE Target Batch 2026-27 for Class 12th" class="er-slide-web er-slide-aspect-web" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/web%20banner/4.webp" alt="JEE Target Batch 2026-27 for Class 12th" loading="lazy" width="12800" height="2416" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </a>
+
+            <!-- SLIDE 5 — FOUNDATION COURSES (CLASS 6TH - 10TH) -->
+            <a href="/courses/foundation" aria-label="Foundation Courses for Class 6th - 10th" class="er-slide-web er-slide-aspect-web" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/web%20banner/5.webp" alt="Foundation Courses for Class 6th - 10th" loading="lazy" width="12800" height="2416" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </a>
+
+            <!-- SLIDE 6 — LEARN FROM ANYWHERE (APP DOWNLOAD) -->
+            <a href="#er-app-download" aria-label="Download EduRain App" class="er-slide-web er-slide-aspect-web" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/web%20banner/6.webp" alt="Learn from Anywhere - EduRain App" loading="lazy" width="12800" height="2416" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </a>
+
           </div>
 
+          <!-- LEFT arrow -->
+          <button id="er-arrow-prev-web" class="er-arrow er-arrow-prev" aria-label="Previous slide">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+            </svg>
+          </button>
+
+          <!-- RIGHT arrow -->
+          <button id="er-arrow-next-web" class="er-arrow er-arrow-next" aria-label="Next slide">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+
+        </section>
+
+        <!-- Dot pagination (Web - 6 dots) -->
+        <div id="er-dots-web" class="er-banner-dots">
+          <button class="er-dot er-dot-active" data-index="0" aria-label="Slide 1"></button>
+          <button class="er-dot" data-index="1" aria-label="Slide 2"></button>
+          <button class="er-dot" data-index="2" aria-label="Slide 3"></button>
+          <button class="er-dot" data-index="3" aria-label="Slide 4"></button>
+          <button class="er-dot" data-index="4" aria-label="Slide 5"></button>
+          <button class="er-dot" data-index="5" aria-label="Slide 6"></button>
         </div>
-
-        <!-- LEFT arrow -->
-        <button id="er-arrow-prev" class="er-arrow er-arrow-prev" aria-label="Previous slide">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
-          </svg>
-        </button>
-
-        <!-- RIGHT arrow -->
-        <button id="er-arrow-next" class="er-arrow er-arrow-next" aria-label="Next slide">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-          </svg>
-        </button>
-
-      </section>
-
-      <!-- Dot pagination (Outside the banner) -->
-      <div id="er-dots" class="er-banner-dots">
-        <button class="er-dot er-dot-active" data-index="0" aria-label="Slide 1"></button>
-        <button class="er-dot" data-index="1" aria-label="Slide 2"></button>
-        <button class="er-dot" data-index="2" aria-label="Slide 3"></button>
-        <button class="er-dot" data-index="3" aria-label="Slide 4"></button>
       </div>
+
+      <!-- ─── MOBILE HERO BANNER (4 Slides) ─── -->
+      <div class="er-banner-mobile">
+        <section id="er-hero-banner-mobile" style="position:relative; width:100%; overflow:hidden; background:#0e3a24;">
+
+          <div id="er-slider-track-mobile" style="display:flex; transition:transform 0.7s cubic-bezier(0.4,0,0.2,1); will-change:transform;">
+
+            <!-- SLIDE 1 — JEE BATCHES -->
+            <a href="/courses/iit-jee" aria-label="JEE Batches" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/mobile%20banner%20images/1.webp" alt="JEE Batches" fetchpriority="high" loading="eager" width="1170" height="519" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </a>
+
+            <!-- SLIDE 2 — NEET BATCHES -->
+            <a href="/courses/neet" aria-label="NEET Batches" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/mobile%20banner%20images/2.jpeg" alt="NEET Batches" loading="lazy" width="1170" height="519" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </a>
+
+            <!-- SLIDE 3 — FOUNDATION COURSES -->
+            <a href="/courses/foundation" aria-label="Foundation Courses" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/mobile%20banner%20images/3.jpg" alt="Foundation Courses" loading="lazy" width="1170" height="519" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </a>
+
+            <!-- SLIDE 4 — LEARN FROM ANYWHERE (APP DOWNLOAD) -->
+            <a href="#er-app-download" aria-label="Download EduRain App" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/mobile%20banner%20images/4.webp" alt="Learn from Anywhere - EduRain App" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </a>
+
+          </div>
+
+          <!-- LEFT arrow -->
+          <button id="er-arrow-prev-mobile" class="er-arrow er-arrow-prev" aria-label="Previous slide">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+            </svg>
+          </button>
+
+          <!-- RIGHT arrow -->
+          <button id="er-arrow-next-mobile" class="er-arrow er-arrow-next" aria-label="Next slide">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+
+        </section>
+
+        <!-- Dot pagination (Mobile - 4 dots) -->
+        <div id="er-dots-mobile" class="er-banner-dots">
+          <button class="er-dot er-dot-active" data-index="0" aria-label="Slide 1"></button>
+          <button class="er-dot" data-index="1" aria-label="Slide 2"></button>
+          <button class="er-dot" data-index="2" aria-label="Slide 3"></button>
+          <button class="er-dot" data-index="3" aria-label="Slide 4"></button>
+        </div>
+      </div>
+
     </div>
   `;
 }
 
 export function initBanner() {
-  const track = document.getElementById('er-slider-track');
-  const dots = document.querySelectorAll('.er-dot');
-  const slides = document.querySelectorAll('.er-slide');
-  const btnPrev = document.getElementById('er-arrow-prev');
-  const btnNext = document.getElementById('er-arrow-next');
-  if (!track || !slides.length) return;
+  function setupSlider({ trackId, dotsContainerId, slideClass, prevBtnId, nextBtnId }) {
+    const track = document.getElementById(trackId);
+    const dotsContainer = document.getElementById(dotsContainerId);
+    if (!track || !dotsContainer) return;
+    const dots = dotsContainer.querySelectorAll('.er-dot');
+    const slides = track.querySelectorAll(slideClass);
+    const btnPrev = document.getElementById(prevBtnId);
+    const btnNext = document.getElementById(nextBtnId);
+    if (!slides.length) return;
 
-  let current = 0;
-  let timer;
+    let current = 0;
+    let timer;
 
-  function goTo(index) {
-    current = ((index % slides.length) + slides.length) % slides.length;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dots.forEach((d, i) => {
-      d.classList.toggle('er-dot-active', i === current);
+    function goTo(index) {
+      current = ((index % slides.length) + slides.length) % slides.length;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, i) => {
+        d.classList.toggle('er-dot-active', i === current);
+      });
+    }
+
+    function start() {
+      stop();
+      timer = setInterval(() => {
+        // Only advance if this slider is currently visible
+        if (track.offsetParent !== null) {
+          goTo(current + 1);
+        }
+      }, 3500);
+    }
+    function stop() { clearInterval(timer); }
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        stop();
+        goTo(parseInt(dot.dataset.index, 10));
+        start();
+      });
     });
+
+    if (btnPrev) {
+      btnPrev.addEventListener('click', (e) => {
+        e.preventDefault();
+        stop();
+        goTo(current - 1);
+        start();
+      });
+    }
+
+    if (btnNext) {
+      btnNext.addEventListener('click', (e) => {
+        e.preventDefault();
+        stop();
+        goTo(current + 1);
+        start();
+      });
+    }
+
+    let tx = 0;
+    track.addEventListener('touchstart', e => {
+      tx = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', e => {
+      const diff = tx - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) {
+        stop();
+        goTo(current + (diff > 0 ? 1 : -1));
+        start();
+      }
+    });
+
+    track.addEventListener('mouseenter', stop);
+    track.addEventListener('mouseleave', start);
+
+    goTo(0);
+    start();
   }
 
-  function start() {
-    stop();
-    timer = setInterval(() => goTo(current + 1), 3500);
-  }
-  function stop() { clearInterval(timer); }
-
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => { stop(); goTo(parseInt(dot.dataset.index)); start(); });
+  // Initialize Web Slider (6 banners)
+  setupSlider({
+    trackId: 'er-slider-track-web',
+    dotsContainerId: 'er-dots-web',
+    slideClass: '.er-slide-web',
+    prevBtnId: 'er-arrow-prev-web',
+    nextBtnId: 'er-arrow-next-web'
   });
 
-  if (btnPrev) btnPrev.addEventListener('click', (e) => { e.preventDefault(); stop(); goTo(current - 1); start(); });
-  if (btnNext) btnNext.addEventListener('click', (e) => { e.preventDefault(); stop(); goTo(current + 1); start(); });
-
-  let tx = 0;
-  track.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
-  track.addEventListener('touchend', e => {
-    const diff = tx - e.changedTouches[0].screenX;
-    if (Math.abs(diff) > 50) { stop(); goTo(current + (diff > 0 ? 1 : -1)); start(); }
+  // Initialize Mobile Slider (4 banners)
+  setupSlider({
+    trackId: 'er-slider-track-mobile',
+    dotsContainerId: 'er-dots-mobile',
+    slideClass: '.er-slide-mobile',
+    prevBtnId: 'er-arrow-prev-mobile',
+    nextBtnId: 'er-arrow-next-mobile'
   });
-
-  track.addEventListener('mouseenter', stop);
-  track.addEventListener('mouseleave', start);
-
-  goTo(0);
-  start();
 }
