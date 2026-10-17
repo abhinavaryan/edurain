@@ -67,30 +67,40 @@ function e(){return`
         </div>
       </div>
 
-      <!-- ─── MOBILE HERO BANNER (4 Slides) ─── -->
+      <!-- ─── MOBILE HERO BANNER (6 Slides) ─── -->
       <div class="er-banner-mobile">
         <section id="er-hero-banner-mobile" style="position:relative; width:100%; overflow:hidden; background:#0e3a24;">
 
           <div id="er-slider-track-mobile" style="display:flex; transition:transform 0.7s cubic-bezier(0.4,0,0.2,1); will-change:transform;">
 
-            <!-- SLIDE 1 — JEE BATCHES -->
-            <a href="/courses/iit-jee" aria-label="JEE Batches" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-              <img src="/images/mobile%20banner%20images/1.webp" alt="JEE Batches" fetchpriority="high" loading="eager" width="1170" height="519" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            <!-- SLIDE 1 — JEE MANTRA 3.0 BATCH (CLASS 11TH) -->
+            <a href="/courses/iit-jee" aria-label="JEE Mantra 3.0 Batch 2027-28 for Class 11th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/mobile%20banner%20images/1.webp?v=2" alt="JEE Mantra 3.0 Batch 2027-28 for Class 11th" fetchpriority="high" loading="eager" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </a>
 
-            <!-- SLIDE 2 — NEET BATCHES -->
-            <a href="/courses/neet" aria-label="NEET Batches" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-              <img src="/images/mobile%20banner%20images/2.jpeg" alt="NEET Batches" loading="lazy" width="1170" height="519" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            <!-- SLIDE 2 — MISSION-NEET 3.0 BATCH (CLASS 11TH) -->
+            <a href="/courses/neet" aria-label="Mission-NEET 3.0 Batch 2027-28 for Class 11th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/mobile%20banner%20images/2.webp?v=2" alt="Mission-NEET 3.0 Batch 2027-28 for Class 11th" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </a>
 
-            <!-- SLIDE 3 — FOUNDATION COURSES -->
-            <a href="/courses/foundation" aria-label="Foundation Courses" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-              <img src="/images/mobile%20banner%20images/3.jpg" alt="Foundation Courses" loading="lazy" width="1170" height="519" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            <!-- SLIDE 3 — NEET WHITE COAT BATCH (CLASS 12TH) -->
+            <a href="/courses/neet" aria-label="NEET White Coat Batch 2026-27 for Class 12th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/mobile%20banner%20images/3.webp?v=2" alt="NEET White Coat Batch 2026-27 for Class 12th" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </a>
 
-            <!-- SLIDE 4 — LEARN FROM ANYWHERE (APP DOWNLOAD) -->
+            <!-- SLIDE 4 — JEE TARGET BATCH (CLASS 12TH) -->
+            <a href="/courses/iit-jee" aria-label="JEE Target Batch 2026-27 for Class 12th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/mobile%20banner%20images/4.webp?v=2" alt="JEE Target Batch 2026-27 for Class 12th" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </a>
+
+            <!-- SLIDE 5 — FOUNDATION COURSES (CLASS 8TH - 10TH) -->
+            <a href="/courses/foundation" aria-label="Foundation Courses for Class 8th - 10th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/mobile%20banner%20images/5.webp?v=2" alt="Foundation Courses for Class 8th - 10th" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </a>
+
+            <!-- SLIDE 6 — LEARN FROM ANYWHERE (APP DOWNLOAD) -->
             <a href="#er-app-download" aria-label="Download EduRain App" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-              <img src="/images/mobile%20banner%20images/4.webp" alt="Learn from Anywhere - EduRain App" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="/images/mobile%20banner%20images/6.webp?v=2" alt="Learn from Anywhere - EduRain App" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </a>
 
           </div>
@@ -111,12 +121,14 @@ function e(){return`
 
         </section>
 
-        <!-- Dot pagination (Mobile - 4 dots) -->
+        <!-- Dot pagination (Mobile - 6 dots) -->
         <div id="er-dots-mobile" class="er-banner-dots">
           <button class="er-dot er-dot-active" data-index="0" aria-label="Slide 1"></button>
           <button class="er-dot" data-index="1" aria-label="Slide 2"></button>
           <button class="er-dot" data-index="2" aria-label="Slide 3"></button>
           <button class="er-dot" data-index="3" aria-label="Slide 4"></button>
+          <button class="er-dot" data-index="4" aria-label="Slide 5"></button>
+          <button class="er-dot" data-index="5" aria-label="Slide 6"></button>
         </div>
       </div>
 
