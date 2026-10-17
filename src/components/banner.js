@@ -74,34 +74,34 @@ export function renderBanner() {
 
           <div id="er-slider-track-mobile" style="display:flex; transition:transform 0.7s cubic-bezier(0.4,0,0.2,1); will-change:transform;">
 
-            <!-- SLIDE 1 — JEE MANTRA 3.0 BATCH (CLASS 11TH) -->
-            <a href="/courses/iit-jee" aria-label="JEE Mantra 3.0 Batch 2027-28 for Class 11th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-              <img src="/images/mobile%20banner%20images/1.webp?v=2" alt="JEE Mantra 3.0 Batch 2027-28 for Class 11th" fetchpriority="high" loading="eager" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
-            </a>
-
-            <!-- SLIDE 2 — MISSION-NEET 3.0 BATCH (CLASS 11TH) -->
+            <!-- SLIDE 1 — MISSION-NEET 3.0 BATCH (CLASS 11TH) -->
             <a href="/courses/neet" aria-label="Mission-NEET 3.0 Batch 2027-28 for Class 11th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-              <img src="/images/mobile%20banner%20images/2.webp?v=2" alt="Mission-NEET 3.0 Batch 2027-28 for Class 11th" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="/images/mobile%20banner%20images/1.webp?v=3" alt="Mission-NEET 3.0 Batch 2027-28 for Class 11th" fetchpriority="high" loading="eager" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </a>
 
-            <!-- SLIDE 3 — NEET WHITE COAT BATCH (CLASS 12TH) -->
-            <a href="/courses/neet" aria-label="NEET White Coat Batch 2026-27 for Class 12th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-              <img src="/images/mobile%20banner%20images/3.webp?v=2" alt="NEET White Coat Batch 2026-27 for Class 12th" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            <!-- SLIDE 2 — JEE MANTRA 3.0 BATCH (CLASS 11TH) -->
+            <a href="/courses/iit-jee" aria-label="JEE Mantra 3.0 Batch 2027-28 for Class 11th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/mobile%20banner%20images/2.webp?v=3" alt="JEE Mantra 3.0 Batch 2027-28 for Class 11th" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </a>
 
-            <!-- SLIDE 4 — JEE TARGET BATCH (CLASS 12TH) -->
+            <!-- SLIDE 3 — JEE TARGET BATCH (CLASS 12TH) -->
             <a href="/courses/iit-jee" aria-label="JEE Target Batch 2026-27 for Class 12th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-              <img src="/images/mobile%20banner%20images/4.webp?v=2" alt="JEE Target Batch 2026-27 for Class 12th" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="/images/mobile%20banner%20images/3.webp?v=3" alt="JEE Target Batch 2026-27 for Class 12th" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </a>
 
-            <!-- SLIDE 5 — FOUNDATION COURSES (CLASS 8TH - 10TH) -->
-            <a href="/courses/foundation" aria-label="Foundation Courses for Class 8th - 10th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-              <img src="/images/mobile%20banner%20images/5.webp?v=2" alt="Foundation Courses for Class 8th - 10th" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            <!-- SLIDE 4 — NEET WHITE COAT BATCH (CLASS 12TH) -->
+            <a href="/courses/neet" aria-label="NEET White Coat Batch 2026-27 for Class 12th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/mobile%20banner%20images/4.webp?v=3" alt="NEET White Coat Batch 2026-27 for Class 12th" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            </a>
+
+            <!-- SLIDE 5 — FOUNDATION COURSES (CLASS 6TH - 10TH) -->
+            <a href="/courses/foundation" aria-label="Foundation Courses for Class 6th - 10th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/mobile%20banner%20images/5.webp?v=3" alt="Foundation Courses for Class 6th - 10th" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </a>
 
             <!-- SLIDE 6 — LEARN FROM ANYWHERE (APP DOWNLOAD) -->
             <a href="#er-app-download" aria-label="Download EduRain App" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-              <img src="/images/mobile%20banner%20images/6.webp?v=2" alt="Learn from Anywhere - EduRain App" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              <img src="/images/mobile%20banner%20images/6.webp?v=3" alt="Learn from Anywhere - EduRain App" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </a>
 
           </div>

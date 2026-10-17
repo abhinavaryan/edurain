@@ -1,4 +1,4 @@
-import { logoutUser } from '../firebase/auth.js';
+// logoutUser is dynamically imported on click
 
 export function renderNavbar() {
     return `
@@ -107,9 +107,10 @@ export function initNavbar() {
     });
     
     authBtnAreas.forEach(area => {
-        area.addEventListener('click', (e) => {
+        area.addEventListener('click', async (e) => {
             if(e.target.classList.contains('logout-btn')) {
-                logoutUser();
+                const { logoutUser } = await import('../firebase/auth.js');
+                await logoutUser();
                 closeMenu();
             }
         });

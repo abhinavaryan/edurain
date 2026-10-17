@@ -1,4 +1,4 @@
-import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+// S3Client and PutObjectCommand are dynamically imported inside uploadToS3
 
 export function getStoredS3Config() {
   return {
@@ -41,6 +41,8 @@ export async function uploadToS3(file, folder = 'website blogs', customFileName 
     });
     config = getStoredS3Config();
   }
+
+  const { S3Client, PutObjectCommand } = await import('@aws-sdk/client-s3');
 
   const client = new S3Client({
     region: config.region,

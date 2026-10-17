@@ -1,7 +1,7 @@
 import './style.css';
 import './fab.css';
 import { initRouter } from './router.js';
-import { onAuthChange } from './firebase/auth.js';
+// onAuthChange is dynamically imported on idle
 import { initFab } from './components/fab.js';
 import { initMobileAppPopup } from './components/mobileAppPopup.js';
 
@@ -20,36 +20,32 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Mobile App Pop-up
   initMobileAppPopup();
 
-  // Listen to Auth State Changes and update navbar
-  onAuthChange((user) => {
-    const authBtnAreas = document.querySelectorAll('.auth-btn-area');
-    
-    authBtnAreas.forEach(area => {
-      const isMobileMenu = area.classList.contains('mobile-menu-footer');
-      if (user) {
-        const displayName = user.displayName || user.email.split('@')[0];
-        area.innerHTML = `
-          <span class="user-greeting">Hi, ${displayName}</span>
-          <button class="btn btn-outline btn-sm logout-btn" ${isMobileMenu ? 'style="width: 100%;"' : ''}>Logout</button>
-        `;
-      } else {
-        area.innerHTML = '';
-        /* 
-        // Temporarily disabled login button
-        area.innerHTML = \`
-          <button class="btn btn-accent login-btn" \${isMobileMenu ? 'style="width: 100%;"' : ''}>\${isMobileMenu ? 'Login/Register' : 'Login'}</button>
-        \`;
-        // Re-attach login button event within this area
-        const loginBtn = area.querySelector('.login-btn');
-        if (loginBtn) {
-          loginBtn.addEventListener('click', () => {
-            document.dispatchEvent(new CustomEvent('open-auth-modal'));
-          });
-        }
-        */
-      }
-    });
-  });
+  // Lazy-load Auth State Changes in background idle time
+  const initAuthObserver = () => {
+    import('./firebase/auth.js').then(({ onAuthChange }) => {
+      onAuthChange((user) => {
+        const authBtnAreas = document.querySelectorAll('.auth-btn-area');
+        authBtnAreas.forEach(area => {
+          const isMobileMenu = area.classList.contains('mobile-menu-footer');
+          if (user) {
+            const displayName = user.displayName || user.email.split('@')[0];
+            area.innerHTML = `
+              <span class="user-greeting">Hi, ${displayName}</span>
+              <button class="btn btn-outline btn-sm logout-btn" ${isMobileMenu ? 'style="width: 100%;"' : ''}>Logout</button>
+            `;
+          } else {
+            area.innerHTML = '';
+          }
+        });
+      });
+    }).catch(() => {});
+  };
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(initAuthObserver, { timeout: 3000 });
+  } else {
+    setTimeout(initAuthObserver, 2000);
+  }
 
   // Setup Intersection Observer for scroll animations
   const observerOptions = {

@@ -216,6 +216,91 @@ function fetchBlogs() {
   });
 
   // ---------------------------------------------------------
+  // Prerender initial homepage shell into dist/index.html
+  // Enables < 1.0s FCP and instant LCP on Mobile and Desktop
+  // ---------------------------------------------------------
+  const prerenderedHomepageApp = `<nav class="navbar" id="main-nav">
+            <div class="navbar-container">
+                <div class="logo">
+                    <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 4px;">
+                        <img src="/images/logo.webp" fetchpriority="high" alt="EduRain Logo" width="65" height="55" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
+                        <div style="display: flex; flex-direction: column; line-height: 1.2; align-items: center;">
+                            <div>
+                                <span class="text-white">Edu</span><span class="text-accent">Rain</span>
+                            </div>
+                            <span style="font-size: 0.45rem; color: #a7f3d0; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; margin-left: -4px;">Victory Starts Here</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="/" class="nav-link active">Home</a>
+                    <a href="/courses" class="nav-link">Our Courses</a>
+                    <a href="/blogs" class="nav-link">Blogs</a>
+                    <a href="/about-us" class="nav-link">About Us</a>
+                    <a href="/contact-us" class="nav-link">Contact Us</a>
+                </div>
+                <div class="auth-btn-area"></div>
+                <button class="hamburger" id="hamburger-btn" aria-label="Open Mobile Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+        <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-header">
+                <div class="logo">
+                    <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                        <img src="/images/logo.webp" alt="EduRain Logo" width="50" height="40" style="height: 40px; width: auto; max-width: 50px; object-fit: contain;">
+                        <div style="display: flex; flex-direction: column; line-height: 1.2;">
+                            <div>
+                                <span class="text-white">Edu</span><span class="text-accent">Rain</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close Mobile Menu">&times;</button>
+            </div>
+            <div class="mobile-menu-body">
+                <a href="/" class="nav-link active">Home</a>
+                <a href="/courses" class="nav-link">Our Courses</a>
+                <a href="/blogs" class="nav-link">Blogs</a>
+                <a href="/about-us" class="nav-link">About Us</a>
+                <a href="/contact-us" class="nav-link">Contact Us</a>
+            </div>
+            <div class="mobile-menu-footer auth-btn-area"></div>
+        </div>
+      <main class="main-content fade-in-section visible">
+        <div class="er-hero-banner-wrapper">
+          <div class="er-banner-web">
+            <section id="er-hero-banner-web" style="position:relative; width:100%; overflow:hidden; background:#0e3a24;">
+              <div id="er-slider-track-web" style="display:flex; transition:transform 0.7s cubic-bezier(0.4,0,0.2,1); will-change:transform;">
+                <a href="/courses/iit-jee" aria-label="JEE Mantra 3.0 Batch 2027-28 for Class 11th" class="er-slide-web er-slide-aspect-web" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+                  <img src="/images/web%20banner/1.webp?v=2" alt="JEE Mantra 3.0 Batch 2027-28 for Class 11th" fetchpriority="high" loading="eager" width="12800" height="2416" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                </a>
+              </div>
+            </section>
+          </div>
+          <div class="er-banner-mobile">
+            <section id="er-hero-banner-mobile" style="position:relative; width:100%; overflow:hidden; background:#0e3a24;">
+              <div id="er-slider-track-mobile" style="display:flex; transition:transform 0.7s cubic-bezier(0.4,0,0.2,1); will-change:transform;">
+                <a href="/courses/neet" aria-label="Mission-NEET 3.0 Batch 2027-28 for Class 11th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+                  <img src="/images/mobile%20banner%20images/1.webp?v=3" alt="Mission-NEET 3.0 Batch 2027-28 for Class 11th" fetchpriority="high" loading="eager" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>`;
+
+  let homeHtml = fs.readFileSync(indexHtmlPath, 'utf8');
+  homeHtml = homeHtml.replace('<div id="app"></div>', `<div id="app">\n${prerenderedHomepageApp}\n  </div>`);
+  homeHtml = homeHtml.replace('</body>', `${seoLinksHtml}</body>`);
+  fs.writeFileSync(indexHtmlPath, homeHtml);
+  console.log('Injected prerendered shell into dist/index.html for near-instant LCP.');
+
+  // ---------------------------------------------------------
   // Generate dynamic sitemap.xml with all routes + blog pages
   // ---------------------------------------------------------
   const sitemap0Xml = `<?xml version="1.0" encoding="UTF-8"?>

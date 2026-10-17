@@ -1,4 +1,4 @@
-import { loginUser, registerUser } from '../firebase/auth.js';
+// loginUser and registerUser are dynamically imported on submit
 
 function playPremiumLoadingAnimation(onComplete) {
     const overlay = document.createElement('div');
@@ -205,6 +205,7 @@ export function initAuthModal() {
             spinner.style.display = 'inline-block';
 
             try {
+                const { loginUser } = await import('../firebase/auth.js');
                 await loginUser(email, password);
                 closeModal();
                 loginForm.reset();
@@ -261,6 +262,7 @@ export function initAuthModal() {
             spinner.style.display = 'inline-block';
 
             try {
+                const { registerUser } = await import('../firebase/auth.js');
                 await registerUser(name, email, password);
                 closeModal();
                 signupForm.reset();

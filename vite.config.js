@@ -19,13 +19,7 @@ export default defineConfig({
         thankyou: resolve(__dirname, 'thank-you.html'),
         study: resolve(__dirname, 'study/index.html')
       },
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            return 'vendor';
-          }
-        }
-      }
+      output: {}
     }
   }
 });
