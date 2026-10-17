@@ -123,30 +123,31 @@ export function initContact() {
             submitBtn.textContent = 'Sending...';
 
             try {
-                // 1. Save to Firebase
-                await saveContactMessage(name, email, message);
+                // 1. Save to Google Spreadsheet (Primary Lead & Contact Webhook)
+                const scriptUrl = 'https://script.google.com/macros/s/AKfycbxspWFgxEFlxdDa1O5GXLHwjeBAsytPeAwAWpOqTlum_hQ0_P4_wIHtcj-HPMTZrJNY/exec';
+                const formData = new URLSearchParams();
+                formData.append('name', name);
+                formData.append('email', email);
+                formData.append('message', message);
                 
-                // 2. Save to Google Spreadsheet
+                await fetch(scriptUrl, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors' // Google Apps Script Webhook
+                });
+
+                // 2. Also attempt to save to Firebase Firestore in background if permissions allow
                 try {
-                    const scriptUrl = 'https://script.google.com/macros/s/AKfycbxspWFgxEFlxdDa1O5GXLHwjeBAsytPeAwAWpOqTlum_hQ0_P4_wIHtcj-HPMTZrJNY/exec';
-                    const formData = new URLSearchParams();
-                    formData.append('name', name);
-                    formData.append('email', email);
-                    formData.append('message', message);
-                    
-                    await fetch(scriptUrl, {
-                        method: 'POST',
-                        body: formData,
-                        mode: 'no-cors' // Important for Google Apps Script to prevent CORS errors on the frontend
-                    });
-                } catch (sheetErr) {
-                    console.error('Google Sheets saving error:', sheetErr);
+                    await saveContactMessage(name, email, message);
+                } catch (fbErr) {
+                    console.warn('Firebase Firestore message save skipped (rules restriction):', fbErr?.message || fbErr);
                 }
 
                 messageArea.textContent = '✅ Thanks for your enquiry! Our consultant will connect with you shortly.';
                 messageArea.className = 'form-message success';
                 form.reset();
             } catch (err) {
+                console.error('Contact submission error:', err);
                 messageArea.textContent = '❌ Failed to send message. Please try again.';
                 messageArea.className = 'form-message error';
             } finally {
