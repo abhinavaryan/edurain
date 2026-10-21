@@ -52,15 +52,18 @@ if (!fs.existsSync(coursesBannerDir)) {
 const coursesJsonPath = path.join(rootDir, 'src', 'data', 'courses.json');
 const courses = JSON.parse(fs.readFileSync(coursesJsonPath, 'utf8'));
 
+const CDN_URL = (process.env.VITE_CDN_URL || envVars.VITE_CDN_URL || `https://${BUCKET}.s3.${REGION}.amazonaws.com`).replace(/\/+$/, '');
+
 async function uploadBufferToS3(buffer, key, contentType) {
   await s3.send(new PutObjectCommand({
     Bucket: BUCKET,
     Key: key,
     Body: buffer,
-    ContentType: contentType
+    ContentType: contentType,
+    CacheControl: 'public, max-age=31536000, immutable'
   }));
   const encodedKey = key.split('/').map(part => encodeURIComponent(part)).join('/');
-  return `https://${BUCKET}.s3.${REGION}.amazonaws.com/${encodedKey}`;
+  return `${CDN_URL}/${encodedKey}`;
 }
 
 async function main() {
@@ -104,7 +107,7 @@ async function main() {
       }
 
       const encodedKey = `website cources/${file}`.split('/').map(part => encodeURIComponent(part)).join('/');
-      const expectedUrl = `https://${BUCKET}.s3.${REGION}.amazonaws.com/${encodedKey}`;
+      const expectedUrl = `${CDN_URL}/${encodedKey}`;
 
       if (matchedCourse.thumbnail === expectedUrl && !force) {
         console.log(`[${matchedCourse.id}] Already synced to S3: ${expectedUrl}`);
@@ -148,7 +151,7 @@ async function main() {
     };
 
     for (const course of courses) {
-      if (course.thumbnail && !course.thumbnail.includes(BUCKET)) {
+      if (course.thumbnail && !course.thumbnail.includes(BUCKET) && !course.thumbnail.includes('cloudfront.net')) {
         console.log(`\nDownloading thumbnail for [${course.id}] ${course.title}...`);
         console.log(`  Source: ${course.thumbnail}`);
         try {

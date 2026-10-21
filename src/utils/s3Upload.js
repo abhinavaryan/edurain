@@ -67,12 +67,25 @@ export async function uploadToS3(file, folder = 'website blogs', customFileName 
     Bucket: config.bucket,
     Key: key,
     Body: uint8Array,
-    ContentType: file.type || 'image/png'
+    ContentType: file.type || 'image/png',
+    CacheControl: 'public, max-age=31536000, immutable'
   });
 
   await client.send(command);
 
-  // Return the public URL
+  // Return the public URL (CDN if configured, else fallback to raw S3)
   const encodedKey = key.split('/').map(part => encodeURIComponent(part)).join('/');
-  return `https://${config.bucket}.s3.${config.region}.amazonaws.com/${encodedKey}`;
+  const baseUrl = (import.meta.env.VITE_CDN_URL || `https://${config.bucket}.s3.${config.region}.amazonaws.com`).replace(/\/+$/, '');
+  return `${baseUrl}/${encodedKey}`;
 }
+
+/**
+ * Converts any direct S3 bucket URL for edurain-notification into the CloudFront CDN URL.
+ * Falls back safely to original URL if already CDN or not matching.
+ */
+export function toCdnUrl(url) {
+  if (!url || typeof url !== 'string') return url;
+  const cdnBase = (import.meta.env.VITE_CDN_URL || 'https://d26zb7slji2zmm.cloudfront.net').replace(/\/+$/, '');
+  return url.replace(/^https:\/\/edurain-notification\.s3(\.[a-z0-9-]+)?\.amazonaws\.com/i, cdnBase);
+}
+

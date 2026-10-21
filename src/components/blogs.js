@@ -2,6 +2,7 @@ import coursesData from '../data/courses.json';
 import blogS3MigrationMap from '../data/blog_s3_migration_map.json';
 import { db } from '../firebase/config.js';
 import { collection, getDocs, query, orderBy, where } from 'firebase/firestore';
+import { toCdnUrl } from '../utils/s3Upload.js';
 
 const POPULAR_TAGS = [
     "All Blogs",
@@ -116,6 +117,12 @@ export function renderBlogs() {
     `;
 }
 
+function hasValidCover(url) {
+    if (!url || typeof url !== 'string') return false;
+    if (url.includes('phototourl.com')) return false;
+    return url.includes('cloudfront.net') || url.includes('edurain-notification.s3');
+}
+
 function renderBlogGridItems(blogs) {
     if (!blogs || blogs.length === 0) {
         return `
@@ -136,12 +143,28 @@ function renderBlogGridItems(blogs) {
             });
         }
 
-        return `
-            <div class="er-pw-blog-card glass-card" data-blog-id="${blog.id}" style="cursor:pointer; animation: fadeIn 0.5s ease forwards;">
+        const validCover = hasValidCover(blog.coverImage);
+        const coverHtml = validCover
+            ? `
                 <div class="er-pw-card-cover">
-                    <img loading="lazy" src="${blog.coverImage || '/images/default-blog.jpg'}" onerror="this.onerror=null; this.src='https://placehold.co/600x400/064e3b/ffffff?text=EduRain+Blog';" alt="${blog.title}" class="er-pw-card-img" style="width:100%; height:auto; object-fit:contain;" />
+                    <img loading="lazy" src="${blog.coverImage}" alt="${blog.title}" class="er-pw-card-img" style="width:100%; height:auto; object-fit:contain;" />
                     <span class="er-pw-card-badge">${blog.category || 'Exam Prep'}</span>
                 </div>
+            `
+            : `
+                <div class="er-pw-card-cover" style="position:relative; width:100%; height:180px; background:rgba(15,23,42,0.6); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:1.2rem; border-bottom:1px dashed rgba(255,255,255,0.15);">
+                    <span class="er-pw-card-badge" style="position:absolute; top:12px; left:12px;">${blog.category || 'Exam Prep'}</span>
+                    <div style="width:42px; height:42px; border-radius:50%; background:rgba(234,179,8,0.15); display:flex; align-items:center; justify-content:center; margin-bottom:0.5rem; border:1px solid rgba(234,179,8,0.3);">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <span style="font-size:0.85rem; font-weight:700; color:#facc15; letter-spacing:0.02em;">Banner Recreate Needed</span>
+                    <span style="font-size:0.75rem; color:#94a3b8; margin-top:3px;">Original Cloudflare link expired</span>
+                </div>
+            `;
+
+        return `
+            <div class="er-pw-blog-card glass-card" data-blog-id="${blog.id}" style="cursor:pointer; animation: fadeIn 0.5s ease forwards;">
+                ${coverHtml}
                 <div class="er-pw-card-body">
                     <h3 class="er-pw-card-title" style="font-size:1.2rem; margin-bottom:0.5rem;">${blog.title}</h3>
                     <p class="er-pw-card-excerpt" style="font-size:0.95rem; color:#64748b; margin-bottom:1rem; display:-webkit-box; -webkit-line-clamp:3; line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;">${blog.excerpt || ''}</p>
@@ -186,8 +209,10 @@ export async function initBlogs() {
             .map(doc => {
                 const data = doc.data();
                 const mapped = blogS3MigrationMap[doc.id];
-                const coverImage = (mapped && mapped.s3Cover) ? mapped.s3Cover : data.coverImage;
-                return { id: doc.id, ...data, coverImage };
+                let coverImage = (mapped && mapped.s3Cover) ? mapped.s3Cover : data.coverImage;
+                coverImage = toCdnUrl(coverImage);
+                const sidebarBannerImage = toCdnUrl(data.sidebarBannerImage);
+                return { id: doc.id, ...data, coverImage, sidebarBannerImage };
             })
             .filter(b => b.status === 'published'); // Client-side filter
             
@@ -290,6 +315,10 @@ export async function initBlogs() {
             // New Quill HTML format
             contentHtml = `<div class="quill-content">${blog.content || `<p class="pw-article-p">${blog.excerpt}</p>`}</div>`;
         }
+
+        // Convert any raw S3 URLs in content body to CloudFront CDN
+        const cdnBase = (import.meta.env.VITE_CDN_URL || 'https://d26zb7slji2zmm.cloudfront.net').replace(/\/+$/, '');
+        contentHtml = contentHtml.replace(/https:\/\/edurain-notification\.s3(\.[a-z0-9-]+)?\.amazonaws\.com/gi, cdnBase);
 
         // Inject YouTube play overlay for hyperlinked images inside blog content using robust DOM parsing
         const tempDiv = document.createElement('div');
@@ -442,9 +471,11 @@ export async function initBlogs() {
                 <span>📅 ${dateStr}</span>
             </div>
 
-            <div class="pw-article-cover-banner" style="margin-bottom: 2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">
-                <img loading="lazy" src="${blog.coverImage || '/images/default-blog.jpg'}" onerror="this.onerror=null; this.src='https://placehold.co/600x400/064e3b/ffffff?text=EduRain+Blog';" alt="${blog.title}" style="width: 100%; display: block;" />
-            </div>
+            ${hasValidCover(blog.coverImage) ? `
+                <div class="pw-article-cover-banner" style="margin-bottom: 2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">
+                    <img loading="lazy" src="${blog.coverImage}" alt="${blog.title}" style="width: 100%; display: block;" />
+                </div>
+            ` : ''}
 
             <div class="pw-article-body" style="font-size: 1.1rem; line-height: 1.8; color: #334155;">
                 ${contentHtml}
@@ -461,15 +492,23 @@ export async function initBlogs() {
         modalRelated.innerHTML = `
             <h3 class="pw-related-title" style="margin-bottom: 1.5rem; color: #1e293b;">Related Articles</h3>
             <div class="pw-related-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
-                ${related.map(r => `
+                ${related.map(r => {
+                    const rValid = hasValidCover(r.coverImage);
+                    const rImgHtml = rValid
+                        ? `<img loading="lazy" src="${r.coverImage}" alt="${r.title}" style="width:100%; height:160px; object-fit:cover;" />`
+                        : `<div style="width:100%; height:120px; background:#1e293b; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#facc15; font-size:0.8rem; font-weight:600; padding:1rem; text-align:center;">
+                            <span>🎨 Banner Recreate Needed</span>
+                            <span style="font-size:0.7rem; color:#94a3b8; font-weight:normal; margin-top:2px;">(Link expired)</span>
+                           </div>`;
+                    return `
                     <div class="pw-related-card btn-open-blog" data-blog-id="${r.id}" style="cursor:pointer; background:white; border-radius:12px; overflow:hidden; box-shadow:0 4px 6px -1px rgba(0,0,0,0.1); border:1px solid #e2e8f0; transition: transform 0.2s;">
-                        <img loading="lazy" src="${r.coverImage || '/images/default-blog.jpg'}" onerror="this.onerror=null; this.src='https://placehold.co/600x400/064e3b/ffffff?text=EduRain+Blog';" alt="${r.title}" style="width:100%; height:160px; object-fit:cover;" />
+                        ${rImgHtml}
                         <div class="pw-related-info" style="padding: 1rem;">
                             <h4 style="margin:0 0 0.5rem 0; font-size:1.05rem; color:#1e293b;">${r.title}</h4>
                             <span style="font-size:0.85rem; color:#64748b;">${r.date?.toDate ? r.date.toDate().toLocaleDateString() : 'Recently'}</span>
                         </div>
                     </div>
-                `).join('')}
+                `;}).join('')}
             </div>
         `;
 

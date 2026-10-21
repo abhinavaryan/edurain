@@ -961,8 +961,10 @@ export function initBlogAdmin() {
                     ? '<span style="background:#16a34a; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Published</span>'
                     : '<span style="background:#94a3b8; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">Draft</span>';
 
-                const isS3Cover = (data.coverImage && data.coverImage.includes('edurain-notification.s3')) || (blogS3MigrationMap[id] && blogS3MigrationMap[id].s3Cover);
-                const s3Badge = isS3Cover ? '<span title="Hosted on AWS S3" style="font-size:0.75rem; background:rgba(56,189,248,0.2); color:#38bdf8; border:1px solid rgba(56,189,248,0.4); padding:2px 6px; border-radius:4px; margin-left:8px; vertical-align:middle;">☁️ S3</span>' : '';
+                const isS3Cover = (data.coverImage && (data.coverImage.includes('edurain-notification.s3') || data.coverImage.includes('cloudfront.net')) && !data.coverImage.includes('phototourl.com')) || (blogS3MigrationMap[id] && blogS3MigrationMap[id].s3Cover);
+                const s3Badge = isS3Cover 
+                    ? '<span title="Hosted on AWS S3 CDN" style="font-size:0.75rem; background:rgba(56,189,248,0.2); color:#38bdf8; border:1px solid rgba(56,189,248,0.4); padding:2px 6px; border-radius:4px; margin-left:8px; vertical-align:middle;">☁️ S3 CDN</span>' 
+                    : '<span title="Original Cloudflare link expired - New banner needed" style="font-size:0.75rem; background:rgba(234,179,8,0.2); color:#facc15; border:1px solid rgba(234,179,8,0.4); padding:2px 6px; border-radius:4px; margin-left:8px; vertical-align:middle;">⚠️ Banner Recreate Needed</span>';
 
                 html += `
                     <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">

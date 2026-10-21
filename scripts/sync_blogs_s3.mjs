@@ -53,15 +53,18 @@ if (!fs.existsSync(blogsLocalDir)) {
 const migrationMapPath = path.join(rootDir, 'src', 'data', 'blog_s3_migration_map.json');
 const scriptsMigrationMapPath = path.join(rootDir, 'scripts', 'blog_s3_migration_map.json');
 
+const CDN_URL = (process.env.VITE_CDN_URL || envVars.VITE_CDN_URL || `https://${BUCKET}.s3.${REGION}.amazonaws.com`).replace(/\/+$/, '');
+
 async function uploadBufferToS3(buffer, key, contentType) {
   await s3.send(new PutObjectCommand({
     Bucket: BUCKET,
     Key: key,
     Body: buffer,
-    ContentType: contentType
+    ContentType: contentType,
+    CacheControl: 'public, max-age=31536000, immutable'
   }));
   const encodedKey = key.split('/').map(part => encodeURIComponent(part)).join('/');
-  return `https://${BUCKET}.s3.${REGION}.amazonaws.com/${encodedKey}`;
+  return `${CDN_URL}/${encodedKey}`;
 }
 
 function fetchFirestoreBlogs() {
@@ -132,14 +135,15 @@ async function main() {
       continue;
     }
 
-    if (coverImage.includes('edurain-notification.s3')) {
-      console.log(`   -> Already on AWS S3: ${coverImage}`);
+    if (coverImage.includes('edurain-notification.s3') || coverImage.includes('cloudfront.net')) {
+      const cdnCover = coverImage.replace(/^https:\/\/edurain-notification\.s3(\.[a-z0-9-]+)?\.amazonaws\.com/i, CDN_URL);
+      console.log(`   -> Already on AWS S3 / CloudFront CDN: ${cdnCover}`);
       alreadyS3Count++;
       migrationMap[id] = {
         id,
         title,
         slug,
-        s3Cover: coverImage,
+        s3Cover: cdnCover,
         alreadyOnS3: true
       };
       continue;

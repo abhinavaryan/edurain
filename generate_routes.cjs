@@ -112,7 +112,13 @@ function fetchBlogs() {
         }
         
         const mapped = blogMigrationMap[id];
-        const coverImg = (mapped && mapped.s3Cover) ? mapped.s3Cover : (fields.coverImage && fields.coverImage.stringValue ? fields.coverImage.stringValue : 'https://www.edurain.in/images/og-banner.png');
+        let coverImg = (mapped && mapped.s3Cover) ? mapped.s3Cover : (fields.coverImage && fields.coverImage.stringValue ? fields.coverImage.stringValue : 'https://www.edurain.in/images/og-banner.png');
+        if (coverImg.includes('edurain-notification.s3')) {
+            coverImg = coverImg.replace(/^https:\/\/edurain-notification\.s3(\.[a-z0-9-]+)?\.amazonaws\.com/i, 'https://d26zb7slji2zmm.cloudfront.net');
+        }
+        if (coverImg.includes('phototourl.com')) {
+            coverImg = 'https://www.edurain.in/images/og-banner.png';
+        }
 
         routesMeta[`blogs/${slug}`] = {
             title: metaTitle,
