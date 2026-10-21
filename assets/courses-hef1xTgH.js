@@ -1,4 +1,4 @@
-import{t as e}from"./courses-H0XK-Oj3.js";import{initFAQ as t,renderFAQ as n}from"./faq-Bo7AT8JC.js";function r(){return`
+import{t as e}from"./courses-DJjP6r1W.js";import{initFAQ as t,renderFAQ as n}from"./faq-Bo7AT8JC.js";function r(){return`
         <section class="courses-section" id="courses-page">
             <div class="section-header">
                 <h1>Our Courses</h1>

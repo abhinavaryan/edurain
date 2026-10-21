@@ -1,1 +1,0 @@
-import{i as e,t}from"./dist-es-CGhZd_3G.js";export{t as EventStreamSerde,e as eventStreamSerdeProvider};
