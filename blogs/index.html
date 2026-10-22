@@ -9,14 +9,14 @@
   <link rel="icon" type="image/png" href="/images/logo.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IIT JEE, NEET & Foundation Blogs | EduRain</title>
-  <meta name="description" content="Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides" />
+  <meta name="description" content="Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides." />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.edurain.in/blogs/">
-  <meta property="og:title" content="IIT JEE, NEET & Foundation Blogs | EduRain">
-  <meta property="og:description" content="Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides">
-  <meta property="og:image" content="https://www.edurain.in/images/og-banner.png">
+  <meta property="og:title" content="IIT JEE, NEET & Class 6-10 Preparation Guides & Blogs | EduRain">
+  <meta property="og:description" content="Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides.">
+  <meta property="og:image" content="https://www.edurain.in/images/og-banner.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="EduRain">
@@ -24,9 +24,9 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://www.edurain.in/blogs/">
-  <meta name="twitter:title" content="IIT JEE, NEET & Foundation Blogs | EduRain">
-  <meta name="twitter:description" content="Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides">
-  <meta name="twitter:image" content="https://www.edurain.in/images/og-banner.png">
+  <meta name="twitter:title" content="IIT JEE, NEET & Class 6-10 Preparation Guides & Blogs | EduRain">
+  <meta name="twitter:description" content="Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides.">
+  <meta name="twitter:image" content="https://www.edurain.in/images/og-banner.webp">
 
   <!-- Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,6 +42,7 @@
   <link rel="preload" as="image" href="/images/mobile banner images/1.webp?v=3" media="(max-width: 640px)" fetchpriority="high">
   <link rel="preload" as="image" href="/images/web banner/1.webp?v=2" media="(min-width: 641px)" fetchpriority="high">
 
+  <!-- JSON-LD Schema Markup -->
   
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TV4YTPQ2J"></script>
@@ -52,7 +53,7 @@
 
   gtag('config', 'G-4TV4YTPQ2J');
 </script>
-  <script type="module" crossorigin src="/assets/main-EGgEg9df.js"></script>
+  <script type="module" crossorigin src="/assets/main-J5pypbss.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-Dezn_h7o.js">
   <link rel="modulepreload" crossorigin href="/assets/preload-helper-Czpn1I53.js">
   <link rel="stylesheet" crossorigin href="/assets/main-Ddd-rB9n.css">
@@ -61,7 +62,961 @@
 
 
 <body>
-  <div id="app"></div>
+  <div id="app">
+
+      
+    <nav class="navbar" id="main-nav">
+      <div class="navbar-container">
+        <div class="logo">
+          <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 4px;">
+            <img src="/images/logo.webp" fetchpriority="high" alt="EduRain Logo" width="65" height="55" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
+            <div style="display: flex; flex-direction: column; line-height: 1.2; align-items: center;">
+              <div>
+                <span class="text-white">Edu</span><span class="text-accent">Rain</span>
+              </div>
+              <span style="font-size: 0.45rem; color: #a7f3d0; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; margin-left: -4px;">Victory Starts Here</span>
+            </div>
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/courses" class="nav-link ">Our Courses</a>
+          <a href="/blogs" class="nav-link active">Blogs</a>
+          <a href="/about-us" class="nav-link ">About Us</a>
+          <a href="/contact-us" class="nav-link ">Contact Us</a>
+        </div>
+        <div class="auth-btn-area"></div>
+        <button class="hamburger" id="hamburger-btn" aria-label="Open Mobile Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu-header">
+        <div class="logo">
+          <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+            <img src="/images/logo.webp" alt="EduRain Logo" width="50" height="40" style="height: 40px; width: auto; max-width: 50px; object-fit: contain;">
+            <div style="display: flex; flex-direction: column; line-height: 1.2;">
+              <div><span class="text-white">Edu</span><span class="text-accent">Rain</span></div>
+            </div>
+          </a>
+        </div>
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close Mobile Menu">&times;</button>
+      </div>
+      <div class="mobile-menu-body">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/courses" class="nav-link ">Our Courses</a>
+        <a href="/blogs" class="nav-link active">Blogs</a>
+        <a href="/about-us" class="nav-link ">About Us</a>
+        <a href="/contact-us" class="nav-link ">Contact Us</a>
+      </div>
+      <div class="mobile-menu-footer auth-btn-area"></div>
+    </div>
+  
+      <main class="main-content fade-in-section visible">
+        
+    <section class="blogs-section" style="max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem;">
+      <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+        <h1 style="font-size: 2.5rem; font-weight: 800; color: #ffffff;">IIT JEE, NEET & Foundation Blogs</h1>
+        <h2 style="font-size: 1.15rem; color: #cbd5e1; font-weight: 400; margin-top: 8px;">
+          Expert preparation strategies, NCERT chapter solutions, and exam blueprints curated by EduRain master teachers
+        </h2>
+      </div>
+      <div class="blogs-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+        
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-09-12-eff65070-1399-478d-b2fa-d543692dd63a.png" alt="NEET Physics Thermal Physics and Waves: Formula Sheet and Key Concepts" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/neet-physics-thermal-physics-and-waves" style="color: inherit; text-decoration: none;">NEET Physics Thermal Physics and Waves: Formula Sheet and Key Concepts</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NEET Physics Thermal Physics and Waves: Formula Sheet and Key Concepts</p>
+        <a href="/blogs/neet-physics-thermal-physics-and-waves" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-08-26-5e4cdbcb-fe9c-4fa4-a89c-c715af8d9b4c.png" alt="Top 40 Most Repeated PYQs in Cell Biology & Biomolecules for NEET" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/edurain-in-cell-cycle-expect-questions-with-solutions" style="color: inherit; text-decoration: none;">Top 40 Most Repeated PYQs in Cell Biology & Biomolecules for NEET</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Top 40 Most Repeated PYQs in Cell Biology & Biomolecules for NEET</p>
+        <a href="/blogs/edurain-in-cell-cycle-expect-questions-with-solutions" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_1QFfoz7O1JkSDRFf85Lx.webp" alt="NEET Physics: Electromagnetic Induction and Alternating Current – Concepts, Formulas" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/electromagnetic-induction-and-alternating-current-neet" style="color: inherit; text-decoration: none;">NEET Physics: Electromagnetic Induction and Alternating Current – Concepts, Formulas</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NEET Physics: Electromagnetic Induction and Alternating Current – Concepts, Formulas</p>
+        <a href="/blogs/electromagnetic-induction-and-alternating-current-neet" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-08-22-e7759731-495b-4dca-9eed-5ba9ebd7d5df.png" alt="NEET 2027 Important Questions: Physics & Biology" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/neet-2027-important-questions-physics-biology" style="color: inherit; text-decoration: none;">NEET 2027 Important Questions: Physics & Biology</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NEET 2027 Important Questions: Physics & Biology</p>
+        <a href="/blogs/neet-2027-important-questions-physics-biology" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_2eNfmKzFH7hWcsRRD3Hr.webp" alt="Class 10 Science Acids, Bases and Salts: Important Questions and Concepts" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-10-science-acids-bases-and-salts" style="color: inherit; text-decoration: none;">Class 10 Science Acids, Bases and Salts: Important Questions and Concepts</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 10 Science Acids, Bases and Salts: Important Questions and Concepts</p>
+        <a href="/blogs/class-10-science-acids-bases-and-salts" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-09-21-1607f0d7-2c4f-4adc-9a48-68e531ecfea4.png" alt="JEE Mains Important Chapters and Topics for 2027 Exam, Preparation Tips" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/jee-mains-important-chapters-and-topics-for-2027-exam" style="color: inherit; text-decoration: none;">JEE Mains Important Chapters and Topics for 2027 Exam, Preparation Tips</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">JEE Mains Important Chapters and Topics for 2027 Exam, Preparation Tips</p>
+        <a href="/blogs/jee-mains-important-chapters-and-topics-for-2027-exam" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-09-21-56cabc78-252b-470d-876c-222f22226ab1.png" alt="Most Important Class 10 Science Question Types with Sample Papers" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/most-important-class-10-science-question" style="color: inherit; text-decoration: none;">Most Important Class 10 Science Question Types with Sample Papers</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Most Important Class 10 Science Question Types with Sample Papers</p>
+        <a href="/blogs/most-important-class-10-science-question" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1792131363789-NCERT_Solutions_for_Class_10_Maths_Chapter_6_Triangles__4_.webp" alt="Class 12 Biology Chapter 9: Biotechnology: Principles and Processes Notes for NEET UG 2027" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-12-biology-chapter-9-biotechnology-for-neet-ug-2027" style="color: inherit; text-decoration: none;">Class 12 Biology Chapter 9: Biotechnology: Principles and Processes Notes for NEET UG 2027</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 12 Biology Chapter 9: Biotechnology: Principles and Processes Notes for NEET UG 2027</p>
+        <a href="/blogs/class-12-biology-chapter-9-biotechnology-for-neet-ug-2027" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1792230672973-Untitled_Design__35_.webp" alt="NEET UG 2027 Registration: Step-by-Step Application Process, Fees, and Documents" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/neet-ug-2027-registration-dates-steps-fees-documents" style="color: inherit; text-decoration: none;">NEET UG 2027 Registration: Step-by-Step Application Process, Fees, and Documents</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NEET UG 2027 Registration dates are yet to be announced by NTA, but based on the 2026 cycle, applications are expected around February 2027. The process is fully online via the NTA official website, involving registration, filling personal and academic details, uploading documents, and paying the fee (₹1700 for General, ₹1600 for EWS/OBC, ₹1000 for SC/ST/PwBD). Candidates must keep photographs, signature, thumb impression, and certificates ready, ensuring all details match their Class 10 certificate to avoid rejection. While waiting for the official bulletin.
+</p>
+        <a href="/blogs/neet-ug-2027-registration-dates-steps-fees-documents" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_5rnEqaA9nWdZrb5ZPraY.webp" alt="High-weightage chapters for NEET 2027: Physics, Chemistry, Biology" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/high-weightage-chapters-for-neet-2027" style="color: inherit; text-decoration: none;">High-weightage chapters for NEET 2027: Physics, Chemistry, Biology</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">High-weightage chapters for NEET 2027: Physics, Chemistry, Biology</p>
+        <a href="/blogs/high-weightage-chapters-for-neet-2027" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_7xcR0axZgWDtJ9Mex2ED.webp" alt="Organic Chemistry for IIT-JEE: Easy Concepts, Important Reactions & Problem-Solving Tips" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/organic-chemistry-for-iit-jee-concepts-tips" style="color: inherit; text-decoration: none;">Organic Chemistry for IIT-JEE: Easy Concepts, Important Reactions & Problem-Solving Tips</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Organic Chemistry for IIT-JEE: Easy Concepts, Important Reactions & Problem-Solving Tips</p>
+        <a href="/blogs/organic-chemistry-for-iit-jee-concepts-tips" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1791973410156-NCERT_Solutions_for_Class_10_Maths_Chapter_4_Quadratic_Equations__1_.png" alt="NCERT Solutions for Class 10 Maths Chapter 4 Quadratic Equations, Formulas and Important Questions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-10-maths-chapter-4-quadratic-equations" style="color: inherit; text-decoration: none;">NCERT Solutions for Class 10 Maths Chapter 4 Quadratic Equations, Formulas and Important Questions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NCERT Solutions for Class 10 Maths Chapter 4 Quadratic Equations, Formulas and Important Questions</p>
+        <a href="/blogs/class-10-maths-chapter-4-quadratic-equations" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_9ewcleyq0aUfuRNMJdZD.webp" alt="Thermodynamics for Class 11 & NEET 2027: Laws, Important Formulas, Heat and Thermodynamic Processes" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/thermodynamics-for-class-11-neet-2027" style="color: inherit; text-decoration: none;">Thermodynamics for Class 11 & NEET 2027: Laws, Important Formulas, Heat and Thermodynamic Processes</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Thermodynamics for Class 11 & NEET 2027: Laws, Important Formulas, Heat and Thermodynamic Processes</p>
+        <a href="/blogs/thermodynamics-for-class-11-neet-2027" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-09-17-e2482b2f-cc1f-4846-804d-0ebb1d0a9877.png" alt="Plant Hormones NEET 2027 | Important Questions & Previous Year Questions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/plant-hormones-neet-2027" style="color: inherit; text-decoration: none;">Plant Hormones NEET 2027 | Important Questions & Previous Year Questions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Plant Hormones NEET 2027 | Important Questions & Previous Year Questions</p>
+        <a href="/blogs/plant-hormones-neet-2027" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_CUKIq0g86fh3dqQiJT0k.webp" alt="Electrostatics and Capacitance: Key Concepts, Formulas & Important Questions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/electrostatics-and-capacitance-notes-formulas" style="color: inherit; text-decoration: none;">Electrostatics and Capacitance: Key Concepts, Formulas & Important Questions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Electrostatics and Capacitance: Key Concepts, Formulas & Important Questions</p>
+        <a href="/blogs/electrostatics-and-capacitance-notes-formulas" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1792649988853-0c6f5b4d-6718-41c4-830b-64d31a78c55d.webp" alt="How to Prepare for JEE 2027: Complete Strategy, Syllabus & Study Plan" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/how-to-prepare-for-jee-2027-complete-study-plan-tips" style="color: inherit; text-decoration: none;">How to Prepare for JEE 2027: Complete Strategy, Syllabus & Study Plan</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">A complete guide on How to Prepare for JEE 2027 covering the expected exam schedule, NTA syllabus, exam pattern, phase-wise study plan, best books, mock test strategy, and common mistakes to avoid. Start with NCERT, build strong concepts, and practise regularly to maximise your score in both JEE Main and JEE Advanced 2027.</p>
+        <a href="/blogs/how-to-prepare-for-jee-2027-complete-study-plan-tips" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-08-24-13d48558-8aca-42a8-88fc-20490688033d.png" alt="NEET 2027 Syllabus: Everything You Need to Know to Start Preparing" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/edurain-in-neet-2027-syllabus-exam-pattern-eligibility-prep-tips" style="color: inherit; text-decoration: none;">NEET 2027 Syllabus: Everything You Need to Know to Start Preparing</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NEET 2027 Syllabus: Everything You Need to Know to Start Preparing</p>
+        <a href="/blogs/edurain-in-neet-2027-syllabus-exam-pattern-eligibility-prep-tips" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-08-22-31f37921-7659-4de7-a58c-90cbc7d2483c.png" alt="Best Mnemonics & Tricks to Remember Plant Growth Regulators (Hormones) for NEET" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/plant-hormone-tricks-for-neet-aspirants" style="color: inherit; text-decoration: none;">Best Mnemonics & Tricks to Remember Plant Growth Regulators (Hormones) for NEET</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Best Mnemonics & Tricks to Remember Plant Growth Regulators (Hormones) for NEET</p>
+        <a href="/blogs/plant-hormone-tricks-for-neet-aspirants" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_EhvfBlZBDKc16kfJg4NB.webp" alt="JEE Main 2027 Preparation Strategy: A Complete 6-Month Study Plan" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/jee-main-2027-preparation-strategy-complete-6-month-plan" style="color: inherit; text-decoration: none;">JEE Main 2027 Preparation Strategy: A Complete 6-Month Study Plan</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">JEE Main 2027 Preparation Strategy: A Complete 6-Month Study Plan</p>
+        <a href="/blogs/jee-main-2027-preparation-strategy-complete-6-month-plan" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1792065215256-download.webp" alt="NCERT Solutions for Class 10 Maths Chapter 2: Polynomials" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-10-maths-chapter-2-polynomials" style="color: inherit; text-decoration: none;">NCERT Solutions for Class 10 Maths Chapter 2: Polynomials</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NCERT Solutions for Class 10 Maths Chapter 2: Polynomials</p>
+        <a href="/blogs/class-10-maths-chapter-2-polynomials" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-09-11-f82ed9a5-54cc-4147-90b6-753b04772691.png" alt="Biology Locomotion and Movement Diagrams for NEET Preparation" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/locomotion-and-movement-diagrams-for-neet-biology" style="color: inherit; text-decoration: none;">Biology Locomotion and Movement Diagrams for NEET Preparation</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Biology Locomotion and Movement Diagrams for NEET Preparation</p>
+        <a href="/blogs/locomotion-and-movement-diagrams-for-neet-biology" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1792649670201-8c99bda4-f04f-4983-b0a1-6285c1e857b7.webp" alt="NEET UG 2027 Exam Date: Expected Schedule and Latest Updates" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/neet-ug-2027-exam-date-expected-schedule-updates" style="color: inherit; text-decoration: none;">NEET UG 2027 Exam Date: Expected Schedule and Latest Updates</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NTA has not yet announced the NEET UG 2027 Exam Date. The exam is expected in early May 2027 and will shift to computer-based testing for the first time. This guide covers expected registration timelines, CBT updates, and preparation tips to help you plan your study schedule before the official bulletin is released.
+
+</p>
+        <a href="/blogs/neet-ug-2027-exam-date-expected-schedule-updates" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-09-12-7f1022fe-bc44-4a88-a0d1-c766b0269152.png" alt="How to Solve Mechanics Numericals in JEE Main Physics Without Calculation Mistakes" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/master-mechanics-numericals-in-jee-main-physics" style="color: inherit; text-decoration: none;">How to Solve Mechanics Numericals in JEE Main Physics Without Calculation Mistakes</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">How to Solve Mechanics Numericals in JEE Main Physics Without Calculation Mistakes</p>
+        <a href="/blogs/master-mechanics-numericals-in-jee-main-physics" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-09-18-4bb144fc-d606-4541-8479-993ee4ae84d0.png" alt="Basic Maths for JEE Main & Advanced: Essential Concepts, Formulas, Tricks & Solved Examples" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/basic-maths-for-jee-main-advanced" style="color: inherit; text-decoration: none;">Basic Maths for JEE Main & Advanced: Essential Concepts, Formulas, Tricks & Solved Examples</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Basic Maths for JEE Main & Advanced: Essential Concepts, Formulas, Tricks & Solved Examples</p>
+        <a href="/blogs/basic-maths-for-jee-main-advanced" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_I7mX9q7GeGeEaGJ7J5mz.webp" alt="Class 11 Vectors and Newton's Laws of Motion: The Foundation of JEE Mechanics" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-11-vectors-and-newton-s-laws-of-motion" style="color: inherit; text-decoration: none;">Class 11 Vectors and Newton's Laws of Motion: The Foundation of JEE Mechanics</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 11 Vectors and Newton's Laws of Motion: The Foundation of JEE Mechanics</p>
+        <a href="/blogs/class-11-vectors-and-newton-s-laws-of-motion" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-09-25-5f8c419f-3fd9-4969-b91d-460002ac65ac.png" alt="CBSE Class 10 Maths Important Questions Chapter-Wise" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/cbse-class-10-maths-important-questions-chapter-wise" style="color: inherit; text-decoration: none;">CBSE Class 10 Maths Important Questions Chapter-Wise</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">CBSE Class 10 Maths Important Questions Chapter-Wise</p>
+        <a href="/blogs/cbse-class-10-maths-important-questions-chapter-wise" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_KTkaKvdyoZVEmIQWDZGu.webp" alt="JEE Main 2027 Session 1 Registration Date" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/jee-main-2027-session-1-registration-date" style="color: inherit; text-decoration: none;">JEE Main 2027 Session 1 Registration Date</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">JEE Main 2027 Session 1 Registration Date</p>
+        <a href="/blogs/jee-main-2027-session-1-registration-date" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_Kq0kO139oJwESt98JVWA.webp" alt="NCERT Solutions for Class 9 Science Chapter 9 Atomic Foundations of Matter" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-9-science-chapter-9-atomic-foundations-of-matter" style="color: inherit; text-decoration: none;">NCERT Solutions for Class 9 Science Chapter 9 Atomic Foundations of Matter</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NCERT Solutions for Class 9 Science Chapter 9 Atomic Foundations of Matter</p>
+        <a href="/blogs/class-9-science-chapter-9-atomic-foundations-of-matter" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1792564564379-Class_11_Cell_Cycle_and_Cell_Division_.webp" alt="Class 11 Cell Cycle and Cell Division: Notes for NEET Preparation" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-11-cell-cycle-and-cell-division-complete-neet-guide" style="color: inherit; text-decoration: none;">Class 11 Cell Cycle and Cell Division: Notes for NEET Preparation</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">This comprehensive guide covers Class 11 Cell Cycle and Cell Division for NEET UG 2027 aspirants. It explains all phases of the cell cycle including G1, S, G2, and M phase, along with detailed step-by-step breakdowns of mitosis and meiosis. The guide features a mitosis vs meiosis comparison table, the five substages of Prophase I, cytokinesis differences in plant and animal cells, common student mistakes to avoid, and a structured NEET preparation strategy. Ideal for students looking to master this high-yield NCERT chapter through clear concepts, labelled diagrams, and targeted practice for NEET 2027.
+</p>
+        <a href="/blogs/class-11-cell-cycle-and-cell-division-complete-neet-guide" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_LTzVEPj3RwceblrXKPL8.webp" alt="Class 10 Maths Polynomials: Concepts, Formulas, Examples & Important Questions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-10-maths-polynomials" style="color: inherit; text-decoration: none;">Class 10 Maths Polynomials: Concepts, Formulas, Examples & Important Questions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 10 Maths Polynomials: Concepts, Formulas, Examples & Important Questions</p>
+        <a href="/blogs/class-10-maths-polynomials" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_MCsKlZb4v1AnB94EN4eG.webp" alt="Chemical Reactions and Equations Class 10 Notes PDF" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/chemical-reactions-and-equations-class-10-notes-tips" style="color: inherit; text-decoration: none;">Chemical Reactions and Equations Class 10 Notes PDF</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Chemical Reactions and Equations Class 10 Notes PDF</p>
+        <a href="/blogs/chemical-reactions-and-equations-class-10-notes-tips" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-09-11-2cfb8e17-d014-4226-b099-cbe6e4a10697.png" alt="Quadratic Equations Class 10: Tricky Questions Solved Step by Step" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/quadratic-equations-class-10" style="color: inherit; text-decoration: none;">Quadratic Equations Class 10: Tricky Questions Solved Step by Step</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Quadratic Equations Class 10: Tricky Questions Solved Step by Step</p>
+        <a href="/blogs/quadratic-equations-class-10" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-09-23-5567bacf-d3cc-4ef5-8ab2-fbf615cae222.png" alt="JEE Mains Physics Important Questions for 2027 Exam with Solutions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/jee-mains-physics-important-questions-with-solutions" style="color: inherit; text-decoration: none;">JEE Mains Physics Important Questions for 2027 Exam with Solutions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">JEE Mains Physics Important Questions for 2027 Exam with Solutions</p>
+        <a href="/blogs/jee-mains-physics-important-questions-with-solutions" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-08-24-b26ace46-31f2-4279-a755-2e0f651e2393.png" alt="Top 10 Topics That Repeated Every Year in JEE Advanced" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/top-10-jee-advanced-repeated-topics" style="color: inherit; text-decoration: none;">Top 10 Topics That Repeated Every Year in JEE Advanced</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Top 10 Topics That Repeated Every Year in JEE Advanced</p>
+        <a href="/blogs/top-10-jee-advanced-repeated-topics" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_O6fFq8WBJ04dcOw8MnVK.webp" alt="NEET 2027 Registration Date: When Will Applications Open?" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/neet-2027-registration-date-eligibility-pattern" style="color: inherit; text-decoration: none;">NEET 2027 Registration Date: When Will Applications Open?</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NEET 2027 Registration Date: When Will Applications Open?</p>
+        <a href="/blogs/neet-2027-registration-date-eligibility-pattern" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_Q5PKsCrmDYGHb1nI2LaT.webp" alt="Vectors Class 11 Physics Note Formulas & Important Questions for NEET" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/vectors-class-11-physics" style="color: inherit; text-decoration: none;">Vectors Class 11 Physics Note Formulas & Important Questions for NEET</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Vectors Class 11 Physics Note Formulas & Important Questions for NEET</p>
+        <a href="/blogs/vectors-class-11-physics" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-09-22-b875977e-b548-4c87-bc83-6e76523881f6.png" alt="Most Important Class 10 Maths Questions for Board Exam Preparation" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-10-maths-questions-for-board-exam" style="color: inherit; text-decoration: none;">Most Important Class 10 Maths Questions for Board Exam Preparation</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Most Important Class 10 Maths Questions for Board Exam Preparation</p>
+        <a href="/blogs/class-10-maths-questions-for-board-exam" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1791972282580-NEET_2027_CBT_Mode___2_.png" alt="NEET 2027 CBT Mode: Complete Preparation Guide for the Expected Computer-Based Exam" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/neet-2027-cbt-mode-official-updates-preparation-guide" style="color: inherit; text-decoration: none;">NEET 2027 CBT Mode: Complete Preparation Guide for the Expected Computer-Based Exam</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NEET 2027 CBT Mode: Complete Preparation Guide for the Expected Computer-Based Exam</p>
+        <a href="/blogs/neet-2027-cbt-mode-official-updates-preparation-guide" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1792393233766-NCERT_Solutions_for_Class_10_Maths_Chapter_7_.webp" alt="NCERT Solutions for Class 10 Maths Chapter 7: Coordinate Geometry and  Important Questions for Board Exams" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/ncert-solutions-for-class-10-maths-chapter-7-coordinate-geometry" style="color: inherit; text-decoration: none;">NCERT Solutions for Class 10 Maths Chapter 7: Coordinate Geometry and  Important Questions for Board Exams</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NCERT Solutions for Class 10 Maths Chapter 7 Coordinate Geometry offers step-by-step solved answers for distance formula, section formula, and midpoint problems based on the latest CBSE syllabus. This guide includes board-style worked examples, common mistake alerts, and a timed preparation plan to help students confidently score full marks in this high-weightage 6-mark unit.</p>
+        <a href="/blogs/ncert-solutions-for-class-10-maths-chapter-7-coordinate-geometry" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_UxkjjUhnX5PE4biV6wAd.webp" alt="Heredity and Evolution Class 10 Important Questions with Answers" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/heredity-and-evolution-class-10-key-questions-notes" style="color: inherit; text-decoration: none;">Heredity and Evolution Class 10 Important Questions with Answers</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Heredity and Evolution Class 10 Important Questions with Answers</p>
+        <a href="/blogs/heredity-and-evolution-class-10-key-questions-notes" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-10-05-2527d845-5f58-4fe2-a055-d860af355ce2.jpg" alt="NEET 2027 Gene Therapy: Principles, Applications, and Important Questions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/neet-2027-gene-therapy-ncert-notes-vectors-practice" style="color: inherit; text-decoration: none;">NEET 2027 Gene Therapy: Principles, Applications, and Important Questions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NEET 2027 Gene Therapy: Principles, Applications, and Important Questions</p>
+        <a href="/blogs/neet-2027-gene-therapy-ncert-notes-vectors-practice" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1791891840005-NCERT_Solutions_for_Class_10_Maths_Chapter_6_Triangles.png" alt="NCERT Solutions for Class 10 Maths Chapter 6 Triangles: Formulas, Properties and Important Questions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/ncert-solutions-for-class-10-maths-chapter-6-triangles" style="color: inherit; text-decoration: none;">NCERT Solutions for Class 10 Maths Chapter 6 Triangles: Formulas, Properties and Important Questions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NCERT Solutions for Class 10 Maths Chapter 6 Triangles: Formulas, Properties and Important Questions</p>
+        <a href="/blogs/ncert-solutions-for-class-10-maths-chapter-6-triangles" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-09-11-f73ddaef-e6e5-4539-9258-2ddf6537eda9.png" alt="Chemical Kinetics JEE Hard Topics Explained with Examples" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/chemical-kinetics-jee-hard-topics-explained-tips" style="color: inherit; text-decoration: none;">Chemical Kinetics JEE Hard Topics Explained with Examples</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Chemical Kinetics JEE Hard Topics Explained with Examples</p>
+        <a href="/blogs/chemical-kinetics-jee-hard-topics-explained-tips" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-09-09-3d8bf02f-b4ef-48ff-9cb4-09f8f1992b0e.png" alt="Class 10 Board Exam Preparation Tips for CBSE Students" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/edurain-in-class-10-board-exam-preparation-tips-for-cbse-students" style="color: inherit; text-decoration: none;">Class 10 Board Exam Preparation Tips for CBSE Students</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 10 Board Exam Preparation Tips for CBSE Students</p>
+        <a href="/blogs/edurain-in-class-10-board-exam-preparation-tips-for-cbse-students" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-09-11-8ef9fa3e-21e8-47b0-87a2-c5952875efd7.png" alt="Biology: Biotechnology and Its Applications – Complete Diagrams for NEET" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/edurain-in-master-biotechnology-for-neet-ncert-diagrams-key-tips" style="color: inherit; text-decoration: none;">Biology: Biotechnology and Its Applications – Complete Diagrams for NEET</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Biology: Biotechnology and Its Applications – Complete Diagrams for NEET</p>
+        <a href="/blogs/edurain-in-master-biotechnology-for-neet-ncert-diagrams-key-tips" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-09-22-7efab4b8-9ab0-42ff-8c27-34b9df982e2a.png" alt="JEE Mains Important Chapters & Topics for 2027 Exam | Preparation Tips" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/jee-mains-important-chapters-topics" style="color: inherit; text-decoration: none;">JEE Mains Important Chapters & Topics for 2027 Exam | Preparation Tips</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">JEE Mains Important Chapters & Topics for 2027 Exam | Preparation Tips</p>
+        <a href="/blogs/jee-mains-important-chapters-topics" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_aXILsmB5ZhQcPWS21UAv.webp" alt="NEET UG 2027 Syllabus: Subject-Wise Chapters" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/neet-ug-2027-syllabus-chapter-list-weightage" style="color: inherit; text-decoration: none;">NEET UG 2027 Syllabus: Subject-Wise Chapters</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NEET UG 2027 Syllabus: Subject-Wise Chapters</p>
+        <a href="/blogs/neet-ug-2027-syllabus-chapter-list-weightage" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_azR65OF1HUA8LLSAmEME.webp" alt="Physics: Properties of Solids and Liquids Important Concepts, Formulas & Questions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/physics-properties-of-solids-and-liquids-for-neet-exam" style="color: inherit; text-decoration: none;">Physics: Properties of Solids and Liquids Important Concepts, Formulas & Questions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Physics: Properties of Solids and Liquids Important Concepts, Formulas & Questions</p>
+        <a href="/blogs/physics-properties-of-solids-and-liquids-for-neet-exam" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_b56GaevABUq3zO4Ux9CQ.webp" alt="NEET UG 2027 Eligibility Criteria: Registration Date" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/neet-ug-2027-registration-date-eligibility-guide" style="color: inherit; text-decoration: none;">NEET UG 2027 Eligibility Criteria: Registration Date</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NEET UG 2027 Eligibility Criteria: Registration Date</p>
+        <a href="/blogs/neet-ug-2027-registration-date-eligibility-guide" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_bH2PEiSIPYjfISk0Duo9.webp" alt="Control and Coordination Class 10 | Reflex Actions & Hormones Explained" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/control-and-coordination-class-10" style="color: inherit; text-decoration: none;">Control and Coordination Class 10 | Reflex Actions & Hormones Explained</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Control and Coordination Class 10 | Reflex Actions & Hormones Explained</p>
+        <a href="/blogs/control-and-coordination-class-10" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1792062161487-Neet_UG_2027.webp" alt="NEET UG 2027 Exam Pattern: Subjects, Marks, Duration, and Marking Scheme" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/neet-ug-2027-exam-pattern-marks-duration-preparation" style="color: inherit; text-decoration: none;">NEET UG 2027 Exam Pattern: Subjects, Marks, Duration, and Marking Scheme</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NEET UG 2027 Exam Pattern: Subjects, Marks, Duration, and Marking Scheme</p>
+        <a href="/blogs/neet-ug-2027-exam-pattern-marks-duration-preparation" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_cDPt5I2X6TKePxbC4eMo.webp" alt="Class 10 Electricity: Electric Power and Energy – Formulas, Concepts & Numericals" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-10-electricity-electric-power-and-energy-guide" style="color: inherit; text-decoration: none;">Class 10 Electricity: Electric Power and Energy – Formulas, Concepts & Numericals</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 10 Electricity: Electric Power and Energy – Formulas, Concepts & Numericals</p>
+        <a href="/blogs/class-10-electricity-electric-power-and-energy-guide" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-09-18-7d5e4ea9-b26c-4818-b3db-b6cab1727ee3.png" alt="Class 10 History – The Rise of Nationalism in Europe: Complete Notes, Concepts & Questions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-10-history-the-rise-of-nationalism-in-europe" style="color: inherit; text-decoration: none;">Class 10 History – The Rise of Nationalism in Europe: Complete Notes, Concepts & Questions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 10 History – The Rise of Nationalism in Europe: Complete Notes, Concepts & Questions</p>
+        <a href="/blogs/class-10-history-the-rise-of-nationalism-in-europe" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_dyTSWjUePDerS1SMfnST.webp" alt="NEET Biology Gene Therapy Notes: Important Questions & NCERT Concepts" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/neet-biology-gene-therapy" style="color: inherit; text-decoration: none;">NEET Biology Gene Therapy Notes: Important Questions & NCERT Concepts</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NEET Biology Gene Therapy Notes: Important Questions & NCERT Concepts</p>
+        <a href="/blogs/neet-biology-gene-therapy" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-09-11-14957d9a-7ec7-4dc1-a0e1-2f534dfe8885.png" alt="Differential Equations JEE: Common Mistakes Students Make" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/differential-equations-jee-common-mistakes-tips" style="color: inherit; text-decoration: none;">Differential Equations JEE: Common Mistakes Students Make</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Differential Equations JEE: Common Mistakes Students Make</p>
+        <a href="/blogs/differential-equations-jee-common-mistakes-tips" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_f3fdH89nKaABIzs0uozN.webp" alt="Trigonometry class 10 maths Important Formulas and Identity-Solving Tips" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/trigonometry-class-10-maths-formulas-tips" style="color: inherit; text-decoration: none;">Trigonometry class 10 maths Important Formulas and Identity-Solving Tips</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Trigonometry class 10 maths Important Formulas and Identity-Solving Tips</p>
+        <a href="/blogs/trigonometry-class-10-maths-formulas-tips" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1792565409569-Class_11_Cell_Cycle_and_Cell_Division___4_.webp" alt="Class 10 Maths Chapter 5 Arithmetic Progression: Notes with Formulas and Solved Examples" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-10-maths-chapter-5-arithmetic-progression-guide" style="color: inherit; text-decoration: none;">Class 10 Maths Chapter 5 Arithmetic Progression: Notes with Formulas and Solved Examples</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">A complete guide to Class 10 Maths Chapter 5 Arithmetic Progression covering AP definition, nth term formula, sum formulas, solved examples, common mistakes, and a board exam preparation plan aligned with the NCERT syllabus.
+
+
+</p>
+        <a href="/blogs/class-10-maths-chapter-5-arithmetic-progression-guide" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-09-10-c0adc3e8-fb25-4e19-8bb8-8d4a99e2383c.png" alt="Carbon and Its Compounds Class 10: Hard Topics Simplified" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/carbon-and-its-compounds-class-10" style="color: inherit; text-decoration: none;">Carbon and Its Compounds Class 10: Hard Topics Simplified</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Carbon and Its Compounds Class 10: Hard Topics Simplified</p>
+        <a href="/blogs/carbon-and-its-compounds-class-10" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-10-07-4d469c21-8902-4430-8e7d-c0679b836089.jpg" alt="Class 9 Science: Atoms and Molecules: Key Concepts, Formulas & Numericals" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-9-science-atoms-and-molecules" style="color: inherit; text-decoration: none;">Class 9 Science: Atoms and Molecules: Key Concepts, Formulas & Numericals</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 9 Science: Atoms and Molecules: Key Concepts, Formulas & Numericals</p>
+        <a href="/blogs/class-9-science-atoms-and-molecules" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-09-19-8af30e8b-810a-44d4-9e15-cbd364df35a4.png" alt="Vectors Class 11 JEE: Complete Concepts, Formulas & Questions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/vectors-class-11-iit-jee" style="color: inherit; text-decoration: none;">Vectors Class 11 JEE: Complete Concepts, Formulas & Questions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Vectors Class 11 JEE: Complete Concepts, Formulas & Questions</p>
+        <a href="/blogs/vectors-class-11-iit-jee" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_i6s72Qy36vqrseXq6lC4.webp" alt="Continuity & Differentiability for Class 12 & JEE Mains 2027" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/continuity-differentiability-for-class-12-jee-mains" style="color: inherit; text-decoration: none;">Continuity & Differentiability for Class 12 & JEE Mains 2027</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Continuity & Differentiability for Class 12 & JEE Mains 2027</p>
+        <a href="/blogs/continuity-differentiability-for-class-12-jee-mains" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-09-10-cd1a5e0e-8062-4de0-bea2-e76fce1f9211.png" alt="Reproduction in Organisms NEET Important Diagrams and Questions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/reproduction-in-organisms-neet" style="color: inherit; text-decoration: none;">Reproduction in Organisms NEET Important Diagrams and Questions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Reproduction in Organisms NEET Important Diagrams and Questions</p>
+        <a href="/blogs/reproduction-in-organisms-neet" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-08-26-67a5b1ec-94ae-4bfb-a41a-20c82d41758d.png" alt="Class 10 Science: Magnetic Effects of Electric Current | Complete Guide" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/edurain-in-magnetic-effects-of-electric-current-class-10-science" style="color: inherit; text-decoration: none;">Class 10 Science: Magnetic Effects of Electric Current | Complete Guide</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 10 Science: Magnetic Effects of Electric Current | Complete Guide</p>
+        <a href="/blogs/edurain-in-magnetic-effects-of-electric-current-class-10-science" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_k5cOsFV1iRQbN4orDVEn.webp" alt="NEET 2027 Biology Most Important Chapters" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/neet-2027-biology-important-chapters" style="color: inherit; text-decoration: none;">NEET 2027 Biology Most Important Chapters</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NEET 2027 Biology Most Important Chapters</p>
+        <a href="/blogs/neet-2027-biology-important-chapters" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1792394386755-Class_12_Biology_Chapter_5_Molecular_Basis_of_Inheritance_.webp" alt="Class 12 Biology Chapter 5 Molecular Basis of Inheritance: Important Questions for NEET UG 2027" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-12-biology-chapter-5-molecular-basis-of-inheritance" style="color: inherit; text-decoration: none;">Class 12 Biology Chapter 5 Molecular Basis of Inheritance: Important Questions for NEET UG 2027</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 12 Biology Chapter 5 Molecular Basis of Inheritance is a high-priority NEET UG 2027 chapter covering DNA structure, replication, transcription, the genetic code, translation, the lac operon, and the Human Genome Project. This NCERT-based guide delivers key facts, experiment summaries, solved questions, and a step-by-step revision plan aligned with the latest NTA syllabus to help aspirants score maximum marks in NEET Biology.</p>
+        <a href="/blogs/class-12-biology-chapter-5-molecular-basis-of-inheritance" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_kwJksqowuh9LLif0biby.webp" alt="Class 10 Maths Chapter-wise MCQs with Answers for 2027 Exams" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-10-maths-chapter-wise-mcqs-with-answers" style="color: inherit; text-decoration: none;">Class 10 Maths Chapter-wise MCQs with Answers for 2027 Exams</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 10 Maths Chapter-wise MCQs with Answers for 2027 Exams</p>
+        <a href="/blogs/class-10-maths-chapter-wise-mcqs-with-answers" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-08-26-699d7f9b-86dd-4593-a82e-ef4fd605449f.png" alt="Class 10 Maths Chapter 6: Triangles Important Questions with Step-by-Step Solutions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-10-maths-edurain-in-triangles-important-questions-solutions" style="color: inherit; text-decoration: none;">Class 10 Maths Chapter 6: Triangles Important Questions with Step-by-Step Solutions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 10 Maths Chapter 6: Triangles Important Questions with Step-by-Step Solutions</p>
+        <a href="/blogs/class-10-maths-edurain-in-triangles-important-questions-solutions" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-09-11-2035c084-7f1e-43eb-856d-66acf6e0fa8e.png" alt="Human Physiology NEET Notes PDF: Digestion to Excretion Explained" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/human-physiology-neet-notes-digestion-to-excretion" style="color: inherit; text-decoration: none;">Human Physiology NEET Notes PDF: Digestion to Excretion Explained</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Human Physiology NEET Notes PDF: Digestion to Excretion Explained</p>
+        <a href="/blogs/human-physiology-neet-notes-digestion-to-excretion" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_losXe3TJM7ZBwqaK91p8.webp" alt="Light Reflection and Refraction Class 10 Notes: Important Formulas & Diagrams" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/light-reflection-and-refraction-class-10" style="color: inherit; text-decoration: none;">Light Reflection and Refraction Class 10 Notes: Important Formulas & Diagrams</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Light Reflection and Refraction Class 10 Notes: Important Formulas & Diagrams</p>
+        <a href="/blogs/light-reflection-and-refraction-class-10" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-10-06-7597ff47-1b1b-4287-a237-873fe8b7772d.jpg" alt="NCERT Solutions for Class 10 Maths: Chapter 8 Trigonometry Important Questions with Easy Solutions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/ncert-solutions-for-class-10-maths-chapter-8-trigonometry" style="color: inherit; text-decoration: none;">NCERT Solutions for Class 10 Maths: Chapter 8 Trigonometry Important Questions with Easy Solutions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NCERT Solutions for Class 10 Maths: Chapter 8 Trigonometry Important Questions with Easy Solutions</p>
+        <a href="/blogs/ncert-solutions-for-class-10-maths-chapter-8-trigonometry" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-10-03-6607c80e-e372-4dcf-9113-1d81d3e9c981.jpg" alt="How to Prepare for NEET 2027: Complete Study Plan & Expert Tips" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/how-to-prepare-for-neet-2027-complete-study-plan" style="color: inherit; text-decoration: none;">How to Prepare for NEET 2027: Complete Study Plan & Expert Tips</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">How to Prepare for NEET 2027: Complete Study Plan & Expert Tips</p>
+        <a href="/blogs/how-to-prepare-for-neet-2027-complete-study-plan" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-09-11-7241ee76-cdce-430f-ae37-10e43052dfe5.png" alt="NEET Previous Year Questions Chapter-wise with Solutions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/neet-previous-year-questions" style="color: inherit; text-decoration: none;">NEET Previous Year Questions Chapter-wise with Solutions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NEET Previous Year Questions Chapter-wise with Solutions</p>
+        <a href="/blogs/neet-previous-year-questions" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_nWp4zkYEJf4SVf3DcDYP.webp" alt="CBSE Class 10 Maths Coordinate Geometry: Important Formulas and Questions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/cbse-class-10-maths-coordinate-geometry-formula-s-and-questions" style="color: inherit; text-decoration: none;">CBSE Class 10 Maths Coordinate Geometry: Important Formulas and Questions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">CBSE Class 10 Maths Coordinate Geometry: Important Formulas and Questions</p>
+        <a href="/blogs/cbse-class-10-maths-coordinate-geometry-formula-s-and-questions" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_o5SSbbsu4fi7JPf1zHqu.webp" alt="How to Solve Physics Numericals | NEET 2027" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/how-to-solve-physics-numericals-for-neet" style="color: inherit; text-decoration: none;">How to Solve Physics Numericals | NEET 2027</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">How to Solve Physics Numericals | NEET 2027</p>
+        <a href="/blogs/how-to-solve-physics-numericals-for-neet" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1792130330801-Untitled_design__32_.webp" alt="Class 10 Science Chapter 7: How do Organisms Reproduce? " style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-10-science-chapter-7-how-do-organisms-reproduce" style="color: inherit; text-decoration: none;">Class 10 Science Chapter 7: How do Organisms Reproduce? </a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 10 Science Chapter 7: How do Organisms Reproduce? </p>
+        <a href="/blogs/class-10-science-chapter-7-how-do-organisms-reproduce" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-08-22-198e090a-8da4-484c-890d-473d5fa84e3b.png" alt="Polynomials Class 10 Step-by-Step Explanation with Examples" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/polynomials-class-10-made-easy" style="color: inherit; text-decoration: none;">Polynomials Class 10 Step-by-Step Explanation with Examples</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Polynomials Class 10 Step-by-Step Explanation with Examples</p>
+        <a href="/blogs/polynomials-class-10-made-easy" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_pLcrqcWnybgHz8AMNLhr.webp" alt="Units and Measurements for Class 11 Physics & JEE: Important Concepts, Formulas & Questions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/units-and-measurements-for-class-11" style="color: inherit; text-decoration: none;">Units and Measurements for Class 11 Physics & JEE: Important Concepts, Formulas & Questions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Units and Measurements for Class 11 Physics & JEE: Important Concepts, Formulas & Questions</p>
+        <a href="/blogs/units-and-measurements-for-class-11" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_pdrxsh4c2Ca1HQVUlUXi.webp" alt="High-weightage chapters for JEE Mains 2027" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/high-weightage-chapters-for-jee-main-2027" style="color: inherit; text-decoration: none;">High-weightage chapters for JEE Mains 2027</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">High-weightage chapters for JEE Mains 2027</p>
+        <a href="/blogs/high-weightage-chapters-for-jee-main-2027" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1792062146865-JEE_Main_2027_Registration.webp" alt="JEE Main 2027 Registration: Step-by-Step Application Process, Fees, and Documents" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/jee-main-2027-registration-steps-documents-and-fee" style="color: inherit; text-decoration: none;">JEE Main 2027 Registration: Step-by-Step Application Process, Fees, and Documents</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">JEE Main 2027 Registration: Step-by-Step Application Process, Fees, and Documents</p>
+        <a href="/blogs/jee-main-2027-registration-steps-documents-and-fee" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-09-19-f5cf244a-06eb-445c-abc6-0ef43cdb19bb.png" alt="Chemical Equilibrium Class 11 & IIT-JEE: Concepts, Formulas & Important Questions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/chemical-equilibrium-class-11-iit-jee" style="color: inherit; text-decoration: none;">Chemical Equilibrium Class 11 & IIT-JEE: Concepts, Formulas & Important Questions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Chemical Equilibrium Class 11 & IIT-JEE: Concepts, Formulas & Important Questions</p>
+        <a href="/blogs/chemical-equilibrium-class-11-iit-jee" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_sBEYjW7cvilB88zHW0GI.webp" alt="Class 10 Science: Light Reflection and Refraction" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/edurain-in-class-10-science-light-reflection-and-refraction" style="color: inherit; text-decoration: none;">Class 10 Science: Light Reflection and Refraction</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 10 Science: Light Reflection and Refraction</p>
+        <a href="/blogs/edurain-in-class-10-science-light-reflection-and-refraction" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_sV0hkTNrUANKH69aV9kL.webp" alt="Gene Therapy Explained Simply: Step-by-Step Guide for NEET 2027" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/edurain-in-neet-biology-gene-therapy-mechanism-types-notes" style="color: inherit; text-decoration: none;">Gene Therapy Explained Simply: Step-by-Step Guide for NEET 2027</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Gene Therapy Explained Simply: Step-by-Step Guide for NEET 2027</p>
+        <a href="/blogs/edurain-in-neet-biology-gene-therapy-mechanism-types-notes" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-08-31-b2c1716b-60c0-48ca-8d67-49b2db74bed0.png" alt="Class 10th Science: Light Numericals & Ray Diagrams Solved (PDF)" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-10th-science-light-numericals-ray-diagrams-guide" style="color: inherit; text-decoration: none;">Class 10th Science: Light Numericals & Ray Diagrams Solved (PDF)</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 10th Science: Light Numericals & Ray Diagrams Solved (PDF)</p>
+        <a href="/blogs/class-10th-science-light-numericals-ray-diagrams-guide" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-09-15-ab2f0a92-5199-4375-a805-9476f7b35a1b.png" alt="Human Reproduction NEET Biology NCERT Notes, Diagrams & Important Questions" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/human-reproduction-neet-biology" style="color: inherit; text-decoration: none;">Human Reproduction NEET Biology NCERT Notes, Diagrams & Important Questions</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Human Reproduction NEET Biology NCERT Notes, Diagrams & Important Questions</p>
+        <a href="/blogs/human-reproduction-neet-biology" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-10-07-0c9989a6-da7e-4f2e-984d-cb81248fdda3.jpg" alt="JEE Main 2027 Syllabus & Important Chapters: Subject-Wise" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/jee-main-2027-syllabus-important-chapters" style="color: inherit; text-decoration: none;">JEE Main 2027 Syllabus & Important Chapters: Subject-Wise</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">JEE Main 2027 Syllabus & Important Chapters: Subject-Wise</p>
+        <a href="/blogs/jee-main-2027-syllabus-important-chapters" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/1792232092686-Class_12_Maths_Chapter_6__Application_of_Derivatives.webp" alt="Class 12 Maths Chapter 6: Application of Derivatives: Formulas and Important Questions for JEE Main 2027" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-12-maths-chapter-6-application-of-derivatives-for-jee" style="color: inherit; text-decoration: none;">Class 12 Maths Chapter 6: Application of Derivatives: Formulas and Important Questions for JEE Main 2027</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Application of Derivatives (Class 12 Maths Chapter 6) uses differentiation to study how functions change. It covers rate of change, increasing and decreasing functions, tangents and normals, approximations, maxima and minima, and the mean value theorems. The guide lists the key formulas, worked examples, practice questions, and a step-by-step method for maxima and minima problems. It also flags common mistakes, such as treating every critical point as an extremum, skipping endpoints on closed intervals, and making slope sign errors. Students should learn the formulas, practise graded questions, and review their errors after each set.</p>
+        <a href="/blogs/class-12-maths-chapter-6-application-of-derivatives-for-jee" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/member/2026-09-11-76303faf-4252-4fff-b58d-af09800591cc.png" alt="Force and Laws of Motion Class 9 Notes for Quick Revision" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/force-and-laws-of-motion-class-9" style="color: inherit; text-decoration: none;">Force and Laws of Motion Class 9 Notes for Quick Revision</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Force and Laws of Motion Class 9 Notes for Quick Revision</p>
+        <a href="/blogs/force-and-laws-of-motion-class-9" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_wqOayRbExzDgulaVCdVk.webp" alt="Motion in a Straight Line for JEE Main & Advanced: Concepts, Formulas & Solved Examples" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/motion-in-a-straight-line-for-jee-main-advanced" style="color: inherit; text-decoration: none;">Motion in a Straight Line for JEE Main & Advanced: Concepts, Formulas & Solved Examples</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Motion in a Straight Line for JEE Main & Advanced: Concepts, Formulas & Solved Examples</p>
+        <a href="/blogs/motion-in-a-straight-line-for-jee-main-advanced" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-09-23-7f933e0a-ffc2-4c0c-a78d-926d7628a725.png" alt="NEET Important Questions for 2027 Exam with Solutions – Physics, Chemistry & Biology" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/neet-important-questions-for-2027-exam-with-solutions" style="color: inherit; text-decoration: none;">NEET Important Questions for 2027 Exam with Solutions – Physics, Chemistry & Biology</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">NEET Important Questions for 2027 Exam with Solutions – Physics, Chemistry & Biology</p>
+        <a href="/blogs/neet-important-questions-for-2027-exam-with-solutions" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://cdn.phototourl.com/free/2026-08-26-ebd79500-84a2-467f-8eb1-c2a42eb73da3.png" alt="Class 11 Human Physiology NCERT Complete Guide for NEET Preparation" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/class-11-human-edurain-in-physiology-neet-notes-weightage-tips" style="color: inherit; text-decoration: none;">Class 11 Human Physiology NCERT Complete Guide for NEET Preparation</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Class 11 Human Physiology NCERT Complete Guide for NEET Preparation</p>
+        <a href="/blogs/class-11-human-edurain-in-physiology-neet-notes-weightage-tips" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_zYgYp46JX4RACyn4cCO0.webp" alt="JEE Mains 2027 Form Date & Exam Date: Expected Schedule" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/jee-mains-2027-form-date-exam-date-session-1-2" style="color: inherit; text-decoration: none;">JEE Mains 2027 Form Date & Exam Date: Expected Schedule</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">JEE Mains 2027 Form Date & Exam Date: Expected Schedule</p>
+        <a href="/blogs/jee-mains-2027-form-date-exam-date-session-1-2" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      <article class="glass-card blog-card" style="padding: 1.5rem; border-radius: 16px; display: flex; flex-direction: column;">
+        <img loading="lazy" src="https://d26zb7slji2zmm.cloudfront.net/website%20blogs/cover_zl9RfP7WInNXDkGppB30.webp" alt="Rotational Motion NEET Physics Notes and Important Formulas" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.2rem;" />
+        <h2 style="font-size: 1.3rem; font-weight: 700; color: #f8fafc; line-height: 1.4; margin-bottom: 0.8rem;">
+          <a href="/blogs/rotational-motion-neet-physics" style="color: inherit; text-decoration: none;">Rotational Motion NEET Physics Notes and Important Formulas</a>
+        </h2>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem; flex: 1;">Rotational Motion NEET Physics Notes and Important Formulas</p>
+        <a href="/blogs/rotational-motion-neet-physics" class="btn btn-accent btn-sm" style="align-self: flex-start; text-decoration: none;">Read Article &rarr;</a>
+      </article>
+    
+      </div>
+    </section>
+  
+      </main>
+      
+    <div class="footer-separator"></div>
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo" style="margin-bottom: 1rem;">
+            <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 4px;">
+              <img loading="lazy" src="/images/logo.webp" alt="EduRain Logo" width="65" height="55" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
+              <div style="display: flex; flex-direction: column; line-height: 1.2; align-items: center;">
+                <div><span class="text-white">Edu</span><span class="text-accent">Rain</span></div>
+                <span style="font-size: 0.45rem; color: #a7f3d0; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; margin-left: -4px;">Victory Starts Here</span>
+              </div>
+            </a>
+          </div>
+          <p>Empowering learners across India with accessible,<br>high-quality education and expert guidance.</p>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/edurain_official/" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/edurainofficial/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.youtube.com/@Eduraininstitute" target="_blank" rel="noopener noreferrer" class="social-icon" title="YouTube" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h2 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Quick Links</h2>
+          <ul class="footer-links">
+            <li><a href="/courses/iit-jee">&gt; JEE Courses</a></li>
+            <li><a href="/courses/neet">&gt; NEET Courses</a></li>
+            <li><a href="/courses/foundation">&gt; Foundation Courses</a></li>
+            <li><a href="/blogs">&gt; Blogs</a></li>
+            <li><a href="/about-us">&gt; About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Contact</h2>
+          <ul class="footer-links">
+            <li><a href="mailto:contact@edurain.in">contact@edurain.in</a></li>
+            <li><a href="tel:+918700201662">+91 8700201662</a></li>
+            <li><span style="color: var(--text-muted); font-size: 0.9rem;">Dwarka Sector 7, New Delhi, 110075</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 EduRain Pvt. Ltd. All rights reserved. | <a href="/privacy" style="color: inherit;">Privacy</a> | <a href="/terms" style="color: inherit;">Terms</a> | <a href="/refund-policy" style="color: inherit;">Refund Policy</a></p>
+      </div>
+    </footer>
+  
+    
+</div>
 
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
@@ -118,11 +1073,13 @@
     <a href="https://www.edurain.in/blogs/thermodynamics-for-class-11-neet-2027/">https://www.edurain.in/blogs/thermodynamics-for-class-11-neet-2027/</a>
     <a href="https://www.edurain.in/blogs/plant-hormones-neet-2027/">https://www.edurain.in/blogs/plant-hormones-neet-2027/</a>
     <a href="https://www.edurain.in/blogs/electrostatics-and-capacitance-notes-formulas/">https://www.edurain.in/blogs/electrostatics-and-capacitance-notes-formulas/</a>
+    <a href="https://www.edurain.in/blogs/how-to-prepare-for-jee-2027-complete-study-plan-tips/">https://www.edurain.in/blogs/how-to-prepare-for-jee-2027-complete-study-plan-tips/</a>
     <a href="https://www.edurain.in/blogs/edurain-in-neet-2027-syllabus-exam-pattern-eligibility-prep-tips/">https://www.edurain.in/blogs/edurain-in-neet-2027-syllabus-exam-pattern-eligibility-prep-tips/</a>
     <a href="https://www.edurain.in/blogs/plant-hormone-tricks-for-neet-aspirants/">https://www.edurain.in/blogs/plant-hormone-tricks-for-neet-aspirants/</a>
     <a href="https://www.edurain.in/blogs/jee-main-2027-preparation-strategy-complete-6-month-plan/">https://www.edurain.in/blogs/jee-main-2027-preparation-strategy-complete-6-month-plan/</a>
     <a href="https://www.edurain.in/blogs/class-10-maths-chapter-2-polynomials/">https://www.edurain.in/blogs/class-10-maths-chapter-2-polynomials/</a>
     <a href="https://www.edurain.in/blogs/locomotion-and-movement-diagrams-for-neet-biology/">https://www.edurain.in/blogs/locomotion-and-movement-diagrams-for-neet-biology/</a>
+    <a href="https://www.edurain.in/blogs/neet-ug-2027-exam-date-expected-schedule-updates/">https://www.edurain.in/blogs/neet-ug-2027-exam-date-expected-schedule-updates/</a>
     <a href="https://www.edurain.in/blogs/master-mechanics-numericals-in-jee-main-physics/">https://www.edurain.in/blogs/master-mechanics-numericals-in-jee-main-physics/</a>
     <a href="https://www.edurain.in/blogs/basic-maths-for-jee-main-advanced/">https://www.edurain.in/blogs/basic-maths-for-jee-main-advanced/</a>
     <a href="https://www.edurain.in/blogs/class-11-vectors-and-newton-s-laws-of-motion/">https://www.edurain.in/blogs/class-11-vectors-and-newton-s-laws-of-motion/</a>

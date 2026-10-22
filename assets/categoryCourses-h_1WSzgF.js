@@ -1,4 +1,4 @@
-import{t as e}from"./courses-DJjP6r1W.js";import{renderFAQ as t}from"./faq-Bo7AT8JC.js";function n(e){let t=`⭐`.repeat(Math.round(e.rating)),n=e.students>=1e3?`${(e.students/1e3).toFixed(1)}K`:e.students;return`
+import{t as e}from"./courses-CNLCIBP1.js";import{renderFAQ as t}from"./faq-Bo7AT8JC.js";function n(e){let t=`⭐`.repeat(Math.round(e.rating)),n=e.students>=1e3?`${(e.students/1e3).toFixed(1)}K`:e.students;return`
         <div class="glass-card course-card fade-in-section visible" data-category="${e.category}" data-link="${e.link||`#`}">
             <div class="course-thumb">
                 <a href="${e.link||`#`}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
@@ -43,7 +43,7 @@ import{t as e}from"./courses-DJjP6r1W.js";import{renderFAQ as t}from"./faq-Bo7AT
         ${o}
         
         ${t(a)}
-    `}function i(){return r(`JEE Courses`,`Comprehensive preparation for IIT-JEE exams. Build a strong foundation and master the concepts to secure your seat in top engineering colleges.`,`JEE`,`
+    `}function i(){return r(`Best IIT JEE 2027 Online Coaching for JEE Main & Advanced`,`Comprehensive preparation for IIT-JEE exams. Build a strong foundation and master the concepts to secure your seat in top engineering colleges.`,`JEE`,`
         <section class="er-courses-content-section" style="max-width: 1000px; margin: 4rem auto; padding: 2.5rem; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
             <div style="position: absolute; top: -50%; left: -20%; width: 60%; height: 100%; background: radial-gradient(circle, rgba(52, 211, 153, 0.08) 0%, transparent 70%); border-radius: 50%; z-index: 0; pointer-events: none;"></div>
             <div style="position: absolute; bottom: -30%; right: -20%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%); border-radius: 50%; z-index: 0; pointer-events: none;"></div>
@@ -99,7 +99,7 @@ import{t as e}from"./courses-DJjP6r1W.js";import{renderFAQ as t}from"./faq-Bo7AT
                 </ul>
             </div>
         </section>
-    `)}function a(){return r(`NEET Courses`,`Crack NEET UG with expert-led coaching in Biology, Physics, and Chemistry designed to help medical aspirants secure top scores and a seat in India's best medical colleges.`,`NEET`,`
+    `)}function a(){return r(`NEET 2027-28 Complete Online Coaching & Preparation`,`Crack NEET UG with expert-led coaching in Biology, Physics, and Chemistry designed to help medical aspirants secure top scores and a seat in India's best medical colleges.`,`NEET`,`
         <section class="er-courses-content-section" style="max-width: 1000px; margin: 4rem auto; padding: 2.5rem; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
             <div style="position: absolute; top: -50%; left: -20%; width: 60%; height: 100%; background: radial-gradient(circle, rgba(52, 211, 153, 0.08) 0%, transparent 70%); border-radius: 50%; z-index: 0; pointer-events: none;"></div>
             <div style="position: absolute; bottom: -30%; right: -20%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%); border-radius: 50%; z-index: 0; pointer-events: none;"></div>
@@ -155,7 +155,7 @@ import{t as e}from"./courses-DJjP6r1W.js";import{renderFAQ as t}from"./faq-Bo7AT
                 </ul>
             </div>
         </section>
-    `)}function o(){return r(`Foundation Courses`,`A strong foundation changes everything. From Class 6 to 10, we make sure your concepts in Science, Maths, and English are crystal clear, the perfect stepping stone for future competitive exams.`,`FOUNDATION`,`
+    `)}function o(){return r(`Best Online Coaching for Classes 6 to 10 | Foundation`,`A strong foundation changes everything. From Class 6 to 10, we make sure your concepts in Science, Maths, and English are crystal clear, the perfect stepping stone for future competitive exams.`,`FOUNDATION`,`
         <section class="er-courses-content-section" style="max-width: 1000px; margin: 4rem auto; padding: 2.5rem; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
             <div style="position: absolute; top: -50%; left: -20%; width: 60%; height: 100%; background: radial-gradient(circle, rgba(52, 211, 153, 0.08) 0%, transparent 70%); border-radius: 50%; z-index: 0; pointer-events: none;"></div>
             <div style="position: absolute; bottom: -30%; right: -20%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%); border-radius: 50%; z-index: 0; pointer-events: none;"></div>

@@ -33,7 +33,7 @@ function e(){return`
                 <div class="er-demo-image-wrap er-reveal visible">
                     <div class="er-demo-glow-ring"></div>
                     <img loading="lazy"
-                        src="/images/demo.png"
+                        src="/images/demo.webp"
                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                         alt="Free Demo — Teacher with student"
                         class="er-demo-img"
