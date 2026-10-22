@@ -736,7 +736,6 @@ function prerenderBlogArticle(meta) {
   }));
 
   const allUrls = [...staticUrls, ...blogUrls];
-  const seoLinksHtml = `\n  <div id="seo-links" style="display:none;" aria-hidden="true">\n${allUrls.map(u => `    <a href="${u.loc}">${u.loc}</a>`).join('\n')}\n  </div>\n`;
 
   // -------------------------------------------------------------
   // Loop over every route and write fully prerendered index.html
@@ -793,7 +792,6 @@ function prerenderBlogArticle(meta) {
     `;
 
     finalHtml = finalHtml.replace('<div id="app"></div>', `<div id="app">\n${fullPageShellHtml}\n</div>`);
-    finalHtml = finalHtml.replace('</body>', `${seoLinksHtml}</body>`);
 
     // 4. Save to dist/{route}/index.html
     const folderPath = path.join(distDir, route);
@@ -835,7 +833,6 @@ function prerenderBlogArticle(meta) {
 
   let homeHtml = fs.readFileSync(indexHtmlPath, 'utf8');
   homeHtml = homeHtml.replace('<div id="app"></div>', `<div id="app">\n${prerenderedHomepageApp}\n</div>`);
-  homeHtml = homeHtml.replace('</body>', `${seoLinksHtml}</body>`);
   fs.writeFileSync(indexHtmlPath, homeHtml);
   console.log('✅ Injected full prerendered shell into dist/index.html (H1 + Cards + Navbar + Footer).');
 
@@ -879,6 +876,17 @@ ${blogUrls.map(u => `    <url>
 </sitemapindex>`;
 
   fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml);
+
+  // Also sync to public folder for repository tracking
+  const publicDir = path.join(__dirname, 'public');
+  if (fs.existsSync(publicDir)) {
+    fs.writeFileSync(path.join(publicDir, 'sitemap-0.xml'), sitemap0Xml);
+    fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml);
+    const publicBlogsDir = path.join(publicDir, 'blogs');
+    if (!fs.existsSync(publicBlogsDir)) fs.mkdirSync(publicBlogsDir, { recursive: true });
+    fs.writeFileSync(path.join(publicBlogsDir, 'sitemap-index.xml'), blogsSitemapXml);
+  }
+
   console.log(`Generated sitemap.xml index and split sitemaps (${staticUrls.length} static URLs, ${blogUrls.length} blog URLs).`);
   console.log('🎉 Successfully prerendered all routes with 100% full raw HTML (H1, H2, Cards, Content, FAQs, and Schemas)!');
 })();
