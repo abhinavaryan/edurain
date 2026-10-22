@@ -124,7 +124,7 @@ export function renderJEECourses() {
     `;
 
     return renderCategoryPage(
-        "JEE Courses", 
+        "Best IIT JEE 2027 Online Coaching for JEE Main & Advanced", 
         "Comprehensive preparation for IIT-JEE exams. Build a strong foundation and master the concepts to secure your seat in top engineering colleges.",
         "JEE",
         jeeExtraHtml
@@ -191,7 +191,7 @@ export function renderNEETCourses() {
     `;
 
     return renderCategoryPage(
-        "NEET Courses",
+        "NEET 2027-28 Complete Online Coaching & Preparation",
         "Crack NEET UG with expert-led coaching in Biology, Physics, and Chemistry designed to help medical aspirants secure top scores and a seat in India's best medical colleges.",
         "NEET",
         neetExtraHtml
@@ -261,7 +261,7 @@ export function renderFoundationCourses() {
     `;
 
     return renderCategoryPage(
-        "Foundation Courses",
+        "Best Online Coaching for Classes 6 to 10 | Foundation",
         "A strong foundation changes everything. From Class 6 to 10, we make sure your concepts in Science, Maths, and English are crystal clear, the perfect stepping stone for future competitive exams.",
         "FOUNDATION",
         foundationExtraHtml

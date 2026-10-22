@@ -5,14 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node generate_routes.cjs",
+    "optimize-images": "node scripts/optimize_local_images.cjs",
+    "build": "node scripts/optimize_local_images.cjs && vite build && node generate_routes.cjs",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "sync-courses-s3": "node scripts/sync_courses_s3.mjs",
     "sync-blogs-s3": "node scripts/sync_blogs_s3.mjs",
     "sync-wiki": "node wiki/scripts/extract_chats.cjs",
-    "push": "npm run sync-wiki && git add . && git commit -a -m \"Update site\" --allow-empty && git push && npm run deploy"
+    "push": "node scripts/optimize_local_images.cjs && npm run sync-wiki && git add . && git commit -a -m \"Update site\" --allow-empty && git push && npm run deploy"
   },
   "devDependencies": {
     "@tailwindcss/container-queries": "^0.1.1",

@@ -151,7 +151,7 @@ const routes = {
         render: () => renderJEECourses(),
         postRender: () => { 
             initFAQ(); 
-            setMetaTags("Best IIT JEE Online Coaching for JEE Main & Advanced | EduRain", "Crack IIT JEE with EduRain: live classes, expert faculty, and structured material for complete JEE Main & Advanced exam preparation", "https://www.edurain.in/courses/iit-jee"); 
+            setMetaTags("Best IIT JEE 2027 Online Coaching for JEE Main & Advanced | EduRain", "Crack IIT JEE 2027 with EduRain: live classes, expert faculty, and structured material for complete JEE Main & Advanced exam preparation.", "https://www.edurain.in/courses/iit-jee"); 
             if (window.anime) {
                 window.anime({
                     targets: '.er-anime-reveal',

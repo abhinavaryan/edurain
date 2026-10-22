@@ -14,7 +14,7 @@ export function renderFaculty() {
             subject: "Chemistry",
             exp: "14 Years Exp.",
             desc: "She is dedicated to building strong fundamentals and developing problem-solving excellence in students.",
-            image: "/images/home teachers image/2.png",
+            image: "/images/home teachers image/2.webp",
             imgStyle: "transform: scale(1.05) translateY(11px); transform-origin: bottom center;",
             icon: "🧪"
         },
@@ -32,7 +32,7 @@ export function renderFaculty() {
             subject: "Physics",
             exp: "17+ Years Exp.",
             desc: "He is recognized for his concept-driven teaching approach and consistent success in guiding NEET aspirants toward top ranks.",
-            image: "/images/home teachers image/3.png",
+            image: "/images/home teachers image/3.webp",
             imgStyle: "transform: scale(1.0) translateY(3px); transform-origin: bottom center;",
             icon: "⚡"
         },
@@ -41,7 +41,7 @@ export function renderFaculty() {
             subject: "Biology",
             exp: "15+ Years Exp.",
             desc: "A highly respected Biology mentor, He is known for making complex concepts simple and helping students achieve NEET results.",
-            image: "/images/home teachers image/4.png",
+            image: "/images/home teachers image/4.webp",
             imgStyle: "transform: scale(1.12) translateY(16px); transform-origin: bottom center;",
             icon: "🧬"
         },

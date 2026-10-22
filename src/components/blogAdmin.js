@@ -154,9 +154,9 @@ export function renderBlogAdmin() {
                                 
                                 <label style="display: block; margin-bottom: 0.5rem; color: #cbd5e1; font-weight: 600;">Cover Image</label>
                                 <div style="margin-bottom: 0.75rem;">
-                                    <input type="file" id="blog-cover-file" accept="image/*" style="display: none;">
+                                    <input type="file" id="blog-cover-file" accept="image/*,.pdf" style="display: none;">
                                     <button type="button" id="btn-upload-cover" style="width: 100%; padding: 0.75rem 1rem; background: linear-gradient(135deg, #16a34a, #15803d); color: white; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: 0.2s;">
-                                        <span>☁️ Upload Image to AWS S3</span>
+                                        <span>☁️ Upload Image/PDF (Auto-WebP)</span>
                                     </button>
                                     <div id="cover-upload-status" style="font-size: 0.8rem; margin-top: 0.4rem; color: #94a3b8; display: none;"></div>
                                     <div id="cover-preview-container" style="display: none; margin-top: 0.5rem; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.2); max-height: 160px; position: relative;">
@@ -221,9 +221,9 @@ export function renderBlogAdmin() {
                                 
                                 <label style="display: block; margin-bottom: 0.25rem; color: #cbd5e1; font-size: 0.85rem;">Banner Image</label>
                                 <div style="margin-bottom: 0.75rem;">
-                                    <input type="file" id="blog-sidebar-banner-file" accept="image/*" style="display: none;">
+                                    <input type="file" id="blog-sidebar-banner-file" accept="image/*,.pdf" style="display: none;">
                                     <button type="button" id="btn-upload-sidebar-banner" style="width: 100%; padding: 0.65rem 1rem; background: linear-gradient(135deg, #16a34a, #15803d); color: white; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: 0.2s;">
-                                        <span>☁️ Upload Banner to AWS S3</span>
+                                        <span>☁️ Upload Banner (Auto-WebP)</span>
                                     </button>
                                     <div id="sidebar-banner-upload-status" style="font-size: 0.8rem; margin-top: 0.4rem; color: #94a3b8; display: none;"></div>
                                     <div id="sidebar-banner-preview-container" style="display: none; margin-top: 0.5rem; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.2); max-height: 140px; position: relative;">
@@ -486,13 +486,17 @@ export function initBlogAdmin() {
             activeUploadsCount++;
 
             btnUploadCover.disabled = true;
-            btnUploadCover.innerHTML = '<span>⏳ Uploading to S3...</span>';
+            btnUploadCover.innerHTML = '<span>⏳ Converting & Uploading...</span>';
             coverStatus.style.display = 'block';
             coverStatus.style.color = '#38bdf8';
-            coverStatus.textContent = `Uploading ${file.name} to AWS S3 (website blogs)...`;
+            coverStatus.textContent = `Optimizing ${file.name} to WebP...`;
 
             try {
-                const s3Url = await uploadToS3(file, 'website blogs');
+                const s3Url = await uploadToS3(file, 'website blogs', '', (statusText) => {
+                    if (thisSessionId === currentDraftSessionId) {
+                        coverStatus.textContent = statusText;
+                    }
+                });
                 if (thisSessionId !== currentDraftSessionId || document.getElementById('view-add-blog')?.style.display === 'none') {
                     console.warn('Cover upload completed but draft session or view changed. Discarding stale completion.');
                     return;
@@ -501,7 +505,7 @@ export function initBlogAdmin() {
                 coverPreviewImg.src = s3Url;
                 coverPreviewContainer.style.display = 'block';
                 coverStatus.style.color = '#4ade80';
-                coverStatus.textContent = '✅ Uploaded to AWS S3 successfully!';
+                coverStatus.textContent = '✅ Converted to WebP & uploaded to AWS S3 successfully!';
             } catch (err) {
                 if (thisSessionId === currentDraftSessionId) {
                     console.error('S3 Cover upload failed:', err);
@@ -511,7 +515,7 @@ export function initBlogAdmin() {
             } finally {
                 activeUploadsCount = Math.max(0, activeUploadsCount - 1);
                 btnUploadCover.disabled = false;
-                btnUploadCover.innerHTML = '<span>☁️ Upload Image to AWS S3</span>';
+                btnUploadCover.innerHTML = '<span>☁️ Upload Image/PDF (Auto-WebP)</span>';
                 coverFileInput.value = '';
                 alignEditorHeight();
             }
@@ -545,13 +549,17 @@ export function initBlogAdmin() {
             activeUploadsCount++;
 
             btnUploadSidebarBanner.disabled = true;
-            btnUploadSidebarBanner.innerHTML = '<span>⏳ Uploading to S3...</span>';
+            btnUploadSidebarBanner.innerHTML = '<span>⏳ Converting & Uploading...</span>';
             sidebarBannerStatus.style.display = 'block';
             sidebarBannerStatus.style.color = '#38bdf8';
-            sidebarBannerStatus.textContent = `Uploading ${file.name} to AWS S3...`;
+            sidebarBannerStatus.textContent = `Optimizing ${file.name} to WebP...`;
 
             try {
-                const s3Url = await uploadToS3(file, 'website blogs');
+                const s3Url = await uploadToS3(file, 'website blogs', '', (statusText) => {
+                    if (thisSessionId === currentDraftSessionId) {
+                        sidebarBannerStatus.textContent = statusText;
+                    }
+                });
                 if (thisSessionId !== currentDraftSessionId || document.getElementById('view-add-blog')?.style.display === 'none') {
                     console.warn('Sidebar banner upload completed but draft session or view changed. Discarding stale completion.');
                     return;
@@ -560,7 +568,7 @@ export function initBlogAdmin() {
                 sidebarBannerPreviewImg.src = s3Url;
                 sidebarBannerPreviewContainer.style.display = 'block';
                 sidebarBannerStatus.style.color = '#4ade80';
-                sidebarBannerStatus.textContent = '✅ Uploaded to AWS S3 successfully!';
+                sidebarBannerStatus.textContent = '✅ Converted to WebP & uploaded to AWS S3 successfully!';
             } catch (err) {
                 if (thisSessionId === currentDraftSessionId) {
                     console.error('S3 Sidebar banner upload failed:', err);
@@ -570,7 +578,7 @@ export function initBlogAdmin() {
             } finally {
                 activeUploadsCount = Math.max(0, activeUploadsCount - 1);
                 btnUploadSidebarBanner.disabled = false;
-                btnUploadSidebarBanner.innerHTML = '<span>☁️ Upload Banner to AWS S3</span>';
+                btnUploadSidebarBanner.innerHTML = '<span>☁️ Upload Banner (Auto-WebP)</span>';
                 sidebarBannerFileInput.value = '';
                 alignEditorHeight();
             }
@@ -644,7 +652,7 @@ export function initBlogAdmin() {
     function imageHandler() {
         const input = document.createElement('input');
         input.setAttribute('type', 'file');
-        input.setAttribute('accept', 'image/*');
+        input.setAttribute('accept', 'image/*,.pdf');
         input.click();
         input.onchange = async () => {
             const file = input.files?.[0];
@@ -655,10 +663,12 @@ export function initBlogAdmin() {
             const statusDiv = document.getElementById('save-status');
             if (statusDiv) {
                 statusDiv.style.color = '#38bdf8';
-                statusDiv.textContent = '⏳ Uploading editor image to S3 (website blogs)...';
+                statusDiv.textContent = '⏳ Optimizing & Converting image to WebP...';
             }
             try {
-                const s3Url = await uploadToS3(file, 'website blogs');
+                const s3Url = await uploadToS3(file, 'website blogs', '', (statusText) => {
+                    if (statusDiv) statusDiv.textContent = statusText;
+                });
                 if (thisSessionId !== currentDraftSessionId || document.getElementById('view-add-blog')?.style.display === 'none') {
                     console.warn('Quill image upload completed but draft session or view changed. Discarding stale completion.');
                     return;
@@ -667,7 +677,7 @@ export function initBlogAdmin() {
                 quill.setSelection(range.index + 1);
                 if (statusDiv) {
                     statusDiv.style.color = '#4ade80';
-                    statusDiv.textContent = '✅ Image inserted from AWS S3!';
+                    statusDiv.textContent = '✅ Image converted to WebP & inserted from AWS S3!';
                     setTimeout(() => { if (statusDiv && statusDiv.textContent.includes('inserted')) statusDiv.textContent = ''; }, 3000);
                 }
             } catch (err) {

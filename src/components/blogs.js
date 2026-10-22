@@ -369,7 +369,7 @@ export async function initBlogs() {
 
         // Apply Open Graph & Twitter Tags dynamically for client-side routing
         const ogUrl = window.location.origin + `/blogs/${blog.slug || blog.id}`;
-        const ogImage = blog.coverImage || window.location.origin + "/images/og-banner.png";
+        const ogImage = blog.coverImage || window.location.origin + "/images/og-banner.webp";
 
         let mOgTitle = document.querySelector('meta[property="og:title"]');
         if (mOgTitle) mOgTitle.content = seoTitle;
