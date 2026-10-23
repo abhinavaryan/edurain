@@ -1,8 +1,8 @@
-import{t as e}from"./courses-RAgz3Tu6.js";import{renderFAQ as t}from"./faq-Bo7AT8JC.js";function n(e){let t=`⭐`.repeat(Math.round(e.rating)),n=e.students>=1e3?`${(e.students/1e3).toFixed(1)}K`:e.students;return`
+import{t as e}from"./courses-BmCYqu1d.js";import{renderFAQ as t}from"./faq-Bo7AT8JC.js";function n(e){let t=`⭐`.repeat(Math.round(e.rating)),n=e.students>=1e3?`${(e.students/1e3).toFixed(1)}K`:e.students;return`
         <div class="glass-card course-card fade-in-section visible" data-category="${e.category}" data-link="${e.link||`#`}">
             <div class="course-thumb">
                 <a href="${e.link||`#`}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
-                    <img loading="lazy" src="${e.thumbnail||`/images/demo.webp`}" alt="${e.title}" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;" />
+                    <img loading="lazy" src="${e.thumbnail||`/images/demo.webp`}" alt="${e.title}" width="400" height="300" style="aspect-ratio: 4/3; object-fit: cover;" />
                 </a>
             </div>
             <span class="course-category">${e.category}</span>
