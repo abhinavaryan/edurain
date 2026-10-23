@@ -2,7 +2,7 @@ import{t as e}from"./courses-DACQpEYm.js";import{renderFAQ as t}from"./faq-Bo7AT
         <div class="glass-card course-card fade-in-section visible" data-category="${e.category}" data-link="${e.link||`#`}">
             <div class="course-thumb">
                 <a href="${e.link||`#`}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
-                    <img loading="lazy" src="${e.thumbnail||`https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80`}" alt="${e.title}" />
+                    <img loading="lazy" src="${e.thumbnail||`/images/demo.webp`}" alt="${e.title}" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;" />
                 </a>
             </div>
             <span class="course-category">${e.category}</span>
