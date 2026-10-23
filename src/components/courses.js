@@ -12,7 +12,7 @@ export function renderCourses() {
             <div class="glass-card course-card fade-in-section visible" data-category="${course.category}" data-link="${course.link || '#'}">
                 <div class="course-thumb">
                     <a href="${course.link || '#'}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
-                        <img loading="lazy" src="${course.thumbnail || '/images/demo.webp'}" alt="${course.title}" width="400" height="300" style="aspect-ratio: 4/3; object-fit: cover;" />
+                        <img loading="lazy" src="${course.thumbnail || '/images/demo.webp'}" alt="${course.title}" width="400" height="295" style="aspect-ratio: 1.355/1; object-fit: cover; object-position: top center;" />
                     </a>
                 </div>
                 <span class="course-category">${course.category}</span>
