@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "optimize-images": "node scripts/optimize_local_images.cjs",
-    "build": "node scripts/optimize_local_images.cjs && vite build && node generate_routes.cjs",
+    "build": "node scripts/optimize_local_images.cjs && node --max-old-space-size=4096 ./node_modules/vite/bin/vite.js build && node generate_routes.cjs",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
