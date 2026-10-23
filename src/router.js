@@ -263,6 +263,7 @@ export const navigateTo = (path) => {
 
 export const initRouter = () => {
   const app = document.getElementById('app');
+  let isInitialLoad = true;
 
   // Handle GitHub Pages 404 redirect hack
   const urlParams = new URLSearchParams(window.location.search);
@@ -350,6 +351,23 @@ export const initRouter = () => {
         postRender: () => { }
       };
     }
+
+    // Hydration check: On initial page load, if #app is already prerendered by SSG,
+    // do NOT wipe and recreate DOM nodes. This eliminates layout shifts (CLS=0) and slashes TBT.
+    const hasPrerenderedContent = app && app.children.length > 0;
+    if (isInitialLoad && hasPrerenderedContent) {
+      isInitialLoad = false;
+      initNavbar();
+      initAuthModal();
+      initFooter();
+      initIosAppPopup();
+      if (route.postRender) route.postRender();
+      if (window.observeFadeElements) {
+        window.observeFadeElements();
+      }
+      return;
+    }
+    isInitialLoad = false;
 
     const isStandalonePage = path.startsWith('/blogadmin') || path.startsWith('/study');
     const navbarHTML = isStandalonePage ? '' : renderNavbar();

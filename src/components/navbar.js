@@ -1,6 +1,13 @@
 // logoutUser is dynamically imported on click
 
-export function renderNavbar() {
+export function renderNavbar(activeRoute = '') {
+    const currentPath = activeRoute || (typeof window !== 'undefined' && window.location ? window.location.pathname : '/');
+    const isHome = currentPath === '' || currentPath === '/';
+    const isCourses = currentPath.startsWith('/courses') || currentPath.startsWith('courses');
+    const isBlogs = currentPath.startsWith('/blogs') || currentPath.startsWith('blogs');
+    const isAbout = currentPath.includes('about');
+    const isContact = currentPath.includes('contact');
+
     return `
         <nav class="navbar" id="main-nav">
             <div class="navbar-container">
@@ -16,15 +23,13 @@ export function renderNavbar() {
                     </a>
                 </div>
                 <div class="nav-links">
-                    <a href="/" class="nav-link active">Home</a>
-                    <a href="/courses" class="nav-link">Our Courses</a>
-                    <a href="/blogs" class="nav-link">Blogs</a>
-                    <a href="/about-us" class="nav-link">About Us</a>
-                    <a href="/contact-us" class="nav-link">Contact Us</a>
+                    <a href="/" class="nav-link ${isHome ? 'active' : ''}">Home</a>
+                    <a href="/courses" class="nav-link ${isCourses ? 'active' : ''}">Our Courses</a>
+                    <a href="/blogs" class="nav-link ${isBlogs ? 'active' : ''}">Blogs</a>
+                    <a href="/about-us" class="nav-link ${isAbout ? 'active' : ''}">About Us</a>
+                    <a href="/contact-us" class="nav-link ${isContact ? 'active' : ''}">Contact Us</a>
                 </div>
-                <div class="auth-btn-area">
-                    ${/* import.meta.env.DEV ? '<button class="btn btn-accent login-btn">Login</button>' : '' */ ''}
-                </div>
+                <div class="auth-btn-area"></div>
                 <button class="hamburger" id="hamburger-btn" aria-label="Open Mobile Menu">
                     <span></span>
                     <span></span>
@@ -48,15 +53,13 @@ export function renderNavbar() {
                 <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close Mobile Menu">&times;</button>
             </div>
             <div class="mobile-menu-body">
-                <a href="/" class="nav-link active">Home</a>
-                <a href="/courses" class="nav-link">Our Courses</a>
-                <a href="/blogs" class="nav-link">Blogs</a>
-                <a href="/about-us" class="nav-link">About Us</a>
-                <a href="/contact-us" class="nav-link">Contact Us</a>
+                <a href="/" class="nav-link ${isHome ? 'active' : ''}">Home</a>
+                <a href="/courses" class="nav-link ${isCourses ? 'active' : ''}">Our Courses</a>
+                <a href="/blogs" class="nav-link ${isBlogs ? 'active' : ''}">Blogs</a>
+                <a href="/about-us" class="nav-link ${isAbout ? 'active' : ''}">About Us</a>
+                <a href="/contact-us" class="nav-link ${isContact ? 'active' : ''}">Contact Us</a>
             </div>
-            <div class="mobile-menu-footer auth-btn-area">
-                ${/* import.meta.env.DEV ? '<button class="btn btn-accent login-btn" style="width: 100%;">Login/Register</button>' : '' */ ''}
-            </div>
+            <div class="mobile-menu-footer auth-btn-area"></div>
         </div>
     `;
 }

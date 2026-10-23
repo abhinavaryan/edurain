@@ -1,4 +1,4 @@
-import coursesData from '../data/courses.json';
+import coursesData from '../data/courses.json' with { type: 'json' };
 import { renderFAQ, initFAQ } from './faq.js';
 
 export function renderCourses() {
@@ -9,10 +9,10 @@ export function renderCourses() {
             : course.students;
 
         return `
-            <div class="glass-card course-card fade-in-section" data-category="${course.category}" data-link="${course.link || '#'}">
+            <div class="glass-card course-card fade-in-section visible" data-category="${course.category}" data-link="${course.link || '#'}">
                 <div class="course-thumb">
                     <a href="${course.link || '#'}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
-                        <img loading="lazy" src="${course.thumbnail || 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80'}" alt="${course.title}" />
+                        <img loading="lazy" src="${course.thumbnail || '/images/demo.webp'}" alt="${course.title}" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;" />
                     </a>
                 </div>
                 <span class="course-category">${course.category}</span>
@@ -39,8 +39,8 @@ export function renderCourses() {
     return `
         <section class="courses-section" id="courses-page">
             <div class="section-header">
-                <h1>Our Courses</h1>
-                <h2 style="font-size: var(--fs-lg); color: var(--text-secondary); font-weight: 400;">Find the best course for your IIT JEE, NEET, or Foundation (Class 6th to 10th) preparation and start learning today </h2>
+                <h1>Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-10)</h1>
+                <h2 style="font-size: var(--fs-lg); color: var(--text-secondary); font-weight: 400; margin-top: 8px;">Find the best course for your IIT JEE, NEET, or Foundation (Class 6th to 10th) preparation and start learning today</h2>
             </div>
             <div class="filter-row">
                 <a href="/courses" class="filter-btn active" style="text-decoration: none;">All</a>

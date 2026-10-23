@@ -1,5 +1,5 @@
 export function renderFooter() {
-    const isContactPage = window.location.pathname.includes('/contact-us');
+    const isContactPage = (typeof window !== 'undefined' && window.location) ? window.location.pathname.includes('/contact-us') : false;
     const separatorHtml = isContactPage ? '' : '<div class="footer-separator"></div>';
     return `
         ${separatorHtml}

@@ -1,5 +1,4 @@
-import { saveContactMessage } from '../firebase/firestore.js';
-
+// saveContactMessage is dynamically imported on submit
 export function renderContact() {
     return `
         <section class="contact-section" id="contact">
@@ -138,6 +137,7 @@ export function initContact() {
 
                 // 2. Also attempt to save to Firebase Firestore in background if permissions allow
                 try {
+                    const { saveContactMessage } = await import('../firebase/firestore.js');
                     await saveContactMessage(name, email, message);
                 } catch (fbErr) {
                     console.warn('Firebase Firestore message save skipped (rules restriction):', fbErr?.message || fbErr);

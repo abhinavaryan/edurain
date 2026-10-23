@@ -131,434 +131,8 @@ function fetchBlogs() {
 
 // -------------------------------------------------------------
 // Prerendering HTML Builders (SSG)
+// Real components are imported dynamically inside generate()
 // -------------------------------------------------------------
-
-function renderPrerenderNavbar(activeRoute = '') {
-  const isHome = activeRoute === '' || activeRoute === '/';
-  const isCourses = activeRoute.startsWith('courses');
-  const isBlogs = activeRoute.startsWith('blogs');
-  const isAbout = activeRoute === 'about-us';
-  const isContact = activeRoute === 'contact-us';
-
-  return `
-    <nav class="navbar" id="main-nav">
-      <div class="navbar-container">
-        <div class="logo">
-          <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 4px;">
-            <img src="/images/logo.webp" fetchpriority="high" alt="EduRain Logo" width="65" height="55" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
-            <div style="display: flex; flex-direction: column; line-height: 1.2; align-items: center;">
-              <div>
-                <span class="text-white">Edu</span><span class="text-accent">Rain</span>
-              </div>
-              <span style="font-size: 0.45rem; color: #a7f3d0; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; margin-left: -4px;">Victory Starts Here</span>
-            </div>
-          </a>
-        </div>
-        <div class="nav-links">
-          <a href="/" class="nav-link ${isHome ? 'active' : ''}">Home</a>
-          <a href="/courses" class="nav-link ${isCourses ? 'active' : ''}">Our Courses</a>
-          <a href="/blogs" class="nav-link ${isBlogs ? 'active' : ''}">Blogs</a>
-          <a href="/about-us" class="nav-link ${isAbout ? 'active' : ''}">About Us</a>
-          <a href="/contact-us" class="nav-link ${isContact ? 'active' : ''}">Contact Us</a>
-        </div>
-        <div class="auth-btn-area"></div>
-        <button class="hamburger" id="hamburger-btn" aria-label="Open Mobile Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </nav>
-    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
-    <div class="mobile-menu" id="mobile-menu">
-      <div class="mobile-menu-header">
-        <div class="logo">
-          <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
-            <img src="/images/logo.webp" alt="EduRain Logo" width="50" height="40" style="height: 40px; width: auto; max-width: 50px; object-fit: contain;">
-            <div style="display: flex; flex-direction: column; line-height: 1.2;">
-              <div><span class="text-white">Edu</span><span class="text-accent">Rain</span></div>
-            </div>
-          </a>
-        </div>
-        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close Mobile Menu">&times;</button>
-      </div>
-      <div class="mobile-menu-body">
-        <a href="/" class="nav-link ${isHome ? 'active' : ''}">Home</a>
-        <a href="/courses" class="nav-link ${isCourses ? 'active' : ''}">Our Courses</a>
-        <a href="/blogs" class="nav-link ${isBlogs ? 'active' : ''}">Blogs</a>
-        <a href="/about-us" class="nav-link ${isAbout ? 'active' : ''}">About Us</a>
-        <a href="/contact-us" class="nav-link ${isContact ? 'active' : ''}">Contact Us</a>
-      </div>
-      <div class="mobile-menu-footer auth-btn-area"></div>
-    </div>
-  `;
-}
-
-function renderPrerenderFooter() {
-  return `
-    <div class="footer-separator"></div>
-    <footer class="site-footer">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <div class="logo" style="margin-bottom: 1rem;">
-            <a href="https://www.edurain.in" style="text-decoration: none; display: flex; align-items: center; gap: 4px;">
-              <img loading="lazy" src="/images/logo.webp" alt="EduRain Logo" width="65" height="55" style="height: 55px; width: auto; max-width: 65px; object-fit: contain;">
-              <div style="display: flex; flex-direction: column; line-height: 1.2; align-items: center;">
-                <div><span class="text-white">Edu</span><span class="text-accent">Rain</span></div>
-                <span style="font-size: 0.45rem; color: #a7f3d0; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; margin-left: -4px;">Victory Starts Here</span>
-              </div>
-            </a>
-          </div>
-          <p>Empowering learners across India with accessible,<br>high-quality education and expert guidance.</p>
-          <div class="social-icons">
-            <a href="https://www.instagram.com/edurain_official/" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/edurainofficial/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://www.youtube.com/@Eduraininstitute" target="_blank" rel="noopener noreferrer" class="social-icon" title="YouTube" aria-label="YouTube">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h2 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Quick Links</h2>
-          <ul class="footer-links">
-            <li><a href="/courses/iit-jee">&gt; JEE Courses</a></li>
-            <li><a href="/courses/neet">&gt; NEET Courses</a></li>
-            <li><a href="/courses/foundation">&gt; Foundation Courses</a></li>
-            <li><a href="/blogs">&gt; Blogs</a></li>
-            <li><a href="/about-us">&gt; About Us</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h2 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Contact</h2>
-          <ul class="footer-links">
-            <li><a href="mailto:contact@edurain.in">contact@edurain.in</a></li>
-            <li><a href="tel:+918700201662">+91 8700201662</a></li>
-            <li><span style="color: var(--text-muted); font-size: 0.9rem;">Dwarka Sector 7, New Delhi, 110075</span></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; ${new Date().getFullYear()} EduRain Pvt. Ltd. All rights reserved. | <a href="/privacy" style="color: inherit;">Privacy</a> | <a href="/terms" style="color: inherit;">Terms</a> | <a href="/refund-policy" style="color: inherit;">Refund Policy</a></p>
-      </div>
-    </footer>
-  `;
-}
-
-function renderCourseCardsHtml(courses) {
-  return courses.map(course => {
-    const stars = '⭐'.repeat(Math.round(course.rating || 5));
-    const studentCount = (course.students >= 1000)
-      ? `${(course.students / 1000).toFixed(1)}K`
-      : (course.students || 500);
-
-    return `
-      <div class="glass-card course-card fade-in-section visible" data-category="${course.category}" data-link="${course.link || '#'}">
-        <div class="course-thumb">
-          <a href="${course.link || '#'}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
-            <img loading="lazy" src="${course.thumbnail || '/images/demo.webp'}" alt="${course.title}" />
-          </a>
-        </div>
-        <span class="course-category">${course.category}</span>
-        <h3>
-          <a href="${course.link || '#'}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
-            ${course.title}
-          </a>
-        </h3>
-        <p class="course-instructor">by ${course.instructor}</p>
-        <div class="course-meta">
-          <span class="course-rating">${stars} ${course.rating}</span>
-          <span class="course-students">${studentCount} students</span>
-        </div>
-        <div class="course-bottom">
-          <span class="course-price">${course.price}</span>
-          <a href="${course.link || '#'}" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">
-            View Details
-          </a>
-        </div>
-      </div>
-    `;
-  }).join('');
-}
-
-function renderFaqSectionHtml(category = 'ALL') {
-  const list = faqsData[category] || faqsData.ALL;
-  const itemsHtml = list.map((faq, index) => {
-    const isFirst = index === 0;
-    return `
-      <div class="faq-item glass-card">
-        <button class="faq-question-btn" aria-expanded="${isFirst ? 'true' : 'false'}" data-index="${index}">
-          <span class="faq-question-text">${faq.question}</span>
-          <span class="faq-icon">
-            <span class="faq-icon-plus" style="display: ${isFirst ? 'none' : 'block'};">+</span>
-            <span class="faq-icon-minus" style="display: ${isFirst ? 'block' : 'none'};">×</span>
-          </span>
-        </button>
-        <div class="faq-answer-container" style="display: ${isFirst ? 'block' : 'none'};">
-          <p class="faq-answer-text">${faq.answer}</p>
-        </div>
-      </div>
-    `;
-  }).join('');
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": list.map(f => ({
-      "@type": "Question",
-      "name": f.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": f.answer
-      }
-    }))
-  };
-
-  return `
-    <section class="faq-section" style="margin-top: 4rem;">
-      <div class="section-header" style="text-align: center; margin-bottom: 40px;">
-        <h2 style="color: #ffffff; display: inline-block; position: relative; font-size: 2.2rem; font-weight: 700; margin-bottom: 0;">
-          Frequently Asked Questions
-          <span style="position: absolute; bottom: -10px; left: 0; width: 100%; height: 4px; background-color: #ffc107; border-radius: 2px;"></span>
-        </h2>
-      </div>
-      <div class="faq-container" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
-        ${itemsHtml}
-      </div>
-    </section>
-    <script type="application/ld+json">
-      ${JSON.stringify(faqSchema)}
-    </script>
-  `;
-}
-
-// -------------------------------------------------------------
-// Route-specific Prerender Pages
-// -------------------------------------------------------------
-
-function prerenderJEECourses() {
-  const filtered = coursesData.filter(c => c.category === 'JEE');
-  const cards = renderCourseCardsHtml(filtered);
-
-  return `
-    <section class="courses-section">
-      <div class="section-header">
-        <h1>Best IIT JEE 2027 Online Coaching for JEE Main & Advanced</h1>
-        <p>Comprehensive preparation for IIT-JEE exams. Build a strong foundation and master the concepts to secure your seat in top engineering colleges.</p>
-      </div>
-      <div class="filter-row">
-        <a href="/courses" class="filter-btn" style="text-decoration: none;">All</a>
-        <a href="/courses/iit-jee" class="filter-btn active" style="text-decoration: none;">JEE</a>
-        <a href="/courses/neet" class="filter-btn" style="text-decoration: none;">NEET</a>
-        <a href="/courses/foundation" class="filter-btn" style="text-decoration: none;">FOUNDATION</a>
-      </div>
-      <div class="courses-grid" style="margin-top: 40px;">
-        ${cards}
-      </div>
-    </section>
-
-    <section class="er-courses-content-section" style="max-width: 1000px; margin: 4rem auto; padding: 2.5rem; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
-      <div style="position: relative; z-index: 1;">
-        <h2 style="color: #f8fafc; font-size: 2.2rem; margin-bottom: 1.2rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em;">
-          IIT- JEE Preparation That Actually Builds Your Rank <span style="background: -webkit-linear-gradient(45deg, #fde047, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Not Just Your Syllabus</span>
-        </h2>
-        <p style="margin-bottom: 2rem; color: #cbd5e1; line-height: 1.6; font-size: 1.05rem;">
-          Cracking IIT-JEE isn't about covering the syllabus once and hoping for the best, it's about understanding concepts deeply enough to solve any question, however it's twisted in the exam. At EduRain, our JEE courses are built around this exact idea: strong fundamentals, consistent practice, and enough tests to know exactly where you stand before the real exam. Whether you're in Class 12th trying to balance boards with JEE, starting fresh in Class 11th, or repeating a year to fix what went wrong last time, there's a batch here designed specifically for that stage.
-        </p>
-
-        <h3 style="color: #f1f5f9; font-size: 1.5rem; margin-bottom: 1.2rem; font-weight: 700;">Our Batches:</h3>
-        <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
-          <li style="margin-bottom: 1rem; color: #cbd5e1; line-height: 1.5; font-size: 1.05rem;">
-            <a href="https://courses.edurain.in/courses/849750" target="_blank" style="color: #60a5fa; font-weight: 600; text-decoration: none;">Dropper JEE 2027 Batch</a> : For students repeating a year who want to rebuild their concepts properly and target a real rank improvement in JEE 2027.
-          </li>
-          <li style="margin-bottom: 1rem; color: #cbd5e1; line-height: 1.5; font-size: 1.05rem;">
-            <a href="https://courses.edurain.in/courses/814178" target="_blank" style="color: #60a5fa; font-weight: 600; text-decoration: none;">TARGET JEE 2027 – 12th Class Batch</a> : For Class 12th students who need to manage boards and JEE prep together without either one suffering.
-          </li>
-          <li style="margin-bottom: 1rem; color: #cbd5e1; line-height: 1.5; font-size: 1.05rem;">
-            <a href="https://courses.edurain.in/courses/813811" target="_blank" style="color: #60a5fa; font-weight: 600; text-decoration: none;">JEE Mantra 3.0 Batch 2028</a> : For Class 11th students starting their JEE journey early, with enough time to build a solid foundation before Class 12th begins.
-          </li>
-        </ul>
-
-        <h3 style="color: #f1f5f9; font-size: 1.5rem; margin-bottom: 1.2rem; font-weight: 700;">Why students choose EduRain for JEE:</h3>
-        <ul style="list-style: none; padding: 0; margin: 0; color: #cbd5e1; line-height: 1.6;">
-          <li style="margin-bottom: 0.8rem;">✔️ <strong>Live interactive classes</strong> with experienced faculty, not just recorded lectures.</li>
-          <li style="margin-bottom: 0.8rem;">✔️ <strong>Doubt-solving sessions</strong> where every conceptual doubt is resolved.</li>
-          <li style="margin-bottom: 0.8rem;">✔️ <strong>Experienced teachers</strong> who specialize in JEE Main & Advanced patterns.</li>
-          <li style="margin-bottom: 0.8rem;">✔️ <strong>Regular mock tests</strong> with detailed analytics and all-India ranking feedback.</li>
-          <li style="margin-bottom: 0.8rem;">✔️ <strong>Curated study material</strong> and problem-solving modules updated to latest 2026-2027 standards.</li>
-        </ul>
-      </div>
-    </section>
-
-    ${renderFaqSectionHtml('JEE')}
-  `;
-}
-
-function prerenderNEETCourses() {
-  const filtered = coursesData.filter(c => c.category === 'NEET');
-  const cards = renderCourseCardsHtml(filtered);
-
-  return `
-    <section class="courses-section">
-      <div class="section-header">
-        <h1>NEET 2027-28 Complete Online Coaching & Preparation</h1>
-        <p>Crack NEET UG with expert-led coaching in Biology, Physics, and Chemistry designed to help medical aspirants secure top scores and a seat in India's best medical colleges.</p>
-      </div>
-      <div class="filter-row">
-        <a href="/courses" class="filter-btn" style="text-decoration: none;">All</a>
-        <a href="/courses/iit-jee" class="filter-btn" style="text-decoration: none;">JEE</a>
-        <a href="/courses/neet" class="filter-btn active" style="text-decoration: none;">NEET</a>
-        <a href="/courses/foundation" class="filter-btn" style="text-decoration: none;">FOUNDATION</a>
-      </div>
-      <div class="courses-grid" style="margin-top: 40px;">
-        ${cards}
-      </div>
-    </section>
-
-    <section class="er-courses-content-section" style="max-width: 1000px; margin: 4rem auto; padding: 2.5rem; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
-      <div style="position: relative; z-index: 1;">
-        <h2 style="color: #f8fafc; font-size: 2.2rem; margin-bottom: 1.2rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em;">
-          NEET Preparation That Focuses on Understanding, <span style="background: -webkit-linear-gradient(45deg, #fde047, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Not Cramming</span>
-        </h2>
-        <p style="margin-bottom: 2rem; color: #cbd5e1; line-height: 1.6; font-size: 1.05rem;">
-          NEET isn't cleared by cramming Biology, Physics and Chemistry the night before revision starts, it's cleared by students who actually understand why an answer is right, not just which one to mark. At EduRain, our NEET courses focus on that exact difference.
-        </p>
-
-        <h3 style="color: #f1f5f9; font-size: 1.5rem; margin-bottom: 1.2rem; font-weight: 700;">Our Batches:</h3>
-        <ul style="list-style: none; padding: 0; margin-bottom: 2rem; color: #cbd5e1; line-height: 1.6;">
-          <li style="margin-bottom: 1rem;"><a href="https://courses.edurain.in/courses/814170" target="_blank" style="color: #60a5fa; font-weight: 600; text-decoration: none;">NEET White Coat 2027 – Class 12th</a> : For Class 12th students balancing boards with NEET.</li>
-          <li style="margin-bottom: 1rem;"><a href="https://courses.edurain.in/courses/814073" target="_blank" style="color: #60a5fa; font-weight: 600; text-decoration: none;">Mission NEET 3.0 Batch 2028</a> : For Class 11th students starting early.</li>
-          <li style="margin-bottom: 1rem;"><a href="https://courses.edurain.in/courses/849750" target="_blank" style="color: #60a5fa; font-weight: 600; text-decoration: none;">Dropper NEET 2027 Batch</a> : For repeaters aiming for a rank turnaround.</li>
-        </ul>
-
-        <h3 style="color: #f1f5f9; font-size: 1.5rem; margin-bottom: 1.2rem; font-weight: 700;">Why choose EduRain for NEET:</h3>
-        <ul style="list-style: none; padding: 0; margin: 0; color: #cbd5e1; line-height: 1.6;">
-          <li style="margin-bottom: 0.8rem;">✔️ <strong>NCERT Line-by-Line Mastery</strong> in Biology, Chemistry & Physics.</li>
-          <li style="margin-bottom: 0.8rem;">✔️ <strong>One-on-one doubt clearing</strong> directly with senior faculty.</li>
-          <li style="margin-bottom: 0.8rem;">✔️ <strong>Speed & Accuracy Drills</strong> matching the latest NTA NEET exam format.</li>
-        </ul>
-      </div>
-    </section>
-
-    ${renderFaqSectionHtml('NEET')}
-  `;
-}
-
-function prerenderFoundationCourses() {
-  const filtered = coursesData.filter(c => c.category === 'FOUNDATION');
-  const cards = renderCourseCardsHtml(filtered);
-
-  return `
-    <section class="courses-section">
-      <div class="section-header">
-        <h1>Best Online Coaching for Classes 6 to 10 | Foundation</h1>
-        <p>A strong foundation changes everything. From Class 6 to 10, we make sure your concepts in Science, Maths, and English are crystal clear, the perfect stepping stone for future competitive exams.</p>
-      </div>
-      <div class="filter-row">
-        <a href="/courses" class="filter-btn" style="text-decoration: none;">All</a>
-        <a href="/courses/iit-jee" class="filter-btn" style="text-decoration: none;">JEE</a>
-        <a href="/courses/neet" class="filter-btn" style="text-decoration: none;">NEET</a>
-        <a href="/courses/foundation" class="filter-btn active" style="text-decoration: none;">FOUNDATION</a>
-      </div>
-      <div class="courses-grid" style="margin-top: 40px;">
-        ${cards}
-      </div>
-    </section>
-
-    <section class="er-courses-content-section" style="max-width: 1000px; margin: 4rem auto; padding: 2.5rem; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
-      <div style="position: relative; z-index: 1;">
-        <h2 style="color: #f8fafc; font-size: 2.2rem; margin-bottom: 1.2rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em;">
-          Class 6th to 10th: Where Real Preparation <span style="background: -webkit-linear-gradient(45deg, #fde047, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Actually Begins</span>
-        </h2>
-        <p style="margin-bottom: 2rem; color: #cbd5e1; line-height: 1.6; font-size: 1.05rem;">
-          Most students struggle in JEE or NEET prep not because the concepts are new, but because the basics from Class 6th to 10th were never solid. At EduRain, our Foundation courses build strong fundamentals early.
-        </p>
-      </div>
-    </section>
-
-    ${renderFaqSectionHtml('FOUNDATION')}
-  `;
-}
-
-function prerenderAllCourses() {
-  const cards = renderCourseCardsHtml(coursesData);
-
-  return `
-    <section class="courses-section" id="courses-page">
-      <div class="section-header">
-        <h1>Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-10)</h1>
-        <h2 style="font-size: var(--fs-lg); color: var(--text-secondary); font-weight: 400; margin-top: 8px;">
-          Find the best course for your IIT JEE, NEET, or Foundation (Class 6th to 10th) preparation and start learning today
-        </h2>
-      </div>
-      <div class="filter-row">
-        <a href="/courses" class="filter-btn active" style="text-decoration: none;">All</a>
-        <a href="/courses/iit-jee" class="filter-btn" style="text-decoration: none;">JEE</a>
-        <a href="/courses/neet" class="filter-btn" style="text-decoration: none;">NEET</a>
-        <a href="/courses/foundation" class="filter-btn" style="text-decoration: none;">FOUNDATION</a>
-      </div>
-      <div class="courses-grid" id="courses-grid" style="margin-top: 40px;">
-        ${cards}
-      </div>
-    </section>
-
-    ${renderFaqSectionHtml('ALL')}
-  `;
-}
-
-function prerenderAboutUs() {
-  return `
-    <section class="about-hero" style="max-width: 1000px; margin: 3rem auto; padding: 2rem 1.5rem; text-align: center;">
-      <h1 style="font-size: 2.5rem; font-weight: 800; color: #ffffff; margin-bottom: 1.2rem;">About EduRain</h1>
-      <h2 style="font-size: 1.4rem; color: #34d399; font-weight: 600; margin-bottom: 2rem;">Built on Mission. Driven by Purpose. Democratizing Master Coaching Across India.</h2>
-      <p style="color: #cbd5e1; font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto 2rem;">
-        At EduRain, we believe quality education shouldn't depend on where you live or how much you can afford to spend on coaching. We started EduRain with one simple goal: to bring foundation learning for Classes 6 to 10 and online coaching for IIT-JEE and NEET preparation to every student who's serious about their future.
-      </p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; text-align: left;">
-        <div class="glass-card" style="padding: 1.8rem; border-radius: 16px;">
-          <h3 style="color: #facc15; font-size: 1.3rem; margin-bottom: 0.8rem;">🎯 Top Faculty</h3>
-          <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">Learn directly from master educators with years of proven success in IIT-JEE, NEET, and Olympiads.</p>
-        </div>
-        <div class="glass-card" style="padding: 1.8rem; border-radius: 16px;">
-          <h3 style="color: #34d399; font-size: 1.3rem; margin-bottom: 0.8rem;">💡 Conceptual Clarity</h3>
-          <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">We teach the 'why' behind formulas, ensuring you retain core ideas effortlessly for high-stakes exams.</p>
-        </div>
-        <div class="glass-card" style="padding: 1.8rem; border-radius: 16px;">
-          <h3 style="color: #60a5fa; font-size: 1.3rem; margin-bottom: 0.8rem;">📊 Analytics & Tests</h3>
-          <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">Regular all-India mock tests and in-depth performance reports pinpoint weak areas early.</p>
-        </div>
-      </div>
-    </section>
-  `;
-}
-
-function prerenderContactUs() {
-  return `
-    <section class="contact-section" style="max-width: 900px; margin: 3rem auto; padding: 2rem 1.5rem;">
-      <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
-        <h1 style="font-size: 2.5rem; font-weight: 800; color: #ffffff;">Contact Us | Get in Touch with EduRain</h1>
-        <p style="color: #cbd5e1; font-size: 1.1rem; margin-top: 0.8rem;">Have questions about our courses for Class 6-10, IIT-JEE or NEET? We are here to help.</p>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-        <div class="glass-card" style="padding: 2rem; border-radius: 16px;">
-          <h3 style="color: #34d399; font-size: 1.3rem; margin-bottom: 1.2rem;">📞 Admissions & Support</h3>
-          <p style="color: #cbd5e1; margin-bottom: 0.8rem;"><strong>Phone:</strong> <a href="tel:+918700201662" style="color: #60a5fa;">+91 8700201662</a></p>
-          <p style="color: #cbd5e1; margin-bottom: 0.8rem;"><strong>Email:</strong> <a href="mailto:contact@edurain.in" style="color: #60a5fa;">contact@edurain.in</a></p>
-          <p style="color: #cbd5e1; margin-bottom: 0.8rem;"><strong>Timings:</strong> Mon - Sat: 9:00 AM - 8:00 PM</p>
-          <p style="color: #cbd5e1;"><strong>Location:</strong> Dwarka Sector 7, New Delhi, India - 110075</p>
-        </div>
-        <div class="glass-card" style="padding: 2rem; border-radius: 16px;">
-          <h3 style="color: #facc15; font-size: 1.3rem; margin-bottom: 1.2rem;">💬 Quick Inquiry</h3>
-          <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem;">Want to speak directly to an academic counselor or book a free trial demo class? Reach us on WhatsApp or call our team.</p>
-          <a href="https://wa.me/918700201662" target="_blank" rel="noopener noreferrer" class="btn btn-accent" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
-            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-          </a>
-        </div>
-      </div>
-    </section>
-  `;
-}
 
 function prerenderPolicy(type) {
   const titles = {
@@ -656,6 +230,20 @@ function prerenderBlogArticle(meta) {
 // -------------------------------------------------------------
 
 (async function generate() {
+  const { renderNavbar } = await import('./src/components/navbar.js');
+  const { renderFooter } = await import('./src/components/footer.js');
+  const { renderCourses } = await import('./src/components/courses.js');
+  const { renderJEECourses, renderNEETCourses, renderFoundationCourses } = await import('./src/components/categoryCourses.js');
+  const { renderAbout } = await import('./src/components/about.js');
+  const { renderContact } = await import('./src/components/contact.js');
+  const { renderBanner } = await import('./src/components/banner.js');
+  const { renderPopularCourses } = await import('./src/components/popularCourses.js');
+  const { renderFreeDemo } = await import('./src/components/freeDemo.js');
+  const { renderFaculty } = await import('./src/components/faculty.js');
+  const { renderHomeReviews } = await import('./src/components/homeReviews.js');
+  const { renderImpact } = await import('./src/components/impact.js');
+  const { renderAppDownload } = await import('./src/components/appDownload.js');
+
   const today = new Date().toISOString().split('T')[0];
   const blogSlugs = [];
   const publishedBlogsForList = [];
@@ -764,17 +352,17 @@ function prerenderBlogArticle(meta) {
     // 2. Build Route Body Content
     let routeContentHtml = '';
     if (route === 'courses/iit-jee') {
-      routeContentHtml = prerenderJEECourses();
+      routeContentHtml = renderJEECourses();
     } else if (route === 'courses/neet') {
-      routeContentHtml = prerenderNEETCourses();
+      routeContentHtml = renderNEETCourses();
     } else if (route === 'courses/foundation') {
-      routeContentHtml = prerenderFoundationCourses();
+      routeContentHtml = renderFoundationCourses();
     } else if (route === 'courses') {
-      routeContentHtml = prerenderAllCourses();
+      routeContentHtml = renderCourses();
     } else if (route === 'about-us') {
-      routeContentHtml = prerenderAboutUs();
+      routeContentHtml = renderAbout();
     } else if (route === 'contact-us') {
-      routeContentHtml = prerenderContactUs();
+      routeContentHtml = renderContact();
     } else if (route === 'blogs') {
       routeContentHtml = prerenderBlogList(publishedBlogsForList);
     } else if (meta.isBlog) {
@@ -785,11 +373,11 @@ function prerenderBlogArticle(meta) {
 
     // 3. Inject full shell: Navbar + Page Body (H1/H2/Cards/FAQs) + Footer into <div id="app">
     const fullPageShellHtml = `
-      ${renderPrerenderNavbar(route)}
+      ${renderNavbar(route)}
       <main class="main-content fade-in-section visible">
         ${routeContentHtml}
       </main>
-      ${renderPrerenderFooter()}
+      ${renderFooter()}
     `;
 
     finalHtml = finalHtml.replace('<div id="app"></div>', `<div id="app">\n${fullPageShellHtml}\n</div>`);
@@ -805,22 +393,14 @@ function prerenderBlogArticle(meta) {
   // -------------------------------------------------------------
   // Prerender Homepage into dist/index.html (Matches actual SPA exactly)
   // -------------------------------------------------------------
-  const { renderBanner } = await import('./src/components/banner.js');
-  const { renderPopularCourses } = await import('./src/components/popularCourses.js');
-  const { renderFreeDemo } = await import('./src/components/freeDemo.js');
-  const { renderFaculty } = await import('./src/components/faculty.js');
-  const { renderHomeReviews } = await import('./src/components/homeReviews.js');
-  const { renderImpact } = await import('./src/components/impact.js');
-  const { renderAppDownload } = await import('./src/components/appDownload.js');
-
   const homepageMainContent = renderBanner() + renderPopularCourses() + renderFreeDemo() + renderFaculty() + renderHomeReviews() + renderImpact() + renderAppDownload();
 
   const prerenderedHomepageApp = `
-    ${renderPrerenderNavbar('')}
+    ${renderNavbar('')}
     <main class="main-content fade-in-section visible">
       ${homepageMainContent}
     </main>
-    ${renderPrerenderFooter()}
+    ${renderFooter()}
   `;
 
   let homeHtml = fs.readFileSync(indexHtmlPath, 'utf8');
