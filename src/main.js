@@ -20,31 +20,34 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Mobile App Pop-up
   initMobileAppPopup();
 
-  // Lazy-load Auth State Changes in background idle time
-  const initAuthObserver = () => {
-    import('./firebase/auth.js').then(({ onAuthChange }) => {
-      onAuthChange((user) => {
-        const authBtnAreas = document.querySelectorAll('.auth-btn-area');
-        authBtnAreas.forEach(area => {
-          const isMobileMenu = area.classList.contains('mobile-menu-footer');
-          if (user) {
-            const displayName = user.displayName || user.email.split('@')[0];
-            area.innerHTML = `
-              <span class="user-greeting">Hi, ${displayName}</span>
-              <button class="btn btn-outline btn-sm logout-btn" ${isMobileMenu ? 'style="width: 100%;"' : ''}>Logout</button>
-            `;
-          } else {
-            area.innerHTML = '';
-          }
+  // Lazy-load Auth State Changes only in DEV or on /blogadmin
+  const shouldObserveAuth = import.meta.env.DEV || window.location.pathname.startsWith('/blogadmin');
+  if (shouldObserveAuth) {
+    const initAuthObserver = () => {
+      import('./firebase/auth.js').then(({ onAuthChange }) => {
+        onAuthChange((user) => {
+          const authBtnAreas = document.querySelectorAll('.auth-btn-area');
+          authBtnAreas.forEach(area => {
+            const isMobileMenu = area.classList.contains('mobile-menu-footer');
+            if (user) {
+              const displayName = user.displayName || user.email.split('@')[0];
+              area.innerHTML = `
+                <span class="user-greeting">Hi, ${displayName}</span>
+                <button class="btn btn-outline btn-sm logout-btn" ${isMobileMenu ? 'style="width: 100%;"' : ''}>Logout</button>
+              `;
+            } else {
+              area.innerHTML = '';
+            }
+          });
         });
-      });
-    }).catch(() => {});
-  };
+      }).catch(() => {});
+    };
 
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(initAuthObserver, { timeout: 3000 });
-  } else {
-    setTimeout(initAuthObserver, 2000);
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(initAuthObserver, { timeout: 3000 });
+    } else {
+      setTimeout(initAuthObserver, 2000);
+    }
   }
 
   // Setup Intersection Observer for scroll animations

@@ -134,6 +134,7 @@ function fetchBlogs() {
 // -------------------------------------------------------------
 
 function renderPrerenderNavbar(activeRoute = '') {
+  const isHome = activeRoute === '' || activeRoute === '/';
   const isCourses = activeRoute.startsWith('courses');
   const isBlogs = activeRoute.startsWith('blogs');
   const isAbout = activeRoute === 'about-us';
@@ -154,7 +155,7 @@ function renderPrerenderNavbar(activeRoute = '') {
           </a>
         </div>
         <div class="nav-links">
-          <a href="/" class="nav-link">Home</a>
+          <a href="/" class="nav-link ${isHome ? 'active' : ''}">Home</a>
           <a href="/courses" class="nav-link ${isCourses ? 'active' : ''}">Our Courses</a>
           <a href="/blogs" class="nav-link ${isBlogs ? 'active' : ''}">Blogs</a>
           <a href="/about-us" class="nav-link ${isAbout ? 'active' : ''}">About Us</a>
@@ -180,7 +181,7 @@ function renderPrerenderNavbar(activeRoute = '') {
         <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close Mobile Menu">&times;</button>
       </div>
       <div class="mobile-menu-body">
-        <a href="/" class="nav-link">Home</a>
+        <a href="/" class="nav-link ${isHome ? 'active' : ''}">Home</a>
         <a href="/courses" class="nav-link ${isCourses ? 'active' : ''}">Our Courses</a>
         <a href="/blogs" class="nav-link ${isBlogs ? 'active' : ''}">Blogs</a>
         <a href="/about-us" class="nav-link ${isAbout ? 'active' : ''}">About Us</a>
@@ -802,31 +803,22 @@ function prerenderBlogArticle(meta) {
   });
 
   // -------------------------------------------------------------
-  // Prerender Homepage into dist/index.html
+  // Prerender Homepage into dist/index.html (Matches actual SPA exactly)
   // -------------------------------------------------------------
+  const { renderBanner } = await import('./src/components/banner.js');
+  const { renderPopularCourses } = await import('./src/components/popularCourses.js');
+  const { renderFreeDemo } = await import('./src/components/freeDemo.js');
+  const { renderFaculty } = await import('./src/components/faculty.js');
+  const { renderHomeReviews } = await import('./src/components/homeReviews.js');
+  const { renderImpact } = await import('./src/components/impact.js');
+  const { renderAppDownload } = await import('./src/components/appDownload.js');
+
+  const homepageMainContent = renderBanner() + renderPopularCourses() + renderFreeDemo() + renderFaculty() + renderHomeReviews() + renderImpact() + renderAppDownload();
+
   const prerenderedHomepageApp = `
     ${renderPrerenderNavbar('')}
     <main class="main-content fade-in-section visible">
-      <div class="er-hero-banner-wrapper">
-        <div class="er-banner-web">
-          <section id="er-hero-banner-web" style="position:relative; width:100%; overflow:hidden; background:#0e3a24;">
-            <div id="er-slider-track-web" style="display:flex;">
-              <a href="/courses/iit-jee" aria-label="JEE Mantra 3.0 Batch 2027-28 for Class 11th" class="er-slide-web er-slide-aspect-web" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-                <img src="/images/web%20banner/1.webp?v=2" alt="JEE Mantra 3.0 Batch 2027-28 for Class 11th" fetchpriority="high" loading="eager" width="12800" height="2416" style="width:100%; height:100%; object-fit:cover; display:block;" />
-              </a>
-            </div>
-          </section>
-        </div>
-      </div>
-      <section class="section popular-courses-section">
-        <div class="section-header">
-          <h1 style="font-size: 2.4rem; font-weight: 800; color: #ffffff;">Best Online Coaching for IIT-JEE, NEET & Class 6-10</h1>
-          <p style="color: #cbd5e1; font-size: 1.1rem; margin-top: 8px;">Explore our top-rated academic programs taught by master teachers across India.</p>
-        </div>
-        <div class="courses-grid" style="margin-top: 30px;">
-          ${renderCourseCardsHtml(coursesData.slice(0, 6))}
-        </div>
-      </section>
+      ${homepageMainContent}
     </main>
     ${renderPrerenderFooter()}
   `;
@@ -834,7 +826,7 @@ function prerenderBlogArticle(meta) {
   let homeHtml = fs.readFileSync(indexHtmlPath, 'utf8');
   homeHtml = homeHtml.replace('<div id="app"></div>', `<div id="app">\n${prerenderedHomepageApp}\n</div>`);
   fs.writeFileSync(indexHtmlPath, homeHtml);
-  console.log('✅ Injected full prerendered shell into dist/index.html (H1 + Cards + Navbar + Footer).');
+  console.log('✅ Injected full prerendered shell into dist/index.html (matching client SPA 100%).');
 
   // -------------------------------------------------------------
   // Dynamic Sitemaps
