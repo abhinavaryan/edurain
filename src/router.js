@@ -230,6 +230,19 @@ const routes = {
   }
 };
 
+// Admin Route Aliases (Supports /blogs-admin, /blog-admin, /admin, /blogsadmin, /blogs/admin)
+routes['/blog-admin'] = routes['/blogadmin'];
+routes['/blogs-admin'] = routes['/blogadmin'];
+routes['/blogsadmin'] = routes['/blogadmin'];
+routes['/admin'] = routes['/blogadmin'];
+routes['/blogs/admin'] = routes['/blogadmin'];
+
+routes['/blog-admin/login'] = routes['/blogadmin/login'];
+routes['/blogs-admin/login'] = routes['/blogadmin/login'];
+routes['/blogsadmin/login'] = routes['/blogadmin/login'];
+routes['/admin/login'] = routes['/blogadmin/login'];
+routes['/blogs/admin/login'] = routes['/blogadmin/login'];
+
 // Removed DEV ONLY block for /study as it is now a separate React app
 
 // ── Scroll reveal for .er-reveal elements ──
@@ -334,7 +347,12 @@ export const initRouter = () => {
 
     let routeConfig = routes[path];
     
-    if (!routeConfig && path.startsWith('/blogs/')) {
+    // Explicitly check for admin routes before generic /blogs/ prefix
+    if (!routeConfig && (path === '/blogs/admin' || path === '/blogs/admin/')) {
+      routeConfig = routes['/blogadmin'];
+    } else if (!routeConfig && (path === '/blogs/admin/login' || path === '/blogs/admin/login/')) {
+      routeConfig = routes['/blogadmin/login'];
+    } else if (!routeConfig && path.startsWith('/blogs/')) {
       routeConfig = routes['/blogs'];
     }
     
@@ -353,9 +371,21 @@ export const initRouter = () => {
     }
 
     // Hydration check: On initial page load, if #app is already prerendered by SSG,
-    // do NOT wipe and recreate DOM nodes. This eliminates layout shifts (CLS=0) and slashes TBT.
-    const hasPrerenderedContent = app && app.children.length > 0;
-    if (isInitialLoad && hasPrerenderedContent) {
+    // only preserve DOM nodes if the prerendered HTML actually matches the current route.
+    // If arriving via GitHub Pages 404 redirect (?p=...) or visiting an admin/dynamic page,
+    // we MUST execute full client render so user doesn't get stuck on the homepage.
+    const isFrom404Redirect = Boolean(urlParams.get('p'));
+    const isAdminRoute = path.includes('admin');
+    const isPrerenderedMatch = !isFrom404Redirect && !isAdminRoute && (
+      (path === '/' && app.querySelector('.banner-section')) ||
+      (path.startsWith('/courses') && app.querySelector('.courses-section')) ||
+      (path.startsWith('/blogs') && (app.querySelector('.blogs-section') || app.querySelector('.blog-post-page'))) ||
+      (path === '/about-us' && app.querySelector('.about-section')) ||
+      (path === '/contact-us' && app.querySelector('.contact-section')) ||
+      (['/privacy', '/terms', '/refund-policy', '/sitemap'].includes(path) && app.querySelector('.policy-page'))
+    );
+
+    if (isInitialLoad && isPrerenderedMatch) {
       isInitialLoad = false;
       initNavbar();
       initAuthModal();
@@ -369,10 +399,10 @@ export const initRouter = () => {
     }
     isInitialLoad = false;
 
-    const isStandalonePage = path.startsWith('/blogadmin') || path.startsWith('/study');
+    const isStandalonePage = isAdminRoute || path.startsWith('/study');
     const navbarHTML = isStandalonePage ? '' : renderNavbar();
     const footerHTML = isStandalonePage ? '' : renderFooter();
-    const authModalHTML = (!path.startsWith('/blogadmin') && import.meta.env.DEV) ? renderAuthModal() : '';
+    const authModalHTML = (!isAdminRoute && import.meta.env.DEV) ? renderAuthModal() : '';
     
     const pageHTML = route.render();
 

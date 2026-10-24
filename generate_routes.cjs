@@ -391,6 +391,35 @@ function prerenderBlogArticle(meta) {
   });
 
   // -------------------------------------------------------------
+  // Generate Clean Static HTML for Admin Routes & Aliases
+  // (Prevents GitHub Pages 404 & homepage redirects for admin users)
+  // -------------------------------------------------------------
+  const adminRoutes = [
+    'blogadmin',
+    'blogadmin/login',
+    'blogs-admin',
+    'blogs-admin/login',
+    'blog-admin',
+    'blog-admin/login',
+    'admin',
+    'admin/login',
+    'blogs/admin',
+    'blogs/admin/login'
+  ];
+
+  adminRoutes.forEach(r => {
+    const folderPath = path.join(distDir, r);
+    if (!fs.existsSync(folderPath)) {
+      fs.mkdirSync(folderPath, { recursive: true });
+    }
+    let adminHtml = indexHtmlWithoutSchema;
+    adminHtml = adminHtml.replace(/<title>[^<]*<\/title>/, '<title>EduRain Blog Admin</title>');
+    adminHtml = adminHtml.replace('</head>', '<meta name="robots" content="noindex, nofollow" />\n</head>');
+    fs.writeFileSync(path.join(folderPath, 'index.html'), adminHtml);
+  });
+  console.log('✅ Generated clean static entrypoints for admin routes (zero 404s).');
+
+  // -------------------------------------------------------------
   // Prerender Homepage into dist/index.html (Matches actual SPA exactly)
   // -------------------------------------------------------------
   const homepageMainContent = renderBanner() + renderPopularCourses() + renderFreeDemo() + renderFaculty() + renderHomeReviews() + renderImpact() + renderAppDownload();

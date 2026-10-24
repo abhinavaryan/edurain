@@ -296,7 +296,9 @@ export function initBlogAdmin() {
             loadBlogs();
         } else {
             // Not logged in or wrong email -> Redirect to login
-            window.location.href = '/blogadmin/login';
+            if (!window.location.pathname.includes('/login')) {
+                window.location.href = '/blogadmin/login';
+            }
         }
     });
 

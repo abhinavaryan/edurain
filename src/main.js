@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Mobile App Pop-up
   initMobileAppPopup();
 
-  // Lazy-load Auth State Changes only in DEV or on /blogadmin
-  const shouldObserveAuth = import.meta.env.DEV || window.location.pathname.startsWith('/blogadmin');
+  // Lazy-load Auth State Changes only in DEV or on admin routes
+  const shouldObserveAuth = import.meta.env.DEV || window.location.pathname.includes('admin');
   if (shouldObserveAuth) {
     const initAuthObserver = () => {
       import('./firebase/auth.js').then(({ onAuthChange }) => {
