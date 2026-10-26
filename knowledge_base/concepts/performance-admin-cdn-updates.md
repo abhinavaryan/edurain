@@ -55,19 +55,21 @@ This document synthesizes the major architectural improvements, security authori
 
 ---
 
-## 6. Mandatory S3 Bucket & CloudFront CDN Policy
+## 6. S3 Bucket Architecture & CloudFront CDN Policy
 
-- **AWS Region:** `ap-south-1`
-- **S3 Bucket:** `edurain-notification`
-- **CDN Base URL:** `https://d26zb7slji2zmm.cloudfront.net` (Distribution `E54IC1UQARCPC`)
-- **Public Access Setting:** **DO NOT BLOCK PUBLIC ACCESS**. S3 `BlockPublicAccess` must remain `false` for all settings (`BlockPublicAcls`, `IgnorePublicAcls`, `BlockPublicPolicy`, `RestrictPublicBuckets`).
-- **Bucket Policy:** Must always maintain `PublicReadGetObject` (`Principal: "*"`, `Action: "s3:GetObject"`, `Resource: "arn:aws:s3:::edurain-notification/*"`) alongside `AllowCloudFrontReadOnly` so that mobile application, website users, teachers, students, PDFs, study material, and notifications can freely access assets directly via S3 without 403 Forbidden errors.
-- **Key Asset Rules:**
-  1. **Strict WebP Standard:** Website images (course tiles, blog covers, Quill rich-text embeds) must be converted/compressed to `.webp` format for web performance.
-  2. **Organized S3 Prefix Folders:**
-     - Course Banners: `website cources/`
-     - Blog Assets & In-Editor Media: `website blogs/`
-     - App & Notifications: `notifications/`, `images/`, `profile-photos/`
-  3. **Dual Access:** Assets are accessible both directly via `https://edurain-notification.s3.ap-south-1.amazonaws.com/...` and via CloudFront CDN `https://d26zb7slji2zmm.cloudfront.net/...`.
+- **Website Asset Bucket (`edurain-notification`):**
+  - **AWS Region:** `ap-south-1`
+  - **CDN Distribution:** `E54IC1UQARCPC` (`https://d26zb7slji2zmm.cloudfront.net`)
+  - **Public Access Setting:** Block Public Access is **ENABLED** (All 4 settings `true`).
+  - **Bucket Policy:** Strictly secured with `AllowCloudFrontReadOnly` via Origin Access Control (OAC). Direct S3 access is blocked (403 Forbidden); all traffic routes exclusively through CloudFront CDN with WAF protection and caching.
+  - **Folders:**
+    - Course Banners: `website cources/`
+    - Blog Assets & In-Editor Media: `website blogs/`
+  - **Format:** Strict WebP format for optimal web performance.
+
+- **App, Media & PDF Buckets (`edurain-media-assets`, `edurain-media-v2`):**
+  - Used by mobile applications, backend services, and student learning portals for PDFs, documents, study materials, and general uploads.
+  - Public Read (`PublicReadGetObject`) is enabled on these media buckets so students and mobile apps have direct access.
+
 
 

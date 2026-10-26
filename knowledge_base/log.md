@@ -11,5 +11,5 @@
 ## [2026-10-24] infrastructure | CloudFront CDN OAC Authorization & WAF Delivery — updated S3 bucket policy with CloudFront OAC principal condition across wildcard ARN arn:aws:s3:::edurain-notification/*, purged edge cache with /* invalidation, and verified browser WAF delivery for 15 course banners and blog media.
 ## [2026-10-24] devops | Deprecated and removed daily auto-deploy GitHub Actions workflow (.github/workflows/daily-deploy.yml) to ensure deployments are strictly developer-controlled.
 ## [2026-10-26] course-tile | Added DROPPER NEET 2027 batch tile (c20.webp) with WebP conversion, S3 edurain-notification upload, CloudFront CDN routing, and standardized all future image uploads to AWS S3 & CloudFront CDN.
-## [2026-10-26] s3-access | Disabled S3 BlockPublicAccess on bucket edurain-notification and configured PublicReadGetObject policy (* on s3:GetObject) alongside CloudFront OAC to ensure students, mobile app, PDFs, and study materials have full direct access without 403 Forbidden errors.
+## [2026-10-26] s3-access | Reverted bucket policy on edurain-notification to CloudFront OAC only (BlockPublicAccess=true) for website assets, confirming that app/PDF uploads use separate public buckets (edurain-media-assets, edurain-media-v2).
 
