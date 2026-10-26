@@ -55,15 +55,19 @@ This document synthesizes the major architectural improvements, security authori
 
 ---
 
-## 6. Mandatory S3 Bucket & CloudFront CDN Policy for All Future Uploads
+## 6. Mandatory S3 Bucket & CloudFront CDN Policy
 
 - **AWS Region:** `ap-south-1`
 - **S3 Bucket:** `edurain-notification`
 - **CDN Base URL:** `https://d26zb7slji2zmm.cloudfront.net` (Distribution `E54IC1UQARCPC`)
-- **Key Rules:**
-  1. **Strict WebP Standard:** All images (course tiles, blog covers, Quill rich-text embeds, faculty portraits) must be converted/compressed to `.webp` format prior to storage.
+- **Public Access Setting:** **DO NOT BLOCK PUBLIC ACCESS**. S3 `BlockPublicAccess` must remain `false` for all settings (`BlockPublicAcls`, `IgnorePublicAcls`, `BlockPublicPolicy`, `RestrictPublicBuckets`).
+- **Bucket Policy:** Must always maintain `PublicReadGetObject` (`Principal: "*"`, `Action: "s3:GetObject"`, `Resource: "arn:aws:s3:::edurain-notification/*"`) alongside `AllowCloudFrontReadOnly` so that mobile application, website users, teachers, students, PDFs, study material, and notifications can freely access assets directly via S3 without 403 Forbidden errors.
+- **Key Asset Rules:**
+  1. **Strict WebP Standard:** Website images (course tiles, blog covers, Quill rich-text embeds) must be converted/compressed to `.webp` format for web performance.
   2. **Organized S3 Prefix Folders:**
      - Course Banners: `website cources/`
      - Blog Assets & In-Editor Media: `website blogs/`
-  3. **Universal CDN URLs:** Raw S3 endpoints (`https://edurain-notification.s3...`) must never be referenced directly in client code or JSON data. All public image URLs must use the CloudFront CDN domain (`https://d26zb7slji2zmm.cloudfront.net/...`).
+     - App & Notifications: `notifications/`, `images/`, `profile-photos/`
+  3. **Dual Access:** Assets are accessible both directly via `https://edurain-notification.s3.ap-south-1.amazonaws.com/...` and via CloudFront CDN `https://d26zb7slji2zmm.cloudfront.net/...`.
+
 
