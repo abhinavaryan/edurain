@@ -8,4 +8,6 @@
 
 ## Concepts
 *Synthesized concept markdown pages.*
-- [Architecture and SEO Updates](file:///c:/Users/abhin/.gemini/antigravity/scratch/edurain/knowledge_base/concepts/architecture-and-seo.md)
+- [Architecture and SEO Updates (Sep 2026)](file:///c:/Users/abhin/.gemini/antigravity/scratch/edurain/knowledge_base/concepts/architecture-and-seo.md)
+- [Platform Performance, Blog Admin Routing & CloudFront CDN (Oct 2026)](file:///c:/Users/abhin/.gemini/antigravity/scratch/edurain/knowledge_base/concepts/performance-admin-cdn-updates.md)
+

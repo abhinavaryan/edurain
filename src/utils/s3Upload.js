@@ -267,7 +267,7 @@ export async function uploadToS3(file, folder = 'website blogs', customFileName 
 
   // Return the public URL (CDN if configured, else fallback to raw S3)
   const encodedKey = key.split('/').map(part => encodeURIComponent(part)).join('/');
-  const baseUrl = (import.meta.env.VITE_CDN_URL || `https://${config.bucket}.s3.${config.region}.amazonaws.com`).replace(/\/+$/, '');
+  const baseUrl = (import.meta.env.VITE_CDN_URL || 'https://d26zb7slji2zmm.cloudfront.net' || `https://${config.bucket}.s3.${config.region}.amazonaws.com`).replace(/\/+$/, '');
   return `${baseUrl}/${encodedKey}`;
 }
 

@@ -156,7 +156,7 @@ export function renderNEETCourses() {
                         <a href="https://courses.edurain.in/courses/814073" target="_blank" style="color: #60a5fa; font-weight: 600; text-decoration: none;">Mission NEET 3.0 Batch 2028</a> : For Class 11th students starting early, giving enough time to build strong fundamentals in Biology, Physics and Chemistry before the final push.
                     </li>
                     <li style="margin-bottom: 1rem; color: #cbd5e1; line-height: 1.5; font-size: 1.05rem;">
-                        <a href="https://courses.edurain.in/courses/849750" target="_blank" style="color: #60a5fa; font-weight: 600; text-decoration: none;">Dropper NEET 2027 Batch</a> : For students repeating a year who want a fresh, proper rebuild of concepts and a real shot at a better score this time.
+                        <a href="https://courses.edurain.in/courses/849748?mainCategory=0&subCatList=%5B358541%5D" target="_blank" style="color: #60a5fa; font-weight: 600; text-decoration: none;">Dropper NEET 2027 Batch</a> : For students repeating a year who want a fresh, proper rebuild of concepts and a real shot at a better score this time.
                     </li>
                 </ul>
                 
