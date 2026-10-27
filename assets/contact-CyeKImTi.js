@@ -1,5 +1,5 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/firestore--LyqouHK.js","assets/config-DJ-3s7d_.js"])))=>i.map(i=>d[i]);
-import{t as e}from"./preload-helper-Czpn1I53.js";function t(){return`
+import{t as e}from"./preload-helper-Czpn1I53.js";function t(e){return e?String(e).replace(/&/g,`&amp;`).replace(/</g,`&lt;`).replace(/>/g,`&gt;`).replace(/"/g,`&quot;`).replace(/'/g,`&#39;`):``}function n(){return`
         <section class="contact-section" id="contact">
             <div class="section-header">
                 <h1>Get In Touch</h1>
@@ -76,12 +76,25 @@ import{t as e}from"./preload-helper-Czpn1I53.js";function t(){return`
                             <input type="email" id="contact-email" aria-label="Your Email" placeholder="Your Email" required />
                         </div>
                         <div class="form-group">
-                            <textarea id="contact-message" placeholder="Your Message" required minlength="10" rows="5"></textarea>
+                            <textarea id="contact-message" placeholder="Your Message" required minlength="10" rows="4"></textarea>
                         </div>
+
+                        <!-- DPDP Act 2026 Compliant Unbundled Consent Checkboxes (Unchecked by Default) -->
+                        <div class="consent-group" style="margin-bottom: 1.2rem; font-size: 0.85rem; line-height: 1.4; display: flex; flex-direction: column; gap: 0.6rem;">
+                            <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" id="contact-consent-terms" required style="margin-top: 3px; accent-color: var(--accent);" />
+                                <span>I agree to the <a href="/terms" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">Terms & Conditions</a> and <a href="/privacy" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">Privacy Policy</a>.</span>
+                            </label>
+                            <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" id="contact-consent-marketing" style="margin-top: 3px; accent-color: var(--accent);" />
+                                <span>I consent to receive academic guidance, demo invites, and updates via WhatsApp / Email.</span>
+                            </label>
+                        </div>
+
                         <button type="submit" class="btn btn-accent btn-lg btn-full" id="contact-submit">Send Message</button>
                         <div class="form-message" id="form-message"></div>
                     </form>
                 </div>
             </div>
         </section>
-    `}function n(){let t=document.getElementById(`contact-form`),n=document.getElementById(`form-message`);t&&t.addEventListener(`submit`,async r=>{r.preventDefault();let i=document.getElementById(`contact-name`).value.trim(),a=document.getElementById(`contact-email`).value.trim(),o=document.getElementById(`contact-message`).value.trim();if(i.length<2){n.textContent=`Please enter your name (min 2 characters).`,n.className=`form-message error`;return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(a)){n.textContent=`Please enter a valid email address.`,n.className=`form-message error`;return}if(o.length<10){n.textContent=`Message must be at least 10 characters.`,n.className=`form-message error`;return}let s=document.getElementById(`contact-submit`);s.disabled=!0,s.textContent=`Sending...`;try{let r=new URLSearchParams;r.append(`name`,i),r.append(`email`,a),r.append(`message`,o),await fetch(`https://script.google.com/macros/s/AKfycbxspWFgxEFlxdDa1O5GXLHwjeBAsytPeAwAWpOqTlum_hQ0_P4_wIHtcj-HPMTZrJNY/exec`,{method:`POST`,body:r,mode:`no-cors`});try{let{saveContactMessage:t}=await e(async()=>{let{saveContactMessage:e}=await import(`./firestore--LyqouHK.js`);return{saveContactMessage:e}},__vite__mapDeps([0,1]));await t(i,a,o)}catch(e){console.warn(`Firebase Firestore message save skipped (rules restriction):`,e?.message||e)}n.textContent=`✅ Thanks for your enquiry! Our consultant will connect with you shortly.`,n.className=`form-message success`,t.reset()}catch(e){console.error(`Contact submission error:`,e),n.textContent=`❌ Failed to send message. Please try again.`,n.className=`form-message error`}finally{s.disabled=!1,s.textContent=`Send Message`}})}export{n as initContact,t as renderContact};
+    `}function r(){let n=document.getElementById(`contact-form`),r=document.getElementById(`form-message`);n&&n.addEventListener(`submit`,async i=>{i.preventDefault();let a=document.getElementById(`contact-name`).value.trim(),o=document.getElementById(`contact-email`).value.trim(),s=document.getElementById(`contact-message`).value.trim(),c=document.getElementById(`contact-consent-terms`).checked,l=document.getElementById(`contact-consent-marketing`).checked,u=t(a),d=t(o),f=t(s);if(!c){r.textContent=`Please agree to the Terms & Conditions and Privacy Policy to proceed.`,r.className=`form-message error`;return}if(a.length<2){r.textContent=`Please enter your name (min 2 characters).`,r.className=`form-message error`;return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(o)){r.textContent=`Please enter a valid email address.`,r.className=`form-message error`;return}if(s.length<10){r.textContent=`Message must be at least 10 characters.`,r.className=`form-message error`;return}let p=document.getElementById(`contact-submit`);p.disabled=!0,p.textContent=`Sending...`;let m={termsConsent:c,marketingConsent:l,timestamp:new Date().toISOString(),policyVersion:`v2026.1`};try{let t=new URLSearchParams;t.append(`name`,a),t.append(`email`,o),t.append(`message`,s),t.append(`consent_terms`,String(c)),t.append(`consent_marketing`,String(l)),t.append(`consent_timestamp`,m.timestamp),await fetch(`https://script.google.com/macros/s/AKfycbxspWFgxEFlxdDa1O5GXLHwjeBAsytPeAwAWpOqTlum_hQ0_P4_wIHtcj-HPMTZrJNY/exec`,{method:`POST`,body:t,mode:`no-cors`});try{let{saveContactMessage:t}=await e(async()=>{let{saveContactMessage:e}=await import(`./firestore--LyqouHK.js`);return{saveContactMessage:e}},__vite__mapDeps([0,1]));await t(u,d,f,m)}catch(e){console.warn(`Firebase Firestore message save skipped (rules restriction):`,e?.message||e)}r.textContent=`✅ Thanks for your enquiry! Our consultant will connect with you shortly.`,r.className=`form-message success`,n.reset()}catch(e){console.error(`Contact submission error:`,e),r.textContent=`❌ Failed to send message. Please try again.`,r.className=`form-message error`}finally{p.disabled=!1,p.textContent=`Send Message`}})}export{r as initContact,n as renderContact};
