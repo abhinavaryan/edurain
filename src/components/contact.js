@@ -1,4 +1,14 @@
 // saveContactMessage is dynamically imported on submit
+function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
 export function renderContact() {
     return `
         <section class="contact-section" id="contact">
@@ -77,8 +87,21 @@ export function renderContact() {
                             <input type="email" id="contact-email" aria-label="Your Email" placeholder="Your Email" required />
                         </div>
                         <div class="form-group">
-                            <textarea id="contact-message" placeholder="Your Message" required minlength="10" rows="5"></textarea>
+                            <textarea id="contact-message" placeholder="Your Message" required minlength="10" rows="4"></textarea>
                         </div>
+
+                        <!-- DPDP Act 2026 Compliant Unbundled Consent Checkboxes (Unchecked by Default) -->
+                        <div class="consent-group" style="margin-bottom: 1.2rem; font-size: 0.85rem; line-height: 1.4; display: flex; flex-direction: column; gap: 0.6rem;">
+                            <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" id="contact-consent-terms" required style="margin-top: 3px; accent-color: var(--accent);" />
+                                <span>I agree to the <a href="/terms" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">Terms & Conditions</a> and <a href="/privacy" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">Privacy Policy</a>.</span>
+                            </label>
+                            <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" id="contact-consent-marketing" style="margin-top: 3px; accent-color: var(--accent);" />
+                                <span>I consent to receive academic guidance, demo invites, and updates via WhatsApp / Email.</span>
+                            </label>
+                        </div>
+
                         <button type="submit" class="btn btn-accent btn-lg btn-full" id="contact-submit">Send Message</button>
                         <div class="form-message" id="form-message"></div>
                     </form>
@@ -95,23 +118,35 @@ export function initContact() {
     if (form) {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const name = document.getElementById('contact-name').value.trim();
-            const email = document.getElementById('contact-email').value.trim();
-            const message = document.getElementById('contact-message').value.trim();
+            const rawName = document.getElementById('contact-name').value.trim();
+            const rawEmail = document.getElementById('contact-email').value.trim();
+            const rawMessage = document.getElementById('contact-message').value.trim();
+            const consentTerms = document.getElementById('contact-consent-terms').checked;
+            const consentMarketing = document.getElementById('contact-consent-marketing').checked;
+
+            // XSS Sanitization
+            const name = escapeHtml(rawName);
+            const email = escapeHtml(rawEmail);
+            const message = escapeHtml(rawMessage);
 
             // Validation
-            if (name.length < 2) {
+            if (!consentTerms) {
+                messageArea.textContent = 'Please agree to the Terms & Conditions and Privacy Policy to proceed.';
+                messageArea.className = 'form-message error';
+                return;
+            }
+            if (rawName.length < 2) {
                 messageArea.textContent = 'Please enter your name (min 2 characters).';
                 messageArea.className = 'form-message error';
                 return;
             }
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
+            if (!emailRegex.test(rawEmail)) {
                 messageArea.textContent = 'Please enter a valid email address.';
                 messageArea.className = 'form-message error';
                 return;
             }
-            if (message.length < 10) {
+            if (rawMessage.length < 10) {
                 messageArea.textContent = 'Message must be at least 10 characters.';
                 messageArea.className = 'form-message error';
                 return;
@@ -121,13 +156,23 @@ export function initContact() {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
 
+            const consentLog = {
+                termsConsent: consentTerms,
+                marketingConsent: consentMarketing,
+                timestamp: new Date().toISOString(),
+                policyVersion: 'v2026.1'
+            };
+
             try {
                 // 1. Save to Google Spreadsheet (Primary Lead & Contact Webhook)
                 const scriptUrl = 'https://script.google.com/macros/s/AKfycbxspWFgxEFlxdDa1O5GXLHwjeBAsytPeAwAWpOqTlum_hQ0_P4_wIHtcj-HPMTZrJNY/exec';
                 const formData = new URLSearchParams();
-                formData.append('name', name);
-                formData.append('email', email);
-                formData.append('message', message);
+                formData.append('name', rawName);
+                formData.append('email', rawEmail);
+                formData.append('message', rawMessage);
+                formData.append('consent_terms', String(consentTerms));
+                formData.append('consent_marketing', String(consentMarketing));
+                formData.append('consent_timestamp', consentLog.timestamp);
                 
                 await fetch(scriptUrl, {
                     method: 'POST',
@@ -138,7 +183,7 @@ export function initContact() {
                 // 2. Also attempt to save to Firebase Firestore in background if permissions allow
                 try {
                     const { saveContactMessage } = await import('../firebase/firestore.js');
-                    await saveContactMessage(name, email, message);
+                    await saveContactMessage(name, email, message, consentLog);
                 } catch (fbErr) {
                     console.warn('Firebase Firestore message save skipped (rules restriction):', fbErr?.message || fbErr);
                 }

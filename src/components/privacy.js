@@ -3,171 +3,244 @@ export function renderPrivacy() {
         <section class="er-privacy-section fade-in-section visible" id="privacy" style="padding: 120px 5%; background: var(--bg-dark); color: var(--text-main); min-height: 100vh;">
             <div class="er-privacy-container" style="max-width: 1000px; margin: 0 auto;">
                 <div class="er-privacy-header text-center" style="margin-bottom: 60px;">
-                    <h1 class="text-gradient" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1rem;">Privacy Policy</h1>
-                    <p style="color: var(--text-muted); font-size: 1.1rem;">Last Updated: August 7, 2026</p>
+                    <h1 class="text-gradient" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em;">Privacy Policy</h1>
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">Last Updated: October 27, 2026 | In Compliance with India DPDP Act 2026–2027, Google Play & Apple App Store Guidelines</p>
                 </div>
 
-                <div class="er-glass-card" style="padding: clamp(2rem, 4vw, 4rem); border-radius: 24px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); line-height: 1.8; color: rgba(255, 255, 255, 0.85);">
+                <div class="er-glass-card" style="padding: clamp(2rem, 4vw, 4rem); border-radius: 24px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); line-height: 1.85; color: rgba(255, 255, 255, 0.88);">
                     
-                    <p style="margin-bottom: 2rem; font-size: 1.1rem;">Please read the following Privacy Policy carefully before using the services available on <strong><a href="https://edurain.in" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);">https://edurain.in</a></strong> or the EduRain mobile application (collectively referred to as the <strong>"Platform"</strong>).</p>
+                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                        Welcome to <strong>EduRain</strong>. Please read this Privacy Policy carefully before accessing or using our website located at <strong><a href="https://edurain.in" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);">https://edurain.in</a></strong> or the <strong>EduRain Mobile Application</strong> (collectively, the <strong>"Platform"</strong>).
+                    </p>
                     
-                    <p style="margin-bottom: 2rem; font-size: 1.1rem;">This Privacy Policy explains how <strong>EduRain Private Limited ("EduRain", "We", "Us", or "Our")</strong> collects, uses, stores, and protects Your information when You access or use Our Platform.</p>
-                    
-                    <p style="margin-bottom: 2rem; font-size: 1.1rem;">By accessing or using the Platform, You agree to the collection, use, and disclosure of Your information in accordance with this Privacy Policy. If You do not agree with any part of this Privacy Policy, please do not use the Platform.</p>
-                    
-                    <p style="margin-bottom: 3rem; font-size: 1.1rem;">We may update this Privacy Policy from time to time. Any changes will be posted on this page, and Your continued use of the Platform after such changes constitutes Your acceptance of the updated Privacy Policy.</p>
+                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                        This Privacy Policy describes how <strong>EduRain Private Limited ("EduRain", "We", "Us", or "Our")</strong> collects, uses, processes, stores, and protects Your personal data and information when You visit, register, or use Our educational services, live classes, doubt solving, examinations, and applications.
+                    </p>
 
-                    <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
-
-                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 600;">1. Collection of Personal Information</h2>
-                    
-                    <h3 style="color: var(--accent); font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: 500;">1.1 Information We Collect</h3>
-                    <p style="margin-bottom: 1rem;">To provide Our educational services effectively, We may collect the following information:</p>
-                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.5rem;">
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Full Name</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Mobile Number</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Email Address</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Residential Address (if required)</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Date of Birth</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Parent/Guardian Details</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Class, Course and Academic Info</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> School/College Name</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> City and State</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Profile Photograph (if uploaded)</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Identity Documents (where required)</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Payment Information</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> IP Address</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Browser & Device Information</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Operating System</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Network Information</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Cookies and Usage Data</li>
-                    </ul>
-                    <p style="margin-bottom: 2rem; font-style: italic; color: rgba(255,255,255,0.6);">Plus any information voluntarily submitted through enquiry forms, admissions, support requests, surveys, contests, or feedback.</p>
-
-                    <h3 style="color: var(--accent); font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: 500;">1.2 Registration Information</h3>
-                    <p style="margin-bottom: 1rem;">While creating an EduRain account, You may be asked to provide: Name, Email Address, Mobile Number, Password, Class/Course, School or College Name, City, Profile Photo (Optional).</p>
-                    <p style="margin-bottom: 2rem;">This information helps Us create and manage Your student account.</p>
-
-                    <h3 style="color: var(--accent); font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: 500;">1.3 Login Through Third-Party Platforms</h3>
-                    <p style="margin-bottom: 2rem;">Where available, You may choose to sign in using services such as Google or other supported providers. If You choose this option, You authorize Us to access the information permitted by that provider's privacy settings. Your use of such services is also governed by their respective Privacy Policies.</p>
-
-                    <h3 style="color: var(--accent); font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: 500;">1.4 Account Security</h3>
-                    <p style="margin-bottom: 1rem;">We store Your account information using industry-standard security measures. Passwords are encrypted and cannot be viewed in plain text.</p>
-                    <p style="margin-bottom: 1rem;">You are solely responsible for:</p>
-                    <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 1rem; color: rgba(255,255,255,0.7);">
-                        <li>Keeping Your password confidential.</li>
-                        <li>Preventing unauthorized access to Your account.</li>
-                        <li>Maintaining accurate and updated account information.</li>
-                        <li>Immediately informing Us if You suspect unauthorized access.</li>
-                    </ul>
-                    <p style="margin-bottom: 2rem;">EduRain shall not be liable for any loss arising from Your failure to protect Your login credentials.</p>
-
-                    <h3 style="color: var(--accent); font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: 500;">1.5 Optional Information</h3>
-                    <p style="margin-bottom: 2rem;">Providing certain information is optional. However, if required information is not provided, We may be unable to offer certain services, courses, examinations, certificates, or customer support.</p>
-
-                    <h3 style="color: var(--accent); font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: 500;">1.6 Automatically Collected Information</h3>
-                    <p style="margin-bottom: 1rem;">When You visit Our Platform, We may automatically collect information such as: IP Address, Browser Type, Device Type, Operating System, Pages Visited, Time Spent on Website, Referral URL, Clickstream Data, Crash Reports, App Usage Statistics.</p>
-                    <p style="margin-bottom: 2rem;">This information helps Us improve performance, security, and user experience.</p>
-
-                    <h3 style="color: var(--accent); font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; font-weight: 500;">1.7 Cookies</h3>
-                    <p style="margin-bottom: 1rem;">EduRain uses cookies and similar technologies to remember user preferences, improve website performance, analyze website traffic, personalize user experience, and enhance security.</p>
-                    <p style="margin-bottom: 2rem;">You may disable cookies through Your browser settings; however, certain features of the Platform may not function properly.</p>
-
-                    <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
-
-                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 600;">2. Use of Personal Information</h2>
-                    <p style="margin-bottom: 1rem;">We use Your information for purposes including but not limited to:</p>
-                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.5rem;">
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Creating and managing Your account</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Providing online classes & services</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Course enrollment & Live class access</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Test Series and Assessments</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Study Material Delivery</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Student Performance Analysis</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Customer Support</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Sending important notifications</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Processing payments & Issuing certificates</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Improving Our Platform</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Preventing fraud and misuse</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Maintaining security & Conducting analytics</li>
-                        <li><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> Sending promotional offers (where permitted)</li>
-                    </ul>
-
-                    <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
-
-                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 600;">3. Sharing of Personal Information</h2>
-                    <p style="margin-bottom: 1.5rem;">EduRain values Your privacy and does not sell Your personal information. However, We may share information with:</p>
-                    
-                    <div style="display: grid; gap: 1.5rem;">
-                        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                            <h3 style="color: var(--accent); font-size: 1.2rem; margin-bottom: 0.5rem;">3.1 Payment Service Providers</h3>
-                            <p style="margin: 0;">For secure payment processing.</p>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                            <h3 style="color: var(--accent); font-size: 1.2rem; margin-bottom: 0.5rem;">3.2 Technology Partners</h3>
-                            <p style="margin: 0;">For hosting, cloud services, analytics, SMS, email delivery, customer support, and platform maintenance.</p>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                            <h3 style="color: var(--accent); font-size: 1.2rem; margin-bottom: 0.5rem;">3.3 Legal Authorities</h3>
-                            <p style="margin: 0;">Where required by applicable law, court order, or government authority.</p>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                            <h3 style="color: var(--accent); font-size: 1.2rem; margin-bottom: 0.5rem;">3.4 Business Transfers</h3>
-                            <p style="margin: 0;">In case of merger, acquisition, restructuring, or sale of assets, user information may be transferred to the successor organization subject to applicable privacy obligations.</p>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                            <h3 style="color: var(--accent); font-size: 1.2rem; margin-bottom: 0.5rem;">3.5 Educational Partners</h3>
-                            <p style="margin: 0;">Where necessary for examinations, certifications, academic collaborations, or student verification.</p>
-                        </div>
-                    </div>
-
-                    <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
-
-                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 600;">4. Data Security</h2>
-                    <p style="margin-bottom: 1rem;">We implement appropriate administrative, technical, and physical safeguards to protect Your information against unauthorized access, disclosure, alteration, or destruction.</p>
-                    <p style="margin-bottom: 2rem;">Despite Our efforts, no online system is completely secure, and therefore We cannot guarantee absolute security.</p>
-
-                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 600;">5. Data Retention</h2>
-                    <p style="margin-bottom: 1rem;">We retain Your information only for as long as necessary to: Provide educational services, Comply with legal obligations, Resolve disputes, Enforce Our agreements, Maintain academic records.</p>
-                    <p style="margin-bottom: 2rem;">After this period, information may be securely deleted or anonymized.</p>
-
-                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 600;">6. Your Rights</h2>
-                    <p style="margin-bottom: 1rem;">You may: Access Your information, Update incorrect information, Request correction of personal data, Request deletion where legally permissible, Withdraw consent where applicable, Opt out of promotional communications.</p>
-                    <p style="margin-bottom: 2rem;">For any such requests, please contact Us using the details provided below.</p>
-
-                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 600;">7. Children's Privacy</h2>
-                    <p style="margin-bottom: 1rem;">EduRain provides educational services for school students. Where required, registration may be completed by parents or legal guardians.</p>
-                    <p style="margin-bottom: 2rem;">Parents or guardians are encouraged to supervise the online activities of minors.</p>
-
-                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 600;">8. Third-Party Links</h2>
-                    <p style="margin-bottom: 1rem;">Our Platform may contain links to third-party websites. EduRain is not responsible for the privacy practices or content of such external websites.</p>
-                    <p style="margin-bottom: 2rem;">Users are advised to read the privacy policies of those websites before providing any personal information.</p>
-
-                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 600;">9. Changes to this Privacy Policy</h2>
-                    <p style="margin-bottom: 1rem;">We reserve the right to modify this Privacy Policy at any time. Any updates will be published on this page along with the revised "Last Updated" date.</p>
-                    <p style="margin-bottom: 2rem;">Continued use of the Platform after such updates constitutes acceptance of the revised Privacy Policy.</p>
-
-                    <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
-
-                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 600;">10. Contact Us</h2>
-                    <p style="margin-bottom: 1.5rem;">If You have any questions, concerns, or requests regarding this Privacy Policy, You may contact Us:</p>
-                    
-                    <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: center;">
-                        <h3 style="color: var(--text-main); font-size: 1.4rem; margin-bottom: 1rem;">EduRain Private Limited</h3>
-                        <p style="margin-bottom: 0.5rem;"><i class="fas fa-globe" style="color: var(--accent); margin-right: 10px;"></i> <a href="https://edurain.in" target="_blank" rel="noopener noreferrer" style="color: var(--text-main); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-main)'">https://edurain.in</a></p>
-                        <p style="margin-bottom: 0.5rem;"><i class="fas fa-envelope" style="color: var(--accent); margin-right: 10px;"></i> <a href="mailto:support@edurain.in" style="color: var(--text-main); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-main)'">support@edurain.in</a></p>
-                        <p style="margin-bottom: 0.5rem;">
-                            <i class="fas fa-phone" style="color: var(--accent); margin-right: 10px;"></i> 
-                            <a href="tel:+918796443910" style="color: var(--text-main); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-main)'" title="Call Us">+91 8796443910</a>
-                            <span style="margin: 0 10px; color: rgba(255,255,255,0.2);">|</span>
-                            <a href="https://wa.me/918796443910" target="_blank" rel="noopener noreferrer" style="color: #25D366; text-decoration: none; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <div style="background: rgba(56, 189, 248, 0.08); border-left: 4px solid #38bdf8; padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; border-radius: 8px;">
+                        <p style="margin: 0; font-size: 1rem; color: #e0f2fe; line-height: 1.7;">
+                            <strong>Regulatory Notice:</strong> This Privacy Policy is published in compliance with the <strong>Digital Personal Data Protection Act, 2023 / 2026–2027 (DPDP Act)</strong> of India, Rule 3(1) of the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021, the <strong>Google Play Developer Policy</strong>, and the <strong>Apple App Store Review Guidelines (Guideline 5.1.1 - Data Collection and Storage)</strong>.
                         </p>
-                        <p style="margin-bottom: 0;"><i class="fas fa-map-marker-alt" style="color: var(--accent); margin-right: 10px;"></i> Sec 132 Urbtech Noida</p>
                     </div>
 
-                    <div style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05);">
-                        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.7); font-style: italic;">By accessing or using the EduRain Platform, You acknowledge that You have read, understood, and agreed to this Privacy Policy.</p>
+                    <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
+
+                    <!-- SECTION 1 -->
+                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700;">1. Information We Collect</h2>
+                    <p style="margin-bottom: 1rem;">To deliver our academic coaching, live lectures, practice tests, and mentorship services, We collect the following categories of information:</p>
+
+                    <h3 style="color: var(--accent); font-size: 1.3rem; margin-top: 1.8rem; margin-bottom: 1rem; font-weight: 600;">1.1 Personal Identification & Profile Data</h3>
+                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.75rem;">
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Full Name of Student & Parent</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Mobile / WhatsApp Phone Number</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Email Address</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Date of Birth & Gender</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Academic Grade / Class (Class 6th–12th, Dropper)</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Target Exam (IIT-JEE, NEET, Foundation)</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> School / Institution Name & Board (CBSE/ICSE/State)</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> City, State & Residential Address</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Profile Photograph (Voluntary)</li>
+                    </ul>
+
+                    <h3 style="color: var(--accent); font-size: 1.3rem; margin-top: 1.8rem; margin-bottom: 1rem; font-weight: 600;">1.2 Location Information</h3>
+                    <p style="margin-bottom: 1rem;">
+                        We collect approximate location data (derived from Your IP address, network carrier, or user-selected state/city).
+                    </p>
+                    <ul style="list-style-type: disc; padding-left: 24px; margin-bottom: 1.5rem; color: rgba(255,255,255,0.8);">
+                        <li><strong>Purpose:</strong> To connect students to the nearest regional CloudFront/CDN streaming server (Delhi/Mumbai) for low-latency live classes, schedule batch lectures according to Indian Standard Time (IST), and calculate applicable state GST for course purchases.</li>
+                        <li><strong>Background Location:</strong> EduRain does <strong>NOT</strong> track or access precise GPS location in the background.</li>
+                    </ul>
+
+                    <h3 style="color: var(--accent); font-size: 1.3rem; margin-top: 1.8rem; margin-bottom: 1rem; font-weight: 600;">1.3 Mobile App & Hardware Device Permissions</h3>
+                    <p style="margin-bottom: 1rem;">
+                        In compliance with Google Play Store & Apple App Store privacy policies, EduRain requests explicit, runtime permissions strictly when required for specific educational features:
+                    </p>
+                    
+                    <div style="display: grid; gap: 1.25rem; margin-bottom: 2rem;">
+                        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08);">
+                            <h4 style="color: #60a5fa; font-size: 1.15rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-camera"></i> Camera Permission
+                            </h4>
+                            <p style="margin: 0; font-size: 0.98rem; color: rgba(255,255,255,0.85);">
+                                <strong>Why We Ask:</strong> Required only when You choose to scan handwritten homework/doubt questions, capture answer sheets during online practice exams, or upload a profile picture. The camera is <strong>NEVER</strong> accessed without Your explicit manual action and is never used in the background.
+                            </p>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08);">
+                            <h4 style="color: #34d399; font-size: 1.15rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-microphone"></i> Microphone Permission
+                            </h4>
+                            <p style="margin: 0; font-size: 0.98rem; color: rgba(255,255,255,0.85);">
+                                <strong>Why We Ask:</strong> Required only when You actively participate in interactive two-way live doubt sessions, verbal Q&A with master teachers, or voice-based doubt queries. The microphone is <strong>NEVER</strong> recorded outside of an active interactive session initiated by You.
+                            </p>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08);">
+                            <h4 style="color: #f59e0b; font-size: 1.15rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-images"></i> Photos, Storage & Media Files
+                            </h4>
+                            <p style="margin: 0; font-size: 0.98rem; color: rgba(255,255,255,0.85);">
+                                <strong>Why We Ask:</strong> Required strictly to allow You to select assignment photos from Your gallery, upload test solutions, and cache offline study PDF materials for review when internet bandwidth is limited.
+                            </p>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08);">
+                            <h4 style="color: #a855f7; font-size: 1.15rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-bell"></i> Push Notifications
+                            </h4>
+                            <p style="margin: 0; font-size: 0.98rem; color: rgba(255,255,255,0.85);">
+                                <strong>Why We Ask:</strong> Used to alert students about upcoming live classes (15 minutes prior), new study modules, test results, doubt answers, and critical academic announcements. You can toggle notifications off at any time in device settings.
+                            </p>
+                        </div>
                     </div>
+
+                    <h3 style="color: var(--accent); font-size: 1.3rem; margin-top: 1.8rem; margin-bottom: 1rem; font-weight: 600;">1.4 Academic Usage & Performance Records</h3>
+                    <p style="margin-bottom: 1.5rem;">
+                        To provide analytics to students and parents, We record course progress, video lecture watch duration, mock test marks, rank percentile, attendance in live classes, and mentor doubt interaction logs.
+                    </p>
+
+                    <h3 style="color: var(--accent); font-size: 1.3rem; margin-top: 1.8rem; margin-bottom: 1rem; font-weight: 600;">1.5 Technical Telemetry & Crash Reports</h3>
+                    <p style="margin-bottom: 2rem;">
+                        We automatically collect device model, operating system version, browser user-agent, network type (Wi-Fi/4G/5G), and diagnostic crash logs via secure services (Sentry / Firebase Crashlytics) to fix technical bugs and optimize streaming performance on budget smartphones.
+                    </p>
+
+                    <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
+
+                    <!-- SECTION 2 -->
+                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700;">2. How We Use Your Information (Lawful Purpose)</h2>
+                    <p style="margin-bottom: 1rem;">Under the DPDP Act and consumer protection regulations, We process personal data solely for legitimate educational purposes:</p>
+                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.75rem;">
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Authenticating student logins & protecting accounts</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Conducting interactive live classes & video streaming</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Evaluating test series, assignments & generating report cards</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> One-on-one doubt clearing with faculty</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Processing course enrollment fee payments securely</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Sending SMS/WhatsApp alerts for class timings & exam schedules</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Complying with statutory taxation, accounting, and legal rules</li>
+                    </ul>
+
+                    <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
+
+                    <!-- SECTION 3 -->
+                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700;">3. Sharing & Disclosure of Information</h2>
+                    <p style="margin-bottom: 1.5rem;">
+                        <strong>We never sell, rent, or trade Your personal data to third parties for advertising or commercial marketing.</strong> Data is shared strictly on a need-to-know basis with trusted infrastructure sub-processors under legally binding confidentiality agreements:
+                    </p>
+
+                    <div style="display: grid; gap: 1.25rem; margin-bottom: 2rem;">
+                        <div style="background: rgba(255,255,255,0.03); padding: 1.25rem 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06);">
+                            <h4 style="color: var(--accent); margin-bottom: 0.4rem; font-size: 1.1rem;">Cloud & Media Infrastructure (AWS & CloudFront)</h4>
+                            <p style="margin: 0; font-size: 0.95rem; color: rgba(255,255,255,0.8);">
+                                All course assets, notes, and profile pictures are stored securely in AWS S3 (ap-south-1 Mumbai) and served via Amazon CloudFront CDN under Origin Access Control.
+                            </p>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.03); padding: 1.25rem 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06);">
+                            <h4 style="color: var(--accent); margin-bottom: 0.4rem; font-size: 1.1rem;">Secure Payment Processing (Razorpay / Certified Gateways)</h4>
+                            <p style="margin: 0; font-size: 0.95rem; color: rgba(255,255,255,0.8);">
+                                Course fees are processed directly by RBI-authorized payment aggregators (PCI-DSS Level 1 compliant). EduRain never sees or stores full credit card numbers, debit card PINs, or UPI passwords.
+                            </p>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.03); padding: 1.25rem 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06);">
+                            <h4 style="color: var(--accent); margin-bottom: 0.4rem; font-size: 1.1rem;">SMS & WhatsApp Communications</h4>
+                            <p style="margin: 0; font-size: 0.95rem; color: rgba(255,255,255,0.8);">
+                                Transactional alerts, OTPs, and lecture schedules are delivered via enterprise telecom aggregators strictly under TRAI DLT commercial regulations.
+                            </p>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.03); padding: 1.25rem 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06);">
+                            <h4 style="color: var(--accent); margin-bottom: 0.4rem; font-size: 1.1rem;">Legal & Law Enforcement Authorities</h4>
+                            <p style="margin: 0; font-size: 0.95rem; color: rgba(255,255,255,0.8);">
+                                We may disclose information where required by court summons, law enforcement agencies, or statutory regulatory bodies under applicable Indian law.
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
+
+                    <!-- SECTION 4 -->
+                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700;">4. Children’s Privacy & Parental Consent (&lt; 18 Years)</h2>
+                    <p style="margin-bottom: 1.5rem;">
+                        EduRain caters to school-age students and exam aspirants, many of whom are below the age of 18.
+                    </p>
+                    <ul style="list-style-type: disc; padding-left: 24px; margin-bottom: 2rem; color: rgba(255,255,255,0.8);">
+                        <li style="margin-bottom: 0.75rem;"><strong>Mandatory Parental Consent:</strong> Accounts for minor students under 18 years of age must be created with the knowledge and verified consent of a parent or legal guardian.</li>
+                        <li style="margin-bottom: 0.75rem;"><strong>No Behavioral Advertising or Profiling:</strong> In strict alignment with the DPDP Act 2023, EduRain prohibits any behavioral tracking, profiling, or targeted commercial advertising directed toward children.</li>
+                        <li style="margin-bottom: 0.75rem;"><strong>Safe Learning Environment:</strong> All doubt forums, classroom chat messages, and educator sessions are monitored to ensure a safe, constructive academic setting free from harassment or abusive behavior.</li>
+                    </ul>
+
+                    <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
+
+                    <!-- SECTION 5 -->
+                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700;">5. Account & Data Deletion (Apple App Store & DPDP Compliant)</h2>
+                    <p style="margin-bottom: 1.5rem;">
+                        Under <strong>Apple App Store Review Guideline 5.1.1(v)</strong> and the <strong>DPDP Act Right to Erasure</strong>, every student has the permanent right to delete their account and associated personal data at any time.
+                    </p>
+
+                    <div style="background: rgba(239, 68, 68, 0.08); border-left: 4px solid #ef4444; padding: 1.5rem; margin-bottom: 2rem; border-radius: 12px;">
+                        <h4 style="color: #fca5a5; font-size: 1.2rem; margin-bottom: 0.75rem; font-weight: 700;">
+                            <i class="fas fa-trash-alt" style="margin-right: 8px;"></i> How to Delete Your Account and Data:
+                        </h4>
+                        <ol style="padding-left: 20px; margin-bottom: 1rem; color: #fee2e2; font-size: 1rem; line-height: 1.7;">
+                            <li style="margin-bottom: 0.5rem;"><strong>In-App Self-Service (Mobile App):</strong> Open the EduRain App &rarr; Navigate to <strong>Profile &rarr; Tap "Delete Account & Data"</strong> &rarr; Confirm in the confirmation dialog.</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Via Email Request:</strong> Send an email from Your registered email address to <strong><a href="mailto:support@edurain.in" style="color: #60a5fa; text-decoration: underline;">support@edurain.in</a></strong> or <strong><a href="mailto:info@edurain.in" style="color: #60a5fa; text-decoration: underline;">info@edurain.in</a></strong> with the subject line <em>"Account Deletion Request"</em>.</li>
+                        </ol>
+                        <p style="margin: 0; font-size: 0.95rem; color: #fecaca;">
+                            <strong>Data Treatment upon Deletion:</strong> Your personal profile, uploaded images, device tokens, and active sessions are permanently deleted within 30 days. Financial transaction logs are archived in encrypted cold storage strictly as required under Indian taxation and accounting laws.
+                        </p>
+                    </div>
+
+                    <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
+
+                    <!-- SECTION 6 -->
+                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700;">6. Data Security & Storage Standards</h2>
+                    <ul style="list-style-type: disc; padding-left: 24px; margin-bottom: 2rem; color: rgba(255,255,255,0.8);">
+                        <li style="margin-bottom: 0.5rem;"><strong>Encryption:</strong> All data transmitted between Your browser/app and our servers is encrypted using 256-bit TLS 1.3 / SSL. Storage is encrypted at rest using AES-256.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Access Control:</strong> Backend databases and S3 storage are isolated behind VPC firewalls, AWS RDS Proxies, and Origin Access Control (OAC).</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Security Incident Reporting:</strong> In compliance with CERT-In directions and the DPDP Act, any confirmed security vulnerability or incident will be reported to statutory authorities and affected users within required timeframes.</li>
+                    </ul>
+
+                    <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
+
+                    <!-- SECTION 7 -->
+                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700;">7. Statutory Grievance Redressal Officer (DPDP Act India)</h2>
+                    <p style="margin-bottom: 1.5rem;">
+                        In accordance with the Information Technology Act 2000, IT Rules 2021, and the Digital Personal Data Protection Act 2023/2026, EduRain has designated a <strong>Grievance Redressal Officer</strong> to address any privacy, consent, or data concerns:
+                    </p>
+
+                    <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); margin-bottom: 2.5rem;">
+                        <h3 style="color: var(--accent); font-size: 1.3rem; margin-bottom: 1rem; font-weight: 700;">Grievance Redressal Officer</h3>
+                        <p style="margin-bottom: 0.6rem;"><strong>Officer Name:</strong> Manoj Kumar</p>
+                        <p style="margin-bottom: 0.6rem;"><strong>Designation:</strong> Head of Compliance & Grievance Officer, EduRain Private Limited</p>
+                        <p style="margin-bottom: 0.6rem;">
+                            <strong>Official Grievance Email:</strong> 
+                            <a href="mailto:info@edurain.in" style="color: #60a5fa; text-decoration: none; font-weight: 600;">info@edurain.in</a>
+                        </p>
+                        <p style="margin-bottom: 0.6rem;">
+                            <strong>General Support Email:</strong> 
+                            <a href="mailto:support@edurain.in" style="color: #60a5fa; text-decoration: none;">support@edurain.in</a>
+                        </p>
+                        <p style="margin-bottom: 0.6rem;">
+                            <strong>Registered Office Address:</strong> 
+                            EduRain Private Limited, Sector 132, Urbtech, Expressway, Noida, Gautam Buddha Nagar, Uttar Pradesh - 201304, India
+                        </p>
+                        <p style="margin-bottom: 0; font-size: 0.95rem; color: #34d399; font-weight: 500;">
+                            <i class="fas fa-clock" style="margin-right: 6px;"></i> Statutory SLA: Acknowledgment within 24–48 hours, resolution within 15–30 calendar days.
+                        </p>
+                    </div>
+
+                    <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
+
+                    <!-- SECTION 8 -->
+                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700;">8. Contact Us</h2>
+                    <div style="background: rgba(255,255,255,0.02); padding: 1.5rem; border-radius: 12px; text-align: center;">
+                        <p style="margin-bottom: 0.5rem;"><strong>EduRain Private Limited</strong></p>
+                        <p style="margin-bottom: 0.5rem;"><i class="fas fa-globe" style="color: var(--accent); margin-right: 8px;"></i> <a href="https://edurain.in" target="_blank" rel="noopener noreferrer" style="color: var(--text-main); text-decoration: none;">https://edurain.in</a></p>
+                        <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone" style="color: var(--accent); margin-right: 8px;"></i> <a href="tel:+918796443910" style="color: var(--text-main); text-decoration: none;">+91 8796443910</a> | <a href="https://wa.me/918796443910" target="_blank" rel="noopener noreferrer" style="color: #25D366; text-decoration: none;"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>
+                        <p style="margin: 0; color: var(--text-muted); font-size: 0.95rem;">Sector 132, Urbtech, Expressway, Noida, UP, India</p>
+                    </div>
+
                 </div>
             </div>
         </section>

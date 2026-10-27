@@ -1,5 +1,15 @@
 // loginUser and registerUser are dynamically imported on submit
 
+function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
 function playPremiumLoadingAnimation(onComplete) {
     const overlay = document.createElement('div');
     overlay.style.cssText = `
@@ -118,6 +128,19 @@ export function renderAuthModal() {
                     <div class="form-group">
                         <input type="password" id="signup-confirm" placeholder="Confirm Password" required minlength="6" />
                     </div>
+
+                    <!-- DPDP Act 2026 Compliant Unbundled Consent Checkboxes (Unchecked by Default) -->
+                    <div class="consent-group" style="margin-bottom: 1.2rem; font-size: 0.82rem; line-height: 1.4; display: flex; flex-direction: column; gap: 0.6rem; text-align: left;">
+                        <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" id="signup-consent-terms" required style="margin-top: 3px; accent-color: var(--accent);" />
+                            <span>I agree to EduRain's <a href="/terms" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">Terms & Conditions</a> and <a href="/privacy" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">Privacy Policy</a>.</span>
+                        </label>
+                        <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" id="signup-consent-age" required style="margin-top: 3px; accent-color: var(--accent);" />
+                            <span>I confirm I am 18+ years of age, or have consent from a parent/guardian.</span>
+                        </label>
+                    </div>
+
                     <div id="signup-error" class="auth-error"></div>
                     <button type="submit" class="btn btn-accent btn-lg btn-full">
                         <span class="btn-text">Create Account</span>
@@ -229,10 +252,12 @@ export function initAuthModal() {
     if (signupForm) {
         signupForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const name = document.getElementById('signup-name').value.trim();
+            const rawName = document.getElementById('signup-name').value.trim();
             const email = document.getElementById('signup-email').value.trim();
             const password = document.getElementById('signup-password').value;
             const confirm = document.getElementById('signup-confirm').value;
+            const consentTerms = document.getElementById('signup-consent-terms')?.checked;
+            const consentAge = document.getElementById('signup-consent-age')?.checked;
             const errorDiv = document.getElementById('signup-error');
             const btnText = signupForm.querySelector('.btn-text');
             const spinner = signupForm.querySelector('.spinner');
@@ -240,7 +265,15 @@ export function initAuthModal() {
             errorDiv.textContent = '';
 
             // Validation
-            if (name.length < 2) {
+            if (!consentTerms) {
+                errorDiv.textContent = 'Please accept the Terms & Conditions and Privacy Policy.';
+                return;
+            }
+            if (!consentAge) {
+                errorDiv.textContent = 'Please confirm age or parental consent.';
+                return;
+            }
+            if (rawName.length < 2) {
                 errorDiv.textContent = 'Please enter your full name.';
                 return;
             }
@@ -257,6 +290,8 @@ export function initAuthModal() {
                 errorDiv.textContent = 'Passwords do not match.';
                 return;
             }
+
+            const name = escapeHtml(rawName);
 
             btnText.style.display = 'none';
             spinner.style.display = 'inline-block';

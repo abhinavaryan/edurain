@@ -66,6 +66,7 @@ export function renderFooter() {
                         <a href="https://wa.me/918796443910" target="_blank" rel="noopener noreferrer" style="color: #25D366; text-decoration: none; font-size: 1.1em;" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:support@edurain.in" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color=''">support@edurain.in</a></p>
+                    <p style="margin-top: 0.5rem; font-size: 0.85rem;"><i class="fas fa-shield-alt"></i> Grievance Officer: <a href="mailto:info@edurain.in" style="color: inherit; text-decoration: underline;">info@edurain.in</a></p>
                 </div>
                 <div class="footer-col">
                     <h2 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Get the App</h2>
@@ -101,6 +102,7 @@ export function renderFooter() {
                     <a href="/privacy">Privacy Policy</a> |
                     <a href="/terms">Terms and Conditions</a> |
                     <a href="/refund-policy">Refund/Cancellation Policy</a> |
+                    <a href="/privacy#grievance">Grievance Redressal</a> |
                     <a href="/contact-us">Contact Us</a>
                 </div>
             </div>
@@ -116,7 +118,6 @@ export function initFooter() {
         if (wrapper) {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                // Close other open wrappers first
                 document.querySelectorAll('.social-dropdown-wrapper.active').forEach(w => {
                     if (w !== wrapper) w.classList.remove('active');
                 });
@@ -133,4 +134,3 @@ export function initFooter() {
         });
     });
 }
-

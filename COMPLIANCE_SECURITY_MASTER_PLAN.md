@@ -59,7 +59,7 @@ CREATE INDEX idx_consent_user ON user_consent_logs(user_id, consent_type);
 - Every user-facing portal (Website footer, WebApp settings, App drawer) must prominently display:
   - **Designation:** Grievance Redressal Officer
   - **Officer Name:** e.g., Manoj / Appointed Legal Officer
-  - **Official Email:** `grievance@edurain.in` (monitored with strict SLA)
+  - **Official Email:** `info@edurain.in` (monitored with strict SLA)
   - **Office Address:** EduRain Pvt. Ltd., Sector 132, Noida, Uttar Pradesh, India
   - **Statutory Resolution SLA:** Acknowledgment within 24 hours, resolution within 15–30 calendar days.
 
@@ -327,3 +327,4 @@ CREATE INDEX idx_consent_user ON user_consent_logs(user_id, consent_type);
 ---
 *Document Version: 1.0.0 (October 2026)*  
 *Approved for EduRain Production Deployments*
+
