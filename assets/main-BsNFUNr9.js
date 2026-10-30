@@ -205,7 +205,7 @@ import"./modulepreload-polyfill-Dezn_h7o.js";import{t as e}from"./preload-helper
       </main>
       ${b}
       
-    `,requestAnimationFrame(()=>{let t=e.querySelector(`.main-content`);t&&t.classList.add(`visible`)}),document.querySelectorAll(`.nav-link`).forEach(e=>{try{let t=new URL(e.href).pathname,n=t.endsWith(`/`)&&t!==`/`?t.slice(0,-1):t;e.classList.toggle(`active`,n===l)}catch{}}),window.scrollTo({top:0,behavior:`instant`}),n(),s(),i(),c(),m.postRender(),window.observeFadeElements&&window.observeFadeElements()},window.addEventListener(`popstate`,window.renderRoute),window.renderRoute()};function g(){let e=document.createElement(`div`);e.id=`er-fab-container`,e.innerHTML=`
+    `,requestAnimationFrame(()=>{let t=e.querySelector(`.main-content`);t&&t.classList.add(`visible`)}),document.querySelectorAll(`.nav-link`).forEach(e=>{try{let t=new URL(e.href).pathname,n=t.endsWith(`/`)&&t!==`/`?t.slice(0,-1):t;e.classList.toggle(`active`,n===l)}catch{}}),window.scrollTo({top:0,behavior:`instant`}),n(),s(),i(),c(),m.postRender(),window.observeFadeElements&&window.observeFadeElements()},window.addEventListener(`popstate`,window.renderRoute),window.renderRoute().finally(()=>{document.documentElement.classList.remove(`er-blogs-loading`)})};function g(){let e=document.createElement(`div`);e.id=`er-fab-container`,e.innerHTML=`
         <!-- AI Chat Window (Hidden by default) -->
         <div id="er-chat-window" class="er-chat-hidden">
             <div class="er-chat-header">
