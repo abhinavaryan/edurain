@@ -445,5 +445,8 @@ export const initRouter = () => {
   };
 
   window.addEventListener('popstate', window.renderRoute);
-  window.renderRoute();
+  window.renderRoute().finally(() => {
+    // Reveal blog pages hidden by the anti-flicker snippet from generate_routes.cjs
+    document.documentElement.classList.remove('er-blogs-loading');
+  });
 };

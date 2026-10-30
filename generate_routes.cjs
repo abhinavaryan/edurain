@@ -151,6 +151,12 @@ async function fetchBlogs() {
 // Real components are imported dynamically inside generate()
 // -------------------------------------------------------------
 
+// Blog pages: the prerendered HTML below is a simplified version for search engines.
+// This hides it for visitors until router.js renders the real blog page, so a refresh
+// never flashes the old design. If JS fails, it is shown again after 5 seconds.
+const blogAntiFlickerSnippet = `<style>html.er-blogs-loading #app > main { visibility: hidden; }</style>
+<script>document.documentElement.classList.add('er-blogs-loading');setTimeout(function () { document.documentElement.classList.remove('er-blogs-loading'); }, 5000);</script>`;
+
 function prerenderBlogList(blogs) {
   const cardsHtml = blogs.map(b => {
     return `
@@ -356,6 +362,10 @@ function prerenderBlogArticle(meta) {
     if (meta.image) {
       finalHtml = finalHtml.replace(/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${meta.image}">`);
       finalHtml = finalHtml.replace(/<meta name="twitter:image" content="[^"]*">/, `<meta name="twitter:image" content="${meta.image}">`);
+    }
+
+    if (route === 'blogs' || meta.isBlog) {
+      finalHtml = finalHtml.replace('</head>', `${blogAntiFlickerSnippet}\n</head>`);
     }
 
     // 2. Build Route Body Content
