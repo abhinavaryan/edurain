@@ -112,15 +112,18 @@ const routesMeta = {
   }
 };
 
-function fetchBlogs() {
+function fetchBlogsPage(pageToken) {
+  let url = 'https://firestore.googleapis.com/v1/projects/edurain-pvt/databases/(default)/documents/blogs?pageSize=300';
+  if (pageToken) url += `&pageToken=${encodeURIComponent(pageToken)}`;
   return new Promise((resolve, reject) => {
-    https.get('https://firestore.googleapis.com/v1/projects/edurain-pvt/databases/(default)/documents/blogs', (res) => {
+    https.get(url, (res) => {
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
         try {
           const json = JSON.parse(data);
-          resolve(json.documents || []);
+          if (json.error) return reject(new Error(json.error.message));
+          resolve(json);
         } catch(e) {
           reject(e);
         }
@@ -129,33 +132,24 @@ function fetchBlogs() {
   });
 }
 
+// Firestore REST returns at most one page per request (100 docs by default).
+// Follow nextPageToken so blogs beyond the first page also get static pages,
+// otherwise GitHub Pages serves them with a 404 status.
+async function fetchBlogs() {
+  const documents = [];
+  let pageToken;
+  do {
+    const json = await fetchBlogsPage(pageToken);
+    documents.push(...(json.documents || []));
+    pageToken = json.nextPageToken;
+  } while (pageToken);
+  return documents;
+}
+
 // -------------------------------------------------------------
 // Prerendering HTML Builders (SSG)
 // Real components are imported dynamically inside generate()
 // -------------------------------------------------------------
-
-function prerenderPolicy(type) {
-  const titles = {
-    privacy: "Privacy Policy",
-    terms: "Terms and Conditions",
-    'refund-policy': "Refund & Cancellation Policy",
-    sitemap: "HTML Sitemap"
-  };
-  const title = titles[type] || "Policy";
-
-  return `
-    <section class="policy-page" style="max-width: 900px; margin: 3rem auto; padding: 2rem 1.5rem; color: #cbd5e1; line-height: 1.8;">
-      <h1 style="color: #ffffff; font-size: 2.2rem; margin-bottom: 1.5rem;">${title}</h1>
-      <p style="margin-bottom: 1.5rem;">Welcome to EduRain. We are committed to transparency, security, and delivering exceptional learning experiences to every student across India.</p>
-      <div class="glass-card" style="padding: 2rem; border-radius: 16px; margin-top: 1.5rem;">
-        <h2 style="color: #34d399; font-size: 1.4rem; margin-bottom: 1rem;">1. Overview</h2>
-        <p style="margin-bottom: 1rem;">EduRain provides online classes, practice mock tests, study materials, and academic mentorship for Classes 6th to 12th, Foundation, IIT-JEE and NEET exams.</p>
-        <h2 style="color: #34d399; font-size: 1.4rem; margin-bottom: 1rem;">2. Contact & Inquiries</h2>
-        <p>If you have any questions regarding our terms, refunds, or data privacy practices, please contact us at <a href="mailto:contact@edurain.in" style="color: #60a5fa;">contact@edurain.in</a>.</p>
-      </div>
-    </section>
-  `;
-}
 
 function prerenderBlogList(blogs) {
   const cardsHtml = blogs.map(b => {
@@ -243,6 +237,19 @@ function prerenderBlogArticle(meta) {
   const { renderHomeReviews } = await import('./src/components/homeReviews.js');
   const { renderImpact } = await import('./src/components/impact.js');
   const { renderAppDownload } = await import('./src/components/appDownload.js');
+  const { renderPrivacy } = await import('./src/components/privacy.js');
+  const { renderTerms } = await import('./src/components/terms.js');
+  const { renderRefund } = await import('./src/components/refund.js');
+  const { renderSitemap } = await import('./src/components/sitemap.js');
+
+  // Policy pages are prerendered from the same components the SPA uses,
+  // so a direct visit and an in-app click show identical content.
+  const policyRenderers = {
+    privacy: renderPrivacy,
+    terms: renderTerms,
+    'refund-policy': renderRefund,
+    sitemap: renderSitemap
+  };
 
   const today = new Date().toISOString().split('T')[0];
   const blogSlugs = [];
@@ -367,8 +374,8 @@ function prerenderBlogArticle(meta) {
       routeContentHtml = prerenderBlogList(publishedBlogsForList);
     } else if (meta.isBlog) {
       routeContentHtml = prerenderBlogArticle(meta);
-    } else if (['privacy', 'terms', 'refund-policy', 'sitemap'].includes(route)) {
-      routeContentHtml = prerenderPolicy(route);
+    } else if (policyRenderers[route]) {
+      routeContentHtml = policyRenderers[route]();
     }
 
     // 3. Inject full shell: Navbar + Page Body (H1/H2/Cards/FAQs) + Footer into <div id="app">

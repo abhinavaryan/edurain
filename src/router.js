@@ -382,7 +382,8 @@ export const initRouter = () => {
       (path.startsWith('/blogs') && (app.querySelector('.blogs-section') || app.querySelector('.blog-post-page'))) ||
       (path === '/about-us' && app.querySelector('.about-section')) ||
       (path === '/contact-us' && app.querySelector('.contact-section')) ||
-      (['/privacy', '/terms', '/refund-policy', '/sitemap'].includes(path) && app.querySelector('.policy-page'))
+      (['/privacy', '/terms', '/refund-policy'].includes(path) && app.querySelector('.er-privacy-section')) ||
+      (path === '/sitemap' && app.querySelector('.er-sitemap-section'))
     );
 
     if (isInitialLoad && isPrerenderedMatch) {
