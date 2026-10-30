@@ -376,10 +376,12 @@ export const initRouter = () => {
     // we MUST execute full client render so user doesn't get stuck on the homepage.
     const isFrom404Redirect = Boolean(urlParams.get('p'));
     const isAdminRoute = path.includes('admin');
+    // Blog pages are intentionally not listed: their prerendered HTML is a simplified
+    // version for search engines, and initBlogs() needs the real layout (search,
+    // categories, reader view), so /blogs and /blogs/<slug> always render client-side.
     const isPrerenderedMatch = !isFrom404Redirect && !isAdminRoute && (
       (path === '/' && app.querySelector('.banner-section')) ||
       (path.startsWith('/courses') && app.querySelector('.courses-section')) ||
-      (path.startsWith('/blogs') && (app.querySelector('.blogs-section') || app.querySelector('.blog-post-page'))) ||
       (path === '/about-us' && app.querySelector('.about-section')) ||
       (path === '/contact-us' && app.querySelector('.contact-section')) ||
       (['/privacy', '/terms', '/refund-policy'].includes(path) && app.querySelector('.er-privacy-section')) ||

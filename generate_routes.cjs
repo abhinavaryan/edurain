@@ -285,6 +285,8 @@ function prerenderBlogArticle(meta) {
         } else if (fields.coverImage && fields.coverImage.stringValue) {
           coverImage = fields.coverImage.stringValue;
         }
+        // phototourl links have expired; skip them like the live blog page does
+        if (coverImage.includes('phototourl.com')) coverImage = '';
 
         publishedBlogsForList.push({ id, slug, title, desc, image: coverImage, category });
 
