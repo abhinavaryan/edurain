@@ -48,67 +48,67 @@ const routesMeta = {
     title: 'Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-10)',
     ogTitle: 'All Online Coaching Courses – IIT JEE, NEET & Foundation | EduRain',
     desc: 'Explore IIT JEE, NEET & Foundation courses for Class 6-10 with expert faculty, structured curriculum & proven results. Take the first step toward success.',
-    canonical: 'https://www.edurain.in/courses/'
+    canonical: 'https://www.edurain.in/courses'
   },
   'blogs': {
     title: 'IIT JEE, NEET & Foundation Blogs | EduRain',
     ogTitle: 'IIT JEE, NEET & Class 6-10 Preparation Guides & Blogs | EduRain',
     desc: 'Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides.',
-    canonical: 'https://www.edurain.in/blogs/'
+    canonical: 'https://www.edurain.in/blogs'
   },
   'courses/iit-jee': {
     title: 'Best IIT JEE 2027 Online Coaching for JEE Main & Advanced | EduRain',
     ogTitle: 'Best IIT JEE Online Coaching 2026-2027 | EduRain',
     desc: 'Crack IIT JEE 2027 with EduRain: live classes, expert faculty, and structured material for complete JEE Main & Advanced exam preparation.',
-    canonical: 'https://www.edurain.in/courses/iit-jee/'
+    canonical: 'https://www.edurain.in/courses/iit-jee'
   },
   'courses/neet': {
     title: 'NEET 2027-28 Complete Online Preparation with EduRain',
     ogTitle: 'NEET 2027-2028 Online Coaching & Complete Preparation | EduRain',
     desc: 'Start your NEET 2027-28 online preparation with EduRain: live classes, expert faculty, and structured NCERT-based material with regular mock tests.',
-    canonical: 'https://www.edurain.in/courses/neet/'
+    canonical: 'https://www.edurain.in/courses/neet'
   },
   'courses/foundation': {
     title: 'Best Online Coaching for Classes 6 to 10 | Foundation (2026-2027)',
     ogTitle: 'Classes 6 to 10 Online Coaching (Foundation 2026-2027) | EduRain',
     desc: 'Live online classes for Class 6 to 10 with expert-led Math, Science & more: building a strong IIT JEE & NEET foundation. Interactive learning, real results.',
-    canonical: 'https://www.edurain.in/courses/foundation/'
+    canonical: 'https://www.edurain.in/courses/foundation'
   },
   'about-us': {
     title: "About Us | EduRain's Mission to Make Learning Accessible",
     ogTitle: 'About EduRain – Democratizing Master Coaching Across India',
     desc: "At EduRain, our mission is to make quality education accessible for every student from Class 6-10 foundation to IIT-JEE & NEET success. Know our story.",
-    canonical: 'https://www.edurain.in/about-us/'
+    canonical: 'https://www.edurain.in/about-us'
   },
   'contact-us': {
     title: "Contact Us | Get in Touch with EduRain",
     ogTitle: 'Contact EduRain – Admissions & Student Support',
     desc: "Have questions about our courses for Class 6-10, IIT-JEE or NEET? Contact EduRain's team for admissions support, course details or a free demo class.",
-    canonical: 'https://www.edurain.in/contact-us/'
+    canonical: 'https://www.edurain.in/contact-us'
   },
   'privacy': {
     title: "Privacy Policy - EduRain",
     ogTitle: "Privacy Policy - EduRain",
     desc: "Privacy policy of EduRain",
-    canonical: 'https://www.edurain.in/privacy/'
+    canonical: 'https://www.edurain.in/privacy'
   },
   'terms': {
     title: "Terms and Conditions - EduRain",
     ogTitle: "Terms and Conditions - EduRain",
     desc: "Terms and conditions of use for EduRain",
-    canonical: 'https://www.edurain.in/terms/'
+    canonical: 'https://www.edurain.in/terms'
   },
   'refund-policy': {
     title: "Refund/Cancellation Policy - EduRain",
     ogTitle: "Refund & Cancellation Policy - EduRain",
     desc: "Refund and cancellation policy for EduRain",
-    canonical: 'https://www.edurain.in/refund-policy/'
+    canonical: 'https://www.edurain.in/refund-policy'
   },
   'sitemap': {
     title: "Sitemap - EduRain",
     ogTitle: "Sitemap - EduRain",
     desc: "Sitemap for EduRain website and all published resources",
-    canonical: 'https://www.edurain.in/sitemap/'
+    canonical: 'https://www.edurain.in/sitemap'
   }
 };
 
@@ -151,11 +151,7 @@ async function fetchBlogs() {
 // Real components are imported dynamically inside generate()
 // -------------------------------------------------------------
 
-// Blog pages: the prerendered HTML below is a simplified version for search engines.
-// This hides it for visitors until router.js renders the real blog page, so a refresh
-// never flashes the old design. If JS fails, it is shown again after 5 seconds.
-const blogAntiFlickerSnippet = `<style>html.er-blogs-loading #app > main { visibility: hidden; }</style>
-<script>document.documentElement.classList.add('er-blogs-loading');setTimeout(function () { document.documentElement.classList.remove('er-blogs-loading'); }, 5000);</script>`;
+// Prerendered blog pages are fully visible immediately for crawlers and visitors without anti-flicker delay
 
 function prerenderBlogList(blogs) {
   const cardsHtml = blogs.map(b => {
@@ -209,7 +205,7 @@ function prerenderBlogArticle(meta) {
         </div>
       ` : ''}
 
-      <div class="blog-post-content" style="color: #cbd5e1; font-size: 1.1rem; line-height: 1.85;">
+      <div class="blog-post-content quill-content" style="color: #cbd5e1; font-size: 1.1rem; line-height: 1.85;">
         ${safeContent}
       </div>
 
@@ -300,7 +296,7 @@ function prerenderBlogArticle(meta) {
           title: `${title} | EduRain Blog`,
           ogTitle: `${title} | EduRain`,
           desc: desc.slice(0, 160),
-          canonical: `https://www.edurain.in/blogs/${slug}/`,
+          canonical: `https://www.edurain.in/blogs/${slug}`,
           image: coverImage,
           content: content,
           category: category,
@@ -323,18 +319,21 @@ function prerenderBlogArticle(meta) {
 
   const staticUrls = [
     { loc: 'https://www.edurain.in', priority: '1.0', changefreq: 'weekly' },
-    { loc: 'https://www.edurain.in/courses/', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://www.edurain.in/courses/iit-jee/', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://www.edurain.in/courses/neet/', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://www.edurain.in/courses/foundation/', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://www.edurain.in/blogs/', priority: '0.8', changefreq: 'daily' },
-    { loc: 'https://www.edurain.in/about-us/', priority: '0.7', changefreq: 'monthly' },
-    { loc: 'https://www.edurain.in/contact-us/', priority: '0.7', changefreq: 'monthly' },
-    { loc: 'https://www.edurain.in/refund-policy/', priority: '0.5', changefreq: 'monthly' }
+    { loc: 'https://www.edurain.in/courses', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/courses/iit-jee', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/courses/neet', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/courses/foundation', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://www.edurain.in/blogs', priority: '0.8', changefreq: 'daily' },
+    { loc: 'https://www.edurain.in/about-us', priority: '0.7', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/contact-us', priority: '0.7', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/privacy', priority: '0.5', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/terms', priority: '0.5', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/refund-policy', priority: '0.5', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/sitemap', priority: '0.6', changefreq: 'monthly' }
   ];
 
   const blogUrls = blogSlugs.map(slug => ({
-    loc: `https://www.edurain.in/blogs/${slug}/`,
+    loc: `https://www.edurain.in/blogs/${slug}`,
     priority: '0.8',
     changefreq: 'monthly'
   }));
@@ -364,9 +363,7 @@ function prerenderBlogArticle(meta) {
       finalHtml = finalHtml.replace(/<meta name="twitter:image" content="[^"]*">/, `<meta name="twitter:image" content="${meta.image}">`);
     }
 
-    if (route === 'blogs' || meta.isBlog) {
-      finalHtml = finalHtml.replace('</head>', `${blogAntiFlickerSnippet}\n</head>`);
-    }
+    // Note: anti-flicker snippet removed so bots and users see content instantly
 
     // 2. Build Route Body Content
     let routeContentHtml = '';
@@ -401,12 +398,22 @@ function prerenderBlogArticle(meta) {
 
     finalHtml = finalHtml.replace('<div id="app"></div>', `<div id="app">\n${fullPageShellHtml}\n</div>`);
 
-    // 4. Save to dist/{route}/index.html
+    // 4. Save BOTH dist/{route}/index.html AND dist/{route}.html
+    // On GitHub Pages:
+    // - dist/{route}.html serves clean URL https://www.edurain.in/{route} directly (200 OK, zero 301 redirects)
+    // - dist/{route}/index.html serves trailing-slash URL https://www.edurain.in/{route}/ (200 OK)
     const folderPath = path.join(distDir, route);
     if (!fs.existsSync(folderPath)) {
       fs.mkdirSync(folderPath, { recursive: true });
     }
     fs.writeFileSync(path.join(folderPath, 'index.html'), finalHtml);
+
+    const directHtmlPath = path.join(distDir, `${route}.html`);
+    const directParent = path.dirname(directHtmlPath);
+    if (!fs.existsSync(directParent)) {
+      fs.mkdirSync(directParent, { recursive: true });
+    }
+    fs.writeFileSync(directHtmlPath, finalHtml);
   });
 
   // -------------------------------------------------------------
@@ -435,6 +442,13 @@ function prerenderBlogArticle(meta) {
     adminHtml = adminHtml.replace(/<title>[^<]*<\/title>/, '<title>EduRain Blog Admin</title>');
     adminHtml = adminHtml.replace('</head>', '<meta name="robots" content="noindex, nofollow" />\n</head>');
     fs.writeFileSync(path.join(folderPath, 'index.html'), adminHtml);
+
+    const directAdminHtmlPath = path.join(distDir, `${r}.html`);
+    const directAdminParent = path.dirname(directAdminHtmlPath);
+    if (!fs.existsSync(directAdminParent)) {
+      fs.mkdirSync(directAdminParent, { recursive: true });
+    }
+    fs.writeFileSync(directAdminHtmlPath, adminHtml);
   });
   console.log('✅ Generated clean static entrypoints for admin routes (zero 404s).');
 
@@ -484,11 +498,15 @@ ${blogUrls.map(u => `    <url>
     fs.mkdirSync(blogsDir, { recursive: true });
   }
   fs.writeFileSync(path.join(blogsDir, 'sitemap-index.xml'), blogsSitemapXml);
+  fs.writeFileSync(path.join(distDir, 'sitemap-blogs.xml'), blogsSitemapXml);
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <sitemap>
         <loc>https://www.edurain.in/sitemap-0.xml</loc>
+    </sitemap>
+    <sitemap>
+        <loc>https://www.edurain.in/sitemap-blogs.xml</loc>
     </sitemap>
     <sitemap>
         <loc>https://www.edurain.in/blogs/sitemap-index.xml</loc>
@@ -501,6 +519,7 @@ ${blogUrls.map(u => `    <url>
   const publicDir = path.join(__dirname, 'public');
   if (fs.existsSync(publicDir)) {
     fs.writeFileSync(path.join(publicDir, 'sitemap-0.xml'), sitemap0Xml);
+    fs.writeFileSync(path.join(publicDir, 'sitemap-blogs.xml'), blogsSitemapXml);
     fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml);
     const publicBlogsDir = path.join(publicDir, 'blogs');
     if (!fs.existsSync(publicBlogsDir)) fs.mkdirSync(publicBlogsDir, { recursive: true });

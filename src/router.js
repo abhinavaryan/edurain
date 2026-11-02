@@ -376,16 +376,14 @@ export const initRouter = () => {
     // we MUST execute full client render so user doesn't get stuck on the homepage.
     const isFrom404Redirect = Boolean(urlParams.get('p'));
     const isAdminRoute = path.includes('admin');
-    // Blog pages are intentionally not listed: their prerendered HTML is a simplified
-    // version for search engines, and initBlogs() needs the real layout (search,
-    // categories, reader view), so /blogs and /blogs/<slug> always render client-side.
     const isPrerenderedMatch = !isFrom404Redirect && !isAdminRoute && (
       (path === '/' && app.querySelector('.banner-section')) ||
       (path.startsWith('/courses') && app.querySelector('.courses-section')) ||
       (path === '/about-us' && app.querySelector('.about-section')) ||
       (path === '/contact-us' && app.querySelector('.contact-section')) ||
       (['/privacy', '/terms', '/refund-policy'].includes(path) && app.querySelector('.er-privacy-section')) ||
-      (path === '/sitemap' && app.querySelector('.er-sitemap-section'))
+      (path === '/sitemap' && app.querySelector('.er-sitemap-section')) ||
+      (path.startsWith('/blogs/') && app.querySelector('.blog-post-page'))
     );
 
     if (isInitialLoad && isPrerenderedMatch) {
@@ -445,8 +443,5 @@ export const initRouter = () => {
   };
 
   window.addEventListener('popstate', window.renderRoute);
-  window.renderRoute().finally(() => {
-    // Reveal blog pages hidden by the anti-flicker snippet from generate_routes.cjs
-    document.documentElement.classList.remove('er-blogs-loading');
-  });
+  window.renderRoute();
 };

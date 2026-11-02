@@ -4,6 +4,9 @@
         <loc>https://www.edurain.in/sitemap-0.xml</loc>
     </sitemap>
     <sitemap>
+        <loc>https://www.edurain.in/sitemap-blogs.xml</loc>
+    </sitemap>
+    <sitemap>
         <loc>https://www.edurain.in/blogs/sitemap-index.xml</loc>
     </sitemap>
 </sitemapindex>
