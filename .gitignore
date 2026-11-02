@@ -52,3 +52,6 @@ lh-*.json
 # Post Signup Web App
 study.html
 src/study/
+
+# Graphify Local Memory
+graphify-out/

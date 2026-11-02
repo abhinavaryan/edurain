@@ -382,8 +382,7 @@ export const initRouter = () => {
       (path === '/about-us' && app.querySelector('.about-section')) ||
       (path === '/contact-us' && app.querySelector('.contact-section')) ||
       (['/privacy', '/terms', '/refund-policy'].includes(path) && app.querySelector('.er-privacy-section')) ||
-      (path === '/sitemap' && app.querySelector('.er-sitemap-section')) ||
-      (path.startsWith('/blogs/') && app.querySelector('.blog-post-page'))
+      (path === '/sitemap' && app.querySelector('.er-sitemap-section'))
     );
 
     if (isInitialLoad && isPrerenderedMatch) {
@@ -443,5 +442,9 @@ export const initRouter = () => {
   };
 
   window.addEventListener('popstate', window.renderRoute);
-  window.renderRoute();
+  window.renderRoute().finally(() => {
+    document.documentElement.classList.remove('er-blogs-loading');
+    const p = document.getElementById('blogs-page-preloader');
+    if (p) p.remove();
+  });
 };

@@ -151,7 +151,61 @@ async function fetchBlogs() {
 // Real components are imported dynamically inside generate()
 // -------------------------------------------------------------
 
-// Prerendered blog pages are fully visible immediately for crawlers and visitors without anti-flicker delay
+const blogLoadingSnippet = `
+<style>
+  html.er-blogs-loading #app > main {
+    visibility: hidden;
+  }
+  html.er-blogs-loading {
+    background-color: #0b0f19 !important;
+  }
+  #blogs-page-preloader {
+    display: none;
+  }
+  html.er-blogs-loading #blogs-page-preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #0b0f19;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .er-spin-loader {
+    width: 44px;
+    height: 44px;
+    border: 3.5px solid rgba(250, 204, 21, 0.15);
+    border-top-color: #facc15;
+    border-radius: 50%;
+    animation: er-spin 0.75s linear infinite;
+  }
+  @keyframes er-spin {
+    to { transform: rotate(360deg); }
+  }
+</style>
+<div id="blogs-page-preloader">
+  <div class="er-spin-loader"></div>
+  <div style="color: #94a3b8; font-size: 0.95rem; font-family: system-ui, -apple-system, sans-serif; font-weight: 500; letter-spacing: 0.5px;">Loading EduRain Blog...</div>
+</div>
+<script>
+  document.documentElement.classList.add('er-blogs-loading');
+  setTimeout(function () {
+    document.documentElement.classList.remove('er-blogs-loading');
+    var p = document.getElementById('blogs-page-preloader');
+    if (p) p.remove();
+  }, 4000);
+</script>
+<noscript>
+  <style>
+    html.er-blogs-loading #app > main { visibility: visible !important; }
+    #blogs-page-preloader { display: none !important; }
+  </style>
+</noscript>
+`;
+
+// Prerendered blog pages include smooth preloader overlay for visitors while keeping full HTML for crawlers
 
 function prerenderBlogList(blogs) {
   const cardsHtml = blogs.map(b => {
@@ -363,7 +417,9 @@ function prerenderBlogArticle(meta) {
       finalHtml = finalHtml.replace(/<meta name="twitter:image" content="[^"]*">/, `<meta name="twitter:image" content="${meta.image}">`);
     }
 
-    // Note: anti-flicker snippet removed so bots and users see content instantly
+    if (route === 'blogs' || meta.isBlog) {
+      finalHtml = finalHtml.replace('</head>', `${blogLoadingSnippet}\n</head>`);
+    }
 
     // 2. Build Route Body Content
     let routeContentHtml = '';
