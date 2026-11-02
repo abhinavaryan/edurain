@@ -151,7 +151,7 @@ async function fetchBlogs() {
 // Real components are imported dynamically inside generate()
 // -------------------------------------------------------------
 
-const blogLoadingSnippet = `
+const blogLoadingHeadSnippet = `
 <style>
   html.er-blogs-loading #app > main {
     visibility: hidden;
@@ -185,10 +185,6 @@ const blogLoadingSnippet = `
     to { transform: rotate(360deg); }
   }
 </style>
-<div id="blogs-page-preloader">
-  <div class="er-spin-loader"></div>
-  <div style="color: #94a3b8; font-size: 0.95rem; font-family: system-ui, -apple-system, sans-serif; font-weight: 500; letter-spacing: 0.5px;">Loading EduRain Blog...</div>
-</div>
 <script>
   document.documentElement.classList.add('er-blogs-loading');
   setTimeout(function () {
@@ -203,6 +199,13 @@ const blogLoadingSnippet = `
     #blogs-page-preloader { display: none !important; }
   </style>
 </noscript>
+`;
+
+const blogPreloaderBody = `
+<div id="blogs-page-preloader">
+  <div class="er-spin-loader"></div>
+  <div style="color: #94a3b8; font-size: 0.95rem; font-family: system-ui, -apple-system, sans-serif; font-weight: 500; letter-spacing: 0.5px;">Loading EduRain Blog...</div>
+</div>
 `;
 
 // Prerendered blog pages include smooth preloader overlay for visitors while keeping full HTML for crawlers
@@ -418,7 +421,7 @@ function prerenderBlogArticle(meta) {
     }
 
     if (route === 'blogs' || meta.isBlog) {
-      finalHtml = finalHtml.replace('</head>', `${blogLoadingSnippet}\n</head>`);
+      finalHtml = finalHtml.replace('</head>', `${blogLoadingHeadSnippet}\n</head>`);
     }
 
     // 2. Build Route Body Content
@@ -452,7 +455,8 @@ function prerenderBlogArticle(meta) {
       ${renderFooter()}
     `;
 
-    finalHtml = finalHtml.replace('<div id="app"></div>', `<div id="app">\n${fullPageShellHtml}\n</div>`);
+    const preloaderHtml = (route === 'blogs' || meta.isBlog) ? blogPreloaderBody : '';
+    finalHtml = finalHtml.replace('<div id="app"></div>', `${preloaderHtml}\n<div id="app">\n${fullPageShellHtml}\n</div>`);
 
     // 4. Save BOTH dist/{route}/index.html AND dist/{route}.html
     // On GitHub Pages:
