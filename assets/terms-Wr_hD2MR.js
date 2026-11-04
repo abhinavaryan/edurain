@@ -10,7 +10,7 @@ function e(){return`
                         Welcome to <strong>EduRain</strong> ("EduRain", "We", "Us", "Our"), accessible at <a href="https://edurain.in" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none; font-weight: 600;">https://edurain.in</a>, along with our official mobile application(s) distributed on Google Play and Apple App Store, and all affiliated digital learning services (collectively, the "Platform").
                     </p>
                     <p style="margin-bottom: 1.5rem; font-size: 1.05rem;">
-                        These Terms and Conditions ("Terms") constitute a legally binding agreement between you ("User", "Student", "Parent/Guardian", "You") and EduRain Private Limited. By registering an account, purchasing a batch, downloading study material, or using any service on the Platform, You confirm that You have read, understood, and agreed to these Terms and our <a href="/privacy" style="color: var(--accent); text-decoration: underline;">Privacy Policy</a>.
+                        These Terms and Conditions ("Terms") constitute a legally binding agreement between you ("User", "Student", "Parent/Guardian", "You") and EduRain (OPC) Private Limited. By registering an account, purchasing a batch, downloading study material, or using any service on the Platform, You confirm that You have read, understood, and agreed to these Terms and our <a href="/privacy" style="color: var(--accent); text-decoration: underline;">Privacy Policy</a>.
                     </p>
 
                     <div style="background: rgba(250, 204, 21, 0.1); border-left: 4px solid var(--accent); padding: 1.25rem; margin-bottom: 2.5rem; border-radius: 8px;">
@@ -101,7 +101,7 @@ function e(){return`
                     </p>
                     <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); margin-bottom: 1.5rem;">
                         <p style="margin-bottom: 0.4rem;"><strong>Officer Name:</strong> Manoj Kumar</p>
-                        <p style="margin-bottom: 0.4rem;"><strong>Designation:</strong> Grievance Redressal Officer, EduRain Private Limited</p>
+                        <p style="margin-bottom: 0.4rem;"><strong>Designation:</strong> Grievance Redressal Officer, EduRain (OPC) Private Limited</p>
                         <p style="margin-bottom: 0.4rem;"><strong>Email:</strong> <a href="mailto:info@edurain.in" style="color: var(--accent);">info@edurain.in</a></p>
                         <p style="margin-bottom: 0.4rem;"><strong>Registered Address:</strong> Sector 132, Urbtech, Expressway, Noida, Gautam Buddha Nagar, Uttar Pradesh - 201304, India</p>
                         <p style="margin: 0; font-size: 0.95rem; color: #34d399;"><strong>Jurisdiction:</strong> The courts at Noida / Gautam Buddha Nagar, Uttar Pradesh shall have exclusive jurisdiction over any legal dispute.</p>
