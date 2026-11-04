@@ -48,7 +48,6 @@ export function renderPrivacy() {
                         '<strong>Account details:</strong> name, mobile number (verified by OTP), email address and, if You sign in with one, a password. Passwords are handled by Google Firebase Authentication; EduRain never stores Your password in readable form.',
                         '<strong>Profile details:</strong> class or target exam (for example IIT-JEE, NEET, Foundation, Class 6th–12th), gender, city, state, pincode, address and a profile photo. Everything except name, mobile number and class/exam is optional.',
                         '<strong>What You send Us:</strong> doubts (text and any photo You attach), questions You type into EduAI Tutor, answers You report, feedback, and messages You send through the contact form, email or WhatsApp.',
-                        '<strong>Purchase details:</strong> the batch or test series You buy, the coupon You apply, the amount, and the order and payment ID from our payment gateway. City and state are used for the GST invoice.',
                     ])}
 
                     <h3 style="${H3}">1.2 Information collected when You use the Platform</h3>
@@ -56,7 +55,7 @@ export function renderPrivacy() {
                         '<strong>Study activity:</strong> batches You are enrolled in, study material You open and how far You got, test answers, marks and rank, live class attendance, and mentorship sessions You book. Bookmarks and study history may also be saved on Your device.',
                         '<strong>Device and technical data:</strong> IP address, device and browser type, operating system, app version, time of each request and error messages, used to keep the service working and secure.',
                         '<strong>Notification token:</strong> if You allow notifications, a device token so We can send You alerts.',
-                        '<strong>Website cookies and analytics:</strong> our website uses cookies and similar browser storage to keep You signed in and remember Your choices, and Google Analytics to understand which pages are visited. You can block cookies in Your browser, but some features, like staying signed in, may then not work. Third-party cookies are controlled by those third parties.',
+                        '<strong>Cookies:</strong> our website and web app use cookies and similar browser storage. See section 3.',
                     ])}
 
                     <h3 style="${H3}">1.3 App permissions</h3>
@@ -77,9 +76,9 @@ export function renderPrivacy() {
                     ${list([
                         'To create and secure Your account, verify Your mobile number and keep You signed in.',
                         'To give You the batches You are enrolled in: study material, live classes, tests, results, doubt answers, mentorship and EduAI Tutor.',
-                        'To process payments and coupons, issue invoices and keep the records the law requires.',
-                        'To send You service messages by SMS, email or push notification (class timings, results, account and payment updates).',
-                        'To send You news about new batches and offers. You can opt out of these at any time (see section 8).',
+                        'To keep the records that Indian law requires.',
+                        'To send You service messages by SMS, email or push notification (class timings, results and account updates).',
+                        'To send You news about new batches and offers. You can opt out of these at any time (see section 9).',
                         'To answer Your questions and complaints and resolve disputes.',
                         'To find and fix errors, prevent fraud, misuse and repeated failed logins, and enforce our <a href="/terms" style="' + LINK + '">Terms & Conditions</a>.',
                         'To improve the Platform using combined statistics (for example, which material is opened most), which do not identify You.',
@@ -87,15 +86,27 @@ export function renderPrivacy() {
 
                     ${HR}
 
-                    <h2 style="${H2}">3. Sharing Your Information</h2>
+                    <h2 style="${H2}">3. Cookies and Similar Technologies</h2>
+                    <p style="${P}">Cookies are small files that a website saves in Your browser. We also use similar browser storage (such as local storage). Our website and web app use them as follows:</p>
+                    ${list([
+                        '<strong>Essential:</strong> to keep You signed in, remember Your choices (such as Your class or exam) and protect the site from attacks and misuse. Without these, signing in and some features will not work.',
+                        '<strong>Analytics:</strong> Google Analytics cookies (such as <code>_ga</code>) count visits and show which pages are used, so We can improve the website. They do not give Us Your name, email or mobile number.',
+                        '<strong>Third-party cookies:</strong> pages that show content or services from other companies (for example Google) may let those companies set their own cookies. We do not control them; their own privacy policies apply.',
+                        'We do <strong>not</strong> use advertising cookies, and We do not use cookies to show You ads.',
+                    ])}
+                    <p style="${P}"><strong>Your choice:</strong> You can block or delete cookies in Your browser settings at any time. You can also stop Google Analytics with Google\'s opt-out add-on: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style="${LINK}">tools.google.com/dlpage/gaoptout</a>. If You block essential cookies, You may not be able to stay signed in.</p>
+                    <p style="${P}">The EduRain mobile app does not use cookies to track You. Pages opened inside the app may use the cookies they need to work.</p>
+
+                    ${HR}
+
+                    <h2 style="${H2}">4. Sharing Your Information</h2>
                     <p style="margin-bottom: 1.5rem;"><strong>We do not sell, rent or trade Your personal data.</strong> We share it only with the service providers below, only for the purpose stated, and they may use it only to provide their service to Us:</p>
                     <div style="display: grid; gap: 1.25rem; margin-bottom: 2rem;">
                         ${card('Hosting & delivery (Amazon Web Services, Bunny.net, Cloudflare)', 'Your account data is stored on Amazon Web Services in Mumbai (ap-south-1). Study material and profile photos are delivered through Amazon CloudFront and Bunny.net. Our web app is delivered and protected from attacks by Cloudflare.')}
-                        ${card('Payments (Razorpay)', 'Payments on the Platform are processed by Razorpay, an RBI-authorised payment aggregator. Your card, UPI or bank details go directly to Razorpay; EduRain never sees or stores Your full card number, CVV, PIN or UPI PIN.')}
                         ${card('OTP, SMS & email (MSG91)', 'Your mobile number and email address are shared with MSG91 to send OTPs and account messages, under TRAI DLT rules.')}
                         ${card('Sign-in, notifications & contact forms (Google Firebase, Expo)', 'Sign-in uses Google Firebase Authentication. Messages from our website contact form are stored in Google Firebase. Push notifications are delivered through Expo and Firebase Cloud Messaging using Your device token.')}
                         ${card('EduAI Tutor (Google Gemini API)', 'Questions You type into EduAI Tutor are sent to Google\'s Gemini API to generate an answer, without Your name, email or mobile number. Please do not type personal details into EduAI. Answers You report are saved so our team can review them.')}
-                        ${card('Live classes & mentorship (Google Meet)', 'Live classes and mentorship sessions are held on Google Meet. When You join, Google processes Your participation under its own privacy policy.')}
+                        ${card('Live classes & 1:1 mentor sessions (Google Meet)', 'Live classes and 1:1 mentor sessions are held on Google Meet. When You join, Google processes Your participation under its own privacy policy.')}
                         ${card('Website analytics (Google Analytics)', 'Our website uses Google Analytics to measure visits. Google receives technical data such as pages viewed, device and browser type, and an approximate location derived from the IP address.')}
                     </div>
                     <p style="${P}">We may also share information:</p>
@@ -107,58 +118,57 @@ export function renderPrivacy() {
 
                     ${HR}
 
-                    <h2 style="${H2}">4. Children's Privacy</h2>
+                    <h2 style="${H2}">5. Children's Privacy</h2>
                     <p style="${P}">Many of our students are under 18. Under the DPDP Act, a parent or legal guardian must agree before a student under 18 creates an account or buys a batch; by doing so, the student confirms that their parent or guardian has agreed. A parent or guardian can contact us at <a href="mailto:support@edurain.in" style="${LINK}">support@edurain.in</a> to see, correct or delete their child's data.</p>
                     <p style="${P}">We do not track children's behaviour for advertising, do not profile them for ads and do not show them targeted advertising.</p>
 
                     ${HR}
 
-                    <h2 style="${H2}">5. How Long We Keep Your Information</h2>
+                    <h2 style="${H2}">6. How Long We Keep Your Information</h2>
                     ${list([
                         'Account, profile and study data: while Your account is active. After You delete Your account, it is deleted within 30 days.',
-                        'Payment and invoice records: as long as Indian tax and accounting laws require, even after the account is deleted.',
+                        'Records the law requires Us to keep (for example, for tax): as long as the law requires, even after the account is deleted.',
                         'Server logs and security records: only as long as needed for security, fixing problems and legal requirements.',
                         'Contact form messages and support emails: as long as needed to answer You, or until You ask Us to delete them.',
                     ])}
 
                     ${HR}
 
-                    <h2 id="delete-account" style="${H2}">6. Delete Your Account and Data</h2>
+                    <h2 id="delete-account" style="${H2}">7. Delete Your Account and Data</h2>
                     <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.25); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
                         <p style="margin-bottom: 0.75rem;">You can delete Your EduRain account and personal data at any time, in either of these ways:</p>
                         <ol style="padding-left: 22px; margin-bottom: 0.75rem;">
                             <li style="${LI}"><strong>In the app:</strong> open the EduRain app &rarr; Profile &rarr; <strong>Delete Account & Data</strong> &rarr; confirm.</li>
                             <li style="${LI}"><strong>By email (no app needed):</strong> email <a href="mailto:support@edurain.in?subject=Account%20Deletion%20Request" style="${LINK}">support@edurain.in</a> from Your registered email address, or mention Your registered mobile number, with the subject <strong>"Account Deletion Request"</strong>.</li>
                         </ol>
-                        <p style="margin: 0; font-size: 0.95rem; color: #fecaca;">Your profile, photos, doubts, study history and device tokens are deleted within 30 days. Payment and invoice records are kept only as long as tax and accounting laws require. Deleting Your account ends access to any batches You bought.</p>
+                        <p style="margin: 0; font-size: 0.95rem; color: #fecaca;">Your profile, photos, doubts, study history and device tokens are deleted within 30 days. Records the law requires Us to keep are kept only as long as the law requires. Deleting Your account ends Your access to Your batches.</p>
                     </div>
 
                     ${HR}
 
-                    <h2 style="${H2}">7. Keeping Your Information Safe</h2>
+                    <h2 style="${H2}">8. Keeping Your Information Safe</h2>
                     ${list([
                         'All data between Your device and our servers is sent over encrypted connections (HTTPS/TLS).',
                         'Your data is stored on secured servers, and only authorised EduRain team members who need it for their work can access it.',
-                        'Card, UPI and bank details are handled only by Razorpay and never reach our servers.',
                         'If a data breach affects You, We will inform You and the authorities as the DPDP Act and CERT-In rules require.',
                         '<strong>Your part:</strong> keep Your OTP and password secret and do not let anyone else use Your account. If You think someone else has used it, email <a href="mailto:support@edurain.in" style="' + LINK + '">support@edurain.in</a> right away. You are responsible for what is done through Your account until You tell Us.',
                     ])}
 
                     ${HR}
 
-                    <h2 style="${H2}">8. Your Rights and Choices</h2>
+                    <h2 style="${H2}">9. Your Rights and Choices</h2>
                     ${list([
                         '<strong>See and correct:</strong> You can see and edit most of Your details in Profile, or ask Us for a summary of the personal data We hold about You.',
-                        '<strong>Delete:</strong> see section 6.',
+                        '<strong>Delete:</strong> see section 7.',
                         '<strong>Withdraw consent:</strong> You can withdraw Your consent at any time by deleting Your account or emailing Us. This does not affect what was done before You withdrew it.',
                         '<strong>Nominate:</strong> You can nominate a person to use these rights for You if You die or become unable to.',
-                        '<strong>Stop promotional messages:</strong> email <a href="mailto:support@edurain.in" style="' + LINK + '">support@edurain.in</a> to stop offers and news. You will still get service messages about Your account, classes and payments. You can turn off push notifications in Your phone settings.',
-                        '<strong>Complain:</strong> contact our Grievance Officer (section 9). If You are not satisfied with the answer, You may complain to the Data Protection Board of India.',
+                        '<strong>Stop promotional messages:</strong> email <a href="mailto:support@edurain.in" style="' + LINK + '">support@edurain.in</a> to stop offers and news. You will still get service messages about Your account and classes. You can turn off push notifications in Your phone settings.',
+                        '<strong>Complain:</strong> contact our Grievance Officer (section 10). If You are not satisfied with the answer, You may complain to the Data Protection Board of India.',
                     ])}
 
                     ${HR}
 
-                    <h2 style="${H2}">9. Grievance Officer</h2>
+                    <h2 style="${H2}">10. Grievance Officer</h2>
                     <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); margin-bottom: 2.5rem;">
                         <p style="margin-bottom: 0.6rem;"><strong>Name:</strong> Manoj Kumar</p>
                         <p style="margin-bottom: 0.6rem;"><strong>Designation:</strong> Head of Compliance & Grievance Officer, EduRain Private Limited</p>
@@ -169,7 +179,7 @@ export function renderPrivacy() {
 
                     ${HR}
 
-                    <h2 style="${H2}">10. Contact Us</h2>
+                    <h2 style="${H2}">11. Contact Us</h2>
                     <div style="background: rgba(255,255,255,0.02); padding: 1.5rem; border-radius: 12px; text-align: center;">
                         <p style="margin-bottom: 0.5rem;"><strong>EduRain Private Limited</strong></p>
                         <p style="margin-bottom: 0.5rem;"><i class="fas fa-envelope" style="color: var(--accent); margin-right: 8px;"></i> <a href="mailto:support@edurain.in" style="color: var(--text-main); text-decoration: none;">support@edurain.in</a></p>

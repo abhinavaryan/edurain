@@ -95,19 +95,6 @@ const routes = {
     }
   },
 
-  '/about-new': {
-    load: async () => {
-      const { renderAbout, initAboutNew } = await import('./components/about-new.js');
-      return { 
-        render: () => renderAbout(), 
-        postRender: () => {
-          setMetaTags("About Us (New) | EduRain", "Check out our new About Us page.", "https://www.edurain.in/about-new");
-          if (initAboutNew) initAboutNew();
-        }
-      };
-    }
-  },
-
   '/contact-us': {
     load: async () => {
       const { renderContact, initContact } = await import('./components/contact.js');
