@@ -36,13 +36,13 @@ function e(){return`
                                 <li><strong>Foundation Courses (Classes 6–10):</strong> We help students build strong concepts in Maths and Science early on, so the transition to JEE and NEET preparation later feels natural, not overwhelming.</li>
                                 <li><strong>IIT-JEE Preparation:</strong> Structured online classes, regular practice tests, and doubt-solving sessions designed around the JEE syllabus and exam pattern.</li>
                                 <li><strong>NEET Preparation:</strong> Focused Biology, Physics, and Chemistry coaching built around what NEET actually demands — accuracy, speed, and conceptual clarity.</li>
-                                <li><strong>Live and Recorded Classes:</strong> So students can learn at a time and pace that suits them, whether they're keeping up in real time or revising later.</li>
+                                <li><strong>Live Classes &amp; 1:1 Mentor Sessions:</strong> Students learn live with our teachers and ask questions in class, get personal guidance from a mentor in one-on-one sessions, and revise at their own pace with study material and tests.</li>
                             </ul>
                         </div>
                         
                         <div class="er-glass-card er-about-card">
                             <h2>Why Students Choose EduRain</h2>
-                            <p>We're not trying to be the biggest online coaching platform. We're trying to be the one that genuinely cares whether a student understands a concept, not just whether they've watched a video. Our teachers focus on building a strong foundation first, because we've seen that students who understand the "why" behind a formula perform far better in JEE and NEET than those who simply memorize.</p>
+                            <p>We're not trying to be the biggest online coaching platform. We're trying to be the one that genuinely cares whether a student understands a concept, not just whether they've finished a chapter. Our teachers focus on building a strong foundation first, because we've seen that students who understand the "why" behind a formula perform far better in JEE and NEET than those who simply memorize.</p>
                         </div>
                     </div>
                 </div>
