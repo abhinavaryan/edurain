@@ -24,6 +24,12 @@ function e(){return`
                     <p style="font-size: 1.15rem; line-height: 1.8; color: rgba(255,255,255,0.85); text-align: center;">
                         Once you enroll and make the required payment, it shall be final and cannot be changed or modified after <strong style="color: var(--accent);">24 hours</strong>, and neither will there be any refund.
                     </p>
+
+                    <hr style="border-color: rgba(255,255,255,0.1); margin: 35px 0;">
+
+                    <p style="font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.85); text-align: center;">
+                        <strong>Printed book sets:</strong> an order can be cancelled within 24 hours of payment if it has not been dispatched. Damaged, missing or wrong books are replaced if reported within 48 hours of delivery. See our <a href="/shipping-policy" style="color: var(--accent); text-decoration: underline;">Shipping & Delivery Policy</a>.
+                    </p>
                 </div>
             </div>
         </section>
