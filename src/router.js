@@ -125,6 +125,12 @@ const routes = {
       return { render: () => renderRefund(), postRender: () => setMetaTags("Refund/Cancellation Policy - EduRain", "Refund and cancellation policy for EduRain", "https://www.edurain.in/refund-policy") };
     }
   },
+  '/shipping-policy': {
+    load: async () => {
+      const { renderShipping } = await import('./components/shipping.js');
+      return { render: () => renderShipping(), postRender: () => setMetaTags("Shipping & Delivery Policy - EduRain", "How EduRain ships and delivers printed book sets across India", "https://www.edurain.in/shipping-policy") };
+    }
+  },
   '/sitemap': {
     load: async () => {
       const { renderSitemap } = await import('./components/sitemap.js');
@@ -211,7 +217,13 @@ const routes = {
   },
   '/study': {
     load: async () => {
-      window.location.href = '/study/';
+      window.location.href = 'https://edurain.in/webapp';
+      return { render: () => '', postRender: () => {} };
+    }
+  },
+  '/webapp': {
+    load: async () => {
+      window.location.href = 'https://edurain.in/webapp';
       return { render: () => '', postRender: () => {} };
     }
   }
@@ -303,6 +315,7 @@ export const initRouter = () => {
           if (url.pathname.startsWith('/jeecourse') || 
               url.pathname.startsWith('/neetcourse') || 
               url.pathname.startsWith('/foundationcourse') ||
+              url.pathname.startsWith('/webapp') ||
               url.pathname.startsWith('/study')) {
              return; 
           }
@@ -368,7 +381,7 @@ export const initRouter = () => {
       (path.startsWith('/courses') && app.querySelector('.courses-section')) ||
       (path === '/about-us' && app.querySelector('.about-section')) ||
       (path === '/contact-us' && app.querySelector('.contact-section')) ||
-      (['/privacy', '/terms', '/refund-policy'].includes(path) && app.querySelector('.er-privacy-section')) ||
+      (['/privacy', '/terms', '/refund-policy', '/shipping-policy'].includes(path) && app.querySelector('.er-privacy-section')) ||
       (path === '/sitemap' && app.querySelector('.er-sitemap-section'))
     );
 
@@ -386,7 +399,7 @@ export const initRouter = () => {
     }
     isInitialLoad = false;
 
-    const isStandalonePage = isAdminRoute || path.startsWith('/study');
+    const isStandalonePage = isAdminRoute;
     const navbarHTML = isStandalonePage ? '' : renderNavbar();
     const footerHTML = isStandalonePage ? '' : renderFooter();
     const authModalHTML = (!isAdminRoute && import.meta.env.DEV) ? renderAuthModal() : '';

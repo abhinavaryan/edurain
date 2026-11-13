@@ -167,7 +167,7 @@ WHY EDURAIN:
 
 CONNECT WITH US:
 - Website: <a href="https://edurain.in/" target="_blank">https://edurain.in/</a>
-- App: <a href="https://play.google.com/store/apps/details?id=co.lynde.fpdwe" target="_blank">Download EduRain App</a>
+- App: <a href="https://play.google.com/store/apps/details?id=com.edurainindia.app" target="_blank">Download EduRain App</a>
 - Instagram: <a href="https://www.instagram.com/edurain_official" target="_blank">@edurain_official</a>
 - YouTube: <a href="https://youtube.com/@eduraininstitute" target="_blank">EduRain YouTube</a>
 - Facebook: <a href="https://www.facebook.com/share/18r8aY7qDH/" target="_blank">EduRain Facebook</a>

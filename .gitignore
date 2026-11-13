@@ -55,3 +55,7 @@ src/study/
 
 # Graphify Local Memory
 graphify-out/
+
+*.zip
+.obsidian/
+wiki/

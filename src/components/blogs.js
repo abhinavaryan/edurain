@@ -99,7 +99,7 @@ export function renderBlogs() {
                             <div class="pw-sidebar-widget pw-app-promo-widget">
                                 <h3>EduRain Learning App</h3>
                                 <p>Get live classes, DPPs, doubt solving & mock test series on your phone.</p>
-                                <a href="https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; margin-top: 0.5rem; background: #16a34a; border: none; border-radius: 8px;">
+                                <a href="https://play.google.com/store/apps/details?id=com.edurainindia.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; margin-top: 0.5rem; background: #16a34a; border: none; border-radius: 8px;">
                                     Download App Free
                                 </a>
                             </div>

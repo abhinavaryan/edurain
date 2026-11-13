@@ -35,11 +35,11 @@ index 496f9cf..2c30b5a 100644
 +
                      <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
 -                        Welcome to <strong>EduRain</strong>. Please read this Privacy Policy carefully before accessing or using our website located at <strong><a href="https://edurain.in" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);">https://edurain.in</a></strong> or the <strong>EduRain Mobile Application</strong> (collectively, the <strong>"Platform"</strong>).
-+                        Please read this Privacy Policy before using the services of <strong>EduRain Private Limited</strong> ("EduRain", "We", "Us" or "Our"). It applies to our website <a href="https://edurain.in" target="_blank" rel="noopener noreferrer" style="${LINK}">https://edurain.in</a>, the EduRain web app at <a href="https://www.edurain.in/webapp" target="_blank" rel="noopener noreferrer" style="${LINK}">www.edurain.in/webapp</a>, and the <strong>EduRain mobile app</strong> on Google Play and the Apple App Store. Together these are called the <strong>"Platform"</strong>. The same batches, study material, tests and account work on all of them.
++                        Please read this Privacy Policy before using the services of <strong>EduRain (OPC) Private Limited</strong> ("EduRain", "We", "Us" or "Our"). It applies to our website <a href="https://edurain.in" target="_blank" rel="noopener noreferrer" style="${LINK}">https://edurain.in</a>, the EduRain web app at <a href="https://www.edurain.in/webapp" target="_blank" rel="noopener noreferrer" style="${LINK}">www.edurain.in/webapp</a>, and the <strong>EduRain mobile app</strong> on Google Play and the Apple App Store. Together these are called the <strong>"Platform"</strong>. The same batches, study material, tests and account work on all of them.
                      </p>
 -                    
                      <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
--                        This Privacy Policy describes how <strong>EduRain Private Limited ("EduRain", "We", "Us", or "Our")</strong> collects, uses, processes, stores, and protects Your personal data and information when You visit, register, or use Our educational services, live classes, doubt solving, examinations, and applications.
+-                        This Privacy Policy describes how <strong>EduRain (OPC) Private Limited ("EduRain", "We", "Us", or "Our")</strong> collects, uses, processes, stores, and protects Your personal data and information when You visit, register, or use Our educational services, live classes, doubt solving, examinations, and applications.
 +                        By creating an account, using the Platform or giving Us Your information, You agree that We may collect and use it as described here. If You do not agree, please do not use the Platform. We may update this Policy from time to time; the date at the top shows the latest version, and for important changes We will also tell You in the app or by email.
                      </p>
  
@@ -351,7 +351,7 @@ index 496f9cf..2c30b5a 100644
 -                        <h3 style="color: var(--accent); font-size: 1.3rem; margin-bottom: 1rem; font-weight: 700;">Grievance Redressal Officer</h3>
 -                        <p style="margin-bottom: 0.6rem;"><strong>Officer Name:</strong> Manoj Kumar</p>
 +                        <p style="margin-bottom: 0.6rem;"><strong>Name:</strong> Manoj Kumar</p>
-                         <p style="margin-bottom: 0.6rem;"><strong>Designation:</strong> Head of Compliance & Grievance Officer, EduRain Private Limited</p>
+                         <p style="margin-bottom: 0.6rem;"><strong>Designation:</strong> Head of Compliance & Grievance Officer, EduRain (OPC) Private Limited</p>
 -                        <p style="margin-bottom: 0.6rem;">
 -                            <strong>Official Grievance Email:</strong> 
 -                            <a href="mailto:info@edurain.in" style="color: #60a5fa; text-decoration: none; font-weight: 600;">info@edurain.in</a>
@@ -362,14 +362,14 @@ index 496f9cf..2c30b5a 100644
 -                        </p>
 -                        <p style="margin-bottom: 0.6rem;">
 -                            <strong>Registered Office Address:</strong> 
--                            EduRain Private Limited, Sector 132, Urbtech, Expressway, Noida, Gautam Buddha Nagar, Uttar Pradesh - 201304, India
+-                            EduRain OPC Private Limited, Sector 132, Urbtech, Expressway, Noida, Gautam Buddha Nagar, Uttar Pradesh - 201304, India
 -                        </p>
 -                        <p style="margin-bottom: 0; font-size: 0.95rem; color: #34d399; font-weight: 500;">
 -                            <i class="fas fa-clock" style="margin-right: 6px;"></i> Statutory SLA: Acknowledgment within 24–48 hours, resolution within 15–30 calendar days.
 -                        </p>
 +                        <p style="margin-bottom: 0.6rem;"><strong>Email:</strong> <a href="mailto:info@edurain.in" style="color: #60a5fa; text-decoration: none; font-weight: 600;">info@edurain.in</a></p>
-+                        <p style="margin-bottom: 0.6rem;"><strong>Address:</strong> EduRain Private Limited, Sector 132, Urbtech, Expressway, Noida, Gautam Buddha Nagar, Uttar Pradesh - 201304, India</p>
-+                        <p style="margin-bottom: 0; font-size: 0.95rem; color: #34d399; font-weight: 500;"><i class="fas fa-clock" style="margin-right: 6px;"></i> We acknowledge complaints within 48 hours and aim to resolve them within 15 days.</p>
++                        <p style="margin-bottom: 0.6rem;"><strong>Address:</strong> EduRain OPC Private Limited, Sector 132, Urbtech, Expressway, Noida, Gautam Buddha Nagar, Uttar Pradesh - 201304, India</p>
++                        <p style="margin-bottom: 0; font-size: 0.95rem; color: #34d399; font-weight: 500;"><i class="fas fa-clock" style="margin-right: 6px;"></i> We acknowledge complaints within 24 hours and aim to resolve them within 15 days.</p>
                      </div>
  
 -                    <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
@@ -379,7 +379,7 @@ index 496f9cf..2c30b5a 100644
 -                    <h2 style="color: var(--text-main); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700;">8. Contact Us</h2>
 +                    <h2 style="${H2}">10. Contact Us</h2>
                      <div style="background: rgba(255,255,255,0.02); padding: 1.5rem; border-radius: 12px; text-align: center;">
-                         <p style="margin-bottom: 0.5rem;"><strong>EduRain Private Limited</strong></p>
+                         <p style="margin-bottom: 0.5rem;"><strong>EduRain OPC Private Limited</strong></p>
 +                        <p style="margin-bottom: 0.5rem;"><i class="fas fa-envelope" style="color: var(--accent); margin-right: 8px;"></i> <a href="mailto:support@edurain.in" style="color: var(--text-main); text-decoration: none;">support@edurain.in</a></p>
                          <p style="margin-bottom: 0.5rem;"><i class="fas fa-globe" style="color: var(--accent); margin-right: 8px;"></i> <a href="https://edurain.in" target="_blank" rel="noopener noreferrer" style="color: var(--text-main); text-decoration: none;">https://edurain.in</a></p>
                          <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone" style="color: var(--accent); margin-right: 8px;"></i> <a href="tel:+918796443910" style="color: var(--text-main); text-decoration: none;">+91 8796443910</a> | <a href="https://wa.me/918796443910" target="_blank" rel="noopener noreferrer" style="color: #25D366; text-decoration: none;"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>

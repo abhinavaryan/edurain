@@ -21,13 +21,13 @@ export function renderPrivacy() {
             <div class="er-privacy-container" style="max-width: 1000px; margin: 0 auto;">
                 <div class="er-privacy-header text-center" style="margin-bottom: 60px;">
                     <h1 class="text-gradient" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em;">Privacy Policy</h1>
-                    <p style="color: var(--text-muted); font-size: 1.1rem;">Last Updated: November 4, 2026 | Applies to the EduRain website, web app and the EduRain apps for Android and iOS</p>
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">Last Updated: November 9, 2026 | Applies to the EduRain website, web app and the EduRain apps for Android and iOS</p>
                 </div>
 
                 <div class="er-glass-card" style="padding: clamp(2rem, 4vw, 4rem); border-radius: 24px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); line-height: 1.85; color: rgba(255, 255, 255, 0.88);">
 
                     <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
-                        Please read this Privacy Policy before using the services of <strong>EduRain Private Limited</strong> ("EduRain", "We", "Us" or "Our"). It applies to our website <a href="https://edurain.in" target="_blank" rel="noopener noreferrer" style="${LINK}">https://edurain.in</a>, the EduRain web app at <a href="https://www.edurain.in/webapp" target="_blank" rel="noopener noreferrer" style="${LINK}">www.edurain.in/webapp</a>, and the <strong>EduRain mobile app</strong> on Google Play and the Apple App Store. Together these are called the <strong>"Platform"</strong>. The same batches, study material, tests and account work on all of them.
+                        Please read this Privacy Policy before using the services of <strong>EduRain (OPC) Private Limited</strong> ("EduRain", "We", "Us" or "Our"). It applies to our website <a href="https://edurain.in" target="_blank" rel="noopener noreferrer" style="${LINK}">https://edurain.in</a>, the EduRain web app at <a href="https://www.edurain.in/webapp" target="_blank" rel="noopener noreferrer" style="${LINK}">www.edurain.in/webapp</a>, and the <strong>EduRain mobile app</strong> on Google Play and the Apple App Store. Together these are called the <strong>"Platform"</strong>. The same batches, study material, tests and account work on all of them.
                     </p>
                     <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
                         By creating an account, using the Platform or giving Us Your information, You agree that We may collect and use it as described here. If You do not agree, please do not use the Platform. We may update this Policy from time to time; the date at the top shows the latest version, and for important changes We will also tell You in the app or by email.
@@ -47,7 +47,9 @@ export function renderPrivacy() {
                     ${list([
                         '<strong>Account details:</strong> name, mobile number (verified by OTP), email address and, if You sign in with one, a password. Passwords are handled by Google Firebase Authentication; EduRain never stores Your password in readable form.',
                         '<strong>Profile details:</strong> class or target exam (for example IIT-JEE, NEET, Foundation, Class 6th–12th), gender, city, state, pincode, address and a profile photo. Everything except name, mobile number and class/exam is optional.',
+                        '<strong>Delivery details (book orders):</strong> when You buy a printed book set, for example in the Android app, We collect the student\'s name, the receiver\'s name and mobile number, email address, delivery address, city, state and pincode so We can deliver the books.',
                         '<strong>What You send Us:</strong> doubts (text and any photo You attach), questions You type into EduAI Tutor, answers You report, feedback, and messages You send through the contact form, email or WhatsApp.',
+                        '<strong>Purchase details:</strong> when You buy a batch, We keep the batch, amount, coupon used, date, payment status and payment reference number, and Your name, phone, email, city and state for the GST invoice. We do <strong>not</strong> receive or store Your card number, CVV, expiry date, UPI PIN or net banking password.',
                     ])}
 
                     <h3 style="${H3}">1.2 Information collected when You use the Platform</h3>
@@ -76,12 +78,13 @@ export function renderPrivacy() {
                     ${list([
                         'To create and secure Your account, verify Your mobile number and keep You signed in.',
                         'To give You the batches You are enrolled in: study material, live classes, tests, results, doubt answers, mentorship and EduAI Tutor.',
-                        'To keep the records that Indian law requires.',
                         'To send You service messages by SMS, email or push notification (class timings, results and account updates).',
+                        'To pack and deliver the book sets You buy, and to send You dispatch and tracking updates.',
                         'To send You news about new batches and offers. You can opt out of these at any time (see section 9).',
                         'To answer Your questions and complaints and resolve disputes.',
                         'To find and fix errors, prevent fraud, misuse and repeated failed logins, and enforce our <a href="/terms" style="' + LINK + '">Terms & Conditions</a>.',
                         'To improve the Platform using combined statistics (for example, which material is opened most), which do not identify You.',
+                        'To process Your payments and coupons, issue invoices and keep the records that Indian law requires.',
                     ])}
 
                     ${HR}
@@ -103,12 +106,15 @@ export function renderPrivacy() {
                     <p style="margin-bottom: 1.5rem;"><strong>We do not sell, rent or trade Your personal data.</strong> We share it only with the service providers below, only for the purpose stated, and they may use it only to provide their service to Us:</p>
                     <div style="display: grid; gap: 1.25rem; margin-bottom: 2rem;">
                         ${card('Hosting & delivery (Amazon Web Services, Bunny.net, Cloudflare)', 'Your account data is stored on Amazon Web Services in Mumbai (ap-south-1). Study material and profile photos are delivered through Amazon CloudFront and Bunny.net. Our web app is delivered and protected from attacks by Cloudflare.')}
+                        ${card('Payments (payment service providers)', 'Payments are processed by RBI-authorised payment service providers. Your card, UPI or bank details are entered directly with them and never reach EduRain. They send Us only the payment status and reference number.')}
                         ${card('OTP, SMS & email (MSG91)', 'Your mobile number and email address are shared with MSG91 to send OTPs and account messages, under TRAI DLT rules.')}
                         ${card('Sign-in, notifications & contact forms (Google Firebase, Expo)', 'Sign-in uses Google Firebase Authentication. Messages from our website contact form are stored in Google Firebase. Push notifications are delivered through Expo and Firebase Cloud Messaging using Your device token.')}
                         ${card('EduAI Tutor (Google Gemini API)', 'Questions You type into EduAI Tutor are sent to Google\'s Gemini API to generate an answer, without Your name, email or mobile number. Please do not type personal details into EduAI. Answers You report are saved so our team can review them.')}
                         ${card('Live classes & 1:1 mentor sessions (Google Meet)', 'Live classes and 1:1 mentor sessions are held on Google Meet. When You join, Google processes Your participation under its own privacy policy.')}
+                        ${card('Book delivery (courier partners)', 'When You buy a printed book set, the receiver\'s name, mobile number and delivery address are shared with our courier and logistics partners only to deliver Your books and track the parcel. Dispatch time, delivery time, charges and returns are explained in our <a href="/shipping-policy" style="' + LINK + '">Shipping & Delivery Policy</a>.')}
                         ${card('Website analytics (Google Analytics)', 'Our website uses Google Analytics to measure visits. Google receives technical data such as pages viewed, device and browser type, and an approximate location derived from the IP address.')}
                     </div>
+                    <p style="${P}">Some of these providers, such as Google and Expo, may process data on servers outside India.</p>
                     <p style="${P}">We may also share information:</p>
                     ${list([
                         '<strong>When the law requires it:</strong> with courts, police, tax and other government authorities in response to a valid legal request, or when We believe in good faith it is needed to protect the rights, property or safety of EduRain, our students or the public.',
@@ -128,6 +134,7 @@ export function renderPrivacy() {
                     ${list([
                         'Account, profile and study data: while Your account is active. After You delete Your account, it is deleted within 30 days.',
                         'Records the law requires Us to keep (for example, for tax): as long as the law requires, even after the account is deleted.',
+                        'Delivery details for book orders: as long as needed to deliver the books and handle replacements or complaints, and longer only where the law requires it (for example, for invoices).',
                         'Server logs and security records: only as long as needed for security, fixing problems and legal requirements.',
                         'Contact form messages and support emails: as long as needed to answer You, or until You ask Us to delete them.',
                     ])}
@@ -150,6 +157,7 @@ export function renderPrivacy() {
                     ${list([
                         'All data between Your device and our servers is sent over encrypted connections (HTTPS/TLS).',
                         'Your data is stored on secured servers, and only authorised EduRain team members who need it for their work can access it.',
+                        'Card, UPI and bank details are handled only by our payment service providers and never reach our servers.',
                         'If a data breach affects You, We will inform You and the authorities as the DPDP Act and CERT-In rules require.',
                         '<strong>Your part:</strong> keep Your OTP and password secret and do not let anyone else use Your account. If You think someone else has used it, email <a href="mailto:support@edurain.in" style="' + LINK + '">support@edurain.in</a> right away. You are responsible for what is done through Your account until You tell Us.',
                     ])}
@@ -171,24 +179,24 @@ export function renderPrivacy() {
                     <h2 style="${H2}">10. Grievance Officer</h2>
                     <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); margin-bottom: 2.5rem;">
                         <p style="margin-bottom: 0.6rem;"><strong>Name:</strong> Manoj Kumar</p>
-                        <p style="margin-bottom: 0.6rem;"><strong>Designation:</strong> Head of Compliance & Grievance Officer, EduRain Private Limited</p>
+                        <p style="margin-bottom: 0.6rem;"><strong>Designation:</strong> Head of Compliance & Grievance Officer, EduRain (OPC) Private Limited</p>
                         <p style="margin-bottom: 0.6rem;"><strong>Email:</strong> <a href="mailto:info@edurain.in" style="color: #60a5fa; text-decoration: none; font-weight: 600;">info@edurain.in</a></p>
-                        <p style="margin-bottom: 0.6rem;"><strong>Address:</strong> EduRain Private Limited, Sector 132, Urbtech, Expressway, Noida, Gautam Buddha Nagar, Uttar Pradesh - 201304, India</p>
-                        <p style="margin-bottom: 0; font-size: 0.95rem; color: #34d399; font-weight: 500;"><i class="fas fa-clock" style="margin-right: 6px;"></i> We acknowledge complaints within 48 hours and aim to resolve them within 15 days.</p>
+                        <p style="margin-bottom: 0.6rem;"><strong>Address:</strong> EduRain (OPC) Private Limited, Sector 132, Urbtech, Expressway, Noida, Gautam Buddha Nagar, Uttar Pradesh - 201304, India</p>
+                        <p style="margin-bottom: 0; font-size: 0.95rem; color: #34d399; font-weight: 500;"><i class="fas fa-clock" style="margin-right: 6px;"></i> We acknowledge complaints within 24 hours and aim to resolve them within 15 days.</p>
                     </div>
 
                     ${HR}
 
                     <h2 style="${H2}">11. Contact Us</h2>
                     <div style="background: rgba(255,255,255,0.02); padding: 1.5rem; border-radius: 12px; text-align: center;">
-                        <p style="margin-bottom: 0.5rem;"><strong>EduRain Private Limited</strong></p>
+                        <p style="margin-bottom: 0.5rem;"><strong>EduRain (OPC) Private Limited</strong></p>
                         <p style="margin-bottom: 0.5rem;"><i class="fas fa-envelope" style="color: var(--accent); margin-right: 8px;"></i> <a href="mailto:support@edurain.in" style="color: var(--text-main); text-decoration: none;">support@edurain.in</a></p>
                         <p style="margin-bottom: 0.5rem;"><i class="fas fa-globe" style="color: var(--accent); margin-right: 8px;"></i> <a href="https://edurain.in" target="_blank" rel="noopener noreferrer" style="color: var(--text-main); text-decoration: none;">https://edurain.in</a></p>
                         <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone" style="color: var(--accent); margin-right: 8px;"></i> <a href="tel:+918796443910" style="color: var(--text-main); text-decoration: none;">+91 8796443910</a> | <a href="https://wa.me/918796443910" target="_blank" rel="noopener noreferrer" style="color: #25D366; text-decoration: none;"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>
                         <p style="margin: 0; color: var(--text-muted); font-size: 0.95rem;">Sector 132, Urbtech, Expressway, Noida, UP, India</p>
                     </div>
 
-                    <p style="margin-top: 2rem; font-size: 0.95rem; color: var(--text-muted);">This Policy is read together with our <a href="/terms" style="${LINK}">Terms & Conditions</a> and <a href="/refund-policy" style="${LINK}">Refund Policy</a>.</p>
+                    <p style="margin-top: 2rem; font-size: 0.95rem; color: var(--text-muted);">This Policy is read together with our <a href="/terms" style="${LINK}">Terms & Conditions</a> , <a href="/refund-policy" style="${LINK}">Refund Policy</a> and <a href="/shipping-policy" style="${LINK}">Shipping & Delivery Policy</a>.</p>
 
                 </div>
             </div>

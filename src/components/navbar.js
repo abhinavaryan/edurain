@@ -29,7 +29,9 @@ export function renderNavbar(activeRoute = '') {
                     <a href="/about-us" class="nav-link ${isAbout ? 'active' : ''}">About Us</a>
                     <a href="/contact-us" class="nav-link ${isContact ? 'active' : ''}">Contact Us</a>
                 </div>
-                <div class="auth-btn-area"></div>
+                <div class="auth-btn-area">
+                    <a href="https://edurain.in/webapp" class="btn btn-accent login-btn" target="_blank" rel="noopener noreferrer">Login</a>
+                </div>
                 <button class="hamburger" id="hamburger-btn" aria-label="Open Mobile Menu">
                     <span></span>
                     <span></span>
@@ -59,7 +61,9 @@ export function renderNavbar(activeRoute = '') {
                 <a href="/about-us" class="nav-link ${isAbout ? 'active' : ''}">About Us</a>
                 <a href="/contact-us" class="nav-link ${isContact ? 'active' : ''}">Contact Us</a>
             </div>
-            <div class="mobile-menu-footer auth-btn-area"></div>
+            <div class="mobile-menu-footer auth-btn-area">
+                <a href="https://edurain.in/webapp" class="btn btn-accent login-btn" style="width: 100%; text-align: center; display: block;" target="_blank" rel="noopener noreferrer">Login</a>
+            </div>
         </div>
     `;
 }
@@ -104,7 +108,6 @@ export function initNavbar() {
 
     loginBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            document.dispatchEvent(new CustomEvent('open-auth-modal'));
             closeMenu();
         });
     });

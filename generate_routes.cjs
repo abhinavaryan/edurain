@@ -104,6 +104,12 @@ const routesMeta = {
     desc: "Refund and cancellation policy for EduRain",
     canonical: 'https://www.edurain.in/refund-policy'
   },
+  'shipping-policy': {
+    title: "Shipping & Delivery Policy - EduRain",
+    ogTitle: "Shipping & Delivery Policy - EduRain",
+    desc: "How EduRain ships and delivers printed book sets across India",
+    canonical: 'https://www.edurain.in/shipping-policy'
+  },
   'sitemap': {
     title: "Sitemap - EduRain",
     ogTitle: "Sitemap - EduRain",
@@ -299,6 +305,7 @@ function prerenderBlogArticle(meta) {
   const { renderPrivacy } = await import('./src/components/privacy.js');
   const { renderTerms } = await import('./src/components/terms.js');
   const { renderRefund } = await import('./src/components/refund.js');
+  const { renderShipping } = await import('./src/components/shipping.js');
   const { renderSitemap } = await import('./src/components/sitemap.js');
 
   // Policy pages are prerendered from the same components the SPA uses,
@@ -307,6 +314,7 @@ function prerenderBlogArticle(meta) {
     privacy: renderPrivacy,
     terms: renderTerms,
     'refund-policy': renderRefund,
+    'shipping-policy': renderShipping,
     sitemap: renderSitemap
   };
 
@@ -386,6 +394,7 @@ function prerenderBlogArticle(meta) {
     { loc: 'https://www.edurain.in/privacy', priority: '0.5', changefreq: 'monthly' },
     { loc: 'https://www.edurain.in/terms', priority: '0.5', changefreq: 'monthly' },
     { loc: 'https://www.edurain.in/refund-policy', priority: '0.5', changefreq: 'monthly' },
+    { loc: 'https://www.edurain.in/shipping-policy', priority: '0.5', changefreq: 'monthly' },
     { loc: 'https://www.edurain.in/sitemap', priority: '0.6', changefreq: 'monthly' }
   ];
 

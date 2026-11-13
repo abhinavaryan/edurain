@@ -1082,7 +1082,7 @@ index 2c30b5a..f1a3e86 100644
 +                    <h2 style="${H2}">10. Grievance Officer</h2>
                      <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); margin-bottom: 2.5rem;">
                          <p style="margin-bottom: 0.6rem;"><strong>Name:</strong> Manoj Kumar</p>
-                         <p style="margin-bottom: 0.6rem;"><strong>Designation:</strong> Head of Compliance & Grievance Officer, EduRain Private Limited</p>
+                         <p style="margin-bottom: 0.6rem;"><strong>Designation:</strong> Head of Compliance & Grievance Officer, EduRain (OPC) Private Limited</p>
 @@ -169,7 +179,7 @@ export function renderPrivacy() {
  
                      ${HR}
@@ -1090,7 +1090,7 @@ index 2c30b5a..f1a3e86 100644
 -                    <h2 style="${H2}">10. Contact Us</h2>
 +                    <h2 style="${H2}">11. Contact Us</h2>
                      <div style="background: rgba(255,255,255,0.02); padding: 1.5rem; border-radius: 12px; text-align: center;">
-                         <p style="margin-bottom: 0.5rem;"><strong>EduRain Private Limited</strong></p>
+                         <p style="margin-bottom: 0.5rem;"><strong>EduRain (OPC) Private Limited</strong></p>
                          <p style="margin-bottom: 0.5rem;"><i class="fas fa-envelope" style="color: var(--accent); margin-right: 8px;"></i> <a href="mailto:support@edurain.in" style="color: var(--text-main); text-decoration: none;">support@edurain.in</a></p>
 diff --git a/src/components/terms.js b/src/components/terms.js
 index c71e5c6..a68529c 100644

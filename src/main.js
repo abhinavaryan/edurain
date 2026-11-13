@@ -36,7 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="btn btn-outline btn-sm logout-btn" ${isMobileMenu ? 'style="width: 100%;"' : ''}>Logout</button>
               `;
             } else {
-              area.innerHTML = '';
+              area.innerHTML = `
+                <a href="https://edurain.in/webapp" class="btn btn-accent login-btn" ${isMobileMenu ? 'style="width: 100%; text-align: center; display: block;"' : ''} target="_blank" rel="noopener noreferrer">Login</a>
+              `;
             }
           });
         });

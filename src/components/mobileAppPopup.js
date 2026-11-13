@@ -137,7 +137,7 @@ function showPopup() {
             document.getElementById('mobile-popup-ios-view').style.display = 'block';
         } else {
             // Android / Others: Direct to Play Store
-            window.open('https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN', '_blank');
+            window.open('https://play.google.com/store/apps/details?id=com.edurainindia.app', '_blank');
             dismissPopup();
         }
     });

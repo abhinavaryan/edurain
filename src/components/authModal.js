@@ -233,11 +233,7 @@ export function initAuthModal() {
                 closeModal();
                 loginForm.reset();
                 playPremiumLoadingAnimation(() => {
-                    if (window.appRouter) {
-                        window.appRouter.navigate('/study');
-                    } else {
-                        window.location.href = '/study';
-                    }
+                    window.location.href = 'https://edurain.in/webapp';
                 });
             } catch (err) {
                 errorDiv.textContent = err.message || 'Login failed. Please try again.';
@@ -302,11 +298,7 @@ export function initAuthModal() {
                 closeModal();
                 signupForm.reset();
                 playPremiumLoadingAnimation(() => {
-                    if (window.appRouter) {
-                        window.appRouter.navigate('/study');
-                    } else {
-                        window.location.href = '/study';
-                    }
+                    window.location.href = 'https://edurain.in/webapp';
                 });
             } catch (err) {
                 errorDiv.textContent = err.message || 'Registration failed. Please try again.';

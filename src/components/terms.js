@@ -5,13 +5,13 @@ export function renderTerms() {
                 <div class="er-glass-card glass-card fade-in-section visible" style="padding: clamp(2rem, 4vw, 3.5rem); margin-bottom: 2rem; border-radius: 24px; line-height: 1.85;">
                     
                     <h1 style="font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 800; color: var(--accent); margin-bottom: 0.5rem; text-align: center; letter-spacing: -0.02em;">Terms and Conditions – EduRain</h1>
-                    <p style="text-align: center; color: var(--text-muted); font-size: 1rem; margin-bottom: 2.5rem;"><strong>Last Updated:</strong> November 4, 2026 | Governing Website, Mobile Applications & Online Batches</p>
+                    <p style="text-align: center; color: var(--text-muted); font-size: 1rem; margin-bottom: 2.5rem;"><strong>Last Updated:</strong> November 9, 2026 | Governing Website, Mobile Applications & Online Batches</p>
 
                     <p style="margin-bottom: 1.5rem; font-size: 1.05rem;">
                         Welcome to <strong>EduRain</strong> ("EduRain", "We", "Us", "Our"), accessible at <a href="https://edurain.in" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none; font-weight: 600;">https://edurain.in</a>, along with our official mobile application(s) distributed on Google Play and Apple App Store, and all affiliated digital learning services (collectively, the "Platform").
                     </p>
                     <p style="margin-bottom: 1.5rem; font-size: 1.05rem;">
-                        These Terms and Conditions ("Terms") constitute a legally binding agreement between you ("User", "Student", "Parent/Guardian", "You") and EduRain Private Limited. By registering an account, purchasing a batch, downloading study material, or using any service on the Platform, You confirm that You have read, understood, and agreed to these Terms and our <a href="/privacy" style="color: var(--accent); text-decoration: underline;">Privacy Policy</a>.
+                        These Terms and Conditions ("Terms") constitute a legally binding agreement between you ("User", "Student", "Parent/Guardian", "You") and EduRain (OPC) Private Limited. By registering an account, purchasing a batch, downloading study material, or using any service on the Platform, You confirm that You have read, understood, and agreed to these Terms and our <a href="/privacy" style="color: var(--accent); text-decoration: underline;">Privacy Policy</a>.
                     </p>
 
                     <div style="background: rgba(250, 204, 21, 0.1); border-left: 4px solid var(--accent); padding: 1.25rem; margin-bottom: 2.5rem; border-radius: 8px;">
@@ -44,6 +44,7 @@ export function renderTerms() {
                         <li style="margin-bottom: 0.6rem;"><strong>One Account, Every Device:</strong> A course You buy is linked to Your EduRain account and can be used both on our website (<a href="/webapp/" style="color: var(--accent);">www.edurain.in/webapp</a>) and in the EduRain mobile app.</li>
                         <li style="margin-bottom: 0.6rem;"><strong>No Hidden Auto-Renewals:</strong> EduRain course purchases are one-time payments for the designated academic validity. There are no recurring auto-debits without explicit prior consumer consent.</li>
                         <li style="margin-bottom: 0.6rem;"><strong>Refund & Course Switch:</strong> Due to immediate activation of intellectual property (study material, DPPs, test series), digital courses are non-refundable once activated. For wrong batch selections, students may request a batch switch within 7 days by contacting support. Read our full <a href="/refund-policy" style="color: var(--accent); text-decoration: underline;">Refund & Cancellation Policy</a>.</li>
+                        <li style="margin-bottom: 0.6rem;"><strong>Printed Book Sets:</strong> In the EduRain app for Android, a batch is sold as a printed book set. Its price includes delivery within India and free online access to the same batch (live classes, study material and tests), which starts right after payment. The books are delivered to the address You enter, as explained in our <a href="/shipping-policy" style="color: var(--accent); text-decoration: underline;">Shipping & Delivery Policy</a>.</li>
                     </ul>
 
                     <h2 style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin: 2.5rem 0 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">4. Live Classes & 1:1 Mentor Sessions</h2>
@@ -102,7 +103,7 @@ export function renderTerms() {
                     </p>
                     <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); margin-bottom: 1.5rem;">
                         <p style="margin-bottom: 0.4rem;"><strong>Officer Name:</strong> Manoj Kumar</p>
-                        <p style="margin-bottom: 0.4rem;"><strong>Designation:</strong> Grievance Redressal Officer, EduRain Private Limited</p>
+                        <p style="margin-bottom: 0.4rem;"><strong>Designation:</strong> Grievance Redressal Officer, EduRain (OPC) Private Limited</p>
                         <p style="margin-bottom: 0.4rem;"><strong>Email:</strong> <a href="mailto:info@edurain.in" style="color: var(--accent);">info@edurain.in</a></p>
                         <p style="margin-bottom: 0.4rem;"><strong>Registered Address:</strong> Sector 132, Urbtech, Expressway, Noida, Gautam Buddha Nagar, Uttar Pradesh - 201304, India</p>
                         <p style="margin: 0; font-size: 0.95rem; color: #34d399;"><strong>Jurisdiction:</strong> The courts at Noida / Gautam Buddha Nagar, Uttar Pradesh shall have exclusive jurisdiction over any legal dispute.</p>

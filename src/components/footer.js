@@ -72,7 +72,7 @@ export function renderFooter() {
                     <h2 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Get the App</h2>
                     <p>Take your lessons anywhere. Download the EduRain app</p>
                     <div class="er-store-buttons" style="margin-top: 0.75rem;">
-                        <a href="https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN" target="_blank" rel="noopener noreferrer" class="er-store-btn er-store-btn-play">
+                        <a href="https://play.google.com/store/apps/details?id=com.edurainindia.app" target="_blank" rel="noopener noreferrer" class="er-store-btn er-store-btn-play">
                             <svg class="er-store-icon" viewBox="0 0 48 48">
                                 <path fill="#00D2FF" d="M7.705,4.043C7.292,4.15,7,4.507,7,5.121c0,1.802,0,18.795,0,18.795S7,42.28,7,43.091c0,0.446,0.197,0.745,0.5,0.856l20.181-20.064L7.705,4.043z"></path>
                                 <path fill="#00E676" d="M33.237,18.36l-8.307-4.796c0,0-15.245-8.803-16.141-9.32C8.401,4.02,8.019,3.961,7.705,4.043l19.977,19.84L33.237,18.36z"></path>
@@ -102,6 +102,7 @@ export function renderFooter() {
                     <a href="/privacy">Privacy Policy</a> |
                     <a href="/terms">Terms and Conditions</a> |
                     <a href="/refund-policy">Refund/Cancellation Policy</a> |
+                    <a href="/shipping-policy">Shipping & Delivery Policy</a> |
                     <a href="/privacy#grievance">Grievance Redressal</a> |
                     <a href="/contact-us">Contact Us</a>
                 </div>
