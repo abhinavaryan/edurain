@@ -1,1 +1,0 @@
-import{i as e,t}from"./dist-es-CDvgk_pW.js";export{t as EventStreamSerde,e as eventStreamSerdeProvider};

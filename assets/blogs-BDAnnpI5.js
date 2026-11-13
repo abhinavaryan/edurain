@@ -1,4 +1,4 @@
-import{a as e,n as t,o as n,s as r,u as i}from"./config-DJ-3s7d_.js";import{t as a}from"./courses-Cg5Nsa6A.js";import{a as o,r as s}from"./s3Upload-B4Xg6tWQ.js";var c=[`All Blogs`,`Study Hacks`,`JEE Mains PYQ`,`NEET Test Series`,`CBSE Class 10 PYQ`,`CBSE Class 12 PYQ`,`Foundation 9th-10th`],l=[];function u(){return`
+import{a as e,n as t,o as n,s as r,u as i}from"./config-DJ-3s7d_.js";import{t as a}from"./courses-Cg5Nsa6A.js";import{a as o,r as s}from"./s3Upload-DAGHPdc4.js";var c=[`All Blogs`,`Study Hacks`,`JEE Mains PYQ`,`NEET Test Series`,`CBSE Class 10 PYQ`,`CBSE Class 12 PYQ`,`Foundation 9th-10th`],l=[];function u(){return`
         <section class="blogs-section" id="blogs">
             <div class="er-pw-blog-container" id="blog-list-view">
                 
@@ -75,7 +75,7 @@ import{a as e,n as t,o as n,s as r,u as i}from"./config-DJ-3s7d_.js";import{t as
                             <div class="pw-sidebar-widget pw-app-promo-widget">
                                 <h3>EduRain Learning App</h3>
                                 <p>Get live classes, DPPs, doubt solving & mock test series on your phone.</p>
-                                <a href="https://play.google.com/store/apps/details?id=co.lynde.fpdwe&hl=en_IN" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; margin-top: 0.5rem; background: #16a34a; border: none; border-radius: 8px;">
+                                <a href="https://play.google.com/store/apps/details?id=com.edurainindia.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; margin-top: 0.5rem; background: #16a34a; border: none; border-radius: 8px;">
                                     Download App Free
                                 </a>
                             </div>
