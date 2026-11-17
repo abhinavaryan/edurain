@@ -57,21 +57,21 @@ const routesMeta = {
     canonical: 'https://www.edurain.in/blogs'
   },
   'courses/iit-jee': {
-    title: 'Best IIT JEE 2027 Online Coaching for JEE Main & Advanced | EduRain',
-    ogTitle: 'Best IIT JEE Online Coaching 2026-2027 | EduRain',
-    desc: 'Crack IIT JEE 2027 with EduRain: live classes, expert faculty, and structured material for complete JEE Main & Advanced exam preparation.',
+    title: 'Best JEE Main 2027 Online Coaching and Complete Preparation with EduRain',
+    ogTitle: 'Best JEE Main 2027 Online Coaching and Complete Preparation with EduRain',
+    desc: 'Prepare for JEE Main 2027 and JEE Advanced 2027 with EduRain IIT JEE online coaching. Join two-way live classes, build strong concepts, practice with mock tests, and perform confidently in the exam.',
     canonical: 'https://www.edurain.in/courses/iit-jee'
   },
   'courses/neet': {
-    title: 'NEET 2027-28 Complete Online Preparation with EduRain',
-    ogTitle: 'NEET 2027-2028 Online Coaching & Complete Preparation | EduRain',
-    desc: 'Start your NEET 2027-28 online preparation with EduRain: live classes, expert faculty, and structured NCERT-based material with regular mock tests.',
+    title: 'Best NEET 2027 Online Coaching and Online NEET Exam Preparation',
+    ogTitle: 'Best NEET 2027 Online Coaching and Online NEET Exam Preparation',
+    desc: 'NEET 2027 online preparation with EduRain: structured courses, live classes, PYQs, mock tests, and exam-focused support for Class 11, 12, and dropout students.',
     canonical: 'https://www.edurain.in/courses/neet'
   },
   'courses/foundation': {
-    title: 'Best Online Coaching for Classes 6 to 10 | Foundation (2026-2027)',
-    ogTitle: 'Classes 6 to 10 Online Coaching (Foundation 2026-2027) | EduRain',
-    desc: 'Live online classes for Class 6 to 10 with expert-led Math, Science & more: building a strong IIT JEE & NEET foundation. Interactive learning, real results.',
+    title: 'Best Online Coaching for Class 6 to 10 | CBSE, ICSE, UP Board',
+    ogTitle: 'Best Online Coaching for Class 6 to 10 | CBSE, ICSE, UP Board',
+    desc: 'Best online coaching for class 6 to 10. Live classes, tests, and doubt support for CBSE, ICSE, and UP Board students. Best CBSE Class 10 online coaching 2027.',
     canonical: 'https://www.edurain.in/courses/foundation'
   },
   'about-us': {
