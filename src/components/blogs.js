@@ -541,7 +541,7 @@ export async function initBlogs() {
         // Reset SEO Tags to default blogs page
         document.title = "IIT JEE, NEET & Foundation Blogs | EduRain";
         let metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) metaDesc.content = "Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides";
+        if (metaDesc) metaDesc.content = "Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-12th) study guides";
 
         const blogsSection = document.getElementById('blogs');
         if (blogsSection) blogsSection.scrollIntoView({ behavior: 'smooth' });

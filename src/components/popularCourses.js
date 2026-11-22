@@ -11,7 +11,7 @@ export function renderPopularCourses() {
             tags: ['Class 11', 'Class 12', 'Dropper']
         },
         {
-            icon: '📚', iconBg: '#f59e0b', blobColor: '#fde68a', category: 'School', title: 'Foundation (6-10)',
+            icon: '📚', iconBg: '#f59e0b', blobColor: '#fde68a', category: 'School', title: 'Foundation (6-12)',
             link: '/courses/foundation',
             tags: ['Class 8', 'Class 9', 'Class 10']
         },
@@ -44,7 +44,7 @@ export function renderPopularCourses() {
     <!-- ═══ SECTION B: POPULAR COURSES ═══ -->
     <section id="er-popular-courses" class="er-section" style="background:linear-gradient(160deg,#e8f5ee 0%,#d4eddf 50%,#c5e8d5 100%);">
         <div class="er-container">
-            <h1 class="er-section-heading er-reveal visible" style="color:#0e3a24; font-weight: 800;">Best Online Coaching for <span style="color:#1f7d4e;">IIT-JEE, NEET &amp; Class 6-10</span></h1>
+            <h1 class="er-section-heading er-reveal visible" style="color:#0e3a24; font-weight: 800;">Best Online Coaching for <span style="color:#1f7d4e;">IIT-JEE, NEET &amp; Class 6-12</span></h1>
             <p class="er-section-sub er-reveal visible" style="color:#2a5e3a;">
                 Find the best course for your JEE, NEET, or foundation preparation and start learning today.
             </p>

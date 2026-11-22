@@ -34,7 +34,7 @@ const faqsData = {
     { question: "Is there a free demo class before enrolling in the NEET course?", answer: "Yes, available students can attend a free demo class first and decide if the teaching style works for them before enrolling." }
   ],
   FOUNDATION: [
-    { question: "What is a Foundation course and who is it for?", answer: "The Foundation course is for students in Class 6th to 10th. It helps you understand your subjects clearly and also prepares you early for big exams such as NEET and IIT-JEE in the future." },
+    { question: "What is a Foundation course and who is it for?", answer: "The Foundation course is for students in Class 6th to 12th. It helps you understand your subjects clearly and also prepares you early for big exams such as NEET and IIT-JEE in the future." },
     { question: "Which subjects are covered in the Foundation course?", answer: "You will study Maths, Science, and English in this course. These subjects help you build a strong base for higher classes." },
     { question: "Are live classes and recorded lectures both available in the Foundation course?", answer: "Yes! You can join live classes with your teacher, and you also get recorded videos. So if you miss a class or want to revise, you can watch it again anytime." },
     { question: "Are mock tests and weekly tests included in the Foundation course?", answer: "Yes, you get weekly tests and mock tests. This helps you check how much you have learned and where you need more practice." },
@@ -45,15 +45,15 @@ const faqsData = {
 
 const routesMeta = {
   'courses': {
-    title: 'Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-10)',
+    title: 'Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-12)',
     ogTitle: 'All Online Coaching Courses – IIT JEE, NEET & Foundation | EduRain',
-    desc: 'Explore IIT JEE, NEET & Foundation courses for Class 6-10 with expert faculty, structured curriculum & proven results. Take the first step toward success.',
+    desc: 'Explore IIT JEE, NEET & Foundation courses for Class 6-12 with expert faculty, structured curriculum & proven results. Take the first step toward success.',
     canonical: 'https://www.edurain.in/courses'
   },
   'blogs': {
     title: 'IIT JEE, NEET & Foundation Blogs | EduRain',
-    ogTitle: 'IIT JEE, NEET & Class 6-10 Preparation Guides & Blogs | EduRain',
-    desc: 'Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides.',
+    ogTitle: 'IIT JEE, NEET & Class 6-12 Preparation Guides & Blogs | EduRain',
+    desc: 'Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-12th) study guides.',
     canonical: 'https://www.edurain.in/blogs'
   },
   'courses/iit-jee': {
@@ -69,21 +69,21 @@ const routesMeta = {
     canonical: 'https://www.edurain.in/courses/neet'
   },
   'courses/foundation': {
-    title: 'Best Online Coaching for Class 6 to 10 | CBSE, ICSE, UP Board',
-    ogTitle: 'Best Online Coaching for Class 6 to 10 | CBSE, ICSE, UP Board',
-    desc: 'Best online coaching for class 6 to 10. Live classes, tests, and doubt support for CBSE, ICSE, and UP Board students. Best CBSE Class 10 online coaching 2027.',
+    title: 'Best Online Coaching for Class 6 to 12 | CBSE, ICSE, UP Board',
+    ogTitle: 'Best Online Coaching for Class 6 to 12 | CBSE, ICSE, UP Board',
+    desc: 'Best online coaching for class 6 to 12. Live classes, tests, and doubt support for CBSE, ICSE, and UP Board students. Best CBSE Class 10 online coaching 2027.',
     canonical: 'https://www.edurain.in/courses/foundation'
   },
   'about-us': {
     title: "About Us | EduRain's Mission to Make Learning Accessible",
     ogTitle: 'About EduRain – Democratizing Master Coaching Across India',
-    desc: "At EduRain, our mission is to make quality education accessible for every student from Class 6-10 foundation to IIT-JEE & NEET success. Know our story.",
+    desc: "At EduRain, our mission is to make quality education accessible for every student from Class 6-12 foundation to IIT-JEE & NEET success. Know our story.",
     canonical: 'https://www.edurain.in/about-us'
   },
   'contact-us': {
     title: "Contact Us | Get in Touch with EduRain",
     ogTitle: 'Contact EduRain – Admissions & Student Support',
-    desc: "Have questions about our courses for Class 6-10, IIT-JEE or NEET? Contact EduRain's team for admissions support, course details or a free demo class.",
+    desc: "Have questions about our courses for Class 6-12, IIT-JEE or NEET? Contact EduRain's team for admissions support, course details or a free demo class.",
     canonical: 'https://www.edurain.in/contact-us'
   },
   'privacy': {

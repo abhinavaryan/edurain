@@ -95,8 +95,8 @@ export function renderBanner() {
             </a>
 
             <!-- SLIDE 5 — FOUNDATION COURSES (CLASS 6TH - 10TH) -->
-            <a href="/courses/foundation" aria-label="Foundation Courses for Class 6th - 10th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
-              <img src="/images/mobile%20banner%20images/5.webp?v=3" alt="Foundation Courses for Class 6th - 10th" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
+            <a href="/courses/foundation" aria-label="Foundation Courses for Class 6th - 12th" class="er-slide-mobile er-slide-aspect-mobile" style="position:relative; flex-shrink:0; width:100%; display:block; text-decoration:none;">
+              <img src="/images/mobile%20banner%20images/5.webp?v=3" alt="Foundation Courses for Class 6th - 12th" loading="lazy" width="1219" height="541" style="width:100%; height:100%; object-fit:cover; display:block;" />
             </a>
 
             <!-- SLIDE 6 — LEARN FROM ANYWHERE (APP DOWNLOAD) -->

@@ -53,7 +53,7 @@ const routes = {
         render: () => renderBanner() + renderPopularCourses() + renderFreeDemo() + renderFaculty() + renderHomeReviews() + renderImpact() + renderAppDownload(),
         postRender: () => {
           initBanner(); initFaculty(); initHomeReviews(); initImpact(); initScrollReveal();
-          setMetaTags("Best Online Coaching for IIT-JEE, NEET & Class 6-10 | EduRain", "EduRain is an online education platform providing academic learning and exam preparation for Class 6–12, Foundation, NEET and IIT-JEE.", "https://www.edurain.in/");
+          setMetaTags("Best Online Coaching for IIT-JEE, NEET & Class 6-12 | EduRain", "EduRain is an online education platform providing academic learning and exam preparation for Class 6–12, Foundation, NEET and IIT-JEE.", "https://www.edurain.in/");
         }
       };
     }
@@ -65,7 +65,7 @@ const routes = {
         render: () => renderCourses(),
         postRender: () => {
           initCourses();
-          setMetaTags("Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-10)", "Explore IIT JEE, NEET & Foundation courses for Class 6-10 with expert faculty, structured curriculum & proven results. Take the first step toward success", "https://www.edurain.in/courses");
+          setMetaTags("Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-12)", "Explore IIT JEE, NEET & Foundation courses for Class 6-12 with expert faculty, structured curriculum & proven results. Take the first step toward success", "https://www.edurain.in/courses");
         }
       };
     }
@@ -78,7 +78,7 @@ const routes = {
         postRender: () => {
           initBlogs();
           if (window.location.pathname === '/blogs' || window.location.pathname === '/blogs/') {
-            setMetaTags("IIT JEE, NEET & Foundation Blogs | EduRain", "Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-10th) study guides", "https://www.edurain.in/blogs");
+            setMetaTags("IIT JEE, NEET & Foundation Blogs | EduRain", "Read blogs on IIT JEE preparation, NEET exam strategy, and Foundation (6th-12th) study guides", "https://www.edurain.in/blogs");
           }
         }
       };
@@ -90,7 +90,7 @@ const routes = {
       const { renderAbout } = await import('./components/about.js');
       return { 
         render: () => renderAbout(), 
-        postRender: () => setMetaTags("About Us | EduRain's Mission to Make Learning Accessible", "At EduRain, our mission is to make quality education accessible for every student from Class 6-10 foundation to IIT-JEE & NEET success. Know our story", "https://www.edurain.in/about-us") 
+        postRender: () => setMetaTags("About Us | EduRain's Mission to Make Learning Accessible", "At EduRain, our mission is to make quality education accessible for every student from Class 6-12 foundation to IIT-JEE & NEET success. Know our story", "https://www.edurain.in/about-us") 
       };
     }
   },
@@ -102,7 +102,7 @@ const routes = {
         render: () => renderContact(),
         postRender: () => { 
           initContact(); 
-          setMetaTags("Contact Us | Get in Touch with EduRain", "Have questions about our courses for Class 6-10, IIT-JEE or NEET? Contact EduRain's team for admissions support, course details or a free demo class", "https://www.edurain.in/contact-us"); 
+          setMetaTags("Contact Us | Get in Touch with EduRain", "Have questions about our courses for Class 6-12, IIT-JEE or NEET? Contact EduRain's team for admissions support, course details or a free demo class", "https://www.edurain.in/contact-us"); 
         }
       };
     }
@@ -188,7 +188,7 @@ const routes = {
         render: () => renderFoundationCourses(),
         postRender: () => { 
             initFAQ(); 
-            setMetaTags("Best Online Coaching for Class 6 to 10 | CBSE, ICSE, UP Board", "Best online coaching for class 6 to 10. Live classes, tests, and doubt support for CBSE, ICSE, and UP Board students. Best CBSE Class 10 online coaching 2027.", "https://www.edurain.in/courses/foundation"); 
+            setMetaTags("Best Online Coaching for Class 6 to 12 | CBSE, ICSE, UP Board", "Best online coaching for class 6 to 12. Live classes, tests, and doubt support for CBSE, ICSE, and UP Board students. Best CBSE Class 10 online coaching 2027.", "https://www.edurain.in/courses/foundation"); 
             if (window.anime) {
                 window.anime({
                     targets: '.er-anime-reveal',

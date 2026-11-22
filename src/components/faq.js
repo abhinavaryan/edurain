@@ -23,7 +23,7 @@ const faqsData = {
         { question: "Is there a free demo class before enrolling in the NEET course?", answer: "Yes, available students can attend a free demo class first and decide if the teaching style works for them before enrolling." }
     ],
     FOUNDATION: [
-        { question: "What is a Foundation course and who is it for?", answer: "The Foundation course is for students in Class 6th to 10th. It helps you understand your subjects clearly and also prepares you early for big exams such as NEET and IIT-JEE in the future." },
+        { question: "What is a Foundation course and who is it for?", answer: "The Foundation course is for students in Class 6th to 12th. It helps you understand your subjects clearly and also prepares you early for big exams such as NEET and IIT-JEE in the future." },
         { question: "Which subjects are covered in the Foundation course?", answer: "You will study Maths, Science, and English in this course. These subjects help you build a strong base for higher classes." },
         { question: "Are live classes and recorded lectures both available in the Foundation course?", answer: "Yes! You can join live classes with your teacher, and you also get recorded videos. So if you miss a class or want to revise, you can watch it again anytime." },
         { question: "Are mock tests and weekly tests included in the Foundation course?", answer: "Yes, you get weekly tests and mock tests. This helps you check how much you have learned and where you need more practice." },
@@ -72,8 +72,8 @@ export function renderFAQ(category = 'ALL') {
                         "@type": "CollectionPage",
                         "@id": "https://www.edurain.in/courses/#webpage",
                         "url": "https://www.edurain.in/courses/",
-                        "name": "Online Courses for Class 6-10, IIT-JEE & NEET | EduRain",
-                        "description": "EduRain offers online coaching for Class 6-10, foundation courses, IIT-JEE preparation, NEET coaching, board exams and competitive exam preparation.",
+                        "name": "Online Courses for Class 6-12, IIT-JEE & NEET | EduRain",
+                        "description": "EduRain offers online coaching for Class 6-12, foundation courses, IIT-JEE preparation, NEET coaching, board exams and competitive exam preparation.",
                         "isPartOf": {
                             "@id": "https://www.edurain.in/#website"
                         },
@@ -277,15 +277,15 @@ export function renderFAQ(category = 'ALL') {
                     {
                         "@type": "Course",
                         "@id": "https://www.edurain.in/courses/foundation/#course",
-                        "name": "Foundation Course for Class 6 to 10",
-                        "description": "EduRain Foundation Course is designed for students in Class 6th to 10th to build a strong foundation in Maths, Science and English while preparing early for future competitive exams such as IIT-JEE and NEET.",
+                        "name": "Foundation Course for Class 6 to 12",
+                        "description": "EduRain Foundation Course is designed for students in Class 6th to 12th to build a strong foundation in Maths, Science and English while preparing early for future competitive exams such as IIT-JEE and NEET.",
                         "url": "https://www.edurain.in/courses/foundation/",
                         "provider": {
                             "@type": "Organization",
                             "name": "EduRain",
                             "url": "https://www.edurain.in/"
                         },
-                        "educationalLevel": "Class 6 to Class 10",
+                        "educationalLevel": "Class 6 to Class 12",
                         "teaches": [
                             "Mathematics",
                             "Science",

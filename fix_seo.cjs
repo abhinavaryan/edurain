@@ -12,9 +12,9 @@ const indexHtmlContent = `<!DOCTYPE html>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/images/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Best Online Coaching for IIT-JEE, NEET & Class 6-10 | EduRain</title>
+  <title>Best Online Coaching for IIT-JEE, NEET & Class 6-12 | EduRain</title>
   <meta name="description"
-    content="EduRain offers online coaching for Class 6-10, foundation courses, IIT-JEE preparation, NEET coaching, board exams and competitive exam preparation." />
+    content="EduRain offers online coaching for Class 6-12, foundation courses, IIT-JEE preparation, NEET coaching, board exams and competitive exam preparation." />
 
   <!-- Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
