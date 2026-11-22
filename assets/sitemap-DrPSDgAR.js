@@ -24,7 +24,7 @@ function e(){return`
                             <ul style="list-style: none; padding: 0;">
                                 <li style="margin-bottom: 0.5rem;"><a href="/courses/iit-jee" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">JEE Preparation</a></li>
                                 <li style="margin-bottom: 0.5rem;"><a href="/courses/neet" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">NEET Preparation</a></li>
-                                <li style="margin-bottom: 0.5rem;"><a href="/courses/foundation" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Foundation (6th-10th)</a></li>
+                                <li style="margin-bottom: 0.5rem;"><a href="/courses/foundation" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Foundation (6th-12th)</a></li>
                             </ul>
                         </div>
 

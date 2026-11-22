@@ -1,8 +1,8 @@
-import{t as e}from"./courses-Cg5Nsa6A.js";import{initFAQ as t,renderFAQ as n}from"./faq-Bo7AT8JC.js";function r(){return`
+import{t as e}from"./courses-Cg5Nsa6A.js";import{initFAQ as t,renderFAQ as n}from"./faq-DntiRxpG.js";function r(){return`
         <section class="courses-section" id="courses-page">
             <div class="section-header">
-                <h1>Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-10)</h1>
-                <h2 style="font-size: var(--fs-lg); color: var(--text-secondary); font-weight: 400; margin-top: 8px;">Find the best course for your IIT JEE, NEET, or Foundation (Class 6th to 10th) preparation and start learning today</h2>
+                <h1>Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-12)</h1>
+                <h2 style="font-size: var(--fs-lg); color: var(--text-secondary); font-weight: 400; margin-top: 8px;">Find the best course for your IIT JEE, NEET, or Foundation (Class 6th to 12th) preparation and start learning today</h2>
             </div>
             <div class="filter-row">
                 <a href="/courses" class="filter-btn active" style="text-decoration: none;">All</a>
@@ -49,11 +49,11 @@ import{t as e}from"./courses-Cg5Nsa6A.js";import{initFAQ as t,renderFAQ as n}fro
             
             <div style="position: relative; z-index: 1;">
                 <h2 class="er-anime-reveal" style="color: #f8fafc; font-size: 2.2rem; margin-bottom: 1.2rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; font-family: 'Inter', sans-serif;">
-                    IIT JEE, NEET and Foundation Courses <span style="background: -webkit-linear-gradient(45deg, #fde047, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">(Class 6th–10th)</span>
+                    IIT JEE, NEET and Foundation Courses <span style="background: -webkit-linear-gradient(45deg, #fde047, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">(Class 6th–12th)</span>
                 </h2>
                 
                 <p class="er-anime-reveal" style="margin-bottom: 1.2rem; color: #cbd5e1; line-height: 1.6; font-size: 1.05rem; font-weight: 400; max-width: 85ch;">
-                    EduRain offers structured coaching for students preparing for IIT JEE, NEET, and those building their academic foundation from Class 6th to 10th. Our JEE courses cover Physics, Chemistry and Maths with a strong focus on problem-solving and speed, guided by faculty who've been teaching this exam for years. 
+                    EduRain offers structured coaching for students preparing for IIT JEE, NEET, and those building their academic foundation from Class 6th to 12th. Our JEE courses cover Physics, Chemistry and Maths with a strong focus on problem-solving and speed, guided by faculty who've been teaching this exam for years. 
                 </p>
                 <p class="er-anime-reveal" style="margin-bottom: 2rem; color: #cbd5e1; line-height: 1.6; font-size: 1.05rem; font-weight: 400; max-width: 85ch;">
                     The NEET courses are built around conceptual clarity in Physics, Chemistry and Biology, so students aren't just memorizing but actually understanding what they study. For younger students, our Foundation courses focus on strengthening core Maths and Science concepts early, so the transition into JEE or NEET preparation later feels natural instead of overwhelming. Every course, whether it's for a Class 11 student just starting out or a dropper repeating the year, is designed around where the student currently stands and what they need to improve next.

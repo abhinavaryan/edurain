@@ -19,7 +19,7 @@ function e(){return`
                     <div class="er-about-col-left">
                         <div class="er-glass-card er-about-card">
                             <h2>Who We Are</h2>
-                            <p>At EduRain, we believe quality education shouldn't depend on where you live or how much you can afford to spend on coaching. We started EduRain with one simple goal: to bring foundation learning for Classes 6 to 10 and online coaching for IIT-JEE and NEET preparation to every student who's serious about their future, no matter which city or town they're studying from.</p>
+                            <p>At EduRain, we believe quality education shouldn't depend on where you live or how much you can afford to spend on coaching. We started EduRain with one simple goal: to bring foundation learning for Classes 6 to 12 and online coaching for IIT-JEE and NEET preparation to every student who's serious about their future, no matter which city or town they're studying from.</p>
                         </div>
                         
                         <div class="er-glass-card er-about-card">
@@ -33,7 +33,7 @@ function e(){return`
                         <div class="er-glass-card er-about-card er-card-highlight">
                             <h2>What We Offer</h2>
                             <ul class="er-about-list">
-                                <li><strong>Foundation Courses (Classes 6–10):</strong> We help students build strong concepts in Maths and Science early on, so the transition to JEE and NEET preparation later feels natural, not overwhelming.</li>
+                                <li><strong>Foundation Courses (Classes 6–12):</strong> We help students build strong concepts in Maths and Science early on, so the transition to JEE and NEET preparation later feels natural, not overwhelming.</li>
                                 <li><strong>IIT-JEE Preparation:</strong> Structured online classes, regular practice tests, and doubt-solving sessions designed around the JEE syllabus and exam pattern.</li>
                                 <li><strong>NEET Preparation:</strong> Focused Biology, Physics, and Chemistry coaching built around what NEET actually demands — accuracy, speed, and conceptual clarity.</li>
                                 <li><strong>Live Classes &amp; 1:1 Mentor Sessions:</strong> Students learn live with our teachers and ask questions in class, get personal guidance from a mentor in one-on-one sessions, and revise at their own pace with study material and tests.</li>

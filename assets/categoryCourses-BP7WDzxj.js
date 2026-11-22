@@ -1,4 +1,4 @@
-import{t as e}from"./courses-Cg5Nsa6A.js";import{renderFAQ as t}from"./faq-Bo7AT8JC.js";function n(e){let t=`⭐`.repeat(Math.round(e.rating)),n=e.students>=1e3?`${(e.students/1e3).toFixed(1)}K`:e.students;return`
+import{t as e}from"./courses-Cg5Nsa6A.js";import{renderFAQ as t}from"./faq-DntiRxpG.js";function n(e){let t=`⭐`.repeat(Math.round(e.rating)),n=e.students>=1e3?`${(e.students/1e3).toFixed(1)}K`:e.students;return`
         <div class="glass-card course-card fade-in-section visible" data-category="${e.category}" data-link="${e.link||`#`}">
             <div class="course-thumb">
                 <a href="${e.link||`#`}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
@@ -155,18 +155,18 @@ import{t as e}from"./courses-Cg5Nsa6A.js";import{renderFAQ as t}from"./faq-Bo7AT
                 </ul>
             </div>
         </section>
-    `)}function o(){return r(`Best Online Coaching for Classes 6 to 10 | Foundation`,`A strong foundation changes everything. From Class 6 to 10, we make sure your concepts in Science, Maths, and English are crystal clear, the perfect stepping stone for future competitive exams.`,`FOUNDATION`,`
+    `)}function o(){return r(`Best Online Coaching for Classes 6 to 12 | Foundation`,`A strong foundation changes everything. From Class 6 to 12, we make sure your concepts in Science, Maths, and English are crystal clear, the perfect stepping stone for future competitive exams.`,`FOUNDATION`,`
         <section class="er-courses-content-section" style="max-width: 1000px; margin: 4rem auto; padding: 2.5rem; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
             <div style="position: absolute; top: -50%; left: -20%; width: 60%; height: 100%; background: radial-gradient(circle, rgba(52, 211, 153, 0.08) 0%, transparent 70%); border-radius: 50%; z-index: 0; pointer-events: none;"></div>
             <div style="position: absolute; bottom: -30%; right: -20%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%); border-radius: 50%; z-index: 0; pointer-events: none;"></div>
             
             <div style="position: relative; z-index: 1;">
                 <h2 class="er-anime-reveal" style="color: #f8fafc; font-size: 2.2rem; margin-bottom: 1.2rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; font-family: 'Inter', sans-serif;">
-                    Class 6th to 10th: Where Real Preparation <span style="background: -webkit-linear-gradient(45deg, #fde047, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Actually Begins</span>
+                    Class 6th to 12th: Where Real Preparation <span style="background: -webkit-linear-gradient(45deg, #fde047, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Actually Begins</span>
                 </h2>
                 
                 <p class="er-anime-reveal" style="margin-bottom: 2rem; color: #cbd5e1; line-height: 1.6; font-size: 1.05rem; font-weight: 400; max-width: 85ch;">
-                    Most students struggle in JEE or NEET prep not because the concepts are new, but because the basics from Class 6th to 10th were never solid to begin with. At EduRain, our Foundation courses focus on exactly that gap building strong fundamentals in Maths and Science early, so that by the time a student reaches Class 11th, they're not relearning basics but actually building on top of them. Each batch is designed for a specific class, keeping the difficulty level and pace right for that age group, taught by faculty who know how to make concepts click without making it feel like extra pressure.
+                    Most students struggle in JEE or NEET prep not because the concepts are new, but because the basics from Class 6th to 12th were never solid to begin with. At EduRain, our Foundation courses focus on exactly that gap building strong fundamentals in Maths and Science early, so that by the time a student reaches Class 11th, they're not relearning basics but actually building on top of them. Each batch is designed for a specific class, keeping the difficulty level and pace right for that age group, taught by faculty who know how to make concepts click without making it feel like extra pressure.
                 </p>
 
                 <h3 class="er-anime-reveal" style="color: #f1f5f9; font-size: 1.5rem; margin-bottom: 1.2rem; font-weight: 700; font-family: 'Inter', sans-serif; letter-spacing: -0.01em;">Our Batches:</h3>

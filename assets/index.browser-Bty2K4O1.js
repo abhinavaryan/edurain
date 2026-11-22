@@ -1,1 +1,0 @@
-import{i as e,t}from"./dist-es--BKGT10Z.js";export{t as EventStreamSerde,e as eventStreamSerdeProvider};
