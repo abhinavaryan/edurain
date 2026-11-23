@@ -189,7 +189,8 @@ const routes = {
         render: () => renderFoundationCourses(),
         postRender: () => { 
             initFAQ(); 
-            setMetaTags("Best Online Coaching for Class 6 to 12 | CBSE, ICSE, UP Board", "Best online coaching for class 6 to 12. Live classes, tests, and doubt support for CBSE, ICSE, and UP Board students. Best CBSE Class 10 online coaching 2027.", "https://www.edurain.in/courses/foundation"); 
+            // Old: setMetaTags("Best Online Coaching for Class 6 to 12 | CBSE, ICSE, UP Board", "Best online coaching for class 6 to 12. Live classes, tests, and doubt support for CBSE, ICSE, and UP Board students. Best CBSE Class 10 online coaching 2027.", "https://www.edurain.in/courses/foundation");
+            setMetaTags("Best Online Coaching for Class 6 to 12 | CBSE, ICSE, UP Board", "Online coaching for Class 6 to 12 with live classes, DPPs, weekly tests and doubt support for CBSE, ICSE and UP Board. Book a free demo class today.", "https://www.edurain.in/courses/foundation");
             if (window.anime) {
                 window.anime({
                     targets: '.er-anime-reveal',

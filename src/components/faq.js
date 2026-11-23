@@ -53,6 +53,22 @@ const faqsData = {
         { question: "Is there a free demo class before enrolling in the NEET course?", answer: "Yes, available students can attend a free demo class first and decide if the teaching style works for them before enrolling." }
     ],
     */
+    // Class 6 to 12 FAQs from the doc "foundation-class-6-to-12". The Class 11 and Class 12 batch FAQs and the Class
+    // 11/12 prices are left out until the doc's [Confirm batch name and details] / [₹ price] parts are filled in.
+    FOUNDATION: [
+        { question: "Which classes does EduRain online coaching cover?", answer: "We offer batches for Class 6, 7, 8, 9, 10, 11 and 12, covering Maths, Science (Physics, Chemistry and Biology), English and Social Science." },
+        { question: "Which boards are covered in EduRain online coaching for Class 6 to 12?", answer: "Our classes cover CBSE, ICSE, UP Board and other boards, so students from every board can learn with us." },
+        { question: "Is EduRain good for CBSE Class 10 board exam preparation?", answer: "The Class 10th Disha Batch covers the full syllabus with revision, mock tests and answer-writing practice, and is planned around the 2027 board exams." },
+        { question: "Which batch should a Class 9 student join for 2027?", answer: "The Class 9th Super Champions Batch is our CBSE-focused course, with live classes, DPPs, tests and doubt support." },
+        { question: "Are the classes live or recorded?", answer: "Both. You attend live classes and can watch recordings any time for revision." },
+        { question: "Do I get DPPs and tests?", answer: "Yes. You get DPPs for every chapter, plus weekly tests and mock tests." },
+        { question: "How are doubts solved?", answer: "You can ask doubts in class and get them cleared by teachers through our doubt support." },
+        { question: "Can I try a class before joining?", answer: "Yes. You can attend a free demo class first." },
+        { question: "How much do the batches cost?", answer: "Class 6 and 7 batches start at ₹3,520, the Class 10 Disha Batch is ₹4,020, and the Class 8 and Class 9 batches are ₹4,520. See each batch page for current offers." },
+        { question: "Is online coaching better than offline for Class 6 to 12?", answer: "Online coaching saves travel time, gives you recordings for revision and lets you study from home. With live interaction and regular tests, it works as well as a classroom for most students." },
+        { question: "Does the foundation course help with JEE and NEET?", answer: "Yes. Strong Class 9 and 10 basics in Maths, Physics, Chemistry and Biology make Class 11 and 12 preparation easier, and our Class 11 and 12 batches continue that preparation for JEE and NEET." }
+    ]
+    /* Old Foundation FAQs, replaced by the ones above. Kept for reference.
     FOUNDATION: [
         { question: "What is a Foundation course and who is it for?", answer: "The Foundation course is for students in Class 6th to 12th. It helps you understand your subjects clearly and also prepares you early for big exams such as NEET and IIT-JEE in the future." },
         { question: "Which subjects are covered in the Foundation course?", answer: "You will study Maths, Science, and English in this course. These subjects help you build a strong base for higher classes." },
@@ -61,6 +77,7 @@ const faqsData = {
         { question: "Will this course help me with my school exams too?", answer: "Yes! Along with preparing you for future big exams, this course also helps you do well in your school exams." },
         { question: "Can I try a free demo class before joining?", answer: "Yes, you can attend a free demo class first. This way, you can see how the teacher explains things before you join the full course." }
     ]
+    */
 };
 
 export function renderFAQ(category = 'ALL') {

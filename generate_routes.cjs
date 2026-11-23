@@ -73,7 +73,8 @@ const routesMeta = {
   'courses/foundation': {
     title: 'Best Online Coaching for Class 6 to 12 | CBSE, ICSE, UP Board',
     ogTitle: 'Best Online Coaching for Class 6 to 12 | CBSE, ICSE, UP Board',
-    desc: 'Best online coaching for class 6 to 12. Live classes, tests, and doubt support for CBSE, ICSE, and UP Board students. Best CBSE Class 10 online coaching 2027.',
+    // Old desc: 'Best online coaching for class 6 to 12. Live classes, tests, and doubt support for CBSE, ICSE, and UP Board students. Best CBSE Class 10 online coaching 2027.'
+    desc: 'Online coaching for Class 6 to 12 with live classes, DPPs, weekly tests and doubt support for CBSE, ICSE and UP Board. Book a free demo class today.',
     canonical: 'https://www.edurain.in/courses/foundation'
   },
   'about-us': {

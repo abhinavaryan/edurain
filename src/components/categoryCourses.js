@@ -628,7 +628,145 @@ export function renderNEETCourses() {
     );
 }
 
+// Foundation page (Class 6 to 12), from the doc "foundation-class-6-to-12". Lines the doc marks as still to fill in
+// ([Class 11th Batch name], [₹ price], [Subject], ...) are left out until the team sends the real details.
+function foundation2027Html() {
+    const blog = (slug, text) => contentLink(`https://www.edurain.in/blogs/${slug}`, text);
+    return contentSection(`
+                <div class="er-anime-reveal">
+                    <p style="${P_STYLE}">Class 6 to 12 is where concepts are built and then put to the test. A child who understands fractions, force or grammar properly in Class 7 finds Class 10 boards easier, and Class 11 and 12 Physics, Chemistry, Maths and Biology become far less stressful, along with JEE or NEET. At EduRain you attend live classes, watch recordings when you need them again, practise with DPPs and tests, and get your doubts cleared by teachers, all from home. Our batches follow the latest CBSE syllabus and are planned for the 2026-27 session and the 2027 board exams.</p>
+
+                    <h2 style="${H2_STYLE} margin-top: 1.6rem;">Online batches for Class 6 to 12</h2>
+                    <p style="${P_STYLE}">Every batch covers its core subjects with live and recorded classes, tests and doubt support. Class 9 to 12 batches also give special attention to board-pattern questions.</p>
+                    ${contentTable(['Class', 'Batch', 'Best for', 'Teachers', 'Price'], [
+                        ['6', contentLink('https://courses.edurain.in/courses/830607', 'Class 6th Batch'), 'Building a strong base in Maths, Science and English with simple, step-by-step lessons', "Khushboo ma'am, Abhishek Sir, Manoj Sir, Yamini ma'am", '₹3,520'],
+                        ['7', contentLink('https://courses.edurain.in/courses/830943', 'Class 7th Batch'), 'Moving from basics to deeper understanding, with regular practice, weekly tests and answer-writing', "Khushboo ma'am, Abhishek Sir, Manoj Sir, Yamini ma'am", '₹3,520'],
+                        ['8', contentLink('https://courses.edurain.in/courses/830945', 'Class 8th Batch'), 'Algebra, mensuration, physics and chemistry basics, so Class 9 does not feel like a sudden jump', "Khushboo ma'am, Abhishek Sir, Manoj Sir, Yamini ma'am", '₹4,520'],
+                        ['9', contentLink('https://courses.edurain.in/courses/814577', 'Class 9th Super Champions Batch'), 'CBSE students who want an early start on board exams, with chapter-wise teaching and regular tests', "Manoj Sir, Khushboo ma'am, Nandini ma'am, Sujeet Sir", '₹4,520'],
+                        ['10', contentLink('https://courses.edurain.in/courses/814204', 'Class 10th Disha Batch'), 'Board-focused preparation: full syllabus, revision, mock tests and answer-writing practice', "Khushboo ma'am, Meghna ma'am, Manoj Sir, Yamini ma'am", '₹4,020'],
+                    ])}
+                    <p style="${P_STYLE}">Not sure which batch fits? Book a free demo class and our team will guide you.</p>
+                </div>
+
+                ${DIVIDER}
+                <div class="er-anime-reveal">
+                    <h2 style="${H2_STYLE}">Why choose EduRain online classes for Class 6 to 12?</h2>
+                    ${contentList([
+                        `${contentBold('Live online classes.')} Attend live classes from home and ask questions the moment they come to mind. Teachers explain, solve examples on the board and keep the class active.`,
+                        `${contentBold('Recorded lectures for revision.')} Missed a class or want to revisit a chapter before the exam? Watch the recording again as many times as you need.`,
+                        `${contentBold('DPPs for every chapter.')} Daily Practice Problems make practice a daily habit instead of a last-week rush.`,
+                        `${contentBold('Weekly tests and mock tests.')} Weekly tests show where you stand, and mock tests prepare you for the real exam hall. After every test, review your weak topics and fix them.`,
+                        `${contentBold('Doubt-clearing support.')} Ask doubts in class or through our doubt support and get simple, clear explanations from teachers.`,
+                        `${contentBold('Board exam preparation.')} From Class 9 onwards, and especially in Class 10 and 12, we keep the board pattern in mind: NCERT-based teaching, important questions, previous-year question practice, revision and answer-writing.`,
+                        `${contentBold('Free demo class.')} Attend a free demo class, see how we teach and then decide.`,
+                        `${contentBold('App and web access.')} Study on the EduRain app or website, on a phone, tablet or laptop, whenever it suits you.`,
+                    ])}
+                </div>
+
+                ${DIVIDER}
+                <div class="er-anime-reveal">
+                    <h2 style="${H2_STYLE}">Subjects covered in Class 6 to 12 online coaching</h2>
+                    ${contentList([
+                        `${contentBold('Maths:')} number systems, algebra, geometry, mensuration, trigonometry and statistics in Class 6 to 10, and sets, functions, calculus, vectors, probability and more in Class 11 and 12, taught with solved examples and practice sets.`,
+                        `${contentBold('Science:')} physics, chemistry and biology explained with diagrams, real-life examples and numerical practice. In Class 11 and 12, Physics, Chemistry and Biology are taught as separate subjects.`,
+                        `${contentBold('English:')} grammar, writing skills and reading comprehension for better school and board exam answers.`,
+                        `${contentBold('Social Science (SST):')} history, geography, civics and economics for Class 6 to 10, with chapter-wise notes and answer-writing practice, taught by Khushboo ma'am.`,
+                    ])}
+                </div>
+
+                ${DIVIDER}
+                <div class="er-anime-reveal">
+                    <h2 style="${H2_STYLE}">How a typical week looks</h2>
+                    ${contentSteps([
+                        'Attend live classes on the chapter of the week.',
+                        'Revise the same day with the recorded lecture and notes.',
+                        'Solve DPPs on that chapter.',
+                        'Clear doubts with teachers.',
+                        'Take the weekly test and review your mistakes.',
+                    ])}
+                    <p style="${P_STYLE}">This simple cycle of learn, practise, test and improve is what turns average marks into good marks.</p>
+                </div>
+
+                ${DIVIDER}
+                <div class="er-anime-reveal">
+                    <h2 style="${H2_STYLE}">Who should join EduRain online batches?</h2>
+                    ${contentList([
+                        'Students of Class 6 to 12 who want strong basics in Maths and Science.',
+                        'Class 9 to 12 students preparing for CBSE board exams 2027 who want regular tests and answer-writing practice.',
+                        'Students who find school teaching too fast and need a second round of explanation.',
+                        'Parents who want a safe, home-based way for their child to learn, with regular tests and progress tracking.',
+                        'Students from smaller towns who want quality teaching without travelling to a coaching centre.',
+                        'Class 11 and 12 students, and JEE and NEET aspirants, who want to build exam-ready concepts alongside school studies.',
+                    ])}
+                </div>
+
+                ${DIVIDER}
+                <div class="er-anime-reveal">
+                    <h2 style="${H2_STYLE}">From foundation to JEE and NEET: why start early?</h2>
+                    <p style="${P_STYLE}">Many toppers say their rank was built in Class 9 and 10. Chapters like motion, force, atoms and molecules, life processes, electricity and algebra are the roots of Class 11 and 12 Physics, Chemistry, Biology and Maths. When these basics are clear early, serious exam preparation in Class 11 and 12 becomes smoother and less stressful. And once your child reaches Class 11 and 12, the same EduRain classroom carries them through school exams, boards and entrance tests together.</p>
+                    <p style="${P_STYLE}">When your child is ready for the next step, explore our ${contentLink('https://www.edurain.in/courses/iit-jee', 'JEE Main 2027 online coaching')} and ${contentLink('https://www.edurain.in/courses/neet', 'NEET 2027 online coaching')} programs. You can also read how the toppers' path starts with strong basics in ${blog('class-9-science-atoms-and-molecules', 'Class 9 Science: Atoms and Molecules')} and ${blog('force-and-laws-of-motion-class-9', 'Force and Laws of Motion Class 9')}.</p>
+                </div>
+
+                ${DIVIDER}
+                <div class="er-anime-reveal">
+                    <h2 style="${H2_STYLE}">Meet our Class 6 to 12 faculty</h2>
+                    <p style="${P_STYLE}">Learn from teachers who know the CBSE syllabus and how to make concepts easy.</p>
+                    ${contentTable(['Teacher', 'Subject', 'Classes', 'Experience'], [
+                        ['Abhishek Sir', 'Maths', '6th-8th', '5+ years'],
+                        ["Meghna Ma'am", 'Maths', '9th-10th', '8+ years'],
+                        ["Yamini Ma'am", 'Science', '6th-10th', '7+ years'],
+                        ['Manoj Sir', 'English', '6th-10th', '15+ years'],
+                        ["Khushboo Ma'am", 'SST', '6th-10th', '5+ years'],
+                    ])}
+                </div>
+
+                ${DIVIDER}
+                <div class="er-anime-reveal">
+                    <h2 style="${H2_STYLE}">Tests, DPPs and doubt support</h2>
+                    ${contentList([
+                        `${contentBold('Experienced teachers.')} Our teachers explain concepts in simple language and keep every class interactive.`,
+                        `${contentBold('Daily Practice Problems (DPPs).')} You get DPPs for every chapter, so practice happens daily and not just before exams.`,
+                        `${contentBold('Weekly and mock tests.')} Chapter-wise and weekly tests check your understanding, and mock tests build exam confidence. After every test, review weak topics, fix them and try again.`,
+                        `${contentBold('Two-way communication.')} Students talk to teachers in class and get doubts solved, so learning is a conversation and not a one-way video.`,
+                    ])}
+                </div>
+
+                ${DIVIDER}
+                <div class="er-anime-reveal">
+                    <h2 style="${H2_STYLE}">Free study resources for Class 6 to 12</h2>
+                    <p style="${P_STYLE}">Read our free guides to see how we explain topics.</p>
+                    ${contentLabel('Class 10 board exam 2027')}
+                    ${contentList([
+                        blog('edurain-in-class-10-board-exam-preparation-tips-for-cbse-students', 'Class 10 Board Exam Preparation Tips for CBSE Students'),
+                        blog('cbse-class-10-board-exam-2027-date-sheet-pdf-download', 'CBSE Class 10 Board Exam 2027 Date Sheet'),
+                        blog('cbse-class-10-maths-important-questions-chapter-wise', 'CBSE Class 10 Maths Important Questions Chapter-Wise'),
+                        'CBSE Class 10 Maths Formula Sheet 2027',
+                        blog('class-10-maths-chapter-wise-mcqs-with-answers', 'Class 10 Maths Chapter-wise MCQs with Answers for 2027 Exams'),
+                        blog('quadratic-equations-class-10', 'Quadratic Equations Class 10: Tricky Questions Solved Step by Step'),
+                        blog('most-important-class-10-science-question', 'Most Important Class 10 Science Question Types with Sample Papers'),
+                        'CBSE Class 10 Science Previous Year Repeated Questions (2021-2025)',
+                        blog('chemical-reactions-and-equations-class-10-notes-tips', 'Chemical Reactions and Equations Class 10 Notes'),
+                        'Class 10 SST Chapter-Wise Strategy for Board 2027',
+                    ])}
+                    ${contentLabel('Class 9')}
+                    ${contentList([
+                        blog('class-9-science-atoms-and-molecules', 'Class 9 Science: Atoms and Molecules'),
+                        blog('force-and-laws-of-motion-class-9', 'Force and Laws of Motion Class 9 Notes for Quick Revision'),
+                    ])}
+                    ${contentLabel('Class 6 to 8')}
+                    ${contentList(['New guides on Maths and Science for Class 6, 7 and 8 are coming soon.'])}
+                </div>
+
+                ${DIVIDER}
+                <div class="er-anime-reveal">
+                    <h2 style="${H2_STYLE}">Start learning with EduRain today</h2>
+                    <p style="${P_STYLE}">Give your child a strong start with online coaching for Class 6 to 12. Attend a free demo class, pick your batch and begin. Call ${contentLink('tel:+918796443910', '+91 87964 43910')} or message us on ${contentLink('https://wa.me/918796443910', 'WhatsApp')} to enroll.</p>
+                </div>
+    `);
+}
+
 export function renderFoundationCourses() {
+    /* Old Foundation content, replaced by the Class 6 to 12 content above (foundation2027Html). Kept for reference.
     const foundationExtraHtml = `
         <section class="er-courses-content-section" style="max-width: 1000px; margin: 4rem auto; padding: 2.5rem; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
             <div style="position: absolute; top: -50%; left: -20%; width: 60%; height: 100%; background: radial-gradient(circle, rgba(52, 211, 153, 0.08) 0%, transparent 70%); border-radius: 50%; z-index: 0; pointer-events: none;"></div>
@@ -689,10 +827,16 @@ export function renderFoundationCourses() {
             </div>
         </section>
     `;
+    */
+    const foundationExtraHtml = foundation2027Html();
 
     return renderCategoryPage(
+        /* Old heading and the line under it, replaced by the doc's title and intro:
         "Best Online Coaching for Classes 6 to 12 | Foundation",
         "A strong foundation changes everything. From Class 6 to 12, we make sure your concepts in Science, Maths, and English are crystal clear, the perfect stepping stone for future competitive exams.",
+        */
+        "Best Online Coaching for Class 6 to 12 | CBSE, ICSE, UP Board Classes",
+        "EduRain offers online coaching for students of Class 6, 7, 8, 9, 10, 11 and 12 who want strong basics in Maths, Science (Physics, Chemistry, Biology), English and Social Science, and a calm, steady path to good marks in CBSE, ICSE and UP Board exams. This page shows our class-wise batches, how our classes run and how we help you from school exams to board exams and beyond.",
         "FOUNDATION",
         foundationExtraHtml
     );
