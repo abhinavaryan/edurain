@@ -166,7 +166,8 @@ const routes = {
         render: () => renderNEETCourses(),
         postRender: () => { 
             initFAQ(); 
-            setMetaTags("Best NEET 2027 Online Coaching and Online NEET Exam Preparation", "NEET 2027 online preparation with EduRain: structured courses, live classes, PYQs, mock tests, and exam-focused support for Class 11, 12, and dropout students.", "https://www.edurain.in/courses/neet"); 
+            // Old: setMetaTags("Best NEET 2027 Online Coaching and Online NEET Exam Preparation", "NEET 2027 online preparation with EduRain: structured courses, live classes, PYQs, mock tests, and exam-focused support for Class 11, 12, and dropout students.", "https://www.edurain.in/courses/neet");
+            setMetaTags("Best NEET 2027 Online Coaching & Online NEET Preparation | EduRain", "NEET 2027 online preparation with EduRain: live classes, PYQs, DPPs, CBT-ready mock tests and expert faculty for Class 11, 12 and dropper students.", "https://www.edurain.in/courses/neet");
             if (window.anime) {
                 window.anime({
                     targets: '.er-anime-reveal',

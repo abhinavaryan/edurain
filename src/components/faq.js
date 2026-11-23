@@ -7,6 +7,20 @@ const faqsData = {
         { question: "Is there a free demo class before purchasing?", answer: "Yes, EduRain offers a free demo class so students can experience the teaching style and course quality before enrolling." },
         { question: "What support is available if I have doubts during the course?", answer: "We provide dedicated doubt-clearing sessions, personal mentor support, and regular teacher interaction to ensure all your questions are answered." }
     ],
+    // JEE FAQs from the doc "Best JEE Main 2027 Online Coaching and Complete Preparation with EduRain"
+    JEE: [
+        { question: "Are the JEE courses at EduRain live or recorded?", answer: "EduRain offers both live and recorded classes. You can attend interactive live sessions and also watch recorded lectures anytime for revision." },
+        { question: "What subjects are covered in the JEE batches?", answer: "EduRain JEE batches cover all the subjects required for the exam: Physics, Chemistry and Mathematics." },
+        { question: "How can I enroll in a JEE batch at EduRain?", answer: "Visit the EduRain website, choose the batch that suits you (Class 11, Class 12 or Dropper) and complete the registration online." },
+        { question: "Are mock tests included in the JEE batches?", answer: "Yes, EduRain JEE batches include regular mock tests, sectional tests, and practice questions, so you can check your preparation and improve your performance." },
+        { question: "What kind of support do teachers provide in these batches?", answer: "Teachers provide live doubt-solving support, feedback on your performance and guidance throughout your preparation. A dedicated doubt-resolution facility is also available." },
+        { question: "What is the last date for JEE Main 2027 registration?", answer: "JEE Main 2027 Session 1 registration started on 24 October 2026, and the last date to apply is 22 November 2026 (11:50 pm). Always confirm the dates on the official NTA website." },
+        { question: "What are the JEE Main 2027 exam dates?", answer: "Session 1 is scheduled for 20, 21, 22, 23, 24 and 28 January 2027, and Session 2 for 2 to 7 April 2027. Dates can change, so follow the official NTA notice." },
+        { question: "Which JEE batch should I choose: Class 11, Class 12 or Dropper?", answer: "Choose the batch that matches your current academic level. Class 11 students build a strong base early, Class 12 students balance board exams with JEE Main, and droppers get a full-year revision and test-focused plan. Not sure? Talk to an EduRain counsellor for guidance." },
+        { question: "Who teaches the JEE batches at EduRain?", answer: "EduRain's JEE faculty includes Mr. Diwakar for Physics, Ms. Ritu for Chemistry and Mr. Debashish Banerjee for Mathematics. See the faculty section above for each teacher's experience." },
+        { question: "Is there a free demo class for the JEE batches?", answer: "Yes. You can book a free demo session, see how our teachers explain concepts and then decide which batch to join." }
+    ],
+    /* Old JEE FAQs, replaced by the ones above. Kept for reference.
     JEE: [
         { question: "What is covered in the IIT-JEE course Mains, Advanced, or both?", answer: "We tell you exactly whether the course prepares you for JEE Mains, JEE Advanced, or both, so you know what you're signing up for." },
         { question: "Which subjects and topics are included in the IIT-JEE syllabus here?", answer: "The course covers Physics, Chemistry, and Maths as per the latest JEE syllabus, so nothing important gets missed." },
@@ -15,6 +29,22 @@ const faqsData = {
         { question: "Who are the faculty teaching the IIT-JEE course?", answer: "Meet the experienced teachers behind the course because for an exam like JEE, knowing who's teaching you matters." },
         { question: "Is there a free demo class before enrolling in the IIT-JEE course?", answer: "Yes, EduRain offers a free demo class for IIT-JEE preparation so students can experience the teaching style and course quality before enrolling." }
     ],
+    */
+    // NEET FAQs from the doc "Best NEET 2027 Online Coaching and Complete NEET 2027 Online Preparation with EduRain"
+    NEET: [
+        { question: "Does EduRain offer NEET 2027 online coaching for Class 11, Class 12 and droppers?", answer: "Yes. EduRain has separate batches for Class 11, Class 12 and dropper students. Each batch follows the latest NEET pattern." },
+        { question: "Will NEET 2027 be conducted online (CBT)?", answer: "The Education Ministry has announced that NEET UG moves to computer-based testing from 2027, and NTA is working towards it. The official notification with the full schedule is still awaited, so check neet.nta.nic.in for the final word." },
+        { question: "When will NEET 2027 registration start?", answer: "The NTA has not announced the dates yet. Registration is expected to start in February 2027, so keep your documents ready. Always confirm the dates on neet.nta.nic.in." },
+        { question: "When is the NEET 2027 exam date?", answer: "Not officially announced. NEET is usually held on the first Sunday of May, which is 2 May 2027, but a CBT may be spread over several days. See our <a href='https://www.edurain.in/blogs/neet-ug-2027-exam-date-expected-schedule-updates' style='color: #60a5fa; font-weight: 600; text-decoration: none;'>exam date update</a>." },
+        { question: "Are the classes live or recorded?", answer: "Both. You can join live classes and ask doubts in real time. You can also watch recordings later for revision." },
+        { question: "Are mock tests and weekly tests included?", answer: "Yes. Every batch includes regular mock tests and weekly tests, along with a performance analysis after each test." },
+        { question: "What are the fees for NEET online coaching at EduRain?", answer: "Fees depend on the batch you choose. At the time of writing, batches are listed from ₹4,820 to ₹12,500. Open your batch page to see the current fee and everything the batch includes. You can also talk to an EduRain counsellor, who will help you pick the right batch." },
+        { question: "Who are the faculty for NEET at EduRain?", answer: "EduRain's NEET faculty includes Mrs. Ritu (Chemistry), Mr. Diwakar (Physics) and Mr. Nitin (Biology), who have taught NEET aspirants for years. See the faculty section above for each teacher's subject and experience." },
+        { question: "Is there a free demo class?", answer: "Yes. You can attend a free demo class before you enroll and then decide." },
+        { question: "Can I clear NEET with online coaching?", answer: "Yes, many students do. Online coaching works when you follow a fixed study plan, attend classes, practice PYQs, and take mock tests regularly." },
+        { question: "Can a student without math appear for NEET?", answer: "Yes. NEET needs Physics, Chemistry, and Biology. Mathematics is not compulsory." }
+    ],
+    /* Old NEET FAQs, replaced by the ones above. Kept for reference.
     NEET: [
         { question: "What subjects are covered in the NEET course?", answer: "Confirms coverage of Physics, Chemistry, and Biology as per the latest NEET syllabus." },
         { question: "Are live classes and recorded lectures both available for NEET prep?", answer: "Yes, both are available. Students get live classes to learn in real-time, plus recorded lectures so they can revise anytime at their own pace." },
@@ -22,6 +52,7 @@ const faqsData = {
         { question: "Who are the faculty teaching the NEET course?", answer: "Addresses trust students want to know teacher experience and qualifications for a high-stakes exam such as NEET." },
         { question: "Is there a free demo class before enrolling in the NEET course?", answer: "Yes, available students can attend a free demo class first and decide if the teaching style works for them before enrolling." }
     ],
+    */
     FOUNDATION: [
         { question: "What is a Foundation course and who is it for?", answer: "The Foundation course is for students in Class 6th to 12th. It helps you understand your subjects clearly and also prepares you early for big exams such as NEET and IIT-JEE in the future." },
         { question: "Which subjects are covered in the Foundation course?", answer: "You will study Maths, Science, and English in this course. These subjects help you build a strong base for higher classes." },

@@ -63,9 +63,11 @@ const routesMeta = {
     canonical: 'https://www.edurain.in/courses/iit-jee'
   },
   'courses/neet': {
-    title: 'Best NEET 2027 Online Coaching and Online NEET Exam Preparation',
-    ogTitle: 'Best NEET 2027 Online Coaching and Online NEET Exam Preparation',
-    desc: 'NEET 2027 online preparation with EduRain: structured courses, live classes, PYQs, mock tests, and exam-focused support for Class 11, 12, and dropout students.',
+    // Old: title and ogTitle 'Best NEET 2027 Online Coaching and Online NEET Exam Preparation',
+    // desc 'NEET 2027 online preparation with EduRain: structured courses, live classes, PYQs, mock tests, and exam-focused support for Class 11, 12, and dropout students.'
+    title: 'Best NEET 2027 Online Coaching & Online NEET Preparation | EduRain',
+    ogTitle: 'Best NEET 2027 Online Coaching & Online NEET Preparation | EduRain',
+    desc: 'NEET 2027 online preparation with EduRain: live classes, PYQs, DPPs, CBT-ready mock tests and expert faculty for Class 11, 12 and dropper students.',
     canonical: 'https://www.edurain.in/courses/neet'
   },
   'courses/foundation': {
