@@ -1,4 +1,4 @@
-import{t as e}from"./courses-Cg5Nsa6A.js";import{initFAQ as t,renderFAQ as n}from"./faq-DntiRxpG.js";function r(){return`
+import{t as e}from"./courses-Cg5Nsa6A.js";import{initFAQ as t,renderFAQ as n}from"./faq-dX0g2TOo.js";function r(){return`
         <section class="courses-section" id="courses-page">
             <div class="section-header">
                 <h1>Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-12)</h1>
