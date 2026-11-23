@@ -100,13 +100,11 @@ const contentBold = (text) => `<strong style="color: #f1f5f9;">${text}</strong>`
 /** A small bold heading inside a section, for groups such as "Physics" in a list of links. */
 const contentLabel = (text) => `<p style="margin: 1.2rem 0 0.5rem; color: #f1f5f9; font-weight: 700; font-size: 1.05rem;">${text}</p>`;
 
-/** The glass box around the content, as in the old sections. Only the inner blocks fade in: the page staggers every
+/** The glass box around the content, as in the old sections but with one even colour: the old sections' two corner
+ *  glows end in a hard vertical line on a box this tall. Only the inner blocks fade in: the page staggers every
  *  .er-anime-reveal by 150 ms, so one per paragraph would keep the lower part of a long page hidden for seconds. */
 const contentSection = (inner) => `
         <section class="er-courses-content-section" style="max-width: 1000px; margin: 4rem auto; padding: 2.5rem; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
-            <div style="position: absolute; top: -50%; left: -20%; width: 60%; height: 100%; background: radial-gradient(circle, rgba(52, 211, 153, 0.08) 0%, transparent 70%); border-radius: 50%; z-index: 0; pointer-events: none;"></div>
-            <div style="position: absolute; bottom: -30%; right: -20%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%); border-radius: 50%; z-index: 0; pointer-events: none;"></div>
-
             <div style="position: relative; z-index: 1;">
                 ${inner}
             </div>
@@ -334,8 +332,12 @@ export function renderJEECourses() {
     const jeeExtraHtml = jeeMain2027Html();
 
     return renderCategoryPage(
-        "Best IIT JEE 2027 Online Coaching for JEE Main & Advanced", 
+        /* Old heading and the line under it, replaced by the doc's title and intro:
+        "Best IIT JEE 2027 Online Coaching for JEE Main & Advanced",
         "Comprehensive preparation for IIT-JEE exams. Build a strong foundation and master the concepts to secure your seat in top engineering colleges.",
+        */
+        "Best JEE Main 2027 Online Coaching and Complete Preparation with EduRain",
+        "JEE Main 2027 Session 1 registration is open until 22 November 2026. EduRain's online JEE coaching helps Class 11, Class 12 and dropper students prepare for JEE Main 2027 with live classes, recorded lectures, mock tests and doubt support. Below you will find the latest updates on registration, application form, eligibility criteria, exam dates, syllabus, admit card and preparation tips.",
         "JEE",
         jeeExtraHtml
     );
