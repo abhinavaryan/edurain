@@ -1,4 +1,4 @@
-import{t as e}from"./courses-Cg5Nsa6A.js";import{initFAQ as t,renderFAQ as n}from"./faq-dX0g2TOo.js";function r(){return`
+import{initFAQ as e,renderFAQ as t}from"./faq-dX0g2TOo.js";import{t as n}from"./webappCourses-HTXMMcV7.js";function r(){return`
         <section class="courses-section" id="courses-page">
             <div class="section-header">
                 <h1>Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-12)</h1>
@@ -11,7 +11,7 @@ import{t as e}from"./courses-Cg5Nsa6A.js";import{initFAQ as t,renderFAQ as n}fro
                 <a href="/courses/foundation" class="filter-btn" style="text-decoration: none;">FOUNDATION</a>
             </div>
             <div class="courses-grid" id="courses-grid">
-                ${e.map(e=>{let t=`⭐`.repeat(Math.round(e.rating)),n=e.students>=1e3?`${(e.students/1e3).toFixed(1)}K`:e.students;return`
+                ${n().map(e=>{let t=`⭐`.repeat(Math.round(e.rating)),n=e.students>=1e3?`${(e.students/1e3).toFixed(1)}K`:e.students;return`
             <div class="glass-card course-card fade-in-section visible" data-category="${e.category}" data-link="${e.link||`#`}">
                 <div class="course-thumb">
                     <a href="${e.link||`#`}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
@@ -88,5 +88,5 @@ import{t as e}from"./courses-Cg5Nsa6A.js";import{initFAQ as t,renderFAQ as n}fro
             </div>
         </section>
 
-        ${n()}
-    `}function i(){let e=document.querySelectorAll(`.course-card`);e.forEach(e=>{e.classList.add(`fade-in-section`,`visible`)}),e.forEach(e=>{e.style.cursor=`pointer`,e.addEventListener(`click`,t=>{if(t.target.closest(`a`))return;let n=e.getAttribute(`data-link`);n&&n!==`#`&&window.open(n,`_blank`,`noopener,noreferrer`)})}),window.anime&&window.anime({targets:`.er-anime-reveal`,translateY:[40,0],opacity:[0,1],easing:`easeOutExpo`,duration:1200,delay:window.anime.stagger(150,{start:300})}),t()}export{i as initCourses,r as renderCourses};
+        ${t()}
+    `}function i(){let t=document.querySelectorAll(`.course-card`);t.forEach(e=>{e.classList.add(`fade-in-section`,`visible`)}),t.forEach(e=>{e.style.cursor=`pointer`,e.addEventListener(`click`,t=>{if(t.target.closest(`a`))return;let n=e.getAttribute(`data-link`);n&&n!==`#`&&window.open(n,`_blank`,`noopener,noreferrer`)})}),window.anime&&window.anime({targets:`.er-anime-reveal`,translateY:[40,0],opacity:[0,1],easing:`easeOutExpo`,duration:1200,delay:window.anime.stagger(150,{start:300})}),e()}export{i as initCourses,r as renderCourses};

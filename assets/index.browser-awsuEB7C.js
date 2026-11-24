@@ -1,0 +1,1 @@
+import{i as e,t}from"./dist-es-BuQMEuR_.js";export{t as EventStreamSerde,e as eventStreamSerdeProvider};
