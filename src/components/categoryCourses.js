@@ -1,7 +1,8 @@
 import coursesData from '../data/courses.json' with { type: 'json' };
 import { renderFAQ } from './faq.js';
+import { courseTiles, refreshCourseTiles } from '../data/webappCourses.js';
 
-function renderCourseCard(course) {
+export function renderCourseCard(course) {
     const stars = '⭐'.repeat(Math.round(course.rating));
     const studentCount = course.students >= 1000
         ? `${(course.students / 1000).toFixed(1)}K`
@@ -36,7 +37,8 @@ function renderCourseCard(course) {
 }
 
 function renderCategoryPage(title, description, categoryKey, extraContentHtml = '') {
-    const filteredCourses = coursesData.filter(c => c.category === categoryKey);
+    // Before the web app's courses: coursesData.filter(c => c.category === categoryKey);
+    const filteredCourses = courseTiles().filter(c => c.category === categoryKey);
     const coursesHtml = filteredCourses.length > 0 
         ? filteredCourses.map(renderCourseCard).join('') 
         : '<p style="text-align: center; width: 100%; color: var(--text-muted);">No courses available in this category yet.</p>';
@@ -549,7 +551,7 @@ function neetUg2027Html() {
                 ${DIVIDER}
                 <div class="er-anime-reveal">
                     <h2 style="${H2_STYLE}">Start Your NEET 2027 Online Preparation Today</h2>
-                    <p style="${P_STYLE}">Your NEET 2027 online preparation begins with one step: choose a batch. Book a free demo class to see how EduRain teaches. Then join the batch that suits you, and start with the first chapter. You can ${contentLink(neetCourses, 'view all EduRain NEET courses')} or call and WhatsApp us on ${contentLink('tel:+918796443910', '+91 87964 43910')} for help.</p>
+                    <p style="${P_STYLE}">Your NEET 2027 online preparation begins with one step: choose a batch. Book a free demo class to see how EduRain teaches. Then join the batch that suits you, and start with the first chapter. You can ${contentLink(neetCourses, 'view all EduRain NEET courses')} or call and WhatsApp us on ${contentLink('tel:+91 84480 97535', '+91 84480 97535')} for help.</p>
                 </div>
     `);
 }
@@ -760,7 +762,7 @@ function foundation2027Html() {
                 ${DIVIDER}
                 <div class="er-anime-reveal">
                     <h2 style="${H2_STYLE}">Start learning with EduRain today</h2>
-                    <p style="${P_STYLE}">Give your child a strong start with online coaching for Class 6 to 12. Attend a free demo class, pick your batch and begin. Call ${contentLink('tel:+918796443910', '+91 87964 43910')} or message us on ${contentLink('https://wa.me/918796443910', 'WhatsApp')} to enroll.</p>
+                    <p style="${P_STYLE}">Give your child a strong start with online coaching for Class 6 to 12. Attend a free demo class, pick your batch and begin. Call ${contentLink('tel:+918448097535', '+91 84480 97535')} or message us on ${contentLink('https://wa.me/918448097535', 'WhatsApp')} to enroll.</p>
                 </div>
     `);
 }
@@ -841,3 +843,6 @@ export function renderFoundationCourses() {
         foundationExtraHtml
     );
 }
+
+/** After a course page shows: swaps in the web app's current courses (JEE, NEET, FOUNDATION, or null for all) */
+export const refreshCategoryTiles = (categoryKey) => refreshCourseTiles(categoryKey, renderCourseCard);

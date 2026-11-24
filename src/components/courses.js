@@ -1,8 +1,10 @@
 import coursesData from '../data/courses.json' with { type: 'json' };
 import { renderFAQ, initFAQ } from './faq.js';
+import { courseTiles } from '../data/webappCourses.js';
 
 export function renderCourses() {
-    const coursesHtml = coursesData.map(course => {
+    // Before the web app's courses: coursesData.map(course => {
+    const coursesHtml = courseTiles().map(course => {
         const stars = '⭐'.repeat(Math.round(course.rating));
         const studentCount = course.students >= 1000
             ? `${(course.students / 1000).toFixed(1)}K`

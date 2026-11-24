@@ -60,11 +60,13 @@ const routes = {
   },
   '/courses': {
     load: async () => {
-      const { renderCourses, initCourses } = await import('./components/courses.js');
+      // Before the web app's courses: const { renderCourses, initCourses } = await import('./components/courses.js');
+      const [{ renderCourses, initCourses }, { refreshCategoryTiles }] = await Promise.all([import('./components/courses.js'), import('./components/categoryCourses.js')]);
       return {
         render: () => renderCourses(),
         postRender: () => {
           initCourses();
+          refreshCategoryTiles(null);
           setMetaTags("Explore Our All Courses – IIT JEE, NEET & Foundation (Class 6-12)", "Explore IIT JEE, NEET & Foundation courses for Class 6-12 with expert faculty, structured curriculum & proven results. Take the first step toward success", "https://www.edurain.in/courses");
         }
       };
@@ -139,11 +141,12 @@ const routes = {
   },
   '/courses/iit-jee': {
     load: async () => {
-      const [{ renderJEECourses }, { initFAQ }] = await Promise.all([import('./components/categoryCourses.js'), import('./components/faq.js')]);
+      const [{ renderJEECourses, refreshCategoryTiles }, { initFAQ }] = await Promise.all([import('./components/categoryCourses.js'), import('./components/faq.js')]);
       return {
         render: () => renderJEECourses(),
         postRender: () => { 
-            initFAQ(); 
+            initFAQ();
+            refreshCategoryTiles('JEE'); 
             setMetaTags("Best JEE Main 2027 Online Coaching and Complete Preparation with EduRain", "Prepare for JEE Main 2027 and JEE Advanced 2027 with EduRain IIT JEE online coaching. Join two-way live classes, build strong concepts, practice with mock tests, and perform confidently in the exam.", "https://www.edurain.in/courses/iit-jee"); 
             if (window.anime) {
                 window.anime({
@@ -161,11 +164,12 @@ const routes = {
   },
   '/courses/neet': {
     load: async () => {
-      const [{ renderNEETCourses }, { initFAQ }] = await Promise.all([import('./components/categoryCourses.js'), import('./components/faq.js')]);
+      const [{ renderNEETCourses, refreshCategoryTiles }, { initFAQ }] = await Promise.all([import('./components/categoryCourses.js'), import('./components/faq.js')]);
       return {
         render: () => renderNEETCourses(),
         postRender: () => { 
-            initFAQ(); 
+            initFAQ();
+            refreshCategoryTiles('NEET'); 
             // Old: setMetaTags("Best NEET 2027 Online Coaching and Online NEET Exam Preparation", "NEET 2027 online preparation with EduRain: structured courses, live classes, PYQs, mock tests, and exam-focused support for Class 11, 12, and dropout students.", "https://www.edurain.in/courses/neet");
             setMetaTags("Best NEET 2027 Online Coaching & Online NEET Preparation | EduRain", "NEET 2027 online preparation with EduRain: live classes, PYQs, DPPs, CBT-ready mock tests and expert faculty for Class 11, 12 and dropper students.", "https://www.edurain.in/courses/neet");
             if (window.anime) {
@@ -184,11 +188,12 @@ const routes = {
   },
   '/courses/foundation': {
     load: async () => {
-      const [{ renderFoundationCourses }, { initFAQ }] = await Promise.all([import('./components/categoryCourses.js'), import('./components/faq.js')]);
+      const [{ renderFoundationCourses, refreshCategoryTiles }, { initFAQ }] = await Promise.all([import('./components/categoryCourses.js'), import('./components/faq.js')]);
       return {
         render: () => renderFoundationCourses(),
         postRender: () => { 
-            initFAQ(); 
+            initFAQ();
+            refreshCategoryTiles('FOUNDATION'); 
             // Old: setMetaTags("Best Online Coaching for Class 6 to 12 | CBSE, ICSE, UP Board", "Best online coaching for class 6 to 12. Live classes, tests, and doubt support for CBSE, ICSE, and UP Board students. Best CBSE Class 10 online coaching 2027.", "https://www.edurain.in/courses/foundation");
             setMetaTags("Best Online Coaching for Class 6 to 12 | CBSE, ICSE, UP Board", "Online coaching for Class 6 to 12 with live classes, DPPs, weekly tests and doubt support for CBSE, ICSE and UP Board. Book a free demo class today.", "https://www.edurain.in/courses/foundation");
             if (window.anime) {
