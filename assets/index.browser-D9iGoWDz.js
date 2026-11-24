@@ -1,0 +1,1 @@
+import{i as e,t}from"./dist-es-CS4hRE_U.js";export{t as EventStreamSerde,e as eventStreamSerdeProvider};
