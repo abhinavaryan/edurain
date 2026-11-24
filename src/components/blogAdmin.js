@@ -51,6 +51,11 @@ export function renderBlogAdmin() {
             </nav>
             
             <div style="padding: 1.5rem 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <!-- Publishes the website with the latest blogs (also runs by itself after every save or delete) -->
+                <button id="admin-deploy-btn" style="width: 100%; padding: 0.75rem; margin-bottom: 0.5rem; background: #2563eb; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                    🚀 Deploy Blogs
+                </button>
+                <div id="admin-deploy-status" style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.75rem;"></div>
                 <button id="admin-logout-btn" style="width: 100%; padding: 0.75rem; background: #ef4444; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
                     Logout
                 </button>
@@ -301,6 +306,23 @@ export function initBlogAdmin() {
             }
         }
     });
+
+    // Deploy: the backend starts the website's GitHub deploy (its token never reaches the browser); live in about 2 minutes
+    async function deployWebsite() {
+        const statusEl = document.getElementById('admin-deploy-status');
+        const show = (text, color) => { if (statusEl) { statusEl.textContent = text; statusEl.style.color = color; } };
+        show('⏳ Starting deploy...', '#94a3b8');
+        try {
+            const token = await auth.currentUser?.getIdToken();
+            const res = await fetch(`${(import.meta.env.VITE_API_URL || '').replace(/\/+$/, '')}/api/website-deploy`, { method: 'POST', headers: { Authorization: `Bearer ${token}` } });
+            const body = await res.json().catch(() => ({}));
+            if (!res.ok) throw new Error(body.error || `HTTP ${res.status}`);
+            show('✅ Deploy started. Live on the website in about 2 minutes.', '#4ade80');
+        } catch (err) {
+            show('❌ Deploy could not start: ' + err.message, '#f87171');
+        }
+    }
+    document.getElementById('admin-deploy-btn')?.addEventListener('click', deployWebsite);
 
     // Logout
     document.getElementById('admin-logout-btn')?.addEventListener('click', async () => {
@@ -1017,6 +1039,7 @@ export function initBlogAdmin() {
                     if (confirm('Are you sure you want to delete this blog?')) {
                         await deleteDoc(doc(db, 'blogs', id));
                         loadBlogs(); // refresh
+                        deployWebsite(); // the deleted blog leaves the website too
                     }
                 });
             });
@@ -1190,6 +1213,7 @@ export function initBlogAdmin() {
                 statusDiv.textContent = 'New blog published successfully!';
                 statusDiv.style.color = '#4ade80';
             }
+            deployWebsite(); // the saved blog goes live on the website by itself
         } catch (error) {
             console.error("Save Error:", error);
             statusDiv.textContent = 'Error saving blog: ' + error.message;
